@@ -1,0 +1,120 @@
+{
+  "scope": "Offline original-code and saved-RAM audit; no guest/model/probe or allowlist change",
+  "program_sha256": "fc496d62a91f6e9b1b84807183bb805bc546c9105d2938546b58a66ad9d132fe",
+  "snapshot": {
+    "path": "/Users/lixiuqi/Documents/ChatGPT/\u76f8\u673a/s5-emulator/menu-smp/results/local-ui-mode35-2g/ram.bin",
+    "queue_object": "0x8e1a08c",
+    "count": 2,
+    "read_index": 2,
+    "envelope": "0x8e9dac4",
+    "prefix": 0,
+    "words": [
+      "0x7f",
+      "0x4a",
+      "0x40001",
+      "0x8aab920",
+      "0x1"
+    ],
+    "pool6_object": "0x8e1c2cc",
+    "controller_state": 2,
+    "controller_byte15": 0,
+    "payload_word": 0
+  },
+  "tbb_paths": [
+    {
+      "base": "0x675ea04",
+      "index": 0,
+      "byte": "0x24",
+      "target": "0x675ea4c"
+    },
+    {
+      "base": "0x66d13bc",
+      "index": 0,
+      "byte": "0x5",
+      "target": "0x66d13c6"
+    },
+    {
+      "base": "0x651dc48",
+      "index": 0,
+      "byte": "0x28",
+      "target": "0x651dc98"
+    },
+    {
+      "base": "0x651e5d8",
+      "index": 1,
+      "byte": "0x4",
+      "target": "0x651e5e0"
+    }
+  ],
+  "exact_request_words": [
+    "0x7f",
+    "0x4a",
+    "0x40001",
+    "0x08aab920",
+    "0x1"
+  ],
+  "ownership": {
+    "kind": "original fixed static message slot, not a pool6 allocation",
+    "slot": "0x08e9dac4",
+    "bytes": 20,
+    "observed_prefix": 0,
+    "producer": "0x0651e662, selected response construction at 0x0651e6b4..0x0651e6c6",
+    "slot_derivation": "literal[0x0651e704]=0x08e9dad8 minus0x14",
+    "payload_derivation": "literal[0x0651e6f4]=0x08aab938 minus0x18",
+    "code_derivation": "literal[0x0651e70c]=0x40024 minus0x23",
+    "constructor": "0x0651d838: original ROM constants7f/4a plus code/payload/type; calls original RTOSsend",
+    "heap_release": "Original receive calls pool6release, whose prefix mismatch returns -17; wrapper ignores it",
+    "expected_pool_release_return": "0xffffffef",
+    "caller_extra_free": false,
+    "general_nonpool_messages_authorized": false
+  },
+  "receive": {
+    "entry_thumb": "0x067ea67b",
+    "arguments": [
+      "0x76",
+      "0x0a603680",
+      0
+    ],
+    "copy_bytes": 20,
+    "expected_return": 0,
+    "note": "Use exact static-slot ownership guard instead of the prior heap-only prefix/release0 guard"
+  },
+  "dispatch": {
+    "entry_thumb": "0x0675f155",
+    "r0": "0x0a603680",
+    "type": 1,
+    "source": "0x4a",
+    "code": "0x40001",
+    "selected_call": "0x0675ea50 -> 0x066d13b0(r0=9,r1=1)",
+    "selected_body": "0x066d13c6 STRB r1,[r2,#0x15]; 0x066d13c8 BX LR",
+    "effect": {
+      "address": "0x08aac2f9",
+      "width_bytes": 1,
+      "value": 1
+    },
+    "expected_return": 1,
+    "payload_dereferenced": false,
+    "ack_sent": false,
+    "mmio_accessed": false,
+    "peer_shared_ram_accessed": false,
+    "additional_payload_or_envelope_cleanup": false
+  },
+  "producer_chain": [
+    "Original task66 0x066d05aa..0x066d05ac requests code40001 through0x06759778, then clears controller+15",
+    "Task74/queue7f original worker0x0651e044 classifies source42 via0x0651dd58->0x0651dc30 as internal1",
+    "0x0651e4a8->0x0651e5c8 selected case1 calls0x0651e662",
+    "Worker writes result0 at0x08aab920 and uses original fixed response slot0x08e9dac4",
+    "0x0651d838 sends the actual response to destination from original request+0 (queue76)"
+  ],
+  "runtime_guards": [
+    "Preserve all prior actual-task66, stack/context and exact live-queue-head guards",
+    "Require exact tuple and fixed address08e9dac4; do not skip a different queued message",
+    "Require prefix0 differs from nonzero valid pool6 object; expect original release -17 without heap mutation",
+    "Require original receive return0 and exact copied20B, then execute only original dispatch",
+    "Observe original selector arguments9/1 and actual STRB at66d13c6; no host controller-byte write",
+    "Require dispatch return1 and restore original waiting task context only at normal return",
+    "No ACK milestone applies to this handler; later controller progression is separate evidence",
+    "Do not rerun the producer or fabricate its response; this is consumption of the actual queued reply"
+  ],
+  "validation_level": "Static contract and existing snapshot identity, not yet a runtime service experiment"
+}

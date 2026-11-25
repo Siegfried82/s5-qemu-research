@@ -1,0 +1,18 @@
+--- a/qemu/test_lens_release_input.py
++++ b/qemu/test_lens_release_input.py
+@@ -47,10 +47,15 @@
+             return q.read_reg('r0')
+         q.select_cpu(0)
+         q.write_mem(0x10000, struct.pack('<2I', 0xe1c010b0, 0xe12fff1e))
++        # Original 0x06752fb0/0x06753036 -> 0x064e6a78 -> 0x066c261c uses NEON/VFP
++        # (vpush {d0-d3}, vdup.32 q0, r2) to zero its 0x18-byte stack descriptor.
++        # Cold-reset CPACR/FPEXC leave VFP disabled and trap to UND (0x4).
++        q.write_mem(0x10020, struct.pack('<7I', 0xee110f50, 0xe380060f, 0xee010f50,
++                                         0xf57ff06f, 0xe3a00101, 0xeee80a10, 0xe12fff1e))
+         q.breakpoint_add(0x10010)
++        call(0x10020, thumb=False)
+         q.write_mem(0x8ab472c, struct.pack('<7I', *[0x7f040000 + i*0x1000 for i in range(7)]))
+         q.write_mem(0x9112628 + 3*20 + 12, struct.pack('<I', 8))
+         for offset, value in [(0, 0x01c7), (0x10, 2), (4, 0)]:
+             call(0x10000, 0x7f043000 + offset, value, thumb=False)
+         assert state()['lens_release_input']['enabled'] is False

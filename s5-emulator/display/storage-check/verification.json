@@ -1,0 +1,105 @@
+{
+  "passed": true,
+  "cases": [
+    {
+      "case": "font_header",
+      "source": "0x41260000",
+      "size": 16,
+      "destination": "0x10000000",
+      "return_value": "0x0",
+      "sector_calls": [
+        {
+          "sector": 37632,
+          "count": 1,
+          "source": "0x41260000",
+          "target": "0x8e9acd8",
+          "device": 1,
+          "sha256": "8fd8ceeadd83724d279d4f250819560aac925f36f4eaf3e57ee65a6808f7c613"
+        }
+      ],
+      "checks": {
+        "return_value": true,
+        "bytes": true,
+        "trailing_sentinel": true,
+        "stack_restored": true
+      },
+      "passed": true
+    },
+    {
+      "case": "font_unaligned_head_middle_tail",
+      "source": "0x412600ff",
+      "size": 2305,
+      "destination": "0x10000007",
+      "return_value": "0x0",
+      "sector_calls": [
+        {
+          "sector": 37632,
+          "count": 1,
+          "source": "0x41260000",
+          "target": "0x8e9acd8",
+          "device": 1,
+          "sha256": "8fd8ceeadd83724d279d4f250819560aac925f36f4eaf3e57ee65a6808f7c613"
+        },
+        {
+          "sector": 37633,
+          "count": 4,
+          "source": "0x41260200",
+          "target": "0x10000108",
+          "device": 1,
+          "sha256": "ad7e62b2d2f5a78e748b5917ac0db227de71ce77276bbdbd0a887b16ab4f2edd"
+        }
+      ],
+      "checks": {
+        "return_value": true,
+        "bytes": true,
+        "trailing_sentinel": true,
+        "stack_restored": true
+      },
+      "passed": true
+    },
+    {
+      "case": "postboot3_header",
+      "source": "0x404a0000",
+      "size": 28,
+      "destination": "0x10000000",
+      "return_value": "0x0",
+      "sector_calls": [
+        {
+          "sector": 9472,
+          "count": 1,
+          "source": "0x404a0000",
+          "target": "0x8e9acd8",
+          "device": 1,
+          "sha256": "a5a2fdd2171918f896fbef6b6b7c18970956c8d123453e317a320a72a10f5523"
+        }
+      ],
+      "checks": {
+        "return_value": true,
+        "bytes": true,
+        "trailing_sentinel": true,
+        "stack_restored": true
+      },
+      "passed": true
+    },
+    {
+      "case": "below_storage_range",
+      "source": "0x3fffffff",
+      "size": 16,
+      "destination": "0x10000000",
+      "return_value": "0xffffffff",
+      "sector_calls": [],
+      "checks": {
+        "return_value": true,
+        "bytes": true,
+        "trailing_sentinel": true,
+        "stack_restored": true
+      },
+      "passed": true
+    }
+  ],
+  "scope": "Original 0x068098b2 executes unchanged; only 0x068609b6 sector I/O is replaced with original component bytes",
+  "limitations": [
+    "No physical storage controller, lock-wrapper execution, DMA, timing or interrupt emulation",
+    "Unknown packaged-storage gaps are not supplied"
+  ]
+}

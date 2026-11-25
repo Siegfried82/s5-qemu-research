@@ -1,0 +1,121 @@
+{
+  "scope": "Read-only original API contract, not a successful runtime implementation",
+  "program_sha256": "fc496d62a91f6e9b1b84807183bb805bc546c9105d2938546b58a66ad9d132fe",
+  "postboot1_sha256": "e14b32e80c50d52e39edd6f7b725aba34b9f0a4ee12ad38987593f5cc8a8ec5f",
+  "snapshot": "/Users/lixiuqi/Documents/ChatGPT/\u76f8\u673a/s5-emulator/menu-smp/results/local-paint-lifecycle/result.json",
+  "observed_cpu": 2,
+  "observed_registers": {
+    "r0": "0x6f000001",
+    "r1": "0x3fff",
+    "r2": "0x9ff4e20",
+    "r3": "0x3",
+    "r4": "0xb3b5ee8",
+    "r5": "0x9ff4e74",
+    "r6": "0x3f800000",
+    "r7": "0x0",
+    "r8": "0x0",
+    "r9": "0x0",
+    "r10": "0x10000015",
+    "r11": "0x0",
+    "r12": "0xc0000000",
+    "r13": "0x9ff4cf0",
+    "r14": "0x7296c67",
+    "r15": "0x64c4362",
+    "cpsr": "0x60000133"
+  },
+  "named_api": {
+    "name": "eglQueryFrameDMP",
+    "entry_thumb": "0x064c4363",
+    "export_table": "0x070d59f4/name,0x070d59f8/function",
+    "arguments": [
+      "r0=EGLDisplay",
+      "r1=attribute",
+      "r2=output_u32_pointer"
+    ],
+    "attribute": "0x3fff only",
+    "output_bytes": 4,
+    "success_return": 1,
+    "failure_return": 0,
+    "operation": "Select current API draw surface;64daee2 reads its word+a0 and clears that word to0; store prior value at output pointer.",
+    "not_a_buffer_descriptor": true,
+    "no_query_side_effects": [
+      "No pixel-buffer address publication",
+      "No swap/present",
+      "No allocation",
+      "No automatic dirty/completion bit"
+    ],
+    "validation_errors": {
+      "display_not1_or2": "3008",
+      "display_uninitialized": "3001",
+      "null_output": "300c",
+      "no_API_context": "3006",
+      "no_draw_surface": "300d",
+      "attribute_not3fff": "3004"
+    },
+    "success_EGL_error": "3000",
+    "host_mapping_note": "Software display/context/surface handles must be validated by their explicit HLE mapping; original native display integers1/2 cannot consume a software handle directly."
+  },
+  "surface_latch": {
+    "offset": "0xa0",
+    "query_read_clear": "0x064daee2",
+    "peek": "0x064daef2",
+    "set_one": "0x064daefe",
+    "identified_setter_call": "0x064e5eac",
+    "setting_condition": "GPU wait command kinds1/8/10: after completion indication, readGPU_BASE+58; bit26 set triggers writeGPU_BASE+1214=01000000, readGPU_BASE+1200, pollbit26clear, then set surface latch1.",
+    "meaning": "Observed GPU exceptional-condition flag used for lower-quality redraw; exact physical register-bit name and resource cause remain unproven.",
+    "software_boundary": "A synchronous software renderer need not invent the original GPU exception. Record an initially zero per-surface latch and read-clear it; any unsupported/failed software operation must still stop or report its actual error rather than being converted into query success."
+  },
+  "internal_mode_control": {
+    "entry_thumb": "0x064c42b9",
+    "exported_name": "not established",
+    "arguments": [
+      "r0=display",
+      "r1=mode0or3"
+    ],
+    "return": "EGLBoolean",
+    "storage": "64daed8 writes mode into current drawsurface+94",
+    "getter": "64daecc; direct caller64e06b0",
+    "consumer": "64e066c command kinds1/8/10: if peek_latch==1 AND mode==3, branch64e070a, skipping current GPU submission but retaining later completion callback path. With latch0 these two modes use the same submit path.",
+    "not_general_noop": true,
+    "limits": "Other command kinds do not use this gate. Do not indiscriminately skip every graphics API if the latch is set. The setter also passes through native VG preparation64d2e7c; software synchronous execution must retain its own ordering."
+  },
+  "job_tbb": {
+    "0": "0x64e0726",
+    "1": "0x64e069e",
+    "2": "0x64e06d4",
+    "3": "0x64e06e4",
+    "4": "0x64e06ec",
+    "5": "0x64e0726",
+    "6": "0x64e0726",
+    "7": "0x64e071c",
+    "8": "0x64e069e",
+    "9": "0x64e06d4",
+    "10": "0x64e069e",
+    "11": "0x64e06d4",
+    "12": "0x64e0696"
+  },
+  "wait_tbb": {
+    "0": "0x64e5e70",
+    "1": "0x64e5e72",
+    "2": "0x64e5eb2",
+    "3": "0x64e5eb6",
+    "4": "0x64e5ec4",
+    "5": "0x64e5e70",
+    "6": "0x64e5e70",
+    "7": "0x64e5e70",
+    "8": "0x64e5e72",
+    "9": "0x64e5eb2",
+    "10": "0x64e5e72",
+    "11": "0x64e5eb2"
+  },
+  "actual_caller_sequence": [
+    "7296c56 internalmode(display,3)",
+    "7296c62 eglQueryFrameDMP(display,3fff,sp+130), clearing prior latch",
+    "Original text draw follows;7296dd2 vgFinish",
+    "7296dde second query;7296de2 loads output word",
+    "If nonzero: preserve parameter1103, set it to1201, re-run original text drawing, restore parameter1103",
+    "7296e4e internalmode(display,0)"
+  ],
+  "enum_correction": "Parameter1103 is VG_RENDERING_QUALITY; value1201 is FASTER. This is not blend-mode modification.",
+  "validation_level": "Exact original code and actual stop ABI; no live execution of these functions by this audit"
+}

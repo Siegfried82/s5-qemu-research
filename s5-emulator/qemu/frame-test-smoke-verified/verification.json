@@ -1,0 +1,117 @@
+{
+  "scope": "Synthetic GIC/MMIO only; no firmware, frame data or guest flag writes",
+  "qemu_sha256": "38fa57d072cadbb7e56a0fb509485167e9aa5b0bd94d280bb634fd2d776d50a9",
+  "checks": [
+    {
+      "name": "default disabled",
+      "passed": true
+    },
+    {
+      "name": "default counters zero",
+      "passed": true
+    },
+    {
+      "name": "disabled pulse rejected",
+      "passed": true
+    },
+    {
+      "name": "reject outside allowlist 0",
+      "passed": true
+    },
+    {
+      "name": "reject outside allowlist 191",
+      "passed": true
+    },
+    {
+      "name": "reject outside allowlist 194",
+      "passed": true
+    },
+    {
+      "name": "reject outside allowlist 196",
+      "passed": true
+    },
+    {
+      "name": "reject outside allowlist 232",
+      "passed": true
+    },
+    {
+      "name": "reject outside allowlist 448",
+      "passed": true
+    },
+    {
+      "name": "mode changes do not modify display MMIO",
+      "passed": true
+    },
+    {
+      "name": "pending starts clear 192",
+      "passed": true
+    },
+    {
+      "name": "edge reaches actual GIC 192",
+      "passed": true
+    },
+    {
+      "name": "ordinary GIC clear 192",
+      "passed": true
+    },
+    {
+      "name": "pending starts clear 193",
+      "passed": true
+    },
+    {
+      "name": "edge reaches actual GIC 193",
+      "passed": true
+    },
+    {
+      "name": "ordinary GIC clear 193",
+      "passed": true
+    },
+    {
+      "name": "disable rejects further pulse",
+      "passed": true
+    },
+    {
+      "name": "state is read-only",
+      "passed": true
+    },
+    {
+      "name": "request accounting",
+      "passed": true
+    },
+    {
+      "name": "test-only declared scope",
+      "passed": true
+    },
+    {
+      "name": "independent display test remains disabled",
+      "passed": true
+    }
+  ],
+  "expected_rejections": [
+    "QMP error: {'class': 'GenericError', 'desc': 'frame-test-pulse requires frame-test-mode=on, a realized GIC and IRQ 192 or 193'}",
+    "QMP error: {'class': 'GenericError', 'desc': 'frame-test-pulse requires frame-test-mode=on, a realized GIC and IRQ 192 or 193'}",
+    "QMP error: {'class': 'GenericError', 'desc': 'frame-test-pulse requires frame-test-mode=on, a realized GIC and IRQ 192 or 193'}",
+    "QMP error: {'class': 'GenericError', 'desc': 'frame-test-pulse requires frame-test-mode=on, a realized GIC and IRQ 192 or 193'}",
+    "QMP error: {'class': 'GenericError', 'desc': 'frame-test-pulse requires frame-test-mode=on, a realized GIC and IRQ 192 or 193'}",
+    "QMP error: {'class': 'GenericError', 'desc': 'frame-test-pulse requires frame-test-mode=on, a realized GIC and IRQ 192 or 193'}",
+    "QMP error: {'class': 'GenericError', 'desc': 'frame-test-pulse requires frame-test-mode=on, a realized GIC and IRQ 192 or 193'}",
+    "QMP error: {'class': 'GenericError', 'desc': 'frame-test-pulse requires frame-test-mode=on, a realized GIC and IRQ 192 or 193'}",
+    "QMP error: {'class': 'GenericError', 'desc': \"Property 's5-rtos-machine.frame-test-state-json' is not writable\"}"
+  ],
+  "state": {
+    "scope": "test-only explicit host IRQ inputs; no frame data",
+    "automatic_timing": false,
+    "hardware_clock_verified": false,
+    "guest_callback_or_flag_writes": false,
+    "mmio_status_modified": false,
+    "enabled": false,
+    "pulse_requests": 10,
+    "pulse_rejected": 8,
+    "last_requested_irq": 193,
+    "pulses": {
+      "192": 1,
+      "193": 1
+    }
+  },
+  "passed": true
+}

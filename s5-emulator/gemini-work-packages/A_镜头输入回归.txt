@@ -1,0 +1,22 @@
+共同要求（先读）：
+项目根目录 /Users/lixiuqi/Documents/ChatGPT/相机/s5-emulator 。用户会手动把本说明交给 Gemini；本说明不要求调用 Antigravity 或其他代理。
+当前原始证据：menu-smp/results/local-requested-lcd-refresh/result.json：110次绘制、5次swap；原CENTER确认时区提示，state20/scene70de；实际画面被modal4a镜头释放按钮警告覆盖。完整DSP尚未模拟。最新新增lens-release输入模型已构建，但未完成实跑验证。
+先阅读 menu-smp/README.md 和本任务涉及源码；现有文档部分历史段落只描述当时结果，不能当作当前结论。
+只做本任务；不要顺便重构、安装依赖、清理文件、修改原固件或连接实体相机。不得写原ready、UI状态、事件、TCB，或直接调用回调来假装成功。不得用自画菜单代替原厂画面。不改全局成功标准，不把swap次数当作主菜单已显示。
+已有结果只读。每轮测试使用新目录，保留失败记录。默认不要保存大RAM转储；需要时说明具体原因。QEMU需要JIT权限，权限失败须明确报告；不能改用伪结果顶替。
+提交：修改文件清单、可复制的命令、实际输出路径、机器可读verification.json，以及简短说明哪些已验证、哪些仍是假设。测试执行成功和断言通过要分开记录。不能验证时提交具体失败，不宣称完成。
+多个任务并行时按各自修改范围操作；需要改共享文件先写建议补丁，不直接改。所有新增文件用本任务编号标识，不覆盖别人的输出。
+
+任务A：镜头释放输入模型的真实回归与界面对照（优先级最高）
+目标：验证现有选项 --lens-release-input-high 是否通过原SPI读写、原输入处理和原告警逻辑，消除错误的“按钮持续按住”警告，展示真正的scene70de内容。不要保证一定成功，记录实际结果。
+主要文件：
+qemu/s5-rtc-peer.c；qemu/test_lens_release_input.py；serial/lens-warning-evidence.json；serial/lens-warning.disasm.txt；menu-smp/boot.py（只读）。
+修改范围：新建 qa/task-a/ 下的运行脚本和报告；现有测试有缺陷可提交单独建议补丁。不要直接改RTC模型、boot.py或图形后端。
+步骤：
+1. 运行现有focused测试：python3 -B qemu/test_lens_release_input.py --output qa/task-a/focused-唯一编号 。核对它实际执行原6752fb0/6753036，而非仅测试Python副本。
+2. 核对默认关闭、stored值02、打开有效读03、关闭恢复02；其它位/寄存器写入值不变。不把该输入称作成功连接镜头。
+3. 新建两个同条件完整运行，唯一变量是lens-release-input-high。项目根目录执行如下命令，分别指定不同--output：
+python3 -B menu-smp/boot.py --ram 2G --storage-hle --capture-gfx --graphics-hle --spi0-open-bus --spi6-open-bus --tx-serial-hle --adc11-sample 0x300 --isolate-display --isolate-display-ticks 600000 --linux-peer --service-gui-once --probe-ui-mode35 --display-clock-test --ui-service-loop --ui-service-postinit --frame-irq-test-pairs 128 --frame-test-stage-seconds 10 --lcd-refresh-test-pulses 8 --key-event KEY_CENTER --key-click --seconds 120 --output qa/task-a/baseline-唯一编号
+第二次同命令增加 --lens-release-input-high 。不要添加其它环境改变。
+4. 比较rtc元数据、modal ID、source/render布局、按键路径、图形错误和每张实际swap PNG。只有最终result中的源/绘制布局及实际图像相互印证才能说明警告消失或页面进入。保存帧索引及SHA，不能仅靠OCR判成功。
+验收：focused完整结果和两轮真实对照齐全；自动报告唯一变量、退出/停止原因、告警是否存在、原时区确认是否成功、页面是否实际更新。即使仍有警告也应如实交付失败证据，不能清标志修好它。

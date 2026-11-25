@@ -1,0 +1,20 @@
+共同要求（先读）：
+项目根目录 /Users/lixiuqi/Documents/ChatGPT/相机/s5-emulator 。用户会手动把本说明交给 Gemini；本说明不要求调用 Antigravity 或其他代理。
+当前原始证据：menu-smp/results/local-requested-lcd-refresh/result.json：110次绘制、5次swap；原CENTER确认时区提示，state20/scene70de；实际画面被modal4a镜头释放按钮警告覆盖。完整DSP尚未模拟。最新新增lens-release输入模型已构建，但未完成实跑验证。
+先阅读 menu-smp/README.md 和本任务涉及源码；现有文档部分历史段落只描述当时结果，不能当作当前结论。
+只做本任务；不要顺便重构、安装依赖、清理文件、修改原固件或连接实体相机。不得写原ready、UI状态、事件、TCB，或直接调用回调来假装成功。不得用自画菜单代替原厂画面。不改全局成功标准，不把swap次数当作主菜单已显示。
+已有结果只读。每轮测试使用新目录，保留失败记录。默认不要保存大RAM转储；需要时说明具体原因。QEMU需要JIT权限，权限失败须明确报告；不能改用伪结果顶替。
+提交：修改文件清单、可复制的命令、实际输出路径、机器可读verification.json，以及简短说明哪些已验证、哪些仍是假设。测试执行成功和断言通过要分开记录。不能验证时提交具体失败，不宣称完成。
+多个任务并行时按各自修改范围操作；需要改共享文件先写建议补丁，不直接改。所有新增文件用本任务编号标识，不覆盖别人的输出。
+
+任务B：把连续按键脚本做成可靠、可独立测试的调度器
+目标：修正目前boot.py --key-sequence仅凭新swap计数就发下一按键的限制。旧页面排队的swap可能满足条件，必须让下一按键等待上一按键目标页面真正提交。
+主要文件（只读）：menu-smp/boot.py 中 scripted_keys、key_sequence_index、key_next_swap_floor；menu-smp/key_probe.py；serial/test_key_probe.py。原布局：源08cb10c8、绘制工作副本0b392e90，modal在+4、scene在+8；它们相同只证明工作副本一致，不能单独证明已swap。
+修改范围：新建 menu-smp/key_sequence_scheduler.py、serial/test_key_sequence_scheduler.py、qa/task-b/；对boot.py的接线提供 qa/task-b/boot-integration.patch，先不要修改boot.py或key_probe.py。
+要求：
+1. 调度器接收显式观察事件：原press dispatch、原press consumed、原release consumed、实际swap及其scene/modal标识、原输入ready条件。通过依赖注入测试，不必运行QEMU。
+2. 每个press只有一个对应release；release始终对应同一key，允许press切页后释放。后续press须有输入ready，并满足对该步骤明确声明的目标scene/modal，且该目标已经真实swap。只知道swap发生但未捕获所属布局时应等待，不能猜。
+3. 每步支持显式目标，超时输出在等press消费/release消费/目标帧/input ready中的哪一项。最后一次release后完成，不等待无意义的额外swap。取消/失败时不再发新press，若无法保证安全释放须明确报告。
+4. 同一页面的UP/DOWN不一定变scene：可使用调用者提供的“该步骤后的帧”标识，但不能用过往帧补足。避免假称scene相同就证明选择变化。
+验收必须覆盖：旧scene晚到swap；新scene在release前就swap；只有工作布局更新未swap；只有swap无布局证明；输入门禁未就绪；按住/释放重复通知；连续不同key；取消；超时；最后一步结束；不修改客体RAM/原状态。另为单按键旧接口提供兼容方案。
+交付：模块、测试、接线补丁、事件接线说明，明确boot在哪个原EGL swap边界采集哪份布局；不要只写与实现一一镜像的测试。

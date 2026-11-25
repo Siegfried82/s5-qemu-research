@@ -1,0 +1,105 @@
+{
+  "scope": "Unmodified original ARM transmit routines, synthetic descriptor/data, no peripheral peer",
+  "qemu_sha256": "8386be7ec92896ef34b6cd0b5b3615afea19fd18dd06ca33add3ed3a8782f374",
+  "cases": [
+    {
+      "name": "absent",
+      "original_entry": "0x67091f2",
+      "original_return": 1,
+      "state": {
+        "scope": "opt-in TX-only controller sink HLE",
+        "enabled": false,
+        "physical_peer_acceptance_verified": false,
+        "rx_or_peer_ack_generated": false,
+        "pixel_or_dsp_execution_generated": false,
+        "timing_verified": false,
+        "stage": 0,
+        "starts": 0,
+        "completed": 0,
+        "acknowledgements": 0,
+        "stops": 0,
+        "bytes": 0,
+        "unsupported": 0,
+        "last_error": "",
+        "records_dropped": 0,
+        "tx_packets_hex": []
+      },
+      "passed": true
+    },
+    {
+      "name": "individual",
+      "original_entry": "0x67091f2",
+      "original_return": 0,
+      "state": {
+        "scope": "opt-in TX-only controller sink HLE",
+        "enabled": true,
+        "physical_peer_acceptance_verified": false,
+        "rx_or_peer_ack_generated": false,
+        "pixel_or_dsp_execution_generated": false,
+        "timing_verified": false,
+        "stage": 0,
+        "starts": 2,
+        "completed": 2,
+        "acknowledgements": 2,
+        "stops": 2,
+        "bytes": 8,
+        "unsupported": 0,
+        "last_error": "",
+        "records_dropped": 0,
+        "tx_packets_hex": [
+          "81123456",
+          "81078d00"
+        ]
+      },
+      "passed": true,
+      "unsupported_requests_rejected": {
+        "scope": "opt-in TX-only controller sink HLE",
+        "enabled": false,
+        "physical_peer_acceptance_verified": false,
+        "rx_or_peer_ack_generated": false,
+        "pixel_or_dsp_execution_generated": false,
+        "timing_verified": false,
+        "stage": 0,
+        "starts": 4,
+        "completed": 2,
+        "acknowledgements": 2,
+        "stops": 2,
+        "bytes": 8,
+        "unsupported": 2,
+        "last_error": "unknown START/config/count/mask/TX prefix or missing bytes",
+        "records_dropped": 0,
+        "tx_packets_hex": [
+          "81123456",
+          "81078d00"
+        ]
+      }
+    },
+    {
+      "name": "batch32",
+      "original_entry": "0x67093de",
+      "original_return": 0,
+      "state": {
+        "scope": "opt-in TX-only controller sink HLE",
+        "enabled": true,
+        "physical_peer_acceptance_verified": false,
+        "rx_or_peer_ack_generated": false,
+        "pixel_or_dsp_execution_generated": false,
+        "timing_verified": false,
+        "stage": 0,
+        "starts": 1,
+        "completed": 1,
+        "acknowledgements": 1,
+        "stops": 1,
+        "bytes": 32,
+        "unsupported": 0,
+        "last_error": "",
+        "records_dropped": 0,
+        "tx_packets_hex": [
+          "8112000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d"
+        ]
+      },
+      "passed": true
+    }
+  ],
+  "passed": true
+}

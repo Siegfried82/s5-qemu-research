@@ -1,0 +1,173 @@
+{
+  "purpose": "Incremental API support grounded in actual original GUI calls; no menu pixels invented",
+  "context_call": {
+    "result_directory": "menu-smp/results/isolated-display-lcd",
+    "pc": "0x064c2f62",
+    "lr": "0x0728fde1",
+    "attribute_pointer": "0x0b14c7dc",
+    "raw_sha256": "7193c64d8247541e06ebb8e70c63ac106fadeae4aa85e42728d37fe19b024fc3",
+    "attribute_words": [
+      "0x3ff7",
+      "0x80000",
+      "0x3ff8",
+      "0x40000",
+      "0x3ff9",
+      "0x10000",
+      "0x3ffa",
+      "0x10000",
+      "0x3fce",
+      "0x10000",
+      "0x3fcf",
+      "0x10000",
+      "0x3038"
+    ],
+    "original_validator": "0x064c3224..0x064c3346",
+    "original_copy": "0x064d83f6..0x064d840c",
+    "context_field_offsets": [
+      "0x3c",
+      "0x40",
+      "0x44",
+      "0x48",
+      "0x4c",
+      "0x50"
+    ],
+    "limit": "Host memory replaces original GPU pools; original pool exhaustion is not emulated"
+  },
+  "window_call": {
+    "result_directory": "menu-smp/results/isolated-display-context",
+    "pc": "0x064c1ce6",
+    "lr": "0x0728fead",
+    "native_handle": "0x0d7554e0",
+    "actual_native_dimensions": [
+      1024,
+      768
+    ],
+    "attributes": {
+      "0x3088": "0x308c",
+      "0x3087": "0x3089"
+    },
+    "standard_meaning": [
+      "VG_ALPHA_FORMAT_PRE",
+      "VG_COLORSPACE_sRGB"
+    ],
+    "primary_definition": "https://raw.githubusercontent.com/KhronosGroup/EGL-Registry/main/api/EGL/egl.h",
+    "implementation": "Named sRGB CoreGraphics premultiplied RGBA surface, full captured dimensions; no arbitrary viewport crop"
+  },
+  "native_bridge": {
+    "pc": "0x064c46c4",
+    "abi": "r0 display, r1 EGL surface, r2 native-handle output; r0 result boolean",
+    "original_semantics": "For type1 surface, writes original surface+0x68 to output and returns1",
+    "replacement": "Maps software surface to original captured DWD handle; native queries0x064de7da/0x064de686 execute unchanged",
+    "correction": "E010 is next buffer index, not pixel format; see serial/native-surface-abi.json"
+  },
+  "surface_linear_mode": {
+    "attribute": "0x3fdd",
+    "value": "0x3fde",
+    "official_enum_name": null,
+    "original_setter": "0x064c2aaa",
+    "field": "EGL surface+0xc8",
+    "consumer": "0x064d2ebe -> 0x064d2f34 -> 0x06503e3c",
+    "original_behavior": "Selects CPU-accessible linear buffer copy; 0x06503ef2 calls original memcpy per row",
+    "software_behavior": "Linear host bitmap with explicit calls.jsonl record",
+    "not_implemented": "Native guest DWD pixel buffers and scanout are not synchronized; their channel order has not been established",
+    "unsupported_alternative": "0x3fdf"
+  },
+  "paint_initialization": {
+    "result_directory": "menu-smp/results/isolated-display-surface",
+    "pc": "0x065d9572",
+    "caller": "0x07290098",
+    "attribute": "0x1a00",
+    "value": "0x1b01",
+    "meaning": "VG_PAINT_TYPE_LINEAR_GRADIENT",
+    "primary_definition": "https://raw.githubusercontent.com/KhronosGroup/OpenVG-Registry/main/api/1.1/openvg.h",
+    "implementation": "Retain original standard paint parameters; constant-alpha linear gradients now implemented with PAD/REPEAT/REFLECT, independent paint matrix, actual fill/stroked-path clipping. Other paint drawing stops."
+  },
+  "vendor_configuration": {
+    "result_directory": "menu-smp/results/isolated-display-paints",
+    "observed_call": "vgSeti(0xc070,1024)",
+    "caller": "0x0729015c",
+    "original_validator": "0x064dd20c..0x064dd222",
+    "range_and_alignment": "8..2048 inclusive; multiple of8; one integer",
+    "default": 256,
+    "storage": "VG context+0x170+0x1c0",
+    "c070_name_status": "No official enum name established; resource capacity correspondence is not simulated",
+    "subsequent_original_init_arrays": [
+      {
+        "param": "0xc120",
+        "address": "0x7435df8",
+        "values": [
+          0,
+          1960,
+          454,
+          359,
+          1865,
+          0
+        ]
+      },
+      {
+        "param": "0xc121",
+        "address": "0x7435dc0",
+        "values": [
+          0,
+          0
+        ]
+      },
+      {
+        "param": "0xc122",
+        "address": "0x7435e1c",
+        "values": [
+          512,
+          512,
+          512
+        ]
+      },
+      {
+        "param": "0xc123",
+        "address": "0x7435dc8",
+        "values": [
+          76,
+          2005,
+          128,
+          150,
+          1964,
+          1941,
+          29,
+          128,
+          2028
+        ]
+      },
+      {
+        "param": "0xc124",
+        "address": "0x7435db8",
+        "values": [
+          0,
+          0
+        ]
+      },
+      {
+        "param": "0xc125",
+        "address": "0x7435dec",
+        "values": [
+          512,
+          512,
+          512
+        ]
+      }
+    ],
+    "array_setter": "0x064dd256..0x064dd36e",
+    "array_semantics": "Hardware YUV conversion raw coefficient state; RGB-only software backend retains these values, rejects YUV/native image formats",
+    "extension_string_address": "0x06ff436d",
+    "extension_string": "VG_DMPX_conversion_YUV_hw_raw_setting"
+  },
+  "gradient_execution": {
+    "source": "menu-smp/results/isolated-display-vendor-state/graphics/calls.jsonl",
+    "entry": "0x065d9d4e",
+    "original_caller_lr": "0x072a33db",
+    "actual_path_handle": "0x10000008",
+    "actual_paint_handle": "0x20000005",
+    "actual_modes": 3,
+    "path_role": "4x4 initialization warm-up, not menu contents",
+    "replay_evidence": "gradient-replay/verification.json",
+    "native_gradient_first": "(0,0)->(0,28), 27 gray stops, alpha1, repeat"
+  }
+}

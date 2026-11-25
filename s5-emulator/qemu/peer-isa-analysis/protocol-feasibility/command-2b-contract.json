@@ -1,0 +1,115 @@
+{
+  "scope": "Offline original-code and saved-RAM audit only; no VM, guest mutation or allowlist change",
+  "program": "/Users/lixiuqi/Documents/ChatGPT/\u76f8\u673a/s5-v29-offline/unpacked-v29/03_program.bin",
+  "program_sha256": "fc496d62a91f6e9b1b84807183bb805bc546c9105d2938546b58a66ad9d132fe",
+  "exact_request_words": [
+    "0x115",
+    "0x11d",
+    "0x2b",
+    "0x0",
+    "0x0"
+  ],
+  "snapshot": {
+    "path": "/Users/lixiuqi/Documents/ChatGPT/\u76f8\u673a/s5-emulator/menu-smp/results/local-ui-service-first/ram.bin",
+    "queue_object": "0x8e1a08c",
+    "count": 2,
+    "capacity": 56,
+    "read_index": 1,
+    "messages": [
+      {
+        "position": 0,
+        "envelope": "0x99cab24",
+        "words": [
+          "0x115",
+          "0x11d",
+          "0x35",
+          "0x1",
+          "0x0"
+        ],
+        "pool_prefix": "0x8e1c2cc"
+      },
+      {
+        "position": 1,
+        "envelope": "0x99caaf4",
+        "words": [
+          "0x115",
+          "0x11d",
+          "0x2b",
+          "0x0",
+          "0x0"
+        ],
+        "pool_prefix": "0x8e1c2cc"
+      }
+    ],
+    "byte_0x090c93ae": 0,
+    "unused_context_words": [
+      "0xffffffff",
+      "0x0"
+    ]
+  },
+  "receive": {
+    "same_as": "ui-service-contract.json receive/peek",
+    "entry_thumb": "0x067ea67b",
+    "arguments": [
+      "0x76",
+      "0x0a603680",
+      "0x0"
+    ],
+    "success_return": 0,
+    "copies_bytes": 20,
+    "original_pool6_release": true,
+    "caller_extra_free": false
+  },
+  "dispatch": {
+    "entry_thumb": "0x0675f155",
+    "r0": "0x0a603680",
+    "type_halfword": 0,
+    "source": "0x11d",
+    "code": "0x2b",
+    "tbb_base": "0x0675eba8",
+    "tbb_entry": "0xed",
+    "tbb_target": "0x0675ed82",
+    "body": "0x0675ede8..0x0675edee",
+    "initialized_r5": 0,
+    "store": {
+      "address": "0x090c93ae",
+      "width_bytes": 1,
+      "value": 0
+    },
+    "return": 1,
+    "extra_cleanup": "None: original task loop immediately receives next"
+  },
+  "ack": {
+    "generated": false,
+    "send_calls": [],
+    "success_meaning": "Handled means original byte store and return only, not an ACK"
+  },
+  "dependencies": {
+    "peer_shared_ram_or_ready": false,
+    "mmio": false,
+    "handler_calls": [],
+    "payload_words_used": false,
+    "ordinary_ram": [
+      "0x090c93ae"
+    ],
+    "dispatcher_unused_loads": [
+      "0x0a604474",
+      "0x0a604478"
+    ],
+    "required": [
+      "Original task66 context",
+      "Initialized RTOS queue76 and pool6",
+      "Mapped ordinary RAM and correct original program identity"
+    ]
+  },
+  "limits": [
+    "The byte's broader application meaning is not identified; this contract only establishes exact effect",
+    "Current snapshot already has byte zero; serving this request is not expected to alter that snapshot value",
+    "This request cannot directly emit the missing code35 acknowledgement at GUI step436",
+    "Do not skip the queued code35 predecessor to reach code2b; re-peek the real live head",
+    "A future experiment must retain the prior context/stack/queue/pool guards and only run original code",
+    "Require original receive success and pool release success, exact copied tuple, selected body and dispatch return1",
+    "A byte-zero outcome alone is not execution evidence because the original value may already be zero",
+    "No runtime test or expanded allowlist has been performed by this audit"
+  ]
+}

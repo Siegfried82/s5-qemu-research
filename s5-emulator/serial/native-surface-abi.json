@@ -1,0 +1,192 @@
+{
+  "scope": "Original native allocation in an explicitly isolated display experiment; no object or task fields modified by this extractor",
+  "snapshot": "/Users/lixiuqi/Documents/ChatGPT/\u76f8\u673a/s5-emulator/menu-smp/results/isolated-display-context/ram.bin",
+  "program_sha256": "fc496d62a91f6e9b1b84807183bb805bc546c9105d2938546b58a66ad9d132fe",
+  "postboot1_sha256": "e14b32e80c50d52e39edd6f7b725aba34b9f0a4ee12ad38987593f5cc8a8ec5f",
+  "observed_windows": [
+    {
+      "handle": "0xd7554e0",
+      "observer": {
+        "index": 15,
+        "name": "observed_native_window",
+        "handle": "0xd7554e0",
+        "width": 1024,
+        "height": 768,
+        "evidence": "original native window call 0x064deeba r1/r2 and its returned r0"
+      },
+      "object_hex": "445744003c0100000100000400030010000000000000000088d7740d60d7740d000000000000000000000000000030000004000302000000",
+      "width": 1024,
+      "height": 768,
+      "stride_bytes": 4096,
+      "internal_format": 0,
+      "bytes_per_buffer": 3145728,
+      "aligned_width": 1024,
+      "aligned_height": 768,
+      "buffer_count": 2,
+      "current_index": 0,
+      "query_e010_next_index": 1,
+      "buffers": [
+        {
+          "native_offset": "0x18",
+          "descriptor": "0xd74d788",
+          "allocation_base": "0xdd0a800",
+          "cpu_alias": "0x8dd0a800",
+          "query_address": "0xdd0a800",
+          "bytes": 3145728,
+          "stride_bytes": 4096,
+          "flags": "0x8000",
+          "descriptor_hex": "00a8d00d00a8d08d00a8d00d00003000001000000080000000000000000000000000000000000000"
+        },
+        {
+          "native_offset": "0x1c",
+          "descriptor": "0xd74d760",
+          "allocation_base": "0xda0a800",
+          "cpu_alias": "0x8da0a800",
+          "query_address": "0xda0a800",
+          "bytes": 3145728,
+          "stride_bytes": 4096,
+          "flags": "0x8000",
+          "descriptor_hex": "00a8a00d00a8a08d00a8a00d00003000001000000080000000000000000000000000000000000000"
+        }
+      ]
+    }
+  ],
+  "address_mapping": {
+    "address": "0x08ab4408",
+    "base_start": "0xda0a800",
+    "alias_start": "0x8da0a800",
+    "bytes": 15466496,
+    "to_alias_function": "0x064d28de",
+    "formula": "alias_start + (base_address - base_start), after range validation"
+  },
+  "entry_abis": {
+    "0x064deeba": {
+      "arguments": [
+        "r0 display argument",
+        "r1 width",
+        "r2 height",
+        "r3 public pixel-format selector",
+        "[entrySP] optional EGL_NONE-terminated attributes"
+      ],
+      "return": "r0 actual guest DWD window pointer, or0 on failure",
+      "observed_caller": "0x0728fe58 choosesr3=1 when EGL_CONFIG_ID=6; other config IDs choose6",
+      "format_conversion": {
+        "1": 0,
+        "21": 1,
+        "2": 2,
+        "6": 3,
+        "4": 4,
+        "26": 5,
+        "28": 6,
+        "29": 7
+      }
+    },
+    "0x064c46c4": {
+      "arguments": [
+        "r0 display (not used)",
+        "r1 EGLsurface",
+        "r2 u32*outNative"
+      ],
+      "return": "BOOL r0=1 iff surface nonzero and surface.u32+8==1; then*outNative=surface.u32+0x68",
+      "bridge": "The host software EGLsurface can map to the already observed real native window; it must not be dereferenced as a guest driver object"
+    },
+    "0x064de7da": {
+      "arguments": [
+        "r0 display (not used)",
+        "r1 nativeDWD",
+        "r2 attribute",
+        "r3 u32*out"
+      ],
+      "return": "BOOL1 on successful original query,0 on failure; output initialized0",
+      "0xe011": "native.u32+0x18 buffer descriptor ->0x06610d5a ->descriptor.u32+8",
+      "0xe012": "native.u32+0x1c buffer descriptor ->0x06610d5a ->descriptor.u32+8",
+      "preserve_original": "After mapping the EGLsurface to actualnative, these helpers can use original descriptors and allocator"
+    },
+    "0x064de686": {
+      "arguments": [
+        "r0 display (not used)",
+        "r1 nativeDWD",
+        "r2 attribute",
+        "r3 u32*out"
+      ],
+      "0xe010": "(s16(native+0x36)+1) % s16(native+0x34)",
+      "return": "BOOL1 on this successfulquery,0 on failure; writesnext index to*out",
+      "important": "This observed E010 query is buffer index, NOT pixel format"
+    },
+    "0x064d53be": {
+      "arguments": [
+        "r0 nativeDWD",
+        "r1 optional zero-terminated low-levelattrs"
+      ],
+      "behavior": "For count2 increments currentindex modulo2, then unlocks native mutex+4",
+      "limit": "Do not call as a standalone inferior-call without satisfying its matching lock/present protocol"
+    }
+  },
+  "native_fields": {
+    "size": "0x38",
+    "+0": "magic'DWD\\0'",
+    "+4": "mutexhandle",
+    "+8": "u16referencecount",
+    "+0xa": "u16width",
+    "+0xc": "u16height",
+    "+0xe": "u16stridebytes",
+    "+0x10": "u32internalformat",
+    "+0x18": "buffer0descriptor",
+    "+0x1c": "buffer1descriptor",
+    "+0x20/+0x24": "additional plane descriptors for internal formats6/7",
+    "+0x28": "lockedCPUalias",
+    "+0x2c": "u32bytesPerBuffer",
+    "+0x30": "u16alignedWidth",
+    "+0x32": "u16alignedHeight",
+    "+0x34": "s16bufferCount",
+    "+0x36": "s16currentIndex"
+  },
+  "buffer_descriptor_fields": {
+    "size": "0x28",
+    "+0": "allocationbase",
+    "+4": "CPUalias",
+    "+8": "query/baseaddress",
+    "+0xc": "bytes",
+    "+0x10": "stridebytes",
+    "+0x14": "flags"
+  },
+  "application_surface_fields": {
+    "builder": "0x0728fe58",
+    "+0": "actualnativewindow",
+    "+4": "EGLsurfacehandle",
+    "+8": "u16width",
+    "+0xa": "u16height",
+    "+0xc": "u16 initialized0",
+    "+0xe": "u16next buffer index fromE010",
+    "+0x10": "E011bufferbase",
+    "+0x14": "E012bufferbase"
+  },
+  "allocation": {
+    "creator": "0x064d4ad2",
+    "bits_per_pixel_internal0": 32,
+    "alignment": "width to16pixels, height to8pixels, each at least32, for observed defaultattributes",
+    "default_buffers": 2,
+    "pixel_channel_order": "Not established by this structure/layout analysis; do not infer from32bpp alone"
+  },
+  "custom_surface_attribute_0x3fdd": {
+    "observed_request": "0x0728feba calls eglSurfaceAttrib(attr3fdd,value3fde)",
+    "setter": "0x064c2aaa validates3fde/3fdf and config+0x48 bits20/21 respectively, stores surface+0xc8",
+    "additional_state": "Marksdirty0x100. For native windows and3fde, queries0x064dfe8e; validDWD returns1 through0x064d4fa4, stores surface+0xd4 and marksdirty0x800",
+    "query_helper_0x064d2ebe": {
+      "out_u8_0": "surface+0xc8==3fde",
+      "out_u8_1": "surface+0xd4==1",
+      "out_u8_2": "surface+0xc4==3094 (preserved)",
+      "out_u32_4": "surface+0xbc descriptor",
+      "out_u32_8": "surface+0xc0"
+    },
+    "consumer": "0x064d2f34: modeflag1 and nonzero callerargument choose descriptor->CPUalias then0x06503e3c clippedrowcopy; othermode takes0x06505b24",
+    "rowcopy_evidence": "0x06503ef2 calls original memcpy0x066c22b4 per row, with optional reversed source row order",
+    "interpretation": "The observed mode supports a CPU-accessible linearbuffer copy path; exact officialextension name is not established",
+    "bridge_contract": "Record and support the observed mode with actuallinear buffer synchronization; do not silently discard unknownvalues"
+  },
+  "limitations": [
+    "1024x768 native allocation does not override original viewport/plane geometry",
+    "No panel scanout or pixel-order validation in this report",
+    "EGL/VG software rendering remains hostHLE; original native allocator reallyexecuted"
+  ]
+}

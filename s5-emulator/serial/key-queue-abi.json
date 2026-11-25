@@ -1,0 +1,93 @@
+{
+  "scope": "Original software-key input through original queue/task/dispatcher; not physical GPIO input and not proof of a menu",
+  "program_sha256": "fc496d62a91f6e9b1b84807183bb805bc546c9105d2938546b58a66ad9d132fe",
+  "module": "s5-emulator/menu-smp/key_probe.py",
+  "allowed_keys": {
+    "KEY_UP": 3,
+    "KEY_DOWN": 4,
+    "KEY_LEFT": 5,
+    "KEY_RIGHT": 6,
+    "KEY_CENTER": 7,
+    "KEY_PLAY": 8,
+    "KEY_Q_MENU": 15,
+    "KEY_SET": 58
+  },
+  "actions": {
+    "0": "release: original action OPEN -> internal2",
+    "1": "press: original TRIGGER -> internal0"
+  },
+  "queue_abi": {
+    "entry": "0x067f0dda",
+    "r0": "0x115 destinationqueue",
+    "r1": 0,
+    "r2": "0x11d source",
+    "r3": 0,
+    "stack_words": [
+      "0x0011f002",
+      "pointer to8bytepayload",
+      "8",
+      "0(timeout)"
+    ],
+    "payload": [
+      "u32 originaltableindex",
+      "u32actionindex"
+    ],
+    "ownership": "Original function allocates/copies payload into its own pool before enqueue; parser and runner do not borrow permanent scratch",
+    "return": "r0=0 accepted; original errors remain errors"
+  },
+  "parser_warning": "Original664bf95 parser uses infinite timeout and ignores sendfailure. Its return is not deliveryproof. Probe uses direct samequeue API withtimeout0.",
+  "safe_boundary": {
+    "entry": "0x06475dea",
+    "task_id": 285,
+    "task_entry": "0x06475dd5",
+    "meaning": "After previous message cleanup, before next receive argumentsetup; originaltask owns the inputstate",
+    "guards": [
+      "TCBmagicDRHT/state2/id285/entry",
+      "Thumb SVC; IRQenabled; no IT",
+      "dispatchdisabled globals08ab4e80/7c/68 and perCPU209c0all0",
+      "8bytealigned originalstack; 4KiBheadroom plus32temporaryargs",
+      "sameCPU,TCB,entry,id andSP atreturn"
+    ],
+    "scratch": "Only32bytes below original SP are temporarily used and restored. No originalcode,TCB,eventflag,inputstate modified."
+  },
+  "registers": {
+    "core": "Opaque g/G; actualQEMU packet68bytes",
+    "fp": "Actual qXfer XML numbering; p/P d0..d31,FPSCR,FPEXC separately saved/restored/verified",
+    "readonly": "FPSID read/verified only, neverwritten",
+    "aliases": "Q0..Q15 are aliases ofD0..D31; notwrittenagain",
+    "transport_test": "results-key-register-xml/restore-result.json"
+  },
+  "correlation": [
+    "Observe67f0e42 actualallocated/copied payloadpointer",
+    "67f0dda return accepted and original core/FP/32stackbytes restored",
+    "Observe6475df4 receives same pointer/code",
+    "Observe64759c6 passes same pointer with exact8payloadbytes",
+    "Observeoriginalstatehandler and UIevents in same dispatch",
+    "Observe64759ca originaldispatcherreturn"
+  ],
+  "limits": [
+    "One key call atatime, no arbitraryindices/actions ortextparser",
+    "Only arm after actually observed EGLswap",
+    "Originalhandlers retain all mode/lock/inputguards",
+    "Bounded inferiorcall2seconds andconsumption5seconds defaults pluscallerouterdeadline",
+    "Timeout duringcall never force-restores savedcontext onanother task",
+    "consumed doesnot imply menuopened"
+  ],
+  "validation": {
+    "host_only_tests": {
+      "path": "test_key_probe.py",
+      "passed": 9,
+      "firmware_execution": false
+    },
+    "real_register_transport": "results-key-register-xml/restore-result.json",
+    "original_key_execution": "../menu-smp/results/isolated-menu-key-vfp/result.json",
+    "original_key_result": "KEY_CENTERpress accepted, received, dispatched throughbank0mask0x10/internal0; originalevent0x0f03002d(0,0); dispatcherreturned; contextrestored",
+    "menu_opened": false
+  },
+  "identity_evidence": {
+    "center": "Originalnamedtableindex7/mask0x10. Alternate normalmodechain6646e84->66be02a sends0f000003; state1handler67fd94a->67fd24c(0)->6856b60->66bed42(2) enters another originalUIstate. These branches are guarded; notall executed in currentboot.",
+    "set": "KEY_SETindex58 is separatebank1mask0x200000. Do not equate it withCENTER basedonname.",
+    "physical_menu_set_identity": "Not independently verified byGPIO orrealcamera; do not claim physicalbutton equivalence.",
+    "current_mode": "Snapshot mode6 skips normalstatehandler. Actual CENTER event is0f03002d, not alternate0f000003."
+  }
+}

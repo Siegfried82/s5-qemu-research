@@ -1,0 +1,501 @@
+{
+  "source_file": "MC801_allmenu.xml",
+  "source_guest_path": "/etc/menuxml/MC801_allmenu.xml",
+  "bytes": 307714,
+  "sha256": "2cf69074d41ac134e9a65ca631cf4842cefc5c49d24cc855ac2094fdbd1e857c",
+  "identity": {
+    "model": "S5",
+    "version": "2.0",
+    "date": "20201027"
+  },
+  "kind": "original S5 remote-control/protocol menu data",
+  "on_camera_gui_rendered": false,
+  "counts": {
+    "camrply": 1,
+    "result": 1,
+    "menuset": 1,
+    "home_menu": 1,
+    "menu": 13,
+    "play_menu": 1,
+    "record_top": 1,
+    "item": 740,
+    "group": 62,
+    "record_qmenu": 1,
+    "record_menu": 1,
+    "record_tab": 1,
+    "record_tab2": 1,
+    "titlelist": 1,
+    "language": 11,
+    "title": 3081
+  },
+  "sections": [
+    {
+      "name": "home_menu",
+      "item_count": 0,
+      "menu_count": 1,
+      "top_level_items": []
+    },
+    {
+      "name": "play_menu",
+      "item_count": 0,
+      "menu_count": 1,
+      "top_level_items": []
+    },
+    {
+      "name": "record_top",
+      "item_count": 206,
+      "menu_count": 1,
+      "top_level_items": [
+        {
+          "id": "menu_item_id_f_and_ss",
+          "title_id": "title_f_and_ss",
+          "func_type": "sp_embeded_f_and_ss"
+        },
+        {
+          "id": "menu_item_id_aperture",
+          "title_id": "title_aperture",
+          "func_type": "sp_embeded_aperture"
+        },
+        {
+          "id": "menu_item_id_shutter_speed",
+          "title_id": "title_shutter_speed",
+          "func_type": "sp_embeded_shutter_speed"
+        },
+        {
+          "id": "menu_item_id_program_shift",
+          "title_id": "title_program_shift",
+          "func_type": "sp_embeded_program_shift"
+        },
+        {
+          "id": "menu_item_id_f",
+          "title_id": "title_f",
+          "func_type": "sp_embeded_f"
+        },
+        {
+          "id": "menu_item_id_ss",
+          "title_id": "title_ss",
+          "func_type": "sp_embeded_ss"
+        },
+        {
+          "id": "menu_item_id_f_and_ss_angle",
+          "title_id": "title_f_and_ss_angle",
+          "func_type": "sp_embeded_f_and_ss_angle"
+        },
+        {
+          "id": "menu_item_id_ss_angle",
+          "title_id": "title_ss_angle",
+          "func_type": "sp_embeded_ss_angle"
+        },
+        {
+          "id": "menu_item_id_f_and_ss_sync",
+          "title_id": "title_f_and_ss_sync",
+          "func_type": "sp_embeded_f_and_ss_sync"
+        },
+        {
+          "id": "menu_item_id_ss_sync",
+          "title_id": "title_ss_sync",
+          "func_type": "sp_embeded_ss_sync"
+        },
+        {
+          "id": "menu_item_id_f_and_ss_angle_sync",
+          "title_id": "title_f_and_ss_angle_sync",
+          "func_type": "sp_embeded_f_and_ss_angle_sync"
+        },
+        {
+          "id": "menu_item_id_ss_angle_sync",
+          "title_id": "title_ss_angle_sync",
+          "func_type": "sp_embeded_ss_angle_sync"
+        },
+        {
+          "id": "menu_item_id_exposure3",
+          "title_id": "title_exposure3",
+          "func_type": "sp_embeded_exposure3"
+        },
+        {
+          "id": "menu_item_id_exposure3_step",
+          "title_id": "title_exposure3_step",
+          "func_type": "sp_embeded_exposure3_step"
+        },
+        {
+          "id": "menu_item_id_sensitivity",
+          "title_id": "title_sensitivity",
+          "func_type": "sp_embeded_sensitivity"
+        },
+        {
+          "id": "menu_item_id_sensitivity_db",
+          "title_id": "title_sensitivity_db",
+          "func_type": "sp_embeded_sensitivity_db"
+        },
+        {
+          "id": "menu_item_id_whitebalance",
+          "title_id": "title_whitebalance",
+          "func_type": "sp_embeded_whitebalance"
+        }
+      ]
+    },
+    {
+      "name": "record_qmenu",
+      "item_count": 125,
+      "menu_count": 1,
+      "top_level_items": [
+        {
+          "id": "menu_item_id_ph_sty",
+          "title_id": "title_ph_sty",
+          "func_type": "select"
+        },
+        {
+          "id": "menu_item_id_ph_sty_saturation",
+          "title_id": "title_ph_sty_saturation",
+          "func_type": "sp_embeded_ph_sty_saturation",
+          "img": "film_saturation",
+          "img_type": "svg"
+        },
+        {
+          "id": "menu_item_id_whitebalance",
+          "title_id": "title_whitebalance",
+          "func_type": "select"
+        },
+        {
+          "id": "menu_item_id_ph_sty_contrast",
+          "title_id": "title_ph_sty_contrast",
+          "func_type": "sp_embeded_ph_sty_contrast",
+          "img": "film_contrast",
+          "img_type": "svg"
+        },
+        {
+          "id": "menu_item_id_ph_sty_highlight",
+          "title_id": "title_ph_sty_highlight",
+          "func_type": "sp_embeded_ph_sty_highlight",
+          "img": "dial_guide_higlight",
+          "img_type": "svg"
+        },
+        {
+          "id": "menu_item_id_ph_sty_shadow",
+          "title_id": "title_ph_sty_shadow",
+          "func_type": "sp_embeded_ph_sty_shadow",
+          "img": "dial_guide_shadow",
+          "img_type": "svg"
+        },
+        {
+          "id": "menu_item_id_ph_sty_sharpness",
+          "title_id": "title_ph_sty_sharpness",
+          "func_type": "sp_embeded_ph_sty_sharpness",
+          "img": "film_sharpness",
+          "img_type": "svg"
+        },
+        {
+          "id": "menu_item_id_ph_sty_noise_reduction",
+          "title_id": "title_ph_sty_noise_reduction",
+          "func_type": "sp_embeded_ph_sty_noise_reduction",
+          "img": "film_noisereduct",
+          "img_type": "svg"
+        },
+        {
+          "id": "menu_item_id_1shoot",
+          "title_id": "title_1shoot",
+          "img": "rec_single",
+          "img_type": "svg",
+          "cmd_mode": "setsetting",
+          "cmd_type": "drivemode",
+          "cmd_value": "normal"
+        },
+        {
+          "id": "menu_item_id_burst_1",
+          "title_id": "title_burst_speed_1",
+          "func_type": "select",
+          "cmd_mode": "setsetting",
+          "cmd_type": "drivemode",
+          "cmd_value": "burst_1"
+        },
+        {
+          "id": "menu_item_id_burst_2",
+          "title_id": "title_burst_speed_2",
+          "func_type": "select",
+          "cmd_mode": "setsetting",
+          "cmd_type": "drivemode",
+          "cmd_value": "burst_2"
+        },
+        {
+          "id": "menu_item_id_stopmotion_interval",
+          "title_id": "title_stopmotion_interval",
+          "img": "qmenu_interval_comadori",
+          "img_type": "svg",
+          "cmd_mode": "setsetting",
+          "cmd_type": "drivemode",
+          "cmd_value": "stopmotion_interval"
+        },
+        {
+          "id": "menu_item_id_selftimer",
+          "title_id": "title_selftimer",
+          "func_type": "select",
+          "cmd_mode": "setsetting",
+          "cmd_type": "drivemode",
+          "cmd_value": "selftimer"
+        },
+        {
+          "id": "menu_item_id_asprat",
+          "title_id": "title_asprat",
+          "func_type": "select"
+        },
+        {
+          "id": "menu_item_id_lightmet",
+          "title_id": "title_lightmet",
+          "func_type": "select"
+        },
+        {
+          "id": "menu_item_id_v_quality",
+          "title_id": "title_v_quality_qmenu",
+          "func_type": "select"
+        }
+      ]
+    },
+    {
+      "name": "record_menu",
+      "item_count": 398,
+      "menu_count": 7,
+      "top_level_items": [
+        {
+          "id": "menu_item_id_ph_sty",
+          "title_id": "title_ph_sty",
+          "func_type": "sp_embeded_ph_sty11"
+        },
+        {
+          "id": "menu_item_id_ph_sty_customs",
+          "title_id": "title_ph_sty",
+          "func_type": "sp_embeded_ph_sty_customs"
+        },
+        {
+          "id": "menu_item_id_lightmet",
+          "title_id": "title_lightmet",
+          "func_type": "select"
+        },
+        {
+          "id": "menu_item_id_asprat",
+          "title_id": "title_asprat",
+          "func_type": "select"
+        },
+        {
+          "id": "menu_item_id_quality",
+          "title_id": "title_quality",
+          "func_type": "select"
+        },
+        {
+          "id": "menu_item_id_pctsiz",
+          "title_id": "title_pctsiz",
+          "func_type": "select"
+        },
+        {
+          "id": "menu_item_id_hlg_photo",
+          "title_id": "title_hlg_photo",
+          "func_type": "select"
+        },
+        {
+          "id": "menu_item_id_hrs",
+          "title_id": "title_hrs",
+          "func_type": "submenu"
+        },
+        {
+          "id": "menu_item_id_filter_set",
+          "title_id": "title_filter_set",
+          "func_type": "sp_embeded_filter_set"
+        },
+        {
+          "id": "menu_item_id_focusmode",
+          "title_id": "title_focusmode",
+          "func_type": "select"
+        },
+        {
+          "id": "menu_item_id_afmode",
+          "title_id": "title_afmode",
+          "func_type": "sp_embeded_afmode"
+        },
+        {
+          "id": "menu_item_id_flash",
+          "title_id": "title_flash",
+          "func_type": "select"
+        },
+        {
+          "id": "menu_item_id_drivemode",
+          "title_id": "title_drivemode",
+          "func_type": "select"
+        },
+        {
+          "id": "menu_item_id_bracket",
+          "title_id": "title_bracket",
+          "func_type": "submenu"
+        },
+        {
+          "id": "menu_item_id_burst_1",
+          "title_id": "title_burst_speed_1",
+          "func_type": "select",
+          "cmd_mode": "setsetting",
+          "cmd_type": "drivemode",
+          "cmd_value": "burst_1"
+        },
+        {
+          "id": "menu_item_id_burst_2",
+          "title_id": "title_burst_speed_2",
+          "func_type": "select",
+          "cmd_mode": "setsetting",
+          "cmd_type": "drivemode",
+          "cmd_value": "burst_2"
+        },
+        {
+          "id": "menu_item_id_stopmotion_interval",
+          "title_id": "title_stopmotion_interval",
+          "func_type": "submenu"
+        },
+        {
+          "id": "menu_item_id_lc",
+          "title_id": "title_lc",
+          "func_type": "submenu"
+        },
+        {
+          "id": "menu_item_id_selftimer",
+          "title_id": "title_selftimer",
+          "func_type": "select",
+          "cmd_mode": "setsetting",
+          "cmd_type": "drivemode",
+          "cmd_value": "selftimer"
+        },
+        {
+          "id": "menu_item_id_6k4k_photo",
+          "title_id": "title_6k4k_photo",
+          "func_type": "submenu"
+        },
+        {
+          "id": "menu_item_id_focus_select",
+          "title_id": "title_focus_select",
+          "func_type": "select"
+        },
+        {
+          "id": "menu_item_id_v_quality",
+          "title_id": "title_v_quality",
+          "func_type": "select"
+        },
+        {
+          "id": "menu_item_id_slow_quick_settings",
+          "title_id": "title_slow_quick_settings",
+          "func_type": "select"
+        },
+        {
+          "id": "menu_item_id_ntsc_pal",
+          "title_id": "title_ntsc_pal",
+          "func_type": "select"
+        },
+        {
+          "id": "menu_item_id_videoformat",
+          "title_id": "title_videoformat",
+          "func_type": "select"
+        },
+        {
+          "id": "menu_item_id_recmode",
+          "title_id": "title_recmode",
+          "func_type": "sp_embeded_recmode"
+        },
+        {
+          "id": "menu_item_id_self_shot",
+          "title_id": "title_self_shot",
+          "func_type": "sp_embeded_self_shot"
+        }
+      ]
+    },
+    {
+      "name": "record_tab",
+      "item_count": 6,
+      "menu_count": 1,
+      "top_level_items": [
+        {
+          "id": "menu_item_id_zoom",
+          "title_id": "title_zoom",
+          "func_type": "sp_embeded_zoom"
+        },
+        {
+          "id": "menu_item_id_tch_shtr",
+          "title_id": "title_tch_shtr",
+          "func_type": "sp_embeded_tch_shtr",
+          "cmd_mode": "setsetting",
+          "cmd_type": "touch_type",
+          "cmd_value": "__value__"
+        },
+        {
+          "id": "menu_item_id_tch_ae",
+          "title_id": "title_tch_ae",
+          "func_type": "sp_embeded_tch_ae",
+          "cmd_mode": "setsetting",
+          "cmd_type": "touch_type",
+          "cmd_value": "__value__"
+        },
+        {
+          "id": "menu_item_id_peaking",
+          "title_id": "title_peaking",
+          "func_type": "sp_embeded_peaking"
+        }
+      ]
+    },
+    {
+      "name": "record_tab2",
+      "item_count": 5,
+      "menu_count": 1,
+      "top_level_items": [
+        {
+          "id": "menu_item_id_af_point_scope",
+          "title_id": "title_af_point_scope",
+          "func_type": "sp_embeded_af_point_scope"
+        },
+        {
+          "id": "menu_item_id_overlay",
+          "title_id": "title_overlay",
+          "func_type": "sp_embeded_overlay"
+        }
+      ]
+    }
+  ],
+  "languages": [
+    {
+      "code": "en",
+      "default": "yes",
+      "title_count": 713
+    },
+    {
+      "code": "ja",
+      "title_count": 266
+    },
+    {
+      "code": "de",
+      "title_count": 220
+    },
+    {
+      "code": "fr",
+      "title_count": 225
+    },
+    {
+      "code": "it",
+      "title_count": 225
+    },
+    {
+      "code": "es",
+      "title_count": 234
+    },
+    {
+      "code": "zh-TW",
+      "title_count": 247
+    },
+    {
+      "code": "zh-CN",
+      "title_count": 251
+    },
+    {
+      "code": "nl",
+      "title_count": 224
+    },
+    {
+      "code": "ru",
+      "title_count": 237
+    },
+    {
+      "code": "ko",
+      "title_count": 239
+    }
+  ]
+}

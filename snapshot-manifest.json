@@ -1,0 +1,1906 @@
+{
+  "date": "2026-11-25",
+  "source": "local s5-emulator snapshot",
+  "files": [
+    {
+      "path": "s5-emulator/README.md",
+      "bytes": 14311,
+      "sha256": "5e6787bd359d9991befe28a29cfb6b848dfe44c87636108474f10bff4d876ddc"
+    },
+    {
+      "path": "s5-emulator/adc/README.md",
+      "bytes": 2732,
+      "sha256": "649021cde045bff5e1033dcaa9d89f19c7cce823bf48c18dfdcad0569b966872"
+    },
+    {
+      "path": "s5-emulator/adc/adc-contract.json",
+      "bytes": 3983,
+      "sha256": "c403834eb09fa348b06e6d893124494f88b1dae0ca076cf54b476cbee2bf2394"
+    },
+    {
+      "path": "s5-emulator/adc/driver-check/raw_0x300/invocation.json",
+      "bytes": 1704,
+      "sha256": "4fe33f93cc3569e704d9d3318b5e1b1cf27827dd05651124fd0ddf3f04913d60"
+    },
+    {
+      "path": "s5-emulator/adc/driver-check/verification.json",
+      "bytes": 7843,
+      "sha256": "5daa0878ca70fa44927900fdc06b2f87d443b3b5f91e38c938113a6119a325bf"
+    },
+    {
+      "path": "s5-emulator/adc/driver-check/zero/invocation.json",
+      "bytes": 1704,
+      "sha256": "825c80dab21cefc0ab8fc28fa7973139a54ab130975351bb2bdbb37bc5ef8a5e"
+    },
+    {
+      "path": "s5-emulator/adc/driver-disassembly.txt",
+      "bytes": 8607,
+      "sha256": "ee5ef53a8038e61bc6d028bc70cf0edee98944ea984bd12ad690469b66310593"
+    },
+    {
+      "path": "s5-emulator/adc/probe_adc.py",
+      "bytes": 4634,
+      "sha256": "18f56f37487f071bd912f6f53660ab7fb606e87689980906f5edb503a82ac164"
+    },
+    {
+      "path": "s5-emulator/analysis/board-init-disassembly.txt",
+      "bytes": 22738,
+      "sha256": "0244ff2e9673d2bc8552582cbf76cdc452fc997f93d08cefd86300cb3a6758d1"
+    },
+    {
+      "path": "s5-emulator/analysis/board-notes.txt",
+      "bytes": 5465,
+      "sha256": "deb5b14aa10e0417007b6954af75da9354f253f9c895cbf8178274a4740443fc"
+    },
+    {
+      "path": "s5-emulator/analysis/boot-first-kmsg.txt",
+      "bytes": 16031,
+      "sha256": "85ad450504ea4fed3403f7d9d049e0a202409955fc90d9fdc662315783909cf8"
+    },
+    {
+      "path": "s5-emulator/analysis/inspect_kernel.py",
+      "bytes": 5029,
+      "sha256": "c833b5e71ef4a4b16bd462c2ce9479fe469f68e93500ad11766839c569b687cf"
+    },
+    {
+      "path": "s5-emulator/analysis/kernel-info.json",
+      "bytes": 2044,
+      "sha256": "4af66103daa74cd40b326fe5451ae6deee1e6066a984a6df02a7566b44e2ce3f"
+    },
+    {
+      "path": "s5-emulator/analysis/read_kmsg.py",
+      "bytes": 3725,
+      "sha256": "f222ff31cea70e3200df13eacbb20c2618b6a49f48466332a793bc0493c5f9fd"
+    },
+    {
+      "path": "s5-emulator/capture/README.md",
+      "bytes": 7119,
+      "sha256": "224096fe628be2a36de39522b40885f79f2f1a93155aaabf7adb1e11fa1c483c"
+    },
+    {
+      "path": "s5-emulator/capture/capture.py",
+      "bytes": 12048,
+      "sha256": "bb375311fb1e31ce916293ed8267ae5d2891ed6d4c436820060b34d86e7ebce0"
+    },
+    {
+      "path": "s5-emulator/capture/jpu_status_layout.txt",
+      "bytes": 2583,
+      "sha256": "0bec041ea49aeb7fdd752345d4f0bb10f5ed1a788f8097e84ff776a92bcdcf8f"
+    },
+    {
+      "path": "s5-emulator/capture/probe_jpu.py",
+      "bytes": 5064,
+      "sha256": "c161cdefb0943cef3d86d02f3d9afb8a70313686784e7b7c41df511cfb2bd333"
+    },
+    {
+      "path": "s5-emulator/capture/probe_jpu_model.py",
+      "bytes": 11051,
+      "sha256": "27e1cf47ee198d06c9f49dab9b6d4a2b721bc9e59d702b85204ffaf1d8e53e52"
+    },
+    {
+      "path": "s5-emulator/capture/results/photo-20261124-200413-17ae09/jpu/guest-output.jpg",
+      "bytes": 806097,
+      "sha256": "8cce4c962734cb2444133d982353e1af3f4df06fe537b15b8fdd0efceb110aad"
+    },
+    {
+      "path": "s5-emulator/capture/results/photo-20261124-200413-17ae09/jpu/qemu/invocation.json",
+      "bytes": 2010,
+      "sha256": "d2d1a2fd9e66b5a1be4ba2e9aa2486fca4254cfa1bf8971226e160f3c24528ab"
+    },
+    {
+      "path": "s5-emulator/capture/results/photo-20261124-200413-17ae09/jpu/verification.json",
+      "bytes": 4630,
+      "sha256": "ae5c5e1fa46a8127ad7b832008c5b0fa9f1a1e39289e90b7af85a2426729777d"
+    },
+    {
+      "path": "s5-emulator/capture/results/photo-20261124-200413-17ae09/lut/qemu-lut-off/invocation.json",
+      "bytes": 1958,
+      "sha256": "d4fc24aa9ebb8d7cd55317c1cdcd23e737f1533d8c5f3c579c043db2e6dfcc47"
+    },
+    {
+      "path": "s5-emulator/capture/results/photo-20261124-200413-17ae09/lut/qemu-lut-on/invocation.json",
+      "bytes": 1958,
+      "sha256": "75d9f35189c10a2012d3453d8e775f31811490611f711a117fb8f72476cee2fb"
+    },
+    {
+      "path": "s5-emulator/capture/results/photo-20261124-200413-17ae09/lut/verification.json",
+      "bytes": 4064,
+      "sha256": "c6ec47689f2f82e09e33b54576dd2f77d8266d2b339e01bb26382dca882fb319"
+    },
+    {
+      "path": "s5-emulator/capture/results/photo-20261124-200413-17ae09/result.json",
+      "bytes": 844,
+      "sha256": "732f23c17a0ef70115a59f038c5327de849466e68124aa5dde3ce1e8b865b98a"
+    },
+    {
+      "path": "s5-emulator/capture/simulate_photo.py",
+      "bytes": 2495,
+      "sha256": "2c6b0a0d2ffce78852a27e3f67ba86c1fd4aa14efdc20943c02e9b7f5c18b225"
+    },
+    {
+      "path": "s5-emulator/display/README.md",
+      "bytes": 17069,
+      "sha256": "0e55d2a9384d258e5e8722141eb677ac226ee243608e880191e3784165a6d7c2"
+    },
+    {
+      "path": "s5-emulator/display/coprocessor-analysis/README.md",
+      "bytes": 5144,
+      "sha256": "a9e5fe39da49353477b4026e0b04ebc563da0a6867a85c7b99aa8b1aab44ed71"
+    },
+    {
+      "path": "s5-emulator/display/coprocessor-analysis/arm-host-disassembly.txt",
+      "bytes": 12582,
+      "sha256": "b260a7a43535eb4312ff3c4cfdb65a9d5d4bd2fe00de4ffe0d070e1c2f904126"
+    },
+    {
+      "path": "s5-emulator/display/coprocessor-analysis/blob-evidence.json",
+      "bytes": 5917,
+      "sha256": "ed76f6d8f632ce27288021c185d7bded5d720350bdb9fe809a74c904bafddbc0"
+    },
+    {
+      "path": "s5-emulator/display/coprocessor-analysis/inspect_blobs.py",
+      "bytes": 3754,
+      "sha256": "9bc5356d942fc1d5a644a52dfa8728779fbf758026b8f05fb739ef8c77e5da74"
+    },
+    {
+      "path": "s5-emulator/display/graphics-api-table.json",
+      "bytes": 22936,
+      "sha256": "778cf1ba830e4c6120c2281db1238df8fc3d78d2466764c25365d56c7c2a3cdb"
+    },
+    {
+      "path": "s5-emulator/display/graphics-hle-bindings.json",
+      "bytes": 27721,
+      "sha256": "a8e4839b51b9fc8cf49ae17ef467030863e2b9278fb5c82cb81eb6b467efd89f"
+    },
+    {
+      "path": "s5-emulator/display/graphics_hle.py",
+      "bytes": 27252,
+      "sha256": "0565692bb73b501b4566699d182e800ed0a8bdbecbdd75b5bf284d75f15ae29b"
+    },
+    {
+      "path": "s5-emulator/display/inspect_first_frame.py",
+      "bytes": 6978,
+      "sha256": "28f896bfd0ae56f4e5c98a9874dd9fd279641d7e0daca92159cc4797854326fa"
+    },
+    {
+      "path": "s5-emulator/display/inspect_live_run.py",
+      "bytes": 3692,
+      "sha256": "cab8490056b5adcd27637e127264270c3996ae301e17b30c961c61f681b34110"
+    },
+    {
+      "path": "s5-emulator/display/inspect_render_wait.py",
+      "bytes": 5930,
+      "sha256": "c6bfcf2aece3789d00c9ce2b64be14b3a38290fe8202f07a12a1e132242c1d5c"
+    },
+    {
+      "path": "s5-emulator/display/live-egl-analysis/evidence.json",
+      "bytes": 5560,
+      "sha256": "53cb9c138c8409468e34a3c6c5e310a09cd3d4c205709a6b3ceeb4c43ee27e0e"
+    },
+    {
+      "path": "s5-emulator/display/live-egl-analysis/vg-state-setter.txt",
+      "bytes": 29269,
+      "sha256": "ae4ed1b8dbb2784ad1b50e3deb1c574b364f74a748876f9b91d3bddb2c2c68da"
+    },
+    {
+      "path": "s5-emulator/display/live-run-analysis/frame-paced-menu.json",
+      "bytes": 12931,
+      "sha256": "25e5f023a24178ad4e5ae2ed3654bd6d39794961eb3035c57953db640a32051d"
+    },
+    {
+      "path": "s5-emulator/display/live-run-analysis/mode35-2g.json",
+      "bytes": 12922,
+      "sha256": "06cd9dd766624287e55bb13d64516dd05e49b680fac7640a7d28334bfa83940a"
+    },
+    {
+      "path": "s5-emulator/display/openvg_backend.py",
+      "bytes": 37322,
+      "sha256": "19129b73b6348549c393874ce2bde44f9d8a2453e4ff0f239215db4a8e1fee35"
+    },
+    {
+      "path": "s5-emulator/display/prepare_components.py",
+      "bytes": 4982,
+      "sha256": "76d16721d0da31ff092229fa76f675362284a0f22cef77fe219948a55d634f42"
+    },
+    {
+      "path": "s5-emulator/display/probe_graphics_wrapper.py",
+      "bytes": 3890,
+      "sha256": "3cbb6d900976d61cc7d594491aba1fa2b234b5d840b3321e1fac3b2c8be5998d"
+    },
+    {
+      "path": "s5-emulator/display/probe_scatter.py",
+      "bytes": 3027,
+      "sha256": "f83f762fc8ec858ce807aef95076d66037cc85b5ec83b04da2b3e3480af30f85"
+    },
+    {
+      "path": "s5-emulator/display/probe_storage.py",
+      "bytes": 3606,
+      "sha256": "73bde0a39882b542d2492a8d6d8e806495b22dff712731611e833a28aaba9766"
+    },
+    {
+      "path": "s5-emulator/display/render-wait-analysis/client-buffer.disasm.txt",
+      "bytes": 9992,
+      "sha256": "4e071c93cc383913640976d68b956f90f9d6945765aa1d4c07c1d4c786accb81"
+    },
+    {
+      "path": "s5-emulator/display/render-wait-analysis/evidence.json",
+      "bytes": 13696,
+      "sha256": "6c7dda70e6e5a0b23c77984a26107f029f4de304ddd1119ab97addd0bfd0b210"
+    },
+    {
+      "path": "s5-emulator/display/render-wait-analysis/observed-path-paint-apis.disasm.txt",
+      "bytes": 12367,
+      "sha256": "8896c5dc6a08012c0b1b620dfbc3422279aed90ed356e327036232ef7d15ee07"
+    },
+    {
+      "path": "s5-emulator/display/render-wait-analysis/original.disasm.txt",
+      "bytes": 18198,
+      "sha256": "12277f124e73402403f84ee4323bc8d5e7fe5a8b283c5157efdaf34807318fae"
+    },
+    {
+      "path": "s5-emulator/display/render-wait-analysis/query-frame-dmp.disasm.txt",
+      "bytes": 14802,
+      "sha256": "8229c29f19c47be92dec26ec24d740f2eca4c8f1ad5229b9868006ca600fd715"
+    },
+    {
+      "path": "s5-emulator/display/render-wait-analysis/standard-image-stride.disasm.txt",
+      "bytes": 2624,
+      "sha256": "cff8eac3dd988f5ad1513a3a3012f4e03afdf148da12590c2f3508b28666eeb3"
+    },
+    {
+      "path": "s5-emulator/display/render-wait-analysis/two-frame-pixel-verification.json",
+      "bytes": 966,
+      "sha256": "8426711a94fa90400eaa69948a945c3affec371cf0d1bfee7f94ac45be48083e"
+    },
+    {
+      "path": "s5-emulator/display/replay_gradient.py",
+      "bytes": 3467,
+      "sha256": "79a352fadba34c31d27a9ffc901dddeae19924ce0bf7a2a8328421768b4ab246"
+    },
+    {
+      "path": "s5-emulator/display/replay_graphics_trace.py",
+      "bytes": 3435,
+      "sha256": "03baa4acfae1cd212d17013159e4027615f325a6877cfe60a8b83fdf05d4367c"
+    },
+    {
+      "path": "s5-emulator/display/scatter-check/all_modules/invocation.json",
+      "bytes": 1181,
+      "sha256": "15469469283eff13f6263cd5f9c9d77b2513e4e8884fea2a012e7b2139df1222"
+    },
+    {
+      "path": "s5-emulator/display/scatter-check/program_only/invocation.json",
+      "bytes": 1149,
+      "sha256": "534cd6dbd3054d53911d695413e87cab73b3fde31b6eba50ed09ed7f7015ff84"
+    },
+    {
+      "path": "s5-emulator/display/scatter-check/verification.json",
+      "bytes": 6835,
+      "sha256": "8698bb90fb8850bff61df585cb8fe7bf0737fa7c429a2ca7f63341339ff65194"
+    },
+    {
+      "path": "s5-emulator/display/service-loop-analysis/README.md",
+      "bytes": 3013,
+      "sha256": "1049e8346231e96043e230d0c046248509f128567888db2349fba10fa1244fba"
+    },
+    {
+      "path": "s5-emulator/display/service-loop-analysis/evidence.json",
+      "bytes": 4577,
+      "sha256": "c47dca69c40e9a68439dc515fa92c0ba3396bc69c239760db7fb86101795f977"
+    },
+    {
+      "path": "s5-emulator/display/service-loop-analysis/first-frame-original.disasm.txt",
+      "bytes": 3913,
+      "sha256": "320d66359585b215bfb45887eb1fb4068f97b2349d36663e51fb9e17f86facc2"
+    },
+    {
+      "path": "s5-emulator/display/service-loop-analysis/first-frame-verification.json",
+      "bytes": 14764,
+      "sha256": "08eb97442e7d06534586de51e45d9b197a3b31177bb8d8dc74ad3e1845d5ae7c"
+    },
+    {
+      "path": "s5-emulator/display/service-loop-analysis/frame-input-contract.json",
+      "bytes": 5993,
+      "sha256": "f0f448c64099ac355fa3f680e4aa96905e58df0cd7b59a0cf8c8738bb12eeb23"
+    },
+    {
+      "path": "s5-emulator/display/service-loop-analysis/frame-producer.disasm.txt",
+      "bytes": 45270,
+      "sha256": "8a593e96f57cd6bf7e914112615b280f0df6c16eebe51e6dedb5e20e64fb9ebe"
+    },
+    {
+      "path": "s5-emulator/display/service-loop-analysis/original.disasm.txt",
+      "bytes": 15436,
+      "sha256": "87c9c747c396c6627ba9ee5bd77c4a6f78899d0d7c32e185e101eb0c6816fff4"
+    },
+    {
+      "path": "s5-emulator/display/storage-check/qemu/invocation.json",
+      "bytes": 1181,
+      "sha256": "5137399ba86695cfb46ef6eb37bc70db645834c883095fc9bc5ca51340e57cc0"
+    },
+    {
+      "path": "s5-emulator/display/storage-check/verification.json",
+      "bytes": 2772,
+      "sha256": "5a115dbee311bf8c629e2227e21f2ed2ff65fd9ec4c6f91fd0dc0fe0d2ac4911"
+    },
+    {
+      "path": "s5-emulator/display/storage.py",
+      "bytes": 4077,
+      "sha256": "d90b6a98504c45495a2db295864227b8de270a7830323117b8392454ed0a44af"
+    },
+    {
+      "path": "s5-emulator/display/task-activation-table.json",
+      "bytes": 5987,
+      "sha256": "fdc904fb2c2e3d164f8dc30133b679569242a71dbad6414a32d628a8fae01365"
+    },
+    {
+      "path": "s5-emulator/display/test_client_buffer.py",
+      "bytes": 6095,
+      "sha256": "568a9cd9fafb98226c79e216893a6c43c47f5b19e6110f416820808fab6b90c7"
+    },
+    {
+      "path": "s5-emulator/display/test_graphics_hle.py",
+      "bytes": 9419,
+      "sha256": "c84edaf4972c30854a705033f7b822c3efe5f6e300b9b88da63df74d8e28a9b0"
+    },
+    {
+      "path": "s5-emulator/display/test_lcd_refresh_defer.py",
+      "bytes": 2883,
+      "sha256": "8b3d26f8eb4838788c1e508b3a2fa406bc12f1d62457d79ee6d5d2a5c1f754c0"
+    },
+    {
+      "path": "s5-emulator/display/test_transform_paths.py",
+      "bytes": 11587,
+      "sha256": "e04407ef30ba186ae81f882eeade11736396ac42353c1f9225183472493226bc"
+    },
+    {
+      "path": "s5-emulator/display/test_ui_service_loop.py",
+      "bytes": 5209,
+      "sha256": "1de7a6cdcaf69a35022f2f9cbd1f671481c5914475c109eef85a7384a040b201"
+    },
+    {
+      "path": "s5-emulator/display/wrapper-check/qemu/invocation.json",
+      "bytes": 1181,
+      "sha256": "77eaee4aa0d8706a8cbe0bc710197dc29ded17defc5494a74efc8c338ce51773"
+    },
+    {
+      "path": "s5-emulator/display/wrapper-check/verification.json",
+      "bytes": 642,
+      "sha256": "2d13c43540de61057e290ec4d81d730768d22145093f901cddcaffe952978812"
+    },
+    {
+      "path": "s5-emulator/gemini-work-packages/A_镜头输入回归.txt",
+      "bytes": 3900,
+      "sha256": "3754d555df0499ab761f97816f809e2959d29cae7bbb53f6ea15cdfb627006b0"
+    },
+    {
+      "path": "s5-emulator/gemini-work-packages/B_连续按键调度.txt",
+      "bytes": 3858,
+      "sha256": "2a9e42c60c7990c9e8b4cb99a704c2d933ad21be7e87158d22ad7fbaf3fd3278"
+    },
+    {
+      "path": "s5-emulator/gemini-work-packages/C_图形重放验收.txt",
+      "bytes": 3691,
+      "sha256": "721769cd99bf6fec20aad8db4759768f43dc28e00ed9cb083b92d1f40f54ae96"
+    },
+    {
+      "path": "s5-emulator/gemini-work-packages/D_原厂画面查看器.txt",
+      "bytes": 3469,
+      "sha256": "628d52f10d86724370c055d9fa06259ee72c7f8118a3a8ad047f6ed992c54f5f"
+    },
+    {
+      "path": "s5-emulator/gemini-work-packages/分工与验收.txt",
+      "bytes": 1228,
+      "sha256": "64a20c3a5890d3aaeaac528b72e37e4b3846b0884d3466d8a4a8375707b7ac7e"
+    },
+    {
+      "path": "s5-emulator/handoff/README.md",
+      "bytes": 3336,
+      "sha256": "18eb93665c4940ef2b8c66d164c48a14224d49e6e9a9f5929494a4236d24a137"
+    },
+    {
+      "path": "s5-emulator/handoff/prepare_ui.py",
+      "bytes": 5530,
+      "sha256": "457cf7880ee54d5f745761285ef72e3428b11ce05f3228098d15a27c2ff3e782"
+    },
+    {
+      "path": "s5-emulator/handoff/run_ui_qemu.py",
+      "bytes": 8339,
+      "sha256": "ca8446765078177ceae568664a645a90dfd07d8737b4bd5f425c7195a14f0ecc"
+    },
+    {
+      "path": "s5-emulator/i2c/README.md",
+      "bytes": 3005,
+      "sha256": "6ddf1513d19878989e118de7e1891e96b4e9cf3fab9f50de5542eb70a1eb1eb1"
+    },
+    {
+      "path": "s5-emulator/i2c/driver-disassembly.txt",
+      "bytes": 61778,
+      "sha256": "78e35adc246639eae198a03090928a5110c264f4c4779328d230bdba3c3d1924"
+    },
+    {
+      "path": "s5-emulator/i2c/error-isr-check/qemu/invocation.json",
+      "bytes": 1149,
+      "sha256": "75360c338baafff797a21394a4dded48c33d0f3ccd026d8d1481900fd3c3f363"
+    },
+    {
+      "path": "s5-emulator/i2c/error-isr-check/verification.json",
+      "bytes": 9135,
+      "sha256": "2415fa3580e0f399911e593c8039a3955a3be2f58f00bcb7c7d55bc99dc79fdc"
+    },
+    {
+      "path": "s5-emulator/i2c/error-isr-check-v2/qemu/invocation.json",
+      "bytes": 1149,
+      "sha256": "af215f7e7a516ca0722f7af36c446ff69933ac6039e7efcc1d4dddd18e819981"
+    },
+    {
+      "path": "s5-emulator/i2c/error-isr-check-v2/verification.json",
+      "bytes": 10528,
+      "sha256": "b08ede5299bd11615656d8b64688709c5bd5a4447aeff78eb03a554a704fac13"
+    },
+    {
+      "path": "s5-emulator/i2c/i2c-contract.json",
+      "bytes": 8612,
+      "sha256": "ac917668e8d2906b36d589ac6bffdb6363e25b48e0cd07a80b8b7b761f74c8d5"
+    },
+    {
+      "path": "s5-emulator/i2c/probe_error_isr.py",
+      "bytes": 5464,
+      "sha256": "769c8fcb2190bd1b90fca24dc6e408e6792f37dabf88b33566ce73d0d017765d"
+    },
+    {
+      "path": "s5-emulator/lab/README.md",
+      "bytes": 3802,
+      "sha256": "26b39c8bd33554943800729a38c3cb21dd1d65cbdcbdab3f8d1698f0ba53f519"
+    },
+    {
+      "path": "s5-emulator/lab/requirements.txt",
+      "bytes": 15,
+      "sha256": "56bce36af734e3b9aeff2be4301bbc2a2c2b58ea1ea1e6ee6e792db84f96fbd4"
+    },
+    {
+      "path": "s5-emulator/lab/s5_lab.py",
+      "bytes": 15179,
+      "sha256": "71f86c3decfe2a8d6ed45440ad00e575bcd69de2fa50a5969e9d58f15b9fb53f"
+    },
+    {
+      "path": "s5-emulator/linux-smp-analysis/README.md",
+      "bytes": 6993,
+      "sha256": "a961086c76acda2bd08cb94ee41f66c4c2e98e7ca2eebe477a9e8becb954e628"
+    },
+    {
+      "path": "s5-emulator/linux-smp-analysis/evidence.json",
+      "bytes": 18569,
+      "sha256": "0c9932f7dc2c24d792655a738e1ed0ac78799ca686ee4b153b32a2fb7e3325cd"
+    },
+    {
+      "path": "s5-emulator/linux-smp-analysis/inspect.py",
+      "bytes": 10777,
+      "sha256": "fd9cfaa04db875ce2e7141a5773915889c3b9a3bf77898372c49c8d9797b2b1d"
+    },
+    {
+      "path": "s5-emulator/linux-smp-analysis/inspect_runtime.py",
+      "bytes": 6061,
+      "sha256": "fdd5e10ac24f48b8b50a98ba5133440339bdfaac9c13af0fe6712c9a9a974daa"
+    },
+    {
+      "path": "s5-emulator/linux-smp-analysis/linux-peer-kmsg.json",
+      "bytes": 18444,
+      "sha256": "3c3648d42f855cc417eba98bad53fe371330962c446730312e392e7346125611"
+    },
+    {
+      "path": "s5-emulator/linux-smp-analysis/linux-peer-kmsg.txt",
+      "bytes": 7053,
+      "sha256": "63ee9a2e51383f8d0aefdc000d1fb8d6fa9046b0f09eeb8e74bd39aa9267993e"
+    },
+    {
+      "path": "s5-emulator/linux-smp-analysis/linux-peer-runtime.json",
+      "bytes": 15260,
+      "sha256": "37edc4679fe95a40993c0c495eb85d2124a37243be930e6c9a04064511e630fd"
+    },
+    {
+      "path": "s5-emulator/linux-smp-analysis/linux.disasm.txt",
+      "bytes": 19191,
+      "sha256": "f142ad0ec11faad59d52984f29acd24a14117320000d27490fdade5aa6e18c9f"
+    },
+    {
+      "path": "s5-emulator/linux-smp-analysis/loader1-gicc.disasm.txt",
+      "bytes": 553,
+      "sha256": "382c1ebc29db765bb12209e600543968b6d818010af62b25cfc1398762514a9e"
+    },
+    {
+      "path": "s5-emulator/linux-smp-analysis/loader3-cpu3.disasm.txt",
+      "bytes": 1331,
+      "sha256": "cc7812548e36c7b697221bdbe2e5b5c4d368b153df1269ebabb0b80e310eabba"
+    },
+    {
+      "path": "s5-emulator/linux-smp-analysis/memory-layout-conversion.disasm.txt",
+      "bytes": 5262,
+      "sha256": "af5d1067b3658edf0b40eb78de0d254d1a7cbe1e17fcf11aec5d31f6a7f9ade6"
+    },
+    {
+      "path": "s5-emulator/linux-smp-analysis/memory-layout-evidence.json",
+      "bytes": 15943,
+      "sha256": "f18c6dab2ce7222cdf78da7eef5a828f2f8c0daa564e1ef8740ae3c84ba86bbf"
+    },
+    {
+      "path": "s5-emulator/linux-smp-analysis/memory-layout-inspect.py",
+      "bytes": 7662,
+      "sha256": "71916d5affac30a2085a484fd18becc8da171ec941492160d6fc6950abb8af07"
+    },
+    {
+      "path": "s5-emulator/linux-smp-analysis/memory-layout-loader.disasm.txt",
+      "bytes": 32735,
+      "sha256": "50fa09046eb5271d1d53a5cc46dd6b7b460abda8a4c23da56396e11289e7ae9e"
+    },
+    {
+      "path": "s5-emulator/linux-smp-analysis/memory-layout-notes.md",
+      "bytes": 4665,
+      "sha256": "31b7d1781d517a8aeb533009266ac97778aeb6b0cbea8594be249cf3a02d1fbd"
+    },
+    {
+      "path": "s5-emulator/linux-smp-analysis/rtos-linux-handoff.disasm.txt",
+      "bytes": 5122,
+      "sha256": "efdc1733ac9735222dcb710b20bfb2c240b70c1b9c6f6d09e9984df4dbf5aaf0"
+    },
+    {
+      "path": "s5-emulator/linux-smp-analysis/zboot.disasm.txt",
+      "bytes": 3523,
+      "sha256": "1516d53a579c619334a468043b8a9b630fd490fbee4cb7a34d0e5e7b015cb875"
+    },
+    {
+      "path": "s5-emulator/linux-smp-analysis/zimage.disasm.txt",
+      "bytes": 5099,
+      "sha256": "cac64745be048bf947b161d723eac87c26d410d20c7c239bd1669b9b0b435d23"
+    },
+    {
+      "path": "s5-emulator/menu-boot-linux/README.md",
+      "bytes": 5700,
+      "sha256": "1f8bbe6dffd2ddd817905c3dc3649a85d3d2e38e44ed0d78e4041eee9d1208ac"
+    },
+    {
+      "path": "s5-emulator/menu-boot-linux/assets/menu-structure.json",
+      "bytes": 13451,
+      "sha256": "b9a37e9f90a1e1680a30c96502c45609750302144ef9a585f2873aa467c1b484"
+    },
+    {
+      "path": "s5-emulator/menu-boot-linux/probe.py",
+      "bytes": 7075,
+      "sha256": "cd733ae5d5dfbe5f0873f081b2ff4590276f29716b5738896c1e1663165c389a"
+    },
+    {
+      "path": "s5-emulator/menu-boot-linux/summary.json",
+      "bytes": 2978,
+      "sha256": "22c2e900f8f69d65defac8146a9c4a5c2e294d244011cba1bcf707361f78ea87"
+    },
+    {
+      "path": "s5-emulator/menu-boot-linux/watchpoint_repro.py",
+      "bytes": 5270,
+      "sha256": "a7f66c025039ef624554a32824c94a26ada6f701c320ea3449744debdd500205"
+    },
+    {
+      "path": "s5-emulator/menu-boot-rtos/README.md",
+      "bytes": 6269,
+      "sha256": "6811deec708818659f18ddcc1d56778bb665c665feba5b121728c38ae331e817"
+    },
+    {
+      "path": "s5-emulator/menu-boot-rtos/enable-mmu.S",
+      "bytes": 422,
+      "sha256": "8536da386ee04615e36aeee463f4c3ed9cfe891c8209fb523bdc32c0b240b3c1"
+    },
+    {
+      "path": "s5-emulator/menu-boot-rtos/enable-vfp.S",
+      "bytes": 285,
+      "sha256": "10a0bd72dac4e0fdd906a6cd9c33b7bf93f4f2119f3166913f34424b9cbc028f"
+    },
+    {
+      "path": "s5-emulator/menu-boot-rtos/probe_boot.py",
+      "bytes": 15817,
+      "sha256": "1b2364c8881d25155673621198941d3dd98d0a8c5b5f272991e887f7fe5090a5"
+    },
+    {
+      "path": "s5-emulator/menu-boot-rtos/summary.json",
+      "bytes": 4126,
+      "sha256": "e4d89e71526a0348562d68f530f08744a166f4fe3d87635c05f1e09465e67c1c"
+    },
+    {
+      "path": "s5-emulator/menu-smp/README.md",
+      "bytes": 18475,
+      "sha256": "de201fdee2e30496d6f80a0779675b61e1c8de4b7e06bfa055a7369b0a5df0d6"
+    },
+    {
+      "path": "s5-emulator/menu-smp/boot-state.S",
+      "bytes": 1884,
+      "sha256": "93181a302560b7b19ee01f2eaaec07aab8fbaabd2aa545f9568e9c7041f4de54"
+    },
+    {
+      "path": "s5-emulator/menu-smp/boot.py",
+      "bytes": 52081,
+      "sha256": "ff70a1826d4136f586157d3f14e92bc0339681c24d6e1a292aa92e8e93575aaa"
+    },
+    {
+      "path": "s5-emulator/menu-smp/display_clock_probe.py",
+      "bytes": 13452,
+      "sha256": "8b40bdde25adfe4d408a22be840c8a77db2c259dcf4f2fe1a04215e70ab021ac"
+    },
+    {
+      "path": "s5-emulator/menu-smp/frame_irq_probe.py",
+      "bytes": 19414,
+      "sha256": "a13ca41e53c03e69cb9cec8b8088f36edeeb9e5df9b3f5a6524db7b33e61446a"
+    },
+    {
+      "path": "s5-emulator/menu-smp/key_probe.py",
+      "bytes": 26221,
+      "sha256": "cbc8a68211578b1897641c1e5cbb16867bb12022e33e7b7da298128cffd36f4e"
+    },
+    {
+      "path": "s5-emulator/menu-smp/lcd_refresh_probe.py",
+      "bytes": 17221,
+      "sha256": "080f923521a01949b0256b79beb47fbc80157258dd02f255e0bfb98e0271a0a2"
+    },
+    {
+      "path": "s5-emulator/menu-smp/module-handshake-evidence.json",
+      "bytes": 4689,
+      "sha256": "33d9a2e77d80c7138e6aff4fa3a756887bd981052735e5a553d6990ea8acc38c"
+    },
+    {
+      "path": "s5-emulator/menu-smp/results/local-frame-query/firmware-verification.json",
+      "bytes": 7087,
+      "sha256": "d57caaf8addb6f6b42508fa6616a641b916e218f544ce956292b0c726550132c"
+    },
+    {
+      "path": "s5-emulator/menu-smp/results/local-frame-query/graphics/calls.jsonl",
+      "bytes": 210164,
+      "sha256": "426bbd428bda9496f16ec9fa1e3f891961a2c84c0f4b7c363eb4f5c46eec3dee"
+    },
+    {
+      "path": "s5-emulator/menu-smp/results/local-frame-query/graphics/frame-0000.png",
+      "bytes": 25964,
+      "sha256": "9bcb4c16d7e82660efc0da5d7c0f6e47c880c76411171b3b8ea4c9c2bc32a761"
+    },
+    {
+      "path": "s5-emulator/menu-smp/results/local-frame-query/linux-kmsg.json",
+      "bytes": 18439,
+      "sha256": "f3fd76dab37f645e694b7c39e507830ee4eaeff04797933103f2a3e81b92222c"
+    },
+    {
+      "path": "s5-emulator/menu-smp/results/local-frame-query/linux-kmsg.txt",
+      "bytes": 7053,
+      "sha256": "30e30f0ed186831df354792f769522231638ff9f6df05050ae119c78af6ff16c"
+    },
+    {
+      "path": "s5-emulator/menu-smp/results/local-frame-query/qemu/invocation.json",
+      "bytes": 5156,
+      "sha256": "9ca2c7b45e348459d5b6c02fc2dddd32c3bed515de749afa5c26662b849943f9"
+    },
+    {
+      "path": "s5-emulator/menu-smp/results/local-frame-query/result.json",
+      "bytes": 1547191,
+      "sha256": "8cb8d920496e1cd481e2f825a098f779a2dd5f40650f207fd21b3aaab98d204d"
+    },
+    {
+      "path": "s5-emulator/menu-smp/results/local-frame-query/visual-verification.json",
+      "bytes": 1086,
+      "sha256": "5979ab63f615bf75af289ecc921636eb8632d0101d3d5e076d43db4dd164dcdd"
+    },
+    {
+      "path": "s5-emulator/menu-smp/results/local-requested-lcd-refresh/firmware-verification.json",
+      "bytes": 7087,
+      "sha256": "d57caaf8addb6f6b42508fa6616a641b916e218f544ce956292b0c726550132c"
+    },
+    {
+      "path": "s5-emulator/menu-smp/results/local-requested-lcd-refresh/graphics/calls.jsonl",
+      "bytes": 945293,
+      "sha256": "d4a76e35483b17b7e1a5383d5eff70f7d27298bb9f800bd7e3b0a38c86c21e3e"
+    },
+    {
+      "path": "s5-emulator/menu-smp/results/local-requested-lcd-refresh/graphics/frame-0000.png",
+      "bytes": 20624,
+      "sha256": "441650dc9de75635c6e5009d8937594af0b4a85bb0a6f4dd93725f09cd885fc7"
+    },
+    {
+      "path": "s5-emulator/menu-smp/results/local-requested-lcd-refresh/graphics/frame-0001.png",
+      "bytes": 21421,
+      "sha256": "4cc91201a32a93d87c7c03470860c59453861af28b03792dea514061bb14b7b8"
+    },
+    {
+      "path": "s5-emulator/menu-smp/results/local-requested-lcd-refresh/graphics/frame-0002.png",
+      "bytes": 69029,
+      "sha256": "5716bb8ee9b24138a1bbb930479a8cf0efc4782b3e8a013ef32c87839295e199"
+    },
+    {
+      "path": "s5-emulator/menu-smp/results/local-requested-lcd-refresh/graphics/frame-0003.png",
+      "bytes": 34369,
+      "sha256": "ef76bb7730fa498f70c0978643c6ed07e2ea707a964fd8af953f52fb16c20890"
+    },
+    {
+      "path": "s5-emulator/menu-smp/results/local-requested-lcd-refresh/graphics/frame-0004.png",
+      "bytes": 34369,
+      "sha256": "ef76bb7730fa498f70c0978643c6ed07e2ea707a964fd8af953f52fb16c20890"
+    },
+    {
+      "path": "s5-emulator/menu-smp/results/local-requested-lcd-refresh/linux-kmsg.json",
+      "bytes": 18767,
+      "sha256": "29866243ea28a31b19840d8fbb01bc44217fc20b20c7a239f499d0e7c4639413"
+    },
+    {
+      "path": "s5-emulator/menu-smp/results/local-requested-lcd-refresh/linux-kmsg.txt",
+      "bytes": 7160,
+      "sha256": "8cda9cab507c3fc74d676956b854e5f4a75f1fec4e714056b4533b98a1196639"
+    },
+    {
+      "path": "s5-emulator/menu-smp/results/local-requested-lcd-refresh/qemu/invocation.json",
+      "bytes": 5206,
+      "sha256": "5d7a50130b598dd33eb1d51a58d2fcc59c7bd3cbd2c31976b5f39f6f9a19e47c"
+    },
+    {
+      "path": "s5-emulator/menu-smp/results/local-requested-lcd-refresh/result.json",
+      "bytes": 1568335,
+      "sha256": "6c60d303a68ad0afc339d614bbae67167cae0b2ac080fb2d951ca04ab0998e33"
+    },
+    {
+      "path": "s5-emulator/menu-smp/results/local-shared-image-stride/firmware-verification.json",
+      "bytes": 7087,
+      "sha256": "d57caaf8addb6f6b42508fa6616a641b916e218f544ce956292b0c726550132c"
+    },
+    {
+      "path": "s5-emulator/menu-smp/results/local-shared-image-stride/graphics/calls.jsonl",
+      "bytes": 245363,
+      "sha256": "3f3d82aee73869ae6b2a109bf577774b5b9376867778ab445625a534abf0b175"
+    },
+    {
+      "path": "s5-emulator/menu-smp/results/local-shared-image-stride/graphics/frame-0000.png",
+      "bytes": 20624,
+      "sha256": "441650dc9de75635c6e5009d8937594af0b4a85bb0a6f4dd93725f09cd885fc7"
+    },
+    {
+      "path": "s5-emulator/menu-smp/results/local-shared-image-stride/graphics/frame-0001.png",
+      "bytes": 21421,
+      "sha256": "4cc91201a32a93d87c7c03470860c59453861af28b03792dea514061bb14b7b8"
+    },
+    {
+      "path": "s5-emulator/menu-smp/results/local-shared-image-stride/linux-kmsg.json",
+      "bytes": 18605,
+      "sha256": "00bb38049febe4f7ddad59c505ad7f5c45f819aee9450f3d57d2ee0d5f672ca9"
+    },
+    {
+      "path": "s5-emulator/menu-smp/results/local-shared-image-stride/linux-kmsg.txt",
+      "bytes": 7108,
+      "sha256": "e08cf02993c0fb5bab4c5b8ba2fb423e13d7a4f4e41bcdc3b53e55321721f442"
+    },
+    {
+      "path": "s5-emulator/menu-smp/results/local-shared-image-stride/qemu/invocation.json",
+      "bytes": 5196,
+      "sha256": "7f96116cd50f24530119598fed6b68d3bb658631649f3fed7c664074d69c6a40"
+    },
+    {
+      "path": "s5-emulator/menu-smp/results/local-shared-image-stride/result.json",
+      "bytes": 1558647,
+      "sha256": "99319f5755380957da1b58a8b911cc79438983675c3ee3355c4920b7b88b4be8"
+    },
+    {
+      "path": "s5-emulator/menu-smp/spi0-evidence.json",
+      "bytes": 1476,
+      "sha256": "8558958b5e48dceb1dcff4ea290ddf77cc8aad8351d004ef5fbdf0c99aa31775"
+    },
+    {
+      "path": "s5-emulator/menu-smp/ui_service_loop.py",
+      "bytes": 16966,
+      "sha256": "a85ccd2b0e02eb0df8459c61e6bad58e4ef082b96e3b9a8cb4cf5a0541dd1a4a"
+    },
+    {
+      "path": "s5-emulator/menu-smp/ui_service_probe.py",
+      "bytes": 22318,
+      "sha256": "fd0712eda5876727f1ce370fab7054679a21e957f31f4e3795a82be5c2abcad6"
+    },
+    {
+      "path": "s5-emulator/probe/__init__.py",
+      "bytes": 77,
+      "sha256": "c8cddbcafd9b6c47de3f9ceb60d3e9320b220810b9b0074611d82c2ade284a99"
+    },
+    {
+      "path": "s5-emulator/probe/qemu_arm.py",
+      "bytes": 19561,
+      "sha256": "61c35bbde2a2aa03b26c9f7ce17b18c6d9a7bf6a39adadc483b6bb5bcdb0b4ac"
+    },
+    {
+      "path": "s5-emulator/probe/smoke.py",
+      "bytes": 3336,
+      "sha256": "d9ab1897966aec3ecdb0ad950435cf8724482d543937c98fa238dc18b4ced165"
+    },
+    {
+      "path": "s5-emulator/probe/test_smp_step.py",
+      "bytes": 4005,
+      "sha256": "6e7b876c527eb010ef585e881c1477bf512ab07645ce3a9e0a4ea3ecc66537d6"
+    },
+    {
+      "path": "s5-emulator/qa/task-a/baseline-taska-02/firmware-verification.json",
+      "bytes": 7087,
+      "sha256": "d57caaf8addb6f6b42508fa6616a641b916e218f544ce956292b0c726550132c"
+    },
+    {
+      "path": "s5-emulator/qa/task-a/baseline-taska-02/graphics/calls.jsonl",
+      "bytes": 1057146,
+      "sha256": "8049536f47a925ed63d3ea220c1bc0ec46a0e8633e1f3986b381b6baffb50f5f"
+    },
+    {
+      "path": "s5-emulator/qa/task-a/baseline-taska-02/graphics/frame-0000.png",
+      "bytes": 20624,
+      "sha256": "441650dc9de75635c6e5009d8937594af0b4a85bb0a6f4dd93725f09cd885fc7"
+    },
+    {
+      "path": "s5-emulator/qa/task-a/baseline-taska-02/graphics/frame-0001.png",
+      "bytes": 21421,
+      "sha256": "4cc91201a32a93d87c7c03470860c59453861af28b03792dea514061bb14b7b8"
+    },
+    {
+      "path": "s5-emulator/qa/task-a/baseline-taska-02/graphics/frame-0002.png",
+      "bytes": 94140,
+      "sha256": "6f14f83b44331ea1e0e95423fa4044ad6960ee4cc48fec45bc9cfe61a3916e24"
+    },
+    {
+      "path": "s5-emulator/qa/task-a/baseline-taska-02/graphics/frame-0003.png",
+      "bytes": 34369,
+      "sha256": "ef76bb7730fa498f70c0978643c6ed07e2ea707a964fd8af953f52fb16c20890"
+    },
+    {
+      "path": "s5-emulator/qa/task-a/baseline-taska-02/graphics/frame-0004.png",
+      "bytes": 34369,
+      "sha256": "ef76bb7730fa498f70c0978643c6ed07e2ea707a964fd8af953f52fb16c20890"
+    },
+    {
+      "path": "s5-emulator/qa/task-a/baseline-taska-02/linux-kmsg.json",
+      "bytes": 18767,
+      "sha256": "cfd19b585ea6012d4c0be4b9339f9239e8281a26d8109e98e67a98251329f2b1"
+    },
+    {
+      "path": "s5-emulator/qa/task-a/baseline-taska-02/linux-kmsg.txt",
+      "bytes": 7159,
+      "sha256": "699fcff4fc0be5a2a55bea2d706556a4e59bb569b5149cbfe01bc6e98319553f"
+    },
+    {
+      "path": "s5-emulator/qa/task-a/baseline-taska-02/qemu/invocation.json",
+      "bytes": 5121,
+      "sha256": "96072e4e5b6ef9c57b73ad3c20421013b07ecdbcd6de51a563fea46eb8ea7dea"
+    },
+    {
+      "path": "s5-emulator/qa/task-a/baseline-taska-02/result.json",
+      "bytes": 1567136,
+      "sha256": "c46b2599a759a3e046d253791c1dadadeb4e89cb6c5cea3cc289d98642cab44e"
+    },
+    {
+      "path": "s5-emulator/qa/task-a/compare_task_a.py",
+      "bytes": 30294,
+      "sha256": "e2808efe4748a9139e5229b9352223c8a31187ec6b49b011f2fe71a20d0bd2aa"
+    },
+    {
+      "path": "s5-emulator/qa/task-a/focused-vfp-taska-02/unmodified-defect-diagnosis/invocation.json",
+      "bytes": 1233,
+      "sha256": "54fd40b23a7ae5fe571f7494838ca65969045b731104a79148cd68452f7d0461"
+    },
+    {
+      "path": "s5-emulator/qa/task-a/focused-vfp-taska-02/verification.json",
+      "bytes": 5248,
+      "sha256": "48d5b2e2d326e32b193a7c68eab479eb4be0271279e2d4563a2ba01a8074a87a"
+    },
+    {
+      "path": "s5-emulator/qa/task-a/focused-vfp-taska-02/vm/invocation.json",
+      "bytes": 1233,
+      "sha256": "06f42e1b0339665bae88de875523b2c0c2e965c5d29d97bea9aed722a9332312"
+    },
+    {
+      "path": "s5-emulator/qa/task-a/lens-release-high-taska-01/firmware-verification.json",
+      "bytes": 7087,
+      "sha256": "d57caaf8addb6f6b42508fa6616a641b916e218f544ce956292b0c726550132c"
+    },
+    {
+      "path": "s5-emulator/qa/task-a/lens-release-high-taska-01/graphics/calls.jsonl",
+      "bytes": 2380538,
+      "sha256": "ae251704edd2ab3c63e75ce653895ea82759d34c568e9ee7d69c6ba992a3c63a"
+    },
+    {
+      "path": "s5-emulator/qa/task-a/lens-release-high-taska-01/graphics/frame-0000.png",
+      "bytes": 20624,
+      "sha256": "441650dc9de75635c6e5009d8937594af0b4a85bb0a6f4dd93725f09cd885fc7"
+    },
+    {
+      "path": "s5-emulator/qa/task-a/lens-release-high-taska-01/graphics/frame-0001.png",
+      "bytes": 21421,
+      "sha256": "4cc91201a32a93d87c7c03470860c59453861af28b03792dea514061bb14b7b8"
+    },
+    {
+      "path": "s5-emulator/qa/task-a/lens-release-high-taska-01/graphics/frame-0002.png",
+      "bytes": 69029,
+      "sha256": "5716bb8ee9b24138a1bbb930479a8cf0efc4782b3e8a013ef32c87839295e199"
+    },
+    {
+      "path": "s5-emulator/qa/task-a/lens-release-high-taska-01/graphics/frame-0003.png",
+      "bytes": 68056,
+      "sha256": "16c3b11967010d0258f0820a36d9b0a149fe995ddbaa039ea92d39b116e2175a"
+    },
+    {
+      "path": "s5-emulator/qa/task-a/lens-release-high-taska-01/graphics/frame-0004.png",
+      "bytes": 83244,
+      "sha256": "e6d920c211a2132f6f9c9b8460c30ec3d0132ed77e4a7ba0471f50f0304049e3"
+    },
+    {
+      "path": "s5-emulator/qa/task-a/lens-release-high-taska-01/graphics/frame-0005.png",
+      "bytes": 69465,
+      "sha256": "9668abb6fa402a8f27282dd5c085373a7efbd3f0c3497134872ed3dfa1a5c23c"
+    },
+    {
+      "path": "s5-emulator/qa/task-a/lens-release-high-taska-01/graphics/frame-0006.png",
+      "bytes": 81040,
+      "sha256": "775d52d077a9786aa960ff3b02b39c503c2c9a36b034cf0c300c1cb70cf6c9bc"
+    },
+    {
+      "path": "s5-emulator/qa/task-a/lens-release-high-taska-01/graphics/frame-0007.png",
+      "bytes": 81040,
+      "sha256": "775d52d077a9786aa960ff3b02b39c503c2c9a36b034cf0c300c1cb70cf6c9bc"
+    },
+    {
+      "path": "s5-emulator/qa/task-a/lens-release-high-taska-01/graphics/frame-0008.png",
+      "bytes": 71896,
+      "sha256": "1df28b49741b05f99699f779ebd8a5b648a66a052395b7607afcf75002bf1adb"
+    },
+    {
+      "path": "s5-emulator/qa/task-a/lens-release-high-taska-01/graphics/frame-0009.png",
+      "bytes": 79689,
+      "sha256": "edb072cbb227c61f2dbe303780d784b32725f10d6a7474364aa7c481611a7eba"
+    },
+    {
+      "path": "s5-emulator/qa/task-a/lens-release-high-taska-01/linux-kmsg.json",
+      "bytes": 18606,
+      "sha256": "bcc54015a87def0ad26661ee7d90c412344564d2f57689f7c2c7ab134962f0e6"
+    },
+    {
+      "path": "s5-emulator/qa/task-a/lens-release-high-taska-01/linux-kmsg.txt",
+      "bytes": 7108,
+      "sha256": "6c5adfe073c1c62f786b38f8a95d3bbc7627804e4aac67964d6facad2ead2c51"
+    },
+    {
+      "path": "s5-emulator/qa/task-a/lens-release-high-taska-01/qemu/invocation.json",
+      "bytes": 5166,
+      "sha256": "3a60b03a349650b70c2033489ecde7f263edeb842bab060c8809bc6a29f1c952"
+    },
+    {
+      "path": "s5-emulator/qa/task-a/lens-release-high-taska-01/result.json",
+      "bytes": 1578322,
+      "sha256": "23b2cc424ee8a9ae40d95b5fa4fc2e25dc358a5b4a8884c548cffbb3b287713b"
+    },
+    {
+      "path": "s5-emulator/qa/task-a/report-task-a.md",
+      "bytes": 4404,
+      "sha256": "e1587a8d4ad6c3adc86f6d862bb61250d3cdec1da228245c0343ad7937b79daf"
+    },
+    {
+      "path": "s5-emulator/qa/task-a/run_task_a.sh",
+      "bytes": 1705,
+      "sha256": "7f927057c82c4b798a44f7ebcc5e77bcd7df220cf121efdf02046f589545c00e"
+    },
+    {
+      "path": "s5-emulator/qa/task-a/run_task_a_focused.py",
+      "bytes": 15285,
+      "sha256": "e5ea00a01b5e53f79c2517b610969ea30e7a49f2b38dcc286c9c17ca9c678c36"
+    },
+    {
+      "path": "s5-emulator/qa/task-a/task-a-test_lens_release_input.patch",
+      "bytes": 1082,
+      "sha256": "033b4b0e733f6592e5f4bbbd916c2ee1755318dd23974a5960370b002f82e01e"
+    },
+    {
+      "path": "s5-emulator/qa/task-a/verification.json",
+      "bytes": 39149,
+      "sha256": "543313d808e6a18771a8a3603266ad4fd90abe178865b43e20bda207dde3ab93"
+    },
+    {
+      "path": "s5-emulator/qemu/README-rtos.md",
+      "bytes": 22841,
+      "sha256": "9ca2eb3a6ee993e008de8f5e7808e2f13de272540796df9cf73cbe6a5c248732"
+    },
+    {
+      "path": "s5-emulator/qemu/apply_qemu_patches.py",
+      "bytes": 5774,
+      "sha256": "56f0e76900a6e24cac991b048b22e94ea02247477b894d0618fff963ee331d9c"
+    },
+    {
+      "path": "s5-emulator/qemu/board-setup.S",
+      "bytes": 647,
+      "sha256": "1bd763b09b1c241283440b509404a422e5c35db2c92bb2ada7abed4a40853d74"
+    },
+    {
+      "path": "s5-emulator/qemu/board-setup.h",
+      "bytes": 724,
+      "sha256": "10b9d1fe3481131b71a52003f161182a6b503546f4d331bd74c42681f28dfae5"
+    },
+    {
+      "path": "s5-emulator/qemu/debugger-analysis/partial-step.md",
+      "bytes": 2955,
+      "sha256": "d6570644f4e4a5d46b3c1e15fb915f4381107247278ad1aab4db2fcf97910724"
+    },
+    {
+      "path": "s5-emulator/qemu/display-clock-analysis/dynamic-period-disassembly.txt",
+      "bytes": 4875,
+      "sha256": "3b6ac7d69e86f860180e093de5279cf5821604203814cc09e6757e043df3ea68"
+    },
+    {
+      "path": "s5-emulator/qemu/display-clock-analysis/dynamic-period-evidence.json",
+      "bytes": 1378,
+      "sha256": "517d49a669f8a1eafe01d4d60082da406ced0a33031e826cb00c341175ef1da5"
+    },
+    {
+      "path": "s5-emulator/qemu/display-test-smoke/qemu/invocation.json",
+      "bytes": 872,
+      "sha256": "22f6ad09eb780145275fe724d6fa01d846ca0def94533dbc8b8847043428b5ee"
+    },
+    {
+      "path": "s5-emulator/qemu/display-test-smoke/verification.json",
+      "bytes": 351,
+      "sha256": "0f58f329030338feaf08c395ea1ca08b2389f79b7f190fe01b2cd66c280ee32b"
+    },
+    {
+      "path": "s5-emulator/qemu/display-test-smoke-arm/qemu/invocation.json",
+      "bytes": 872,
+      "sha256": "a210036d54a363bbdaa0b961b747f1110f123d0ac4e64641b9240723aeaaea2d"
+    },
+    {
+      "path": "s5-emulator/qemu/display-test-smoke-arm/verification.json",
+      "bytes": 3012,
+      "sha256": "c1054cc137ed2b6db30d039004cf6e4c6d4a5fbf4184d9873905c6c338052520"
+    },
+    {
+      "path": "s5-emulator/qemu/display-test-smoke-local/qemu/invocation.json",
+      "bytes": 872,
+      "sha256": "d39d436a658fc04bca389842c814ba541e50c2d7c2ff0a980c8db30a8aff7dd5"
+    },
+    {
+      "path": "s5-emulator/qemu/display-test-smoke-local/verification.json",
+      "bytes": 2814,
+      "sha256": "e5b9ee6f8c8b2c865fea7921d20ab8a2215214ec45c5845930a4c208c4e015f5"
+    },
+    {
+      "path": "s5-emulator/qemu/display-test-smoke-verified/qemu/invocation.json",
+      "bytes": 872,
+      "sha256": "9981b94e4a2770fec427d8ff68704f76fc4b21ae1220d2187b785d5ffd225e32"
+    },
+    {
+      "path": "s5-emulator/qemu/display-test-smoke-verified/verification.json",
+      "bytes": 4672,
+      "sha256": "4f19f3e11154810fb5698eff4930228cfa363a2a79f67c8e6230eb656a9cd87c"
+    },
+    {
+      "path": "s5-emulator/qemu/frame-test-smoke-verified/qemu/invocation.json",
+      "bytes": 825,
+      "sha256": "79af5a18d336d9ce416f520c4cfe1db213c9b19b5ba89fe58c8082026a6572c4"
+    },
+    {
+      "path": "s5-emulator/qemu/frame-test-smoke-verified/verification.json",
+      "bytes": 3463,
+      "sha256": "d33dd6af2b4dddf557fd31add77145055915b74b93cee02922ded9590acc36fb"
+    },
+    {
+      "path": "s5-emulator/qemu/generate_board_setup.py",
+      "bytes": 4881,
+      "sha256": "65b7e3f9954a4048af7071290a747cbee1a214c901419a2241bee7218e0c2a73"
+    },
+    {
+      "path": "s5-emulator/qemu/inspect_rtos_irqs.py",
+      "bytes": 2740,
+      "sha256": "185b017b34825aa6387ee3a0b1886dbfa2e70e101cc107fe156bd13d90bba4ce"
+    },
+    {
+      "path": "s5-emulator/qemu/oneshot-reload-baseline/s5-linux/invocation.json",
+      "bytes": 812,
+      "sha256": "70ae5051cf7760499181bd1065282e51eb68b07d76601cfbad3a030912a66534"
+    },
+    {
+      "path": "s5-emulator/qemu/oneshot-reload-baseline/s5-rtos/invocation.json",
+      "bytes": 833,
+      "sha256": "5bab05224429a795a141692249f7ed9969ff5bb1d4368f227544e2c72d126a44"
+    },
+    {
+      "path": "s5-emulator/qemu/oneshot-reload-baseline/verification.json",
+      "bytes": 1492,
+      "sha256": "20f2775051b209124d6f3533fa4b602d4f967ffe435e874fd8afbe23ef74d75d"
+    },
+    {
+      "path": "s5-emulator/qemu/oneshot-reload-before/s5-rtos/invocation.json",
+      "bytes": 833,
+      "sha256": "d027cfe03deaa952d5d7720e5b013cebe17fffbc7e4272413ae4c28ae3c4fd85"
+    },
+    {
+      "path": "s5-emulator/qemu/oneshot-reload-fixed/s5-linux/invocation.json",
+      "bytes": 812,
+      "sha256": "7eb829f4b486341c8c0fb7af9935c984cb31f57f44417135a623be8dd7f06db5"
+    },
+    {
+      "path": "s5-emulator/qemu/oneshot-reload-fixed/s5-rtos/invocation.json",
+      "bytes": 833,
+      "sha256": "4993ec426e04fbba46a7237801a4b1d8e587d960dc70bcc2fbc23b4214e39d63"
+    },
+    {
+      "path": "s5-emulator/qemu/oneshot-reload-fixed/verification.json",
+      "bytes": 1484,
+      "sha256": "eb197ac4e869a85710654e3aaf498a8cb56e72ee7e66fe4c3ec7c341a0e31ae6"
+    },
+    {
+      "path": "s5-emulator/qemu/peer-isa-analysis/README.md",
+      "bytes": 11980,
+      "sha256": "4c6bb69f57e9aa86699e86ecc593b90cd43bd01ead4b36c13a76d9e805e34873"
+    },
+    {
+      "path": "s5-emulator/qemu/peer-isa-analysis/analyze.py",
+      "bytes": 14132,
+      "sha256": "dca86b73b248717aaeb4040b523b4281c66e0ec3c8f6f10c879e451e90ffe7c6"
+    },
+    {
+      "path": "s5-emulator/qemu/peer-isa-analysis/compare_decoders.py",
+      "bytes": 6660,
+      "sha256": "1c68df8b07c699ac81dabd76393a6f9af1cf7a4b93af8d11d696b8baf76b25ff"
+    },
+    {
+      "path": "s5-emulator/qemu/peer-isa-analysis/protocol-feasibility/README.md",
+      "bytes": 12808,
+      "sha256": "5a19f052d93f90fdbffe01d64a35e133473462adaae815b65d83275a1e911360"
+    },
+    {
+      "path": "s5-emulator/qemu/peer-isa-analysis/protocol-feasibility/arm-protocol-disassembly.txt",
+      "bytes": 128007,
+      "sha256": "b569b58868f0ba4d2aba125bf54a6684cedae71d51f194b7b0a59a4f7219b2fc"
+    },
+    {
+      "path": "s5-emulator/qemu/peer-isa-analysis/protocol-feasibility/async-display-config-contract.json",
+      "bytes": 8505,
+      "sha256": "99cd437dae26e0142ea0d3f3131a7f46916a57da4833033cc34978c6eab7a62c"
+    },
+    {
+      "path": "s5-emulator/qemu/peer-isa-analysis/protocol-feasibility/async-display-config-disassembly.txt",
+      "bytes": 12823,
+      "sha256": "e047d00d2559c5aa83efc66dbbb6c35a51ace719e682c881887b3a401f89ec14"
+    },
+    {
+      "path": "s5-emulator/qemu/peer-isa-analysis/protocol-feasibility/audit_async_display_config.py",
+      "bytes": 5349,
+      "sha256": "682222eb2237889f891ac6f631421b4901720dedb6f765e8257ce3d44c4f10c5"
+    },
+    {
+      "path": "s5-emulator/qemu/peer-isa-analysis/protocol-feasibility/audit_client_pbuffer.py",
+      "bytes": 9666,
+      "sha256": "5624e950a2ed16df6b2dd98f3b4d404a5b23747ee792168a71fb1f7ec4217348"
+    },
+    {
+      "path": "s5-emulator/qemu/peer-isa-analysis/protocol-feasibility/audit_command_2b.py",
+      "bytes": 6627,
+      "sha256": "43bdbee0859a2391d008686c18c722a5ac097a5f80046ca7d316adb80256dac6"
+    },
+    {
+      "path": "s5-emulator/qemu/peer-isa-analysis/protocol-feasibility/audit_command_40001.py",
+      "bytes": 8227,
+      "sha256": "4227ba921f4d1468a7d5fc6e126160f30ca17e806d2e50c6a34717af3e796b41"
+    },
+    {
+      "path": "s5-emulator/qemu/peer-isa-analysis/protocol-feasibility/audit_query_frame.py",
+      "bytes": 6573,
+      "sha256": "d4c35cb38980ba3baefe5f25a8fdbeed0be92a8a006770a3fd7737bb1cdd5ff5"
+    },
+    {
+      "path": "s5-emulator/qemu/peer-isa-analysis/protocol-feasibility/audit_serial_tx.py",
+      "bytes": 6802,
+      "sha256": "3c3cae859c2f8a061d7c6120865dbae98719fa27cd876b1b9677f69521d56807"
+    },
+    {
+      "path": "s5-emulator/qemu/peer-isa-analysis/protocol-feasibility/audit_skipped_arm_init.py",
+      "bytes": 11999,
+      "sha256": "6aa479609d5bcb2cb66bdd9bfb4a20725d9989fb63a4923ef8ce30669fd89ac0"
+    },
+    {
+      "path": "s5-emulator/qemu/peer-isa-analysis/protocol-feasibility/audit_text_vg_calls.py",
+      "bytes": 9358,
+      "sha256": "732978c494ea2d88d7577149eb92515565a07997a6b38065bc5754de18c2cfe0"
+    },
+    {
+      "path": "s5-emulator/qemu/peer-isa-analysis/protocol-feasibility/audit_transform_path.py",
+      "bytes": 3913,
+      "sha256": "ea107d6c4cf312ae2dde7b51530a44a16dbbbb9675c7d2f7ae2ae25425d88b52"
+    },
+    {
+      "path": "s5-emulator/qemu/peer-isa-analysis/protocol-feasibility/audit_ui_service.py",
+      "bytes": 10572,
+      "sha256": "a9b4bbea27cfa70ecc31c36e0c7d39587a12441dd5024b1120300d3e5217cf6f"
+    },
+    {
+      "path": "s5-emulator/qemu/peer-isa-analysis/protocol-feasibility/client-pbuffer-contract.json",
+      "bytes": 5905,
+      "sha256": "94e0b52bedaa370f4136ca1f56fc11eff1fca350124cbd6724167e14263dabbc"
+    },
+    {
+      "path": "s5-emulator/qemu/peer-isa-analysis/protocol-feasibility/client-pbuffer-disassembly.txt",
+      "bytes": 46974,
+      "sha256": "80e541bc5a84fe6e64cba75d959fe55b209def785b5982e239a61c7ab497dae6"
+    },
+    {
+      "path": "s5-emulator/qemu/peer-isa-analysis/protocol-feasibility/command-2b-contract.json",
+      "bytes": 3393,
+      "sha256": "406ba17e67c54c9522c807a350fcc92cb6d6eea0e1b11721d15c87b404b64fdd"
+    },
+    {
+      "path": "s5-emulator/qemu/peer-isa-analysis/protocol-feasibility/command-2b-disassembly.txt",
+      "bytes": 2995,
+      "sha256": "ad939c1402bcfe992ee591594544556097b7ed3859295b7931a7672ab03d4ad3"
+    },
+    {
+      "path": "s5-emulator/qemu/peer-isa-analysis/protocol-feasibility/command-40001-contract.json",
+      "bytes": 4272,
+      "sha256": "7fb67188ceb54338a3e60e385c9c5848b2dddd39b3bbdef50e05ca354a9d0299"
+    },
+    {
+      "path": "s5-emulator/qemu/peer-isa-analysis/protocol-feasibility/command-40001-disassembly.txt",
+      "bytes": 9989,
+      "sha256": "691d1269df42373515e7013ab35a87cd5a440e86a3a4b6bc199d65a82a1948a7"
+    },
+    {
+      "path": "s5-emulator/qemu/peer-isa-analysis/protocol-feasibility/postinit-frame-gate-disassembly.txt",
+      "bytes": 14288,
+      "sha256": "29c5736c5481179a41526d8a29b9bed29ca04c199a9eb54f2c98293e658308ca"
+    },
+    {
+      "path": "s5-emulator/qemu/peer-isa-analysis/protocol-feasibility/postinit-frame-gate-evidence.json",
+      "bytes": 3522,
+      "sha256": "75fe13b69c129ffb42ed35e887e2e0c62f733924d0cab96c3b34b6f49e78a4fa"
+    },
+    {
+      "path": "s5-emulator/qemu/peer-isa-analysis/protocol-feasibility/query-frame-contract.json",
+      "bytes": 4888,
+      "sha256": "96897d43b3a3082b196c860bdb221de76209d8003b2252c077c5b0d467be6fd5"
+    },
+    {
+      "path": "s5-emulator/qemu/peer-isa-analysis/protocol-feasibility/query-frame-disassembly.txt",
+      "bytes": 18030,
+      "sha256": "81b19c6d7d4b5d78228bb12cdfbfb031ea7269e1a64783a13e29d8436348abe6"
+    },
+    {
+      "path": "s5-emulator/qemu/peer-isa-analysis/protocol-feasibility/serial-tx-contract.json",
+      "bytes": 35254,
+      "sha256": "0a2b1cc0171d479d01ab4bc0b1aeb6ab9dbf62222a6fd52354fdf90b70c5bfd0"
+    },
+    {
+      "path": "s5-emulator/qemu/peer-isa-analysis/protocol-feasibility/serial-tx-disassembly.txt",
+      "bytes": 15147,
+      "sha256": "b9c9db9a66184d237c8a453a69391f13d9a4e04591a7155cd4fc472ae7a4146a"
+    },
+    {
+      "path": "s5-emulator/qemu/peer-isa-analysis/protocol-feasibility/skipped-arm-init-contract.json",
+      "bytes": 7869,
+      "sha256": "d24ad8cebece0f9b3e8fadc7e8c7b2c9701850c14544838a6e4a579480163558"
+    },
+    {
+      "path": "s5-emulator/qemu/peer-isa-analysis/protocol-feasibility/skipped-arm-init-disassembly.txt",
+      "bytes": 75599,
+      "sha256": "d1e336756b6da87b7daae5ecdca3d0ffaf5dad41efe1dbf037ccb27d43cc8e6e"
+    },
+    {
+      "path": "s5-emulator/qemu/peer-isa-analysis/protocol-feasibility/text-vg-lookahead-contract.json",
+      "bytes": 11475,
+      "sha256": "8e627ad1b60f895bd77a6ed42280b4c5c55b25ef276185f9fa4959f76fb96f71"
+    },
+    {
+      "path": "s5-emulator/qemu/peer-isa-analysis/protocol-feasibility/text-vg-lookahead-disassembly.txt",
+      "bytes": 58681,
+      "sha256": "a777f7ba16eb4f34121d5eab27917298deb83d526fb0a67e5d61580fbde3d52f"
+    },
+    {
+      "path": "s5-emulator/qemu/peer-isa-analysis/protocol-feasibility/transform-path-contract.json",
+      "bytes": 2077,
+      "sha256": "db446dd03606d42de7fa075d729f784a1808820215eb4e15f15de487026cdc52"
+    },
+    {
+      "path": "s5-emulator/qemu/peer-isa-analysis/protocol-feasibility/transform-path-disassembly.txt",
+      "bytes": 7904,
+      "sha256": "f3b22d49829afa0cf4a8aafd885d264b1303dea9473c96941bd158942b4274b2"
+    },
+    {
+      "path": "s5-emulator/qemu/peer-isa-analysis/protocol-feasibility/ui-service-contract.json",
+      "bytes": 5462,
+      "sha256": "060fcdbd3bca516a4f191791eff9661d5bdf8dc965fbf9663499029e6dcafe0e"
+    },
+    {
+      "path": "s5-emulator/qemu/peer-isa-analysis/protocol-feasibility/ui-service-disassembly.txt",
+      "bytes": 26832,
+      "sha256": "5dbdc56417fd9295ec7d2332787369bc465e22e3fd9018ad2f3d768e91d8b34d"
+    },
+    {
+      "path": "s5-emulator/qemu/probe_timer_irqs.py",
+      "bytes": 2286,
+      "sha256": "6e42a912980d3ab6d3af54efd5b869277cd5ada1794bc186112f62434b81479a"
+    },
+    {
+      "path": "s5-emulator/qemu/realview-reference.c",
+      "bytes": 16342,
+      "sha256": "81add7fc7d6e0da0b3af8d975c506c6522a20f7b2b6f5a4e71b645d827a65a37"
+    },
+    {
+      "path": "s5-emulator/qemu/s5-rtc-peer.c",
+      "bytes": 7177,
+      "sha256": "3e34476bbb18c0b8a4e53cd3af999858bbf52e918bb614ded53a7810fcf0488e"
+    },
+    {
+      "path": "s5-emulator/qemu/s5-rtos.c",
+      "bytes": 60146,
+      "sha256": "89745b77c5d0a46db7228bcbe36499b48f5a7a88c5f45e5e0ebf94957730e7bf"
+    },
+    {
+      "path": "s5-emulator/qemu/s5.c",
+      "bytes": 6254,
+      "sha256": "7a51907d2637037dfb531cfb6df9c7376035f338d8166d7648aa9b96080417d0"
+    },
+    {
+      "path": "s5-emulator/qemu/serial-tx-hle-verified/absent/invocation.json",
+      "bytes": 1233,
+      "sha256": "492c9c4f49a76c2e6eafc0aeb9d350da6f75c193b174f171f9783b6708c14f6d"
+    },
+    {
+      "path": "s5-emulator/qemu/serial-tx-hle-verified/batch32/invocation.json",
+      "bytes": 1233,
+      "sha256": "f092d9be1d047f18b97573fe91c003f5487af7d512fe620ca3af0a8c4bfe2cfa"
+    },
+    {
+      "path": "s5-emulator/qemu/serial-tx-hle-verified/individual/invocation.json",
+      "bytes": 1233,
+      "sha256": "4f0afe2ba51d167d3c9cd87c7733fc232370970e0880253faea016a0d60a3350"
+    },
+    {
+      "path": "s5-emulator/qemu/serial-tx-hle-verified/verification.json",
+      "bytes": 3007,
+      "sha256": "eb63683da8be69c52c177e786255f4b2d17d612df4639c181a07248b8ffc21e7"
+    },
+    {
+      "path": "s5-emulator/qemu/smoke_models.py",
+      "bytes": 16258,
+      "sha256": "936030666618e72c4eb20501dd83d27e008a1351c6186a9f4d677b5dc9e5846d"
+    },
+    {
+      "path": "s5-emulator/qemu/smoke_smp.py",
+      "bytes": 2894,
+      "sha256": "fbbd3b35b6ca9351fd2867ac39c06fe78a40779c62c079f0d0a8b94d29602b35"
+    },
+    {
+      "path": "s5-emulator/qemu/software-status-verified/verification.json",
+      "bytes": 1909,
+      "sha256": "ca3d95d94b7fd5d962c262b6deed728d77d51ff3731215973c8dd5a7f8595087"
+    },
+    {
+      "path": "s5-emulator/qemu/software-status-verified/vm/invocation.json",
+      "bytes": 1233,
+      "sha256": "16a766723d20cfb2b5c0055a717d2d7e212eb11e03f606012254457e63578d5b"
+    },
+    {
+      "path": "s5-emulator/qemu/test_display_inputs.py",
+      "bytes": 7248,
+      "sha256": "dbbb0247403a6ccca32c7c76b309e8b58ca1323568783d3f7963f0a37fd7c8e3"
+    },
+    {
+      "path": "s5-emulator/qemu/test_frame_inputs.py",
+      "bytes": 4610,
+      "sha256": "cf3e1c3dcf5f30a62b1687252ef23cdb620d9cd8a86a86f36b228896e28384c3"
+    },
+    {
+      "path": "s5-emulator/qemu/test_lens_release_input.py",
+      "bytes": 5174,
+      "sha256": "83aed38d868ab39f0719dad54d1e67b751aaa349d5228747ab066388e8fc2427"
+    },
+    {
+      "path": "s5-emulator/qemu/test_oneshot_reload.py",
+      "bytes": 3985,
+      "sha256": "82d340a04298dc775214915185f38497211ce407f94b5cd6b4cbd000a8574971"
+    },
+    {
+      "path": "s5-emulator/qemu/test_ram_layout.py",
+      "bytes": 6070,
+      "sha256": "e2eb3be7b7bbeb5cd1f0032af4e9faaf3f3407863eae3da7e88cc7dead6dec3e"
+    },
+    {
+      "path": "s5-emulator/qemu/test_serial_tx_hle.py",
+      "bytes": 5303,
+      "sha256": "859ad07b9615501e47d0f944a0a8420cf4b7df9db7b1dfc01132ef4c38b18a83"
+    },
+    {
+      "path": "s5-emulator/qemu/test_software_status.py",
+      "bytes": 4094,
+      "sha256": "45e1ce77836e2fa9b81f1900a4139ad27a0d2dce89df8095d2181e551f941c79"
+    },
+    {
+      "path": "s5-emulator/qemu/vexpress-reference.c",
+      "bytes": 29734,
+      "sha256": "342f668505a5133ed086e8430cdf1ba3059fa0fc6dc9485e2dd7ba001300162e"
+    },
+    {
+      "path": "s5-emulator/s5.py",
+      "bytes": 17940,
+      "sha256": "46222032696bbd7f5ed1c06807b527d8f01b4e6df422779aed923cf311feeda0"
+    },
+    {
+      "path": "s5-emulator/serial/README.md",
+      "bytes": 47327,
+      "sha256": "319614585d1f25b2842045f2aea7432d589fc9704d2ea43fb2bfe9cc052fe5b2"
+    },
+    {
+      "path": "s5-emulator/serial/coprocessor-wait-evidence.disasm.txt",
+      "bytes": 13348,
+      "sha256": "b064a561a2e4d28abb7e4f0e9962fd24a43a059322088a9955c839ea6561f17c"
+    },
+    {
+      "path": "s5-emulator/serial/coprocessor-wait-evidence.json",
+      "bytes": 27384,
+      "sha256": "d063778397fce10c5189589e3138885ae209e56ea8941187a3e10cfeca0e3f8c"
+    },
+    {
+      "path": "s5-emulator/serial/display-clock-evidence.disasm.txt",
+      "bytes": 39630,
+      "sha256": "64e81744061924a7fb7efa0811ecaa453df7e1a245562c0c869f9419da4326fa"
+    },
+    {
+      "path": "s5-emulator/serial/display-clock-evidence.json",
+      "bytes": 27472,
+      "sha256": "7c725e0d46ae11ea92a6ed3f83e335eb7040d94150dd7872cf0400b422921fe2"
+    },
+    {
+      "path": "s5-emulator/serial/extract_key_events.py",
+      "bytes": 6431,
+      "sha256": "5dd730abeb6c10ced33e65f8503444fa1e38e94044d341fa591aeee180d35636"
+    },
+    {
+      "path": "s5-emulator/serial/extract_loader_gic.py",
+      "bytes": 4171,
+      "sha256": "547ce0a530985b158dc99b797898767db11b1846c83f1c9c2b5d4dd63da39ef0"
+    },
+    {
+      "path": "s5-emulator/serial/extract_timer_irq_map.py",
+      "bytes": 2800,
+      "sha256": "7cf0ca7886a7132a95b786a253cbe0c54688090ac4e2558d576118aba12d71fd"
+    },
+    {
+      "path": "s5-emulator/serial/frame-device-poll-evidence.json",
+      "bytes": 3782,
+      "sha256": "35817847ed04c7af6b61b9a342c6676c7671e4de9fc044f68caef43512c48f5d"
+    },
+    {
+      "path": "s5-emulator/serial/frame-device-poll.disasm.txt",
+      "bytes": 5765,
+      "sha256": "4f29658c870b05bb2bda0f8db92c7559d6db9eaed09e91d440ad56ecd3568e00"
+    },
+    {
+      "path": "s5-emulator/serial/frame-paced-debugger-stop.json",
+      "bytes": 3090,
+      "sha256": "6aa5ec397c3335faec0831d2a3b843cbe514a47b8e7d6e69ca39c521dcf8cae8"
+    },
+    {
+      "path": "s5-emulator/serial/gui-stage436-evidence.json",
+      "bytes": 8952,
+      "sha256": "ce3d8c44daf51df4bce12d765042795463f89957cec9a3c896a819182d70c2d4"
+    },
+    {
+      "path": "s5-emulator/serial/gui-stage436.disasm.txt",
+      "bytes": 17291,
+      "sha256": "6f897278475199f999873833c1dc8aedd68815dcf92fbaa07e7cd06ec6de3cdd"
+    },
+    {
+      "path": "s5-emulator/serial/gui-start-wait-evidence.json",
+      "bytes": 7749,
+      "sha256": "ad5ef5a90b8db1c22d89eb2607e61a45963c1067ed8763f9c536eb40ff46fda2"
+    },
+    {
+      "path": "s5-emulator/serial/gui-start-wait.disasm.txt",
+      "bytes": 11816,
+      "sha256": "af62613bee61fccc1c9f1df86ef0461f6eaa627dd2a91e378f2badbac7bc8e22"
+    },
+    {
+      "path": "s5-emulator/serial/gui-terminal-key-evidence.json",
+      "bytes": 3169,
+      "sha256": "72014d1fed7039d5ce02ecb919710f74875b3ac99834807a4450f0e69c477c63"
+    },
+    {
+      "path": "s5-emulator/serial/gui-terminal-key.disasm.txt",
+      "bytes": 12854,
+      "sha256": "fbe6cc8597272cab5fddb2f914430dd2f8912c8826ece538d3dfe4a4ad72b45a"
+    },
+    {
+      "path": "s5-emulator/serial/i2c-wait-evidence.json",
+      "bytes": 10710,
+      "sha256": "3843202fae98f8f36e45e462c964f9bc7414a510685a8643fc3751e8d2d2827d"
+    },
+    {
+      "path": "s5-emulator/serial/i2c-wait.disasm.txt",
+      "bytes": 17291,
+      "sha256": "210f2ea839695c87a5d4e04018df33178d16f6f7e4d4d9636f1c794c6b5c72a1"
+    },
+    {
+      "path": "s5-emulator/serial/inspect_coprocessor_wait.py",
+      "bytes": 7105,
+      "sha256": "d783d90f22a65005385459e8b852a7c232f35f3f888bcc8dd4cfd507c135a3d7"
+    },
+    {
+      "path": "s5-emulator/serial/inspect_display_clock.py",
+      "bytes": 12094,
+      "sha256": "9932dadb97ab36061ac6b0cf8dfa2e09b2cd363f809a38fae9996aac97955e8f"
+    },
+    {
+      "path": "s5-emulator/serial/inspect_gui_stage436.py",
+      "bytes": 7713,
+      "sha256": "2d9e1e695340760e0d6fca5df660bb3308f4bfbbffeee1c5e3e927aebc558132"
+    },
+    {
+      "path": "s5-emulator/serial/inspect_gui_start_wait.py",
+      "bytes": 6385,
+      "sha256": "e644210fbcb513189edf9f33694d18da0b13da2b9a6a1ac03a8976a9330624b0"
+    },
+    {
+      "path": "s5-emulator/serial/inspect_gui_terminal_key.py",
+      "bytes": 5601,
+      "sha256": "68f348bc2683257ebf87cbe6df698122f5049bc31553a88efd15007a30660720"
+    },
+    {
+      "path": "s5-emulator/serial/inspect_i2c_wait.py",
+      "bytes": 4516,
+      "sha256": "1201fd000da5df31cbf08f9255cda14461a292c5b4bd3df344e8453cfe90be15"
+    },
+    {
+      "path": "s5-emulator/serial/inspect_key_input_source.py",
+      "bytes": 6091,
+      "sha256": "b20e97166839f2fead94d035af69ea6abbe8b07e4709a851a349f8a36ce236a7"
+    },
+    {
+      "path": "s5-emulator/serial/inspect_lcd_spi_wait.py",
+      "bytes": 5819,
+      "sha256": "1637d80e1cc740617ba41c6c51fc1e391e673ff72ab516282343e8ccf688bb5a"
+    },
+    {
+      "path": "s5-emulator/serial/inspect_lens_warning.py",
+      "bytes": 6098,
+      "sha256": "dd41ed727cb05b71a613d4d4ac17c6dca3a48fc424f63cdfaa525dc30a25b286"
+    },
+    {
+      "path": "s5-emulator/serial/inspect_mode35_fault.py",
+      "bytes": 10086,
+      "sha256": "d9a4feae9635d7801657e1aeda6caf8e2dfbc32397a039d81d7754af8319d2b2"
+    },
+    {
+      "path": "s5-emulator/serial/inspect_mode35_frame_wait.py",
+      "bytes": 7085,
+      "sha256": "d9777ed10f3e5f97ef5cc9e736336f4dec9831a1b6e5c2fdb636430e78edfe04"
+    },
+    {
+      "path": "s5-emulator/serial/inspect_native_surface.py",
+      "bytes": 10211,
+      "sha256": "d89ab6427c90e8735c50093f82b9049d178eb62dbcc252e99f25a84e40a997ba"
+    },
+    {
+      "path": "s5-emulator/serial/inspect_secondary_input_stage.py",
+      "bytes": 6327,
+      "sha256": "321b014f6895b38a39a6b347030bc7bb040f8cec1f8920a4e5a2b2f558938b4b"
+    },
+    {
+      "path": "s5-emulator/serial/inspect_startup_wait.py",
+      "bytes": 5662,
+      "sha256": "0906c182f0059b715a28509f1a94dc57c8105e883e8af6aafbe7d7c1d95d4688"
+    },
+    {
+      "path": "s5-emulator/serial/inspect_tick_wait.py",
+      "bytes": 6188,
+      "sha256": "7a0bd5bd94991d780c88df370d13fe63cb61c2e7eb057c1c09e1989592c492d2"
+    },
+    {
+      "path": "s5-emulator/serial/inspect_timezone_key.py",
+      "bytes": 7341,
+      "sha256": "eef8559ecc5106f886569813d5628d3da20d79ba2ac2f6f79760f086ad24454e"
+    },
+    {
+      "path": "s5-emulator/serial/inspect_uart_power.py",
+      "bytes": 6238,
+      "sha256": "2791bc27ba3d5502023df79ec90f2fa7047bd23208329463ded80c5f32c2b803"
+    },
+    {
+      "path": "s5-emulator/serial/isolated-delay-abi.json",
+      "bytes": 2827,
+      "sha256": "b78c15ae0c9270c23f5badc324bc8c6df5dd25a6d4649d5d2cf5c2cacbf2aa86"
+    },
+    {
+      "path": "s5-emulator/serial/isolated-delay.disasm.txt",
+      "bytes": 12044,
+      "sha256": "714a12b533bc582d3660a1013567ee4ac7e41f28653cbea601da726d588552e4"
+    },
+    {
+      "path": "s5-emulator/serial/key-event-evidence.json",
+      "bytes": 27445,
+      "sha256": "c7021f4baea8be498f27495933f21141600faaf0fafacd1c0d79b153e2f17d01"
+    },
+    {
+      "path": "s5-emulator/serial/key-events.disasm.txt",
+      "bytes": 24441,
+      "sha256": "264afca1ac4d1ce09b1905c16f9709b53b50356b08c837b3475152e1c3d81a15"
+    },
+    {
+      "path": "s5-emulator/serial/key-input-producer.disasm.txt",
+      "bytes": 13146,
+      "sha256": "6379fa17ac2fe25bfc5badfa56a8c1fdf3f2eb2400ec4d5448a0897707afdd53"
+    },
+    {
+      "path": "s5-emulator/serial/key-input-source-evidence.json",
+      "bytes": 4475,
+      "sha256": "848e6b464a34013e5c118f8b6b2f231f84f72eb1c229e49cdef5d65e1a2ea0da"
+    },
+    {
+      "path": "s5-emulator/serial/key-queue-abi.json",
+      "bytes": 4208,
+      "sha256": "76022d547d9273551125ea21943c11ecb07896140fca61ad45b13b6456692341"
+    },
+    {
+      "path": "s5-emulator/serial/key-queue.disasm.txt",
+      "bytes": 17868,
+      "sha256": "b213052f52ebdaddb66e1b8690dea3fc4e67b31637b77af8489683800dbfbd8d"
+    },
+    {
+      "path": "s5-emulator/serial/lcd-spi-wait-evidence.json",
+      "bytes": 5908,
+      "sha256": "840189cd870ead186c9731b1c9f9a46b2770cdd20dfe303a9f0a3d62cdf84f8f"
+    },
+    {
+      "path": "s5-emulator/serial/lcd-spi-wait.disasm.txt",
+      "bytes": 17688,
+      "sha256": "989a94da357e42d39883ec1720cd552d686418550329f8ed51bab19588311ca2"
+    },
+    {
+      "path": "s5-emulator/serial/lens-warning-evidence.json",
+      "bytes": 3922,
+      "sha256": "a9c7c6db13214859dc597e0f02e0fa06b49e2455736274e58694afb5dd4eb0bf"
+    },
+    {
+      "path": "s5-emulator/serial/lens-warning.disasm.txt",
+      "bytes": 5178,
+      "sha256": "ef5fd8b943261992ea0a0148edd3dedfbbfa79471dc14c35141739d9c3736dfa"
+    },
+    {
+      "path": "s5-emulator/serial/loader-gic.disasm.txt",
+      "bytes": 10123,
+      "sha256": "f50495e5dd8592a757128d744723052cdffd31e6080fda2437242eeb23576cd0"
+    },
+    {
+      "path": "s5-emulator/serial/loader-gic.json",
+      "bytes": 109624,
+      "sha256": "65493d01016df6df68484bc6bda905e6e30feb7635bf43942bad49bbd04031f8"
+    },
+    {
+      "path": "s5-emulator/serial/loader-timer-disassembly.txt",
+      "bytes": 4042,
+      "sha256": "e2cc040327843c7d2efeaff2c130fe4edd3ae6f8996d6bafa5486d2db833a67a"
+    },
+    {
+      "path": "s5-emulator/serial/mode35-fault-evidence.disasm.txt",
+      "bytes": 22199,
+      "sha256": "795848702181208f7b473de2312be24fbcc271e75058912058aba5a8141fc0d7"
+    },
+    {
+      "path": "s5-emulator/serial/mode35-fault-evidence.json",
+      "bytes": 19685,
+      "sha256": "720c4ecc709e0e7ba4fc01e3772789108ef22d6d886d7b3ff562846a32210638"
+    },
+    {
+      "path": "s5-emulator/serial/mode35-frame-wait-evidence.json",
+      "bytes": 4223,
+      "sha256": "f06134091cad848a3850f0addd27d4eb77d9d49d55f9993aa614e8238ed69bed"
+    },
+    {
+      "path": "s5-emulator/serial/mode35-frame-wait.disasm.txt",
+      "bytes": 13216,
+      "sha256": "b6618f2bb289aa9d6516be688ea80104a500f35c00903e4512e17ecbf69d8c90"
+    },
+    {
+      "path": "s5-emulator/serial/native-surface-abi.disasm.txt",
+      "bytes": 65878,
+      "sha256": "06e62afb2a5f2236447b5b2b115e4877cfdecba0e41467e2c3611317c826b386"
+    },
+    {
+      "path": "s5-emulator/serial/native-surface-abi.json",
+      "bytes": 7455,
+      "sha256": "e9a3505af5082d1a8c3efea98024710d688d0b5efcd2c3166836d7885b245371"
+    },
+    {
+      "path": "s5-emulator/serial/original-disassembly.txt",
+      "bytes": 35097,
+      "sha256": "8bef3f39f536cdbde67acd36493afe045b616be1badad74a7cbefe33fac606a6"
+    },
+    {
+      "path": "s5-emulator/serial/power-sleep-evidence.json",
+      "bytes": 2873,
+      "sha256": "70408b3c292426d06f0e969207b33bdc7dd578c2f526ff06f1725a25e8fa86bd"
+    },
+    {
+      "path": "s5-emulator/serial/register_model.py",
+      "bytes": 2752,
+      "sha256": "8be5c70645e98c3222782ddc15b3e88abb1eae288c3e7aa65823e193e9c25fde"
+    },
+    {
+      "path": "s5-emulator/serial/secondary-input-stage-evidence.json",
+      "bytes": 12209,
+      "sha256": "d93c12841d79cc3c11bf9363003fe60be5d02226a1b71329eae109e8cb40201b"
+    },
+    {
+      "path": "s5-emulator/serial/secondary-input-stage.disasm.txt",
+      "bytes": 13314,
+      "sha256": "8581264880f17804e74b067792c3e7aa54efdec6231076290412c7d07dcb76ac"
+    },
+    {
+      "path": "s5-emulator/serial/startup-wait.disasm.txt",
+      "bytes": 25070,
+      "sha256": "b4df3d9e7929afc5e92b6b2628823c8ff4177af47b616bcadbbc74ebf4a9b6ba"
+    },
+    {
+      "path": "s5-emulator/serial/startup-wait.json",
+      "bytes": 111410,
+      "sha256": "45f0cd5d021e8b67e3e315d782216e520067c1099aa10143c537a95f52a36b45"
+    },
+    {
+      "path": "s5-emulator/serial/summary.json",
+      "bytes": 7389,
+      "sha256": "0f3481f9c88398e924895cbd31177d55a5dee72c16bfe457d0d1ed79cc48adfc"
+    },
+    {
+      "path": "s5-emulator/serial/test_display_clock_probe.py",
+      "bytes": 7319,
+      "sha256": "49fea57ff8427a6594e6a35dbfcdc9e7694ac20b78ed7e1551d46b71d2e96fb6"
+    },
+    {
+      "path": "s5-emulator/serial/test_frame_irq_probe.py",
+      "bytes": 9452,
+      "sha256": "62a4aad2e968c98580040ff1795daeb51ecfb0945a31208dbc0603443b3b0df4"
+    },
+    {
+      "path": "s5-emulator/serial/test_key_probe.py",
+      "bytes": 18707,
+      "sha256": "7841a7fd82057f67c1cc9402780243772d9bf3e6e686c03c1247fecdfef8f853"
+    },
+    {
+      "path": "s5-emulator/serial/test_lcd_refresh_probe.py",
+      "bytes": 5614,
+      "sha256": "220a0fd12800c0b79d26b6a46f2908e74465c93968b64a4592f3de6e94c45e86"
+    },
+    {
+      "path": "s5-emulator/serial/test_ui_service_probe.py",
+      "bytes": 10390,
+      "sha256": "2449c99fb09122b64563c574863f87243be8c5319772f806771e62d5913cf81d"
+    },
+    {
+      "path": "s5-emulator/serial/tick-wait-evidence.json",
+      "bytes": 19571,
+      "sha256": "7b4e01f3c3168e4e98770bf2c70b027d99099f15c17b83be85eca18a329ec839"
+    },
+    {
+      "path": "s5-emulator/serial/tick-wait.disasm.txt",
+      "bytes": 19633,
+      "sha256": "32dbc8429127abe575db0104bc06752964a570f9f84fb6491286266f345d5c83"
+    },
+    {
+      "path": "s5-emulator/serial/timer-irq-map.json",
+      "bytes": 8874,
+      "sha256": "dc4ba3bcd005403cdde845b49156d2bca741d2f193da8cfe086d1114eaabfcdf"
+    },
+    {
+      "path": "s5-emulator/serial/timer-irq-map.stdout.json",
+      "bytes": 8874,
+      "sha256": "dc4ba3bcd005403cdde845b49156d2bca741d2f193da8cfe086d1114eaabfcdf"
+    },
+    {
+      "path": "s5-emulator/serial/timer6-queue16-wait-evidence.json",
+      "bytes": 1625,
+      "sha256": "90c4534245443a43d7ea45250040b8b870434e29d14bd827fc82471b0e37973c"
+    },
+    {
+      "path": "s5-emulator/serial/timezone-key-evidence.json",
+      "bytes": 16670,
+      "sha256": "5ea439f9b1529e522c2a04888b4ff3bd1977963bd450cec4c5e4a3f2b750adf7"
+    },
+    {
+      "path": "s5-emulator/serial/timezone-key.disasm.txt",
+      "bytes": 6095,
+      "sha256": "e5351e17eee367eb2e48ea212fe511c87f0f0be1e3e0661209686456fd1469d8"
+    },
+    {
+      "path": "s5-emulator/serial/trace_serial.py",
+      "bytes": 9328,
+      "sha256": "b792d8b11fe3f8252b18c22212c78fbbf161e95e558097f80edb1dfe08c01eec"
+    },
+    {
+      "path": "s5-emulator/serial/uart-evidence.json",
+      "bytes": 4565,
+      "sha256": "3987388c793edb1a61c5b7d396340d55a70ddd0b07ab3d2ba24f617bf6a354b1"
+    },
+    {
+      "path": "s5-emulator/serial/uart-power.disasm.txt",
+      "bytes": 32976,
+      "sha256": "642d7d53d59bdbbc86746e08c9366ac839afb88c94bfb5b9e89e6c537654e262"
+    },
+    {
+      "path": "s5-emulator/serial/verify_loader_gic.py",
+      "bytes": 3874,
+      "sha256": "f2a22c069f50a701c83d26720f366736a24bbd25d1c163b9dfa592f81fb2b53a"
+    },
+    {
+      "path": "s5-emulator/serial/verify_loader_timer.py",
+      "bytes": 2654,
+      "sha256": "7f1e8589a2baa25c1e3bcd30b75d99cdd4292d4cf6458f42046bc08fc1db387b"
+    },
+    {
+      "path": "s5-emulator/toolchain/README.md",
+      "bytes": 1327,
+      "sha256": "5821f671a12854186e379907c5386ee3494e3f2a9ffa9f65be09acc706d54154"
+    },
+    {
+      "path": "s5-emulator/toolchain/bin/pkg-config-utf8",
+      "bytes": 450,
+      "sha256": "51403ea9e7f1ec45a88be63aa229eb02326dfa10451dc9fe9da40670c47f9146"
+    },
+    {
+      "path": "s5-emulator/toolchain/build.sh",
+      "bytes": 1626,
+      "sha256": "06d7085a370ea3d95ec3f859533c9fb4046b30a3c1df0cbe88578ba101b907e6"
+    },
+    {
+      "path": "s5-emulator/toolchain/dependencies-osx-arm64.txt",
+      "bytes": 3336,
+      "sha256": "f40a71d1a8221a87984b1e85684f9c567fd314be3a479a9aa5a421443b99d5db"
+    },
+    {
+      "path": "s5-emulator/toolchain/requirements-build.txt",
+      "bytes": 30,
+      "sha256": "5501788df895cde41b47520daaafe65946d432709dc823557010d5db6246ebf6"
+    },
+    {
+      "path": "s5-emulator/toolchain/source-manifest.json",
+      "bytes": 578,
+      "sha256": "e44cdca0225026515cedefac4561f78ea8703d97f1a37f822a535402f082f89d"
+    },
+    {
+      "path": "s5-emulator/tools/smoke_test.py",
+      "bytes": 3250,
+      "sha256": "f352b62bd120491e951bab633578031d3b7b36847965b86d48efe1904c483138"
+    },
+    {
+      "path": "s5-emulator/userspace/README.md",
+      "bytes": 5635,
+      "sha256": "31422502627118c9226b431ad9f1d4672511d53283575ed43b55f73447fd5e1f"
+    },
+    {
+      "path": "s5-emulator/userspace/build_initramfs.py",
+      "bytes": 9209,
+      "sha256": "9916a234e0ecb8d8265b0bc21030db88b45ef2da62c3b5058c6971503702697b"
+    },
+    {
+      "path": "s5-emulator/userspace/init.S",
+      "bytes": 8107,
+      "sha256": "40bb6b631d29d12cbced80db5dc358cbd1310319523587001b820dc0a6c22303"
+    },
+    {
+      "path": "s5-emulator/启动S5模拟器.command",
+      "bytes": 2617,
+      "sha256": "8acab1de4cbf0d5fd7e232cd6fb0eb99cd74539facfad75ecfb155a05defb6a4"
+    }
+  ]
+}

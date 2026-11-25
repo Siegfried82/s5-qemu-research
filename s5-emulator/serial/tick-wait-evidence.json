@@ -1,0 +1,892 @@
+{
+  "scope": "Original firmware static analysis and saved QEMU state; no event injection or instruction patch",
+  "original_program": "/Users/lixiuqi/Documents/ChatGPT/\u76f8\u673a/s5-v29-offline/unpacked-v29/03_program.bin",
+  "program_sha256": "fc496d62a91f6e9b1b84807183bb805bc546c9105d2938546b58a66ad9d132fe",
+  "snapshot": "/Users/lixiuqi/Documents/ChatGPT/\u76f8\u673a/s5-emulator/menu-smp/results/adc-environment-boot/ram.bin",
+  "snapshot_base": "0x0",
+  "main_task": {
+    "tcb": "0x8dfe890",
+    "name": "uiTSK001",
+    "entry": "0x63c88af",
+    "run_count": 18,
+    "state": 3,
+    "wait_type": 2,
+    "timeout_ticks": 2,
+    "saved_sp": "0x99b5ea0",
+    "wait_object": "0x0",
+    "stack_words": {
+      "0x99b5ea0": "0x0",
+      "0x99b5ea4": "0x20000113",
+      "0x99b5ea8": "0x0",
+      "0x99b5eac": "0x0",
+      "0x99b5eb0": "0x0",
+      "0x99b5eb4": "0x0",
+      "0x99b5eb8": "0x0",
+      "0x99b5ebc": "0x0",
+      "0x99b5ec0": "0x0",
+      "0x99b5ec4": "0x0",
+      "0x99b5ec8": "0x0",
+      "0x99b5ecc": "0x0",
+      "0x99b5ed0": "0x0",
+      "0x99b5ed4": "0x0",
+      "0x99b5ed8": "0x0",
+      "0x99b5edc": "0x0",
+      "0x99b5ee0": "0x0",
+      "0x99b5ee4": "0x0",
+      "0x99b5ee8": "0x0",
+      "0x99b5eec": "0x0",
+      "0x99b5ef0": "0x0",
+      "0x99b5ef4": "0x0",
+      "0x99b5ef8": "0x0",
+      "0x99b5efc": "0x0",
+      "0x99b5f00": "0x0",
+      "0x99b5f04": "0x0",
+      "0x99b5f08": "0x0",
+      "0x99b5f0c": "0x0",
+      "0x99b5f10": "0x0",
+      "0x99b5f14": "0x0",
+      "0x99b5f18": "0x0",
+      "0x99b5f1c": "0x0",
+      "0x99b5f20": "0x0",
+      "0x99b5f24": "0x0",
+      "0x99b5f28": "0x0",
+      "0x99b5f2c": "0x0",
+      "0x99b5f30": "0x0",
+      "0x99b5f34": "0x0",
+      "0x99b5f38": "0x0",
+      "0x99b5f3c": "0x0",
+      "0x99b5f40": "0x0",
+      "0x99b5f44": "0x0",
+      "0x99b5f48": "0x0",
+      "0x99b5f4c": "0x0",
+      "0x99b5f50": "0x0",
+      "0x99b5f54": "0x0",
+      "0x99b5f58": "0x0",
+      "0x99b5f5c": "0x0",
+      "0x99b5f60": "0x0",
+      "0x99b5f64": "0x0",
+      "0x99b5f68": "0x10",
+      "0x99b5f6c": "0x8dfe890",
+      "0x99b5f70": "0x0",
+      "0x99b5f74": "0x20000113",
+      "0x99b5f78": "0x2",
+      "0x99b5f7c": "0x0",
+      "0x99b5f80": "0x1",
+      "0x99b5f84": "0x99b1620",
+      "0x99b5f88": "0x0",
+      "0x99b5f8c": "0x66c246b",
+      "0x99b5f90": "0x0",
+      "0x99b5f94": "0x8c9a198",
+      "0x99b5f98": "0x6f48eb8",
+      "0x99b5f9c": "0x6f48ebc",
+      "0x99b5fa0": "0x0",
+      "0x99b5fa4": "0x64a074d",
+      "0x99b5fa8": "0x0",
+      "0x99b5fac": "0x647c4b1",
+      "0x99b5fb0": "0x0",
+      "0x99b5fb4": "0x647e837",
+      "0x99b5fb8": "0x0",
+      "0x99b5fbc": "0x63c8b7b",
+      "0x99b5fc0": "0x0",
+      "0x99b5fc4": "0x0",
+      "0x99b5fc8": "0x0",
+      "0x99b5fcc": "0x0",
+      "0x99b5fd0": "0x0",
+      "0x99b5fd4": "0x0",
+      "0x99b5fd8": "0x0",
+      "0x99b5fdc": "0x0",
+      "0x99b5fe0": "0x0",
+      "0x99b5fe4": "0x8dfe890",
+      "0x99b5fe8": "0x0",
+      "0x99b5fec": "0x0",
+      "0x99b5ff0": "0x0",
+      "0x99b5ff4": "0x0",
+      "0x99b5ff8": "0x0",
+      "0x99b5ffc": "0x653a231",
+      "0x99b6000": "0x0",
+      "0x99b6004": "0x0",
+      "0x99b6008": "0x0",
+      "0x99b600c": "0x0",
+      "0x99b6010": "0x0",
+      "0x99b6014": "0xefefefef",
+      "0x99b6018": "0xefefefef",
+      "0x99b601c": "0xefefefef"
+    }
+  },
+  "verified_call_chain": [
+    {
+      "call": "0x063c8b76",
+      "target": "0x0647e822",
+      "saved_return": "0x063c8b7b"
+    },
+    {
+      "call": "0x0647e832",
+      "target": "0x0647c4a2",
+      "saved_return": "0x0647e837"
+    },
+    {
+      "call": "0x0647c4ac",
+      "target": "0x064a070e",
+      "saved_return": "0x0647c4b1"
+    },
+    {
+      "call": "0x064a0748",
+      "target": "0x066c23e8",
+      "r0": 1,
+      "saved_return": "0x064a074d"
+    },
+    {
+      "call": "0x066c2466",
+      "target": "0x06498810",
+      "saved_return": "0x066c246b"
+    }
+  ],
+  "delay": {
+    "entry": "0x066c23e8",
+    "argument": 1,
+    "behavior": "Sets TCB wait_type=2 and timeout=argument+1, then reschedules",
+    "caller_behavior": "0x064a070e writes GPIO 0x7f081c14 = 0x10000000 then 0x10000001, then requests one tick delay",
+    "not_rtc_second_poll": true
+  },
+  "tick_counters": {
+    "timer0_callback_modulo10": {
+      "address": "0x8aaa5f4",
+      "value": 1
+    },
+    "software_timer_ticks": {
+      "address": "0x8aaa7b4",
+      "value": 1
+    },
+    "os_ticks": {
+      "address": "0x8ab6394",
+      "value": 1
+    },
+    "clock64_low": {
+      "address": "0x8ab18f8",
+      "value": 1
+    },
+    "clock64_high": {
+      "address": "0x8ab18fc",
+      "value": 0
+    }
+  },
+  "timer0": {
+    "mmio": "0x7f020000",
+    "gic_id": 36,
+    "original_setup": "0x064851ee",
+    "load": 27000,
+    "qemu_clock_hz": 27000000,
+    "expected_period_seconds": 0.001,
+    "control_after_setup": "0xf2",
+    "original_driver_control_or": "0x06554c7c ORR r2,r2,#0x12; bit4 is reserved in standard SP804",
+    "original_irq_configuration": "loader3 table sets edge trigger and CPU0 target for ID36",
+    "handler_table": "0x09119760",
+    "handler": "0x64969f5",
+    "dispatch": "0x064969f4 sets channel0, tails to 0x06554da0",
+    "callback_table": "0x091126b4",
+    "callback": "0x6485179",
+    "callback_behavior": "0x06485178 updates callback/software-clock counters and invokes 0x068e805c OS tick",
+    "acknowledgement": "IRQ trampoline 0x068f9a10 performs GIC IAR/EOIR. No timer INTCLR in the direct callback chain or dispatch. Driver writes INTCLR only in timer start/stop paths examined."
+  },
+  "gic": {
+    "distributor_control": 1,
+    "security_extensions": false,
+    "cpus": [
+      {
+        "index": 0,
+        "control": 1,
+        "priority_mask": 240,
+        "running_priority": 256,
+        "current_pending": 1023,
+        "halted": true,
+        "interrupt_request": 0
+      },
+      {
+        "index": 1,
+        "control": 1,
+        "priority_mask": 240,
+        "running_priority": 256,
+        "current_pending": 1023,
+        "halted": true,
+        "interrupt_request": 0
+      },
+      {
+        "index": 2,
+        "control": 1,
+        "priority_mask": 240,
+        "running_priority": 256,
+        "current_pending": 1023,
+        "halted": true,
+        "interrupt_request": 0
+      },
+      {
+        "index": 3,
+        "control": 0,
+        "priority_mask": 0,
+        "running_priority": 256,
+        "current_pending": 1023,
+        "halted": false,
+        "interrupt_request": 0
+      }
+    ],
+    "enabled_or_asserted_irqs": [
+      {
+        "id": 0,
+        "enabled": 255,
+        "pending": 248,
+        "active": 0,
+        "level": 0,
+        "group": 0,
+        "targets": 0,
+        "priority_cpu0": 0
+      },
+      {
+        "id": 1,
+        "enabled": 255,
+        "pending": 0,
+        "active": 0,
+        "level": 0,
+        "group": 0,
+        "targets": 0,
+        "priority_cpu0": 0
+      },
+      {
+        "id": 2,
+        "enabled": 255,
+        "pending": 0,
+        "active": 0,
+        "level": 0,
+        "group": 0,
+        "targets": 0,
+        "priority_cpu0": 0
+      },
+      {
+        "id": 3,
+        "enabled": 255,
+        "pending": 0,
+        "active": 0,
+        "level": 0,
+        "group": 0,
+        "targets": 0,
+        "priority_cpu0": 0
+      },
+      {
+        "id": 4,
+        "enabled": 255,
+        "pending": 0,
+        "active": 0,
+        "level": 0,
+        "group": 0,
+        "targets": 0,
+        "priority_cpu0": 0
+      },
+      {
+        "id": 5,
+        "enabled": 255,
+        "pending": 0,
+        "active": 0,
+        "level": 0,
+        "group": 0,
+        "targets": 0,
+        "priority_cpu0": 0
+      },
+      {
+        "id": 6,
+        "enabled": 255,
+        "pending": 0,
+        "active": 0,
+        "level": 0,
+        "group": 0,
+        "targets": 0,
+        "priority_cpu0": 0
+      },
+      {
+        "id": 7,
+        "enabled": 255,
+        "pending": 0,
+        "active": 0,
+        "level": 0,
+        "group": 0,
+        "targets": 0,
+        "priority_cpu0": 0
+      },
+      {
+        "id": 8,
+        "enabled": 255,
+        "pending": 0,
+        "active": 0,
+        "level": 0,
+        "group": 0,
+        "targets": 0,
+        "priority_cpu0": 0
+      },
+      {
+        "id": 9,
+        "enabled": 255,
+        "pending": 0,
+        "active": 0,
+        "level": 0,
+        "group": 0,
+        "targets": 0,
+        "priority_cpu0": 0
+      },
+      {
+        "id": 10,
+        "enabled": 255,
+        "pending": 0,
+        "active": 0,
+        "level": 0,
+        "group": 0,
+        "targets": 0,
+        "priority_cpu0": 0
+      },
+      {
+        "id": 11,
+        "enabled": 255,
+        "pending": 0,
+        "active": 0,
+        "level": 0,
+        "group": 0,
+        "targets": 0,
+        "priority_cpu0": 0
+      },
+      {
+        "id": 12,
+        "enabled": 255,
+        "pending": 0,
+        "active": 0,
+        "level": 0,
+        "group": 0,
+        "targets": 0,
+        "priority_cpu0": 0
+      },
+      {
+        "id": 13,
+        "enabled": 255,
+        "pending": 0,
+        "active": 0,
+        "level": 0,
+        "group": 0,
+        "targets": 0,
+        "priority_cpu0": 0
+      },
+      {
+        "id": 14,
+        "enabled": 255,
+        "pending": 0,
+        "active": 0,
+        "level": 0,
+        "group": 0,
+        "targets": 0,
+        "priority_cpu0": 0
+      },
+      {
+        "id": 15,
+        "enabled": 255,
+        "pending": 0,
+        "active": 0,
+        "level": 0,
+        "group": 0,
+        "targets": 0,
+        "priority_cpu0": 0
+      },
+      {
+        "id": 36,
+        "enabled": 255,
+        "pending": 0,
+        "active": 0,
+        "level": 255,
+        "group": 0,
+        "targets": 1,
+        "priority_cpu0": 0
+      },
+      {
+        "id": 38,
+        "enabled": 255,
+        "pending": 0,
+        "active": 0,
+        "level": 255,
+        "group": 0,
+        "targets": 1,
+        "priority_cpu0": 0
+      },
+      {
+        "id": 42,
+        "enabled": 255,
+        "pending": 0,
+        "active": 0,
+        "level": 255,
+        "group": 0,
+        "targets": 1,
+        "priority_cpu0": 0
+      },
+      {
+        "id": 87,
+        "enabled": 255,
+        "pending": 0,
+        "active": 0,
+        "level": 0,
+        "group": 0,
+        "targets": 1,
+        "priority_cpu0": 0
+      },
+      {
+        "id": 89,
+        "enabled": 255,
+        "pending": 0,
+        "active": 0,
+        "level": 0,
+        "group": 0,
+        "targets": 1,
+        "priority_cpu0": 0
+      },
+      {
+        "id": 160,
+        "enabled": 255,
+        "pending": 0,
+        "active": 0,
+        "level": 0,
+        "group": 0,
+        "targets": 1,
+        "priority_cpu0": 0
+      },
+      {
+        "id": 161,
+        "enabled": 255,
+        "pending": 0,
+        "active": 0,
+        "level": 0,
+        "group": 0,
+        "targets": 1,
+        "priority_cpu0": 0
+      },
+      {
+        "id": 162,
+        "enabled": 255,
+        "pending": 0,
+        "active": 0,
+        "level": 0,
+        "group": 0,
+        "targets": 1,
+        "priority_cpu0": 0
+      },
+      {
+        "id": 166,
+        "enabled": 255,
+        "pending": 0,
+        "active": 0,
+        "level": 0,
+        "group": 0,
+        "targets": 1,
+        "priority_cpu0": 0
+      },
+      {
+        "id": 167,
+        "enabled": 255,
+        "pending": 0,
+        "active": 0,
+        "level": 0,
+        "group": 0,
+        "targets": 1,
+        "priority_cpu0": 0
+      },
+      {
+        "id": 182,
+        "enabled": 255,
+        "pending": 0,
+        "active": 0,
+        "level": 0,
+        "group": 0,
+        "targets": 2,
+        "priority_cpu0": 0
+      },
+      {
+        "id": 192,
+        "enabled": 255,
+        "pending": 0,
+        "active": 0,
+        "level": 0,
+        "group": 0,
+        "targets": 1,
+        "priority_cpu0": 0
+      },
+      {
+        "id": 193,
+        "enabled": 255,
+        "pending": 0,
+        "active": 0,
+        "level": 0,
+        "group": 0,
+        "targets": 1,
+        "priority_cpu0": 0
+      },
+      {
+        "id": 196,
+        "enabled": 255,
+        "pending": 0,
+        "active": 0,
+        "level": 0,
+        "group": 0,
+        "targets": 1,
+        "priority_cpu0": 0
+      },
+      {
+        "id": 208,
+        "enabled": 255,
+        "pending": 0,
+        "active": 0,
+        "level": 0,
+        "group": 0,
+        "targets": 1,
+        "priority_cpu0": 0
+      },
+      {
+        "id": 209,
+        "enabled": 255,
+        "pending": 0,
+        "active": 0,
+        "level": 0,
+        "group": 0,
+        "targets": 1,
+        "priority_cpu0": 0
+      },
+      {
+        "id": 211,
+        "enabled": 255,
+        "pending": 0,
+        "active": 0,
+        "level": 0,
+        "group": 0,
+        "targets": 1,
+        "priority_cpu0": 0
+      },
+      {
+        "id": 213,
+        "enabled": 255,
+        "pending": 0,
+        "active": 0,
+        "level": 0,
+        "group": 0,
+        "targets": 1,
+        "priority_cpu0": 0
+      },
+      {
+        "id": 224,
+        "enabled": 255,
+        "pending": 0,
+        "active": 0,
+        "level": 0,
+        "group": 0,
+        "targets": 1,
+        "priority_cpu0": 0
+      },
+      {
+        "id": 226,
+        "enabled": 255,
+        "pending": 0,
+        "active": 0,
+        "level": 0,
+        "group": 0,
+        "targets": 1,
+        "priority_cpu0": 0
+      },
+      {
+        "id": 228,
+        "enabled": 255,
+        "pending": 0,
+        "active": 0,
+        "level": 0,
+        "group": 0,
+        "targets": 1,
+        "priority_cpu0": 0
+      },
+      {
+        "id": 230,
+        "enabled": 255,
+        "pending": 0,
+        "active": 0,
+        "level": 0,
+        "group": 0,
+        "targets": 1,
+        "priority_cpu0": 0
+      },
+      {
+        "id": 231,
+        "enabled": 255,
+        "pending": 0,
+        "active": 0,
+        "level": 0,
+        "group": 0,
+        "targets": 1,
+        "priority_cpu0": 0
+      },
+      {
+        "id": 232,
+        "enabled": 255,
+        "pending": 0,
+        "active": 0,
+        "level": 0,
+        "group": 0,
+        "targets": 1,
+        "priority_cpu0": 0
+      },
+      {
+        "id": 233,
+        "enabled": 255,
+        "pending": 0,
+        "active": 0,
+        "level": 0,
+        "group": 0,
+        "targets": 1,
+        "priority_cpu0": 0
+      },
+      {
+        "id": 236,
+        "enabled": 255,
+        "pending": 0,
+        "active": 0,
+        "level": 0,
+        "group": 0,
+        "targets": 1,
+        "priority_cpu0": 0
+      },
+      {
+        "id": 237,
+        "enabled": 255,
+        "pending": 0,
+        "active": 0,
+        "level": 0,
+        "group": 0,
+        "targets": 1,
+        "priority_cpu0": 0
+      },
+      {
+        "id": 238,
+        "enabled": 255,
+        "pending": 0,
+        "active": 0,
+        "level": 0,
+        "group": 0,
+        "targets": 1,
+        "priority_cpu0": 0
+      },
+      {
+        "id": 239,
+        "enabled": 255,
+        "pending": 0,
+        "active": 0,
+        "level": 0,
+        "group": 0,
+        "targets": 1,
+        "priority_cpu0": 0
+      },
+      {
+        "id": 240,
+        "enabled": 255,
+        "pending": 0,
+        "active": 0,
+        "level": 0,
+        "group": 0,
+        "targets": 1,
+        "priority_cpu0": 0
+      },
+      {
+        "id": 241,
+        "enabled": 255,
+        "pending": 0,
+        "active": 0,
+        "level": 0,
+        "group": 0,
+        "targets": 1,
+        "priority_cpu0": 0
+      },
+      {
+        "id": 242,
+        "enabled": 255,
+        "pending": 0,
+        "active": 0,
+        "level": 0,
+        "group": 0,
+        "targets": 1,
+        "priority_cpu0": 0
+      },
+      {
+        "id": 243,
+        "enabled": 255,
+        "pending": 0,
+        "active": 0,
+        "level": 0,
+        "group": 0,
+        "targets": 1,
+        "priority_cpu0": 0
+      },
+      {
+        "id": 244,
+        "enabled": 255,
+        "pending": 0,
+        "active": 0,
+        "level": 0,
+        "group": 0,
+        "targets": 1,
+        "priority_cpu0": 0
+      },
+      {
+        "id": 246,
+        "enabled": 255,
+        "pending": 0,
+        "active": 0,
+        "level": 0,
+        "group": 0,
+        "targets": 1,
+        "priority_cpu0": 0
+      },
+      {
+        "id": 247,
+        "enabled": 255,
+        "pending": 0,
+        "active": 0,
+        "level": 0,
+        "group": 0,
+        "targets": 1,
+        "priority_cpu0": 0
+      },
+      {
+        "id": 248,
+        "enabled": 255,
+        "pending": 0,
+        "active": 0,
+        "level": 0,
+        "group": 0,
+        "targets": 1,
+        "priority_cpu0": 0
+      },
+      {
+        "id": 249,
+        "enabled": 255,
+        "pending": 0,
+        "active": 0,
+        "level": 0,
+        "group": 0,
+        "targets": 1,
+        "priority_cpu0": 0
+      },
+      {
+        "id": 252,
+        "enabled": 255,
+        "pending": 0,
+        "active": 0,
+        "level": 0,
+        "group": 0,
+        "targets": 1,
+        "priority_cpu0": 0
+      },
+      {
+        "id": 253,
+        "enabled": 255,
+        "pending": 0,
+        "active": 0,
+        "level": 0,
+        "group": 0,
+        "targets": 1,
+        "priority_cpu0": 0
+      },
+      {
+        "id": 254,
+        "enabled": 255,
+        "pending": 0,
+        "active": 0,
+        "level": 0,
+        "group": 0,
+        "targets": 1,
+        "priority_cpu0": 0
+      },
+      {
+        "id": 255,
+        "enabled": 255,
+        "pending": 0,
+        "active": 0,
+        "level": 0,
+        "group": 0,
+        "targets": 1,
+        "priority_cpu0": 0
+      },
+      {
+        "id": 294,
+        "enabled": 255,
+        "pending": 0,
+        "active": 0,
+        "level": 0,
+        "group": 0,
+        "targets": 1,
+        "priority_cpu0": 0
+      },
+      {
+        "id": 298,
+        "enabled": 255,
+        "pending": 0,
+        "active": 0,
+        "level": 0,
+        "group": 0,
+        "targets": 1,
+        "priority_cpu0": 0
+      },
+      {
+        "id": 299,
+        "enabled": 255,
+        "pending": 0,
+        "active": 0,
+        "level": 0,
+        "group": 0,
+        "targets": 1,
+        "priority_cpu0": 0
+      },
+      {
+        "id": 320,
+        "enabled": 255,
+        "pending": 0,
+        "active": 0,
+        "level": 0,
+        "group": 0,
+        "targets": 1,
+        "priority_cpu0": 0
+      },
+      {
+        "id": 323,
+        "enabled": 255,
+        "pending": 0,
+        "active": 0,
+        "level": 0,
+        "group": 0,
+        "targets": 1,
+        "priority_cpu0": 0
+      },
+      {
+        "id": 326,
+        "enabled": 255,
+        "pending": 0,
+        "active": 0,
+        "level": 0,
+        "group": 0,
+        "targets": 1,
+        "priority_cpu0": 0
+      },
+      {
+        "id": 329,
+        "enabled": 255,
+        "pending": 0,
+        "active": 0,
+        "level": 0,
+        "group": 0,
+        "targets": 1,
+        "priority_cpu0": 0
+      }
+    ]
+  },
+  "inference": {
+    "confidence": "Strong evidence for missing repeated timer edges; physical bit4 semantics not independently verified",
+    "basis": "Four tick counters each equal1, timer0 ID36 level asserted but pending0 and active0, CPUs idle, task retains2 tick timeout",
+    "candidate": "SoC timer pulse/automatic-clear extension, possibly associated with Control bit4, which original driver always enables",
+    "required_test": "Explicit inferred timer profile, preserve original GIC edge configuration, verify original callback repeats and original delay returns"
+  },
+  "menu_rendered": false
+}

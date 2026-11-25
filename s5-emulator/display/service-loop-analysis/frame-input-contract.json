@@ -1,0 +1,171 @@
+{
+  "scope": "Read-only original opcode and existing local-ui-loop-postinit RAM analysis; no message/ACK injection, no new QEMU run",
+  "sender": {
+    "function": "0x065206b8",
+    "arguments": {
+      "r0": "message code",
+      "r1": "borrowed payload pointer",
+      "r2": "not consumed as an input; overwritten before use"
+    },
+    "envelope_words": [
+      "0",
+      "0x2001",
+      "code",
+      "payload",
+      "0"
+    ],
+    "static_ring": "0x08c4ffe0",
+    "slots": 32,
+    "slot_bytes": 20,
+    "index_u16": "0x08aa0236",
+    "index_update": "under original IRQ lock, index=(index+1)&31",
+    "queue_id_pointer": "0x06f49a2c",
+    "queue_id": "0x77",
+    "transport": "65477bc determines ISR/non-ISR path;65968d4 or657b7f4; failure invokes original6666240(1008)",
+    "ownership": "Envelopes and payload are original static storage. Sender does not allocate or deep-copy payload; host must not free or replace them."
+  },
+  "frame_messages": {
+    "0": "671edee",
+    "1": "671e0e8",
+    "2": "671e35e",
+    "3": "671eef2",
+    "all_payloads": "0x08c51d9c"
+  },
+  "consumer": {
+    "task_id": 67,
+    "entry": "0x06705544",
+    "tcb": "0x08e03c18",
+    "copy_path": "6705762 ->675eff8 ->66c2598",
+    "copy_size": "0x220",
+    "destination": "0x0a603fb8",
+    "source": "message[3]",
+    "processing_path": "6705262 ->6786afe/6786c30/6786cb0 ->66d19c2 ->66d179c ->66d16fe",
+    "ownership": "Task receives the 20-byte envelope and then copies payload into its static working state. This does not prove nested pointers are owned or that image memory exists."
+  },
+  "context_descriptor": {
+    "payload_offset": "0xbc",
+    "size": "0x30",
+    "old_context_offset": "0xec",
+    "producer": "0x0671d594",
+    "bank_register": "0x7c00011c bit0",
+    "stack_input_to_649ef88": {
+      "0x0": "u32 phase: caller r0!=0 ->0; caller r0==0 ->1",
+      "0x4": "u16 bank from7c00011c&1",
+      "0x6": "u8 payload[0x13c]",
+      "0x7": "u8 caller r1"
+    },
+    "current_storage": "0x08c51fbc",
+    "previous_storage": "0x08c51fec",
+    "construction": "649ef88 ->649eed6 ->649ed32, using original mode-state at08c4ffcc and original ROM tables",
+    "fields_with_direct_consumers": {
+      "0x20": "ROM mode/index lookup via649f860/649f86c/649f878",
+      "0x2c": "capability flags pointer;649f6c2 reads byte+19"
+    },
+    "not_proven": "No pixel plane address/stride/pixel packing ABI was established in this context descriptor. Do not put host RGB buffers into these fields."
+  },
+  "minimum_next_experiment": "Model only original configured frame/bank timing IRQ and let original ISR/producer construct payload and send. Observe65206b8 and675eff8 before asserting a usable frame. Do not synthesize q77 messages or mode35 ACKs.",
+  "limitations": [
+    "Original DSP initialization remains unfinished.",
+    "A timed frame event does not prove sensor pixels, ISP output, capture or a menu image.",
+    "Direct671edfa(1) is a potential separately labelled original producer-function experiment, but its wider hardware and mode preconditions have not been fully validated."
+  ],
+  "snapshot": {
+    "directory": "/Users/lixiuqi/Documents/ChatGPT/相机/s5-emulator/menu-smp/results/local-ui-loop-postinit",
+    "result_sha256": "bdaaced0eabbbf1593e01b13e47d256e5187c4bf325373a73cce7237c1de32f1",
+    "0x8c51d9c": {
+      "bytes": 544,
+      "sha256": "4f5849931607840d2f2ae05b419511342256c8ac6034ce2b6497bdc922bc42f8",
+      "nonzero_bytes": 1,
+      "nonzero_words": {
+        "0xb4": "0x1000000"
+      }
+    },
+    "0xa603fb8": {
+      "bytes": 544,
+      "sha256": "44ddd2f478477ebd1c1cd5b99400af48cd46033c59173195f48870e608cec810",
+      "nonzero_bytes": 0,
+      "nonzero_words": {}
+    },
+    "0x8c51fbc": {
+      "bytes": 96,
+      "sha256": "2ea9ab9198d1638007400cd2c3bef1cc745b864b76011a0e1bc52180ac6452d4",
+      "nonzero_bytes": 0,
+      "nonzero_words": {}
+    },
+    "0x8c4ffcc": {
+      "bytes": 20,
+      "sha256": "de47c9b27eb8d300dbb5f2c353e632c393262cf06340c4fa7f1b40c4cbd36f90",
+      "nonzero_bytes": 0,
+      "nonzero_words": {}
+    },
+    "0x8c52050": {
+      "bytes": 608,
+      "sha256": "4beb641f77c3df2749a5dffc0a23f4270dc4b94e1e940287fc3ebfa05b720662",
+      "nonzero_bytes": 0,
+      "nonzero_words": {}
+    },
+    "0x8c522b0": {
+      "bytes": 608,
+      "sha256": "1987cac93cf9921ef006b16ccead1ad8bc9b54f30675a56d61992c9dd06d4120",
+      "nonzero_bytes": 104,
+      "nonzero_words": {
+        "0x0": "0x6ea",
+        "0xc": "0xffffffff",
+        "0x14": "0x8000000",
+        "0x38": "0x1",
+        "0x40": "0x2000200",
+        "0x44": "0x8000400",
+        "0x48": "0x1000000",
+        "0x4c": "0x200",
+        "0x144": "0xc1124",
+        "0x148": "0x2000200",
+        "0x150": "0x7070a0b",
+        "0x154": "0x9060607",
+        "0x158": "0xa0a0909",
+        "0x15c": "0xb0b0b0a",
+        "0x160": "0xb0b0b0b",
+        "0x164": "0xc0c0c0c",
+        "0x168": "0xc0c0c0c",
+        "0x16c": "0xd0d0d0d",
+        "0x170": "0xe0e0d0d",
+        "0x18c": "0x800000",
+        "0x190": "0x57004c",
+        "0x194": "0xe500d0",
+        "0x198": "0x16500e5",
+        "0x19c": "0xe6011b",
+        "0x1a0": "0xa100be",
+        "0x1a4": "0x78008b",
+        "0x1a8": "0xb300d0",
+        "0x1ac": "0x88009a",
+        "0x1b0": "0x670077",
+        "0x1b4": "0x4b0059",
+        "0x1b8": "0x6b0081",
+        "0x1bc": "0x450057",
+        "0x1c0": "0x2a0036",
+        "0x1c4": "0x3a0047",
+        "0x1e4": "0x6eda3fc",
+        "0x20c": "0x2000000",
+        "0x210": "0x40200",
+        "0x214": "0x64",
+        "0x218": "0x64",
+        "0x21c": "0x240030",
+        "0x224": "0x1000100",
+        "0x234": "0x40100",
+        "0x240": "0x4",
+        "0x248": "0x4",
+        "0x25c": "0x2"
+      }
+    },
+    "0x8aa02e4": {
+      "bytes": 48,
+      "sha256": "2089ba5de64ad8cb46af45d30fd3e028e09f21714174320fceee12924da791fb",
+      "nonzero_bytes": 4,
+      "nonzero_words": {
+        "0x0": "0x1",
+        "0x4": "0x1",
+        "0x10": "0x1",
+        "0x1c": "0x1"
+      }
+    }
+  }
+}

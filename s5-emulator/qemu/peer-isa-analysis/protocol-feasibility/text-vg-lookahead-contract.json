@@ -1,0 +1,296 @@
+{
+  "scope": "Read-only ahead-of-stop original API identification; no new binding, emulation or success injection",
+  "program_sha256": "fc496d62a91f6e9b1b84807183bb805bc546c9105d2938546b58a66ad9d132fe",
+  "postboot1_sha256": "e14b32e80c50d52e39edd6f7b725aba34b9f0a4ee12ad38987593f5cc8a8ec5f",
+  "binding_source": "/Users/lixiuqi/Documents/ChatGPT/\u76f8\u673a/s5-emulator/display/graphics_hle.py",
+  "binding_source_sha256": "26a4cf2127eedfd315f591fd763b2a291d937c4a1457572c1fe40bfd6b5967de",
+  "binding_comparison_note": "Live development snapshot only; another agent may add bindings later.",
+  "api_identification": "Names inferred from matching wrapper ABI, checked enums/capabilities and actual application uses; not original exported symbol strings.",
+  "primary_references": [
+    "https://www.khronos.org/files/openvg-quick-reference-card.pdf",
+    "https://registry.khronos.org/OpenVG/specs/openvg_1_0_1.pdf"
+  ],
+  "references_note": "Official API signatures/capability names corroborate local instruction evidence. Mask APIs use OpenVG1.1 reference card page2; path bounds/length/interpolation page3.",
+  "APIs": [
+    {
+      "name": "vgRemovePathCapabilities",
+      "entry": "0x65d9bc6",
+      "entry_thumb": "0x65d9bc7",
+      "argument_words": [
+        "path",
+        "capabilities"
+      ],
+      "argc_words": 2,
+      "return_abi": "void",
+      "abi_note": "r0..r3 hold first four words; remaining words are at entrySP+0,+4,...; scalar floating-point values use integer-register words in these original wrappers",
+      "lower_entry": "0x64e166c",
+      "evidence": "Clears supplied bits from validated path object+20 with BIC; does not clear geometry.",
+      "priority": "text",
+      "direct_postboot1_call_sites": [
+        "0x72a6db8",
+        "0x72a7228",
+        "0x72a7398",
+        "0x72a8cf8"
+      ],
+      "present_in_core_at_audit": true,
+      "entry_bytes_16": "70b50c46054600f072ff002805d02246"
+    },
+    {
+      "name": "vgGetParameterfv",
+      "entry": "0x65d9962",
+      "entry_thumb": "0x65d9963",
+      "argument_words": [
+        "object",
+        "paramType",
+        "count",
+        "float_values_ptr"
+      ],
+      "argc_words": 4,
+      "return_abi": "void",
+      "abi_note": "r0..r3 hold first four words; remaining words are at entrySP+0,+4,...; scalar floating-point values use integer-register words in these original wrappers",
+      "lower_entry": null,
+      "evidence": "Text72a6dde queries paint color1a01/count4 into stack and reads floats. Wrapper dispatches by object type with float-output flag1.",
+      "priority": "text",
+      "direct_postboot1_call_sites": [
+        "0x72a6de8"
+      ],
+      "present_in_core_at_audit": true,
+      "entry_bytes_16": "2de9fe4f9a4614468946074601f0a1f8"
+    },
+    {
+      "name": "vgAppendPath",
+      "entry": "0x65d9c00",
+      "entry_thumb": "0x65d9c01",
+      "argument_words": [
+        "dstPath",
+        "srcPath"
+      ],
+      "argc_words": 2,
+      "return_abi": "void",
+      "abi_note": "r0..r3 hold first four words; remaining words are at entrySP+0,+4,...; scalar floating-point values use integer-register words in these original wrappers",
+      "lower_entry": "0x64e17d0",
+      "evidence": "Checks source capability bit0/destination bit1, copies source segments and converts/appends coordinates to destination.",
+      "priority": "text_helper",
+      "direct_postboot1_call_sites": [
+        "0x72a3350"
+      ],
+      "present_in_core_at_audit": false,
+      "entry_bytes_16": "70b50c46054600f055ff002805d02246"
+    },
+    {
+      "name": "vgPathTransformedBounds",
+      "entry": "0x65d9d28",
+      "entry_thumb": "0x65d9d29",
+      "argument_words": [
+        "path",
+        "minX_float_ptr",
+        "minY_float_ptr",
+        "width_float_ptr",
+        "height_float_ptr"
+      ],
+      "argc_words": 5,
+      "return_abi": "void",
+      "abi_note": "r0..r3 hold first four words; remaining words are at entrySP+0,+4,...; scalar floating-point values use integer-register words in these original wrappers",
+      "lower_entry": "0x64e2f9a",
+      "evidence": "Checks capability bit11, transforms four bounding-box corners with context path matrix, computes min/max and stores four floats.",
+      "priority": "text_optional_mask",
+      "direct_postboot1_call_sites": [
+        "0x72a3444"
+      ],
+      "present_in_core_at_audit": false,
+      "entry_bytes_16": "2de9fc411c4616460f468046089d00f0"
+    },
+    {
+      "name": "vgMask",
+      "entry": "0x65da454",
+      "entry_thumb": "0x65da455",
+      "argument_words": [
+        "mask",
+        "operation",
+        "x",
+        "y",
+        "width",
+        "height"
+      ],
+      "argc_words": 6,
+      "return_abi": "void",
+      "abi_note": "r0..r3 hold first four words; remaining words are at entrySP+0,+4,...; scalar floating-point values use integer-register words in these original wrappers",
+      "lower_entry": "0x65eb1e6",
+      "evidence": "Validates operation1500..1505 and positive width/height. Text calls mask0,operation1501 and rectangle while1130 MASKING is enabled.",
+      "priority": "text_optional_mask",
+      "direct_postboot1_call_sites": [
+        "0x72a74e2",
+        "0x72a75e4"
+      ],
+      "present_in_core_at_audit": false,
+      "entry_bytes_16": "2de9ff5f1e4691468a468346dde90e87"
+    },
+    {
+      "name": "vgRenderToMask",
+      "entry": "0x65da4b8",
+      "entry_thumb": "0x65da4b9",
+      "argument_words": [
+        "path",
+        "paintModes",
+        "operation"
+      ],
+      "argc_words": 3,
+      "return_abi": "void",
+      "abi_note": "r0..r3 hold first four words; remaining words are at entrySP+0,+4,...; scalar floating-point values use integer-register words in these original wrappers",
+      "lower_entry": "0x64e3434",
+      "evidence": "Shares path draw core but passes mask-operation and distinct render-to-mask selector1; text uses paintModes2,operation1505.",
+      "priority": "text_optional_mask",
+      "direct_postboot1_call_sites": [
+        "0x72a7522",
+        "0x72a75f0"
+      ],
+      "present_in_core_at_audit": false,
+      "entry_bytes_16": "2de9fc4115460f46804600f0f7fa0600"
+    },
+    {
+      "name": "vgPathBounds",
+      "entry": "0x65d9d02",
+      "entry_thumb": "0x65d9d03",
+      "argument_words": [
+        "path",
+        "minX_float_ptr",
+        "minY_float_ptr",
+        "width_float_ptr",
+        "height_float_ptr"
+      ],
+      "argc_words": 5,
+      "return_abi": "void",
+      "abi_note": "r0..r3 hold first four words; remaining words are at entrySP+0,+4,...; scalar floating-point values use integer-register words in these original wrappers",
+      "lower_entry": "0x64e2ec2",
+      "evidence": "Checks capability bit10; stores original minX/minY and max-min without applying matrix; empty path yields zero origins and negative widths.",
+      "priority": "other_postboot1",
+      "direct_postboot1_call_sites": [
+        "0x73af956",
+        "0x73af9b4"
+      ],
+      "present_in_core_at_audit": false,
+      "entry_bytes_16": "2de9fc411c4616460f468046089d00f0"
+    },
+    {
+      "name": "vgModifyPathCoords",
+      "entry": "0x65d9c44",
+      "entry_thumb": "0x65d9c45",
+      "argument_words": [
+        "path",
+        "startIndex",
+        "numSegments",
+        "pathData_ptr"
+      ],
+      "argc_words": 4,
+      "return_abi": "void",
+      "abi_note": "r0..r3 hold first four words; remaining words are at entrySP+0,+4,...; scalar floating-point values use integer-register words in these original wrappers",
+      "lower_entry": "0x64e19d0",
+      "evidence": "Checks capability bit2, segment-index/count and data alignment; replaces coordinates for existing segment range.",
+      "priority": "other_postboot1",
+      "direct_postboot1_call_sites": [
+        "0x7292176",
+        "0x7292500",
+        "0x7298cda",
+        "0x73af99a",
+        "0x73afa10"
+      ],
+      "present_in_core_at_audit": false,
+      "entry_bytes_16": "f8b51c4615460e46074600f031ff0028"
+    },
+    {
+      "name": "vgGetPathCapabilities",
+      "entry": "0x65d9be2",
+      "entry_thumb": "0x65d9be3",
+      "argument_words": [
+        "path"
+      ],
+      "argc_words": 1,
+      "return_abi": "r0 bitfield",
+      "abi_note": "r0..r3 hold first four words; remaining words are at entrySP+0,+4,...; scalar floating-point values use integer-register words in these original wrappers",
+      "lower_entry": "0x64e164a",
+      "evidence": "Returns validated path object+20; invalid path reports1000 and returns0.",
+      "priority": "no_direct_postboot1_call",
+      "direct_postboot1_call_sites": [],
+      "present_in_core_at_audit": false,
+      "entry_bytes_16": "10b5044600f065ff02004ff0000005d0"
+    },
+    {
+      "name": "vgPathLength",
+      "entry": "0x65d9ca4",
+      "entry_thumb": "0x65d9ca5",
+      "argument_words": [
+        "path",
+        "startSegment",
+        "numSegments"
+      ],
+      "argc_words": 3,
+      "return_abi": "r0 IEEE754 float bits",
+      "abi_note": "r0..r3 hold first four words; remaining words are at entrySP+0,+4,...; scalar floating-point values use integer-register words in these original wrappers",
+      "lower_entry": "0x64e2aec",
+      "evidence": "Checks capability bit7 and segment bounds, subtracts cumulative arc-length values; error return is float -1. Wrapper explicitly VMOVs result to r0.",
+      "priority": "no_direct_postboot1_call",
+      "direct_postboot1_call_sites": [],
+      "present_in_core_at_audit": false,
+      "entry_bytes_16": "70b514460d46064600f002ff9fedfe0a"
+    },
+    {
+      "name": "vgInterpolatePath",
+      "entry": "0x65d9c80",
+      "entry_thumb": "0x65d9c81",
+      "argument_words": [
+        "dstPath",
+        "startPath",
+        "endPath",
+        "amount_IEEE754_word"
+      ],
+      "argc_words": 4,
+      "return_abi": "r0 VGboolean",
+      "abi_note": "r0..r3 hold first four words; remaining words are at entrySP+0,+4,...; scalar floating-point values use integer-register words in these original wrappers",
+      "lower_entry": "0x64e1eee",
+      "evidence": "Validates three path handles and capabilities destination bit6/source bit5; fourth public word is read as float amount by lower routine.",
+      "priority": "no_direct_postboot1_call",
+      "direct_postboot1_call_sites": [],
+      "present_in_core_at_audit": false,
+      "entry_bytes_16": "f8b515460e4607461c4600f013ff0021"
+    }
+  ],
+  "conclusion": "Prioritize actual text remove-capabilities and paint-float query; optional outline uses transformed bounds and masking. No direct postboot1 BL to path length or interpolation was found; do not spend runtime implementation effort on those solely because they are neighboring wrappers.",
+  "unresolved_actual_targets": {
+    "0x65da992": [
+      "0x72903ca",
+      "0x7290846",
+      "0x72a3538",
+      "0x72ead8c",
+      "0x72ebf16",
+      "0x72ec6c6"
+    ],
+    "0x65da76e": [
+      "0x729042e",
+      "0x7290b4e",
+      "0x72985a2",
+      "0x72a35bc",
+      "0x72ec21a",
+      "0x72ec3ec"
+    ],
+    "0x65daa38": [
+      "0x7298232",
+      "0x7298324",
+      "0x7298e8a",
+      "0x7298f60",
+      "0x72a3580",
+      "0x72ec2c0",
+      "0x72ec484",
+      "0x73adfd8"
+    ],
+    "0x65da884": [
+      "0x72a34fe"
+    ],
+    "0x65da186": [
+      "0x72a35fa"
+    ],
+    "0x65da618": [
+      "0x72a52c6"
+    ]
+  },
+  "caution": "Static paths are conditional, not a prediction that the next live frame will take them. Unknown APIs remain unsupported until their behavior is implemented and tested."
+}

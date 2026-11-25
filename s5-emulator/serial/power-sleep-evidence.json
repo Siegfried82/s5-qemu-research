@@ -1,0 +1,77 @@
+{
+  "original_firmware": "/Users/lixiuqi/Documents/ChatGPT/\u76f8\u673a/s5-v29-offline/unpacked-v29/03_program.bin",
+  "sha256": "fc496d62a91f6e9b1b84807183bb805bc546c9105d2938546b58a66ad9d132fe",
+  "checkpoint": "/Users/lixiuqi/Documents/ChatGPT/\u76f8\u673a/s5-emulator/menu-smp/results/pre-sleep-checkpoint/result.json",
+  "registers": {
+    "r0": "0x25e",
+    "r1": "0x0",
+    "r2": "0x60840",
+    "r3": "0x1008",
+    "r4": "0x1",
+    "r5": "0x62b5c18",
+    "r6": "0x6319000",
+    "r7": "0x200",
+    "r8": "0x0",
+    "r9": "0x296",
+    "r10": "0x26d",
+    "r11": "0x8a9db28",
+    "r12": "0x60000000",
+    "r13": "0x99b5f90",
+    "r14": "0x66807dd",
+    "r15": "0x653efe2",
+    "cpsr": "0x20000133"
+  },
+  "checkpoint_pc_expected": "0x0653efe2",
+  "sample_stack_address": "0x99b5f90",
+  "sample": 0,
+  "source_reads": [
+    {
+      "api_channel": 8,
+      "mmio": "0x7f030034",
+      "role": "First sample, possibly offset-corrected"
+    },
+    {
+      "api_channel": 11,
+      "mmio": "0x7f030040",
+      "role": "Second sample; main selects maximum"
+    }
+  ],
+  "adc_table_ram": "0x08aa7dec",
+  "threshold_table_pointer": "0x6319440",
+  "thresholds": {
+    "r9_offset_0x12": 662,
+    "r10_offset_0x0e": 621,
+    "final_offset_0x1c": 606
+  },
+  "state_flags": {
+    "0x062b5c18": 0,
+    "0x062b5c1a": 0,
+    "0x08ab1209": 1
+  },
+  "actual_path": [
+    "main 0x063c8a7a calls 0x0653ee1c regardless of UART return value",
+    "0x0653efb8 compares sample0 against0x26d; below",
+    "0x0653efc0 calls0x0653edb4, which sets backup register0x0424 bit3",
+    "0x0653efcc compares threshold0x25e againstsample0; thresholdgreater",
+    "0x0653efe2 about to call0x0644f9be DRAM sleep path"
+  ],
+  "explicit_environment_proposal": {
+    "adc11_raw": 768,
+    "scope": "Input sample only; no firmware branch, task event, threshold, or successful UART reply patch.",
+    "expected_original_branch": "0x0653efbe BHS0x0653ef84 avoids this low-sample sleep path",
+    "physical_voltage_conversion": "Unknown; raw768 is an explicit experimental environment value, not a measured camera voltage."
+  },
+  "independent_sram_failure": {
+    "evidence": "menu-smp/results/uart-controllers-boot/qemu/qemu-trace.log",
+    "initial_mapping": "Only0x70028000..0x70028fff had RAM backing",
+    "original_stack": "0x7002a3f0 set by0x068e8040",
+    "ignored_saved_return_addresses": {
+      "0x7002a3d4": "0x7002804f",
+      "0x7002a3c4": "0x70028315",
+      "0x7002a3b4": "0x70028205"
+    },
+    "inference": "Original sleep SPI routine POP read dropped stack aszero, leading toPC0/loader reset loop. This reset artifact is separate from the intentional entry into sleep.",
+    "minimum_observed_extent": "Must cover at least0x70028000..0x7002a3ff for code and stack."
+  },
+  "supply_check_physical_name": "ADC/threshold behavior verified; exact board electrical input and volts not verified."
+}

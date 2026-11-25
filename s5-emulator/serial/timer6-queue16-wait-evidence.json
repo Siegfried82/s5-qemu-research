@@ -1,0 +1,49 @@
+{
+  "scope": "Saved snapshot read only; not a hardware timer proof by itself",
+  "snapshot": "/Users/lixiuqi/Documents/ChatGPT/\u76f8\u673a/s5-emulator/menu-smp/results/local-ui-loop-postinit",
+  "sequence_index": 1,
+  "ready_byte08aa7f19": 0,
+  "queue16": {
+    "object": "0x8e1930c",
+    "capacity": 4,
+    "read_index": 1,
+    "write_index": 1,
+    "count": 0,
+    "receiver_list": "0x8e00e5c"
+  },
+  "consumer": {
+    "tcb": "0x8e00d44",
+    "id": 30,
+    "entry": "0x67f3c21",
+    "state": 4,
+    "wait_object": "0x8e1930c"
+  },
+  "interpretation": "Exactly one queue slot has advanced, queue empty, original consumer is suspended awaiting this queue. No evidence the consumer is stuck in a callback. Timer6 LOAD re-arm is investigated independently by QEMU agent.",
+  "candidate_source_irqs": [
+    {
+      "id": 192,
+      "enabled": 255,
+      "pending": 0,
+      "active": 0,
+      "level": 0,
+      "group": 0,
+      "targets": 1,
+      "priority_cpu0": 0
+    },
+    {
+      "id": 193,
+      "enabled": 255,
+      "pending": 0,
+      "active": 0,
+      "level": 0,
+      "group": 0,
+      "targets": 1,
+      "priority_cpu0": 0
+    }
+  ],
+  "test_contract_pending": [
+    "Wait for corrected timer6 to naturally progress original callback table and set readiness; never set readiness bytes manually.",
+    "Only pulse source IRQ192/193 after original GIC enable/routes and original software gates are observed. Hardware MMIO enable/phase/pixel metadata still need their own contract.",
+    "Observe original source producer65206b8, q77 consumer,66d16fe and ACK send; do not call poll or manufacture GUI ACK."
+  ]
+}

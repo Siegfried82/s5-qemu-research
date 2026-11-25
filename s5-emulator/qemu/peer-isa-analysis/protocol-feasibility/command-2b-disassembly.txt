@@ -1,0 +1,73 @@
+Program SHA256 fc496d62a91f6e9b1b84807183bb805bc546c9105d2938546b58a66ad9d132fe
+Exact request {115,11d,2b,0,0}; table byte ed -> 675ed82 -> 675ede8.
+No handler execution; selected instruction ranges only.
+
+outer type-zero dispatcher: 0x0675f154..0x0675f162
+0675f154: 0146       mov       r1, r0
+0675f156: 10b5       push      {r4, lr}
+0675f158: 0020       movs      r0, #0
+0675f15a: 0a8a       ldrh      r2, [r1, #0x10]
+0675f15c: 1204       lsls      r2, r2, #0x10
+0675f15e: 120c       lsrs      r2, r2, #0x10
+0675f160: 13d0       beq       #0x675f18a
+
+type-zero tail: 0x0675f18a..0x0675f192
+0675f18a: bde81040   pop.w     {r4, lr}
+0675f18e: 0846       mov       r0, r1
+0675f190: 9fe6       b         #0x675eed2
+
+source11d dispatch: 0x0675eed2..0x0675eee6
+0675eed2: c04b       ldr       r3, [pc, #0x300] ; [0x0675f1d4]=0x06f492b0
+0675eed4: 0021       movs      r1, #0
+0675eed6: 10b5       push      {r4, lr}
+0675eed8: 4268       ldr       r2, [r0, #4]
+0675eeda: 1b68       ldr       r3, [r3]
+0675eedc: 9a42       cmp       r2, r3
+0675eede: 02d1       bne       #0x675eee6
+0675eee0: fff755fe   bl        #0x675eb8e
+0675eee4: 15e0       b         #0x675ef12
+
+source dispatch return bridge: 0x0675ef12..0x0675ef16
+0675ef12: 0146       mov       r1, r0
+0675ef14: 34e0       b         #0x675ef80
+
+source dispatch return: 0x0675ef80..0x0675ef84
+0675ef80: 0846       mov       r0, r1
+0675ef82: 10bd       pop       {r4, pc}
+
+code dispatcher r5 initialization and TBB: 0x0675eb8e..0x0675eba8
+0675eb8e: 2de9fc41   push.w    {r2, r3, r4, r5, r6, r7, r8, lr}
+0675eb92: 8f49       ldr       r1, [pc, #0x23c] ; [0x0675edd0]=0x0a604474
+0675eb94: 0025       movs      r5, #0
+0675eb96: 8468       ldr       r4, [r0, #8]
+0675eb98: 41f22516   movw      r6, #0x1125
+0675eb9c: 8d4f       ldr       r7, [pc, #0x234] ; [0x0675edd4]=0x06f49efc
+0675eb9e: 4c2c       cmp       r4, #0x4c
+0675eba0: 06c9       ldm       r1, {r1, r2}
+0675eba2: 70d2       bhs       #0x675ec86
+0675eba4: dfe804f0   tbb       [pc, r4]
+
+selected code2b branch: 0x0675ed82..0x0675ed84
+0675ed82: 31e0       b         #0x675ede8
+
+entire code2b body: 0x0675ede8..0x0675edf0
+0675ede8: f848       ldr       r0, [pc, #0x3e0] ; [0x0675f1cc]=0x090c92e8
+0675edea: 80f8c650   strb.w    r5, [r0, #0xc6]
+0675edee: 6be0       b         #0x675eec8
+
+handled return: 0x0675eec8..0x0675eece
+0675eec8: 0120       movs      r0, #1
+0675eeca: bde8fc81   pop.w     {r2, r3, r4, r5, r6, r7, r8, pc}
+
+task loop handled cleanup decision: 0x0675efbc..0x0675efd6
+0675efbc: 3246       mov       r2, r6
+0675efbe: 8449       ldr       r1, [pc, #0x210] ; [0x0675f1d0]=0x0a603680
+0675efc0: 2868       ldr       r0, [r5]
+0675efc2: 8bf05afb   bl        #0x67ea67a
+0675efc6: 0028       cmp       r0, #0
+0675efc8: f8d1       bne       #0x675efbc
+0675efca: 814c       ldr       r4, [pc, #0x204] ; [0x0675f1d0]=0x0a603680
+0675efcc: 2046       mov       r0, r4
+0675efce: 00f0c1f8   bl        #0x675f154
+0675efd2: 0028       cmp       r0, #0
+0675efd4: f2d1       bne       #0x675efbc

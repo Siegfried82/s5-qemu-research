@@ -1,0 +1,168 @@
+{
+  "passed": true,
+  "cases": [
+    {
+      "kind": "program_only",
+      "original_scatter_returned": true,
+      "stop": "T05thread:01;",
+      "pc": "0x068e4684",
+      "checks": [
+        {
+          "table_address": "0x62800fc",
+          "source": "0x70879b8",
+          "destination": "0x8a67000",
+          "bytes": 348068,
+          "handler": "0x62800c4",
+          "operation": "copy",
+          "all_bytes_match_full_component_source": true,
+          "destination_sha256": "a7eb78773ba35ed188deeb363d6cdaffa0163d3c64a53a9354e64964960f9edf",
+          "expected_sha256": "a7eb78773ba35ed188deeb363d6cdaffa0163d3c64a53a9354e64964960f9edf",
+          "destination_all_zero": false
+        },
+        {
+          "table_address": "0x628010c",
+          "source": "0x75bde50",
+          "destination": "0xb147000",
+          "bytes": 548884,
+          "handler": "0x62800c4",
+          "operation": "copy",
+          "all_bytes_match_full_component_source": false,
+          "destination_sha256": "f1aa0a92062bf527eb537acb16cbc9858433698a687bafdc8a12166cd57e1a22",
+          "expected_sha256": "3bef51c9936c99d013dd338314de12a85038a54cb47fda702f34277057893d56",
+          "destination_all_zero": true
+        },
+        {
+          "table_address": "0x628011c",
+          "source": "0x79ec6c4",
+          "destination": "0xb3c9000",
+          "bytes": 45604,
+          "handler": "0x62800c4",
+          "operation": "copy",
+          "all_bytes_match_full_component_source": false,
+          "destination_sha256": "140008d8a0abc86c8987e4d3467d79c90ec3db4f4b2f6bda8fe7a786e5563ce8",
+          "expected_sha256": "9a45357014871fbeb6b832b274418c4017c9f4bb09a263b71c72c97468a80ed0",
+          "destination_all_zero": true
+        },
+        {
+          "table_address": "0x628012c",
+          "source": "0x7fb3dd0",
+          "destination": "0xc11b000",
+          "bytes": 49540,
+          "handler": "0x62800c4",
+          "operation": "copy",
+          "all_bytes_match_full_component_source": false,
+          "destination_sha256": "1bde626fd6316c42577de0d40953dec7c565a42f1318c30e1d3e21b34e0129be",
+          "expected_sha256": "b30ba1bc3ff0b7ea5c7871fffd6872685cb342ec363a88def33ee5ca78083846",
+          "destination_all_zero": true
+        },
+        {
+          "table_address": "0x628013c",
+          "source": "0x20000",
+          "destination": "0x20000",
+          "bytes": 2508,
+          "handler": "0x62800e0",
+          "operation": "zero",
+          "all_bytes_match_full_component_source": true,
+          "destination_sha256": "e44657eba0c646f5cbc87053d478dfef1128216275566cd925bbd9cac3ad6721",
+          "expected_sha256": "e44657eba0c646f5cbc87053d478dfef1128216275566cd925bbd9cac3ad6721",
+          "destination_all_zero": true
+        },
+        {
+          "table_address": "0x628014c",
+          "source": "0x70dc95c",
+          "destination": "0x8abbfa4",
+          "bytes": 7210016,
+          "handler": "0x62800e0",
+          "operation": "zero",
+          "all_bytes_match_full_component_source": true,
+          "destination_sha256": "c6caa6c816e3acf03287b54493ef8d5f7d09edb05eb4a52f32adbaa2100395c5",
+          "expected_sha256": "c6caa6c816e3acf03287b54493ef8d5f7d09edb05eb4a52f32adbaa2100395c5",
+          "destination_all_zero": true
+        }
+      ]
+    },
+    {
+      "kind": "all_modules",
+      "original_scatter_returned": true,
+      "stop": "T05thread:01;",
+      "pc": "0x068e4684",
+      "checks": [
+        {
+          "table_address": "0x62800fc",
+          "source": "0x70879b8",
+          "destination": "0x8a67000",
+          "bytes": 348068,
+          "handler": "0x62800c4",
+          "operation": "copy",
+          "all_bytes_match_full_component_source": true,
+          "destination_sha256": "a7eb78773ba35ed188deeb363d6cdaffa0163d3c64a53a9354e64964960f9edf",
+          "expected_sha256": "a7eb78773ba35ed188deeb363d6cdaffa0163d3c64a53a9354e64964960f9edf",
+          "destination_all_zero": false
+        },
+        {
+          "table_address": "0x628010c",
+          "source": "0x75bde50",
+          "destination": "0xb147000",
+          "bytes": 548884,
+          "handler": "0x62800c4",
+          "operation": "copy",
+          "all_bytes_match_full_component_source": true,
+          "destination_sha256": "3bef51c9936c99d013dd338314de12a85038a54cb47fda702f34277057893d56",
+          "expected_sha256": "3bef51c9936c99d013dd338314de12a85038a54cb47fda702f34277057893d56",
+          "destination_all_zero": false
+        },
+        {
+          "table_address": "0x628011c",
+          "source": "0x79ec6c4",
+          "destination": "0xb3c9000",
+          "bytes": 45604,
+          "handler": "0x62800c4",
+          "operation": "copy",
+          "all_bytes_match_full_component_source": true,
+          "destination_sha256": "9a45357014871fbeb6b832b274418c4017c9f4bb09a263b71c72c97468a80ed0",
+          "expected_sha256": "9a45357014871fbeb6b832b274418c4017c9f4bb09a263b71c72c97468a80ed0",
+          "destination_all_zero": false
+        },
+        {
+          "table_address": "0x628012c",
+          "source": "0x7fb3dd0",
+          "destination": "0xc11b000",
+          "bytes": 49540,
+          "handler": "0x62800c4",
+          "operation": "copy",
+          "all_bytes_match_full_component_source": true,
+          "destination_sha256": "b30ba1bc3ff0b7ea5c7871fffd6872685cb342ec363a88def33ee5ca78083846",
+          "expected_sha256": "b30ba1bc3ff0b7ea5c7871fffd6872685cb342ec363a88def33ee5ca78083846",
+          "destination_all_zero": false
+        },
+        {
+          "table_address": "0x628013c",
+          "source": "0x20000",
+          "destination": "0x20000",
+          "bytes": 2508,
+          "handler": "0x62800e0",
+          "operation": "zero",
+          "all_bytes_match_full_component_source": true,
+          "destination_sha256": "e44657eba0c646f5cbc87053d478dfef1128216275566cd925bbd9cac3ad6721",
+          "expected_sha256": "e44657eba0c646f5cbc87053d478dfef1128216275566cd925bbd9cac3ad6721",
+          "destination_all_zero": true
+        },
+        {
+          "table_address": "0x628014c",
+          "source": "0x70dc95c",
+          "destination": "0x8abbfa4",
+          "bytes": 7210016,
+          "handler": "0x62800e0",
+          "operation": "zero",
+          "all_bytes_match_full_component_source": true,
+          "destination_sha256": "c6caa6c816e3acf03287b54493ef8d5f7d09edb05eb4a52f32adbaa2100395c5",
+          "expected_sha256": "c6caa6c816e3acf03287b54493ef8d5f7d09edb05eb4a52f32adbaa2100395c5",
+          "destination_all_zero": true
+        }
+      ]
+    }
+  ],
+  "menu_rendered": false,
+  "scope": "Original 0x06280090 scatter routine, stopping before C runtime continuation; synthetic stack/CPU state",
+  "finding": "Loading only program leaves three postboot RW copies zero; loading all modules restores exact original bytes"
+}

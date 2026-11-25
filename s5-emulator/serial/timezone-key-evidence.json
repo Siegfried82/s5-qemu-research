@@ -1,0 +1,580 @@
+{
+  "scope": "Original code and prior execution evidence; no key call, state change, callback, or GPIO input in this analysis",
+  "program_sha256": "fc496d62a91f6e9b1b84807183bb805bc546c9105d2938546b58a66ad9d132fe",
+  "run": "/Users/lixiuqi/Documents/ChatGPT/\u76f8\u673a/s5-emulator/menu-smp/results/local-frame-query",
+  "presented_frame": "/Users/lixiuqi/Documents/ChatGPT/\u76f8\u673a/s5-emulator/menu-smp/results/local-frame-query/graphics/frame-0000.png",
+  "observed_text": "Please set the time zone; Set",
+  "native_layout": {
+    "control_words_08a928b0": [
+      "0x0",
+      "0x1",
+      "0x0",
+      "0x1"
+    ],
+    "transition_step_08cb0ee0": "0x4a0",
+    "mode35_confirmation_mask_08aa1103": "0xff",
+    "confirmation_mask_08aa1104": "0xff",
+    "source_scene_08cb10d0": "0x1001",
+    "render_scene_0b392e98": "0x1001",
+    "source_layout_08cb10c8_hex": "000000003c0200000110000000000000",
+    "render_layout_0b392e90_hex": "000000003c0200000110000000000000",
+    "lcd_clock_state_08ab488c": "0x4",
+    "avio_clock_completion_08a9c7f8": "0x2"
+  },
+  "modal_id": "0x23c",
+  "modal_dispatch": [
+    "066beea6 calls0682de54 for an active original modal before the normalmode6 exclusion",
+    "0682de54 receivesUIevent0f000002 and calls0682d0e0 with its originalUIkey parameter",
+    "Original32-bit relative switch at0682d580..d588 uses table0682d58c",
+    "For modal23c, index55, table entry0682d6e0=2da ->0682d866 ->0682e248"
+  ],
+  "original_confirmation_path": {
+    "accepted_ui_key_codes": [
+      "0x7",
+      "0x12",
+      "0x48"
+    ],
+    "center_source": "OriginalKEY_CENTER press ->bank0mask10 ->0663f02e ->066bddc8(7,0), when native input routing permits",
+    "handler": "0682e268 calls066aa2ac(4), then068b728e(2)",
+    "original_state_change": "068b7294 calls066bed42(0x20);068b72a2 stores its own kind2",
+    "original_scene_change": "068b72a4 calls068b7b3c;068b7b42 calls066c1982(0x70de)",
+    "validation_limit": "This downstream path is established statically, not yet observed for the blocked requests in this run"
+  },
+  "actual_blocked_requests": [
+    {
+      "key": "KEY_CENTER",
+      "action": 1,
+      "status": "consumed_by_original_dispatcher",
+      "route": [
+        {
+          "kind": "original_key_route",
+          "route": "raw_state_route_entry",
+          "r0_r2": [
+            "0xa03de98",
+            "0x0",
+            "0x0"
+          ],
+          "table_r4": "0xa03dea8",
+          "gate_values": {
+            "transition_stage": 0,
+            "pending_mode": "0xff",
+            "secondary_stage": 2,
+            "input_enable_byte": 1,
+            "input_gate_word": 16,
+            "state": 1,
+            "mode": 1,
+            "modal_id": 572
+          },
+          "local_payload_pointer": "0xa03de98",
+          "local_payload_hex": "1000000010000000000000000000000000000181000000000000000000000000080000000000000008000000000000003330c024160700008000000000001800000000000000000000000000000000000000000000000000",
+          "local_payload_words": [
+            "0x10",
+            "0x10",
+            "0x0",
+            "0x0",
+            "0x81010000",
+            "0x0",
+            "0x0",
+            "0x0",
+            "0x8",
+            "0x0",
+            "0x8",
+            "0x0",
+            "0x24c03033",
+            "0x716",
+            "0x80",
+            "0x180000",
+            "0x0",
+            "0x0",
+            "0x0",
+            "0x0",
+            "0x0",
+            "0x0"
+          ],
+          "pc": "0x66431de",
+          "cpu": 2,
+          "tcb": "0x8e15000"
+        },
+        {
+          "kind": "original_key_route",
+          "route": "alternate_handler_gate_return",
+          "r0_r2": [
+            "0x0",
+            "0xffffffff",
+            "0x0"
+          ],
+          "table_r4": "0xa03de98",
+          "gate_values": {
+            "transition_stage": 0,
+            "pending_mode": "0xff",
+            "secondary_stage": 2,
+            "input_enable_byte": 1,
+            "input_gate_word": 16,
+            "state": 1,
+            "mode": 1,
+            "modal_id": 572
+          },
+          "pc": "0x6643212",
+          "cpu": 2,
+          "tcb": "0x8e15000"
+        },
+        {
+          "kind": "original_key_route",
+          "route": "transition_gate_return",
+          "r0_r2": [
+            "0x0",
+            "0xff",
+            "0x0"
+          ],
+          "table_r4": "0xa03de98",
+          "gate_values": {
+            "transition_stage": 0,
+            "pending_mode": "0xff",
+            "secondary_stage": 2,
+            "input_enable_byte": 1,
+            "input_gate_word": 16,
+            "state": 1,
+            "mode": 1,
+            "modal_id": 572
+          },
+          "pc": "0x6643224",
+          "cpu": 2,
+          "tcb": "0x8e15000"
+        },
+        {
+          "kind": "original_key_route",
+          "route": "secondary_transition_gate_return",
+          "r0_r2": [
+            "0x1",
+            "0x2",
+            "0x0"
+          ],
+          "table_r4": "0xa03de98",
+          "gate_values": {
+            "transition_stage": 0,
+            "pending_mode": "0xff",
+            "secondary_stage": 2,
+            "input_enable_byte": 1,
+            "input_gate_word": 16,
+            "state": 1,
+            "mode": 1,
+            "modal_id": 572
+          },
+          "pc": "0x664322c",
+          "cpu": 2,
+          "tcb": "0x8e15000"
+        }
+      ]
+    },
+    {
+      "key": "KEY_CENTER",
+      "action": 0,
+      "status": "consumed_by_original_dispatcher",
+      "route": [
+        {
+          "kind": "original_key_route",
+          "route": "raw_state_route_entry",
+          "r0_r2": [
+            "0xa03de98",
+            "0x0",
+            "0x0"
+          ],
+          "table_r4": "0xa03dea8",
+          "gate_values": {
+            "transition_stage": 0,
+            "pending_mode": "0xff",
+            "secondary_stage": 2,
+            "input_enable_byte": 1,
+            "input_gate_word": 16,
+            "state": 1,
+            "mode": 1,
+            "modal_id": 572
+          },
+          "local_payload_pointer": "0xa03de98",
+          "local_payload_hex": "0000000000000000000000001000000000000181000000000000000000000000080000000000000008000000000000003330c024160700008000000000001800000000000000000000000000000000000000000000000000",
+          "local_payload_words": [
+            "0x0",
+            "0x0",
+            "0x0",
+            "0x10",
+            "0x81010000",
+            "0x0",
+            "0x0",
+            "0x0",
+            "0x8",
+            "0x0",
+            "0x8",
+            "0x0",
+            "0x24c03033",
+            "0x716",
+            "0x80",
+            "0x180000",
+            "0x0",
+            "0x0",
+            "0x0",
+            "0x0",
+            "0x0",
+            "0x0"
+          ],
+          "pc": "0x66431de",
+          "cpu": 2,
+          "tcb": "0x8e15000"
+        },
+        {
+          "kind": "original_key_route",
+          "route": "alternate_handler_gate_return",
+          "r0_r2": [
+            "0x0",
+            "0xffffffff",
+            "0x0"
+          ],
+          "table_r4": "0xa03de98",
+          "gate_values": {
+            "transition_stage": 0,
+            "pending_mode": "0xff",
+            "secondary_stage": 2,
+            "input_enable_byte": 1,
+            "input_gate_word": 16,
+            "state": 1,
+            "mode": 1,
+            "modal_id": 572
+          },
+          "pc": "0x6643212",
+          "cpu": 2,
+          "tcb": "0x8e15000"
+        },
+        {
+          "kind": "original_key_route",
+          "route": "transition_gate_return",
+          "r0_r2": [
+            "0x0",
+            "0xff",
+            "0x0"
+          ],
+          "table_r4": "0xa03de98",
+          "gate_values": {
+            "transition_stage": 0,
+            "pending_mode": "0xff",
+            "secondary_stage": 2,
+            "input_enable_byte": 1,
+            "input_gate_word": 16,
+            "state": 1,
+            "mode": 1,
+            "modal_id": 572
+          },
+          "pc": "0x6643224",
+          "cpu": 2,
+          "tcb": "0x8e15000"
+        },
+        {
+          "kind": "original_key_route",
+          "route": "secondary_transition_gate_return",
+          "r0_r2": [
+            "0x1",
+            "0x2",
+            "0x0"
+          ],
+          "table_r4": "0xa03de98",
+          "gate_values": {
+            "transition_stage": 0,
+            "pending_mode": "0xff",
+            "secondary_stage": 2,
+            "input_enable_byte": 1,
+            "input_gate_word": 16,
+            "state": 1,
+            "mode": 1,
+            "modal_id": 572
+          },
+          "pc": "0x664322c",
+          "cpu": 2,
+          "tcb": "0x8e15000"
+        }
+      ]
+    }
+  ],
+  "exact_input_gate": {
+    "original_primary": "066bfd22 returns0 only whenpending_mode[08aa1124]==ff and stage[08aa1120] in{0,1}",
+    "original_secondary": "066adcfc tailbranches0682e5d0; returns0 only whenstage[08aa090c] in{0,1}",
+    "actual_secondary_stage": 2,
+    "meaning": "Both originalpress and release reachedthisgetter and returned1, so the rawroute returned before either normalkeyhandler",
+    "not_proved": "Which original asynchronous display step will release the secondary lock must be observed; this analysis never sets it"
+  },
+  "probe_additions": {
+    "wait_option": "KeyProbe.arm(...,wait_for_input_route_ready=True)",
+    "default": false,
+    "behavior": "At originaltask285 loop, reads both predicates, single-steps pending original loop, preserves the same bounded deadline; invokes no getter or key function while blocked",
+    "report": "input_route_gate with actual primary_stage/pending_mode/secondary_stage, bothready predicates, samples andwait_steps",
+    "timeout": "timeout_waiting_for_input_route_ready; no forcedstate orcontext restore",
+    "read_only_consumption_observers": [
+      "0682d0e0",
+      "0682e248",
+      "068b728e",
+      "068b7b3c"
+    ]
+  },
+  "later_actual_confirmation": {
+    "run": "/Users/lixiuqi/Documents/ChatGPT/\u76f8\u673a/s5-emulator/menu-smp/results/local-shared-image-stride",
+    "input_route_gate": {
+      "samples": 12,
+      "wait_steps": 11,
+      "original_primary_getter": "0x066bfd22",
+      "original_secondary_getter": "0x0682e5d0",
+      "required": "pending_mode==0xff and primary_stage in{0,1} and secondary_stage in{0,1}",
+      "primary_stage": 0,
+      "pending_mode": 255,
+      "secondary_stage": 1,
+      "primary_ready": true,
+      "secondary_ready": true,
+      "passed": true
+    },
+    "observed_original_route": [
+      {
+        "kind": "original_ui_event",
+        "r0_r2": [
+          "0xf03002d",
+          "0x0",
+          "0x0"
+        ],
+        "ui_state_words": [
+          "0x0",
+          "0x1",
+          "0x0",
+          "0x1"
+        ],
+        "pc": "0x66beea6",
+        "cpu": 2,
+        "tcb": "0x8e15000"
+      },
+      {
+        "kind": "original_ui_key",
+        "r0_r2": [
+          "0x6",
+          "0x1",
+          "0x0"
+        ],
+        "ui_state_words": [
+          "0x0",
+          "0x1",
+          "0x0",
+          "0x1"
+        ],
+        "pc": "0x66bddc8",
+        "cpu": 2,
+        "tcb": "0x8e15000"
+      },
+      {
+        "kind": "original_ui_event",
+        "r0_r2": [
+          "0xf000002",
+          "0x10006",
+          "0x0"
+        ],
+        "ui_state_words": [
+          "0x0",
+          "0x1",
+          "0x0",
+          "0x1"
+        ],
+        "pc": "0x66beea6",
+        "cpu": 2,
+        "tcb": "0x8e15000"
+      },
+      {
+        "kind": "original_key_route",
+        "route": "original_modal_key_dispatch",
+        "r0_r2": [
+          "0x10006",
+          "0x10006",
+          "0x10006"
+        ],
+        "table_r4": "0x0",
+        "gate_values": {
+          "transition_stage": 0,
+          "pending_mode": "0xff",
+          "secondary_stage": 1,
+          "input_enable_byte": 1,
+          "input_gate_word": 16,
+          "state": 1,
+          "mode": 1,
+          "modal_id": 572
+        },
+        "pc": "0x682d0e0",
+        "cpu": 2,
+        "tcb": "0x8e15000"
+      },
+      {
+        "kind": "original_key_route",
+        "route": "original_timezone_prompt_key_handler",
+        "r0_r2": [
+          "0x10006",
+          "0x10006",
+          "0x10006"
+        ],
+        "table_r4": "0x0",
+        "gate_values": {
+          "transition_stage": 0,
+          "pending_mode": "0xff",
+          "secondary_stage": 1,
+          "input_enable_byte": 1,
+          "input_gate_word": 16,
+          "state": 1,
+          "mode": 1,
+          "modal_id": 572
+        },
+        "pc": "0x682e248",
+        "cpu": 2,
+        "tcb": "0x8e15000"
+      },
+      {
+        "kind": "original_ui_key",
+        "r0_r2": [
+          "0x7",
+          "0x0",
+          "0x0"
+        ],
+        "ui_state_words": [
+          "0x0",
+          "0x1",
+          "0x0",
+          "0x1"
+        ],
+        "pc": "0x66bddc8",
+        "cpu": 2,
+        "tcb": "0x8e15000"
+      },
+      {
+        "kind": "original_ui_event",
+        "r0_r2": [
+          "0xf000002",
+          "0x7",
+          "0x0"
+        ],
+        "ui_state_words": [
+          "0x0",
+          "0x1",
+          "0x0",
+          "0x1"
+        ],
+        "pc": "0x66beea6",
+        "cpu": 2,
+        "tcb": "0x8e15000"
+      },
+      {
+        "kind": "original_key_route",
+        "route": "original_modal_key_dispatch",
+        "r0_r2": [
+          "0x7",
+          "0x7",
+          "0x7"
+        ],
+        "table_r4": "0x0",
+        "gate_values": {
+          "transition_stage": 0,
+          "pending_mode": "0xff",
+          "secondary_stage": 1,
+          "input_enable_byte": 1,
+          "input_gate_word": 16,
+          "state": 1,
+          "mode": 1,
+          "modal_id": 572
+        },
+        "pc": "0x682d0e0",
+        "cpu": 2,
+        "tcb": "0x8e15000"
+      },
+      {
+        "kind": "original_key_route",
+        "route": "original_timezone_prompt_key_handler",
+        "r0_r2": [
+          "0x7",
+          "0x7",
+          "0x7"
+        ],
+        "table_r4": "0x0",
+        "gate_values": {
+          "transition_stage": 0,
+          "pending_mode": "0xff",
+          "secondary_stage": 1,
+          "input_enable_byte": 1,
+          "input_gate_word": 16,
+          "state": 1,
+          "mode": 1,
+          "modal_id": 572
+        },
+        "pc": "0x682e248",
+        "cpu": 2,
+        "tcb": "0x8e15000"
+      },
+      {
+        "kind": "original_key_route",
+        "route": "original_timezone_setup_entry",
+        "r0_r2": [
+          "0x2",
+          "0x0",
+          "0x23c"
+        ],
+        "table_r4": "0x8cc5da0",
+        "gate_values": {
+          "transition_stage": 0,
+          "pending_mode": "0xff",
+          "secondary_stage": 1,
+          "input_enable_byte": 1,
+          "input_gate_word": 0,
+          "state": 1,
+          "mode": 1,
+          "modal_id": 0
+        },
+        "pc": "0x68b728e",
+        "cpu": 2,
+        "tcb": "0x8e15000"
+      },
+      {
+        "kind": "original_key_route",
+        "route": "original_timezone_scene_setup",
+        "r0_r2": [
+          "0x8a934b8",
+          "0x8a92890",
+          "0x68b7ac5"
+        ],
+        "table_r4": "0x2",
+        "gate_values": {
+          "transition_stage": 0,
+          "pending_mode": "0xff",
+          "secondary_stage": 1,
+          "input_enable_byte": 1,
+          "input_gate_word": 0,
+          "state": 32,
+          "mode": 1,
+          "modal_id": 0
+        },
+        "pc": "0x68b7b3c",
+        "cpu": 2,
+        "tcb": "0x8e15000"
+      }
+    ],
+    "original_state_at_stop": {
+      "control_words_08a928b0": [
+        "0x0",
+        "0x20",
+        "0x0",
+        "0x1"
+      ],
+      "transition_step_08cb0ee0": "0x4a0",
+      "secondary_transition_stage_08aa090c": 1,
+      "modal_id_08a92898": "0x4a",
+      "mode35_confirmation_mask_08aa1103": "0xff",
+      "confirmation_mask_08aa1104": "0xff",
+      "source_scene_08cb10d0": "0x70de",
+      "render_scene_0b392e98": "0x1001",
+      "source_layout_08cb10c8_hex": "000000004a000000de70000000000000",
+      "render_layout_0b392e90_hex": "000000003c0200000110000000000000",
+      "lcd_clock_state_08ab488c": "0x4",
+      "avio_clock_completion_08a9c7f8": "0x2"
+    },
+    "press_and_release_consumed": true,
+    "all_core_and_fp_contexts_restored": true,
+    "conclusion": "Original time-zone confirmation executed, producing state0x20 and source scene0x70de.",
+    "display_limit": "Rendered scene remained0x1001 with modal0x23c. This proves the state transition, not presentation of the next scene.",
+    "input_lock_limit": "The native stage became1 naturally; the previously captured stage2 was a finite asynchronous wait, not proof of a missing peripheral."
+  }
+}

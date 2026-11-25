@@ -1,0 +1,306 @@
+{
+  "source": "/Users/lixiuqi/Documents/ChatGPT/\u76f8\u673a/s5-v29-offline/unpacked-v29/03_program.bin",
+  "source_sha256": "fc496d62a91f6e9b1b84807183bb805bc546c9105d2938546b58a66ad9d132fe",
+  "basis": "actual table bytes plus original enable/disable code; not an arithmetic extrapolation",
+  "tables": {
+    "channel_to_hardware_index": "0x6ff2b20",
+    "hardware_index_to_mmio": "0x6ff2a50",
+    "hardware_index_to_logical_irq": "0x6ff2ab8",
+    "logical_irq_to_gic_interrupt_id": "0x6ff1240"
+  },
+  "call_chain": [
+    "0x06554cde timer start; timer ctrl+8 bit5 gates IRQ operations",
+    "0x06554d00 loads logical IRQ table; calls 0x0658bada",
+    "0x0658baee loads GIC map; 0x0658baf0 maps logical ID",
+    "0x0651ea74 enables absolute GIC ID via ISENABLER +0x100"
+  ],
+  "rows": [
+    {
+      "channel": 0,
+      "hardware_index": 0,
+      "mmio_base": "0x7f020000",
+      "logical_irq": 88,
+      "gic_interrupt_id": 36,
+      "gic_spi_input": 4,
+      "mmio_entry_address": "0x6ff2a50",
+      "logical_irq_entry_address": "0x6ff2ab8",
+      "gic_map_entry_address": "0x6ff13a0"
+    },
+    {
+      "channel": 1,
+      "hardware_index": 1,
+      "mmio_base": "0x7f020020",
+      "logical_irq": 89,
+      "gic_interrupt_id": 37,
+      "gic_spi_input": 5,
+      "mmio_entry_address": "0x6ff2a54",
+      "logical_irq_entry_address": "0x6ff2abc",
+      "gic_map_entry_address": "0x6ff13a4"
+    },
+    {
+      "channel": 2,
+      "hardware_index": 2,
+      "mmio_base": "0x7f021000",
+      "logical_irq": 90,
+      "gic_interrupt_id": 38,
+      "gic_spi_input": 6,
+      "mmio_entry_address": "0x6ff2a58",
+      "logical_irq_entry_address": "0x6ff2ac0",
+      "gic_map_entry_address": "0x6ff13a8"
+    },
+    {
+      "channel": 3,
+      "hardware_index": 3,
+      "mmio_base": "0x7f021020",
+      "logical_irq": 91,
+      "gic_interrupt_id": 39,
+      "gic_spi_input": 7,
+      "mmio_entry_address": "0x6ff2a5c",
+      "logical_irq_entry_address": "0x6ff2ac4",
+      "gic_map_entry_address": "0x6ff13ac"
+    },
+    {
+      "channel": 4,
+      "hardware_index": 4,
+      "mmio_base": "0x7f022000",
+      "logical_irq": 92,
+      "gic_interrupt_id": 40,
+      "gic_spi_input": 8,
+      "mmio_entry_address": "0x6ff2a60",
+      "logical_irq_entry_address": "0x6ff2ac8",
+      "gic_map_entry_address": "0x6ff13b0"
+    },
+    {
+      "channel": 5,
+      "hardware_index": 5,
+      "mmio_base": "0x7f022020",
+      "logical_irq": 93,
+      "gic_interrupt_id": 41,
+      "gic_spi_input": 9,
+      "mmio_entry_address": "0x6ff2a64",
+      "logical_irq_entry_address": "0x6ff2acc",
+      "gic_map_entry_address": "0x6ff13b4"
+    },
+    {
+      "channel": 6,
+      "hardware_index": 6,
+      "mmio_base": "0x7f023000",
+      "logical_irq": 94,
+      "gic_interrupt_id": 42,
+      "gic_spi_input": 10,
+      "mmio_entry_address": "0x6ff2a68",
+      "logical_irq_entry_address": "0x6ff2ad0",
+      "gic_map_entry_address": "0x6ff13b8"
+    },
+    {
+      "channel": 7,
+      "hardware_index": 7,
+      "mmio_base": "0x7f023020",
+      "logical_irq": 95,
+      "gic_interrupt_id": 43,
+      "gic_spi_input": 11,
+      "mmio_entry_address": "0x6ff2a6c",
+      "logical_irq_entry_address": "0x6ff2ad4",
+      "gic_map_entry_address": "0x6ff13bc"
+    },
+    {
+      "channel": 8,
+      "hardware_index": 8,
+      "mmio_base": "0x7f024000",
+      "logical_irq": 96,
+      "gic_interrupt_id": 44,
+      "gic_spi_input": 12,
+      "mmio_entry_address": "0x6ff2a70",
+      "logical_irq_entry_address": "0x6ff2ad8",
+      "gic_map_entry_address": "0x6ff13c0"
+    },
+    {
+      "channel": 9,
+      "hardware_index": 9,
+      "mmio_base": "0x7f024020",
+      "logical_irq": 97,
+      "gic_interrupt_id": 45,
+      "gic_spi_input": 13,
+      "mmio_entry_address": "0x6ff2a74",
+      "logical_irq_entry_address": "0x6ff2adc",
+      "gic_map_entry_address": "0x6ff13c4"
+    },
+    {
+      "channel": 10,
+      "hardware_index": 10,
+      "mmio_base": "0x7f025000",
+      "logical_irq": 98,
+      "gic_interrupt_id": 46,
+      "gic_spi_input": 14,
+      "mmio_entry_address": "0x6ff2a78",
+      "logical_irq_entry_address": "0x6ff2ae0",
+      "gic_map_entry_address": "0x6ff13c8"
+    },
+    {
+      "channel": 11,
+      "hardware_index": 11,
+      "mmio_base": "0x7f025020",
+      "logical_irq": 99,
+      "gic_interrupt_id": 47,
+      "gic_spi_input": 15,
+      "mmio_entry_address": "0x6ff2a7c",
+      "logical_irq_entry_address": "0x6ff2ae4",
+      "gic_map_entry_address": "0x6ff13cc"
+    },
+    {
+      "channel": 12,
+      "hardware_index": 12,
+      "mmio_base": "0x7f026000",
+      "logical_irq": 100,
+      "gic_interrupt_id": 48,
+      "gic_spi_input": 16,
+      "mmio_entry_address": "0x6ff2a80",
+      "logical_irq_entry_address": "0x6ff2ae8",
+      "gic_map_entry_address": "0x6ff13d0"
+    },
+    {
+      "channel": 13,
+      "hardware_index": 13,
+      "mmio_base": "0x7f026020",
+      "logical_irq": 101,
+      "gic_interrupt_id": 49,
+      "gic_spi_input": 17,
+      "mmio_entry_address": "0x6ff2a84",
+      "logical_irq_entry_address": "0x6ff2aec",
+      "gic_map_entry_address": "0x6ff13d4"
+    },
+    {
+      "channel": 14,
+      "hardware_index": 14,
+      "mmio_base": "0x7f027000",
+      "logical_irq": 102,
+      "gic_interrupt_id": 50,
+      "gic_spi_input": 18,
+      "mmio_entry_address": "0x6ff2a88",
+      "logical_irq_entry_address": "0x6ff2af0",
+      "gic_map_entry_address": "0x6ff13d8"
+    },
+    {
+      "channel": 15,
+      "hardware_index": 15,
+      "mmio_base": "0x7f027020",
+      "logical_irq": 103,
+      "gic_interrupt_id": 51,
+      "gic_spi_input": 19,
+      "mmio_entry_address": "0x6ff2a8c",
+      "logical_irq_entry_address": "0x6ff2af4",
+      "gic_map_entry_address": "0x6ff13dc"
+    },
+    {
+      "channel": 16,
+      "hardware_index": 16,
+      "mmio_base": "0x7f028000",
+      "logical_irq": 104,
+      "gic_interrupt_id": 52,
+      "gic_spi_input": 20,
+      "mmio_entry_address": "0x6ff2a90",
+      "logical_irq_entry_address": "0x6ff2af8",
+      "gic_map_entry_address": "0x6ff13e0"
+    },
+    {
+      "channel": 17,
+      "hardware_index": 17,
+      "mmio_base": "0x7f028020",
+      "logical_irq": 105,
+      "gic_interrupt_id": 53,
+      "gic_spi_input": 21,
+      "mmio_entry_address": "0x6ff2a94",
+      "logical_irq_entry_address": "0x6ff2afc",
+      "gic_map_entry_address": "0x6ff13e4"
+    },
+    {
+      "channel": 18,
+      "hardware_index": 18,
+      "mmio_base": "0x7f029000",
+      "logical_irq": 106,
+      "gic_interrupt_id": 54,
+      "gic_spi_input": 22,
+      "mmio_entry_address": "0x6ff2a98",
+      "logical_irq_entry_address": "0x6ff2b00",
+      "gic_map_entry_address": "0x6ff13e8"
+    },
+    {
+      "channel": 19,
+      "hardware_index": 19,
+      "mmio_base": "0x7f029020",
+      "logical_irq": 107,
+      "gic_interrupt_id": 55,
+      "gic_spi_input": 23,
+      "mmio_entry_address": "0x6ff2a9c",
+      "logical_irq_entry_address": "0x6ff2b04",
+      "gic_map_entry_address": "0x6ff13ec"
+    },
+    {
+      "channel": 20,
+      "hardware_index": 20,
+      "mmio_base": "0x7f02a000",
+      "logical_irq": 108,
+      "gic_interrupt_id": 56,
+      "gic_spi_input": 24,
+      "mmio_entry_address": "0x6ff2aa0",
+      "logical_irq_entry_address": "0x6ff2b08",
+      "gic_map_entry_address": "0x6ff13f0"
+    },
+    {
+      "channel": 21,
+      "hardware_index": 21,
+      "mmio_base": "0x7f02a020",
+      "logical_irq": 109,
+      "gic_interrupt_id": 57,
+      "gic_spi_input": 25,
+      "mmio_entry_address": "0x6ff2aa4",
+      "logical_irq_entry_address": "0x6ff2b0c",
+      "gic_map_entry_address": "0x6ff13f4"
+    },
+    {
+      "channel": 22,
+      "hardware_index": 22,
+      "mmio_base": "0x7f02b000",
+      "logical_irq": 110,
+      "gic_interrupt_id": 58,
+      "gic_spi_input": 26,
+      "mmio_entry_address": "0x6ff2aa8",
+      "logical_irq_entry_address": "0x6ff2b10",
+      "gic_map_entry_address": "0x6ff13f8"
+    },
+    {
+      "channel": 23,
+      "hardware_index": 23,
+      "mmio_base": "0x7f02b020",
+      "logical_irq": 111,
+      "gic_interrupt_id": 59,
+      "gic_spi_input": 27,
+      "mmio_entry_address": "0x6ff2aac",
+      "logical_irq_entry_address": "0x6ff2b14",
+      "gic_map_entry_address": "0x6ff13fc"
+    },
+    {
+      "channel": 24,
+      "hardware_index": 24,
+      "mmio_base": "0x7f02c000",
+      "logical_irq": 112,
+      "gic_interrupt_id": 60,
+      "gic_spi_input": 28,
+      "mmio_entry_address": "0x6ff2ab0",
+      "logical_irq_entry_address": "0x6ff2b18",
+      "gic_map_entry_address": "0x6ff1400"
+    },
+    {
+      "channel": 25,
+      "hardware_index": 25,
+      "mmio_base": "0x7f02c020",
+      "logical_irq": 113,
+      "gic_interrupt_id": 61,
+      "gic_spi_input": 29,
+      "mmio_entry_address": "0x6ff2ab4",
+      "logical_irq_entry_address": "0x6ff2b1c",
+      "gic_map_entry_address": "0x6ff1404"
+    }
+  ],
+  "irq_delivery_runtime_validated_by_this_script": false
+}

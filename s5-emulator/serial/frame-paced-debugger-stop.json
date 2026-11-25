@@ -1,0 +1,131 @@
+{
+  "scope": "Read-only real-run diagnosis, no guest state change or QEMU launch",
+  "snapshot_result": "/Users/lixiuqi/Documents/ChatGPT/\u76f8\u673a/s5-emulator/menu-smp/results/local-frame-paced-menu/result.json",
+  "stop_reason": "unexpected_stop",
+  "last_stop": {
+    "cpu": 2,
+    "pc": "0x65dd096",
+    "reply": "T05thread:03;",
+    "label": "unexpected_stop",
+    "registers": [
+      {
+        "r0": "0x0",
+        "r1": "0x55c6",
+        "r2": "0x0",
+        "r3": "0x0",
+        "r4": "0x0",
+        "r5": "0x2",
+        "r6": "0x10000",
+        "r7": "0x7b193444",
+        "r8": "0xac387d8",
+        "r9": "0x10",
+        "r10": "0x10000",
+        "r11": "0x1",
+        "r12": "0x7b193408",
+        "r13": "0xac387b0",
+        "r14": "0x7b193430",
+        "r15": "0x67092da",
+        "cpsr": "0x800001b2"
+      },
+      {
+        "r0": "0x0",
+        "r1": "0x63be899",
+        "r2": "0x0",
+        "r3": "0x0",
+        "r4": "0x8dfeb18",
+        "r5": "0x0",
+        "r6": "0x0",
+        "r7": "0x0",
+        "r8": "0x0",
+        "r9": "0x0",
+        "r10": "0x99b6420",
+        "r11": "0x0",
+        "r12": "0x0",
+        "r13": "0x99b6800",
+        "r14": "0x63be8a5",
+        "r15": "0x63be8aa",
+        "cpsr": "0x600001b3"
+      },
+      {
+        "r0": "0x1",
+        "r1": "0x9119760",
+        "r2": "0x2",
+        "r3": "0x10000",
+        "r4": "0x0",
+        "r5": "0x0",
+        "r6": "0x0",
+        "r7": "0x0",
+        "r8": "0x0",
+        "r9": "0x0",
+        "r10": "0x0",
+        "r11": "0x0",
+        "r12": "0x8",
+        "r13": "0xac36a88",
+        "r14": "0x65dd095",
+        "r15": "0x65dd096",
+        "cpsr": "0x1b2"
+      },
+      {
+        "r0": "0x3",
+        "r1": "0x70019f10",
+        "r2": "0xffffffff",
+        "r3": "0xffffffff",
+        "r4": "0x80128000",
+        "r5": "0x0",
+        "r6": "0x0",
+        "r7": "0x0",
+        "r8": "0x0",
+        "r9": "0x0",
+        "r10": "0x0",
+        "r11": "0x0",
+        "r12": "0x0",
+        "r13": "0x0",
+        "r14": "0x0",
+        "r15": "0x384",
+        "cpsr": "0x600001d3"
+      }
+    ],
+    "shared_words": [
+      "0x1",
+      "0x0",
+      "0x1",
+      "0x0"
+    ]
+  },
+  "frame_stage": "wait_isr_return",
+  "foreign_return_stops": 1,
+  "last_foreign_return": {
+    "cpu": 2,
+    "sp": "0xac36a88",
+    "cpsr": "0x800001b2"
+  },
+  "pulses": [
+    {
+      "irq": 192,
+      "pair": 1,
+      "counts": {
+        "192": 1,
+        "193": 0
+      }
+    },
+    {
+      "irq": 193,
+      "pair": 1,
+      "counts": {
+        "192": 1,
+        "193": 1
+      }
+    },
+    {
+      "irq": 192,
+      "pair": 2,
+      "counts": {
+        "192": 2,
+        "193": 1
+      }
+    }
+  ],
+  "completed_consumers": [],
+  "guest_exception_event_labels": [],
+  "interpretation": "Unexpected stop CPU2 at065dd096 equals the shared IRQ return site065dd094 plus one Thumb instruction; CPU0 remains in the originalIRQ192 body. This supports the legacy multi-CPU single-step race under investigation, not firmware exception evidence. The public QemuArm.step fix and real isolated-step smoke are owned by root."
+}

@@ -1,0 +1,580 @@
+{
+  "scope": "Existing snapshot plus original opcode verification; no new QEMU execution",
+  "source_program": {
+    "path": "/Users/lixiuqi/Documents/ChatGPT/\u76f8\u673a/s5-v29-offline/unpacked-v29/03_program.bin",
+    "sha256": "fc496d62a91f6e9b1b84807183bb805bc546c9105d2938546b58a66ad9d132fe"
+  },
+  "snapshot": "/Users/lixiuqi/Documents/ChatGPT/\u76f8\u673a/s5-emulator/menu-smp/results/local-frame-pairs2",
+  "result_sha256": "fecb4499b239dc9ca7dc4f4427b6efe172d5fb4f6e86e9ddd08b919c3be8d505",
+  "explicit_irq_test": {
+    "scope": "test-only explicit host IRQ inputs; no frame data",
+    "automatic_timing": false,
+    "hardware_clock_verified": false,
+    "guest_callback_or_flag_writes": false,
+    "mmio_status_modified": false,
+    "enabled": false,
+    "pulse_requests": 4,
+    "pulse_rejected": 0,
+    "last_requested_irq": 193,
+    "pulses": {
+      "192": 2,
+      "193": 2
+    }
+  },
+  "frame_source_trace": {
+    "scope": "Explicit TEST source IRQ192/193 inputs; no physical period, sensor, RGB pixels or complete camera emulation",
+    "status": "original_source_isrs_returned_under_test_inputs",
+    "pairs": 2,
+    "automatic_timing": false,
+    "guest_ram_or_registers_written_by_host": false,
+    "metadata_or_queue_messages_constructed_by_host": false,
+    "guest_callback_invoked_by_host": false,
+    "ui_or_dsp_ready_written_by_host": false,
+    "menu_rendered_verified": false,
+    "pulses": [
+      {
+        "irq": 192,
+        "pair": 1,
+        "counts": {
+          "192": 1,
+          "193": 0
+        }
+      },
+      {
+        "irq": 193,
+        "pair": 1,
+        "counts": {
+          "192": 1,
+          "193": 1
+        }
+      },
+      {
+        "irq": 192,
+        "pair": 2,
+        "counts": {
+          "192": 2,
+          "193": 1
+        }
+      },
+      {
+        "irq": 193,
+        "pair": 2,
+        "counts": {
+          "192": 2,
+          "193": 2
+        }
+      }
+    ],
+    "events": [
+      {
+        "kind": "original_isr_entry",
+        "irq": 192,
+        "pc": "0x6497252",
+        "cpu": 0,
+        "sp": "0xac38a88",
+        "lr": "0x65dd095",
+        "cpsr": "0x800001b2",
+        "caller_blx_bytes": "8047",
+        "state": {
+          "init_ready": 1,
+          "postinit_ready": 1,
+          "source_latch": 0,
+          "previous_source_latch": 0,
+          "mode_flag": 0,
+          "source_inhibit": 0,
+          "sampled_gate_vector": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "sequence_index": 10,
+          "poll_counter": 0,
+          "mode35_ack": 13,
+          "controller_state": 2,
+          "controller_reply_received": 1,
+          "queue77": {
+            "object": "0x8e1a0b0",
+            "count": 0,
+            "read_index": 0,
+            "write_index": 0
+          }
+        }
+      },
+      {
+        "kind": "original_isr_return",
+        "irq": 192,
+        "pc": "0x65dd094",
+        "cpu": 0,
+        "sp": "0xac38a88",
+        "cpsr": "0x600001b2",
+        "state": {
+          "init_ready": 1,
+          "postinit_ready": 1,
+          "source_latch": 1,
+          "previous_source_latch": 1,
+          "mode_flag": 0,
+          "source_inhibit": 0,
+          "sampled_gate_vector": [
+            1,
+            0,
+            1,
+            0,
+            1
+          ],
+          "sequence_index": 10,
+          "poll_counter": 0,
+          "mode35_ack": 13,
+          "controller_state": 2,
+          "controller_reply_received": 1,
+          "queue77": {
+            "object": "0x8e1a0b0",
+            "count": 0,
+            "read_index": 0,
+            "write_index": 0
+          }
+        }
+      },
+      {
+        "kind": "original_isr_entry",
+        "irq": 193,
+        "pc": "0x649727c",
+        "cpu": 0,
+        "sp": "0xac38a88",
+        "lr": "0x65dd095",
+        "cpsr": "0x800001b2",
+        "caller_blx_bytes": "8047",
+        "state": {
+          "init_ready": 1,
+          "postinit_ready": 1,
+          "source_latch": 1,
+          "previous_source_latch": 1,
+          "mode_flag": 0,
+          "source_inhibit": 0,
+          "sampled_gate_vector": [
+            1,
+            0,
+            1,
+            0,
+            1
+          ],
+          "sequence_index": 10,
+          "poll_counter": 0,
+          "mode35_ack": 13,
+          "controller_state": 2,
+          "controller_reply_received": 1,
+          "queue77": {
+            "object": "0x8e1a0b0",
+            "count": 0,
+            "read_index": 0,
+            "write_index": 0
+          }
+        }
+      },
+      {
+        "kind": "original_isr_return",
+        "irq": 193,
+        "pc": "0x65dd094",
+        "cpu": 0,
+        "sp": "0xac38a88",
+        "cpsr": "0x600001b2",
+        "state": {
+          "init_ready": 1,
+          "postinit_ready": 1,
+          "source_latch": 1,
+          "previous_source_latch": 1,
+          "mode_flag": 0,
+          "source_inhibit": 0,
+          "sampled_gate_vector": [
+            1,
+            0,
+            1,
+            0,
+            1
+          ],
+          "sequence_index": 10,
+          "poll_counter": 0,
+          "mode35_ack": 13,
+          "controller_state": 2,
+          "controller_reply_received": 1,
+          "queue77": {
+            "object": "0x8e1a0b0",
+            "count": 0,
+            "read_index": 0,
+            "write_index": 0
+          }
+        }
+      },
+      {
+        "kind": "original_isr_entry",
+        "irq": 192,
+        "pc": "0x6497252",
+        "cpu": 0,
+        "sp": "0xac38a88",
+        "lr": "0x65dd095",
+        "cpsr": "0x800001b2",
+        "caller_blx_bytes": "8047",
+        "state": {
+          "init_ready": 1,
+          "postinit_ready": 1,
+          "source_latch": 1,
+          "previous_source_latch": 1,
+          "mode_flag": 0,
+          "source_inhibit": 0,
+          "sampled_gate_vector": [
+            1,
+            0,
+            1,
+            0,
+            1
+          ],
+          "sequence_index": 10,
+          "poll_counter": 0,
+          "mode35_ack": 13,
+          "controller_state": 2,
+          "controller_reply_received": 1,
+          "queue77": {
+            "object": "0x8e1a0b0",
+            "count": 0,
+            "read_index": 0,
+            "write_index": 0
+          }
+        }
+      },
+      {
+        "kind": "original_isr_return",
+        "irq": 192,
+        "pc": "0x65dd094",
+        "cpu": 0,
+        "sp": "0xac38a88",
+        "cpsr": "0x600001b2",
+        "state": {
+          "init_ready": 1,
+          "postinit_ready": 1,
+          "source_latch": 1,
+          "previous_source_latch": 1,
+          "mode_flag": 0,
+          "source_inhibit": 0,
+          "sampled_gate_vector": [
+            1,
+            0,
+            1,
+            0,
+            0
+          ],
+          "sequence_index": 10,
+          "poll_counter": 0,
+          "mode35_ack": 13,
+          "controller_state": 2,
+          "controller_reply_received": 1,
+          "queue77": {
+            "object": "0x8e1a0b0",
+            "count": 0,
+            "read_index": 0,
+            "write_index": 0
+          }
+        }
+      },
+      {
+        "kind": "original_isr_entry",
+        "irq": 193,
+        "pc": "0x649727c",
+        "cpu": 0,
+        "sp": "0xac38aa8",
+        "lr": "0x65dd095",
+        "cpsr": "0x800001b2",
+        "caller_blx_bytes": "8047",
+        "state": {
+          "init_ready": 1,
+          "postinit_ready": 1,
+          "source_latch": 1,
+          "previous_source_latch": 1,
+          "mode_flag": 0,
+          "source_inhibit": 0,
+          "sampled_gate_vector": [
+            1,
+            0,
+            1,
+            0,
+            0
+          ],
+          "sequence_index": 10,
+          "poll_counter": 0,
+          "mode35_ack": 13,
+          "controller_state": 2,
+          "controller_reply_received": 1,
+          "queue77": {
+            "object": "0x8e1a0b0",
+            "count": 0,
+            "read_index": 0,
+            "write_index": 0
+          }
+        }
+      },
+      {
+        "kind": "original_isr_return",
+        "irq": 193,
+        "pc": "0x65dd094",
+        "cpu": 0,
+        "sp": "0xac38aa8",
+        "cpsr": "0x600001b2",
+        "state": {
+          "init_ready": 1,
+          "postinit_ready": 1,
+          "source_latch": 1,
+          "previous_source_latch": 1,
+          "mode_flag": 0,
+          "source_inhibit": 0,
+          "sampled_gate_vector": [
+            1,
+            0,
+            1,
+            0,
+            0
+          ],
+          "sequence_index": 10,
+          "poll_counter": 0,
+          "mode35_ack": 13,
+          "controller_state": 2,
+          "controller_reply_received": 1,
+          "queue77": {
+            "object": "0x8e1a0b0",
+            "count": 1,
+            "read_index": 0,
+            "write_index": 1
+          }
+        }
+      }
+    ],
+    "pending_irq_cleanup": "Disabling TEST does not retract already pending GIC edges; this helper never clears GIC pending or active bits",
+    "initial_state": {
+      "init_ready": 1,
+      "postinit_ready": 1,
+      "source_latch": 0,
+      "previous_source_latch": 0,
+      "mode_flag": 0,
+      "source_inhibit": 0,
+      "sampled_gate_vector": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "sequence_index": 10,
+      "poll_counter": 0,
+      "mode35_ack": 13,
+      "controller_state": 2,
+      "controller_reply_received": 1,
+      "queue77": {
+        "object": "0x8e1a0b0",
+        "count": 0,
+        "read_index": 0,
+        "write_index": 0
+      }
+    },
+    "initial_gic": {
+      "cpu0": {
+        "index": 0,
+        "control": 1,
+        "priority_mask": 240,
+        "running_priority": 256,
+        "current_pending": 1023,
+        "halted": false,
+        "interrupt_request": 0
+      },
+      "irqs": {
+        "192": {
+          "id": 192,
+          "enabled": 255,
+          "pending": 0,
+          "active": 0,
+          "level": 0,
+          "group": 0,
+          "targets": 1,
+          "priority_cpu0": 0
+        },
+        "193": {
+          "id": 193,
+          "enabled": 255,
+          "pending": 0,
+          "active": 0,
+          "level": 0,
+          "group": 0,
+          "targets": 1,
+          "priority_cpu0": 0
+        }
+      }
+    },
+    "model_before": {
+      "scope": "test-only explicit host IRQ inputs; no frame data",
+      "automatic_timing": false,
+      "hardware_clock_verified": false,
+      "guest_callback_or_flag_writes": false,
+      "mmio_status_modified": false,
+      "enabled": false,
+      "pulse_requests": 0,
+      "pulse_rejected": 0,
+      "last_requested_irq": 0,
+      "pulses": {
+        "192": 0,
+        "193": 0
+      }
+    },
+    "foreign_return_stops": 3,
+    "last_foreign_return": {
+      "cpu": 2,
+      "sp": "0xac36a88",
+      "cpsr": "0x800001b2"
+    },
+    "final_state": {
+      "init_ready": 1,
+      "postinit_ready": 1,
+      "source_latch": 1,
+      "previous_source_latch": 1,
+      "mode_flag": 0,
+      "source_inhibit": 0,
+      "sampled_gate_vector": [
+        1,
+        0,
+        1,
+        0,
+        0
+      ],
+      "sequence_index": 10,
+      "poll_counter": 0,
+      "mode35_ack": 13,
+      "controller_state": 2,
+      "controller_reply_received": 1,
+      "queue77": {
+        "object": "0x8e1a0b0",
+        "count": 1,
+        "read_index": 0,
+        "write_index": 1
+      }
+    },
+    "model_after": {
+      "scope": "test-only explicit host IRQ inputs; no frame data",
+      "automatic_timing": false,
+      "hardware_clock_verified": false,
+      "guest_callback_or_flag_writes": false,
+      "mmio_status_modified": false,
+      "enabled": true,
+      "pulse_requests": 4,
+      "pulse_rejected": 0,
+      "last_requested_irq": 193,
+      "pulses": {
+        "192": 2,
+        "193": 2
+      }
+    },
+    "inputs_restored_off": true,
+    "closed": true,
+    "started": true
+  },
+  "envelope": {
+    "address": "0x08c4ffe0",
+    "words": [
+      "0x0",
+      "0x2001",
+      "0x0",
+      "0x8c51d9c",
+      "0x0"
+    ],
+    "expected_original_first_code0": true
+  },
+  "queue77_after": {
+    "capacity": 32,
+    "array": 162448680,
+    "write": 1,
+    "read": 1,
+    "count": 0,
+    "object": "0x8e1a0b0"
+  },
+  "payload": {
+    "source": "0x8c51d9c",
+    "work": "0xa603fb8",
+    "bytes": 544,
+    "source_sha256": "35cf82ffc472866c9a11eab6bb2e8cdd10bd7c30b45b3b319bd9cf40af814f1a",
+    "work_sha256": "03c2179cc354ad84c41fe2c0acddc7f1ab4c7cbf6aa83b12218164a0b59c90f1",
+    "source_nonzero_bytes": 38,
+    "work_nonzero_bytes": 42,
+    "matching_bytes": 540,
+    "differences": [
+      {
+        "offset": "0x218",
+        "source": 0,
+        "work": 255
+      },
+      {
+        "offset": "0x219",
+        "source": 0,
+        "work": 255
+      },
+      {
+        "offset": "0x21a",
+        "source": 0,
+        "work": 255
+      },
+      {
+        "offset": "0x21b",
+        "source": 0,
+        "work": 255
+      }
+    ],
+    "copy_opcode": "675eff8 loads message+0xc, r2=0x220, r0=0a603fb8, tail66c2598"
+  },
+  "context": {
+    "offset": "0xbc",
+    "bytes": 48,
+    "source_work_equal": true,
+    "words": [
+      "0x0",
+      "0x0",
+      "0x0",
+      "0x0",
+      "0x0",
+      "0x1",
+      "0x3",
+      "0x3",
+      "0x0",
+      "0x3c",
+      "0x0",
+      "0x8aac02b"
+    ],
+    "flags_pointer": "0x8aac02b",
+    "flags_are_ram": true,
+    "flag_byte_19": 0,
+    "original_default_source": "649f964 uses literal649fa48=08aac02b and stores it at context+2c",
+    "correction": "The observed flags live in RAM. A ROM literal supplies their address; this is not a ROM flags table."
+  },
+  "work_218_explanation": {
+    "source": "0x0",
+    "work": "0xffffffff",
+    "writer": "66d19d2 passes work+218 to676c3a8;676c3b2 stores return from676c2fc",
+    "getter_chain": "676c2fc ->6811134 ->6563e3c",
+    "getter_global": "0x8ab1900",
+    "enabled_byte_6": 0,
+    "disabled_branch": "6563e44 CBZ ->6563e76 MOV r0,-1; return via6563e72/74",
+    "matches_original_postprocess": true,
+    "interpretation": "Original consumer output field, not evidence of a failed 0x220 copy"
+  },
+  "readiness": {
+    "counter_address": "0x08aac26c",
+    "counter": 1,
+    "path": "66d19c2 ->66d179c;649f6c2 checks context+2c byte19; zero permits66d16fe",
+    "counter_instruction": "66d1784 adds1;66d1788 stores halfword",
+    "evidence_limit": "Counter and metadata state plus original control path; no independent per-instruction trace was captured by this inspector"
+  },
+  "graphics": {
+    "draws": 4,
+    "swaps": 1,
+    "scope": "Host software EGL/OpenVG output from original guest calls; guest native scanout buffers are not synchronized"
+  },
+  "sensor_pixels_proven": false,
+  "original_capture_proven": false,
+  "menu_proven": false,
+  "copy_consistent_after_original_postprocess": true,
+  "disassembly_written": true
+}

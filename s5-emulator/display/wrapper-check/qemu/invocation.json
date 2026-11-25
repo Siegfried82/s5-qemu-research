@@ -1,0 +1,47 @@
+{
+  "argv": [
+    "/Users/lixiuqi/Documents/ChatGPT/\u76f8\u673a/s5-emulator/toolchain/build/qemu-system-arm",
+    "-M",
+    "none",
+    "-cpu",
+    "cortex-a7",
+    "-m",
+    "3G",
+    "-S",
+    "-accel",
+    "tcg,thread=single",
+    "-display",
+    "none",
+    "-monitor",
+    "none",
+    "-serial",
+    "none",
+    "-no-user-config",
+    "-nodefaults",
+    "-qmp",
+    "unix:/tmp/s5-rsp-tq26gg42/qmp,server=on,wait=off",
+    "-gdb",
+    "unix:/tmp/s5-rsp-tq26gg42/gdb,server=on,wait=off",
+    "-device",
+    "loader,file=/Users/lixiuqi/Documents/ChatGPT/\u76f8\u673a/s5-emulator/display/prepared/original-rtos-and-osddata.bin,addr=0x6280000,force-raw=on"
+  ],
+  "ram_base": 0,
+  "ram_bytes": 3221225472,
+  "machine": "none",
+  "cpu_count": 1,
+  "mapped_address_ranges": [
+    [
+      0,
+      3221225472
+    ]
+  ],
+  "loaded_files": [
+    {
+      "file": "/Users/lixiuqi/Documents/ChatGPT/\u76f8\u673a/s5-emulator/display/prepared/original-rtos-and-osddata.bin",
+      "address": 103284736,
+      "bytes": 41840640,
+      "sha256": "fb95f93ee28628de61df77c5b6efcde56be64e88d1815d660fbac0325653eefe"
+    }
+  ],
+  "scope": "Flat-memory ARM function probe; no S5 hardware model"
+}

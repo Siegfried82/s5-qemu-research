@@ -1,0 +1,1108 @@
+{
+  "scope": "Static original firmware evidence only. No key/event/GPIO injection or menu-open claim.",
+  "source": "/Users/lixiuqi/Documents/ChatGPT/\u76f8\u673a/s5-v29-offline/unpacked-v29/03_program.bin",
+  "sha256": "fc496d62a91f6e9b1b84807183bb805bc546c9105d2938546b58a66ad9d132fe",
+  "keys": [
+    {
+      "index": 0,
+      "entry": "0x6f1003c",
+      "value": "0x0",
+      "name_pointer": "0x7085268",
+      "name": "WAIT",
+      "dispatcher_case": "0x664371e"
+    },
+    {
+      "index": 1,
+      "entry": "0x6f10044",
+      "value": "0x20000000",
+      "name_pointer": "0x7084f65",
+      "name": "CAPTURE_SCREEN",
+      "dispatcher_case": "0x664372e"
+    },
+    {
+      "index": 2,
+      "entry": "0x6f1004c",
+      "value": "0x0",
+      "name_pointer": "0x7084e5c",
+      "name": "POWER_OFF",
+      "dispatcher_case": "0x664376a"
+    },
+    {
+      "index": 3,
+      "entry": "0x6f10054",
+      "value": "0x4",
+      "name_pointer": "0x708505a",
+      "name": "KEY_UP",
+      "dispatcher_case": "0x6643776"
+    },
+    {
+      "index": 4,
+      "entry": "0x6f1005c",
+      "value": "0x8",
+      "name_pointer": "0x7084fd8",
+      "name": "KEY_DOWN",
+      "dispatcher_case": "0x6643776"
+    },
+    {
+      "index": 5,
+      "entry": "0x6f10064",
+      "value": "0x1",
+      "name_pointer": "0x70851cd",
+      "name": "KEY_LEFT",
+      "dispatcher_case": "0x6643776"
+    },
+    {
+      "index": 6,
+      "entry": "0x6f1006c",
+      "value": "0x2",
+      "name_pointer": "0x708525e",
+      "name": "KEY_RIGHT",
+      "dispatcher_case": "0x6643776"
+    },
+    {
+      "index": 7,
+      "entry": "0x6f10074",
+      "value": "0x10",
+      "name_pointer": "0x70850ab",
+      "name": "KEY_CENTER",
+      "dispatcher_case": "0x6643776"
+    },
+    {
+      "index": 8,
+      "entry": "0x6f1007c",
+      "value": "0x20",
+      "name_pointer": "0x70852be",
+      "name": "KEY_PLAY",
+      "dispatcher_case": "0x6643776"
+    },
+    {
+      "index": 9,
+      "entry": "0x6f10084",
+      "value": "0x40",
+      "name_pointer": "0x70852b2",
+      "name": "KEY_DISPLAY",
+      "dispatcher_case": "0x6643776"
+    },
+    {
+      "index": 10,
+      "entry": "0x6f1008c",
+      "value": "0x80",
+      "name_pointer": "0x7084e44",
+      "name": "KEY_DELETE",
+      "dispatcher_case": "0x6643776"
+    },
+    {
+      "index": 11,
+      "entry": "0x6f10094",
+      "value": "0x100",
+      "name_pointer": "0x7084e66",
+      "name": "KEY_SHUTTER_HALF",
+      "dispatcher_case": "0x6643776"
+    },
+    {
+      "index": 12,
+      "entry": "0x6f1009c",
+      "value": "0x200",
+      "name_pointer": "0x7084f0f",
+      "name": "KEY_SHUTTER_FULL",
+      "dispatcher_case": "0x6643776"
+    },
+    {
+      "index": 13,
+      "entry": "0x6f100a4",
+      "value": "0x800",
+      "name_pointer": "0x7084de1",
+      "name": "KEY_MOVIE",
+      "dispatcher_case": "0x6643776"
+    },
+    {
+      "index": 14,
+      "entry": "0x6f100ac",
+      "value": "0x400",
+      "name_pointer": "0x7084eec",
+      "name": "KEY_AF_AE_LOCK",
+      "dispatcher_case": "0x6643776"
+    },
+    {
+      "index": 15,
+      "entry": "0x6f100b4",
+      "value": "0x2000",
+      "name_pointer": "0x7085292",
+      "name": "KEY_Q_MENU",
+      "dispatcher_case": "0x6643776"
+    },
+    {
+      "index": 16,
+      "entry": "0x6f100bc",
+      "value": "0x4000",
+      "name_pointer": "0x7084e9a",
+      "name": "KEY_LCD_EVF",
+      "dispatcher_case": "0x6643776"
+    },
+    {
+      "index": 17,
+      "entry": "0x6f100c4",
+      "value": "0x8000",
+      "name_pointer": "0x7084f50",
+      "name": "KEY_FILM",
+      "dispatcher_case": "0x6643776"
+    },
+    {
+      "index": 18,
+      "entry": "0x6f100cc",
+      "value": "0x10000",
+      "name_pointer": "0x708529d",
+      "name": "KEY_LPSW",
+      "dispatcher_case": "0x6643776"
+    },
+    {
+      "index": 19,
+      "entry": "0x6f100d4",
+      "value": "0x20000",
+      "name_pointer": "0x7084e90",
+      "name": "KEY_AF_MF",
+      "dispatcher_case": "0x6643776"
+    },
+    {
+      "index": 20,
+      "entry": "0x6f100dc",
+      "value": "0x40000",
+      "name_pointer": "0x7084d1d",
+      "name": "KEY_IA",
+      "dispatcher_case": "0x6643776"
+    },
+    {
+      "index": 21,
+      "entry": "0x6f100e4",
+      "value": "0x80000",
+      "name_pointer": "0x7084c80",
+      "name": "KEY_FUNCTION_1",
+      "dispatcher_case": "0x6643776"
+    },
+    {
+      "index": 22,
+      "entry": "0x6f100ec",
+      "value": "0x100000",
+      "name_pointer": "0x7084cc1",
+      "name": "KEY_FUNCTION_2",
+      "dispatcher_case": "0x6643776"
+    },
+    {
+      "index": 23,
+      "entry": "0x6f100f4",
+      "value": "0x200000",
+      "name_pointer": "0x7084ce3",
+      "name": "KEY_FUNCTION_3",
+      "dispatcher_case": "0x6643776"
+    },
+    {
+      "index": 24,
+      "entry": "0x6f100fc",
+      "value": "0x400000",
+      "name_pointer": "0x7084cf2",
+      "name": "KEY_FUNCTION_4",
+      "dispatcher_case": "0x6643776"
+    },
+    {
+      "index": 25,
+      "entry": "0x6f10104",
+      "value": "0x80000000",
+      "name_pointer": "0x7084d01",
+      "name": "KEY_FUNCTION_5",
+      "dispatcher_case": "0x6643776"
+    },
+    {
+      "index": 26,
+      "entry": "0x6f1010c",
+      "value": "0x800000",
+      "name_pointer": "0x7084fe1",
+      "name": "KEY_ISO",
+      "dispatcher_case": "0x6643776"
+    },
+    {
+      "index": 27,
+      "entry": "0x6f10114",
+      "value": "0x1000000",
+      "name_pointer": "0x7084d43",
+      "name": "KEY_WB",
+      "dispatcher_case": "0x6643776"
+    },
+    {
+      "index": 28,
+      "entry": "0x6f1011c",
+      "value": "0x2000000",
+      "name_pointer": "0x7084e39",
+      "name": "KEY_EXPOSE",
+      "dispatcher_case": "0x6643776"
+    },
+    {
+      "index": 29,
+      "entry": "0x6f10124",
+      "value": "0x1000",
+      "name_pointer": "0x7084f87",
+      "name": "KEY_KURU_PON",
+      "dispatcher_case": "0x6643776"
+    },
+    {
+      "index": 30,
+      "entry": "0x6f1012c",
+      "value": "0x4000000",
+      "name_pointer": "0x708517e",
+      "name": "CONTROL_DIAL_LEFT",
+      "dispatcher_case": "0x6643776"
+    },
+    {
+      "index": 31,
+      "entry": "0x6f10134",
+      "value": "0x8000000",
+      "name_pointer": "0x708520b",
+      "name": "CONTROL_DIAL_RIGHT",
+      "dispatcher_case": "0x6643776"
+    },
+    {
+      "index": 32,
+      "entry": "0x6f1013c",
+      "value": "0x10000000",
+      "name_pointer": "0x7084d7f",
+      "name": "ZOOM_LEVER_WIDE",
+      "dispatcher_case": "0x6643776"
+    },
+    {
+      "index": 33,
+      "entry": "0x6f10144",
+      "value": "0x20000000",
+      "name_pointer": "0x7084dfd",
+      "name": "ZOOM_LEVER_TELE",
+      "dispatcher_case": "0x6643776"
+    },
+    {
+      "index": 34,
+      "entry": "0x6f1014c",
+      "value": "0x40000000",
+      "name_pointer": "0x708501b",
+      "name": "KEY_STROBO_POP_UP",
+      "dispatcher_case": "0x6643776"
+    },
+    {
+      "index": 35,
+      "entry": "0x6f10154",
+      "value": "0x1",
+      "name_pointer": "0x70851a9",
+      "name": "FRONT_DIAL_LEFT",
+      "dispatcher_case": "0x664378c"
+    },
+    {
+      "index": 36,
+      "entry": "0x6f1015c",
+      "value": "0x2",
+      "name_pointer": "0x7085238",
+      "name": "FRONT_DIAL_RIGHT",
+      "dispatcher_case": "0x664378c"
+    },
+    {
+      "index": 37,
+      "entry": "0x6f10164",
+      "value": "0x4",
+      "name_pointer": "0x7085195",
+      "name": "REAR_DIAL_LEFT",
+      "dispatcher_case": "0x664378c"
+    },
+    {
+      "index": 38,
+      "entry": "0x6f1016c",
+      "value": "0x8",
+      "name_pointer": "0x7085223",
+      "name": "REAR_DIAL_RIGHT",
+      "dispatcher_case": "0x664378c"
+    },
+    {
+      "index": 39,
+      "entry": "0x6f10174",
+      "value": "0x10",
+      "name_pointer": "0x70851a4",
+      "name": "GRIP_FRONT_DIAL_LEFT",
+      "dispatcher_case": "0x664378c"
+    },
+    {
+      "index": 40,
+      "entry": "0x6f1017c",
+      "value": "0x20",
+      "name_pointer": "0x7085233",
+      "name": "GRIP_FRONT_DIAL_RIGHT",
+      "dispatcher_case": "0x664378c"
+    },
+    {
+      "index": 41,
+      "entry": "0x6f10184",
+      "value": "0x40",
+      "name_pointer": "0x7085190",
+      "name": "GRIP_REAR_DIAL_LEFT",
+      "dispatcher_case": "0x664378c"
+    },
+    {
+      "index": 42,
+      "entry": "0x6f1018c",
+      "value": "0x80",
+      "name_pointer": "0x708521e",
+      "name": "GRIP_REAR_DIAL_RIGHT",
+      "dispatcher_case": "0x664378c"
+    },
+    {
+      "index": 43,
+      "entry": "0x6f10194",
+      "value": "0x400",
+      "name_pointer": "0x7084f79",
+      "name": "GRIP_FUNCTION",
+      "dispatcher_case": "0x664378c"
+    },
+    {
+      "index": 44,
+      "entry": "0x6f1019c",
+      "value": "0x100",
+      "name_pointer": "0x70851b9",
+      "name": "FUNCTION_LEVER_LEFT",
+      "dispatcher_case": "0x664378c"
+    },
+    {
+      "index": 45,
+      "entry": "0x6f101a4",
+      "value": "0x200",
+      "name_pointer": "0x7085249",
+      "name": "FUNCTION_LEVER_RIGHT",
+      "dispatcher_case": "0x664378c"
+    },
+    {
+      "index": 46,
+      "entry": "0x6f101ac",
+      "value": "0x800",
+      "name_pointer": "0x7084ee3",
+      "name": "KEY_WIFI",
+      "dispatcher_case": "0x664378c"
+    },
+    {
+      "index": 47,
+      "entry": "0x6f101b4",
+      "value": "0x1000",
+      "name_pointer": "0x70850d7",
+      "name": "KEY_DELETE_LONG_PRESS",
+      "dispatcher_case": "0x664378c"
+    },
+    {
+      "index": 48,
+      "entry": "0x6f101bc",
+      "value": "0x2000",
+      "name_pointer": "0x70850cf",
+      "name": "KEY_OIS",
+      "dispatcher_case": "0x664378c"
+    },
+    {
+      "index": 49,
+      "entry": "0x6f101c4",
+      "value": "0x0",
+      "name_pointer": "0x708516f",
+      "name": "RING_DIAL_LEFT",
+      "dispatcher_case": "0x664378c"
+    },
+    {
+      "index": 50,
+      "entry": "0x6f101cc",
+      "value": "0x0",
+      "name_pointer": "0x70851fb",
+      "name": "RING_DIAL_RIGHT",
+      "dispatcher_case": "0x664378c"
+    },
+    {
+      "index": 51,
+      "entry": "0x6f101d4",
+      "value": "0x0",
+      "name_pointer": "0x708514c",
+      "name": "RING_DIAL2_LEFT",
+      "dispatcher_case": "0x664378c"
+    },
+    {
+      "index": 52,
+      "entry": "0x6f101dc",
+      "value": "0x0",
+      "name_pointer": "0x70851d6",
+      "name": "RING_DIAL2_RIGHT",
+      "dispatcher_case": "0x664378c"
+    },
+    {
+      "index": 53,
+      "entry": "0x6f101e4",
+      "value": "0x10000",
+      "name_pointer": "0x7084d6d",
+      "name": "REMOCON_ZOOM_WIDE",
+      "dispatcher_case": "0x664378c"
+    },
+    {
+      "index": 54,
+      "entry": "0x6f101ec",
+      "value": "0x20000",
+      "name_pointer": "0x7084deb",
+      "name": "REMOCON_ZOOM_TELE",
+      "dispatcher_case": "0x664378c"
+    },
+    {
+      "index": 55,
+      "entry": "0x6f101f4",
+      "value": "0x40000",
+      "name_pointer": "0x7084dac",
+      "name": "KEY_MODE",
+      "dispatcher_case": "0x664378c"
+    },
+    {
+      "index": 56,
+      "entry": "0x6f101fc",
+      "value": "0x80000",
+      "name_pointer": "0x7084f3b",
+      "name": "KEY_CREATIVE_CONTROL",
+      "dispatcher_case": "0x664378c"
+    },
+    {
+      "index": 57,
+      "entry": "0x6f10204",
+      "value": "0x100000",
+      "name_pointer": "0x708513a",
+      "name": "KEY_RESET",
+      "dispatcher_case": "0x664378c"
+    },
+    {
+      "index": 58,
+      "entry": "0x6f1020c",
+      "value": "0x200000",
+      "name_pointer": "0x7085144",
+      "name": "KEY_SET",
+      "dispatcher_case": "0x664378c"
+    },
+    {
+      "index": 59,
+      "entry": "0x6f10214",
+      "value": "0x400000",
+      "name_pointer": "0x7085077",
+      "name": "KEY_TRIELMAR",
+      "dispatcher_case": "0x664378c"
+    },
+    {
+      "index": 60,
+      "entry": "0x6f1021c",
+      "value": "0x800000",
+      "name_pointer": "0x7084ffd",
+      "name": "KEY_4K_PHOTO",
+      "dispatcher_case": "0x664378c"
+    },
+    {
+      "index": 61,
+      "entry": "0x6f10224",
+      "value": "0x0",
+      "name_pointer": "0x708508c",
+      "name": "ND_FILTER",
+      "dispatcher_case": "0x664375c"
+    },
+    {
+      "index": 62,
+      "entry": "0x6f1022c",
+      "value": "0x4",
+      "name_pointer": "0x708500f",
+      "name": "JOYSTICK_UP",
+      "dispatcher_case": "0x66437b4"
+    },
+    {
+      "index": 63,
+      "entry": "0x6f10234",
+      "value": "0x8",
+      "name_pointer": "0x7084f99",
+      "name": "JOYSTICK_DOWN",
+      "dispatcher_case": "0x66437b4"
+    },
+    {
+      "index": 64,
+      "entry": "0x6f1023c",
+      "value": "0x1",
+      "name_pointer": "0x7085161",
+      "name": "JOYSTICK_LEFT",
+      "dispatcher_case": "0x66437b4"
+    },
+    {
+      "index": 65,
+      "entry": "0x6f10244",
+      "value": "0x2",
+      "name_pointer": "0x70851ec",
+      "name": "JOYSTICK_RIGHT",
+      "dispatcher_case": "0x66437b4"
+    },
+    {
+      "index": 66,
+      "entry": "0x6f1024c",
+      "value": "0x10",
+      "name_pointer": "0x708509b",
+      "name": "JOYSTICK_CENTER",
+      "dispatcher_case": "0x66437b4"
+    },
+    {
+      "index": 67,
+      "entry": "0x6f10254",
+      "value": "0x80",
+      "name_pointer": "0x708500a",
+      "name": "GRIP_JOYSTICK_UP",
+      "dispatcher_case": "0x66437b4"
+    },
+    {
+      "index": 68,
+      "entry": "0x6f1025c",
+      "value": "0x100",
+      "name_pointer": "0x7084f94",
+      "name": "GRIP_JOYSTICK_DOWN",
+      "dispatcher_case": "0x66437b4"
+    },
+    {
+      "index": 69,
+      "entry": "0x6f10264",
+      "value": "0x20",
+      "name_pointer": "0x708515c",
+      "name": "GRIP_JOYSTICK_LEFT",
+      "dispatcher_case": "0x66437b4"
+    },
+    {
+      "index": 70,
+      "entry": "0x6f1026c",
+      "value": "0x40",
+      "name_pointer": "0x70851e7",
+      "name": "GRIP_JOYSTICK_RIGHT",
+      "dispatcher_case": "0x66437b4"
+    },
+    {
+      "index": 71,
+      "entry": "0x6f10274",
+      "value": "0x200",
+      "name_pointer": "0x7085096",
+      "name": "GRIP_JOYSTICK_CENTER",
+      "dispatcher_case": "0x66437b4"
+    },
+    {
+      "index": 72,
+      "entry": "0x6f1027c",
+      "value": "0x16",
+      "name_pointer": "0x7084d10",
+      "name": "MODE_DIAL_IA",
+      "dispatcher_case": "0x66437ca"
+    },
+    {
+      "index": 73,
+      "entry": "0x6f10284",
+      "value": "0xb",
+      "name_pointer": "0x7085061",
+      "name": "MODE_DIAL_P",
+      "dispatcher_case": "0x66437ca"
+    },
+    {
+      "index": 74,
+      "entry": "0x6f1028c",
+      "value": "0x10",
+      "name_pointer": "0x7084d37",
+      "name": "MODE_DIAL_A",
+      "dispatcher_case": "0x66437ca"
+    },
+    {
+      "index": 75,
+      "entry": "0x6f10294",
+      "value": "0x11",
+      "name_pointer": "0x7085103",
+      "name": "MODE_DIAL_S",
+      "dispatcher_case": "0x66437ca"
+    },
+    {
+      "index": 76,
+      "entry": "0x6f1029c",
+      "value": "0x12",
+      "name_pointer": "0x7084f59",
+      "name": "MODE_DIAL_M",
+      "dispatcher_case": "0x66437ca"
+    },
+    {
+      "index": 77,
+      "entry": "0x6f102a4",
+      "value": "0xd",
+      "name_pointer": "0x7084dd1",
+      "name": "MODE_DIAL_MOVIE",
+      "dispatcher_case": "0x66437ca"
+    },
+    {
+      "index": 78,
+      "entry": "0x6f102ac",
+      "value": "0x17",
+      "name_pointer": "0x7084c6d",
+      "name": "MODE_DIAL_CUSTOM_1",
+      "dispatcher_case": "0x66437ca"
+    },
+    {
+      "index": 79,
+      "entry": "0x6f102b4",
+      "value": "0x18",
+      "name_pointer": "0x7084cae",
+      "name": "MODE_DIAL_CUSTOM_2",
+      "dispatcher_case": "0x66437ca"
+    },
+    {
+      "index": 80,
+      "entry": "0x6f102bc",
+      "value": "0x1a",
+      "name_pointer": "0x7084cd0",
+      "name": "MODE_DIAL_CUSTOM_3",
+      "dispatcher_case": "0x66437ca"
+    },
+    {
+      "index": 81,
+      "entry": "0x6f102c4",
+      "value": "0x1e",
+      "name_pointer": "0x7084d24",
+      "name": "MODE_DIAL_PANORAMA",
+      "dispatcher_case": "0x66437ca"
+    },
+    {
+      "index": 82,
+      "entry": "0x6f102cc",
+      "value": "0x13",
+      "name_pointer": "0x7084e1f",
+      "name": "MODE_DIAL_SCENE",
+      "dispatcher_case": "0x66437ca"
+    },
+    {
+      "index": 83,
+      "entry": "0x6f102d4",
+      "value": "0x9",
+      "name_pointer": "0x7084f20",
+      "name": "MODE_DIAL_CREATIVE_CONTROL",
+      "dispatcher_case": "0x66437ca"
+    },
+    {
+      "index": 84,
+      "entry": "0x6f102dc",
+      "value": "0x2",
+      "name_pointer": "0x7084e0d",
+      "name": "DRIVE_DIAL_SINGLE",
+      "dispatcher_case": "0x66437d8"
+    },
+    {
+      "index": 85,
+      "entry": "0x6f102e4",
+      "value": "0x0",
+      "name_pointer": "0x7085281",
+      "name": "DRIVE_DIAL_BURST",
+      "dispatcher_case": "0x66437d8"
+    },
+    {
+      "index": 86,
+      "entry": "0x6f102ec",
+      "value": "0x5",
+      "name_pointer": "0x7084fe9",
+      "name": "DRIVE_DIAL_4K_PHOTO",
+      "dispatcher_case": "0x66437d8"
+    },
+    {
+      "index": 87,
+      "entry": "0x6f102f4",
+      "value": "0x6",
+      "name_pointer": "0x70850ed",
+      "name": "DRIVE_DIAL_POST_FOCUS",
+      "dispatcher_case": "0x66437d8"
+    },
+    {
+      "index": 88,
+      "entry": "0x6f102fc",
+      "value": "0x3",
+      "name_pointer": "0x7084e80",
+      "name": "DRIVE_DIAL_SELF",
+      "dispatcher_case": "0x66437d8"
+    },
+    {
+      "index": 89,
+      "entry": "0x6f10304",
+      "value": "0x4",
+      "name_pointer": "0x7084efb",
+      "name": "DRIVE_DIAL_INTERVAL",
+      "dispatcher_case": "0x66437d8"
+    },
+    {
+      "index": 90,
+      "entry": "0x6f1030c",
+      "value": "0x1",
+      "name_pointer": "0x7084db5",
+      "name": "NEXT_LANGUAGE",
+      "dispatcher_case": "0x66437e6"
+    },
+    {
+      "index": 91,
+      "entry": "0x6f10314",
+      "value": "0x0",
+      "name_pointer": "0x7084dc3",
+      "name": "PREV_LANGUAGE",
+      "dispatcher_case": "0x66437e6"
+    },
+    {
+      "index": 92,
+      "entry": "0x6f1031c",
+      "value": "0x0",
+      "name_pointer": "0x7084d8f",
+      "name": "SET_OSDDSPMODE",
+      "dispatcher_case": "0x66437f8"
+    },
+    {
+      "index": 93,
+      "entry": "0x6f10324",
+      "value": "0x1",
+      "name_pointer": "0x7084d4a",
+      "name": "SET_OSDPC",
+      "dispatcher_case": "0x664380a"
+    },
+    {
+      "index": 94,
+      "entry": "0x6f1032c",
+      "value": "0x2",
+      "name_pointer": "0x708526d",
+      "name": "SET_OSDMSG_ONE_SHOT",
+      "dispatcher_case": "0x664381c"
+    },
+    {
+      "index": 95,
+      "entry": "0x6f10334",
+      "value": "0x3",
+      "name_pointer": "0x7084eb3",
+      "name": "SET_OSDMSG",
+      "dispatcher_case": "0x6643832"
+    },
+    {
+      "index": 96,
+      "entry": "0x6f1033c",
+      "value": "0x4",
+      "name_pointer": "0x7084ea6",
+      "name": "CLEAR_OSDMSG",
+      "dispatcher_case": "0x6643854"
+    },
+    {
+      "index": 97,
+      "entry": "0x6f10344",
+      "value": "0x5",
+      "name_pointer": "0x7084d54",
+      "name": "SET_OSDMD",
+      "dispatcher_case": "0x6643882"
+    },
+    {
+      "index": 98,
+      "entry": "0x6f1034c",
+      "value": "0x0",
+      "name_pointer": "0x70850c5",
+      "name": "LED_POWER",
+      "dispatcher_case": "0x6643898"
+    },
+    {
+      "index": 99,
+      "entry": "0x6f10354",
+      "value": "0x1",
+      "name_pointer": "0x7084e77",
+      "name": "LED_SELF",
+      "dispatcher_case": "0x6643898"
+    },
+    {
+      "index": 100,
+      "entry": "0x6f1035c",
+      "value": "0x2",
+      "name_pointer": "0x7084eda",
+      "name": "LED_WIFI",
+      "dispatcher_case": "0x6643898"
+    },
+    {
+      "index": 101,
+      "entry": "0x6f10364",
+      "value": "0x3",
+      "name_pointer": "0x7084c60",
+      "name": "LED_SD_CARD1",
+      "dispatcher_case": "0x6643898"
+    },
+    {
+      "index": 102,
+      "entry": "0x6f1036c",
+      "value": "0x4",
+      "name_pointer": "0x7084c8f",
+      "name": "LED_SD_CARD2",
+      "dispatcher_case": "0x6643898"
+    },
+    {
+      "index": 103,
+      "entry": "0x6f10374",
+      "value": "0x0",
+      "name_pointer": "0x708506d",
+      "name": "COLOR_BAR",
+      "dispatcher_case": "0x6643870"
+    },
+    {
+      "index": 104,
+      "entry": "0x6f1037c",
+      "value": "0x0",
+      "name_pointer": "0x7084e2f",
+      "name": "TEST_TONE",
+      "dispatcher_case": "0x664386e"
+    },
+    {
+      "index": 105,
+      "entry": "0x6f10384",
+      "value": "0x0",
+      "name_pointer": "0x7084d5e",
+      "name": "FORMAT_SD_CARD",
+      "dispatcher_case": "0x664386c"
+    },
+    {
+      "index": 106,
+      "entry": "0x6f1038c",
+      "value": "0x0",
+      "name_pointer": "0x70852c7",
+      "name": "SYSTEM_FREQUENCY",
+      "dispatcher_case": "0x664375c"
+    },
+    {
+      "index": 107,
+      "entry": "0x6f10394",
+      "value": "0x0",
+      "name_pointer": "0x7085133",
+      "name": "ASPECT",
+      "dispatcher_case": "0x664386a"
+    },
+    {
+      "index": 108,
+      "entry": "0x6f1039c",
+      "value": "0x0",
+      "name_pointer": "0x7084e4f",
+      "name": "PICTURE_SIZE",
+      "dispatcher_case": "0x6643868"
+    },
+    {
+      "index": 109,
+      "entry": "0x6f103a4",
+      "value": "0x0",
+      "name_pointer": "0x70852d8",
+      "name": "PICTURE_QUALITY",
+      "dispatcher_case": "0x6643866"
+    },
+    {
+      "index": 110,
+      "entry": "0x6f103ac",
+      "value": "0x0",
+      "name_pointer": "0x7085126",
+      "name": "MOVIE_FORMAT",
+      "dispatcher_case": "0x6643864"
+    },
+    {
+      "index": 111,
+      "entry": "0x6f103b4",
+      "value": "0x0",
+      "name_pointer": "0x708510f",
+      "name": "NOTIFY_OVERHEAT",
+      "dispatcher_case": "0x6643862"
+    },
+    {
+      "index": 112,
+      "entry": "0x6f103bc",
+      "value": "0x7",
+      "name_pointer": "0x7084c9c",
+      "name": "DRIVE_DIAL_BURST2",
+      "dispatcher_case": "0x66437d8"
+    },
+    {
+      "index": 113,
+      "entry": "0x6f103c4",
+      "value": "0x0",
+      "name_pointer": "0x70850b6",
+      "name": "FRONT_FN_LEVER",
+      "dispatcher_case": "0x664375c"
+    },
+    {
+      "index": 114,
+      "entry": "0x6f103cc",
+      "value": "0x0",
+      "name_pointer": "0x7084d9e",
+      "name": "KEY_VIEW_MODE",
+      "dispatcher_case": "0x66437a2"
+    },
+    {
+      "index": 115,
+      "entry": "0x6f103d4",
+      "value": "0x0",
+      "name_pointer": "0x7084ebe",
+      "name": "STATUS_LCD_BACKLIGHT_SWITCH",
+      "dispatcher_case": "0x664375c"
+    },
+    {
+      "index": 116,
+      "entry": "0x6f103dc",
+      "value": "0x400",
+      "name_pointer": "0x7085032",
+      "name": "JOYSTICK_LEFT_UP",
+      "dispatcher_case": "0x66437b4"
+    },
+    {
+      "index": 117,
+      "entry": "0x6f103e4",
+      "value": "0x1000",
+      "name_pointer": "0x7085048",
+      "name": "JOYSTICK_RIGHT_UP",
+      "dispatcher_case": "0x66437b4"
+    },
+    {
+      "index": 118,
+      "entry": "0x6f103ec",
+      "value": "0x800",
+      "name_pointer": "0x7084fac",
+      "name": "JOYSTICK_LEFT_DOWN",
+      "dispatcher_case": "0x66437b4"
+    },
+    {
+      "index": 119,
+      "entry": "0x6f103f4",
+      "value": "0x2000",
+      "name_pointer": "0x7084fc4",
+      "name": "JOYSTICK_RIGHT_DOWN",
+      "dispatcher_case": "0x66437b4"
+    },
+    {
+      "index": 120,
+      "entry": "0x6f103fc",
+      "value": "0x4000",
+      "name_pointer": "0x708502d",
+      "name": "GRIP_JOYSTICK_LEFT_UP",
+      "dispatcher_case": "0x66437b4"
+    },
+    {
+      "index": 121,
+      "entry": "0x6f10404",
+      "value": "0x10000",
+      "name_pointer": "0x7085043",
+      "name": "GRIP_JOYSTICK_RIGHT_UP",
+      "dispatcher_case": "0x66437b4"
+    },
+    {
+      "index": 122,
+      "entry": "0x6f1040c",
+      "value": "0x8000",
+      "name_pointer": "0x7084fa7",
+      "name": "GRIP_JOYSTICK_LEFT_DOWN",
+      "dispatcher_case": "0x66437b4"
+    },
+    {
+      "index": 123,
+      "entry": "0x6f10414",
+      "value": "0x20000",
+      "name_pointer": "0x7084fbf",
+      "name": "GRIP_JOYSTICK_RIGHT_DOWN",
+      "dispatcher_case": "0x66437b4"
+    },
+    {
+      "index": 124,
+      "entry": "0x6f1041c",
+      "value": "0x100000",
+      "name_pointer": "0x70852a6",
+      "name": "FUNCTION_SW",
+      "dispatcher_case": "0x6643776"
+    }
+  ],
+  "actions": [
+    {
+      "argument": 0,
+      "entry": "0x6f10424",
+      "internal_action": 2,
+      "name": "OPEN"
+    },
+    {
+      "argument": 1,
+      "entry": "0x6f1042c",
+      "internal_action": 0,
+      "name": "TRIGGER"
+    },
+    {
+      "argument": 2,
+      "entry": "0x6f10434",
+      "internal_action": 1,
+      "name": "REPEAT"
+    },
+    {
+      "argument": 3,
+      "entry": "0x6f1043c",
+      "internal_action": 3,
+      "name": "ONE_SHOT"
+    }
+  ],
+  "original_parser": {
+    "address_thumb": "0x0664bf95",
+    "argument_registers": {
+      "r0": "argc",
+      "r1": "argv pointer array"
+    },
+    "minimum_argc": 3,
+    "argv1": "Exact case-sensitive table name, or decimal table index",
+    "argv2": "Numeric action argument, not internal action value; key cases require0..3",
+    "optional_argv3": "Numeric delay passed to original0x066c23e8 when nonzero",
+    "queue_call": "0x067f0dda",
+    "queue_registers": {
+      "r0": "0x115",
+      "r1": 0,
+      "r2": "0x11d",
+      "r3": 0
+    },
+    "queue_stack_arguments": [
+      "0x0011f002",
+      "pointer to two u32 payload words",
+      8,
+      "0xffffffff"
+    ],
+    "payload_words": [
+      "table_index",
+      "action_argument"
+    ],
+    "string_test": "KEY_CENTER, action1 is a candidate press; KEY_CENTER, action0 is release. This is an invocation description, not a tested shell command."
+  },
+  "original_message_handler": {
+    "receiving_task": "uiTSK285, entry0x06475dd5; in pulse-timer-60s run_count149 and waiting on queue0x115",
+    "queue_receive": "0x06475df0 calls0x067ea67a(r0=0x115,r1=message_buffer,r2=-1)",
+    "receiver_dispatch": "0x06475e20 ->0x06475c6e ->0x06475886; key/control dispatch is attempted before other message classes",
+    "entry": "0x06475886",
+    "message_code_offset": 8,
+    "payload_pointer_offset": 12,
+    "match": "0x064758a0 compares0x0011f002;0x064759c6 calls0x06643680(payload)",
+    "buffer_release": "0x06475c04 calls0x067f0dd0 after dispatch"
+  },
+  "key_center": {
+    "table_index": 7,
+    "mask": "0x10",
+    "bank": 0,
+    "case": "0x06643776",
+    "handler": "0x066435a0",
+    "action_lookup": "Reads one byte from0x06f10424 + action_argument*8",
+    "state": "Copies existing0x58-byte input state from0x08ca9624 and sets current/trigger/repeat/release fields",
+    "state_dispatch": "0x06643648 calls0x066431de; mode/state guards remain original",
+    "ui_key_mapping": "0x0663f02e tests bank0 trigger bit4 and calls0x066bddc8(r0=7,r1=0)",
+    "ui_event": "0x066bddc8 passes event0x0f000002 and (action<<16)|key to0x066beea6",
+    "alternate_live_handler": "bank0 table0x06f10554 {mask0x10,trigger1,flags1,handler0x06646e85}; original handler can call0x066be02a(0) at0x06647092 after state checks",
+    "menu_meaning": "Candidate for camera MENU/SET from center-key role and routing, not yet runtime-confirmed. Physical GPIO mapping not established."
+  },
+  "separate_keys": {
+    "KEY_Q_MENU": {
+      "index": 15,
+      "mask": "0x2000",
+      "bank": 0,
+      "handler_table": "0x06f10584",
+      "handler": "0x06649983"
+    },
+    "KEY_SET": {
+      "index": 58,
+      "mask": "0x200000",
+      "bank": 1,
+      "case": "0x0664378c",
+      "handler": "0x0664353a"
+    }
+  },
+  "restrictions": [
+    "Do not label a software-key invocation as GPIO or physical key emulation.",
+    "Table index, bit mask, internal action and final UI key code are different namespaces.",
+    "No runtime safety/liveness of calling this API from an arbitrary halted task is established; use a suitable original task context and bounded probe.",
+    "Do not bypass original input guards by calling a final menu-open transition directly."
+  ]
+}

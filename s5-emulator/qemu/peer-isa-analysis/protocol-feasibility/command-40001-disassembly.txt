@@ -1,0 +1,244 @@
+Original SHA256 fc496d62a91f6e9b1b84807183bb805bc546c9105d2938546b58a66ad9d132fe
+Offline selected paths; TBB bytes are reported separately and excluded from instruction ranges.
+
+outer dispatch type/source guards: 0x675f154..0x675f168
+0675f154 0146       mov       r1, r0
+0675f156 10b5       push      {r4, lr}
+0675f158 0020       movs      r0, #0
+0675f15a 0a8a       ldrh      r2, [r1, #0x10]
+0675f15c 1204       lsls      r2, r2, #0x10
+0675f15e 120c       lsrs      r2, r2, #0x10
+0675f160 13d0       beq       #0x675f18a
+0675f162 1d4b       ldr       r3, [pc, #0x74] ; [0x0675f1d8]=0x06f48fa8
+0675f164 012a       cmp       r2, #1
+0675f166 14d0       beq       #0x675f192
+
+type1 source4a tail: 0x675f192..0x675f1a4
+0675f192 4a68       ldr       r2, [r1, #4]
+0675f194 0020       movs      r0, #0
+0675f196 1b68       ldr       r3, [r3]
+0675f198 9a42       cmp       r2, r3
+0675f19a f5d1       bne       #0x675f188
+0675f19c bde81040   pop.w     {r4, lr}
+0675f1a0 0846       mov       r0, r1
+0675f1a2 21e4       b         #0x675e9e8
+
+code40001 dispatcher before table: 0x675e9e8..0x675ea04
+0675e9e8 10b5       push      {r4, lr}
+0675e9ea f74b       ldr       r3, [pc, #0x3dc] ; [0x0675edc8]=0x00040017
+0675e9ec 8268       ldr       r2, [r0, #8]
+0675e9ee d11a       subs      r1, r2, r3
+0675e9f0 9a42       cmp       r2, r3
+0675e9f2 48d0       beq       #0x675ea86
+0675e9f4 0fdc       bgt       #0x675ea16
+0675e9f6 6ff48021   mvn       r1, #0x40000
+0675e9fa 1144       add       r1, r2
+0675e9fc 1129       cmp       r1, #0x11
+0675e9fe 20d2       bhs       #0x675ea42
+0675ea00 dfe801f0   tbb       [pc, r1]
+
+code40001 selected call: 0x675ea4c..0x675ea56
+0675ea4c 0121       movs      r1, #1
+0675ea4e 0920       movs      r0, #9
+0675ea50 72f7aefc   bl        #0x66d13b0
+0675ea54 26e0       b         #0x675eaa4
+
+handled return: 0x675eaa4..0x675eaa8
+0675eaa4 0120       movs      r0, #1
+0675eaa6 10bd       pop       {r4, pc}
+
+controller byte selector before table: 0x66d13b0..0x66d13bc
+066d13b0 db4a       ldr       r2, [pc, #0x36c] ; [0x066d1720]=0x08aac2e4
+066d13b2 0938       subs      r0, #9
+066d13b4 0a28       cmp       r0, #0xa
+066d13b6 1bd2       bhs       #0x66d13f0
+066d13b8 dfe800f0   tbb       [pc, r0]
+
+entire selected controller-byte body: 0x66d13c6..0x66d13ca
+066d13c6 5175       strb      r1, [r2, #0x15]
+066d13c8 7047       bx        lr
+
+original task66 command40001 send: 0x66d0594..0x66d05bc
+066d0594 a84f       ldr       r7, [pc, #0x2a0] ; [0x066d0838]=0x090c92e8
+066d0596 51f0d2f9   bl        #0x672193e
+066d059a 0146       mov       r1, r0
+066d059c a448       ldr       r0, [pc, #0x290] ; [0x066d0830]=0x08aac2e4
+066d059e 7238       subs      r0, #0x72
+066d05a0 0246       mov       r2, r0
+066d05a2 0170       strb      r1, [r0]
+066d05a4 3979       ldrb      r1, [r7, #4]
+066d05a6 4170       strb      r1, [r0, #1]
+066d05a8 0021       movs      r1, #0
+066d05aa a448       ldr       r0, [pc, #0x290] ; [0x066d083c]=0x00040001
+066d05ac 89f0e4f8   bl        #0x6759778
+066d05b0 6e75       strb      r6, [r5, #0x15]
+066d05b2 18b1       cbz       r0, #0x66d05bc
+066d05b4 41f20200   movw      r0, #0x1002
+066d05b8 95f742fe   bl        #0x6666240
+
+task74 classifier source42: 0x651dd80..0x651dd92
+0651dd80 f04b       ldr       r3, [pc, #0x3c0] ; [0x0651e144]=0x06f48f88
+0651dd82 6168       ldr       r1, [r4, #4]
+0651dd84 1b68       ldr       r3, [r3]
+0651dd86 9942       cmp       r1, r3
+0651dd88 03d1       bne       #0x651dd92
+0651dd8a 2046       mov       r0, r4
+0651dd8c fff750ff   bl        #0x651dc30
+0651dd90 4ce0       b         #0x651de2c
+
+task74 code classifier before table: 0x651dc30..0x651dc48
+0651dc30 0146       mov       r1, r0
+0651dc32 6ff48022   mvn       r2, #0x40000
+0651dc36 0720       movs      r0, #7
+0651dc38 8968       ldr       r1, [r1, #8]
+0651dc3a 1144       add       r1, r2
+0651dc3c 40f20122   movw      r2, #0x201
+0651dc40 3929       cmp       r1, #0x39
+0651dc42 20d2       bhs       #0x651dc86
+0651dc44 dfe801f0   tbb       [pc, r1]
+
+task74 classification result1: 0x651dc98..0x651dc9c
+0651dc98 0120       movs      r0, #1
+0651dc9a 7047       bx        lr
+
+task74 dispatcher: 0x651e4a8..0x651e4be
+0651e4a8 70b5       push      {r4, r5, r6, lr}
+0651e4aa 0446       mov       r4, r0
+0651e4ac 0d46       mov       r5, r1
+0651e4ae 401e       subs      r0, r0, #1
+0651e4b0 0828       cmp       r0, #8
+0651e4b2 04d2       bhs       #0x651e4be
+0651e4b4 2046       mov       r0, r4
+0651e4b6 bde87040   pop.w     {r4, r5, r6, lr}
+0651e4ba 00f085b8   b.w       #0x651e5c8
+
+task74 secondary dispatcher before table: 0x651e5c8..0x651e5d8
+0651e5c8 0246       mov       r2, r0
+0651e5ca 4ff0ff30   mov.w     r0, #-1
+0651e5ce 072a       cmp       r2, #7
+0651e5d0 08b5       push      {r3, lr}
+0651e5d2 09d2       bhs       #0x651e5e8
+0651e5d4 dfe802f0   tbb       [pc, r2]
+
+task74 selected worker call: 0x651e5e0..0x651e5ea
+0651e5e0 0846       mov       r0, r1
+0651e5e2 00f03ef8   bl        #0x651e662
+0651e5e6 0120       movs      r0, #1
+0651e5e8 08bd       pop       {r3, pc}
+
+worker response and fixed slot: 0x651e662..0x651e6d4
+0651e662 2de9f843   push.w    {r3, r4, r5, r6, r7, r8, sb, lr}
+0651e666 2a4d       ldr       r5, [pc, #0xa8] ; [0x0651e710]=0x06f493b4
+0651e668 8046       mov       r8, r0
+0651e66a 2868       ldr       r0, [r5]
+0651e66c a3f19efe   bl        #0x66c23ac
+0651e670 204e       ldr       r6, [pc, #0x80] ; [0x0651e6f4]=0x08aab938
+0651e672 0020       movs      r0, #0
+0651e674 0127       movs      r7, #1
+0651e676 183e       subs      r6, #0x18
+0651e678 a6f13004   sub.w     r4, r6, #0x30
+0651e67c 3060       str       r0, [r6]
+0651e67e 2069       ldr       r0, [r4, #0x10]
+0651e680 0128       cmp       r0, #1
+0651e682 17d0       beq       #0x651e6b4
+0651e684 83f2d2fa   bl        #0x67a1c2c
+0651e688 0120       movs      r0, #1
+0651e68a 6ff0e5f9   bl        #0x658da58
+0651e68e 04f11800   add.w     r0, r4, #0x18
+0651e692 83f2cdfa   bl        #0x67a1c30
+0651e696 a069       ldr       r0, [r4, #0x18]
+0651e698 04f11c02   add.w     r2, r4, #0x1c
+0651e69c 0168       ldr       r1, [r0]
+0651e69e 8b69       ldr       r3, [r1, #0x18]
+0651e6a0 0021       movs      r1, #0
+0651e6a2 9847       blx       r3
+0651e6a4 a069       ldr       r0, [r4, #0x18]
+0651e6a6 04f12002   add.w     r2, r4, #0x20
+0651e6aa 0168       ldr       r1, [r0]
+0651e6ac 8b69       ldr       r3, [r1, #0x18]
+0651e6ae 0121       movs      r1, #1
+0651e6b0 9847       blx       r3
+0651e6b2 2761       str       r7, [r4, #0x10]
+0651e6b4 0123       movs      r3, #1
+0651e6b6 154a       ldr       r2, [pc, #0x54] ; [0x0651e70c]=0x00040024
+0651e6b8 1249       ldr       r1, [pc, #0x48] ; [0x0651e704]=0x08e9dad8
+0651e6ba e760       str       r7, [r4, #0xc]
+0651e6bc 233a       subs      r2, #0x23
+0651e6be 0096       str       r6, [sp]
+0651e6c0 1439       subs      r1, #0x14
+0651e6c2 d8f80000   ldr.w     r0, [r8]
+0651e6c6 fff7b7f8   bl        #0x651d838
+0651e6ca 2868       ldr       r0, [r5]
+0651e6cc bde8f843   pop.w     {r3, r4, r5, r6, r7, r8, sb, lr}
+0651e6d0 a3f142bf   b.w       #0x66c2558
+
+original response constructor: 0x651d838..0x651d860
+0651d838 70b5       push      {r4, r5, r6, lr}
+0651d83a ec4d       ldr       r5, [pc, #0x3b0] ; [0x0651dbec]=0x06f49a40
+0651d83c 049c       ldr       r4, [sp, #0x10]
+0651d83e 2d68       ldr       r5, [r5]
+0651d840 0d60       str       r5, [r1]
+0651d842 eb4d       ldr       r5, [pc, #0x3ac] ; [0x0651dbf0]=0x06f48fa8
+0651d844 2d68       ldr       r5, [r5]
+0651d846 4d60       str       r5, [r1, #4]
+0651d848 0b61       str       r3, [r1, #0x10]
+0651d84a c1e90224   strd      r2, r4, [r1, #8]
+0651d84e 5df0d1ff   bl        #0x657b7f4
+0651d852 0400       movs      r4, r0
+0651d854 02d0       beq       #0x651d85c
+0651d856 e748       ldr       r0, [pc, #0x39c] ; [0x0651dbf4]=0x0400004b
+0651d858 40f2d0f8   bl        #0x675d9fc
+0651d85c 2046       mov       r0, r4
+0651d85e 70bd       pop       {r4, r5, r6, pc}
+
+original receive copy/release: 0x67ea6be..0x67ea6d4
+067ea6be 0099       ldr       r1, [sp]
+067ea6c0 1422       movs      r2, #0x14
+067ea6c2 3046       mov       r0, r6
+067ea6c4 d7f66aef   blx       #0x66c259c
+067ea6c8 0099       ldr       r1, [sp]
+067ea6ca 0620       movs      r0, #6
+067ea6cc b8f58cfa   bl        #0x65a2be8
+067ea6d0 0020       movs      r0, #0
+067ea6d2 f8bd       pop       {r3, r4, r5, r6, r7, pc}
+
+pool ownership mismatch validation: 0x65a2be8..0x65a2c40
+065a2be8 2de9f041   push.w    {r4, r5, r6, r7, r8, lr}
+065a2bec 0026       movs      r6, #0
+065a2bee 0d46       mov       r5, r1
+065a2bf0 0128       cmp       r0, #1
+065a2bf2 0446       mov       r4, r0
+065a2bf4 07db       blt       #0x65a2c06
+065a2bf6 3b48       ldr       r0, [pc, #0xec] ; [0x065a2ce4]=0x08aa7fe8
+065a2bf8 0068       ldr       r0, [r0]
+065a2bfa a042       cmp       r0, r4
+065a2bfc 03db       blt       #0x65a2c06
+065a2bfe 47f6fe70   movw      r0, #0x7ffe
+065a2c02 8442       cmp       r4, r0
+065a2c04 03dd       ble       #0x65a2c0e
+065a2c06 6ff01100   mvn       r0, #0x11
+065a2c0a bde8f081   pop.w     {r4, r5, r6, r7, r8, pc}
+065a2c0e 6ff01007   mvn       r7, #0x10
+065a2c12 2db1       cbz       r5, #0x65a2c20
+065a2c14 56f3d0e8   blx       #0x68f8db8
+065a2c18 20b1       cbz       r0, #0x65a2c24
+065a2c1a 6ff01800   mvn       r0, #0x18
+065a2c1e f4e7       b         #0x65a2c0a
+065a2c20 3846       mov       r0, r7
+065a2c22 f2e7       b         #0x65a2c0a
+065a2c24 56f346e8   blx       #0x68f8cb4
+065a2c28 2f49       ldr       r1, [pc, #0xbc] ; [0x065a2ce8]=0x08e1e1a4
+065a2c2a 01eb8401   add.w     r1, r1, r4, lsl #2
+065a2c2e 51f8041c   ldr       r1, [r1, #-0x4]
+065a2c32 e1b3       cbz       r1, #0x65a2cae
+065a2c34 2a1f       subs      r2, r5, #4
+065a2c36 1268       ldr       r2, [r2]
+065a2c38 8a42       cmp       r2, r1
+065a2c3a 01d0       beq       #0x65a2c40
+065a2c3c 3e46       mov       r6, r7
+065a2c3e 4de0       b         #0x65a2cdc
+
+pool ownership mismatch return: 0x65a2cdc..0x65a2ce4
+065a2cdc 56f332e8   blx       #0x68f8d44
+065a2ce0 3046       mov       r0, r6
+065a2ce2 92e7       b         #0x65a2c0a

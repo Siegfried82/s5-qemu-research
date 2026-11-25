@@ -1,0 +1,780 @@
+{
+  "scope": "Read-only original instruction and saved execution analysis; no pointer patch, alias folding, fault skip, or QEMU execution",
+  "snapshot": "/Users/lixiuqi/Documents/ChatGPT/相机/s5-emulator/menu-smp/results/local-ui-mode35",
+  "fault_register_run": "/Users/lixiuqi/Documents/ChatGPT/相机/s5-emulator/menu-smp/results/local-ui-mode35-fault-regs/result.json",
+  "program_sha256": "fc496d62a91f6e9b1b84807183bb805bc546c9105d2938546b58a66ad9d132fe",
+  "fault": {
+    "cpu": 2,
+    "registers": {
+      "r0": "0x7fa91080",
+      "r1": "0x2938000",
+      "r2": "0xfd159000",
+      "r3": "0x3",
+      "r4": "0x80",
+      "r5": "0x9051738",
+      "r6": "0x7d159000",
+      "r7": "0xffa91000",
+      "r8": "0x7fa91080",
+      "r9": "0x646a773",
+      "r10": "0x8ab0e74",
+      "r11": "0x2e87000",
+      "r12": "0xdead",
+      "r13": "0x0",
+      "r14": "0x646bcce",
+      "r15": "0x10",
+      "cpsr": "0x80000197"
+    },
+    "pc_from_abort_lr_minus8": "0x646bcc6",
+    "instruction": "str r6, [r7]",
+    "bytes": "3e60",
+    "write_address": "0xffa91000",
+    "write_value": "0x7d159000",
+    "system_registers": {
+      "TTBR0": {
+        "number": 150,
+        "bits": 64,
+        "raw_le": "0000100000000000",
+        "value": "0x100000"
+      },
+      "TTBR1": {
+        "number": 151,
+        "bits": 64,
+        "raw_le": "0000000000000000",
+        "value": "0x0"
+      },
+      "TTBR0_EL1": {
+        "number": 154,
+        "bits": 32,
+        "raw_le": "00001000",
+        "value": "0x100000"
+      },
+      "TTBR1_EL1": {
+        "number": 155,
+        "bits": 32,
+        "raw_le": "00000000",
+        "value": "0x0"
+      },
+      "DFAR": {
+        "number": 156,
+        "bits": 32,
+        "raw_le": "0010a9ff",
+        "value": "0xffa91000"
+      },
+      "TTBCR": {
+        "number": 158,
+        "bits": 32,
+        "raw_le": "00000000",
+        "value": "0x0"
+      },
+      "IFAR": {
+        "number": 159,
+        "bits": 32,
+        "raw_le": "00000000",
+        "value": "0x0"
+      },
+      "SCTLR": {
+        "number": 177,
+        "bits": 32,
+        "raw_le": "7900c500",
+        "value": "0xc50079"
+      },
+      "DFSR": {
+        "number": 178,
+        "bits": 32,
+        "raw_le": "08080000",
+        "value": "0x808"
+      },
+      "IFSR": {
+        "number": 181,
+        "bits": 32,
+        "raw_le": "00000000",
+        "value": "0x0"
+      }
+    },
+    "dfsr_interpretation": "0x808: WnR=1, short-descriptor fault status8, synchronous external abort; not translation or permission fault"
+  },
+  "task": {
+    "tcb": "0x8e15000",
+    "id": 285,
+    "entry": "0x6475dd5",
+    "state": 2,
+    "cpu": 2,
+    "name_scope": "Original input/UI task285, not the injected task66 call",
+    "saved_tcb_sp": "0xa03dd98",
+    "stack_start": "0xa031b98",
+    "stack_end": "0xa03df97",
+    "abort_sp": "r13=0 is the banked ABT stack at vector entry; it is not evidence the interrupted task SP was0",
+    "inferred_svc_sp": "0x0a03db08, from original646bca2 six-register frame and savedLR646a715; not a direct banked-SP read",
+    "confirmed_saved_call_edges": [
+      {
+        "saved_lr_address": "0xa03db1c",
+        "saved_lr": "0x646a715",
+        "call_instruction": "0x646a710",
+        "callee": "0x646bca2"
+      },
+      {
+        "saved_lr_address": "0xa03db84",
+        "saved_lr": "0x646a773",
+        "call_instruction": "0x646a76e",
+        "callee": "0x646a6aa"
+      },
+      {
+        "saved_lr_address": "0xa03dba4",
+        "saved_lr": "0x67e3339",
+        "call_instruction": "0x67e3334",
+        "callee": "0x646a72c"
+      },
+      {
+        "saved_lr_address": "0xa03dbbc",
+        "saved_lr": "0x6769e7b",
+        "call_instruction": "0x6769e76",
+        "callee": "0x67e3314"
+      }
+    ],
+    "other_stack_code_candidates_not_a_verified_backtrace": [
+      {
+        "address": "0xa03d99c",
+        "value": "0x67169c7"
+      },
+      {
+        "address": "0xa03d9a4",
+        "value": "0x6512ccf"
+      },
+      {
+        "address": "0xa03d9b4",
+        "value": "0x6721a1b"
+      },
+      {
+        "address": "0xa03d9bc",
+        "value": "0x67169c7"
+      },
+      {
+        "address": "0xa03d9c4",
+        "value": "0x6512ccf"
+      },
+      {
+        "address": "0xa03d9d4",
+        "value": "0x6721a1b"
+      },
+      {
+        "address": "0xa03d9dc",
+        "value": "0x67169c7"
+      },
+      {
+        "address": "0xa03d9e4",
+        "value": "0x6512ccf"
+      },
+      {
+        "address": "0xa03d9f4",
+        "value": "0x6721a1b"
+      },
+      {
+        "address": "0xa03d9fc",
+        "value": "0x67169c7"
+      },
+      {
+        "address": "0xa03da04",
+        "value": "0x6512ccf"
+      },
+      {
+        "address": "0xa03da14",
+        "value": "0x6721a1b"
+      },
+      {
+        "address": "0xa03da1c",
+        "value": "0x649decd"
+      },
+      {
+        "address": "0xa03da3c",
+        "value": "0x649e361"
+      },
+      {
+        "address": "0xa03da44",
+        "value": "0x649d8eb"
+      },
+      {
+        "address": "0xa03da54",
+        "value": "0x67169c7"
+      },
+      {
+        "address": "0xa03da5c",
+        "value": "0x6512ccf"
+      },
+      {
+        "address": "0xa03da74",
+        "value": "0x66c1b59"
+      },
+      {
+        "address": "0xa03da94",
+        "value": "0x649def7"
+      },
+      {
+        "address": "0xa03dab4",
+        "value": "0x674647b"
+      },
+      {
+        "address": "0xa03db04",
+        "value": "0x646bcbf"
+      },
+      {
+        "address": "0xa03db1c",
+        "value": "0x646a715"
+      },
+      {
+        "address": "0xa03db2c",
+        "value": "0x67e31e7"
+      },
+      {
+        "address": "0xa03db3c",
+        "value": "0x67697a7"
+      },
+      {
+        "address": "0xa03db4c",
+        "value": "0x646c037"
+      },
+      {
+        "address": "0xa03db6c",
+        "value": "0x67e3339"
+      },
+      {
+        "address": "0xa03db84",
+        "value": "0x646a773"
+      },
+      {
+        "address": "0xa03dba4",
+        "value": "0x67e3339"
+      },
+      {
+        "address": "0xa03dbbc",
+        "value": "0x6769e7b"
+      },
+      {
+        "address": "0xa03dbcc",
+        "value": "0x65b6407"
+      },
+      {
+        "address": "0xa03dbec",
+        "value": "0x679f7cf"
+      },
+      {
+        "address": "0xa03dbfc",
+        "value": "0x6525e87"
+      },
+      {
+        "address": "0xa03dc8c",
+        "value": "0x6526257"
+      },
+      {
+        "address": "0xa03dd5c",
+        "value": "0x66bafab"
+      },
+      {
+        "address": "0xa03ddbc",
+        "value": "0x676a107"
+      },
+      {
+        "address": "0xa03ddcc",
+        "value": "0x676a263"
+      },
+      {
+        "address": "0xa03de14",
+        "value": "0x67c403b"
+      },
+      {
+        "address": "0xa03dea4",
+        "value": "0x67c4673"
+      },
+      {
+        "address": "0xa03decc",
+        "value": "0x645d01d"
+      },
+      {
+        "address": "0xa03defc",
+        "value": "0x6475c5d"
+      },
+      {
+        "address": "0xa03df24",
+        "value": "0x6475c85"
+      },
+      {
+        "address": "0xa03df2c",
+        "value": "0x65a2cd3"
+      },
+      {
+        "address": "0xa03df44",
+        "value": "0x67ea6d1"
+      },
+      {
+        "address": "0xa03df5c",
+        "value": "0x6475e25"
+      }
+    ]
+  },
+  "allocation": {
+    "descriptor": "0x9051738",
+    "words": [
+      "0x1",
+      "0x7d159000",
+      "0x2938080",
+      "0x9049728",
+      "0x11",
+      "0x100",
+      "0x0",
+      "0x0"
+    ],
+    "base": "0x7d159000",
+    "size": "0x2938080",
+    "guard_size": "0x80",
+    "parent_arena": "0x9049728",
+    "guard_offset": "0x2938000",
+    "translated_base": "0xfd159000",
+    "guard_destination": "0xffa91000",
+    "subtraction_underflow": false,
+    "caller_requested_bytes": "0x02938000; allocator adds128-byte guard and aligns to128",
+    "origin": "Original646a6aa ->646b2fc selects arena ->646b5aa allocates ->646bca2 writes tail guard",
+    "selection": "Type0x11 maps to pool registry entry0904820c; policy field+0xc=1 causes646b368 to start from finalarena(first+0x4c0)"
+  },
+  "arena_initialization": {
+    "function": "0x0646adf0",
+    "initializer_call": "0x0646ae36 ->0x0646ad2a",
+    "source_instructions": [
+      "646ae2e LDR r2, literal646b104=703e0000",
+      "646ae30 MOV r1,0fc00000",
+      "646ae34 LDR r0,[08ab103c+8]"
+    ],
+    "hardcoded_start": "0x0fc00000",
+    "hardcoded_size": "0x703e0000",
+    "hardcoded_end_exclusive": "0x7ffe0000",
+    "block_size_constant": "0x2e87000",
+    "count": 39,
+    "descriptor_base": "0x09049268",
+    "descriptor_stride": 32,
+    "arenas": [
+      {
+        "index": 0,
+        "address": "0x9049268",
+        "id": 0,
+        "base": "0xfc00000",
+        "size": "0x1bd6000",
+        "end_exclusive": "0x117d6000",
+        "class_byte": 1
+      },
+      {
+        "index": 1,
+        "address": "0x9049288",
+        "id": 1,
+        "base": "0x117d6000",
+        "size": "0x2e87000",
+        "end_exclusive": "0x1465d000",
+        "class_byte": 0
+      },
+      {
+        "index": 2,
+        "address": "0x90492a8",
+        "id": 2,
+        "base": "0x1465d000",
+        "size": "0x2e87000",
+        "end_exclusive": "0x174e4000",
+        "class_byte": 0
+      },
+      {
+        "index": 3,
+        "address": "0x90492c8",
+        "id": 3,
+        "base": "0x174e4000",
+        "size": "0x2e87000",
+        "end_exclusive": "0x1a36b000",
+        "class_byte": 0
+      },
+      {
+        "index": 4,
+        "address": "0x90492e8",
+        "id": 4,
+        "base": "0x1a36b000",
+        "size": "0x2e87000",
+        "end_exclusive": "0x1d1f2000",
+        "class_byte": 0
+      },
+      {
+        "index": 5,
+        "address": "0x9049308",
+        "id": 5,
+        "base": "0x1d1f2000",
+        "size": "0x2e87000",
+        "end_exclusive": "0x20079000",
+        "class_byte": 0
+      },
+      {
+        "index": 6,
+        "address": "0x9049328",
+        "id": 6,
+        "base": "0x20079000",
+        "size": "0x2e87000",
+        "end_exclusive": "0x22f00000",
+        "class_byte": 0
+      },
+      {
+        "index": 7,
+        "address": "0x9049348",
+        "id": 7,
+        "base": "0x22f00000",
+        "size": "0x2e87000",
+        "end_exclusive": "0x25d87000",
+        "class_byte": 0
+      },
+      {
+        "index": 8,
+        "address": "0x9049368",
+        "id": 8,
+        "base": "0x25d87000",
+        "size": "0x2e87000",
+        "end_exclusive": "0x28c0e000",
+        "class_byte": 0
+      },
+      {
+        "index": 9,
+        "address": "0x9049388",
+        "id": 9,
+        "base": "0x28c0e000",
+        "size": "0x2e87000",
+        "end_exclusive": "0x2ba95000",
+        "class_byte": 0
+      },
+      {
+        "index": 10,
+        "address": "0x90493a8",
+        "id": 10,
+        "base": "0x2ba95000",
+        "size": "0x2e87000",
+        "end_exclusive": "0x2e91c000",
+        "class_byte": 0
+      },
+      {
+        "index": 11,
+        "address": "0x90493c8",
+        "id": 11,
+        "base": "0x2e91c000",
+        "size": "0x2e87000",
+        "end_exclusive": "0x317a3000",
+        "class_byte": 0
+      },
+      {
+        "index": 12,
+        "address": "0x90493e8",
+        "id": 12,
+        "base": "0x317a3000",
+        "size": "0x2e87000",
+        "end_exclusive": "0x3462a000",
+        "class_byte": 0
+      },
+      {
+        "index": 13,
+        "address": "0x9049408",
+        "id": 13,
+        "base": "0x3462a000",
+        "size": "0x2e87000",
+        "end_exclusive": "0x374b1000",
+        "class_byte": 0
+      },
+      {
+        "index": 14,
+        "address": "0x9049428",
+        "id": 14,
+        "base": "0x374b1000",
+        "size": "0x2e87000",
+        "end_exclusive": "0x3a338000",
+        "class_byte": 0
+      },
+      {
+        "index": 15,
+        "address": "0x9049448",
+        "id": 15,
+        "base": "0x3a338000",
+        "size": "0x2e87000",
+        "end_exclusive": "0x3d1bf000",
+        "class_byte": 0
+      },
+      {
+        "index": 16,
+        "address": "0x9049468",
+        "id": 16,
+        "base": "0x3d1bf000",
+        "size": "0x2e87000",
+        "end_exclusive": "0x40046000",
+        "class_byte": 0
+      },
+      {
+        "index": 17,
+        "address": "0x9049488",
+        "id": 17,
+        "base": "0x40046000",
+        "size": "0x2e87000",
+        "end_exclusive": "0x42ecd000",
+        "class_byte": 0
+      },
+      {
+        "index": 18,
+        "address": "0x90494a8",
+        "id": 18,
+        "base": "0x42ecd000",
+        "size": "0x2e87000",
+        "end_exclusive": "0x45d54000",
+        "class_byte": 0
+      },
+      {
+        "index": 19,
+        "address": "0x90494c8",
+        "id": 19,
+        "base": "0x45d54000",
+        "size": "0x2e87000",
+        "end_exclusive": "0x48bdb000",
+        "class_byte": 0
+      },
+      {
+        "index": 20,
+        "address": "0x90494e8",
+        "id": 20,
+        "base": "0x48bdb000",
+        "size": "0x2e87000",
+        "end_exclusive": "0x4ba62000",
+        "class_byte": 0
+      },
+      {
+        "index": 21,
+        "address": "0x9049508",
+        "id": 21,
+        "base": "0x4ba62000",
+        "size": "0x2e87000",
+        "end_exclusive": "0x4e8e9000",
+        "class_byte": 0
+      },
+      {
+        "index": 22,
+        "address": "0x9049528",
+        "id": 22,
+        "base": "0x4e8e9000",
+        "size": "0x2e87000",
+        "end_exclusive": "0x51770000",
+        "class_byte": 0
+      },
+      {
+        "index": 23,
+        "address": "0x9049548",
+        "id": 23,
+        "base": "0x51770000",
+        "size": "0x2e87000",
+        "end_exclusive": "0x545f7000",
+        "class_byte": 0
+      },
+      {
+        "index": 24,
+        "address": "0x9049568",
+        "id": 24,
+        "base": "0x545f7000",
+        "size": "0x2e87000",
+        "end_exclusive": "0x5747e000",
+        "class_byte": 0
+      },
+      {
+        "index": 25,
+        "address": "0x9049588",
+        "id": 25,
+        "base": "0x5747e000",
+        "size": "0x2e87000",
+        "end_exclusive": "0x5a305000",
+        "class_byte": 0
+      },
+      {
+        "index": 26,
+        "address": "0x90495a8",
+        "id": 26,
+        "base": "0x5a305000",
+        "size": "0x2e87000",
+        "end_exclusive": "0x5d18c000",
+        "class_byte": 0
+      },
+      {
+        "index": 27,
+        "address": "0x90495c8",
+        "id": 27,
+        "base": "0x5d18c000",
+        "size": "0x2e87000",
+        "end_exclusive": "0x60013000",
+        "class_byte": 0
+      },
+      {
+        "index": 28,
+        "address": "0x90495e8",
+        "id": 28,
+        "base": "0x60013000",
+        "size": "0x2e87000",
+        "end_exclusive": "0x62e9a000",
+        "class_byte": 0
+      },
+      {
+        "index": 29,
+        "address": "0x9049608",
+        "id": 29,
+        "base": "0x62e9a000",
+        "size": "0x2e87000",
+        "end_exclusive": "0x65d21000",
+        "class_byte": 0
+      },
+      {
+        "index": 30,
+        "address": "0x9049628",
+        "id": 30,
+        "base": "0x65d21000",
+        "size": "0x2e87000",
+        "end_exclusive": "0x68ba8000",
+        "class_byte": 0
+      },
+      {
+        "index": 31,
+        "address": "0x9049648",
+        "id": 31,
+        "base": "0x68ba8000",
+        "size": "0x2e87000",
+        "end_exclusive": "0x6ba2f000",
+        "class_byte": 0
+      },
+      {
+        "index": 32,
+        "address": "0x9049668",
+        "id": 32,
+        "base": "0x6ba2f000",
+        "size": "0x2e87000",
+        "end_exclusive": "0x6e8b6000",
+        "class_byte": 0
+      },
+      {
+        "index": 33,
+        "address": "0x9049688",
+        "id": 33,
+        "base": "0x6e8b6000",
+        "size": "0x2e87000",
+        "end_exclusive": "0x7173d000",
+        "class_byte": 0
+      },
+      {
+        "index": 34,
+        "address": "0x90496a8",
+        "id": 34,
+        "base": "0x7173d000",
+        "size": "0x2e87000",
+        "end_exclusive": "0x745c4000",
+        "class_byte": 0
+      },
+      {
+        "index": 35,
+        "address": "0x90496c8",
+        "id": 35,
+        "base": "0x745c4000",
+        "size": "0x2e87000",
+        "end_exclusive": "0x7744b000",
+        "class_byte": 0
+      },
+      {
+        "index": 36,
+        "address": "0x90496e8",
+        "id": 36,
+        "base": "0x7744b000",
+        "size": "0x2e87000",
+        "end_exclusive": "0x7a2d2000",
+        "class_byte": 0
+      },
+      {
+        "index": 37,
+        "address": "0x9049708",
+        "id": 37,
+        "base": "0x7a2d2000",
+        "size": "0x2e87000",
+        "end_exclusive": "0x7d159000",
+        "class_byte": 0
+      },
+      {
+        "index": 38,
+        "address": "0x9049728",
+        "id": 38,
+        "base": "0x7d159000",
+        "size": "0x2e87000",
+        "end_exclusive": "0x7ffe0000",
+        "class_byte": 2
+      }
+    ],
+    "interpretation": "Range is deliberately initialized by original firmware, not created by the observed guard subtraction. It does not alone prove physical DRAM capacity."
+  },
+  "original_address_translation": {
+    "table": "0x6ff11b0",
+    "row_fields": [
+      "size",
+      "field1",
+      "field2",
+      "field3"
+    ],
+    "rows": [
+      [
+        "0x40000000",
+        "0x0",
+        "0x0",
+        "0x80000000"
+      ],
+      [
+        "0x40000000",
+        "0x40000000",
+        "0xdead",
+        "0xc0000000"
+      ],
+      [
+        "0x0",
+        "0xdead",
+        "0xdead",
+        "0xdead"
+      ],
+      [
+        "0x0",
+        "0xdead",
+        "0xdead",
+        "0xdead"
+      ]
+    ],
+    "call": "646bcba ->66c1b4c ->66808c6 ->6680838",
+    "conversion": "66808c6 chooses sourcefield1 and destinationfield3",
+    "matching_row": 1,
+    "arithmetic": "0x7d159000 - 0x40000000 + 0xc0000000 = 0xfd159000",
+    "second_bank_note": "Row1 maps field1 40000000..7fffffff to field3 c0000000..ffffffff; field2 is DEAD, so this is not evidence to back low40000000..7fffffff as cached RAM."
+  },
+  "saved_page_table_sections": [
+    {
+      "virtual": "0x646bcc6",
+      "l1_entry_address": "0x100190",
+      "descriptor": "0x6411c02",
+      "physical": "0x646bcc6",
+      "source": "First run saved RAM; second run confirms same TTBR0 and fault address"
+    },
+    {
+      "virtual": "0x7d159000",
+      "l1_entry_address": "0x101f44",
+      "descriptor": "0x7d100c02",
+      "physical": "0x7d159000",
+      "source": "First run saved RAM; second run confirms same TTBR0 and fault address"
+    },
+    {
+      "virtual": "0xfd159000",
+      "l1_entry_address": "0x103f44",
+      "descriptor": "0xfd111c02",
+      "physical": "0xfd159000",
+      "source": "First run saved RAM; second run confirms same TTBR0 and fault address"
+    },
+    {
+      "virtual": "0xffa91000",
+      "l1_entry_address": "0x103fe8",
+      "descriptor": "0xffa11c02",
+      "physical": "0xffa91000",
+      "source": "First run saved RAM; second run confirms same TTBR0 and fault address"
+    }
+  ],
+  "conclusion": "The original tail-guard store uses a validly computed high-bank address. The actual page table maps that VA identically, and the observed write external abort is explained by the existing512MiB high RAM window not covering it. This fault is not evidence of guard-size underflow or an arbitrary uninitialized pointer.",
+  "bounded_followup": "An explicit2GiB high-address RAM backing experiment is grounded in the original allocator and translation table. Preserve Device/MMIO low mappings and do not fold addresses into512MiB. Observe whether the same original store proceeds; this tests the mapping gap, not real-camera capacity or DSP readiness.",
+  "limits": "Actual physical DRAM topology and whether later initialization constrains this address pool remain independently unverified; later exceptions or hardware waits must be retained."
+}

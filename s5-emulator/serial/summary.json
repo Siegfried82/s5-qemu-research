@@ -1,0 +1,213 @@
+{
+  "scope": "Original S5 channel-3 register protocol, RTC/backup semantics, bounded execution",
+  "source_sha256": "fc496d62a91f6e9b1b84807183bb805bc546c9105d2938546b58a66ad9d132fe",
+  "original_instructions_patched": false,
+  "physical_chip_identified": false,
+  "flash_or_eeprom_protocol": false,
+  "controller": {
+    "base": "0x7f043000",
+    "register_compatibility": "PL022 SSP",
+    "first_config_CR0": "0x01c7",
+    "first_config_CPSR": 2,
+    "channel": 3
+  },
+  "protocol": {
+    "frame_bytes": 3,
+    "command_order": "big-endian 16-bit",
+    "read_flag": "command bit0 == 1",
+    "register_address": "command & 0xfffe",
+    "read_payload": "RX[2], TX[2]=0xff",
+    "write_payload": "TX[2], ignored RX",
+    "initial_observed_TX": "0439ff",
+    "cs_encoded_write_address": "0x7f081c0c",
+    "cs_select_write": "0x10000001",
+    "cs_deselect_write": "0x10000000",
+    "physical_cs_polarity": "not established"
+  },
+  "rtc_registers": {
+    "0x0402": "BCD seconds",
+    "0x0404": "BCD minutes",
+    "0x0406": "BCD hours",
+    "0x0408": "BCD day",
+    "0x040a": "BCD month",
+    "0x040c": "BCD year + 2000",
+    "0x040e": "bit0 tested by cold initialization; exact hardware semantics unknown",
+    "0x0410": "counter enable/initialization state inferred from firmware writes",
+    "0x0420..0x043e": "16 retained application status bytes"
+  },
+  "unverified_status_fields": {
+    "0x041a": "bit0 combined with GPIO 7f08005c bit4; bit1 tested for startup state; bit2 tested/cleared in calendar-scheduled path; exact meanings not named",
+    "0x0488": "startup tests bit2; RMW helpers manipulate bits0,1,2,5; exact device/power semantics unknown"
+  },
+  "strict_python_probe": {
+    "evidence": "results-both-transfers/result.json",
+    "completed_transfers": 21,
+    "model_reset_defaults_verified": false,
+    "next_wait": "0x70021004 command completion in flat RAM; original write 0x0100"
+  },
+  "smp_c_model_execution": {
+    "evidence": "results-smp-cold/result.json",
+    "rtc": {
+      "profile": "assumed-cold-reset",
+      "physical_chip_identified": false,
+      "clock_advances": false,
+      "reads": 24,
+      "writes": 16,
+      "unknown_reads": 3,
+      "malformed_frames": 0,
+      "unsupported_registers": [
+        "0x041a",
+        "0x0488"
+      ],
+      "registers": {
+        "0x0402": 0,
+        "0x0404": 0,
+        "0x0406": 0,
+        "0x0408": 1,
+        "0x040a": 1,
+        "0x040c": 20,
+        "0x040e": 1,
+        "0x0410": 1,
+        "0x041a": 1,
+        "0x0420": 0,
+        "0x0422": 0,
+        "0x0424": 0,
+        "0x0426": 16,
+        "0x0428": 0,
+        "0x042a": 0,
+        "0x042c": 0,
+        "0x042e": 0,
+        "0x0430": 0,
+        "0x0432": 0,
+        "0x0434": 0,
+        "0x0436": 0,
+        "0x0438": 0,
+        "0x043a": 0,
+        "0x043c": 0,
+        "0x043e": 0,
+        "0x0440": 0,
+        "0x0610": 1
+      }
+    },
+    "peer_flags_manually_cleared": false,
+    "new_observation": "original firmware wrote BCD date 2014-01-01; no calendar payload injected by probe",
+    "next_wait": "timer value at 0x7f020024 remains zero"
+  },
+  "menu_rendered": false,
+  "timer_irq_map": "timer-irq-map.json",
+  "loader_timer_state": {
+    "source": "01_loader2.bin",
+    "original_call_offset": "0x190 ARM BLX to 0x5e6 Thumb",
+    "source_function_offset": "0x5e6..0x602",
+    "control_address": "0x7f020028",
+    "ordered_writes": [
+      "0x0",
+      "0x6",
+      "0x86"
+    ],
+    "load_register_written": false,
+    "mode": "32-bit free-running downcounter, divide16, IRQ disabled",
+    "clock_hz": 1687500,
+    "elapsed_read": "(old_value - current_value) modulo 2^32",
+    "exact_handoff_phase_recovered": false,
+    "original_function_runtime_evidence": "results-loader-timer/result.json",
+    "runtime_passed": true
+  },
+  "startup_wait": {
+    "evidence": "startup-wait.json",
+    "main_task": "uiTSK001",
+    "state": "suspended on event125 with all-bit AND mask0x7fffffff forever",
+    "gpio_inputs": [
+      "0x7f080410 bit4",
+      "0x7f080094 bit4"
+    ],
+    "physical_names_verified": false,
+    "later_parent_boot": "menu-smp/results/inactive-inputs-boot/result.json",
+    "later_parent_observation": "Explicit inactive GPIO profile allowed original code to reach SPI0; no menu render claimed"
+  },
+  "loader_gic": {
+    "evidence": "loader-gic.json",
+    "routing_initializer": "Original loader3 Thumb0x10e8",
+    "isolated_execution_passed": true,
+    "runtime_evidence": "results-loader-gic-guest-readback/result.json",
+    "low_vector_requirement": "Original loader3 resident@0, VBAR0",
+    "full_irq_delivery_proven_here": false
+  },
+  "uart": {
+    "evidence": "uart-evidence.json",
+    "gic_ids": [
+      85,
+      86,
+      294,
+      295,
+      296
+    ],
+    "actual_tx_channel2_hex": "3427",
+    "external_peer_implemented": false,
+    "external_peer_identity_verified": false
+  },
+  "adc_sleep_check": {
+    "evidence": "power-sleep-evidence.json",
+    "actual_checkpoint": "0x0653efe2",
+    "actual_sample": 0,
+    "experimental_adc11_raw_proposal": 768,
+    "voltage_mapping_verified": false,
+    "normal_sample_boot_verified_here": false
+  },
+  "tick_wait": {
+    "evidence": "serial/tick-wait-evidence.json",
+    "disassembly": "serial/tick-wait.disasm.txt",
+    "reproducer": "serial/inspect_tick_wait.py",
+    "snapshot": "menu-smp/results/adc-environment-boot",
+    "main_wait": "Original one-tick delay at0x064a0748, stored TCB timeout2, wait_type2",
+    "observed_tick_count": 1,
+    "timer0_gic_id": 36,
+    "hypothesis": "Missing SoC repeated edge/pulse extension; bit4 meaning not physically verified",
+    "menu_rendered": false,
+    "followup": {
+      "snapshot": "menu-smp/results/pulse-timer-boot",
+      "os_ticks": 21791,
+      "original_delay_returned": true,
+      "model": "Explicit inferred SoC bit4 pulse profile; physical bit semantics still unverified"
+    }
+  },
+  "i2c_wait": {
+    "evidence": "serial/i2c-wait-evidence.json",
+    "reproducer": "serial/inspect_i2c_wait.py",
+    "main_event": 19,
+    "worker_event": 18,
+    "worker_timeout_bounded": true,
+    "endpoint_role": "audio_hpamp per original string",
+    "exact_part_unverified": true,
+    "followup": {
+      "snapshot": "menu-smp/results/pulse-timer-60s",
+      "original_timeout_retries_completed": true,
+      "avio_task_18_activated": true
+    }
+  },
+  "key_events": {
+    "evidence": "serial/key-event-evidence.json",
+    "disassembly": "serial/key-events.disasm.txt",
+    "reproducer": "serial/extract_key_events.py",
+    "scope": "Static only; no input injection",
+    "candidate": "KEY_CENTER tableindex7/action1 TRIGGER",
+    "genuine_parser": "0x0664bf95(argc,argv)",
+    "menu_open_verified": false,
+    "physical_gpio_mapping_verified": false
+  },
+  "coprocessor_wait": {
+    "evidence": "serial/coprocessor-wait-evidence.json",
+    "reproducer": "serial/inspect_coprocessor_wait.py",
+    "current_task": "uiTSK066 priority56",
+    "blocking_loop": "0x065491ee polls0x7b004000 withouttimeout/yield",
+    "avio_task18": "Ready priority108 but never run",
+    "architecture": "unidentified embedded execution payload",
+    "success_response_fabricated": false
+  },
+  "isolated_display_scheduling": {
+    "abi": "serial/isolated-delay-abi.json",
+    "original_delay": "0x066c23e8(60000)",
+    "scope": "Opt-in isolated scheduling experiment, not whole-camera boot",
+    "performed_by_this_agent": false
+  }
+}

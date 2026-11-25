@@ -1,0 +1,110 @@
+{
+  "scope": "Read-only original ARM ABI, storage and reference-lifetime evidence",
+  "program_sha256": "fc496d62a91f6e9b1b84807183bb805bc546c9105d2938546b58a66ad9d132fe",
+  "postboot1_sha256": "e14b32e80c50d52e39edd6f7b725aba34b9f0a4ee12ad38987593f5cc8a8ec5f",
+  "runtime_snapshot": "/Users/lixiuqi/Documents/ChatGPT/\u76f8\u673a/s5-emulator/menu-smp/results/local-frame-query/result.json",
+  "observed_cpu": 2,
+  "observed_registers": {
+    "r0": "0x6f000001",
+    "r1": "0x3096",
+    "r2": "0x4000001b",
+    "r3": "0x6f000002",
+    "r4": "0x9ff5024",
+    "r5": "0x9ff5090",
+    "r6": "0x0",
+    "r7": "0x2eb",
+    "r8": "0x0",
+    "r9": "0x443aaaab",
+    "r10": "0x44680000",
+    "r11": "0x10",
+    "r12": "0x0",
+    "r13": "0x9ff4f38",
+    "r14": "0x7290605",
+    "r15": "0x64c2878",
+    "cpsr": "0x20000133"
+  },
+  "observed_image_capture": {
+    "index": 1017,
+    "name": "captured_image",
+    "handle": "0x4000001b",
+    "format": "0x2",
+    "width": 64,
+    "height": 40,
+    "stride": null,
+    "source_path": "/Users/lixiuqi/Documents/ChatGPT/\u76f8\u673a/s5-emulator/menu-smp/results/local-frame-query/graphics/image-4000001b.bin",
+    "sha256": "84ff92691f909a05b224e1c56abb4864f01b4f8e3c854e4bb4c7baf1d3f6d652"
+  },
+  "api": {
+    "name": "eglCreatePbufferFromClientBuffer",
+    "entry": "0x064c2878",
+    "arguments": [
+      "r0=EGLDisplay",
+      "r1=buffer type",
+      "r2=client image handle",
+      "r3=EGLConfig",
+      "[entrySP]=attribute-list pointer"
+    ],
+    "return": "EGLSurface or zero",
+    "actual_buffer_type": "0x3096 (EGL_OPENVG_IMAGE)",
+    "actual_attributes": {
+      "value": 0,
+      "evidence": "72905ca r6=0;72905fa STR r6,[sp];7290600 BL64c2878"
+    },
+    "dimensions": "64d307a reads signed16 image+38 (width) and +3a (height); these determine the surface, not new width/height attributes."
+  },
+  "native_storage_contract": [
+    "64c2558\u219264d30e2 obtains the original VG image object from the current VG context image map.",
+    "64c255e\u219264d3112 increments image[0] reference count while holding original lock.",
+    "64c25a4\u219264d307a gets original image width/height;64c25ba\u219264d3094 gets image format at+1c.",
+    "64c27ec calls64da79c with the same retained image as fourth argument.",
+    "64da90e/64da914 store this same image pointer into surface+68.",
+    "For client image surface types12/32/52,64da966\u219264d327e reads image+5c and image+70. If+70 absent, the original image backing helper65e7dca supplies it.",
+    "64da974/64da978/64da97c convert that buffer using66107fc and store it atsurface+74. No pixel-copy routine occurs in this binding path.",
+    "64dadbe recognizes types12/32/52 and64dadd2 loads surface+68;64dadd4\u219264d3140\u219265e676a releases image reference.",
+    "eglDestroySurface removes public handle and decrements surface reference before final64dadbe, preserving current-surface deferred lifetime."
+  ],
+  "caller_lifecycle": [
+    "72905c6\u219272907fa creates client image; local[r4] stores its image handle, local[r4+4] stores original external backing allocation.",
+    "72907fa rounds allocation width to16 and height to8, allocates4bytes/pixel aligned80, optionally clears it, then65da992 creates format2 image using this allocation.",
+    "72905d0..72905ee saves current display, draw surface, read surface and context.",
+    "7290600 creates client-image surface using null attributes.",
+    "7290612\u219272a323a\u219264c3478 makes the new surface both draw and read, preserving saved context.",
+    "72906ba helper restores saved display/draw/read/context via72a323a, then72906ce destroys the temporary surface. The image handle remains owned by the caller."
+  ],
+  "dmp_external_image_pitch": {
+    "entry": "0x065da992",
+    "original_evidence": "65e7b42 sets fifth helper argument0, calls65e7224(width,height,&storageWidth,&storageHeight,0).",
+    "storage_width": "width==8 ? 8 : (width+15)&~15",
+    "storage_height": "(height+7)&~7",
+    "format2": "65e7318 TBB entry2 goes7352: premultiplied flag1, internal format0;65e61b6 TBB entry0 goes61d4 and returns32bits/pixel.",
+    "pitch": "65e73fe stores storageWidth at image+3c;65e7406 stores storageHeight at+3e;65e7404..740e computes(bytesPerPixel*storageWidth) and stores image+48.",
+    "size_validation": "65e7be0..7bf2 requires supplied allocation size exactly storageWidth*storageHeight*bitsPerPixel/8.",
+    "observed_format2_examples": [
+      {
+        "width": 10,
+        "height": 56,
+        "storage_width": 16,
+        "storage_height": 56,
+        "pitch": 64,
+        "allocation_bytes": 3584
+      },
+      {
+        "width": 64,
+        "height": 40,
+        "storage_width": 64,
+        "storage_height": 40,
+        "pitch": 256,
+        "allocation_bytes": 10240
+      }
+    ],
+    "warning": "Do not infer row pitch as visibleWidth*4 or allocationSize/visibleHeight. Height padding and the special width8 case matter. Other image APIs with explicit stride retain their own contracts."
+  },
+  "implementation_boundary": {
+    "required": "A surface and its source image share live pixel storage; a one-time copy is insufficient. Keep separate image/surface handles and retain storage while either referenced owner remains alive.",
+    "ordering": "Current-surface drawing completes before the original context is restored and the temporary surface is destroyed.",
+    "no_guest_side_effects": "This audit does not mutate QEMU, firmware, GUI flags, events or RAM.",
+    "limits": "Actual null-attribute, format2,64x40 path is established. Additional attribute combinations, alternate image formats and non-current shared-context edge cases need their own support/validation, not silent success."
+  },
+  "primary_reference": "https://registry.khronos.org/OpenVG/specs/openvg_1_0_1.pdf",
+  "validation_level": "Exact original static path plus actual API stop/image capture; no native GPU execution by this audit"
+}

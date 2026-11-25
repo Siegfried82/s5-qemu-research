@@ -1,0 +1,48 @@
+{
+  "argv": [
+    "/Users/lixiuqi/Documents/ChatGPT/\u76f8\u673a/s5-emulator/toolchain/build/qemu-system-arm",
+    "-M",
+    "s5-rtos",
+    "-cpu",
+    "cortex-a7",
+    "-m",
+    "512M",
+    "-S",
+    "-accel",
+    "tcg,thread=single",
+    "-display",
+    "none",
+    "-monitor",
+    "none",
+    "-serial",
+    "none",
+    "-no-user-config",
+    "-nodefaults",
+    "-qmp",
+    "unix:/tmp/s5-rsp-9c4ca3hz/qmp,server=on,wait=off",
+    "-gdb",
+    "unix:/tmp/s5-rsp-9c4ca3hz/gdb,server=on,wait=off",
+    "-smp",
+    "4"
+  ],
+  "ram_base": 0,
+  "ram_bytes": 536870912,
+  "machine": "s5-rtos",
+  "cpu_count": 4,
+  "mapped_address_ranges": [
+    [
+      0,
+      536870912
+    ],
+    [
+      1879048192,
+      268435456
+    ],
+    [
+      2147483648,
+      536870912
+    ]
+  ],
+  "loaded_files": [],
+  "scope": "Partial research machine; see board-specific model limitations"
+}

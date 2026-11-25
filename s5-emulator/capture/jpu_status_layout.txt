@@ -1,0 +1,87 @@
+Original S5 V2.9 JPU driver instructions used to constrain the experimental software device.
+The literals and region are verified against the original decrypted component by probe_jpu_model.py.
+
+877f6706: push     {r4, lr}
+877f6708: movs     r0, #1
+877f670a: ldr      r4, [sp, #8]
+877f670c: lsls     r0, r4
+877f670e: subs     r0, r0, #1
+877f6710: ands     r2, r0
+877f6712: lsls     r2, r3
+877f6714: lsls     r0, r3
+877f6716: ldr      r3, [r1]
+877f6718: bics     r3, r0
+877f671a: orrs     r3, r2
+877f671c: str      r3, [r1]
+877f671e: pop      {r4, pc}
+
+877f6720: push     {r3, lr}
+877f6722: str      r3, [sp]
+877f6724: mov      r3, r2
+877f6726: mov      r2, r1
+877f6728: ldr      r1, [pc, #0x294]
+877f672a: adds     r1, r1, #4
+877f672c: bl       #0x877f6706
+877f6730: pop      {r3, pc}
+
+877f6856: ldr      r2, [pc, #0x16c]
+877f6858: movs     r1, #1
+877f685a: str      r1, [r2]
+877f685c: movs     r2, #0
+877f685e: mov      r3, r1
+877f6860: b        #0x877f6720
+
+877f6940: ldr      r0, [pc, #0x80]
+877f6942: push     {r2, r3, r4, lr}
+877f6944: adds     r0, #8
+877f6946: ldr      r0, [r0]
+877f6948: ldr      r2, [pc, #0x74]
+877f694a: ldr      r2, [r2, #0x3c]
+877f694c: cbz      r1, #0x877f695e
+877f694e: lsls     r0, r0, #0x1e
+877f6950: bpl      #0x877f695a
+877f6952: lsls     r0, r2, #0x19
+877f6954: bpl      #0x877f695a
+877f6956: movs     r0, #0xb
+877f6958: pop      {r2, r3, r4, pc}
+877f695a: movs     r0, #0
+877f695c: pop      {r2, r3, r4, pc}
+
+877f6d88: ldr      r0, [pc, #0x160]
+877f6d8a: push     {r4, lr}
+877f6d8c: subs     r0, #0x24
+877f6d8e: ldr      r3, [r0, #0x50]
+877f6d90: ldr      r2, [r0, #0x2c]
+877f6d92: ldr      r1, [r0, #0x30]
+877f6d94: ldr      r4, [r0, #0x34]
+877f6d96: lsls     r0, r3, #0x18
+877f6d98: orr.w    r0, r0, r2, lsl #16
+877f6d9c: orr.w    r0, r0, r1, lsl #8
+877f6da0: orrs     r0, r4
+877f6da2: cmp      r0, #0xe
+877f6da4: bls      #0x877f6daa
+877f6da6: subs     r0, #0xe
+877f6da8: pop      {r4, pc}
+877f6daa: movs     r0, #0
+877f6dac: pop      {r4, pc}
+
+877f6ebe: push     {r4, r5, r6, lr}
+877f6ec0: mov      r4, r1
+877f6ec2: mov      r5, r0
+877f6ec4: movs     r1, #1
+877f6ec6: bl       #0x877f6940
+877f6eca: cmp      r0, #0xb
+877f6ecc: str      r0, [r4]
+877f6ece: beq      #0x877f6ed8
+877f6ed0: movs     r0, #0
+877f6ed2: str      r0, [r4, #4]
+877f6ed4: str      r0, [r4, #8]
+877f6ed6: pop      {r4, r5, r6, pc}
+877f6ed8: mov      r0, r5
+877f6eda: bl       #0x877f6d88
+877f6ede: str      r0, [r4, #4]
+877f6ee0: ldr      r0, [pc, #0xc]
+877f6ee2: adds     r0, #0x4c
+877f6ee4: ldrh     r0, [r0]
+877f6ee6: and      r0, r0, #1
+877f6eea: b        #0x877f6ed4

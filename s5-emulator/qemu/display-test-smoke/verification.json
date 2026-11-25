@@ -1,0 +1,9 @@
+{
+  "scope": "Paused QEMU with no guest firmware; explicit diagnostic input API only",
+  "guest_instructions_executed": false,
+  "hardware_timing_verified": false,
+  "qemu_sha256": "9842c4bb70de9e69ea19fff6321706ab667ce949113a5cdf04c5492281a32b2f",
+  "checks": [],
+  "passed": false,
+  "error": "QEMU exited during startup; inspect qemu-stderr.log"
+}

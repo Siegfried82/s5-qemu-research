@@ -1,0 +1,184 @@
+{
+  "scope": "Offline original ARM control-flow audit and read-only existing snapshot; no runtime invocation",
+  "program": "/Users/lixiuqi/Documents/ChatGPT/\u76f8\u673a/s5-v29-offline/unpacked-v29/03_program.bin",
+  "program_sha256": "fc496d62a91f6e9b1b84807183bb805bc546c9105d2938546b58a66ad9d132fe",
+  "snapshot": "/Users/lixiuqi/Documents/ChatGPT/\u76f8\u673a/s5-emulator/menu-smp/results/local-frame-paced-menu-timeout10/ram.bin",
+  "snapshot_fields": {
+    "nested_init_complete": {
+      "address": "0x8a670ea",
+      "bytes": "00"
+    },
+    "peer_published_subpointers": {
+      "address": "0x8a9dbdc",
+      "bytes": "00000000000000000000000000000000000000000000000000000000"
+    },
+    "peer_first_pointer": {
+      "address": "0x8a9ea94",
+      "bytes": "00000000"
+    },
+    "second_peer_pointer": {
+      "address": "0x8aa94e8",
+      "bytes": "00000000"
+    },
+    "outer_host_pointer": {
+      "address": "0x8a9f368",
+      "bytes": "0000000000000000"
+    },
+    "independent_host_structure": {
+      "address": "0x8bf2fce",
+      "bytes": "00000000000000000000000000000000"
+    },
+    "outer_final_status": {
+      "address": "0x8aa04b0",
+      "bytes": "00000000000000000000000000000000"
+    },
+    "calibration_halfwords_prefix": {
+      "address": "0x8c9f8c0",
+      "bytes": "00000000000000000000000000000000"
+    },
+    "calibration_words_prefix": {
+      "address": "0x8ca1854",
+      "bytes": "00000000000000000000000000000000"
+    },
+    "callback_ring_controls": {
+      "address": "0x8a9ed0e",
+      "bytes": "0000000000000000"
+    },
+    "callback_ring_first_entry": {
+      "address": "0x91a25e0",
+      "bytes": "00000000000000000000000000000000000000000000000000000000"
+    },
+    "later_postinit_enabled": {
+      "address": "0x8aa02af",
+      "bytes": "01"
+    },
+    "timed_startup_sequence": {
+      "address": "0x8aa7f18",
+      "bytes": "0001000101000a00"
+    }
+  },
+  "conclusion": "The partial task66 loop omits substantial peer-dependent initialization and several ARM-only initializers. The audited independent initializers do not send GUI scene messages or install OSD routes. No specific missing queue101 producer has been established by this audit.",
+  "already_returned_before_wait": [
+    "0x671268c",
+    "0x64cb15a",
+    "0x6518898",
+    "0x652930c",
+    "0x67a288c",
+    "0x661eac8",
+    "0x66fafb0",
+    "0x67030c2",
+    "0x651f978",
+    "0x6511c44",
+    "0x65c8a0c"
+  ],
+  "already_returned_note": "Follows the observed call stack to 65491ee. These are not candidate missing calls; re-running the outer initializer repeats already completed state resets.",
+  "wait_stack": [
+    "675efae calls676ede0",
+    "676ee24 calls65c592c",
+    "65c5936 calls65850f4",
+    "65850f6 calls657ba88",
+    "657bb98 calls65491e4",
+    "65491ee polls7b004000"
+  ],
+  "uncompleted_peer_stages": {
+    "65491e4": "First-ready, pointer publication and magic checks, host shared configuration, phase2 wait, additional pointer publication and6638964 shared initialization remain incomplete.",
+    "657b94c": "First pending call. 663ad9a writes through u32(08a9dbdc);663b0f8/6638736/6549524 also use peer state. Unsafe with null published pointers.",
+    "66cbdf2": "Contains ARM tables but calls663add0 at66cbedc, which writes through u32(08a9dbe8)+1c. Not independent.",
+    "6715cbc": "Command submission6639b14 occurs before local callback registration. Submit reads u32(08a9dbe8)+6eec and u32(08a9dbec)+200; ring slots are8 bytes and64 entries. No live peer/ring contract means this cannot be treated as a pure callback installer.",
+    "remaining_commands": [
+      "26",
+      "36",
+      "81",
+      "82",
+      "85",
+      "86",
+      "87",
+      "8f conditional",
+      "a2 conditional",
+      "a9",
+      "ab",
+      "b2",
+      "b3",
+      "bd"
+    ],
+    "callback26": "66cda4a stores three halfwords at08bef62c and selects numeric constants via66f9ac2. No queue/OSD call on this audited callback path.",
+    "callback36": "6715e40 stores three halfwords at08a9ed10. No queue/OSD call.",
+    "hardware_tail": "6639824->652e666 configures SSP2/GPIO and calls other hardware helpers;6639828->6546f68->6546e20 sends SPI0 commandE5 for0x200. These are not GUI route initializers. Full transitive hardware effects are not claimed audited."
+  },
+  "independent_function_candidates": [
+    {
+      "entry_thumb": "0x06715c75",
+      "return_pc": "0x06715cb4",
+      "arguments": "none consumed",
+      "effects": "Clear08a9ed0e and3 halfwords08a9ed10; reset127 host callback-ring entries,28 bytes each, at091a25e0",
+      "dependencies": "RAM only; destructive if any callbacks already registered",
+      "gui_scene_producer": false
+    },
+    {
+      "entry_thumb": "0x06586def",
+      "return_pc": "0x06586e48",
+      "arguments": "none consumed",
+      "effects": "Initialize08a9ee10/08a9ee44/08a9ee54,08bed6cc,08bf2fce,090c5d30+9c4..9ca; record timer1 VALUE",
+      "dependencies": "Loaded EEPROM byte063069e0, writable host state, valid initialized timer1; timer read66c19e2->67076d4->6554d72",
+      "gui_scene_producer": false,
+      "does_not_set_nested_completion_byte": true
+    },
+    {
+      "entry_thumb": "0x0658b891",
+      "return_pc": "0x0658b8d2",
+      "arguments": "none consumed",
+      "effects": "Publish091a543c at08a9f36c; reset counters/bytes at091a566c and08c33378",
+      "dependencies": "RAM only",
+      "gui_scene_producer": false
+    },
+    {
+      "entry_thumb": "0x0676efdd",
+      "return_pc": "0x0676f084",
+      "arguments": "none consumed",
+      "effects": "Fill4042 halfwords at08c9f8c0 with0800; build4042 int32 calibration entries at08ca1854 from original tables/EEPROM",
+      "dependencies": "Original06f0dcf0,062e6400,06307c00 and0x228 bytes stack; interpolation branch requires valid ordered input table; helper65b25c0 is a bounded table search",
+      "gui_scene_producer": false
+    }
+  ],
+  "completion_setters_are_not_standalone_repair": {
+    "65c593e": "Writes byte08a670ea=1 only after65850f4 returns. It enables65c5942's subsequent services. Calling or imitating this store before its dependent initialization would falsely mark completion.",
+    "659c898": "Final outer tail only sets u32(08aa04b8)=1, after6658c2a. Its original order does not license setting it independently to hide a missing peer."
+  },
+  "second_peer": {
+    "path": "676ee30->6658c2a->64ab520",
+    "descriptor_sources": [
+      "06a5d918",
+      "06a6d918"
+    ],
+    "destinations": [
+      "7b060000",
+      "7b040000"
+    ],
+    "descriptor_lengths": [
+      "0x10000",
+      "0x10000"
+    ],
+    "extra_descriptor_field_offset8": "0x2000; not assumed the first upload byte length",
+    "wait_pc": "0x064ab574",
+    "wait_condition": "u32(7b044200)!=0",
+    "published_pointer": "u32(08aa94e8)=7b040000+2*u32(7b044200)",
+    "host_shared_writes": [
+      "+0=7f081c10",
+      "+4=7f081c1c",
+      "+8=7f081c28",
+      "+c=7f080014",
+      "+10=7f080c00",
+      "+828=u32(08aa94f0)",
+      "+81e halfword=0"
+    ],
+    "host_response": "7b044204=1 then enable GIC183/185",
+    "not_safe_to_skip": "Unknown peer layout and work; neither ready word nor shared pointer may be invented"
+  },
+  "experiment_boundary": "If a later explicit experiment runs an independent candidate, call its original Thumb entry in valid task context, preserve stack/register ABI, stop on unknown accesses, and report only that function's observed side effects. Do not resume657bb9c, run676ee28 across the second peer, synthesize completion bytes, or claim complete676ede0/fullboot.",
+  "limits": [
+    "No live calls or guest writes in this audit",
+    "No new DSP protocol model",
+    "Negative GUI finding applies to the audited independent functions/callbacks, not all descendants of peer-dependent initialization",
+    "Snapshot zero values corroborate missing state but alone do not identify the GUI scene blocker"
+  ]
+}

@@ -1,0 +1,151 @@
+{
+  "original_firmware": "/Users/lixiuqi/Documents/ChatGPT/\u76f8\u673a/s5-v29-offline/unpacked-v29/03_program.bin",
+  "sha256": "fc496d62a91f6e9b1b84807183bb805bc546c9105d2938546b58a66ad9d132fe",
+  "source_of_runtime_evidence": "/Users/lixiuqi/Documents/ChatGPT/\u76f8\u673a/s5-emulator/menu-smp/results/pre-sleep-checkpoint/result.json",
+  "channels": [
+    {
+      "channel": 0,
+      "mmio": "0x7f050000",
+      "mmio_source": "0x70d5130",
+      "logical_irq": "0x72",
+      "logical_irq_source": "0x70d5144",
+      "gic_mapping_entry": "0x6ff1408",
+      "gic_id": 85,
+      "spi_input": 53
+    },
+    {
+      "channel": 1,
+      "mmio": "0x7f051000",
+      "mmio_source": "0x70d5134",
+      "logical_irq": "0x74",
+      "logical_irq_source": "0x70d5148",
+      "gic_mapping_entry": "0x6ff1410",
+      "gic_id": 86,
+      "spi_input": 54
+    },
+    {
+      "channel": 2,
+      "mmio": "0x7f052000",
+      "mmio_source": "0x70d5138",
+      "logical_irq": "0x76",
+      "logical_irq_source": "0x70d514c",
+      "gic_mapping_entry": "0x6ff1418",
+      "gic_id": 294,
+      "spi_input": 262
+    },
+    {
+      "channel": 3,
+      "mmio": "0x7f053000",
+      "mmio_source": "0x70d513c",
+      "logical_irq": "0x78",
+      "logical_irq_source": "0x70d5150",
+      "gic_mapping_entry": "0x6ff1420",
+      "gic_id": 295,
+      "spi_input": 263
+    },
+    {
+      "channel": 4,
+      "mmio": "0x7f054000",
+      "mmio_source": "0x70d5140",
+      "logical_irq": "0x7a",
+      "logical_irq_source": "0x70d5154",
+      "gic_mapping_entry": "0x6ff1428",
+      "gic_id": 296,
+      "spi_input": 264
+    }
+  ],
+  "rx_drain": {
+    "entry": "0x0648f2cc",
+    "loop": "0x0648f34e..0x0648f358",
+    "status": "FR+0x18 bit4=RXFE",
+    "behavior": "Read/discard DR while RXFE=0. Unmodeled FR=0 falsely reports endless RX data.",
+    "after_drain": "Enable CR RXE bit9, IMSC|=0x7d0, UARTEN bit0"
+  },
+  "setup_observed_before_mapping": {
+    "IBRD": 7,
+    "FBRD": 21,
+    "LCRH": "0x76",
+    "IFLS": "0x12",
+    "character_format": "8 data bits, even parity, 1 stop bit, FIFO enabled",
+    "physical_clock_baud_not_verified": true
+  },
+  "packets": [
+    {
+      "address": "0x8ab12d0",
+      "tx_len": 1,
+      "tx_pointer": "0x8ab12e0",
+      "tx_hex": "34",
+      "rx_len": 5,
+      "rx_pointer": "0x8ab12e8"
+    },
+    {
+      "address": "0x8ab13d0",
+      "tx_len": 1,
+      "tx_pointer": "0x8ab13e0",
+      "tx_hex": "27",
+      "rx_len": 4,
+      "rx_pointer": "0x8ab13e8"
+    }
+  ],
+  "actual_uart_transmissions": [
+    {
+      "channel": 0,
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "first_128_bytes": ""
+    },
+    {
+      "channel": 1,
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "first_128_bytes": ""
+    },
+    {
+      "channel": 2,
+      "bytes": 2,
+      "sha256": "a969cb7f454181d07fa39f0338b182127787a86e0f5c17d13b1dec0de1ea0293",
+      "first_128_bytes": "3427"
+    },
+    {
+      "channel": 3,
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "first_128_bytes": ""
+    },
+    {
+      "channel": 4,
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "first_128_bytes": ""
+    }
+  ],
+  "reply_parse": {
+    "function": "0x06448bc8",
+    "0x34": "Requires 5 bytes with byte0=0x34; stores (byte2<<8)|byte4 at 0x08c9a198+0x20c and byte1 at 0x062a9000+0x288",
+    "0x27": "Requires 4 bytes with byte0=0x27; stores (byte1<<12)+(byte2<<8)+byte3 at 0x08c9a198+0x20a",
+    "field_physical_meanings": "Unproven; do not fabricate successful replies from these checks."
+  },
+  "timeout": {
+    "wrapper": "0x064497fe",
+    "implementation": "0x06448a6a",
+    "timer_accessor": "0x067076d4(1) -> 0x06554d72(1)",
+    "ordinary_ticks": 675000,
+    "special_command": "0x41",
+    "special_ticks": 33750000,
+    "seconds_at_1687500Hz": {
+      "ordinary": 0.4,
+      "special": 20
+    },
+    "timeout_returns": 3,
+    "wrapper_loops_only_on_return": 1
+  },
+  "endpoint_identity": {
+    "verified": false,
+    "candidate_component": "32_usbcharge.bin has USBCHARGE header and Cortex-M vectors, but protocol association was not established. Not used to generate responses."
+  },
+  "limits": [
+    "PL011 transport modeled; no external UART peer or reply was simulated.",
+    "SPI0 prior progress used explicitly absent-peer MISO0; uploading bytes is not coprocessor completion.",
+    "No menu rendering proved by these results."
+  ]
+}

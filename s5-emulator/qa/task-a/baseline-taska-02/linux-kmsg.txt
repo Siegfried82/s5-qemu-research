@@ -1,0 +1,117 @@
+[    0.000000] Booting Linux on physical CPU 0x3
+[    0.000000] Initializing cgroup subsys cpuset
+[    0.000000] Initializing cgroup subsys cpu
+[    0.000000] Initializing cgroup subsys cpuacct
+[    0.000000] Linux version 3.18.18 (img.yamashita.seiya@imglinux125) (gcc version 4.8.5 (Buildroot 2017.02) ) #1 SMP Thu Jun 12 14:54:26 JST 2025
+[    0.000000] CPU: ARMv7 Processor [410fc075] revision 5 (ARMv7), cr=10c5387d
+[    0.000000] CPU: PIPT / VIPT nonaliasing data cache, VIPT aliasing instruction cache
+[    0.000000] Machine model: panasonic,pvc03v
+[    0.000000] Memory policy: Data cache writealloc
+[    0.000000] On node 0 totalpages: 11776
+[    0.000000]   Normal zone: 92 pages used for memmap
+[    0.000000]   Normal zone: 0 pages reserved
+[    0.000000]   Normal zone: 11776 pages, LIFO batch:1
+[    0.000000] PERCPU: Embedded 9 pages/cpu @c2bec000 s6080 r8192 d22592 u36864
+[    0.000000] pcpu-alloc: s6080 r8192 d22592 u36864 alloc=9*4096
+[    0.000000] pcpu-alloc: [0] 0 
+[    0.000000] Built 1 zonelists in Zone order, mobility grouping on.  Total pages: 11684
+[    0.000000] Kernel command line: root=/dev/mtdblock0 slram=slram0,0x83100000,+0x00300000,slram1,0x83400000,+0x00A00000 console=ttyAMA,115200 lpj=6213632
+[    0.000000] PID hash table entries: 256 (order: -2, 1024 bytes)
+[    0.000000] Dentry cache hash table entries: 8192 (order: 3, 32768 bytes)
+[    0.000000] Inode-cache hash table entries: 4096 (order: 2, 16384 bytes)
+[    0.000000] Memory: 41712K/47104K available (3467K kernel code, 233K rwdata, 904K rodata, 132K init, 95K bss, 5392K reserved)
+[    0.000000] Virtual kernel memory layout:
+    vector  : 0xffff0000 - 0xffff1000   (   4 kB)
+    fixmap  : 0xffc00000 - 0xffe00000   (2048 kB)
+    vmalloc : 0xc3000000 - 0xff000000   ( 960 MB)
+    lowmem  : 0xc0000000 - 0xc2f00000   (  47 MB)
+    modules : 0xbf000000 - 0xc0000000   (  16 MB)
+      .text : 0xc0008000 - 0xc044cde4   (4372 kB)
+      .init : 0xc044d000 - 0xc046e000   ( 132 kB)
+      .data : 0xc046e000 - 0xc04a8620   ( 234 kB)
+       .bss : 0xc04a8620 - 0xc04c028c   (  96 kB)
+[    0.000000] Hierarchical RCU implementation.
+[    0.000000] 	RCU restricting CPUs from NR_CPUS=4 to nr_cpu_ids=1.
+[    0.000000] RCU: Adjusting geometry for rcu_fanout_leaf=16, nr_cpu_ids=1
+[    0.000000] NR_IRQS:448
+[    0.000131] sched_clock: 32 bits at 27MHz, resolution 37ns, wraps every 159072862170ns
+[    0.003571] Console: colour dummy device 80x30
+[    0.003927] allocated 524288 bytes of page_cgroup
+[    0.003945] please try 'cgroup_disable=memory' option if you don't want memory cgroups
+[    0.004094] Calibrating delay loop (skipped) preset value.. 1242.72 BogoMIPS (lpj=6213632)
+[    0.004186] pid_max: default: 32768 minimum: 301
+[    0.005681] Mount-cache hash table entries: 1024 (order: 0, 4096 bytes)
+[    0.005710] Mountpoint-cache hash table entries: 1024 (order: 0, 4096 bytes)
+[    0.014711] Initializing cgroup subsys memory
+[    0.014906] Initializing cgroup subsys devices
+[    0.014974] Initializing cgroup subsys freezer
+[    0.015032] Initializing cgroup subsys net_cls
+[    0.015088] Initializing cgroup subsys blkio
+[    0.015128] Initializing cgroup subsys net_prio
+[    0.015312] CPU: Testing write buffer coherency: ok
+[    0.020162] /cpus/cpu@3 missing clock-frequency property
+[    0.020458] CPU0: thread -1, cpu 3, socket 0, mpidr 80000003
+[    0.020787] Setting up static identity map for 0x8054a0e0 - 0x8054a114
+[    0.026806] Brought up 1 CPUs
+[    0.026866] SMP: Total of 1 processors activated (1242.72 BogoMIPS).
+[    0.026906] CPU: All CPU(s) started in SVC mode.
+[    0.103161] VFP support v0.3: implementor 41 architecture 2 part 30 variant 7 rev 5
+[    0.120555] NET: Registered protocol family 16
+[    0.122359] DMA: preallocated 256 KiB pool for atomic coherent allocations
+[    0.152595] Bluetooth: Core ver 2.19
+[    0.152714] NET: Registered protocol family 31
+[    0.152733] Bluetooth: HCI device and connection manager initialized
+[    0.152818] Bluetooth: HCI socket layer initialized
+[    0.152874] Bluetooth: L2CAP socket layer initialized
+[    0.152934] Bluetooth: SCO socket layer initialized
+[    0.154612] cfg80211: Calling CRDA to update world regulatory domain
+[    0.156282] Switched to clocksource arm,sp804
+[    0.157787] FS-Cache: Loaded
+[    0.173155] NET: Registered protocol family 2
+[    0.177874] TCP established hash table entries: 1024 (order: 0, 4096 bytes)
+[    0.177967] TCP bind hash table entries: 1024 (order: 1, 8192 bytes)
+[    0.178059] TCP: Hash tables configured (established 1024 bind 1024)
+[    0.178243] TCP: reno registered
+[    0.178318] UDP hash table entries: 256 (order: 1, 8192 bytes)
+[    0.178386] UDP-Lite hash table entries: 256 (order: 1, 8192 bytes)
+[    0.179276] NET: Registered protocol family 1
+[    0.186026] futex hash table entries: 256 (order: 2, 16384 bytes)
+[    0.192248] squashfs: version 4.0 (2009/01/31) Phillip Lougher
+[    0.193392] msgmni has been set to 81
+[    0.197659] Block layer SCSI generic (bsg) driver version 0.4 loaded (major 254)
+[    0.197757] io scheduler noop registered
+[    0.197800] io scheduler deadline registered
+[    0.197902] io scheduler cfq registered (default)
+[    0.205545] slram: devname = slram0
+[    0.205579] slram: devstart = 0x83100000
+[    0.205635] slram: devlength = +0x00300000
+[    0.205714] slram: devname=slram0, devstart=0x83100000, devlength=0x300000
+[    0.209463] slram: Registered device slram0 from 2147328KiB to 2150400KiB
+[    0.209499] slram: Mapped from 0xc3400000 to 0xc3700000
+[    0.209517] slram: devname = slram1
+[    0.209530] slram: devstart = 0x83400000
+[    0.209545] slram: devlength = +0x00A00000
+[    0.209567] slram: devname=slram1, devstart=0x83400000, devlength=0xa00000
+[    0.212044] slram: Registered device slram1 from 2150400KiB to 2160640KiB
+[    0.212063] slram: Mapped from 0xc4000000 to 0xc4a00000
+[    0.212486] tun: Universal TUN/TAP device driver, 1.6
+[    0.212502] tun: (C) 1999-2004 Max Krasnyansky <maxk@qualcomm.com>
+[    0.213617] nf_conntrack version 0.5.0 (651 buckets, 2604 max)
+[    0.216434] ip_tables: (C) 2000-2006 Netfilter Core Team
+[    0.217560] TCP: cubic registered
+[    0.218064] NET: Registered protocol family 10
+[    0.222955] sit: IPv6 over IPv4 tunneling driver
+[    0.226005] NET: Registered protocol family 17
+[    0.226352] bridge: automatic filtering via arp/ip/ip6tables has been deprecated. Update your scripts to load br_netfilter if you need this.
+[    0.226435] Bridge firewalling registered
+[    0.226905] Key type dns_resolver registered
+[    0.227129] Registering SWP/SWPB emulation handler
+[    0.230738] Warning: unable to open an initial console.
+[    0.244699] VFS: Mounted root (squashfs filesystem) readonly on device 31:0.
+[    0.268472] Freeing unused kernel memory: 132K (c044d000 - c046e000)
+[    0.862284] cpu_iccdrv: module license 'Proprietary' taints kernel.
+[    0.862584] Disabling lock debugging due to kernel taint
+[    0.868539] icc driver version 1.3.0 (major 123)
+[    0.883810] icsm driver version 1.3.0 (major 124)
+[    7.467550] hrtimer: interrupt took 70425000 ns
+[   82.928397] random: nonblocking pool is initialized

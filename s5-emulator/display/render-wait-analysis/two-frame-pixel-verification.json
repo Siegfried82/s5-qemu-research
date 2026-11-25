@@ -1,0 +1,34 @@
+{
+  "scope": "Original run PNG verification; no image modification and no QEMU execution",
+  "frames": [
+    {
+      "path": "/Users/lixiuqi/Documents/ChatGPT/\u76f8\u673a/s5-emulator/menu-smp/results/local-shared-image-stride/graphics/frame-0000.png",
+      "sha256": "441650dc9de75635c6e5009d8937594af0b4a85bb0a6f4dd93725f09cd885fc7"
+    },
+    {
+      "path": "/Users/lixiuqi/Documents/ChatGPT/\u76f8\u673a/s5-emulator/menu-smp/results/local-shared-image-stride/graphics/frame-0001.png",
+      "sha256": "4cc91201a32a93d87c7c03470860c59453861af28b03792dea514061bb14b7b8"
+    }
+  ],
+  "center_roi": [
+    160,
+    250,
+    800,
+    390
+  ],
+  "center_pixels_identical": true,
+  "difference_bbox": [
+    866,
+    21,
+    929,
+    59
+  ],
+  "center_bright_pixels_each": [
+    9696,
+    9696
+  ],
+  "replay_sha256": [
+    "441650dc9de75635c6e5009d8937594af0b4a85bb0a6f4dd93725f09cd885fc7",
+    "4cc91201a32a93d87c7c03470860c59453861af28b03792dea514061bb14b7b8"
+  ]
+}

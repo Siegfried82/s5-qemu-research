@@ -1,0 +1,230 @@
+{
+  "source": "/Users/lixiuqi/Documents/ChatGPT/\u76f8\u673a/s5-v29-offline/unpacked-v29/03_program.bin",
+  "sha256": "fc496d62a91f6e9b1b84807183bb805bc546c9105d2938546b58a66ad9d132fe",
+  "table_address": "0x06fefaa0",
+  "modules": [
+    {
+      "index": 0,
+      "control": "0x7c160000",
+      "reset": "0x7c1600c0",
+      "hardware_index": 0
+    },
+    {
+      "index": 1,
+      "control": "0x7c160014",
+      "reset": "0x7c160120",
+      "hardware_index": 5
+    },
+    {
+      "index": 2,
+      "control": "0x7c160018",
+      "reset": "0x7c1600c4",
+      "hardware_index": 6
+    },
+    {
+      "index": 3,
+      "control": "0x7c16001c",
+      "reset": "0x7c1600c8",
+      "hardware_index": 7
+    },
+    {
+      "index": 4,
+      "control": "0x7c160020",
+      "reset": "0x0",
+      "hardware_index": 8
+    },
+    {
+      "index": 5,
+      "control": "0x7c160024",
+      "reset": "0x7c1600cc",
+      "hardware_index": 9
+    },
+    {
+      "index": 6,
+      "control": "0x7c160028",
+      "reset": "0x0",
+      "hardware_index": 10
+    },
+    {
+      "index": 7,
+      "control": "0x7c16002c",
+      "reset": "0x7c1600d0",
+      "hardware_index": 11
+    },
+    {
+      "index": 8,
+      "control": "0x7c160030",
+      "reset": "0x7c1600d4",
+      "hardware_index": 12
+    },
+    {
+      "index": 9,
+      "control": "0x7c160034",
+      "reset": "0x7c1600d8",
+      "hardware_index": 13
+    },
+    {
+      "index": 10,
+      "control": "0x7c160038",
+      "reset": "0x7c1600dc",
+      "hardware_index": 14
+    },
+    {
+      "index": 11,
+      "control": "0x7c16003c",
+      "reset": "0x7c1600e0",
+      "hardware_index": 15
+    },
+    {
+      "index": 12,
+      "control": "0x7c160040",
+      "reset": "0x7c1600e4",
+      "hardware_index": 16
+    },
+    {
+      "index": 13,
+      "control": "0x7c160044",
+      "reset": "0x7c1600e8",
+      "hardware_index": 17
+    },
+    {
+      "index": 14,
+      "control": "0x7c160048",
+      "reset": "0x7c1600ec",
+      "hardware_index": 18
+    },
+    {
+      "index": 15,
+      "control": "0x7c16004c",
+      "reset": "0x7c1600f0",
+      "hardware_index": 19
+    },
+    {
+      "index": 16,
+      "control": "0x7c160050",
+      "reset": "0x7c1600f4",
+      "hardware_index": 20
+    },
+    {
+      "index": 17,
+      "control": "0x7c160054",
+      "reset": "0x7c1600f8",
+      "hardware_index": 21
+    },
+    {
+      "index": 18,
+      "control": "0x7c160058",
+      "reset": "0x7c1600fc",
+      "hardware_index": 22
+    },
+    {
+      "index": 19,
+      "control": "0x7c16005c",
+      "reset": "0x7c160100",
+      "hardware_index": 23
+    },
+    {
+      "index": 20,
+      "control": "0x7c16006c",
+      "reset": "0x7c160104",
+      "hardware_index": 27
+    },
+    {
+      "index": 21,
+      "control": "0x7c160070",
+      "reset": "0x7c160108",
+      "hardware_index": 28
+    },
+    {
+      "index": 22,
+      "control": "0x7c160074",
+      "reset": "0x7c160124",
+      "hardware_index": 29
+    },
+    {
+      "index": 23,
+      "control": "0x7c160078",
+      "reset": "0x0",
+      "hardware_index": 30
+    },
+    {
+      "index": 24,
+      "control": "0x7c16007c",
+      "reset": "0x0",
+      "hardware_index": 31
+    },
+    {
+      "index": 25,
+      "control": "0x7c160080",
+      "reset": "0x7c16010c",
+      "hardware_index": 32
+    },
+    {
+      "index": 26,
+      "control": "0x7c160084",
+      "reset": "0x7c160110",
+      "hardware_index": 33
+    },
+    {
+      "index": 27,
+      "control": "0x7c160088",
+      "reset": "0x7c160114",
+      "hardware_index": 34
+    },
+    {
+      "index": 28,
+      "control": "0x7c16008c",
+      "reset": "0x7c160118",
+      "hardware_index": 35
+    },
+    {
+      "index": 29,
+      "control": "0x7c160090",
+      "reset": "0x0",
+      "hardware_index": 36
+    },
+    {
+      "index": 30,
+      "control": "0x7c160094",
+      "reset": "0x0",
+      "hardware_index": 37
+    },
+    {
+      "index": 31,
+      "control": "0x7c160098",
+      "reset": "0x7c16011c",
+      "hardware_index": 38
+    }
+  ],
+  "observed_control_handshake": {
+    "writer": "0x0644e882",
+    "reader": "0x0644e8d6",
+    "control_bits": [
+      4,
+      5,
+      6,
+      7
+    ],
+    "corresponding_status_bits": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "enable_poll": "0x0644f1b0..0x0644f1c8",
+    "additional_status_bits": [
+      16,
+      24
+    ]
+  },
+  "observed_reset_handshake": {
+    "request_bit": 0,
+    "status_bits": [
+      4,
+      8
+    ],
+    "example_enable": "0x0644eecc..0x0644eeda",
+    "example_disable": "0x0644ec8c..0x0644ecac"
+  },
+  "model_limit": "Correspondence is inferred from original instruction sequences; peripheral identity, physical latency and all error states remain unverified."
+}

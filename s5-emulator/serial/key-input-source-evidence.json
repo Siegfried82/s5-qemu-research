@@ -1,0 +1,156 @@
+{
+  "scope": "Read-only static and saved-RAM evidence; no GPIO override, sampling, or key submitted",
+  "program_sha256": "fc496d62a91f6e9b1b84807183bb805bc546c9105d2938546b58a66ad9d132fe",
+  "snapshot": "/Users/lixiuqi/Documents/ChatGPT/\u76f8\u673a/s5-emulator/menu-smp/results/local-terminal-menu-click-tx",
+  "original_pipeline": [
+    "06544f6a ->06544974 samples GPIO/ADC to08e20f74",
+    "06544f9c ->06543fc8 converts the sampled structure to0x58-byte logical input state",
+    "06545004 ->06543cfe allocates/copies0x58 bytes and sends originalcode11f001 toqueue115",
+    "064759ba..59be ->06642d22 consumes the original raw-input message",
+    "06642fa2..fa8 copies the original current input state to08ca9624"
+  ],
+  "exact_center_pin": {
+    "register": "0x7f082814",
+    "access_bits": 16,
+    "data_bit": 4,
+    "sample_code": "06545536..5544: bit4 clear produces rawmask0x8000; set produces0",
+    "mapping_table_ram": "0x08aa89e4",
+    "mapping_index": 15,
+    "mapping": {
+      "raw": "0x8000",
+      "logical_bank0": "0x10"
+    },
+    "named_key": "Original06f1003c table index7 KEY_CENTER hasmask0x10",
+    "explicit_inactive_environment": "Returning bit4=1 at this register is consistent with releasing this sampled software key; other bits are not established",
+    "limits": "Physical panel label and SoC pad name are not independently verified"
+  },
+  "second_sampled_pin": {
+    "register": "0x7f080420",
+    "access_bits": 16,
+    "data_bit": 4,
+    "sample_code": "06545544..5552: bit4 clear addsrawmask0x2000",
+    "mapping_index": 13,
+    "logical_bank0": "0x400",
+    "physical_identity": "Not established here; do not assign a button name by guess"
+  },
+  "mapping_table_source": {
+    "program_offset": "0xe4939c",
+    "program_virtual_address": "0x70c939c",
+    "original_bytes_match_runtime": true,
+    "entries": [
+      {
+        "raw": "0x1",
+        "logical": "0x100"
+      },
+      {
+        "raw": "0x2",
+        "logical": "0x200"
+      },
+      {
+        "raw": "0x4",
+        "logical": "0x4"
+      },
+      {
+        "raw": "0x8",
+        "logical": "0x8"
+      },
+      {
+        "raw": "0x10",
+        "logical": "0x2"
+      },
+      {
+        "raw": "0x20",
+        "logical": "0x1"
+      },
+      {
+        "raw": "0x40",
+        "logical": "0x800"
+      },
+      {
+        "raw": "0x80",
+        "logical": "0x1000000"
+      },
+      {
+        "raw": "0x100",
+        "logical": "0x800000"
+      },
+      {
+        "raw": "0x200",
+        "logical": "0x2000000"
+      },
+      {
+        "raw": "0x400",
+        "logical": "0x20"
+      },
+      {
+        "raw": "0x800",
+        "logical": "0x4000"
+      },
+      {
+        "raw": "0x1000",
+        "logical": "0x200000"
+      },
+      {
+        "raw": "0x2000",
+        "logical": "0x400"
+      },
+      {
+        "raw": "0x4000",
+        "logical": "0x2000"
+      },
+      {
+        "raw": "0x8000",
+        "logical": "0x10"
+      },
+      {
+        "raw": "0x10000",
+        "logical": "0x80"
+      },
+      {
+        "raw": "0x20000",
+        "logical": "0x40"
+      },
+      {
+        "raw": "0x40000",
+        "logical": "0x10000"
+      },
+      {
+        "raw": "0x80000",
+        "logical": "0x100000"
+      },
+      {
+        "raw": "0x100000",
+        "logical": "0x400"
+      },
+      {
+        "raw": "0x200000",
+        "logical": "0x10000"
+      },
+      {
+        "raw": "0x400000",
+        "logical": "0x20000"
+      }
+    ]
+  },
+  "saved_state": {
+    "raw_word": "0xabfe2",
+    "converted_bank0": "0x3b04f51",
+    "original_adjustment_cleared_bit20": true,
+    "actual_current_bank0": "0x3b04f51",
+    "actual_input_hex": "514fb00300000000010000000000000000000181000000000000000000000000080000000000000008000000000000003330c064160700008000000000001800000000000000000000000000000000000000000000000000",
+    "host_software_held_word": "0x0"
+  },
+  "software_press_scope": {
+    "entry": "066435a0(mask10,internal0)",
+    "initial_copy": "Copies previous0x58 bytes from08ca9624",
+    "bank0_replacement": [
+      "0x10",
+      "0x10",
+      "0",
+      "0"
+    ],
+    "proof": "066435ce..35d4 writecurrent,trigger,repeat,release fields explicitly; originalbank0 multi-key value is not retained in this local call",
+    "still_copied": "Other banks and switch fields remain copied from original input state",
+    "conclusion": "GPIO0 explains a held CENTER in background input, but is not by itself proof that this blocks the explicit software CENTER press"
+  }
+}

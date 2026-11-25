@@ -1,0 +1,745 @@
+{
+  "scope": "Static original-byte analysis plus read-only existing snapshot; no CPU3 execution by this inspector",
+  "sources": [
+    {
+      "path": "/Users/lixiuqi/Documents/ChatGPT/\u76f8\u673a/s5-v29-offline/unpacked-v29/00_loader1.bin",
+      "sha256": "e009d688fb152a70d90fb4df88705b29f441e3dc50c57e4ea1fddf1a49c19d32",
+      "bytes": 4096
+    },
+    {
+      "path": "/Users/lixiuqi/Documents/ChatGPT/\u76f8\u673a/s5-v29-offline/unpacked-v29/02_loader3.bin",
+      "sha256": "67d44d7c2bb2091b7a56ca5118345e0ee604e6b2c6c31769cd6de06ae752d838",
+      "bytes": 49152
+    },
+    {
+      "path": "/Users/lixiuqi/Documents/ChatGPT/\u76f8\u673a/s5-v29-offline/unpacked-v29/03_program.bin",
+      "sha256": "fc496d62a91f6e9b1b84807183bb805bc546c9105d2938546b58a66ad9d132fe",
+      "bytes": 16674816
+    },
+    {
+      "path": "/Users/lixiuqi/Documents/ChatGPT/\u76f8\u673a/s5-v29-offline/unpacked-v29/27_zboot.bin",
+      "sha256": "014dad699b15c269e9905ccfbffe1f73963bbef1301298ba230bb9cf8b34fd9f",
+      "bytes": 2048
+    },
+    {
+      "path": "/Users/lixiuqi/Documents/ChatGPT/\u76f8\u673a/s5-v29-offline/unpacked-v29/28_dtb.bin",
+      "sha256": "f1a4d16edaadbda1940fa95994acd5d69a3e90f5c25daaa68c7151535df8e188",
+      "bytes": 4096
+    },
+    {
+      "path": "/Users/lixiuqi/Documents/ChatGPT/\u76f8\u673a/s5-v29-offline/unpacked-v29/29_zimage.bin",
+      "sha256": "72b6633d7f20009c5067af6faa5549d52a581c4a55915695e616d666220f7ef0",
+      "bytes": 2621440
+    },
+    {
+      "path": "/Users/lixiuqi/Documents/ChatGPT/\u76f8\u673a/s5-v29-offline/unpacked-v29/30_rootfs1.bin",
+      "sha256": "4a41552e007d5048e32c542899324935c762ae8583b818712cb78b028ba49bf0",
+      "bytes": 3145728
+    },
+    {
+      "path": "/Users/lixiuqi/Documents/ChatGPT/\u76f8\u673a/s5-v29-offline/unpacked-v29/31_rootfs2.bin",
+      "sha256": "4121e7d7503c68d108453ece3016553f5d1ec90cf7bcc79aaf5e3b4234147215",
+      "bytes": 10485760
+    }
+  ],
+  "original_dtb": {
+    "name": "",
+    "properties": {
+      "compatible": [
+        "panasonic,pvc03v"
+      ],
+      "#address-cells": [
+        "0x2"
+      ],
+      "#size-cells": [
+        "0x2"
+      ],
+      "interrupt-parent": [
+        "0x1"
+      ]
+    },
+    "children": [
+      {
+        "name": "interrupt-controller@70001000",
+        "properties": {
+          "compatible": [
+            "arm,cortex-a7-gic"
+          ],
+          "interrupt-controller": [],
+          "#interrupt-cells": [
+            "0x3"
+          ],
+          "cpu-offset": [
+            "0x8000"
+          ],
+          "reg": [
+            "0x0",
+            "0x70001000",
+            "0x0",
+            "0x19000",
+            "0x0",
+            "0x70002000",
+            "0x0",
+            "0x19000"
+          ],
+          "linux,phandle": [
+            "0x1"
+          ],
+          "phandle": [
+            "0x1"
+          ]
+        },
+        "children": []
+      },
+      {
+        "name": "timer@7f02a000",
+        "properties": {
+          "compatible": [
+            "arm,sp804",
+            "arm,primecell"
+          ],
+          "reg": [
+            "0x0",
+            "0x7f02a000",
+            "0x0",
+            "0x1000"
+          ],
+          "interrupts": [
+            "0x0",
+            "0x18",
+            "0x4",
+            "0x0",
+            "0x19",
+            "0x4"
+          ],
+          "clocks": [
+            "0x2",
+            "0x2",
+            "0x3"
+          ],
+          "clock-names": [
+            "tim_clk",
+            "tim_clk",
+            "apb_pclk"
+          ]
+        },
+        "children": []
+      },
+      {
+        "name": "uart@7f050000",
+        "properties": {
+          "compatible": [
+            "arm,pl011",
+            "arm,primecell"
+          ],
+          "reg": [
+            "0x0",
+            "0x7f050000",
+            "0x0",
+            "0x1000"
+          ],
+          "interrupts": [
+            "0x0",
+            "0x35",
+            "0x4"
+          ],
+          "clocks": [
+            "0x3"
+          ],
+          "clock-names": [
+            "apb_pclk"
+          ],
+          "status": [
+            "okay"
+          ]
+        },
+        "children": []
+      },
+      {
+        "name": "uart@7f051000",
+        "properties": {
+          "compatible": [
+            "arm,pl011",
+            "arm,primecell"
+          ],
+          "reg": [
+            "0x0",
+            "0x7f051000",
+            "0x0",
+            "0x1000"
+          ],
+          "interrupts": [
+            "0x0",
+            "0x36",
+            "0x4"
+          ],
+          "clocks": [
+            "0x3"
+          ],
+          "clock-names": [
+            "apb_pclk"
+          ],
+          "status": [
+            "disabled"
+          ]
+        },
+        "children": []
+      },
+      {
+        "name": "uart@7f052000",
+        "properties": {
+          "compatible": [
+            "arm,pl011",
+            "arm,primecell"
+          ],
+          "reg": [
+            "0x0",
+            "0x7f052000",
+            "0x0",
+            "0x1000"
+          ],
+          "interrupts": [
+            "0x0",
+            "0x106",
+            "0x4"
+          ],
+          "clocks": [
+            "0x3"
+          ],
+          "clock-names": [
+            "apb_pclk"
+          ],
+          "status": [
+            "disabled"
+          ]
+        },
+        "children": []
+      },
+      {
+        "name": "uart@7f053000",
+        "properties": {
+          "compatible": [
+            "arm,pl011",
+            "arm,primecell"
+          ],
+          "reg": [
+            "0x0",
+            "0x7f053000",
+            "0x0",
+            "0x1000"
+          ],
+          "interrupts": [
+            "0x0",
+            "0x107",
+            "0x4"
+          ],
+          "clocks": [
+            "0x3"
+          ],
+          "clock-names": [
+            "apb_pclk"
+          ],
+          "status": [
+            "disabled"
+          ]
+        },
+        "children": []
+      },
+      {
+        "name": "uart@7f054000",
+        "properties": {
+          "compatible": [
+            "arm,pl011",
+            "arm,primecell"
+          ],
+          "reg": [
+            "0x0",
+            "0x7f054000",
+            "0x0",
+            "0x1000"
+          ],
+          "interrupts": [
+            "0x0",
+            "0x108",
+            "0x4"
+          ],
+          "clocks": [
+            "0x3"
+          ],
+          "clock-names": [
+            "apb_pclk"
+          ],
+          "status": [
+            "disabled"
+          ]
+        },
+        "children": []
+      },
+      {
+        "name": "sdio@7c300000",
+        "properties": {
+          "compatible": [
+            "panasonic,sdhci"
+          ],
+          "reg": [
+            "",
+            "",
+            "",
+            "",
+            "|0",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            " "
+          ],
+          "interrupts": [
+            "0x0",
+            "0x37",
+            "0x4",
+            "0x0",
+            "0x38",
+            "0x4"
+          ],
+          "max-frequency": [
+            "0x2f34f60"
+          ],
+          "status": [
+            "disabled"
+          ]
+        },
+        "children": []
+      },
+      {
+        "name": "sdio@7c302000",
+        "properties": {
+          "compatible": [
+            "panasonic,sdhci"
+          ],
+          "reg": [
+            "",
+            "",
+            "",
+            "",
+            "|0 ",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            " "
+          ],
+          "interrupts": [
+            "0x0",
+            "0x39",
+            "0x4",
+            "0x0",
+            "0x3a",
+            "0x4"
+          ],
+          "max-frequency": [
+            "0x2f34f60"
+          ],
+          "status": [
+            "disabled"
+          ]
+        },
+        "children": []
+      },
+      {
+        "name": "sdio@7c304000",
+        "properties": {
+          "compatible": [
+            "panasonic,sdhci"
+          ],
+          "reg": [
+            "",
+            "",
+            "",
+            "",
+            "|0@",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            " "
+          ],
+          "interrupts": [
+            "0x0",
+            "0x3b",
+            "0x4",
+            "0x0",
+            "0x3c",
+            "0x4"
+          ],
+          "max-frequency": [
+            "0x2f34f60"
+          ],
+          "status": [
+            "okay"
+          ]
+        },
+        "children": []
+      },
+      {
+        "name": "clocks",
+        "properties": {
+          "#address-cells": [
+            "0x1"
+          ],
+          "#size-cells": [
+            ""
+          ]
+        },
+        "children": [
+          {
+            "name": "pclk",
+            "properties": {
+              "compatible": [
+                "fixed-clock"
+              ],
+              "clock-frequency": [
+                "0xcdfe60"
+              ],
+              "#clock-cells": [
+                ""
+              ],
+              "clock-output-names": [
+                "apb_pclk"
+              ],
+              "linux,phandle": [
+                "0x3"
+              ],
+              "phandle": [
+                "0x3"
+              ]
+            },
+            "children": []
+          },
+          {
+            "name": "timclk",
+            "properties": {
+              "compatible": [
+                "fixed-clock"
+              ],
+              "clock-frequency": [
+                "0x19bfcc0"
+              ],
+              "#clock-cells": [
+                ""
+              ],
+              "clock-output-names": [
+                "tim_clk"
+              ],
+              "linux,phandle": [
+                "0x2"
+              ],
+              "phandle": [
+                "0x2"
+              ]
+            },
+            "children": []
+          }
+        ]
+      },
+      {
+        "name": "usb@7C100000",
+        "properties": {
+          "compatible": [
+            "panasonic,pvc03v-dwc3"
+          ],
+          "#address-cells": [
+            "0x2"
+          ],
+          "#size-cells": [
+            "0x2"
+          ],
+          "reg": [
+            "0x0",
+            "0x2680000",
+            "0x0",
+            "0x10000"
+          ],
+          "interrupts": [
+            "0x0",
+            "0x189",
+            "0x1"
+          ],
+          "ranges": [],
+          "status": [
+            "disabled"
+          ]
+        },
+        "children": [
+          {
+            "name": "dwc3@7C200000",
+            "properties": {
+              "compatible": [
+                "synopsys,dwc3"
+              ],
+              "reg": [
+                "0x0",
+                "0x7c200000",
+                "0x0",
+                "0x70000"
+              ],
+              "interrupts": [
+                "0x0",
+                "0x77",
+                "0x4"
+              ],
+              "dr_mode": [
+                "peripheral"
+              ]
+            },
+            "children": []
+          }
+        ]
+      },
+      {
+        "name": "cpus",
+        "properties": {
+          "#address-cells": [
+            "0x1"
+          ],
+          "#size-cells": [
+            ""
+          ]
+        },
+        "children": [
+          {
+            "name": "cpu@3",
+            "properties": {
+              "device_type": [
+                "cpu"
+              ],
+              "compatible": [
+                "arm,cortex-a7"
+              ],
+              "reg": [
+                "0x3"
+              ]
+            },
+            "children": []
+          }
+        ]
+      },
+      {
+        "name": "chosen",
+        "properties": {
+          "bootargs": [
+            "root=/dev/mtdblock0 slram=slram0,0x83100000,+0x00300000,slram1,0x83400000,+0x00A00000 console=ttyAMA,115200 lpj=6213632"
+          ]
+        },
+        "children": []
+      },
+      {
+        "name": "memory@80200000",
+        "properties": {
+          "device_type": [
+            "memory"
+          ],
+          "reg": [
+            "0x0",
+            "0x80200000",
+            "0x0",
+            "0x2f00000"
+          ]
+        },
+        "children": []
+      }
+    ]
+  },
+  "dtb_reservations": [],
+  "rtos_release": {
+    "load_sequence": "0644ce34 -> 0644cd28; after successful reads 0644ce54 -> 0644cf44",
+    "entry": "0x80120000",
+    "mailbox": "0x80128000",
+    "store_instruction": "0x0644cf48",
+    "sgi_wrapper": "0x0658baa8",
+    "logical_irq": 2,
+    "absolute_sgi": 2,
+    "destination_physical_cpu": 3,
+    "target_mask": "0x8",
+    "gicd_sgir_value": "0x00080002",
+    "gicd_write": "0643616c: [70001000 + (sender MPIDR & 3)*8000 + f00]",
+    "not_a_reset_register": true
+  },
+  "original_loader": {
+    "loader1_nonzero_core_gicc_setup": "0000016c..0000019c",
+    "cpu3_gicc": "0x7001a000",
+    "control": 1,
+    "priority_mask": "0xf0",
+    "loader3_dispatch": "0x00000330",
+    "cpu3_mailbox_init": "0x00000370",
+    "cpu3_wait": "0x0000037c",
+    "wfi": "0x00000380",
+    "mailbox_empty": "0xffffffff",
+    "branch_to_published_entry": "0x000003b4",
+    "pending_clear": "STRB ff to 70001f10 + CPU*8000 (CPENDSGIR0 byte0 only; do not reinterpret as SGI2 acknowledgement)",
+    "stack_used_on_cpu3_wait_path": false,
+    "warning": "Entering 330/370 after the existing release would overwrite the published mailbox; establish wait state before RTOS publishes"
+  },
+  "zboot": {
+    "mpidr_test": "(MPIDR & 0xf03) == 3",
+    "cpu3_write": {
+      "address": "0x80200000",
+      "value": 3
+    },
+    "kernel_entry": "0x82300000",
+    "r0": 0,
+    "r1": 3,
+    "r2": "0x822ff000",
+    "mmu_and_data_cache": "disabled by original zboot before kernel jump",
+    "other_core_path": "waits mailbox80200000==3, then WFI; later branches when mailbox changes from3",
+    "original_dtb_cpu": "physical MPIDR3; do not apply single-Linux demo cpu@0/cpu-offset edits"
+  },
+  "memory": {
+    "coherent_alias": "physical80000000+n shares backing with low n on current s5-rtos experiment",
+    "linux_ram": [
+      "0x80200000",
+      "0x83100000"
+    ],
+    "low_alias_linux_ram": [
+      "0x00200000",
+      "0x03100000"
+    ],
+    "zimage_decompression_destination": "0x80208000",
+    "decompressed_kernel_end_exclusive": "0x806a8620",
+    "kernel_bytes": 4851232,
+    "kernel_sha256": "84f99f8b9d4200a30fe2968e8a3fa29aea6d00aa90c153929e399208d1d3048a",
+    "linux_initial_pgd": [
+      "0x80204000",
+      "0x80208000"
+    ],
+    "decompressor_stack_initial": "0x82554f90",
+    "decompressor_heap_end": "0x82564f90",
+    "helper_pgd": [
+      "0x00100000",
+      "0x00104000"
+    ],
+    "helper_old_cpu3_park": "0x00010800",
+    "direct_known_linux_overlap_with_helpers": false,
+    "rtos_program_start": "0x06280000",
+    "limits": "Bounds describe verified initial image/DTB allocation region, not proof every future driver DMA/IPC access is safe"
+  },
+  "linux_gic": {
+    "original_reg_base": [
+      "0x70001000",
+      "0x70002000"
+    ],
+    "cpu_offset": "0x8000",
+    "physical_cpu3_aliases": [
+      "0x70019000",
+      "0x7001a000"
+    ],
+    "compiled_driver": "c045ef8c gic_init_bases; c045f050..78 uses physical cpu map times offset",
+    "distribution_init": "c045f20c..25c: only IRQs whose existing ITARGETSR includes this CPU mask get prioritya0/ICENABLER writes; no unconditional global re-routing in this path",
+    "banked_init": "c018c43c clears PPIs, enables SGIs, sets banked priorities; c018c298 enables CPU3 interface",
+    "remaining_shared_risk": "Check real guest trace: writable shared distributor, IPC60000, unmodeled SDIO/clock; no claim Linux boots in SMP yet"
+  },
+  "snapshot": {
+    "directory": "/Users/lixiuqi/Documents/ChatGPT/\u76f8\u673a/s5-emulator/menu-smp/results/isolated-display-gradient",
+    "result_sha256": "4da649fdafe6dce6e9e5a6a179d181b1aa9744cf22c8cf72c4380a399a90dd77",
+    "components": [
+      {
+        "component": "27_zboot.bin",
+        "physical": "0x80120000",
+        "bytes": 2048,
+        "exact": true,
+        "guest_sha256": "014dad699b15c269e9905ccfbffe1f73963bbef1301298ba230bb9cf8b34fd9f",
+        "equal_except_last4": true,
+        "original_last4": "ffffffff",
+        "guest_last4": "ffffffff"
+      },
+      {
+        "component": "28_dtb.bin",
+        "physical": "0x822ff000",
+        "bytes": 4096,
+        "exact": true,
+        "guest_sha256": "f1a4d16edaadbda1940fa95994acd5d69a3e90f5c25daaa68c7151535df8e188",
+        "equal_except_last4": true,
+        "original_last4": "ffffffff",
+        "guest_last4": "ffffffff"
+      },
+      {
+        "component": "29_zimage.bin",
+        "physical": "0x82300000",
+        "bytes": 2621440,
+        "exact": true,
+        "guest_sha256": "72b6633d7f20009c5067af6faa5549d52a581c4a55915695e616d666220f7ef0",
+        "equal_except_last4": true,
+        "original_last4": "ffffffff",
+        "guest_last4": "ffffffff"
+      },
+      {
+        "component": "30_rootfs1.bin",
+        "physical": "0x83100000",
+        "bytes": 3145728,
+        "exact": false,
+        "guest_sha256": "229830738097534c5131984ae81593df0e308e1fd0f60a23aac0dea43fd496b5",
+        "equal_except_last4": true,
+        "original_last4": "ffffffff",
+        "guest_last4": "90020000"
+      },
+      {
+        "component": "31_rootfs2.bin",
+        "physical": "0x83400000",
+        "bytes": 10485760,
+        "exact": false,
+        "guest_sha256": "3711b05449caa1a5de598feb15e9b177f4133e1ee39abf3155086b31cb5a6eb4",
+        "equal_except_last4": true,
+        "original_last4": "ffffffff",
+        "guest_last4": "90020000"
+      }
+    ],
+    "rtos_release_mailbox": "0x80120000",
+    "linux_secondary_mailbox": "0x0",
+    "rtos_linux_state_08a79f64": "0100000000000000",
+    "cpu3": {
+      "r0": "0x0",
+      "r1": "0x0",
+      "r2": "0x0",
+      "r3": "0x0",
+      "r4": "0x0",
+      "r5": "0x0",
+      "r6": "0x0",
+      "r7": "0x0",
+      "r8": "0x0",
+      "r9": "0x0",
+      "r10": "0x0",
+      "r11": "0x0",
+      "r12": "0x0",
+      "r13": "0x0",
+      "r14": "0x0",
+      "r15": "0x10800",
+      "cpsr": "0x600001d3"
+    },
+    "gicc3": {
+      "index": 3,
+      "control": 0,
+      "priority_mask": 0,
+      "running_priority": 256,
+      "current_pending": 1023,
+      "halted": false,
+      "interrupt_request": 0
+    },
+    "sgi2": {
+      "id": 2,
+      "enabled": 255,
+      "pending": 8,
+      "active": 0,
+      "level": 0,
+      "group": 0,
+      "targets": 0,
+      "priority_cpu0": 0
+    },
+    "rootfs_last_word_explanation": "Original0644cd7c/0644cdaa stores version*063b0000 at833ffffc/83dffffc after successful load; not an emulator patch"
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "source": "/Users/lixiuqi/Documents/ChatGPT/\u76f8\u673a/s5-v29-offline/unpacked-v29/03_program.bin",
+  "sha256": "fc496d62a91f6e9b1b84807183bb805bc546c9105d2938546b58a66ad9d132fe",
+  "peripheral_identity": "unknown",
+  "observed_boot": "menu-smp/results/inactive-inputs-boot",
+  "first_spi0_tx": "f5",
+  "transfer_abi": {
+    "entry": "0x0642c43c",
+    "channel": "r0=0",
+    "tx": "r1",
+    "rx": "r2",
+    "bytes": "r3"
+  },
+  "five_byte_command_wrapper": "0x064e6aac",
+  "startup": "0x06546e80",
+  "startup_commands": [
+    "f5020000a0",
+    "f4010000a0",
+    "f0000003a0",
+    "f2776000a0",
+    "f2336000a0",
+    "f2116000a0",
+    "f3010000a0",
+    "f0010003a0",
+    "f1010000a0",
+    "66000000a0",
+    "67000000a0",
+    "e2000000a0"
+  ],
+  "upload_wrapper": "0x06546d62",
+  "upload_configuration": {
+    "0xe3": "three little-endian bytes from first argument (destination candidate)",
+    "0xe4": "three little-endian bytes from length argument",
+    "0xe1": "three configuration bytes; meanings not established"
+  },
+  "return_checker": {
+    "entry": "0x06546c80",
+    "observations": "tests RX[0]==0x20 and RX[4]==0; all disassembled exit paths return r0=0",
+    "physical_response_verified": false
+  },
+  "limitations": [
+    "No actual device response captured",
+    "SPI0 MISO=0 would represent an explicit absent-peer experiment, not a successful coprocessor simulation",
+    "Code upload may be required later; no uploaded code execution model exists"
+  ]
+}

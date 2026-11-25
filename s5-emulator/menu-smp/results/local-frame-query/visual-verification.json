@@ -1,0 +1,19 @@
+{
+  "scope": "Visual inspection of an actual original EGL swap through the software graphics backend; partial original startup only",
+  "frame": "/Users/lixiuqi/Documents/ChatGPT/相机/s5-emulator/menu-smp/results/local-frame-query/graphics/frame-0000.png",
+  "png_sha256": "9bcb4c16d7e82660efc0da5d7c0f6e47c880c76411171b3b8ea4c9c2bc32a761",
+  "observed_text": [
+    "Please set the time zone",
+    "Set"
+  ],
+  "original_modal_id": "0x23c",
+  "original_egl_swap_observed": true,
+  "swap_call_log_index": 693,
+  "draw_calls_at_swap": 15,
+  "original_ui_prompt_presented": true,
+  "main_menu_open": false,
+  "input_confirmation_succeeded": false,
+  "full_camera_boot": false,
+  "qemu_sha256": "dab0f1a17045b8ecd64985a7a22233c7bdead0cf7610bfb6f62f7af0ec27fcb5",
+  "review_note": "The first submitted frame contains the original time-zone prompt and Set control, with unused native-buffer margins. Subsequent rendering stopped at unsupported eglCreatePbufferFromClientBuffer; the CENTER request reached the original dispatcher but was rejected by the active secondary transition gate."
+}

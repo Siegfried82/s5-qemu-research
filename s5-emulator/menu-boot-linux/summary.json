@@ -1,0 +1,71 @@
+{
+  "scope": "Original S5 V2.9 Linux startup/services; not main camera RTOS GUI",
+  "original_kernel_modified": false,
+  "original_programs_modified": false,
+  "real_camera_connected": false,
+  "network_device_present": false,
+  "boot_comparison": {
+    "five_seconds": "results/stock-boot-5s-c44d3433",
+    "twenty_seconds": "results/stock-boot-20s-d403ab53",
+    "same_qemu_sha256": "a51ab45780242aa65827fafcc3d300075a23c50eb68b8c4afcb7a24a63bd039b",
+    "same_dtb_sha256": "68d72d5cdef3a46c93958c34c0081ac848c4d70ae45b668e31adff65068871ad",
+    "record_count_each": 108,
+    "all_message_text_identical": true,
+    "last_message": "icsm driver version 1.3.0 (major 124)",
+    "limitation": "Same log tail does not independently establish that every guest process is blocked."
+  },
+  "original_rcs_execution": {
+    "evidence": "results/stock-rcs-processes-a7660ca4",
+    "rcs_exit": 0,
+    "guest_uptime_at_process_list": "0.54 seconds",
+    "nwa_process_state": "Z / defunct",
+    "modules": [
+      "cpu_iccdrv Live",
+      "cpu_icsmdrv Live"
+    ],
+    "synthetic_component": "PID 1 is the command initramfs; orphan zombie state is not claimed for original /sbin/init."
+  },
+  "nwa_without_modules": {
+    "evidence": "results/nwa-strace-304c2abe",
+    "execve_succeeded": true,
+    "first_fatal_device_dependency": "open(\"/dev/icc0\", O_RDWR) = -1 ENXIO",
+    "guest_exit_code": 1
+  },
+  "nwa_with_original_modules": {
+    "evidence": "results/nwa-with-stock-modules-1af68219",
+    "icc_modprobe_exit": 0,
+    "icsm_modprobe_exit": 0,
+    "icc0_open_succeeded": true,
+    "ioctl": "0xc0085c03",
+    "ioctl_syscall_return": 0,
+    "guest_exit_code": 1,
+    "static_correlation": {
+      "nwa_call_address": "0x120cc",
+      "call": "CPU_Icc_Open(0xc001)",
+      "libicc_query_function": "0x41bd09f4",
+      "response_field_offset": 4,
+      "acceptance_rule": "CPU_Icc_Open requires the returned signed field to be positive before opening /dev/icc1",
+      "inference": "Trace ends before /dev/icc1 open; the original library rejects the returned ICC query data. The exact field value was not read."
+    }
+  },
+  "menu_data": {
+    "file": "assets/MC801_allmenu.xml",
+    "metadata": "assets/menu-structure.json",
+    "sha256": "2cf69074d41ac134e9a65ca631cf4842cefc5c49d24cc855ac2094fdbd1e857c",
+    "guest_openssl_hash_matched": true,
+    "items": 740,
+    "languages": 11,
+    "on_camera_gui_rendered": false
+  },
+  "next_dependency": "Implement/observe the real ICC shared-state and peer/main-core behavior before claiming camera services or UI startup.",
+  "debugger_watchpoint_control": {
+    "evidence": "results/watchpoint-repro-fe01f97c/summary.json",
+    "synthetic_code_only": true,
+    "no_original_firmware_loaded": true,
+    "control_and_non_hit_pass": true,
+    "Z2_and_Z4_exact_and_region_hit_continue_timeout": true,
+    "first_qmp_query_still_responds_running": true,
+    "hit_cases_required_sigkill": true,
+    "remaining_test_qemu_processes": ""
+  }
+}

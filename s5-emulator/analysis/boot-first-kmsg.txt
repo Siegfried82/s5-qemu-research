@@ -1,0 +1,220 @@
+[    0.000000] [<c0019a70>] (warn_slowpath_common) from [<c0019ac0>] (warn_slowpath_fmt+0x2c/0x3c)
+[    0.000000] [<c0019ac0>] (warn_slowpath_fmt) from [<c0051640>] (irq_domain_associate+0x64/0x188)
+[    0.000000] [<c0051640>] (irq_domain_associate) from [<c0051798>] (irq_domain_associate_many+0x34/0x3c)
+[    0.000000] [<c0051798>] (irq_domain_associate_many) from [<c0051838>] (irq_domain_add_legacy+0x48/0x54)
+[    0.000000] [<c0051838>] (irq_domain_add_legacy) from [<c045f17c>] (gic_init_bases+0x1f0/0x320)
+[    0.000000] [<c045f17c>] (gic_init_bases) from [<c045f354>] (gic_of_init+0xa8/0xf4)
+[    0.000000] [<c045f354>] (gic_of_init) from [<c0462844>] (of_irq_init+0x160/0x258)
+[    0.000000] [<c0462844>] (of_irq_init) from [<c044dab4>] (start_kernel+0x21c/0x434)
+[    0.000000] [<c044dab4>] (start_kernel) from [<8020806c>] (0x8020806c)
+[    0.000000] ---[ end trace cb88537fdc8fa22e ]---
+[    0.000000] ------------[ cut here ]------------
+[    0.000000] WARNING: CPU: 0 PID: 0 at kernel/irq/irqdomain.c:279 irq_domain_associate+0x64/0x188()
+[    0.000000] error: virq493 is not allocated
+[    0.000000] Modules linked in:
+[    0.000000] 
+[    0.000000] CPU: 0 PID: 0 Comm: swapper/0 Tainted: G        W      3.18.18 #1
+[    0.000000] [<c0012804>] (unwind_backtrace) from [<c0010474>] (show_stack+0x10/0x14)
+[    0.000000] [<c0010474>] (show_stack) from [<c0344c98>] (dump_stack+0x6c/0x88)
+[    0.000000] [<c0344c98>] (dump_stack) from [<c0019a70>] (warn_slowpath_common+0x60/0x84)
+[    0.000000] [<c0019a70>] (warn_slowpath_common) from [<c0019ac0>] (warn_slowpath_fmt+0x2c/0x3c)
+[    0.000000] [<c0019ac0>] (warn_slowpath_fmt) from [<c0051640>] (irq_domain_associate+0x64/0x188)
+[    0.000000] [<c0051640>] (irq_domain_associate) from [<c0051798>] (irq_domain_associate_many+0x34/0x3c)
+[    0.000000] [<c0051798>] (irq_domain_associate_many) from [<c0051838>] (irq_domain_add_legacy+0x48/0x54)
+[    0.000000] [<c0051838>] (irq_domain_add_legacy) from [<c045f17c>] (gic_init_bases+0x1f0/0x320)
+[    0.000000] [<c045f17c>] (gic_init_bases) from [<c045f354>] (gic_of_init+0xa8/0xf4)
+[    0.000000] [<c045f354>] (gic_of_init) from [<c0462844>] (of_irq_init+0x160/0x258)
+[    0.000000] [<c0462844>] (of_irq_init) from [<c044dab4>] (start_kernel+0x21c/0x434)
+[    0.000000] [<c044dab4>] (start_kernel) from [<8020806c>] (0x8020806c)
+[    0.000000] ---[ end trace cb88537fdc8fa22f ]---
+[    0.000000] ------------[ cut here ]------------
+[    0.000000] WARNING: CPU: 0 PID: 0 at kernel/irq/irqdomain.c:279 irq_domain_associate+0x64/0x188()
+[    0.000000] error: virq494 is not allocated
+[    0.000000] Modules linked in:
+[    0.000000] 
+[    0.000000] CPU: 0 PID: 0 Comm: swapper/0 Tainted: G        W      3.18.18 #1
+[    0.000000] [<c0012804>] (unwind_backtrace) from [<c0010474>] (show_stack+0x10/0x14)
+[    0.000000] [<c0010474>] (show_stack) from [<c0344c98>] (dump_stack+0x6c/0x88)
+[    0.000000] [<c0344c98>] (dump_stack) from [<c0019a70>] (warn_slowpath_common+0x60/0x84)
+[    0.000000] [<c0019a70>] (warn_slowpath_common) from [<c0019ac0>] (warn_slowpath_fmt+0x2c/0x3c)
+[    0.000000] [<c0019ac0>] (warn_slowpath_fmt) from [<c0051640>] (irq_domain_associate+0x64/0x188)
+[    0.000000] [<c0051640>] (irq_domain_associate) from [<c0051798>] (irq_domain_associate_many+0x34/0x3c)
+[    0.000000] [<c0051798>] (irq_domain_associate_many) from [<c0051838>] (irq_domain_add_legacy+0x48/0x54)
+[    0.000000] [<c0051838>] (irq_domain_add_legacy) from [<c045f17c>] (gic_init_bases+0x1f0/0x320)
+[    0.000000] [<c045f17c>] (gic_init_bases) from [<c045f354>] (gic_of_init+0xa8/0xf4)
+[    0.000000] [<c045f354>] (gic_of_init) from [<c0462844>] (of_irq_init+0x160/0x258)
+[    0.000000] [<c0462844>] (of_irq_init) from [<c044dab4>] (start_kernel+0x21c/0x434)
+[    0.000000] [<c044dab4>] (start_kernel) from [<8020806c>] (0x8020806c)
+[    0.000000] ---[ end trace cb88537fdc8fa230 ]---
+[    0.000000] ------------[ cut here ]------------
+[    0.000000] WARNING: CPU: 0 PID: 0 at kernel/irq/irqdomain.c:279 irq_domain_associate+0x64/0x188()
+[    0.000000] error: virq495 is not allocated
+[    0.000000] Modules linked in:
+[    0.000000] 
+[    0.000000] CPU: 0 PID: 0 Comm: swapper/0 Tainted: G        W      3.18.18 #1
+[    0.000000] [<c0012804>] (unwind_backtrace) from [<c0010474>] (show_stack+0x10/0x14)
+[    0.000000] [<c0010474>] (show_stack) from [<c0344c98>] (dump_stack+0x6c/0x88)
+[    0.000000] [<c0344c98>] (dump_stack) from [<c0019a70>] (warn_slowpath_common+0x60/0x84)
+[    0.000000] [<c0019a70>] (warn_slowpath_common) from [<c0019ac0>] (warn_slowpath_fmt+0x2c/0x3c)
+[    0.000000] [<c0019ac0>] (warn_slowpath_fmt) from [<c0051640>] (irq_domain_associate+0x64/0x188)
+[    0.000000] [<c0051640>] (irq_domain_associate) from [<c0051798>] (irq_domain_associate_many+0x34/0x3c)
+[    0.000000] [<c0051798>] (irq_domain_associate_many) from [<c0051838>] (irq_domain_add_legacy+0x48/0x54)
+[    0.000000] [<c0051838>] (irq_domain_add_legacy) from [<c045f17c>] (gic_init_bases+0x1f0/0x320)
+[    0.000000] [<c045f17c>] (gic_init_bases) from [<c045f354>] (gic_of_init+0xa8/0xf4)
+[    0.000000] [<c045f354>] (gic_of_init) from [<c0462844>] (of_irq_init+0x160/0x258)
+[    0.000000] [<c0462844>] (of_irq_init) from [<c044dab4>] (start_kernel+0x21c/0x434)
+[    0.000000] [<c044dab4>] (start_kernel) from [<8020806c>] (0x8020806c)
+[    0.000000] ---[ end trace cb88537fdc8fa231 ]---
+[    0.000000] ------------[ cut here ]------------
+[    0.000000] WARNING: CPU: 0 PID: 0 at kernel/irq/irqdomain.c:279 irq_domain_associate+0x64/0x188()
+[    0.000000] error: virq496 is not allocated
+[    0.000000] Modules linked in:
+[    0.000000] 
+[    0.000000] CPU: 0 PID: 0 Comm: swapper/0 Tainted: G        W      3.18.18 #1
+[    0.000000] [<c0012804>] (unwind_backtrace) from [<c0010474>] (show_stack+0x10/0x14)
+[    0.000000] [<c0010474>] (show_stack) from [<c0344c98>] (dump_stack+0x6c/0x88)
+[    0.000000] [<c0344c98>] (dump_stack) from [<c0019a70>] (warn_slowpath_common+0x60/0x84)
+[    0.000000] [<c0019a70>] (warn_slowpath_common) from [<c0019ac0>] (warn_slowpath_fmt+0x2c/0x3c)
+[    0.000000] [<c0019ac0>] (warn_slowpath_fmt) from [<c0051640>] (irq_domain_associate+0x64/0x188)
+[    0.000000] [<c0051640>] (irq_domain_associate) from [<c0051798>] (irq_domain_associate_many+0x34/0x3c)
+[    0.000000] [<c0051798>] (irq_domain_associate_many) from [<c0051838>] (irq_domain_add_legacy+0x48/0x54)
+[    0.000000] [<c0051838>] (irq_domain_add_legacy) from [<c045f17c>] (gic_init_bases+0x1f0/0x320)
+[    0.000000] [<c045f17c>] (gic_init_bases) from [<c045f354>] (gic_of_init+0xa8/0xf4)
+[    0.000000] [<c045f354>] (gic_of_init) from [<c0462844>] (of_irq_init+0x160/0x258)
+[    0.000000] [<c0462844>] (of_irq_init) from [<c044dab4>] (start_kernel+0x21c/0x434)
+[    0.000000] [<c044dab4>] (start_kernel) from [<8020806c>] (0x8020806c)
+[    0.000000] ---[ end trace cb88537fdc8fa232 ]---
+[    0.000000] ------------[ cut here ]------------
+[    0.000000] WARNING: CPU: 0 PID: 0 at kernel/irq/irqdomain.c:279 irq_domain_associate+0x64/0x188()
+[    0.000000] error: virq497 is not allocated
+[    0.000000] Modules linked in:
+[    0.000000] 
+[    0.000000] CPU: 0 PID: 0 Comm: swapper/0 Tainted: G        W      3.18.18 #1
+[    0.000000] [<c0012804>] (unwind_backtrace) from [<c0010474>] (show_stack+0x10/0x14)
+[    0.000000] [<c0010474>] (show_stack) from [<c0344c98>] (dump_stack+0x6c/0x88)
+[    0.000000] [<c0344c98>] (dump_stack) from [<c0019a70>] (warn_slowpath_common+0x60/0x84)
+[    0.000000] [<c0019a70>] (warn_slowpath_common) from [<c0019ac0>] (warn_slowpath_fmt+0x2c/0x3c)
+[    0.000000] [<c0019ac0>] (warn_slowpath_fmt) from [<c0051640>] (irq_domain_associate+0x64/0x188)
+[    0.000000] [<c0051640>] (irq_domain_associate) from [<c0051798>] (irq_domain_associate_many+0x34/0x3c)
+[    0.000000] [<c0051798>] (irq_domain_associate_many) from [<c0051838>] (irq_domain_add_legacy+0x48/0x54)
+[    0.000000] [<c0051838>] (irq_domain_add_legacy) from [<c045f17c>] (gic_init_bases+0x1f0/0x320)
+[    0.000000] [<c045f17c>] (gic_init_bases) from [<c045f354>] (gic_of_init+0xa8/0xf4)
+[    0.000000] [<c045f354>] (gic_of_init) from [<c0462844>] (of_irq_init+0x160/0x258)
+[    0.000000] [<c0462844>] (of_irq_init) from [<c044dab4>] (start_kernel+0x21c/0x434)
+[    0.000000] [<c044dab4>] (start_kernel) from [<8020806c>] (0x8020806c)
+[    0.000000] ---[ end trace cb88537fdc8fa233 ]---
+[    0.000000] ------------[ cut here ]------------
+[    0.000000] WARNING: CPU: 0 PID: 0 at kernel/irq/irqdomain.c:279 irq_domain_associate+0x64/0x188()
+[    0.000000] error: virq498 is not allocated
+[    0.000000] Modules linked in:
+[    0.000000] 
+[    0.000000] CPU: 0 PID: 0 Comm: swapper/0 Tainted: G        W      3.18.18 #1
+[    0.000000] [<c0012804>] (unwind_backtrace) from [<c0010474>] (show_stack+0x10/0x14)
+[    0.000000] [<c0010474>] (show_stack) from [<c0344c98>] (dump_stack+0x6c/0x88)
+[    0.000000] [<c0344c98>] (dump_stack) from [<c0019a70>] (warn_slowpath_common+0x60/0x84)
+[    0.000000] [<c0019a70>] (warn_slowpath_common) from [<c0019ac0>] (warn_slowpath_fmt+0x2c/0x3c)
+[    0.000000] [<c0019ac0>] (warn_slowpath_fmt) from [<c0051640>] (irq_domain_associate+0x64/0x188)
+[    0.000000] [<c0051640>] (irq_domain_associate) from [<c0051798>] (irq_domain_associate_many+0x34/0x3c)
+[    0.000000] [<c0051798>] (irq_domain_associate_many) from [<c0051838>] (irq_domain_add_legacy+0x48/0x54)
+[    0.000000] [<c0051838>] (irq_domain_add_legacy) from [<c045f17c>] (gic_init_bases+0x1f0/0x320)
+[    0.000000] [<c045f17c>] (gic_init_bases) from [<c045f354>] (gic_of_init+0xa8/0xf4)
+[    0.000000] [<c045f354>] (gic_of_init) from [<c0462844>] (of_irq_init+0x160/0x258)
+[    0.000000] [<c0462844>] (of_irq_init) from [<c044dab4>] (start_kernel+0x21c/0x434)
+[    0.000000] [<c044dab4>] (start_kernel) from [<8020806c>] (0x8020806c)
+[    0.000000] ---[ end trace cb88537fdc8fa234 ]---
+[    0.000000] GIC CPU mask not found - kernel will fail to boot.
+[    0.000000] GIC CPU mask not found - kernel will fail to boot.
+[    0.000084] sched_clock: 32 bits at 27MHz, resolution 37ns, wraps every 159072862170ns
+[    0.001850] Console: colour dummy device 80x30
+[    0.002146] allocated 524288 bytes of page_cgroup
+[    0.002155] please try 'cgroup_disable=memory' option if you don't want memory cgroups
+[    0.002251] Calibrating delay loop (skipped) preset value.. 1242.72 BogoMIPS (lpj=6213632)
+[    0.002312] pid_max: default: 32768 minimum: 301
+[    0.002783] Mount-cache hash table entries: 1024 (order: 0, 4096 bytes)
+[    0.002796] Mountpoint-cache hash table entries: 1024 (order: 0, 4096 bytes)
+[    0.006908] Initializing cgroup subsys memory
+[    0.007018] Initializing cgroup subsys devices
+[    0.007051] Initializing cgroup subsys freezer
+[    0.007079] Initializing cgroup subsys net_cls
+[    0.007102] Initializing cgroup subsys blkio
+[    0.007119] Initializing cgroup subsys net_prio
+[    0.007207] CPU: Testing write buffer coherency: ok
+[    0.010815] /cpus/cpu@0 missing clock-frequency property
+[    0.010905] CPU0: thread -1, cpu 0, socket 0, mpidr 80000000
+[    0.010993] Setting up static identity map for 0x8054a0e0 - 0x8054a114
+[    0.015419] Brought up 1 CPUs
+[    0.015455] SMP: Total of 1 processors activated (1242.72 BogoMIPS).
+[    0.015476] CPU: All CPU(s) started in SVC mode.
+[    0.027213] VFP support v0.3: implementor 41 architecture 2 part 30 variant 7 rev 5
+[    0.038205] NET: Registered protocol family 16
+[    0.039706] DMA: preallocated 256 KiB pool for atomic coherent allocations
+[    0.054522] Bluetooth: Core ver 2.19
+[    0.054571] NET: Registered protocol family 31
+[    0.054579] Bluetooth: HCI device and connection manager initialized
+[    0.054630] Bluetooth: HCI socket layer initialized
+[    0.054662] Bluetooth: L2CAP socket layer initialized
+[    0.054700] Bluetooth: SCO socket layer initialized
+[    0.055632] cfg80211: Calling CRDA to update world regulatory domain
+[    0.056715] Switched to clocksource arm,sp804
+[    0.057329] FS-Cache: Loaded
+[    0.060899] NET: Registered protocol family 2
+[    0.063966] TCP established hash table entries: 1024 (order: 0, 4096 bytes)
+[    0.064033] TCP bind hash table entries: 1024 (order: 1, 8192 bytes)
+[    0.064112] TCP: Hash tables configured (established 1024 bind 1024)
+[    0.064234] TCP: reno registered
+[    0.064285] UDP hash table entries: 256 (order: 1, 8192 bytes)
+[    0.064340] UDP-Lite hash table entries: 256 (order: 1, 8192 bytes)
+[    0.064862] NET: Registered protocol family 1
+[    0.069688] futex hash table entries: 256 (order: 2, 16384 bytes)
+[    0.073659] squashfs: version 4.0 (2009/01/31) Phillip Lougher
+[    0.074394] msgmni has been set to 81
+[    0.076441] Block layer SCSI generic (bsg) driver version 0.4 loaded (major 254)
+[    0.076500] io scheduler noop registered
+[    0.076522] io scheduler deadline registered
+[    0.076574] io scheduler cfq registered (default)
+[    0.078487] slram: devname = slram0
+[    0.078508] slram: devstart = 0x83100000
+[    0.078519] slram: devlength = +0x00300000
+[    0.078576] slram: devname=slram0, devstart=0x83100000, devlength=0x300000
+[    0.080363] slram: Registered device slram0 from 2147328KiB to 2150400KiB
+[    0.080380] slram: Mapped from 0xc3400000 to 0xc3700000
+[    0.080387] slram: devname = slram1
+[    0.080390] slram: devstart = 0x83400000
+[    0.080395] slram: devlength = +0x00A00000
+[    0.080400] slram: devname=slram1, devstart=0x83400000, devlength=0xa00000
+[    0.080847] slram: Registered device slram1 from 2150400KiB to 2160640KiB
+[    0.080851] slram: Mapped from 0xc4000000 to 0xc4a00000
+[    0.081093] tun: Universal TUN/TAP device driver, 1.6
+[    0.081099] tun: (C) 1999-2004 Max Krasnyansky <maxk@qualcomm.com>
+[    0.081428] nf_conntrack version 0.5.0 (651 buckets, 2604 max)
+[    0.083371] ip_tables: (C) 2000-2006 Netfilter Core Team
+[    0.084109] TCP: cubic registered
+[    0.084406] NET: Registered protocol family 10
+[    0.086676] sit: IPv6 over IPv4 tunneling driver
+[    0.087829] NET: Registered protocol family 17
+[    0.088045] bridge: automatic filtering via arp/ip/ip6tables has been deprecated. Update your scripts to load br_netfilter if you need this.
+[    0.088088] Bridge firewalling registered
+[    0.088379] Key type dns_resolver registered
+[    0.088453] Registering SWP/SWPB emulation handler
+[    0.090565] Warning: unable to open an initial console.
+[    0.099624] VFS: Mounted root (squashfs filesystem) readonly on device 31:0.
+[    0.109652] Freeing unused kernel memory: 132K (c044d000 - c046e000)
+[    0.312966] cpu_iccdrv: module license 'Proprietary' taints kernel.
+[    0.313190] Disabling lock debugging due to kernel taint
+[    0.317032] ------------[ cut here ]------------
+[    0.317233] WARNING: CPU: 0 PID: 150 at kernel/irq/manage.c:1481 request_threaded_irq+0x58/0x118()
+[    0.317273] Modules linked in: cpu_iccdrv(PO+)
+[    0.317609] CPU: 0 PID: 150 Comm: modprobe Tainted: P        W  O   3.18.18 #1
+[    0.317882] [<c0012804>] (unwind_backtrace) from [<c0010474>] (show_stack+0x10/0x14)
+[    0.317927] [<c0010474>] (show_stack) from [<c0344c98>] (dump_stack+0x6c/0x88)
+[    0.317966] [<c0344c98>] (dump_stack) from [<c0019a70>] (warn_slowpath_common+0x60/0x84)
+[    0.317974] [<c0019a70>] (warn_slowpath_common) from [<c0019b24>] (warn_slowpath_null+0x18/0x20)
+[    0.317982] [<c0019b24>] (warn_slowpath_null) from [<c004f410>] (request_threaded_irq+0x58/0x118)
+[    0.317995] [<c004f410>] (request_threaded_irq) from [<bf0051f4>] (init_module+0x1f4/0x3bc [cpu_iccdrv])
+[    0.318091] [<bf0051f4>] (init_module [cpu_iccdrv]) from [<c00087b8>] (do_one_initcall+0xfc/0x1a4)
+[    0.318100] [<c00087b8>] (do_one_initcall) from [<c006b1d8>] (load_module+0x14b4/0x1a84)
+[    0.318113] [<c006b1d8>] (load_module) from [<c006b8dc>] (SyS_finit_module+0x5c/0x6c)
+[    0.318121] [<c006b8dc>] (SyS_finit_module) from [<c000d9e0>] (ret_fast_syscall+0x0/0x38)
+[    0.318156] ---[ end trace cb88537fdc8fa236 ]---
+[    0.318187] icc_init_driver: request_irq failed -22
+[    0.326698] icsm driver version 1.3.0 (major 124)

@@ -1,0 +1,766 @@
+{
+  "buffer_physical_address": "0x806ab754",
+  "buffer_bytes": 16384,
+  "first_index": 0,
+  "next_index": 7300,
+  "first_sequence": 0,
+  "next_sequence": 108,
+  "records": [
+    {
+      "sequence": 0,
+      "timestamp_ns": 0,
+      "level": 6,
+      "facility": 0,
+      "text": "Booting Linux on physical CPU 0x3"
+    },
+    {
+      "sequence": 1,
+      "timestamp_ns": 0,
+      "level": 6,
+      "facility": 0,
+      "text": "Initializing cgroup subsys cpuset"
+    },
+    {
+      "sequence": 2,
+      "timestamp_ns": 0,
+      "level": 6,
+      "facility": 0,
+      "text": "Initializing cgroup subsys cpu"
+    },
+    {
+      "sequence": 3,
+      "timestamp_ns": 0,
+      "level": 6,
+      "facility": 0,
+      "text": "Initializing cgroup subsys cpuacct"
+    },
+    {
+      "sequence": 4,
+      "timestamp_ns": 0,
+      "level": 5,
+      "facility": 0,
+      "text": "Linux version 3.18.18 (img.yamashita.seiya@imglinux125) (gcc version 4.8.5 (Buildroot 2017.02) ) #1 SMP Thu Jun 12 14:54:26 JST 2025"
+    },
+    {
+      "sequence": 5,
+      "timestamp_ns": 0,
+      "level": 6,
+      "facility": 0,
+      "text": "CPU: ARMv7 Processor [410fc075] revision 5 (ARMv7), cr=10c5387d"
+    },
+    {
+      "sequence": 6,
+      "timestamp_ns": 0,
+      "level": 6,
+      "facility": 0,
+      "text": "CPU: PIPT / VIPT nonaliasing data cache, VIPT aliasing instruction cache"
+    },
+    {
+      "sequence": 7,
+      "timestamp_ns": 0,
+      "level": 6,
+      "facility": 0,
+      "text": "Machine model: panasonic,pvc03v"
+    },
+    {
+      "sequence": 8,
+      "timestamp_ns": 0,
+      "level": 6,
+      "facility": 0,
+      "text": "Memory policy: Data cache writealloc"
+    },
+    {
+      "sequence": 9,
+      "timestamp_ns": 0,
+      "level": 7,
+      "facility": 0,
+      "text": "On node 0 totalpages: 11776"
+    },
+    {
+      "sequence": 10,
+      "timestamp_ns": 0,
+      "level": 7,
+      "facility": 0,
+      "text": "  Normal zone: 92 pages used for memmap"
+    },
+    {
+      "sequence": 11,
+      "timestamp_ns": 0,
+      "level": 7,
+      "facility": 0,
+      "text": "  Normal zone: 0 pages reserved"
+    },
+    {
+      "sequence": 12,
+      "timestamp_ns": 0,
+      "level": 7,
+      "facility": 0,
+      "text": "  Normal zone: 11776 pages, LIFO batch:1"
+    },
+    {
+      "sequence": 13,
+      "timestamp_ns": 0,
+      "level": 6,
+      "facility": 0,
+      "text": "PERCPU: Embedded 9 pages/cpu @c2bec000 s6080 r8192 d22592 u36864"
+    },
+    {
+      "sequence": 14,
+      "timestamp_ns": 0,
+      "level": 7,
+      "facility": 0,
+      "text": "pcpu-alloc: s6080 r8192 d22592 u36864 alloc=9*4096"
+    },
+    {
+      "sequence": 15,
+      "timestamp_ns": 0,
+      "level": 7,
+      "facility": 0,
+      "text": "pcpu-alloc: [0] 0 "
+    },
+    {
+      "sequence": 16,
+      "timestamp_ns": 0,
+      "level": 4,
+      "facility": 0,
+      "text": "Built 1 zonelists in Zone order, mobility grouping on.  Total pages: 11684"
+    },
+    {
+      "sequence": 17,
+      "timestamp_ns": 0,
+      "level": 5,
+      "facility": 0,
+      "text": "Kernel command line: root=/dev/mtdblock0 slram=slram0,0x83100000,+0x00300000,slram1,0x83400000,+0x00A00000 console=ttyAMA,115200 lpj=6213632"
+    },
+    {
+      "sequence": 18,
+      "timestamp_ns": 0,
+      "level": 6,
+      "facility": 0,
+      "text": "PID hash table entries: 256 (order: -2, 1024 bytes)"
+    },
+    {
+      "sequence": 19,
+      "timestamp_ns": 0,
+      "level": 6,
+      "facility": 0,
+      "text": "Dentry cache hash table entries: 8192 (order: 3, 32768 bytes)"
+    },
+    {
+      "sequence": 20,
+      "timestamp_ns": 0,
+      "level": 6,
+      "facility": 0,
+      "text": "Inode-cache hash table entries: 4096 (order: 2, 16384 bytes)"
+    },
+    {
+      "sequence": 21,
+      "timestamp_ns": 0,
+      "level": 4,
+      "facility": 0,
+      "text": "Memory: 41712K/47104K available (3467K kernel code, 233K rwdata, 904K rodata, 132K init, 95K bss, 5392K reserved)"
+    },
+    {
+      "sequence": 22,
+      "timestamp_ns": 0,
+      "level": 5,
+      "facility": 0,
+      "text": "Virtual kernel memory layout:\n    vector  : 0xffff0000 - 0xffff1000   (   4 kB)\n    fixmap  : 0xffc00000 - 0xffe00000   (2048 kB)\n    vmalloc : 0xc3000000 - 0xff000000   ( 960 MB)\n    lowmem  : 0xc0000000 - 0xc2f00000   (  47 MB)\n    modules : 0xbf000000 - 0xc0000000   (  16 MB)\n      .text : 0xc0008000 - 0xc044cde4   (4372 kB)\n      .init : 0xc044d000 - 0xc046e000   ( 132 kB)\n      .data : 0xc046e000 - 0xc04a8620   ( 234 kB)\n       .bss : 0xc04a8620 - 0xc04c028c   (  96 kB)"
+    },
+    {
+      "sequence": 23,
+      "timestamp_ns": 0,
+      "level": 6,
+      "facility": 0,
+      "text": "Hierarchical RCU implementation."
+    },
+    {
+      "sequence": 24,
+      "timestamp_ns": 0,
+      "level": 6,
+      "facility": 0,
+      "text": "\tRCU restricting CPUs from NR_CPUS=4 to nr_cpu_ids=1."
+    },
+    {
+      "sequence": 25,
+      "timestamp_ns": 0,
+      "level": 6,
+      "facility": 0,
+      "text": "RCU: Adjusting geometry for rcu_fanout_leaf=16, nr_cpu_ids=1"
+    },
+    {
+      "sequence": 26,
+      "timestamp_ns": 0,
+      "level": 6,
+      "facility": 0,
+      "text": "NR_IRQS:448"
+    },
+    {
+      "sequence": 27,
+      "timestamp_ns": 131999,
+      "level": 6,
+      "facility": 0,
+      "text": "sched_clock: 32 bits at 27MHz, resolution 37ns, wraps every 159072862170ns"
+    },
+    {
+      "sequence": 28,
+      "timestamp_ns": 3934998,
+      "level": 6,
+      "facility": 0,
+      "text": "Console: colour dummy device 80x30"
+    },
+    {
+      "sequence": 29,
+      "timestamp_ns": 4709998,
+      "level": 6,
+      "facility": 0,
+      "text": "allocated 524288 bytes of page_cgroup"
+    },
+    {
+      "sequence": 30,
+      "timestamp_ns": 4727998,
+      "level": 6,
+      "facility": 0,
+      "text": "please try 'cgroup_disable=memory' option if you don't want memory cgroups"
+    },
+    {
+      "sequence": 31,
+      "timestamp_ns": 4840998,
+      "level": 6,
+      "facility": 0,
+      "text": "Calibrating delay loop (skipped) preset value.. 1242.72 BogoMIPS (lpj=6213632)"
+    },
+    {
+      "sequence": 32,
+      "timestamp_ns": 4930998,
+      "level": 6,
+      "facility": 0,
+      "text": "pid_max: default: 32768 minimum: 301"
+    },
+    {
+      "sequence": 33,
+      "timestamp_ns": 6442998,
+      "level": 6,
+      "facility": 0,
+      "text": "Mount-cache hash table entries: 1024 (order: 0, 4096 bytes)"
+    },
+    {
+      "sequence": 34,
+      "timestamp_ns": 6471998,
+      "level": 6,
+      "facility": 0,
+      "text": "Mountpoint-cache hash table entries: 1024 (order: 0, 4096 bytes)"
+    },
+    {
+      "sequence": 35,
+      "timestamp_ns": 14041998,
+      "level": 6,
+      "facility": 0,
+      "text": "Initializing cgroup subsys memory"
+    },
+    {
+      "sequence": 36,
+      "timestamp_ns": 14212998,
+      "level": 6,
+      "facility": 0,
+      "text": "Initializing cgroup subsys devices"
+    },
+    {
+      "sequence": 37,
+      "timestamp_ns": 14283998,
+      "level": 6,
+      "facility": 0,
+      "text": "Initializing cgroup subsys freezer"
+    },
+    {
+      "sequence": 38,
+      "timestamp_ns": 14378998,
+      "level": 6,
+      "facility": 0,
+      "text": "Initializing cgroup subsys net_cls"
+    },
+    {
+      "sequence": 39,
+      "timestamp_ns": 14428998,
+      "level": 6,
+      "facility": 0,
+      "text": "Initializing cgroup subsys blkio"
+    },
+    {
+      "sequence": 40,
+      "timestamp_ns": 14467998,
+      "level": 6,
+      "facility": 0,
+      "text": "Initializing cgroup subsys net_prio"
+    },
+    {
+      "sequence": 41,
+      "timestamp_ns": 14606998,
+      "level": 6,
+      "facility": 0,
+      "text": "CPU: Testing write buffer coherency: ok"
+    },
+    {
+      "sequence": 42,
+      "timestamp_ns": 21287998,
+      "level": 3,
+      "facility": 0,
+      "text": "/cpus/cpu@3 missing clock-frequency property"
+    },
+    {
+      "sequence": 43,
+      "timestamp_ns": 21413998,
+      "level": 6,
+      "facility": 0,
+      "text": "CPU0: thread -1, cpu 3, socket 0, mpidr 80000003"
+    },
+    {
+      "sequence": 44,
+      "timestamp_ns": 21770998,
+      "level": 6,
+      "facility": 0,
+      "text": "Setting up static identity map for 0x8054a0e0 - 0x8054a114"
+    },
+    {
+      "sequence": 45,
+      "timestamp_ns": 28213998,
+      "level": 6,
+      "facility": 0,
+      "text": "Brought up 1 CPUs"
+    },
+    {
+      "sequence": 46,
+      "timestamp_ns": 28266998,
+      "level": 6,
+      "facility": 0,
+      "text": "SMP: Total of 1 processors activated (1242.72 BogoMIPS)."
+    },
+    {
+      "sequence": 47,
+      "timestamp_ns": 28295998,
+      "level": 6,
+      "facility": 0,
+      "text": "CPU: All CPU(s) started in SVC mode."
+    },
+    {
+      "sequence": 48,
+      "timestamp_ns": 95034998,
+      "level": 6,
+      "facility": 0,
+      "text": "VFP support v0.3: implementor 41 architecture 2 part 30 variant 7 rev 5"
+    },
+    {
+      "sequence": 49,
+      "timestamp_ns": 109852998,
+      "level": 6,
+      "facility": 0,
+      "text": "NET: Registered protocol family 16"
+    },
+    {
+      "sequence": 50,
+      "timestamp_ns": 111636998,
+      "level": 6,
+      "facility": 0,
+      "text": "DMA: preallocated 256 KiB pool for atomic coherent allocations"
+    },
+    {
+      "sequence": 51,
+      "timestamp_ns": 139282998,
+      "level": 6,
+      "facility": 0,
+      "text": "Bluetooth: Core ver 2.19"
+    },
+    {
+      "sequence": 52,
+      "timestamp_ns": 139392998,
+      "level": 6,
+      "facility": 0,
+      "text": "NET: Registered protocol family 31"
+    },
+    {
+      "sequence": 53,
+      "timestamp_ns": 139411998,
+      "level": 6,
+      "facility": 0,
+      "text": "Bluetooth: HCI device and connection manager initialized"
+    },
+    {
+      "sequence": 54,
+      "timestamp_ns": 139502998,
+      "level": 6,
+      "facility": 0,
+      "text": "Bluetooth: HCI socket layer initialized"
+    },
+    {
+      "sequence": 55,
+      "timestamp_ns": 139559998,
+      "level": 6,
+      "facility": 0,
+      "text": "Bluetooth: L2CAP socket layer initialized"
+    },
+    {
+      "sequence": 56,
+      "timestamp_ns": 139620998,
+      "level": 6,
+      "facility": 0,
+      "text": "Bluetooth: SCO socket layer initialized"
+    },
+    {
+      "sequence": 57,
+      "timestamp_ns": 142357998,
+      "level": 6,
+      "facility": 0,
+      "text": "cfg80211: Calling CRDA to update world regulatory domain"
+    },
+    {
+      "sequence": 58,
+      "timestamp_ns": 147180998,
+      "level": 6,
+      "facility": 0,
+      "text": "Switched to clocksource arm,sp804"
+    },
+    {
+      "sequence": 59,
+      "timestamp_ns": 149217998,
+      "level": 5,
+      "facility": 0,
+      "text": "FS-Cache: Loaded"
+    },
+    {
+      "sequence": 60,
+      "timestamp_ns": 164316998,
+      "level": 6,
+      "facility": 0,
+      "text": "NET: Registered protocol family 2"
+    },
+    {
+      "sequence": 61,
+      "timestamp_ns": 168233998,
+      "level": 6,
+      "facility": 0,
+      "text": "TCP established hash table entries: 1024 (order: 0, 4096 bytes)"
+    },
+    {
+      "sequence": 62,
+      "timestamp_ns": 168319998,
+      "level": 6,
+      "facility": 0,
+      "text": "TCP bind hash table entries: 1024 (order: 1, 8192 bytes)"
+    },
+    {
+      "sequence": 63,
+      "timestamp_ns": 168409998,
+      "level": 6,
+      "facility": 0,
+      "text": "TCP: Hash tables configured (established 1024 bind 1024)"
+    },
+    {
+      "sequence": 64,
+      "timestamp_ns": 168606998,
+      "level": 6,
+      "facility": 0,
+      "text": "TCP: reno registered"
+    },
+    {
+      "sequence": 65,
+      "timestamp_ns": 168683998,
+      "level": 6,
+      "facility": 0,
+      "text": "UDP hash table entries: 256 (order: 1, 8192 bytes)"
+    },
+    {
+      "sequence": 66,
+      "timestamp_ns": 168756998,
+      "level": 6,
+      "facility": 0,
+      "text": "UDP-Lite hash table entries: 256 (order: 1, 8192 bytes)"
+    },
+    {
+      "sequence": 67,
+      "timestamp_ns": 169666998,
+      "level": 6,
+      "facility": 0,
+      "text": "NET: Registered protocol family 1"
+    },
+    {
+      "sequence": 68,
+      "timestamp_ns": 175682998,
+      "level": 6,
+      "facility": 0,
+      "text": "futex hash table entries: 256 (order: 2, 16384 bytes)"
+    },
+    {
+      "sequence": 69,
+      "timestamp_ns": 179257998,
+      "level": 6,
+      "facility": 0,
+      "text": "squashfs: version 4.0 (2009/01/31) Phillip Lougher"
+    },
+    {
+      "sequence": 70,
+      "timestamp_ns": 180488998,
+      "level": 6,
+      "facility": 0,
+      "text": "msgmni has been set to 81"
+    },
+    {
+      "sequence": 71,
+      "timestamp_ns": 186410998,
+      "level": 6,
+      "facility": 0,
+      "text": "Block layer SCSI generic (bsg) driver version 0.4 loaded (major 254)"
+    },
+    {
+      "sequence": 72,
+      "timestamp_ns": 186521998,
+      "level": 6,
+      "facility": 0,
+      "text": "io scheduler noop registered"
+    },
+    {
+      "sequence": 73,
+      "timestamp_ns": 186567998,
+      "level": 6,
+      "facility": 0,
+      "text": "io scheduler deadline registered"
+    },
+    {
+      "sequence": 74,
+      "timestamp_ns": 186671998,
+      "level": 6,
+      "facility": 0,
+      "text": "io scheduler cfq registered (default)"
+    },
+    {
+      "sequence": 75,
+      "timestamp_ns": 193943998,
+      "level": 7,
+      "facility": 0,
+      "text": "slram: devname = slram0"
+    },
+    {
+      "sequence": 76,
+      "timestamp_ns": 193983998,
+      "level": 7,
+      "facility": 0,
+      "text": "slram: devstart = 0x83100000"
+    },
+    {
+      "sequence": 77,
+      "timestamp_ns": 194004998,
+      "level": 7,
+      "facility": 0,
+      "text": "slram: devlength = +0x00300000"
+    },
+    {
+      "sequence": 78,
+      "timestamp_ns": 194113998,
+      "level": 7,
+      "facility": 0,
+      "text": "slram: devname=slram0, devstart=0x83100000, devlength=0x300000"
+    },
+    {
+      "sequence": 79,
+      "timestamp_ns": 197540998,
+      "level": 7,
+      "facility": 0,
+      "text": "slram: Registered device slram0 from 2147328KiB to 2150400KiB"
+    },
+    {
+      "sequence": 80,
+      "timestamp_ns": 197574998,
+      "level": 7,
+      "facility": 0,
+      "text": "slram: Mapped from 0xc3400000 to 0xc3700000"
+    },
+    {
+      "sequence": 81,
+      "timestamp_ns": 197592998,
+      "level": 7,
+      "facility": 0,
+      "text": "slram: devname = slram1"
+    },
+    {
+      "sequence": 82,
+      "timestamp_ns": 197605998,
+      "level": 7,
+      "facility": 0,
+      "text": "slram: devstart = 0x83400000"
+    },
+    {
+      "sequence": 83,
+      "timestamp_ns": 197619998,
+      "level": 7,
+      "facility": 0,
+      "text": "slram: devlength = +0x00A00000"
+    },
+    {
+      "sequence": 84,
+      "timestamp_ns": 197641998,
+      "level": 7,
+      "facility": 0,
+      "text": "slram: devname=slram1, devstart=0x83400000, devlength=0xa00000"
+    },
+    {
+      "sequence": 85,
+      "timestamp_ns": 200684998,
+      "level": 7,
+      "facility": 0,
+      "text": "slram: Registered device slram1 from 2150400KiB to 2160640KiB"
+    },
+    {
+      "sequence": 86,
+      "timestamp_ns": 200703998,
+      "level": 7,
+      "facility": 0,
+      "text": "slram: Mapped from 0xc4000000 to 0xc4a00000"
+    },
+    {
+      "sequence": 87,
+      "timestamp_ns": 201119998,
+      "level": 6,
+      "facility": 0,
+      "text": "tun: Universal TUN/TAP device driver, 1.6"
+    },
+    {
+      "sequence": 88,
+      "timestamp_ns": 201134998,
+      "level": 6,
+      "facility": 0,
+      "text": "tun: (C) 1999-2004 Max Krasnyansky <maxk@qualcomm.com>"
+    },
+    {
+      "sequence": 89,
+      "timestamp_ns": 201844998,
+      "level": 6,
+      "facility": 0,
+      "text": "nf_conntrack version 0.5.0 (651 buckets, 2604 max)"
+    },
+    {
+      "sequence": 90,
+      "timestamp_ns": 204597998,
+      "level": 6,
+      "facility": 0,
+      "text": "ip_tables: (C) 2000-2006 Netfilter Core Team"
+    },
+    {
+      "sequence": 91,
+      "timestamp_ns": 205565998,
+      "level": 6,
+      "facility": 0,
+      "text": "TCP: cubic registered"
+    },
+    {
+      "sequence": 92,
+      "timestamp_ns": 206018998,
+      "level": 6,
+      "facility": 0,
+      "text": "NET: Registered protocol family 10"
+    },
+    {
+      "sequence": 93,
+      "timestamp_ns": 211326998,
+      "level": 6,
+      "facility": 0,
+      "text": "sit: IPv6 over IPv4 tunneling driver"
+    },
+    {
+      "sequence": 94,
+      "timestamp_ns": 213677998,
+      "level": 6,
+      "facility": 0,
+      "text": "NET: Registered protocol family 17"
+    },
+    {
+      "sequence": 95,
+      "timestamp_ns": 214012998,
+      "level": 6,
+      "facility": 0,
+      "text": "bridge: automatic filtering via arp/ip/ip6tables has been deprecated. Update your scripts to load br_netfilter if you need this."
+    },
+    {
+      "sequence": 96,
+      "timestamp_ns": 214090998,
+      "level": 5,
+      "facility": 0,
+      "text": "Bridge firewalling registered"
+    },
+    {
+      "sequence": 97,
+      "timestamp_ns": 214468998,
+      "level": 5,
+      "facility": 0,
+      "text": "Key type dns_resolver registered"
+    },
+    {
+      "sequence": 98,
+      "timestamp_ns": 214684998,
+      "level": 5,
+      "facility": 0,
+      "text": "Registering SWP/SWPB emulation handler"
+    },
+    {
+      "sequence": 99,
+      "timestamp_ns": 218116998,
+      "level": 3,
+      "facility": 0,
+      "text": "Warning: unable to open an initial console."
+    },
+    {
+      "sequence": 100,
+      "timestamp_ns": 231619998,
+      "level": 6,
+      "facility": 0,
+      "text": "VFS: Mounted root (squashfs filesystem) readonly on device 31:0."
+    },
+    {
+      "sequence": 101,
+      "timestamp_ns": 256062998,
+      "level": 6,
+      "facility": 0,
+      "text": "Freeing unused kernel memory: 132K (c044d000 - c046e000)"
+    },
+    {
+      "sequence": 102,
+      "timestamp_ns": 882476995,
+      "level": 4,
+      "facility": 0,
+      "text": "cpu_iccdrv: module license 'Proprietary' taints kernel."
+    },
+    {
+      "sequence": 103,
+      "timestamp_ns": 882711995,
+      "level": 4,
+      "facility": 0,
+      "text": "Disabling lock debugging due to kernel taint"
+    },
+    {
+      "sequence": 104,
+      "timestamp_ns": 889094995,
+      "level": 1,
+      "facility": 0,
+      "text": "icc driver version 1.3.0 (major 123)"
+    },
+    {
+      "sequence": 105,
+      "timestamp_ns": 904687995,
+      "level": 1,
+      "facility": 0,
+      "text": "icsm driver version 1.3.0 (major 124)"
+    },
+    {
+      "sequence": 106,
+      "timestamp_ns": 7648046969,
+      "level": 4,
+      "facility": 0,
+      "text": "hrtimer: interrupt took 109832000 ns"
+    },
+    {
+      "sequence": 107,
+      "timestamp_ns": 82810916683,
+      "level": 5,
+      "facility": 0,
+      "text": "random: nonblocking pool is initialized"
+    }
+  ]
+}

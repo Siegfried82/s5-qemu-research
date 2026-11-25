@@ -1,0 +1,414 @@
+{
+  "scope": "Read-only existing snapshot and original opcodes. No new QEMU or guest modification.",
+  "snapshot": "/Users/lixiuqi/Documents/ChatGPT/\u76f8\u673a/s5-emulator/menu-smp/results/local-frame-paced-menu-timeout10",
+  "originals": [
+    {
+      "path": "/Users/lixiuqi/Documents/ChatGPT/\u76f8\u673a/s5-v29-offline/unpacked-v29/03_program.bin",
+      "base": "0x6280000",
+      "sha256": "fc496d62a91f6e9b1b84807183bb805bc546c9105d2938546b58a66ad9d132fe"
+    },
+    {
+      "path": "/Users/lixiuqi/Documents/ChatGPT/\u76f8\u673a/s5-v29-offline/unpacked-v29/05_postboot1.bin",
+      "base": "0x7267000",
+      "sha256": "e14b32e80c50d52e39edd6f7b725aba34b9f0a4ee12ad38987593f5cc8a8ec5f"
+    }
+  ],
+  "observed": {
+    "tasks": [
+      {
+        "tcb": "0x8dffe14",
+        "id": 18,
+        "entry": "0x647e83f",
+        "runs": 6822,
+        "state": 3,
+        "sp": "0x99ce938",
+        "wait_type": 32,
+        "wait_id": "0xf",
+        "saved_code_words": [
+          {
+            "address": "0x99cea24",
+            "value": "0x6722de1"
+          },
+          {
+            "address": "0x99cea2c",
+            "value": "0x6f49920"
+          },
+          {
+            "address": "0x99cea4c",
+            "value": "0x647e867"
+          },
+          {
+            "address": "0x99cea54",
+            "value": "0x653a231"
+          }
+        ]
+      },
+      {
+        "tcb": "0x8e136b0",
+        "id": 265,
+        "entry": "0x7267101",
+        "runs": 1,
+        "state": 2,
+        "sp": "0x9fe67f8",
+        "wait_type": 0,
+        "wait_id": "0x0",
+        "saved_code_words": [
+          {
+            "address": "0x9fe690c",
+            "value": "0x653a1f7"
+          },
+          {
+            "address": "0x9fe6938",
+            "value": "0x63f79fd"
+          },
+          {
+            "address": "0x9fe693c",
+            "value": "0x653a25e"
+          }
+        ]
+      },
+      {
+        "tcb": "0x8e13d04",
+        "id": 270,
+        "entry": "0x727cf9d",
+        "runs": 7,
+        "state": 3,
+        "sp": "0x9ff51d0",
+        "wait_type": 32,
+        "wait_id": "0x101",
+        "saved_code_words": [
+          {
+            "address": "0x9ff52bc",
+            "value": "0x6722de1"
+          },
+          {
+            "address": "0x9ff52e4",
+            "value": "0x67ea6a1"
+          },
+          {
+            "address": "0x9ff52fc",
+            "value": "0x727cfdf"
+          }
+        ]
+      },
+      {
+        "tcb": "0x8e15000",
+        "id": 285,
+        "entry": "0x6475dd5",
+        "runs": 1886,
+        "state": 3,
+        "sp": "0xa03de30",
+        "wait_type": 32,
+        "wait_id": "0x115",
+        "saved_code_words": [
+          {
+            "address": "0xa03df1c",
+            "value": "0x6722de1"
+          },
+          {
+            "address": "0xa03df44",
+            "value": "0x67ea6a1"
+          },
+          {
+            "address": "0xa03df5c",
+            "value": "0x6475df5"
+          }
+        ]
+      }
+    ],
+    "queues": [
+      {
+        "id": "0xf",
+        "object": "0x8e19210",
+        "capacity": 64,
+        "array": "0x99cea78",
+        "write": 10,
+        "read": 10,
+        "count": 0
+      },
+      {
+        "id": "0x101",
+        "object": "0x8e1b418",
+        "capacity": 64,
+        "array": "0x9ff5320",
+        "write": 1,
+        "read": 1,
+        "count": 0
+      },
+      {
+        "id": "0x115",
+        "object": "0x8e1b6e8",
+        "capacity": 128,
+        "array": "0xa048f98",
+        "write": 78,
+        "read": 78,
+        "count": 0
+      }
+    ],
+    "event86": {
+      "id": 134,
+      "object": "0x8e18b70",
+      "flags": 0
+    },
+    "gui_callback": "0x727cf59",
+    "layout_work_scene": "0xffff",
+    "producer_scene": "0x1001",
+    "layout_message": [
+      "0x115",
+      "0x11d",
+      "0xee000",
+      "0x8cb10c8",
+      "0x0"
+    ],
+    "producer_state": "00000101000000000000000000000000000000000000000001000000ffffffffffffffffffffffffffffffff0000000055000000000000000000000000000000",
+    "readiness_override": 0,
+    "lcd_state": 4,
+    "avio": 2,
+    "selector": 0,
+    "draws": 4,
+    "swaps": 1
+  },
+  "lcd_chain": [
+    "232 ->6497338 ->649694e ->648b728 ->647ca76 ->647e796 ->64bcfe4(queue15,word3)",
+    "task18 case3 at647e898 ->callback[08a9d604+c]=727cf59",
+    "727cf58 queries event86; onlybit0 sends {0,10e,11f438,0,0} toq115 then clearsbit0",
+    "727ca4e sends11f439 toq115 then727ca5a sets event86bit0;727ca5e is original request observation boundary"
+  ],
+  "scene_chain": [
+    "task285 q115 loop6475dd4 calls6832c1c after actual events",
+    "6832cc0 gets original scene66c1958;6832cce writes08cb10c8+8 and marksdirty",
+    "68334b0 calls6469ebe(2); nonzero plus6771096()==0 returnswithout q101send",
+    "6833506 actualsender67ea590(queue101,reply115,source11d,ee000,payload08cb10c8)",
+    "task270727cc9c ->727cac2 copies payload via681475e ->727c896 constructs/draws original layout"
+  ],
+  "missing_registers": {
+    "addresses": [
+      "0x7c0151f4",
+      "0x7c0151f8",
+      "0x7c0151fc",
+      "0x7c015200"
+    ],
+    "read": "6680720 copies these four words to caller output",
+    "write": "6680708 stores caller four words and returns0",
+    "software_rmw": "6469ee8 sets original RTOS event; under668076c(1f) lock reads4words, ORs word2 with savedr1mask, writes4words, unlocks",
+    "mask2_provenance": "6548f6a(group0)setsr9=2;6549440(0)loads/verifiesLOAD/scatters original component;success6549046MOVr1,r9;6549048BL6469ee8",
+    "consumer": "6469ebe(mask) returns0 if word2 containsmask, else8000000e",
+    "narrower_model": "Preserve four software-written32bit values shared across CPUs, reset0; do not setmask2 independently.7c0151f0 reset/togglecommand is outside this narrow contract.",
+    "trace": [
+      {
+        "line": 2,
+        "text": "S5_RTOS_UNMODELED cpu=0 read addr=0x7c0151f4 size=4 value=0x0 occurrence=1 returned"
+      },
+      {
+        "line": 3,
+        "text": "S5_RTOS_UNMODELED cpu=0 read addr=0x7c0151f8 size=4 value=0x0 occurrence=1 returned"
+      },
+      {
+        "line": 4,
+        "text": "S5_RTOS_UNMODELED cpu=0 read addr=0x7c0151fc size=4 value=0x0 occurrence=1 returned"
+      },
+      {
+        "line": 5,
+        "text": "S5_RTOS_UNMODELED cpu=0 read addr=0x7c015200 size=4 value=0x0 occurrence=1 returned"
+      },
+      {
+        "line": 6,
+        "text": "S5_RTOS_UNMODELED cpu=0 write addr=0x7c0151f4 size=4 value=0x0 occurrence=1 ignored"
+      },
+      {
+        "line": 7,
+        "text": "S5_RTOS_UNMODELED cpu=0 write addr=0x7c0151f8 size=4 value=0x0 occurrence=1 ignored"
+      },
+      {
+        "line": 8,
+        "text": "S5_RTOS_UNMODELED cpu=0 write addr=0x7c0151fc size=4 value=0x0 occurrence=1 ignored"
+      },
+      {
+        "line": 9,
+        "text": "S5_RTOS_UNMODELED cpu=0 write addr=0x7c015200 size=4 value=0x0 occurrence=1 ignored"
+      },
+      {
+        "line": 954,
+        "text": "S5_RTOS_UNMODELED cpu=2 read addr=0x7c0151f4 size=4 value=0x0 occurrence=1 returned"
+      },
+      {
+        "line": 955,
+        "text": "S5_RTOS_UNMODELED cpu=2 read addr=0x7c0151f8 size=4 value=0x0 occurrence=1 returned"
+      },
+      {
+        "line": 956,
+        "text": "S5_RTOS_UNMODELED cpu=2 read addr=0x7c0151fc size=4 value=0x0 occurrence=1 returned"
+      },
+      {
+        "line": 957,
+        "text": "S5_RTOS_UNMODELED cpu=2 read addr=0x7c015200 size=4 value=0x0 occurrence=1 returned"
+      },
+      {
+        "line": 958,
+        "text": "S5_RTOS_UNMODELED cpu=2 write addr=0x7c0151f4 size=4 value=0x0 occurrence=1 ignored"
+      },
+      {
+        "line": 959,
+        "text": "S5_RTOS_UNMODELED cpu=2 write addr=0x7c0151f8 size=4 value=0x0 occurrence=1 ignored"
+      },
+      {
+        "line": 960,
+        "text": "S5_RTOS_UNMODELED cpu=2 write addr=0x7c0151fc size=4 value=0x1 occurrence=1 ignored"
+      },
+      {
+        "line": 961,
+        "text": "S5_RTOS_UNMODELED cpu=2 write addr=0x7c015200 size=4 value=0x0 occurrence=1 ignored"
+      },
+      {
+        "line": 1107,
+        "text": "S5_RTOS_UNMODELED cpu=2 read addr=0x7c0151f4 size=4 value=0x0 occurrence=2 returned"
+      },
+      {
+        "line": 1108,
+        "text": "S5_RTOS_UNMODELED cpu=2 read addr=0x7c0151f8 size=4 value=0x0 occurrence=2 returned"
+      },
+      {
+        "line": 1109,
+        "text": "S5_RTOS_UNMODELED cpu=2 read addr=0x7c0151fc size=4 value=0x0 occurrence=2 returned"
+      },
+      {
+        "line": 1110,
+        "text": "S5_RTOS_UNMODELED cpu=2 read addr=0x7c015200 size=4 value=0x0 occurrence=2 returned"
+      },
+      {
+        "line": 1111,
+        "text": "S5_RTOS_UNMODELED cpu=2 write addr=0x7c0151f4 size=4 value=0x0 occurrence=2 ignored"
+      },
+      {
+        "line": 1112,
+        "text": "S5_RTOS_UNMODELED cpu=2 write addr=0x7c0151f8 size=4 value=0x0 occurrence=2 ignored"
+      },
+      {
+        "line": 1113,
+        "text": "S5_RTOS_UNMODELED cpu=2 write addr=0x7c0151fc size=4 value=0x2 occurrence=2 ignored"
+      },
+      {
+        "line": 1114,
+        "text": "S5_RTOS_UNMODELED cpu=2 write addr=0x7c015200 size=4 value=0x0 occurrence=2 ignored"
+      },
+      {
+        "line": 1115,
+        "text": "S5_RTOS_UNMODELED cpu=2 read addr=0x7c0151f4 size=4 value=0x0 occurrence=3 returned"
+      },
+      {
+        "line": 1116,
+        "text": "S5_RTOS_UNMODELED cpu=2 read addr=0x7c0151f8 size=4 value=0x0 occurrence=3 returned"
+      },
+      {
+        "line": 1117,
+        "text": "S5_RTOS_UNMODELED cpu=2 read addr=0x7c0151fc size=4 value=0x0 occurrence=3 returned"
+      },
+      {
+        "line": 1118,
+        "text": "S5_RTOS_UNMODELED cpu=2 read addr=0x7c015200 size=4 value=0x0 occurrence=3 returned"
+      },
+      {
+        "line": 1119,
+        "text": "S5_RTOS_UNMODELED cpu=2 write addr=0x7c0151f4 size=4 value=0x0 occurrence=3 ignored"
+      },
+      {
+        "line": 1120,
+        "text": "S5_RTOS_UNMODELED cpu=2 write addr=0x7c0151f8 size=4 value=0x0 occurrence=3 ignored"
+      },
+      {
+        "line": 1121,
+        "text": "S5_RTOS_UNMODELED cpu=2 write addr=0x7c0151fc size=4 value=0x4 occurrence=3 ignored"
+      },
+      {
+        "line": 1122,
+        "text": "S5_RTOS_UNMODELED cpu=2 write addr=0x7c015200 size=4 value=0x0 occurrence=3 ignored"
+      },
+      {
+        "line": 2674,
+        "text": "S5_RTOS_UNMODELED cpu=2 read addr=0x7c0151f4 size=4 value=0x0 occurrence=4 returned"
+      },
+      {
+        "line": 2675,
+        "text": "S5_RTOS_UNMODELED cpu=2 read addr=0x7c0151f8 size=4 value=0x0 occurrence=4 returned"
+      },
+      {
+        "line": 2676,
+        "text": "S5_RTOS_UNMODELED cpu=2 read addr=0x7c0151fc size=4 value=0x0 occurrence=4 returned"
+      },
+      {
+        "line": 2677,
+        "text": "S5_RTOS_UNMODELED cpu=2 read addr=0x7c015200 size=4 value=0x0 occurrence=4 returned"
+      },
+      {
+        "line": 11947,
+        "text": "S5_RTOS_UNMODELED cpu=0 read addr=0x7c0151f4 size=4 value=0x0 occurrence=2 returned"
+      },
+      {
+        "line": 11948,
+        "text": "S5_RTOS_UNMODELED cpu=0 read addr=0x7c0151f8 size=4 value=0x0 occurrence=2 returned"
+      },
+      {
+        "line": 11949,
+        "text": "S5_RTOS_UNMODELED cpu=0 read addr=0x7c0151fc size=4 value=0x0 occurrence=2 returned"
+      },
+      {
+        "line": 11950,
+        "text": "S5_RTOS_UNMODELED cpu=0 read addr=0x7c015200 size=4 value=0x0 occurrence=2 returned"
+      },
+      {
+        "line": 11958,
+        "text": "S5_RTOS_UNMODELED cpu=0 read addr=0x7c0151f4 size=4 value=0x0 occurrence=3 returned"
+      },
+      {
+        "line": 11959,
+        "text": "S5_RTOS_UNMODELED cpu=0 read addr=0x7c0151f8 size=4 value=0x0 occurrence=3 returned"
+      },
+      {
+        "line": 11960,
+        "text": "S5_RTOS_UNMODELED cpu=0 read addr=0x7c0151fc size=4 value=0x0 occurrence=3 returned"
+      },
+      {
+        "line": 11961,
+        "text": "S5_RTOS_UNMODELED cpu=0 read addr=0x7c015200 size=4 value=0x0 occurrence=3 returned"
+      },
+      {
+        "line": 11979,
+        "text": "S5_RTOS_UNMODELED cpu=0 read addr=0x7c0151f4 size=4 value=0x0 occurrence=4 returned"
+      },
+      {
+        "line": 11980,
+        "text": "S5_RTOS_UNMODELED cpu=0 read addr=0x7c0151f8 size=4 value=0x0 occurrence=4 returned"
+      },
+      {
+        "line": 11981,
+        "text": "S5_RTOS_UNMODELED cpu=0 read addr=0x7c0151fc size=4 value=0x0 occurrence=4 returned"
+      },
+      {
+        "line": 11982,
+        "text": "S5_RTOS_UNMODELED cpu=0 read addr=0x7c015200 size=4 value=0x0 occurrence=4 returned"
+      },
+      {
+        "line": 12567,
+        "text": "S5_RTOS_UNMODELED cpu=2 write addr=0x7c0151f4 size=4 value=0x0 occurrence=4 ignored"
+      },
+      {
+        "line": 12568,
+        "text": "S5_RTOS_UNMODELED cpu=2 write addr=0x7c0151f8 size=4 value=0x0 occurrence=4 ignored"
+      },
+      {
+        "line": 12569,
+        "text": "S5_RTOS_UNMODELED cpu=2 write addr=0x7c0151fc size=4 value=0x8 occurrence=4 ignored"
+      },
+      {
+        "line": 12570,
+        "text": "S5_RTOS_UNMODELED cpu=2 write addr=0x7c015200 size=4 value=0x0 occurrence=4 ignored"
+      }
+    ]
+  },
+  "conclusions": [
+    "No current task270 Vsync wait: it waits originalq101 withzeroqueuedmessages; EGLinit task265 exited.",
+    "OriginalLCD232 can call GUIcallback butevent86 flags0 currently prevents a GUIrequest; repeatedLCD alone is not established as the cause.",
+    "Originalsoftware-written component-completion flags are lost in unmodeledMMIO, making actual scene submission readiness fail. A rerun preserving writes is needed to validate causality.",
+    "worksceneffff vs sourcescene1001 is consistent with missed later submission, notproof of memcpyfailure. No menu pixels exist in this snapshot."
+  ]
+}

@@ -1,0 +1,114 @@
+
+SOURCE 01_loader2.bin
+SHA256 4a925f2e019310a9a8f2029df652cc7a5e93be5fb8ee4b6b29c6c6d3805cea85
+Addresses below are file offsets; load address zero used for isolated verification.
+
+MODE ARM
+0000017c 0140d3e4     ldrb r4, [r3], #1
+00000180 0140c1e4     strb r4, [r1], #1
+00000184 faffffea     b #0x174
+00000188 530000eb     bl #0x2dc
+0000018c 590200fa     blx #0xaf8
+00000190 130100fb     blx #0x5e6
+00000194 040100fb     blx #0x5ae
+00000198 d30000fa     blx #0x4ec
+0000019c 0000a0e1     mov r0, r0
+000001a0 0b00a0e3     mov r0, #0xb
+000001a4 0219a0e3     mov r1, #0x8000
+
+MODE Thumb
+0000057e 70b5         push {r4, r5, r6, lr}
+00000580 80b1         cbz r0, #0x5a4
+00000582 0221         movs r1, #2
+00000584 ff20         movs r0, #0xff
+00000586 fff7ebff     bl #0x560
+0000058a 0120         movs r0, #1
+0000058c 00f026f8     bl #0x5dc
+00000590 0446         mov r4, r0
+00000592 40f29865     movw r5, #0x698
+00000596 0120         movs r0, #1
+00000598 00f020f8     bl #0x5dc
+0000059c 201a         subs r0, r4, r0
+0000059e a842         cmp r0, r5
+000005a0 f9d3         blo #0x596
+000005a2 70bd         pop {r4, r5, r6, pc}
+000005a4 bde87040     pop.w {r4, r5, r6, lr}
+000005a8 0021         movs r1, #0
+000005aa fd20         movs r0, #0xfd
+000005ac d8e7         b #0x560
+000005ae 0a49         ldr r1, [pc, #0x28]
+000005b0 0848         ldr r0, [pc, #0x20]
+000005b2 10b5         push {r4, lr}
+000005b4 0865         str r0, [r1, #0x50]
+000005b6 fff79ffe     bl #0x2f8
+000005ba 0822         movs r2, #8
+000005bc 0021         movs r1, #0
+000005be bde81040     pop.w {r4, lr}
+000005c2 0320         movs r0, #3
+000005c4 fff7a2be     b.w #0x30c
+000005c8 7047         bx lr
+000005ca 0000         movs r0, r0
+000005cc 0100         movs r1, r0
+000005ce 0010         asrs r0, r0, #0x20
+000005d0 0c1c         adds r4, r1, #0
+000005d2 087f         ldrb r0, [r1, #0x1c]
+000005d4 1000         movs r0, r2
+000005d6 0177         strb r1, [r0, #0x1c]
+000005d8 0000         movs r0, r0
+000005da 087f         ldrb r0, [r1, #0x1c]
+000005dc 0949         ldr r1, [pc, #0x24]
+000005de 51f82000     ldr.w r0, [r1, r0, lsl #2]
+000005e2 4068         ldr r0, [r0, #4]
+000005e4 7047         bx lr
+000005e6 074b         ldr r3, [pc, #0x1c]
+000005e8 0121         movs r1, #1
+000005ea 0022         movs r2, #0
+000005ec 5868         ldr r0, [r3, #4]
+000005ee 8260         str r2, [r0, #8]
+000005f0 0222         movs r2, #2
+000005f2 61f38302     bfi r2, r1, #2, #2
+000005f6 8260         str r2, [r0, #8]
+000005f8 5868         ldr r0, [r3, #4]
+000005fa 8168         ldr r1, [r0, #8]
+000005fc 41f08001     orr r1, r1, #0x80
+00000600 8160         str r1, [r0, #8]
+00000602 7047         bx lr
+
+SOURCE 02_loader3.bin
+SHA256 67d44d7c2bb2091b7a56ca5118345e0ee604e6b2c6c31769cd6de06ae752d838
+Addresses below are file offsets; load address zero used for isolated verification.
+
+MODE Thumb
+00002034 70b5         push {r4, r5, r6, lr}
+00002036 0d46         mov r5, r1
+00002038 0646         mov r6, r0
+0000203a 0120         movs r0, #1
+0000203c 00f00cf8     bl #0x2058
+00002040 0446         mov r4, r0
+00002042 0120         movs r0, #1
+00002044 00f008f8     bl #0x2058
+00002048 201a         subs r0, r4, r0
+0000204a a842         cmp r0, r5
+0000204c f9d3         blo #0x2042
+0000204e 3046         mov r0, r6
+00002050 70bd         pop {r4, r5, r6, pc}
+00002052 0000         movs r0, r0
+00002054 0cd0         beq #0x2070
+00002056 0000         movs r0, r0
+00002058 0949         ldr r1, [pc, #0x24]
+0000205a 51f82000     ldr.w r0, [r1, r0, lsl #2]
+0000205e 4068         ldr r0, [r0, #4]
+00002060 7047         bx lr
+00002062 074b         ldr r3, [pc, #0x1c]
+00002064 0121         movs r1, #1
+00002066 0022         movs r2, #0
+00002068 5868         ldr r0, [r3, #4]
+0000206a 8260         str r2, [r0, #8]
+0000206c 0222         movs r2, #2
+0000206e 61f38302     bfi r2, r1, #2, #2
+00002072 8260         str r2, [r0, #8]
+00002074 5868         ldr r0, [r3, #4]
+00002076 8168         ldr r1, [r0, #8]
+00002078 41f08001     orr r1, r1, #0x80
+0000207c 8160         str r1, [r0, #8]
+0000207e 7047         bx lr

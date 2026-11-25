@@ -1,0 +1,538 @@
+{
+  "passed": true,
+  "cases": [
+    {
+      "bus": 0,
+      "mode": 0,
+      "context_query_result": 0,
+      "injected_controller_status": "0xf8",
+      "trace": [
+        {
+          "pc": "0x658bb0c",
+          "r0": 124,
+          "r1": 0
+        },
+        {
+          "pc": "0x658bb3e",
+          "r0": 124,
+          "r1": 0
+        },
+        {
+          "pc": "0x65477bc",
+          "r0": 0,
+          "r1": 0
+        },
+        {
+          "pc": "0x6576118",
+          "r0": 18,
+          "r1": 2
+        }
+      ],
+      "passed": true
+    },
+    {
+      "bus": 4,
+      "mode": 0,
+      "context_query_result": 0,
+      "injected_controller_status": "0xf8",
+      "trace": [
+        {
+          "pc": "0x658bb0c",
+          "r0": 128,
+          "r1": 0
+        },
+        {
+          "pc": "0x658bb3e",
+          "r0": 128,
+          "r1": 0
+        },
+        {
+          "pc": "0x65477bc",
+          "r0": 0,
+          "r1": 0
+        },
+        {
+          "pc": "0x6576118",
+          "r0": 18,
+          "r1": 2
+        }
+      ],
+      "passed": true
+    },
+    {
+      "bus": 0,
+      "mode": 0,
+      "context_query_result": 1,
+      "injected_controller_status": "0xf8",
+      "trace": [
+        {
+          "pc": "0x658bb0c",
+          "r0": 124,
+          "r1": 0
+        },
+        {
+          "pc": "0x658bb3e",
+          "r0": 124,
+          "r1": 0
+        },
+        {
+          "pc": "0x65477bc",
+          "r0": 0,
+          "r1": 0
+        },
+        {
+          "pc": "0x65490e0",
+          "r0": 18,
+          "r1": 2
+        }
+      ],
+      "passed": true
+    },
+    {
+      "bus": 4,
+      "mode": 0,
+      "context_query_result": 1,
+      "injected_controller_status": "0xf8",
+      "trace": [
+        {
+          "pc": "0x658bb0c",
+          "r0": 128,
+          "r1": 0
+        },
+        {
+          "pc": "0x658bb3e",
+          "r0": 128,
+          "r1": 0
+        },
+        {
+          "pc": "0x65477bc",
+          "r0": 0,
+          "r1": 0
+        },
+        {
+          "pc": "0x65490e0",
+          "r0": 18,
+          "r1": 2
+        }
+      ],
+      "passed": true
+    },
+    {
+      "bus": 0,
+      "mode": 1,
+      "context_query_result": 0,
+      "injected_controller_status": "0xf8",
+      "trace": [
+        {
+          "pc": "0x658bb0c",
+          "r0": 124,
+          "r1": 1
+        },
+        {
+          "pc": "0x658bb3e",
+          "r0": 124,
+          "r1": 1
+        },
+        {
+          "pc": "0x65477bc",
+          "r0": 0,
+          "r1": 1
+        },
+        {
+          "pc": "0x6576118",
+          "r0": 18,
+          "r1": 2
+        }
+      ],
+      "passed": true
+    },
+    {
+      "bus": 4,
+      "mode": 1,
+      "context_query_result": 0,
+      "injected_controller_status": "0xf8",
+      "trace": [
+        {
+          "pc": "0x658bb0c",
+          "r0": 128,
+          "r1": 1
+        },
+        {
+          "pc": "0x658bb3e",
+          "r0": 128,
+          "r1": 1
+        },
+        {
+          "pc": "0x65477bc",
+          "r0": 0,
+          "r1": 1
+        },
+        {
+          "pc": "0x6576118",
+          "r0": 18,
+          "r1": 2
+        }
+      ],
+      "passed": true
+    },
+    {
+      "bus": 0,
+      "mode": 1,
+      "context_query_result": 1,
+      "injected_controller_status": "0xf8",
+      "trace": [
+        {
+          "pc": "0x658bb0c",
+          "r0": 124,
+          "r1": 1
+        },
+        {
+          "pc": "0x658bb3e",
+          "r0": 124,
+          "r1": 1
+        },
+        {
+          "pc": "0x65477bc",
+          "r0": 0,
+          "r1": 1
+        },
+        {
+          "pc": "0x65490e0",
+          "r0": 18,
+          "r1": 2
+        }
+      ],
+      "passed": true
+    },
+    {
+      "bus": 4,
+      "mode": 1,
+      "context_query_result": 1,
+      "injected_controller_status": "0xf8",
+      "trace": [
+        {
+          "pc": "0x658bb0c",
+          "r0": 128,
+          "r1": 1
+        },
+        {
+          "pc": "0x658bb3e",
+          "r0": 128,
+          "r1": 1
+        },
+        {
+          "pc": "0x65477bc",
+          "r0": 0,
+          "r1": 1
+        },
+        {
+          "pc": "0x65490e0",
+          "r0": 18,
+          "r1": 2
+        }
+      ],
+      "passed": true
+    },
+    {
+      "bus": 0,
+      "mode": 2,
+      "context_query_result": 0,
+      "injected_controller_status": "0xf8",
+      "trace": [
+        {
+          "pc": "0x658bb0c",
+          "r0": 124,
+          "r1": 2
+        },
+        {
+          "pc": "0x658bb3e",
+          "r0": 124,
+          "r1": 2
+        },
+        {
+          "pc": "0x65477bc",
+          "r0": 0,
+          "r1": 2
+        },
+        {
+          "pc": "0x6576118",
+          "r0": 18,
+          "r1": 2
+        }
+      ],
+      "passed": true
+    },
+    {
+      "bus": 4,
+      "mode": 2,
+      "context_query_result": 0,
+      "injected_controller_status": "0xf8",
+      "trace": [
+        {
+          "pc": "0x658bb0c",
+          "r0": 128,
+          "r1": 2
+        },
+        {
+          "pc": "0x658bb3e",
+          "r0": 128,
+          "r1": 2
+        },
+        {
+          "pc": "0x65477bc",
+          "r0": 0,
+          "r1": 2
+        },
+        {
+          "pc": "0x6576118",
+          "r0": 18,
+          "r1": 2
+        }
+      ],
+      "passed": true
+    },
+    {
+      "bus": 0,
+      "mode": 2,
+      "context_query_result": 1,
+      "injected_controller_status": "0xf8",
+      "trace": [
+        {
+          "pc": "0x658bb0c",
+          "r0": 124,
+          "r1": 2
+        },
+        {
+          "pc": "0x658bb3e",
+          "r0": 124,
+          "r1": 2
+        },
+        {
+          "pc": "0x65477bc",
+          "r0": 0,
+          "r1": 2
+        },
+        {
+          "pc": "0x65490e0",
+          "r0": 18,
+          "r1": 2
+        }
+      ],
+      "passed": true
+    },
+    {
+      "bus": 4,
+      "mode": 2,
+      "context_query_result": 1,
+      "injected_controller_status": "0xf8",
+      "trace": [
+        {
+          "pc": "0x658bb0c",
+          "r0": 128,
+          "r1": 2
+        },
+        {
+          "pc": "0x658bb3e",
+          "r0": 128,
+          "r1": 2
+        },
+        {
+          "pc": "0x65477bc",
+          "r0": 0,
+          "r1": 2
+        },
+        {
+          "pc": "0x65490e0",
+          "r0": 18,
+          "r1": 2
+        }
+      ],
+      "passed": true
+    },
+    {
+      "bus": 0,
+      "mode": 3,
+      "context_query_result": 0,
+      "injected_controller_status": "0xf8",
+      "trace": [
+        {
+          "pc": "0x658bb0c",
+          "r0": 124,
+          "r1": 3
+        },
+        {
+          "pc": "0x658bb3e",
+          "r0": 124,
+          "r1": 3
+        },
+        {
+          "pc": "0x65477bc",
+          "r0": 0,
+          "r1": 3
+        },
+        {
+          "pc": "0x6576118",
+          "r0": 18,
+          "r1": 2
+        }
+      ],
+      "passed": true
+    },
+    {
+      "bus": 4,
+      "mode": 3,
+      "context_query_result": 0,
+      "injected_controller_status": "0xf8",
+      "trace": [
+        {
+          "pc": "0x658bb0c",
+          "r0": 128,
+          "r1": 3
+        },
+        {
+          "pc": "0x658bb3e",
+          "r0": 128,
+          "r1": 3
+        },
+        {
+          "pc": "0x65477bc",
+          "r0": 0,
+          "r1": 3
+        },
+        {
+          "pc": "0x6576118",
+          "r0": 18,
+          "r1": 2
+        }
+      ],
+      "passed": true
+    },
+    {
+      "bus": 0,
+      "mode": 3,
+      "context_query_result": 1,
+      "injected_controller_status": "0xf8",
+      "trace": [
+        {
+          "pc": "0x658bb0c",
+          "r0": 124,
+          "r1": 3
+        },
+        {
+          "pc": "0x658bb3e",
+          "r0": 124,
+          "r1": 3
+        },
+        {
+          "pc": "0x65477bc",
+          "r0": 0,
+          "r1": 3
+        },
+        {
+          "pc": "0x65490e0",
+          "r0": 18,
+          "r1": 2
+        }
+      ],
+      "passed": true
+    },
+    {
+      "bus": 4,
+      "mode": 3,
+      "context_query_result": 1,
+      "injected_controller_status": "0xf8",
+      "trace": [
+        {
+          "pc": "0x658bb0c",
+          "r0": 128,
+          "r1": 3
+        },
+        {
+          "pc": "0x658bb3e",
+          "r0": 128,
+          "r1": 3
+        },
+        {
+          "pc": "0x65477bc",
+          "r0": 0,
+          "r1": 3
+        },
+        {
+          "pc": "0x65490e0",
+          "r0": 18,
+          "r1": 2
+        }
+      ],
+      "passed": true
+    }
+  ],
+  "bit0_controls": [
+    {
+      "mode": 0,
+      "controller_status": "0xf0",
+      "reached_pc": "0x6499518",
+      "expected_normal_state_machine": "0x6499518",
+      "passed": true
+    },
+    {
+      "mode": 0,
+      "controller_status": "0xf1",
+      "reached_pc": "0x6499518",
+      "expected_normal_state_machine": "0x6499518",
+      "passed": true
+    },
+    {
+      "mode": 1,
+      "controller_status": "0xf0",
+      "reached_pc": "0x649927e",
+      "expected_normal_state_machine": "0x649927e",
+      "passed": true
+    },
+    {
+      "mode": 1,
+      "controller_status": "0xf1",
+      "reached_pc": "0x649927e",
+      "expected_normal_state_machine": "0x649927e",
+      "passed": true
+    },
+    {
+      "mode": 2,
+      "controller_status": "0xf0",
+      "reached_pc": "0x6499138",
+      "expected_normal_state_machine": "0x6499138",
+      "passed": true
+    },
+    {
+      "mode": 2,
+      "controller_status": "0xf1",
+      "reached_pc": "0x6499138",
+      "expected_normal_state_machine": "0x6499138",
+      "passed": true
+    },
+    {
+      "mode": 3,
+      "controller_status": "0xf0",
+      "reached_pc": "0x6498ecc",
+      "expected_normal_state_machine": "0x6498ecc",
+      "passed": true
+    },
+    {
+      "mode": 3,
+      "controller_status": "0xf1",
+      "reached_pc": "0x6498ecc",
+      "expected_normal_state_machine": "0x6498ecc",
+      "passed": true
+    }
+  ],
+  "program_sha256": "fc496d62a91f6e9b1b84807183bb805bc546c9105d2938546b58a66ad9d132fe",
+  "qemu_sha256": "9f827dbbbfc7a2ed42726c93fa4dc2c765a1c32ca95b8201589961d958d94e12",
+  "original_instructions_modified": false,
+  "actual_device_irq_injected": false,
+  "synthetic_input": "Flat RAM at controller status address contains 0xf8; descriptor mode and context are explicit test parameters",
+  "substitutions": [
+    "logical IRQ disable and pending clear wrappers (logged)",
+    "OS context query (0 or 1)",
+    "event delivery endpoint (logged, not executed)"
+  ],
+  "conclusion": "All tested original ISR dispatch modes turn status bit 3 into event18 mask2; this does not establish bit3 is physical NACK or validate RTOS queue/event execution"
+}

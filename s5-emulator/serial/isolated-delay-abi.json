@@ -1,0 +1,45 @@
+{
+  "scope": "Static ABI review for an explicit isolated-display scheduling experiment; no inferior-call performed by this script",
+  "program_sha256": "fc496d62a91f6e9b1b84807183bb805bc546c9105d2938546b58a66ad9d132fe",
+  "preferred_api": {
+    "name": "Original delay API, dly_tsk-like",
+    "thumb_entry": "0x066c23e9",
+    "r0": 60000,
+    "effect": "Original API adds1 and stores60001 in TCB+0x4c, changes wait_type to2, then calls original scheduler0x06498810",
+    "clock": "Original timer0 LOAD0x6978 at configured27MHz produces1ms callbacks; nominal60001ticks about60.001seconds of guest virtual time",
+    "bounds": "No explicit upper-limit validation found;60000 does not wrap the argument+1 arithmetic",
+    "checks": [
+      "0x068f8db8 must return0 (no interrupt nesting)",
+      "Current task via0x06508492 must be nonnull",
+      "0x08ab4e80 |0x08ab4e7c must equal0",
+      "0x08ab4e68 must equal0 together with a repeated interrupt-context check"
+    ],
+    "runtime_precedent": "menu-smp/results/pulse-timer-boot proved original0x066c23e8(1) returned after repeated ticks"
+  },
+  "inferior_call_contract": {
+    "breakpoint": "0x065491ee, Thumb, CPU0 original task66 context",
+    "do_not_call_from": "Final snapshot PC0x18/CPSR IRQ; that is an interrupt sampling point, not the task context",
+    "preserve": "Full original CPU register context including CPSR and available VFP state; preserve original task SP for call",
+    "call": "Set r0=60000, LR=an independent executable scratch-return address|1, PC=0x066c23e8 with original Thumb task CPSR. Keep original task stack and do not patch task fields.",
+    "return": "A separate code breakpoint at scratch-return verifies API return; only then restore saved original context and continue original busy loop if desired",
+    "during_wait": "Other tasks may execute. Do not restore the saved task66 register context onto a different running task. A run ended before return remains an interrupted isolated scheduling experiment.",
+    "limits": [
+      "Delayingtask66 does not complete coprocessor boot or release locks it may own.",
+      "Any further UI wait on its state/locks is real evidence and must not be cleared by hand.",
+      "60second argument is guest virtual time, not a guaranteed wall-clock timeout; retain outer process/time bounds."
+    ]
+  },
+  "alternative_suspend_api": {
+    "thumb_entry": "0x06535969",
+    "r0": "Task ID66, or0=self via0x065084ba",
+    "ready_path": "itron state1/2\u21928, suspend count+fc=1, TXstate+30=3, timeoutffffffff, original0x06498810 scheduler",
+    "resume_thumb_entry": "0x0654911d",
+    "status": "Static only; not runtime tested; bounded delay preferred for first experiment"
+  },
+  "experiment_performed": false,
+  "baseline_guards": {
+    "0x8ab4e80": 0,
+    "0x8ab4e7c": 0,
+    "0x8ab4e68": 0
+  }
+}

@@ -1,0 +1,133 @@
+{
+  "argv": [
+    "/Users/lixiuqi/Documents/ChatGPT/\u76f8\u673a/s5-emulator/toolchain/build/qemu-system-arm",
+    "-M",
+    "s5-rtos",
+    "-cpu",
+    "cortex-a7",
+    "-m",
+    "2G",
+    "-S",
+    "-accel",
+    "tcg,thread=single",
+    "-display",
+    "none",
+    "-monitor",
+    "none",
+    "-serial",
+    "none",
+    "-no-user-config",
+    "-nodefaults",
+    "-qmp",
+    "unix:/tmp/s5-rsp-ljfx4yqp/qmp,server=on,wait=off",
+    "-gdb",
+    "unix:/tmp/s5-rsp-ljfx4yqp/gdb,server=on,wait=off",
+    "-smp",
+    "4",
+    "-d",
+    "unimp,guest_errors",
+    "-D",
+    "/Users/lixiuqi/Documents/ChatGPT/\u76f8\u673a/s5-emulator/menu-smp/results/local-requested-lcd-refresh/qemu/qemu-trace.log",
+    "-device",
+    "loader,file=/Users/lixiuqi/Documents/ChatGPT/\u76f8\u673a/s5-v29-offline/unpacked-v29/02_loader3.bin,addr=0x0,force-raw=on",
+    "-device",
+    "loader,file=/Users/lixiuqi/Documents/ChatGPT/\u76f8\u673a/s5-v29-offline/unpacked-v29/03_program.bin,addr=0x6280000,force-raw=on",
+    "-device",
+    "loader,file=/Users/lixiuqi/Documents/ChatGPT/\u76f8\u673a/s5-v29-offline/unpacked-v29/05_postboot1.bin,addr=0x7267000,force-raw=on",
+    "-device",
+    "loader,file=/Users/lixiuqi/Documents/ChatGPT/\u76f8\u673a/s5-v29-offline/unpacked-v29/06_postboot2.bin,addr=0x76e7000,force-raw=on",
+    "-device",
+    "loader,file=/Users/lixiuqi/Documents/ChatGPT/\u76f8\u673a/s5-v29-offline/unpacked-v29/07_postboot3.bin,addr=0x7707000,force-raw=on",
+    "-device",
+    "loader,file=/Users/lixiuqi/Documents/ChatGPT/\u76f8\u673a/s5-v29-offline/unpacked-v29/08_postboot4.bin,addr=0x7ee7000,force-raw=on",
+    "-device",
+    "loader,file=/Users/lixiuqi/Documents/ChatGPT/\u76f8\u673a/s5-v29-offline/unpacked-v29/09_postboot5.bin,addr=0x7f07000,force-raw=on",
+    "-device",
+    "loader,file=/Users/lixiuqi/Documents/ChatGPT/\u76f8\u673a/s5-v29-offline/unpacked-v29/21_osddata.bin,addr=0x7fe7000,force-raw=on",
+    "-device",
+    "loader,file=/Users/lixiuqi/Documents/ChatGPT/\u76f8\u673a/s5-emulator/menu-smp/results/local-requested-lcd-refresh/boot-state.bin,addr=0x10000,force-raw=on",
+    "-device",
+    "loader,file=/Users/lixiuqi/Documents/ChatGPT/\u76f8\u673a/s5-emulator/menu-smp/results/local-requested-lcd-refresh/page-table.bin,addr=0x100000,force-raw=on"
+  ],
+  "ram_base": 0,
+  "ram_bytes": 2147483648,
+  "machine": "s5-rtos",
+  "cpu_count": 4,
+  "mapped_address_ranges": [
+    [
+      0,
+      1073741824
+    ],
+    [
+      1879048192,
+      268435456
+    ],
+    [
+      2147483648,
+      2147483648
+    ]
+  ],
+  "loaded_files": [
+    {
+      "file": "/Users/lixiuqi/Documents/ChatGPT/\u76f8\u673a/s5-v29-offline/unpacked-v29/02_loader3.bin",
+      "address": 0,
+      "bytes": 49152,
+      "sha256": "67d44d7c2bb2091b7a56ca5118345e0ee604e6b2c6c31769cd6de06ae752d838"
+    },
+    {
+      "file": "/Users/lixiuqi/Documents/ChatGPT/\u76f8\u673a/s5-v29-offline/unpacked-v29/03_program.bin",
+      "address": 103284736,
+      "bytes": 16674816,
+      "sha256": "fc496d62a91f6e9b1b84807183bb805bc546c9105d2938546b58a66ad9d132fe"
+    },
+    {
+      "file": "/Users/lixiuqi/Documents/ChatGPT/\u76f8\u673a/s5-v29-offline/unpacked-v29/05_postboot1.bin",
+      "address": 119959552,
+      "bytes": 4718592,
+      "sha256": "e14b32e80c50d52e39edd6f7b725aba34b9f0a4ee12ad38987593f5cc8a8ec5f"
+    },
+    {
+      "file": "/Users/lixiuqi/Documents/ChatGPT/\u76f8\u673a/s5-v29-offline/unpacked-v29/06_postboot2.bin",
+      "address": 124678144,
+      "bytes": 131072,
+      "sha256": "76a627dc813626668f242f3da0001e9c7df6cb6983a68093951b42d4b8a81284"
+    },
+    {
+      "file": "/Users/lixiuqi/Documents/ChatGPT/\u76f8\u673a/s5-v29-offline/unpacked-v29/07_postboot3.bin",
+      "address": 124809216,
+      "bytes": 8257536,
+      "sha256": "435f3b6a4f2f3368107885025dc698acc333f6f048875727bed25b93d49b4dbc"
+    },
+    {
+      "file": "/Users/lixiuqi/Documents/ChatGPT/\u76f8\u673a/s5-v29-offline/unpacked-v29/08_postboot4.bin",
+      "address": 133066752,
+      "bytes": 131072,
+      "sha256": "a328d5508102bdb141469c4b6a6dc84b584f14dfbc34cfde54d5837a4f42f444"
+    },
+    {
+      "file": "/Users/lixiuqi/Documents/ChatGPT/\u76f8\u673a/s5-v29-offline/unpacked-v29/09_postboot5.bin",
+      "address": 133197824,
+      "bytes": 917504,
+      "sha256": "8912a67ac38cba6edd4f15810322dd0142f3497c20cb077dbfaa203001896286"
+    },
+    {
+      "file": "/Users/lixiuqi/Documents/ChatGPT/\u76f8\u673a/s5-v29-offline/unpacked-v29/21_osddata.bin",
+      "address": 134115328,
+      "bytes": 11010048,
+      "sha256": "9581b1d535c8f3eb20f5f51d7d33c4c5e4106a3024c0ba7bf2b231a480e29f5b"
+    },
+    {
+      "file": "/Users/lixiuqi/Documents/ChatGPT/\u76f8\u673a/s5-emulator/menu-smp/results/local-requested-lcd-refresh/boot-state.bin",
+      "address": 65536,
+      "bytes": 1056,
+      "sha256": "c16fae075efd52cb87dbf5394c42423cc8389bfa0e242ca394a704ccdc1fdd96"
+    },
+    {
+      "file": "/Users/lixiuqi/Documents/ChatGPT/\u76f8\u673a/s5-emulator/menu-smp/results/local-requested-lcd-refresh/page-table.bin",
+      "address": 1048576,
+      "bytes": 16384,
+      "sha256": "be5f76f1a89829d075fccbd6b7088770e94d733c7616634692dff33f50e8d5a3"
+    }
+  ],
+  "scope": "Partial research machine; see board-specific model limitations"
+}

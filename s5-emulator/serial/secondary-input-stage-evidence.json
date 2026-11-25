@@ -1,0 +1,470 @@
+{
+  "scope": "Original static code plus prior saved execution. No guest calls, state writes, IRQs, or new peripherals.",
+  "program_sha256": "fc496d62a91f6e9b1b84807183bb805bc546c9105d2938546b58a66ad9d132fe",
+  "historical_snapshot": "/Users/lixiuqi/Documents/ChatGPT/\u76f8\u673a/s5-emulator/menu-smp/results/local-path-transform",
+  "historical_snapshot_limit": "Graphics execution stopped early. Its waiting tasks do not establish a permanent stall or missing peripheral.",
+  "historical_state": {
+    "secondary_stage": 2,
+    "pending_callback_byte": 1,
+    "configuration_substep": "0x8b4",
+    "secondary_substep": "0x870",
+    "active_callback": "0x682e88d"
+  },
+  "historical_tasks": [
+    {
+      "tcb": "0x8e0009c",
+      "id": 20,
+      "entry": "0x646e3a7",
+      "saved_sp": "0x99cfea8",
+      "wait_type": 8,
+      "event_id": 11,
+      "event_object": "0x8e183c0",
+      "saved_stack_words": [
+        {
+          "address": "0x99cfeac",
+          "value": "0x20000113"
+        },
+        {
+          "address": "0x99cff74",
+          "value": "0x8e0009c"
+        },
+        {
+          "address": "0x99cff78",
+          "value": "0x8e183c0"
+        },
+        {
+          "address": "0x99cff7c",
+          "value": "0xffffffff"
+        },
+        {
+          "address": "0x99cff80",
+          "value": "0x1"
+        },
+        {
+          "address": "0x99cff88",
+          "value": "0x99cffe8"
+        },
+        {
+          "address": "0x99cff8c",
+          "value": "0xb"
+        },
+        {
+          "address": "0x99cff90",
+          "value": "0x8ab4e68"
+        },
+        {
+          "address": "0x99cff94",
+          "value": "0x65b2419"
+        },
+        {
+          "address": "0x99cff98",
+          "value": "0x1"
+        },
+        {
+          "address": "0x99cffa0",
+          "value": "0x99cffe8"
+        },
+        {
+          "address": "0x99cffa4",
+          "value": "0x40000113"
+        },
+        {
+          "address": "0x99cffa8",
+          "value": "0xb"
+        },
+        {
+          "address": "0x99cffac",
+          "value": "0x99cffe8"
+        },
+        {
+          "address": "0x99cffb4",
+          "value": "0x1"
+        },
+        {
+          "address": "0x99cffb8",
+          "value": "0x2"
+        },
+        {
+          "address": "0x99cffcc",
+          "value": "0x657b8f5"
+        },
+        {
+          "address": "0x99cffd0",
+          "value": "0xffffffff"
+        },
+        {
+          "address": "0x99cffd4",
+          "value": "0x6f4972c"
+        },
+        {
+          "address": "0x99cffd8",
+          "value": "0x8a9d624"
+        },
+        {
+          "address": "0x99cffdc",
+          "value": "0x1"
+        },
+        {
+          "address": "0x99cffe4",
+          "value": "0x646d527"
+        },
+        {
+          "address": "0x99cffec",
+          "value": "0x99d0108"
+        },
+        {
+          "address": "0x99cfff0",
+          "value": "0x8a9d624"
+        },
+        {
+          "address": "0x99cfff4",
+          "value": "0x646dc6d"
+        },
+        {
+          "address": "0x99cfff8",
+          "value": "0x646d3d7"
+        },
+        {
+          "address": "0x99d0030",
+          "value": "0xe"
+        },
+        {
+          "address": "0x99d003c",
+          "value": "0x2"
+        },
+        {
+          "address": "0x99d0040",
+          "value": "0x4"
+        },
+        {
+          "address": "0x99d004c",
+          "value": "0x1"
+        },
+        {
+          "address": "0x99d0068",
+          "value": "0x6"
+        },
+        {
+          "address": "0x99d0078",
+          "value": "0x4"
+        },
+        {
+          "address": "0x99d0080",
+          "value": "0x3"
+        },
+        {
+          "address": "0x99d0088",
+          "value": "0x3c0"
+        },
+        {
+          "address": "0x99d008c",
+          "value": "0x280"
+        },
+        {
+          "address": "0x99d0090",
+          "value": "0x8bdcd00"
+        },
+        {
+          "address": "0x99d00b0",
+          "value": "0xb"
+        },
+        {
+          "address": "0x99d00b8",
+          "value": "0xe"
+        },
+        {
+          "address": "0x99d00bc",
+          "value": "0x8e00000"
+        },
+        {
+          "address": "0x99d00c0",
+          "value": "0x8e19200"
+        },
+        {
+          "address": "0x99d00cc",
+          "value": "0x1"
+        },
+        {
+          "address": "0x99d00d8",
+          "value": "0x1"
+        },
+        {
+          "address": "0x99d00dc",
+          "value": "0x99d0108"
+        },
+        {
+          "address": "0x99d00e0",
+          "value": "0x1"
+        },
+        {
+          "address": "0x99d00e8",
+          "value": "0x8a9d624"
+        },
+        {
+          "address": "0x99d00f4",
+          "value": "0x682e88d"
+        },
+        {
+          "address": "0x99d00fc",
+          "value": "0x8bdd528"
+        },
+        {
+          "address": "0x99d0100",
+          "value": "0x8bdd53c"
+        },
+        {
+          "address": "0x99d0104",
+          "value": "0x646e469"
+        },
+        {
+          "address": "0x99d010c",
+          "value": "0x4"
+        },
+        {
+          "address": "0x99d0144",
+          "value": "0x4"
+        },
+        {
+          "address": "0x99d0150",
+          "value": "0x1"
+        },
+        {
+          "address": "0x99d016c",
+          "value": "0xefefefef"
+        },
+        {
+          "address": "0x99d0170",
+          "value": "0xefefefef"
+        },
+        {
+          "address": "0x99d0174",
+          "value": "0xefefefef"
+        }
+      ]
+    },
+    {
+      "tcb": "0x8dff67c",
+      "id": 12,
+      "entry": "0x6483061",
+      "saved_sp": "0x99bb328",
+      "wait_type": 8,
+      "event_id": 6,
+      "event_object": "0x8e18370",
+      "saved_stack_words": [
+        {
+          "address": "0x99bb32c",
+          "value": "0x20000113"
+        },
+        {
+          "address": "0x99bb3f4",
+          "value": "0x8dff67c"
+        },
+        {
+          "address": "0x99bb3f8",
+          "value": "0x8e18370"
+        },
+        {
+          "address": "0x99bb3fc",
+          "value": "0xffffffff"
+        },
+        {
+          "address": "0x99bb400",
+          "value": "0x80"
+        },
+        {
+          "address": "0x99bb404",
+          "value": "0x1"
+        },
+        {
+          "address": "0x99bb408",
+          "value": "0x99bb468"
+        },
+        {
+          "address": "0x99bb40c",
+          "value": "0x6"
+        },
+        {
+          "address": "0x99bb410",
+          "value": "0x8ab4e68"
+        },
+        {
+          "address": "0x99bb414",
+          "value": "0x65b2419"
+        },
+        {
+          "address": "0x99bb418",
+          "value": "0x80"
+        },
+        {
+          "address": "0x99bb41c",
+          "value": "0x1"
+        },
+        {
+          "address": "0x99bb420",
+          "value": "0x99bb468"
+        },
+        {
+          "address": "0x99bb424",
+          "value": "0x60000113"
+        },
+        {
+          "address": "0x99bb428",
+          "value": "0x6"
+        },
+        {
+          "address": "0x99bb42c",
+          "value": "0x99bb468"
+        },
+        {
+          "address": "0x99bb430",
+          "value": "0x1"
+        },
+        {
+          "address": "0x99bb434",
+          "value": "0x80"
+        },
+        {
+          "address": "0x99bb43c",
+          "value": "0x8ab4d9c"
+        },
+        {
+          "address": "0x99bb44c",
+          "value": "0x657b8f5"
+        },
+        {
+          "address": "0x99bb450",
+          "value": "0xffffffff"
+        },
+        {
+          "address": "0x99bb458",
+          "value": "0x8ab4d9c"
+        },
+        {
+          "address": "0x99bb464",
+          "value": "0x64813fb"
+        },
+        {
+          "address": "0x99bb470",
+          "value": "0x8ab4d9c"
+        },
+        {
+          "address": "0x99bb474",
+          "value": "0x6482d9b"
+        },
+        {
+          "address": "0x99bb47c",
+          "value": "0x20940"
+        },
+        {
+          "address": "0x99bb488",
+          "value": "0x6f49724"
+        },
+        {
+          "address": "0x99bb48c",
+          "value": "0x1000f"
+        },
+        {
+          "address": "0x99bb490",
+          "value": "0xfffffffd"
+        },
+        {
+          "address": "0x99bb494",
+          "value": "0xfffffffb"
+        },
+        {
+          "address": "0x99bb498",
+          "value": "0xfffffff7"
+        },
+        {
+          "address": "0x99bb49c",
+          "value": "0xfffeffff"
+        },
+        {
+          "address": "0x99bb4a0",
+          "value": "0xfffffffe"
+        },
+        {
+          "address": "0x99bb4ac",
+          "value": "0x64830e3"
+        },
+        {
+          "address": "0x99bb4b0",
+          "value": "0x1"
+        },
+        {
+          "address": "0x99bb4b4",
+          "value": "0x653a231"
+        },
+        {
+          "address": "0x99bb4cc",
+          "value": "0xefefefef"
+        },
+        {
+          "address": "0x99bb4d0",
+          "value": "0xefefefef"
+        },
+        {
+          "address": "0x99bb4d4",
+          "value": "0xefefefef"
+        }
+      ]
+    }
+  ],
+  "original_control_flow": [
+    "Task285 loop06475e24 calls066add00, whose first call is0682f0e8.",
+    "0682f0e8 selects0682eeaa(08c98880) for secondary_stage2.",
+    "0682eeaa initially writes2 at08aa090c and invokes0682e9e2(1).",
+    "0682e894 sets byte08aa0908=1 and passes callback0682e88d to0646e564(config44B,1,callback).",
+    "0682e9e2 records configuration substep8b4 while the pending byte is nonzero;0682eeaa records substep870.",
+    "0646e48c copies the request to its original static queue and signals originalqueue16.",
+    "Task20 entry0646e3a6 consumes that request and stores callback at08a9d634.",
+    "0646e464 calls0646d5e8; only its return permits0646e472 BLX callback.",
+    "Callback0682e88c writes0 to08aa0908. The next native UI loop resumes the state machine.",
+    "0682ef10 writes secondary_stage1;0682ef30 writes substep888 after remaining native calls."
+  ],
+  "nested_historical_wait": {
+    "task20": "Saved chain0646e469 ->0646dc6d ->0646d527 ->0657b8f5; event11 mask1 via0646d4aa(2).",
+    "submission": "0646dc18 calls06483120 with callback0646d3d7, then waits for its case2 notification.",
+    "task12": "06483120 sets event6 bit0; entry06483060 consumes it and calls06482d76.",
+    "task12_saved_chain": "064830e3 ->06482d9b ->064813fb ->0657b8f5; event6 mask0x80.",
+    "callback2_location": "If the original path progresses,06482f24 sets r0=2 and06482f28 BLX invokes the registered callback.",
+    "limits": "No claim here that event86 is the source or that the historical waits require a model change."
+  },
+  "later_observed_progress": {
+    "run": "/Users/lixiuqi/Documents/ChatGPT/\u76f8\u673a/s5-emulator/menu-smp/results/local-shared-image-stride",
+    "gate": {
+      "samples": 12,
+      "wait_steps": 11,
+      "original_primary_getter": "0x066bfd22",
+      "original_secondary_getter": "0x0682e5d0",
+      "required": "pending_mode==0xff and primary_stage in{0,1} and secondary_stage in{0,1}",
+      "primary_stage": 0,
+      "pending_mode": 255,
+      "secondary_stage": 1,
+      "primary_ready": true,
+      "secondary_ready": true,
+      "passed": true
+    },
+    "state": {
+      "control_words_08a928b0": [
+        "0x0",
+        "0x20",
+        "0x0",
+        "0x1"
+      ],
+      "transition_step_08cb0ee0": "0x4a0",
+      "secondary_transition_stage_08aa090c": 1,
+      "modal_id_08a92898": "0x4a",
+      "mode35_confirmation_mask_08aa1103": "0xff",
+      "confirmation_mask_08aa1104": "0xff",
+      "source_scene_08cb10d0": "0x70de",
+      "render_scene_0b392e98": "0x1001",
+      "source_layout_08cb10c8_hex": "000000004a000000de70000000000000",
+      "render_layout_0b392e90_hex": "000000003c0200000110000000000000",
+      "lcd_clock_state_08ab488c": "0x4",
+      "avio_clock_completion_08a9c7f8": "0x2"
+    },
+    "conclusion": "The native lock became ready without a direct callback, event-field write, or stage override. The original key handler subsequently confirmed the time-zone prompt.",
+    "callback_observation_limit": "This later result directly samples stage1 and downstream key calls; it does not contain a separate breakpoint trace at every internal callback."
+  }
+}

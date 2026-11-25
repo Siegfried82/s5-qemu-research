@@ -1,0 +1,166 @@
+{
+  "scope": "Static contract and pre-existing snapshot audit only; not a successful runtime experiment",
+  "program": "/Users/lixiuqi/Documents/ChatGPT/\u76f8\u673a/s5-v29-offline/unpacked-v29/03_program.bin",
+  "program_sha256": "fc496d62a91f6e9b1b84807183bb805bc546c9105d2938546b58a66ad9d132fe",
+  "snapshot": "/Users/lixiuqi/Documents/ChatGPT/\u76f8\u673a/s5-emulator/menu-smp/results/isolated-display-gradient/ram.bin",
+  "snapshot_observations": {
+    "0x76": {
+      "object": "0x8e1a08c",
+      "capacity": 56,
+      "array": "0x9aec448",
+      "write_index": 1,
+      "read_index": 0,
+      "count": 1,
+      "waiting_receivers": "0x0",
+      "waiting_senders": "0x0",
+      "head": "0x99cab3c",
+      "words": [
+        "0x115",
+        "0x11d",
+        "0x36",
+        "0x1",
+        "0x0"
+      ],
+      "allocation_prefix": "0x8e1c2cc"
+    },
+    "0x115": {
+      "object": "0x8e1b6e8",
+      "capacity": 128,
+      "array": "0xa048f98",
+      "write_index": 104,
+      "read_index": 104,
+      "count": 0,
+      "waiting_receivers": "0x8e15118",
+      "waiting_senders": "0x0"
+    },
+    "max_queues": 293,
+    "reply_ring_index": 0,
+    "pool6_object": "0x8e1c2cc",
+    "task66_buffer_words": [
+      "0x0",
+      "0x0",
+      "0x0",
+      "0x0",
+      "0x0"
+    ],
+    "system_state_by_cpu": [
+      "0x0",
+      "0x0",
+      "0x0",
+      "0x0"
+    ]
+  },
+  "original_rom_constants": {
+    "0x6f492b0": "0x11d",
+    "0x6f49a28": "0x76",
+    "0x6f48f88": "0x42",
+    "0x6f49c64": "0x115"
+  },
+  "exact_request_words": [
+    "0x115",
+    "0x11d",
+    "0x36",
+    "0x1",
+    "0x0"
+  ],
+  "task66": {
+    "entry_thumb": "0x0675ef85",
+    "original_peer_wait_pc": "0x065491ee",
+    "static_context": "0x0a603680",
+    "context_bytes": 3592,
+    "prologue_zeroes_context_before_incomplete_init": true
+  },
+  "peek": {
+    "queue": "0x76",
+    "object": "u32(0x08e1b94c + (queue-1)*4)",
+    "capacity_offset": 4,
+    "array_offset": 12,
+    "write_index_offset": 16,
+    "read_index_offset": 20,
+    "count_offset": 24,
+    "waiting_receivers_offset": 28,
+    "waiting_senders_offset": 32,
+    "head_envelope": "u32(u32(object+12) + 4*u32(object+20))",
+    "selected_path_requires_waiting_senders_zero": true
+  },
+  "receive": {
+    "entry_thumb": "0x067ea67b",
+    "r0_queue": "0x76",
+    "r1_original_destination": "0x0a603680",
+    "r2_timeout": 0,
+    "success_return": 0,
+    "empty_return": -2,
+    "other_failure_return": -1,
+    "copied_bytes": 20,
+    "release_call": "0x065a2be8(pool=6,envelope)",
+    "release_return_ignored_by_wrapper": true,
+    "caller_must_not_release_again": true
+  },
+  "dispatch": {
+    "entry_thumb": "0x0675f155",
+    "r0": "0x0a603680",
+    "type_guard": "u16(message+0x10)==0",
+    "source_guard": "u32(message+4)==0x11d",
+    "code_guard": "u32(message+8)==0x36",
+    "mode_guard": "u32(message+12)==1",
+    "tbb_table": "0x675eba8",
+    "tbb_entry": "0x69",
+    "selected_target": "0x675ec7a",
+    "mode_handler_thumb": "0x0653b7e7",
+    "handled_return": 1,
+    "handled_does_not_prove_reply_send_success": true,
+    "caller_cleanup": "None for this zero-payload handled request; original loop receives next"
+  },
+  "reply": {
+    "created_by_original_firmware_only": true,
+    "helper_thumb": "0x06759711",
+    "helper_arguments": [
+      "0x36",
+      "0x1",
+      "0x0"
+    ],
+    "original_generated_words": [
+      "0x76",
+      "0x42",
+      "0x36",
+      "0x0",
+      "0x1"
+    ],
+    "destination_queue": "0x115",
+    "ring": "0x08e9f518",
+    "slot_bytes": 20,
+    "ring_index_address": "0x08aab9d4",
+    "ring_slots": 128,
+    "send_timeout": 0,
+    "send_return_observation_pc": "0x06759766",
+    "required_send_return_r0": 0,
+    "send_failure": "Original helper invokes 0x06666240(error=0x100f)",
+    "send_ownership": "Underlying RTOS passes the original ring pointer; no probe allocation or free"
+  },
+  "dependency_result": {
+    "exact_mode1_path_references_peer_shared_ram": false,
+    "exact_mode1_path_references_mmio": false,
+    "ordinary_state_byte_read": "0x08a9da70; both values take identical reply path when mode=1",
+    "dependencies": [
+      "Initialized RTOS queues and pool6",
+      "Actual task66 task context and stack",
+      "Original reply ring index in [0,127]",
+      "Working SMP scheduler and locks"
+    ],
+    "validation_level": "Static positive evidence for this single message; runtime still required"
+  },
+  "guards": [
+    "Separate opt-in VM experiment; preserve strict baseline",
+    "Stop at actual task66 PC 0x065491ee, not an IRQ sample or arbitrary task",
+    "u32(0x209c0 + cpu_index*4)==0 and current TCB is task66",
+    "Save all GPRs/CPSR/SP/LR; use existing task stack and 8-byte call alignment",
+    "Validate live queue map, bounds, nonzero count and no waiting senders; exact head tuple only",
+    "Require pool6 ownership prefix for this original envelope",
+    "Receive exactly once with timeout0 and require return0 plus exact copied tuple",
+    "Run only original dispatch and require original send return0 as well as handled return1",
+    "No direct ACK, event-bit write, TCB rewrite, peer-ready/magic/shared-pointer fabrication",
+    "After both calls return, restore saved CPU call context to peer wait; retain original queue/ring side effects",
+    "Do not rewind scheduler/RAM after a partially completed call; on error/timeout stop this VM",
+    "No claims about other modes/codes, DSP startup, full boot or physical camera behavior"
+  ]
+}

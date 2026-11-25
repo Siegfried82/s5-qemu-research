@@ -1,0 +1,23 @@
+{
+  "passed": true,
+  "scope": "fresh host frame -> actual BIN LUT in QEMU -> original driver -> software JPU -> guest JPEG",
+  "camera_menu_or_shutter_executed": false,
+  "jpeg_backend": "host Pillow software device",
+  "export": {
+    "path": "/Users/lixiuqi/Documents/ChatGPT/相机/s5-emulator/capture/results/photo-20261124-200413-17ae09/jpu/guest-output.jpg",
+    "sha256": "8cce4c962734cb2444133d982353e1af3f4df06fe537b15b8fdd0efceb110aad",
+    "decoded_dimensions": [
+      6000,
+      4000
+    ]
+  },
+  "original_driver_status": [
+    11,
+    806097,
+    0
+  ],
+  "evidence": [
+    "/Users/lixiuqi/Documents/ChatGPT/相机/s5-emulator/capture/results/photo-20261124-200413-17ae09/lut/verification.json",
+    "/Users/lixiuqi/Documents/ChatGPT/相机/s5-emulator/capture/results/photo-20261124-200413-17ae09/jpu/verification.json"
+  ]
+}

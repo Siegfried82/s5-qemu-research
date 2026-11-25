@@ -1,0 +1,136 @@
+{
+  "program": "/Users/lixiuqi/Documents/ChatGPT/\u76f8\u673a/s5-v29-offline/unpacked-v29/03_program.bin",
+  "sha256": "fc496d62a91f6e9b1b84807183bb805bc546c9105d2938546b58a66ad9d132fe",
+  "sample_function": "0x0659ed98",
+  "arguments": {
+    "r0": "logical channel",
+    "r1": "number of consecutive channels; 0 behaves as 1",
+    "r2": "uint16_t destination"
+  },
+  "banks": [
+    {
+      "index": 0,
+      "base": "0x7f030000",
+      "base_literal": "0x659f0b8",
+      "logical_first": 0,
+      "logical_last": 11,
+      "count": 12,
+      "original_result_pointer_table": "0x70c87a4",
+      "relocated_result_pointer_table": "0x8aa7dec",
+      "result_pointers": [
+        "0x7f030014",
+        "0x7f030018",
+        "0x7f03001c",
+        "0x7f030020",
+        "0x7f030024",
+        "0x7f030028",
+        "0x7f03002c",
+        "0x7f030030",
+        "0x7f030034",
+        "0x7f030038",
+        "0x7f03003c",
+        "0x7f030040"
+      ]
+    },
+    {
+      "index": 1,
+      "base": "0x7f031000",
+      "base_literal": "0x659f0b4",
+      "logical_first": 20,
+      "logical_last": 26,
+      "count": 7,
+      "original_result_pointer_table": "0x70c87d4",
+      "relocated_result_pointer_table": "0x8aa7e1c",
+      "result_pointers": [
+        "0x7f031014",
+        "0x7f031018",
+        "0x7f03101c",
+        "0x7f031020",
+        "0x7f031024",
+        "0x7f031028",
+        "0x7f03102c",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0"
+      ]
+    },
+    {
+      "index": 2,
+      "base": "0x7f032000",
+      "base_literal": "0x659f0b0",
+      "logical_first": 27,
+      "logical_last": 30,
+      "count": 4,
+      "original_result_pointer_table": "0x70c8804",
+      "relocated_result_pointer_table": "0x8aa7e4c",
+      "result_pointers": [
+        "0x7f032014",
+        "0x7f032018",
+        "0x7f03201c",
+        "0x7f032020",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0"
+      ]
+    }
+  ],
+  "register_contract": {
+    "control0": "bit0 start, poll until hardware clears; bit1 bypasses start and directly reads cached result",
+    "control4": "written zero by synchronous driver",
+    "count8": "number of requested channels",
+    "mask_c": "bit per valid requested local channel",
+    "status58": "driver waits for bit0 to clear",
+    "results": "base+0x14+4*local channel; original driver LDR word then STRH, no shift or scaling"
+  },
+  "irqs": {
+    "conversion_irq_required_by_observed_sync_path": false,
+    "hardware_irq_number": "not established; no IRQ wait/enable in 0659ed98 or bulk0659ef6c"
+  },
+  "return": {
+    "1": "completed/read cached samples",
+    "0": "timeout or bank clock gating; output remains untouched"
+  },
+  "clock_gate_register": "0x7f0382a0 bit0 gates bank1, bit1 gates bank2",
+  "poll_timeout": "counter checks prior value >1000, then clears start bit and returns 0",
+  "observed_full_boot_mmio": "menu-smp/results/uart-controllers-boot/result.json: control0/4/8/c writes, status58 and results reads; no result writes observed",
+  "channel_counts": {
+    "address": "0x06f48dc4",
+    "bytes": [
+      12,
+      7,
+      4
+    ]
+  },
+  "pointer_reference_search": {
+    "image": "display/prepared/original-rtos-and-osddata.bin",
+    "sha256": "fb95f93ee28628de61df77c5b6efcde56be64e88d1815d660fbac0325653eefe",
+    "scope": "Exact 32-bit pointer values only; absence cannot exclude indirect or computed references",
+    "results": {
+      "0x659ed91": [],
+      "0x659ed99": [],
+      "0x659ef11": [],
+      "0x659ef6d": [],
+      "0x659ed79": [],
+      "0x8aa7de8": [
+        "0x659f0a8"
+      ],
+      "0x8aa7dec": [],
+      "0x6f48dc4": [
+        "0x659f0bc"
+      ]
+    }
+  },
+  "runtime_validation": {
+    "path": "adc/driver-check/verification.json",
+    "passed": true,
+    "cases": 10,
+    "description": "Actual unchanged ADC function plus stateful QEMU ADC device; only standalone OS semaphore calls substituted; no IRQ injection"
+  }
+}

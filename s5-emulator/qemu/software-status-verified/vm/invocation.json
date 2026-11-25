@@ -1,0 +1,53 @@
+{
+  "argv": [
+    "/Users/lixiuqi/Documents/ChatGPT/\u76f8\u673a/s5-emulator/toolchain/build/qemu-system-arm",
+    "-M",
+    "s5-rtos",
+    "-cpu",
+    "cortex-a7",
+    "-m",
+    "512M",
+    "-S",
+    "-accel",
+    "tcg,thread=single",
+    "-display",
+    "none",
+    "-monitor",
+    "none",
+    "-serial",
+    "none",
+    "-no-user-config",
+    "-nodefaults",
+    "-qmp",
+    "unix:/tmp/s5-rsp-f1a8dpfy/qmp,server=on,wait=off",
+    "-gdb",
+    "unix:/tmp/s5-rsp-f1a8dpfy/gdb,server=on,wait=off",
+    "-smp",
+    "4",
+    "-device",
+    "loader,file=/Users/lixiuqi/Documents/ChatGPT/\u76f8\u673a/s5-v29-offline/unpacked-v29/03_program.bin,addr=0x6280000,force-raw=on"
+  ],
+  "ram_base": 0,
+  "ram_bytes": 536870912,
+  "machine": "s5-rtos",
+  "cpu_count": 4,
+  "mapped_address_ranges": [
+    [
+      0,
+      536870912
+    ],
+    [
+      1879048192,
+      268435456
+    ]
+  ],
+  "loaded_files": [
+    {
+      "file": "/Users/lixiuqi/Documents/ChatGPT/\u76f8\u673a/s5-v29-offline/unpacked-v29/03_program.bin",
+      "address": 103284736,
+      "bytes": 16674816,
+      "sha256": "fc496d62a91f6e9b1b84807183bb805bc546c9105d2938546b58a66ad9d132fe"
+    }
+  ],
+  "scope": "Partial research machine; see board-specific model limitations"
+}

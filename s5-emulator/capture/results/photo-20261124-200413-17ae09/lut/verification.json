@@ -1,0 +1,121 @@
+{
+  "passed": true,
+  "frame": [
+    6000,
+    4000
+  ],
+  "source": "host generated synthetic test scene",
+  "package_sha256": "5727be9315ee229291783a483090efb88be9fd75fcdc032f19314152738564de",
+  "payload_sha256": "8ffbbbf47e545a0742548113867c405eeab5c846f149a70f827bac08073fbec0",
+  "qemu_sha256": "a51ab45780242aa65827fafcc3d300075a23c50eb68b8c4afcb7a24a63bd039b",
+  "input_plane_sha256": {
+    "Y": "daa2c1182917f267649f1700ccd1f0c92ff845f211feaecc141c13dd8aea3636",
+    "C": "8332034dc860811fc0515afeace3e1156dfcfe44b28a79b6739bd1b10c29e860"
+  },
+  "reference_lut_sha256": "2a651a4376b7938ebe4d8f8c17bd5b2830ad52587359eaf942567726cec651b0",
+  "jpeg_encoder": "Pillow 11.3.0 on macOS host",
+  "cases": [
+    {
+      "mode": 0,
+      "trace": [
+        {
+          "stage": "original_getter",
+          "pc": "0x87864acc",
+          "stop": "T05thread:01;"
+        },
+        {
+          "stage": "original_memcpy",
+          "pc": "0x8782bd3c",
+          "stop": "T05thread:01;"
+        },
+        {
+          "stage": "original_call_return",
+          "pc": "0x877537a6",
+          "stop": "T05thread:01;"
+        }
+      ],
+      "checks": {
+        "descriptor_copied": true,
+        "return_value_zero": true,
+        "stack_restored": true,
+        "saved_registers_preserved": true,
+        "Y_all_row_padding_preserved": true,
+        "Y_entire_plane_unchanged": true,
+        "C_all_row_padding_preserved": true,
+        "C_entire_plane_unchanged": true
+      },
+      "plane_sha256": {
+        "Y": "daa2c1182917f267649f1700ccd1f0c92ff845f211feaecc141c13dd8aea3636",
+        "C": "8332034dc860811fc0515afeace3e1156dfcfe44b28a79b6739bd1b10c29e860"
+      },
+      "jpeg": {
+        "path": "/Users/lixiuqi/Documents/ChatGPT/\u76f8\u673a/s5-emulator/capture/results/photo-20261124-200413-17ae09/lut/capture_off.jpg",
+        "sha256": "8ea84b8ee4ef9bf2e3cf8ebb0cefe0f1c46b5091986d07aad56049bb0a1d1365",
+        "bytes": 802741,
+        "decoded_size": [
+          6000,
+          4000
+        ]
+      }
+    },
+    {
+      "mode": 1,
+      "trace": [
+        {
+          "stage": "original_getter",
+          "pc": "0x87864acc",
+          "stop": "T05thread:01;"
+        },
+        {
+          "stage": "original_memcpy",
+          "pc": "0x8782bd3c",
+          "stop": "T05thread:01;"
+        },
+        {
+          "stage": "original_call_return",
+          "pc": "0x877537a6",
+          "stop": "T05thread:01;"
+        }
+      ],
+      "checks": {
+        "descriptor_copied": true,
+        "return_value_zero": true,
+        "stack_restored": true,
+        "saved_registers_preserved": true,
+        "Y_all_row_padding_preserved": true,
+        "C_all_row_padding_preserved": true,
+        "output_changed": true
+      },
+      "plane_sha256": {
+        "Y": "f20bb4b947ee2ac34a667fdc5e0461569b2a62f783f12ef4f34660f4d12cf00f",
+        "C": "274665a85e087b326a33ab6653ed063d3e745aa6fd213c2507c5e18d727bbe7c"
+      },
+      "independent_reference": {
+        "pairs_checked": 4100,
+        "pixels_checked": 8200,
+        "all_exact": true
+      },
+      "jpeg": {
+        "path": "/Users/lixiuqi/Documents/ChatGPT/\u76f8\u673a/s5-emulator/capture/results/photo-20261124-200413-17ae09/lut/capture_lut.jpg",
+        "sha256": "d15d685bbc6fa9ba9624fd4d61301ab71e3d31aad8eae5cc031b8f4a1841f241",
+        "bytes": 806104,
+        "decoded_size": [
+          6000,
+          4000
+        ]
+      }
+    }
+  ],
+  "preview_mean_absolute_rgb_difference": [
+    12.830216666666667,
+    5.5264444444444445,
+    7.23772037037037
+  ],
+  "limitations": [
+    "No S5 menu, sensor, shutter, autofocus, AE, AWB, ISP or native camera JPEG encoder executed",
+    "Actual experimental BIN code and original getter/memcpy execute with supplied registers and flat synthetic RAM",
+    "NV16 CbCr, full-range BT.601 and descriptor ABI remain experimental assumptions",
+    "Color conversion, chroma subsampling and final JPEG encoding use host Pillow",
+    "Independent integer reference covers sampled pixels; full off-case identity and every row padding byte checked"
+  ]
+}

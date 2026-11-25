@@ -1,0 +1,12 @@
+#!/usr/bin/python3
+"""Work around pkg-config 0.29 escaping each byte of non-ASCII paths."""
+import pathlib
+import re
+import subprocess
+import sys
+
+executable = pathlib.Path(__file__).resolve().parents[1] / "deps/bin/pkg-config"
+result = subprocess.run([str(executable), *sys.argv[1:]], capture_output=True)
+sys.stdout.buffer.write(re.sub(rb"\\([\x80-\xff])", rb"\1", result.stdout))
+sys.stderr.buffer.write(result.stderr)
+sys.exit(result.returncode)

@@ -1,0 +1,209 @@
+{
+  "scope": "Local scheduling experiment: original task66 temporarily delayed through original OS API; not a completed original boot",
+  "snapshot": "/Users/lixiuqi/Documents/ChatGPT/\u76f8\u673a/s5-emulator/menu-smp/results/isolated-display-first/ram.bin",
+  "program_sha256": "fc496d62a91f6e9b1b84807183bb805bc546c9105d2938546b58a66ad9d132fe",
+  "original_firmware_instructions_modified": false,
+  "display_isolation": {
+    "scope": "Local scheduling experiment, not a completed original boot",
+    "method": "Call original dly_tsk-like API for 60000 ticks at task66's peer wait; no TCB/event/firmware instruction patch",
+    "delay_entry": "0x66c23e8",
+    "calls": [
+      {
+        "cpu": 0,
+        "tcb": "0x8e03ad4",
+        "task_id": 66,
+        "pc": "0x65491ee",
+        "guards": {
+          "0x8ab4e80": 0,
+          "0x8ab4e7c": 0,
+          "0x8ab4e68": 0,
+          "0x209c0": 0
+        },
+        "saved_core_registers": {
+          "r0": "0x1",
+          "r1": "0x7c14071c",
+          "r2": "0x9acef74",
+          "r3": "0x6a3d918",
+          "r4": "0x7b004000",
+          "r5": "0x62e4e74",
+          "r6": "0x62e4e72",
+          "r7": "0x62e4e76",
+          "r8": "0x62e4e70",
+          "r9": "0x62e4e44",
+          "r10": "0x62e4e6e",
+          "r11": "0x62e4e42",
+          "r12": "0x20000",
+          "r13": "0x9acef90",
+          "r14": "0x655197b",
+          "r15": "0x65491ee",
+          "cpsr": "0x20000133"
+        },
+        "requested_ticks": 60000,
+        "returned": false
+      }
+    ]
+  },
+  "original_execution_events": [
+    "primary_shared_barrier",
+    "serial_transfer_entry",
+    "original_irq_context_entry",
+    "original_irq_dispatcher",
+    "late_startup_interrupt_setup",
+    "activate_startup_tasks",
+    "activate_avio_task_18",
+    "avio_task_entry",
+    "avio_osd_callback_registration"
+  ],
+  "current_task": {
+    "tcb": "0x8dffe14",
+    "id": 18,
+    "name": "uiTSK018",
+    "entry": "0x647e83f",
+    "priority": 108,
+    "run_count": 9,
+    "state": 2
+  },
+  "registers": {
+    "r0": "0x6",
+    "r1": "0x99ce31c",
+    "r2": "0x99ce310",
+    "r3": "0x1",
+    "r4": "0x0",
+    "r5": "0x0",
+    "r6": "0x7f046000",
+    "r7": "0x8ab472c",
+    "r8": "0x1",
+    "r9": "0x0",
+    "r10": "0x99cc278",
+    "r11": "0x0",
+    "r12": "0x0",
+    "r13": "0x99ce2dc",
+    "r14": "0x64232a5",
+    "r15": "0x642c45c",
+    "cpsr": "0x400001b3"
+  },
+  "wait": {
+    "controller": "0x7f046000",
+    "driver": "0x0642c43c",
+    "pc": "0x642c45c",
+    "condition": "SSPSR +0xc bit0 (TFE); no byte emitted yet at snapshot",
+    "tx_pointer": "0x99ce31c",
+    "tx_hex": "60",
+    "transfer_bytes": 1
+  },
+  "stack_return_slots": {
+    "0x99ce2ec": "0x64232a5",
+    "0x99ce2f4": "0x64e6a4d",
+    "0x99ce324": "0x6483b3f",
+    "0x99ce344": "0x6484df7",
+    "0x99ce354": "0x6484115",
+    "0x99ce364": "0x647e1c3",
+    "0x99cea4c": "0x647e857"
+  },
+  "caller_chain": [
+    {
+      "entry": "0x0647e83e",
+      "role": "uiTSK018 original AVIO task"
+    },
+    {
+      "entry": "0x0647e6f8",
+      "role": "initialization wrapper"
+    },
+    {
+      "entry": "0x0647e0e2",
+      "role": "avio_control_lcdinit_static; original string at0x0647e48c"
+    },
+    {
+      "entry": "0x064840ee",
+      "role": "avio_lcdevf_driver_serial_sendall(lcdevf=0); original string at0x064844bc"
+    },
+    {
+      "entry": "0x06484de2",
+      "role": "lcdevf=0 choosesLCD function0x06483aee;1 choosesEVF function0x06484f18"
+    },
+    {
+      "entry": "0x06483aee",
+      "role": "iterates original16bit register/value words, two independent one-byte transfers perword"
+    },
+    {
+      "entry": "0x06484dd4",
+      "role": "lcdevf=0 selectsSPI6;1 selectsSPI4"
+    },
+    {
+      "entry": "0x064e6a24",
+      "role": "single-byte full-duplex transfer through0x0642327e to0x0642c43c"
+    }
+  ],
+  "lcd_protocol_observed_in_original_code": {
+    "frame": "For each u16 word: byte0=((word>>8)&0x7f)<<1, byte1=word&0xff",
+    "cs_function": "0x06484db6",
+    "cs_encoded_register": "0x7f083018",
+    "select_write": "0x10000000",
+    "deselect_write": "0x10000001",
+    "physical_cs_polarity_verified": false,
+    "receive_semantics": "Single-byte helper reads RX and returns it, but LCD caller0x06483aee ignores both results; no ACK/success check in this path",
+    "evf_distinction": "SPI4/CS7f082818 has a separate path with read mode at6484f98; SPI6 conclusions do not establishEVF response semantics",
+    "first_eight_writes": [
+      {
+        "pointer_slot": "0x8a9c8c8",
+        "source": "0x631a000",
+        "word": "0x3000",
+        "tx": "6000"
+      },
+      {
+        "pointer_slot": "0x8a9c8cc",
+        "source": "0x631a002",
+        "word": "0x7900",
+        "tx": "f200"
+      },
+      {
+        "pointer_slot": "0x8a9c8d0",
+        "source": "0x631a004",
+        "word": "0x7f00",
+        "tx": "fe00"
+      },
+      {
+        "pointer_slot": "0x8a9c8d4",
+        "source": "0x631a006",
+        "word": "0x7e00",
+        "tx": "fc00"
+      },
+      {
+        "pointer_slot": "0x8a9c8d8",
+        "source": "0x631a008",
+        "word": "0x640c",
+        "tx": "c80c"
+      },
+      {
+        "pointer_slot": "0x8a9c8dc",
+        "source": "0x631a00a",
+        "word": "0x3008",
+        "tx": "6008"
+      },
+      {
+        "pointer_slot": "0x8a9c8e0",
+        "source": "0x631a00c",
+        "word": "0x7900",
+        "tx": "f200"
+      },
+      {
+        "pointer_slot": "0x8a9c8e4",
+        "source": "0x631a00e",
+        "word": "0x362c",
+        "tx": "6c2c"
+      }
+    ],
+    "table_source": {
+      "component": "14_eep_fix.bin",
+      "offset": "0x1a000",
+      "resident_address": "0x0631a000",
+      "identical_program_offset": "0x9a000"
+    }
+  },
+  "limitations": [
+    "No physicalLCD part identified",
+    "No peripheral ACK fabricated",
+    "No framebuffer or menu rendered in this snapshot",
+    "Controller-only continuation does not emulate panel scanout"
+  ]
+}

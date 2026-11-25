@@ -1,0 +1,18 @@
+{
+  "qemu": {
+    "version": "9.2.4",
+    "url": "https://download.qemu.org/qemu-9.2.4.tar.xz",
+    "sha256": "f3cc1c4eabfdb288218ac3e33763dbe9e276d8bc890b867a2335d58de2ddd39a"
+  },
+  "dtc": {
+    "repository": "https://gitlab.com/qemu-project/dtc.git",
+    "commit": "b6910bec11614980a21e46fbccc35934b671bd81"
+  },
+  "local_changes": [
+    "hw/arm/s5.c copied from ../qemu/s5.c",
+    "hw/arm/meson.build adds s5.c to CONFIG_VEXPRESS",
+    "hw/arm/board-setup.h copied from ../qemu/board-setup.h"
+  ],
+  "build_entrypoint": "./build.sh",
+  "dependency_scope": "project-local"
+}

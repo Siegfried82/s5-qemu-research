@@ -1,0 +1,126 @@
+{
+  "scope": "Offline original instructions and previously saved RAM; no guest modifications",
+  "program_sha256": "fc496d62a91f6e9b1b84807183bb805bc546c9105d2938546b58a66ad9d132fe",
+  "irq_sources": [
+    {
+      "gic_id": 192,
+      "logical_id": "0x82",
+      "handler": "0x6497252",
+      "service": "0x65b9c3a",
+      "original_table_pointer": "0x63b5cd8",
+      "runtime_handler_slot": "0x9119d64"
+    },
+    {
+      "gic_id": 193,
+      "logical_id": "0x83",
+      "handler": "0x649727c",
+      "service": "0x65b9e1a",
+      "original_table_pointer": "0x63b5cdc",
+      "runtime_handler_slot": "0x9119d6c"
+    }
+  ],
+  "gate": {
+    "vector": "0x08aa02c8",
+    "predicate": "v[0]!=0 and v[1]==0 and v[2]!=0 and v[3]==0 and v[4]==0",
+    "sources": [
+      "0x08aa0289 (latched only by original 651c91e after startup ready)",
+      "0x08a9da70",
+      "0x08aa02af (original 65b9fcc postinit)",
+      "0x08aa032a",
+      "original 65b9c3a local state-change indicator r4"
+    ],
+    "first_irq_transition": "When 0289 transitions0->1 and 02ac was0, first sample sets v4=1; a later stable IRQ192 may pass. No host flag write justified."
+  },
+  "startup_sequence": {
+    "state": "0x08aa7f18",
+    "ready_offset": 1,
+    "index_halfword_offset": 6,
+    "table": "0x06f48df0",
+    "entries": [
+      {
+        "index": 0,
+        "delay_ms": 5,
+        "guard": 1,
+        "callback": "0x6759403"
+      },
+      {
+        "index": 1,
+        "delay_ms": 5,
+        "guard": 1,
+        "callback": "0x6759409"
+      },
+      {
+        "index": 2,
+        "delay_ms": 5,
+        "guard": 1,
+        "callback": "0x6759411"
+      },
+      {
+        "index": 3,
+        "delay_ms": 15,
+        "guard": 1,
+        "callback": "0x6759419"
+      },
+      {
+        "index": 4,
+        "delay_ms": 5,
+        "guard": 1,
+        "callback": "0x6759421"
+      },
+      {
+        "index": 5,
+        "delay_ms": 5,
+        "guard": 1,
+        "callback": "0x6759429"
+      },
+      {
+        "index": 6,
+        "delay_ms": 5,
+        "guard": 1,
+        "callback": "0x6759431"
+      },
+      {
+        "index": 7,
+        "delay_ms": 1,
+        "guard": 1,
+        "callback": "0x675943b"
+      },
+      {
+        "index": 8,
+        "delay_ms": 1,
+        "guard": 1,
+        "callback": "0x6759461"
+      },
+      {
+        "index": 9,
+        "delay_ms": 0,
+        "guard": 0,
+        "callback": "0x0"
+      }
+    ],
+    "step_function": "0x067595fc",
+    "callback": "0x0675953a",
+    "queue": "0x16",
+    "consumer_dispatch": "0x067f3cec",
+    "timer_logical": 6,
+    "mmio": "0x7f023000",
+    "gic_id": 42,
+    "first_config_control": "0xb3",
+    "later_arm": "original 6554ca2 writes TimerLoad only at6554cd0",
+    "ready_writer": "original 675948e sets byte08aa7f19 after sequence callback6759460"
+  },
+  "model_fix": {
+    "property": "load-rearms-oneshot",
+    "default": false,
+    "enabled_board": "s5-rtos only",
+    "specification": "ARM DDI0271D2.2.6 one-shot reload",
+    "url": "https://documentation-service.arm.com/static/5e8e2102fd977155116a4aef",
+    "focused_before": "qemu/oneshot-reload-baseline/verification.json",
+    "focused_after": "qemu/oneshot-reload-fixed/verification.json"
+  },
+  "unknowns": [
+    "192/193 physical timing, device enable/mask/status and frame-buffer completion contract remain unverified",
+    "A TEST edge is not proof of generated or consumed physical frame data",
+    "The gate and downstream controller can still reject or fault on later unavailable dependencies"
+  ]
+}

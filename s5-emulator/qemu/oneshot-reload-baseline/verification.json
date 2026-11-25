@@ -1,0 +1,71 @@
+{
+  "scope": "Synthetic timer MMIO only, no camera firmware or ready writes",
+  "qemu_sha256": "a8e0a2be1287bc9a491b63b9126edfaf458c04ce4a28778874169aaa6c34d34f",
+  "cases": [
+    {
+      "machine": "s5-rtos",
+      "expiries": [
+        {
+          "index": 0,
+          "load": 27000,
+          "value": 0,
+          "control": 179,
+          "ris": 1,
+          "mis": 1
+        },
+        {
+          "index": 1,
+          "load": 54000,
+          "value": 54000,
+          "control": 179,
+          "ris": 0,
+          "mis": 0
+        },
+        {
+          "index": 2,
+          "load": 81000,
+          "value": 81000,
+          "control": 179,
+          "ris": 0,
+          "mis": 0
+        }
+      ],
+      "disabled_load_does_not_start": true,
+      "periodic_three_expiries": true,
+      "passed": true
+    },
+    {
+      "machine": "s5-linux",
+      "expiries": [
+        {
+          "index": 0,
+          "load": 27000,
+          "value": 0,
+          "control": 179,
+          "ris": 1,
+          "mis": 1
+        },
+        {
+          "index": 1,
+          "load": 54000,
+          "value": 54000,
+          "control": 179,
+          "ris": 0,
+          "mis": 0
+        },
+        {
+          "index": 2,
+          "load": 81000,
+          "value": 81000,
+          "control": 179,
+          "ris": 0,
+          "mis": 0
+        }
+      ],
+      "disabled_load_does_not_start": true,
+      "periodic_three_expiries": true,
+      "passed": true
+    }
+  ],
+  "passed": true
+}

@@ -1,0 +1,66 @@
+{
+  "scope": "Read-only original instructions and prior results; no guest mutation, new key, GPIO, serial input, or acknowledgment.",
+  "program_sha256": "fc496d62a91f6e9b1b84807183bb805bc546c9105d2938546b58a66ad9d132fe",
+  "actual_render": {
+    "run": "/Users/lixiuqi/Documents/ChatGPT/\u76f8\u673a/s5-emulator/menu-smp/results/local-requested-lcd-refresh",
+    "frame": "/Users/lixiuqi/Documents/ChatGPT/\u76f8\u673a/s5-emulator/menu-smp/results/local-requested-lcd-refresh/graphics/frame-0003.png",
+    "observed_text": "The lens is not attached properly. Do not push lens release button while lens is attached.",
+    "state": {
+      "control_words_08a928b0": [
+        "0x0",
+        "0x20",
+        "0x0",
+        "0x1"
+      ],
+      "transition_step_08cb0ee0": "0x4a0",
+      "secondary_transition_stage_08aa090c": 1,
+      "modal_id_08a92898": "0x4a",
+      "mode35_confirmation_mask_08aa1103": "0xff",
+      "confirmation_mask_08aa1104": "0xff",
+      "source_scene_08cb10d0": "0x70de",
+      "render_scene_0b392e98": "0x70de",
+      "source_layout_08cb10c8_hex": "000000004a000000de70000000000000",
+      "render_layout_0b392e90_hex": "000000004a000000de70000000000000",
+      "lcd_clock_state_08ab488c": "0x4",
+      "avio_clock_completion_08a9c7f8": "0x2"
+    },
+    "conclusion": "Source and rendered scene70de both carry modal4a. The warning overlays the successfully selected time-zone scene."
+  },
+  "actual_serial_registers": {
+    "0x0448": 16,
+    "0x044a": 119,
+    "0x044c": 74,
+    "0x044e": 2
+  },
+  "historical_saved_ram": {
+    "run": "/Users/lixiuqi/Documents/ChatGPT/\u76f8\u673a/s5-emulator/menu-smp/results/local-terminal-menu-click-tx",
+    "packed_status": "0x24a7710",
+    "raw_plus_16": 1,
+    "current_logical_plus_30": "0x64c03033",
+    "processed_logical_plus_30": "0x64c03033",
+    "modal_id": "0x4a"
+  },
+  "original_chain": [
+    "06549df8 calls06752fb0 to read registers0448,044a,044c,044e into four consecutive bytes, then stores the packed word at08aa0974.",
+    "06544d12..4d20 loads halfword[08aa0974+2], extracts bit8, XORs1, and stores raw_input+16. This is packed bit24, equivalently register044e bit0.",
+    "0654409a calls06543ec0 to convert raw_input+16 to boolean;065440a2 places it in logical_input+30 bit23.",
+    "06544120..415a compares that bit with its previous value08aa8200; transitions reset timestamp08aa81c0. A stable1 with elapsed value greater than1000 from0648523a sets logical_input+30 bit30.",
+    "If source bit23 changes to0, this same original path clears bit30. No host-side flag clear is needed.",
+    "0664ce4e compares bit30 with the last processed copy; when input processing is allowed by0663d45c, it updates the processed copy.",
+    "For bit30=1,0664ce84 calls06693306(1), whose06693324 calls068147b8(4a) to add the original modal.",
+    "For bit30=0,0664ce92 calls06693306(0), which removes an existing4a via0681488e; both paths request native redraw."
+  ],
+  "minimal_input_contract_candidate": {
+    "location": "Serial peer register0x044e, bit0 only",
+    "current_register": 2,
+    "released_read_value_if_other_bits_unchanged": 3,
+    "polarity_at_original_sampler": "bit0=0 -> raw1 -> sustained warning condition; bit0=1 -> raw0 -> warning condition cleared by original code",
+    "scope": "Explicit external input environment, not a successful lens protocol/attachment response. Preserve all other register bits and normal native initialization.",
+    "not_yet_proved": "The physical pin/chip name and read-versus-write semantics of register044e still require peer-model audit. No generic GPIO-high profile follows from this evidence."
+  },
+  "limits": [
+    "1000 is the original timestamp threshold; this report does not assume its wall-clock unit.",
+    "A released warning input does not establish a connected working lens or a functioning sensor/DSP.",
+    "The candidate input change has not been executed by this audit."
+  ]
+}

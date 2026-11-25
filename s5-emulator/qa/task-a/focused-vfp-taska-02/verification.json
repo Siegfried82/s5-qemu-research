@@ -1,0 +1,176 @@
+{
+  "task": "Task A Step 1-2 Focused SPI3 0x044e Input Verification",
+  "unmodified_test_script": "/Users/lixiuqi/Documents/ChatGPT/相机/s5-emulator/qemu/test_lens_release_input.py",
+  "unmodified_test_execution_succeeded": false,
+  "unmodified_test_defect_diagnosis": {
+    "reproduced": true,
+    "stop_reply": "T05thread:01;",
+    "vector_pc": "0x4",
+    "cpsr": "0x1db",
+    "mode": "UND (0x1b)",
+    "lr_und": "0x66c2624",
+    "faulting_pc": "0x66c2620",
+    "faulting_instruction_word": "0xed2d0b08",
+    "faulting_instruction_mnemonic": "vpush {d0, d1, d2, d3}",
+    "call_chain": "0x06753036 -> 0x064e6a78 -> 0x066c261c (zeroes 0x18-byte SPI stack struct via NEON/VFP)",
+    "cause": "qemu/test_lens_release_input.py runs from cold CPU reset without enabling CPACR.cp10/11 and FPEXC.EN",
+    "suggested_patch": "/Users/lixiuqi/Documents/ChatGPT/相机/s5-emulator/qa/task-a/task-a-test_lens_release_input.patch"
+  },
+  "focused_with_vfp_enable_execution_succeeded": true,
+  "focused_with_vfp_enable_assertions_passed": true,
+  "lens_attachment_claimed": false,
+  "focused_report": {
+    "scope": "Original SPI3 register read/write routines (0x06752fb0 / 0x06753036) with explicit controller + VFP setup; external input hypothesis on register 0x044e bit0 only, not lens presence or peer ACK",
+    "qemu_sha256": "c2dda5a2b73b943f245fb04b4edc22b1c39540cdff3d9edc75d85d30e2111e1c",
+    "program_sha256": "fc496d62a91f6e9b1b84807183bb805bc546c9105d2938546b58a66ad9d132fe",
+    "original_instructions_modified": false,
+    "guest_ui_or_event_writes": false,
+    "setup": [
+      "CPACR cp10/cp11=0x00f00000 and FPEXC.EN=0x40000000 (matches menu-smp/boot-state.S)",
+      "SPI channel address table restored at 0x08ab472c",
+      "8-bit channel descriptor at 0x09112628 + 3*20 + 12",
+      "PL022 CR0=01c7, CPSR=2, CR1=0"
+    ],
+    "original_entry_execution_evidence": {
+      "0x06753036_hits": 11,
+      "0x06752fb0_hits": 14,
+      "0x0642c43c_hits": 25,
+      "verified_instruction_words": {
+        "0x06752fb0_first8_hex": "7fb5fa4c0d46f849",
+        "0x06753036_first8_hex": "7cb5d84d0024d64a",
+        "0x0642c43c_first8_hex": "f0b5384f00252c46"
+      }
+    },
+    "checks": [
+      {
+        "name": "default_off_stored02_enabled03_disabled02",
+        "passed": true,
+        "default_read": 2,
+        "enabled_read": 3,
+        "disabled_read": 2,
+        "stored_value_throughout": 2
+      },
+      {
+        "name": "register_044e_other_bits_and_latch_preserved",
+        "passed": true,
+        "cases": [
+          {
+            "written": 0,
+            "stored": 0,
+            "read_when_enabled": 1
+          },
+          {
+            "written": 2,
+            "stored": 2,
+            "read_when_enabled": 3
+          },
+          {
+            "written": 128,
+            "stored": 128,
+            "read_when_enabled": 129
+          },
+          {
+            "written": 254,
+            "stored": 254,
+            "read_when_enabled": 255
+          },
+          {
+            "written": 255,
+            "stored": 255,
+            "read_when_enabled": 255
+          }
+        ]
+      },
+      {
+        "name": "other_spi3_registers_unaffected",
+        "passed": true,
+        "cases": [
+          {
+            "register": "0x0448",
+            "written": 16,
+            "read": 16
+          },
+          {
+            "register": "0x044a",
+            "written": 119,
+            "read": 119
+          },
+          {
+            "register": "0x044c",
+            "written": 74,
+            "read": 74
+          },
+          {
+            "register": "0x0402",
+            "written": 53,
+            "read": 53
+          }
+        ]
+      },
+      {
+        "name": "unknown_register_still_reported_unsupported",
+        "passed": true,
+        "unknown_reads": 1,
+        "unsupported_registers": [
+          "0x0554"
+        ],
+        "affected_reads": 6
+      }
+    ],
+    "final_state": {
+      "profile": "assumed-cold-reset",
+      "physical_chip_identified": false,
+      "clock_advances": false,
+      "reads": 14,
+      "writes": 11,
+      "unknown_reads": 1,
+      "malformed_frames": 0,
+      "lens_release_input": {
+        "enabled": false,
+        "scope": "explicit external input: read044e bit0 high; not lens presence or peer ACK",
+        "register": "0x044e",
+        "read_mask": 1,
+        "stored_value": 2,
+        "effective_value": 2,
+        "affected_reads": 6,
+        "stored_value_modified": false
+      },
+      "unsupported_registers": [
+        "0x0554"
+      ],
+      "registers": {
+        "0x0402": 53,
+        "0x0404": 0,
+        "0x0406": 0,
+        "0x0408": 0,
+        "0x040a": 0,
+        "0x040c": 0,
+        "0x040e": 1,
+        "0x0410": 0,
+        "0x0420": 0,
+        "0x0422": 0,
+        "0x0424": 0,
+        "0x0426": 0,
+        "0x0428": 0,
+        "0x042a": 0,
+        "0x042c": 0,
+        "0x042e": 0,
+        "0x0430": 0,
+        "0x0432": 0,
+        "0x0434": 0,
+        "0x0436": 0,
+        "0x0438": 0,
+        "0x043a": 0,
+        "0x043c": 0,
+        "0x043e": 0,
+        "0x0440": 0,
+        "0x0448": 16,
+        "0x044a": 119,
+        "0x044c": 74,
+        "0x044e": 2
+      }
+    },
+    "execution_succeeded": true,
+    "assertions_passed": true
+  }
+}

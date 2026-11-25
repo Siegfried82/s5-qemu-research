@@ -1,0 +1,170 @@
+{
+  "model": "debugger-mediated software JPU, Pillow host backend",
+  "original_driver_region_sha256": "836a14022ac416689b17afdda2666102af153d6ad6370ae3f446f4ba7ec2bb8f",
+  "capture_record": "/Users/lixiuqi/Documents/ChatGPT/\u76f8\u673a/s5-emulator/capture/results/photo-20261124-200413-17ae09/lut/verification.json",
+  "capture_plane_sha256": {
+    "Y": "f20bb4b947ee2ac34a667fdc5e0461569b2a62f783f12ef4f34660f4d12cf00f",
+    "C": "274665a85e087b326a33ab6653ed063d3e745aa6fd213c2507c5e18d727bbe7c"
+  },
+  "events": [
+    {
+      "stage": "original_driver_start_sequence",
+      "returned": false,
+      "stop": "T05thread:01;",
+      "registers": {
+        "r0": "0x8e100000",
+        "r1": "0x7c156000",
+        "r2": "0x0",
+        "r3": "0x3",
+        "r4": "0x0",
+        "r5": "0x0",
+        "r6": "0x0",
+        "r7": "0x0",
+        "r8": "0x0",
+        "r9": "0x0",
+        "r10": "0x0",
+        "r11": "0x0",
+        "r12": "0x0",
+        "r13": "0x8f00f000",
+        "r14": "0x8eff0001",
+        "r15": "0x877f6856",
+        "cpsr": "0x600001f3"
+      }
+    },
+    {
+      "stage": "original_start_register_store",
+      "stop": "T05thread:01;",
+      "registers": {
+        "r0": "0x1",
+        "r1": "0x7c156004",
+        "r2": "0x1",
+        "r3": "0x1",
+        "r4": "0x1",
+        "r5": "0x0",
+        "r6": "0x0",
+        "r7": "0x0",
+        "r8": "0x0",
+        "r9": "0x0",
+        "r10": "0x0",
+        "r11": "0x0",
+        "r12": "0x0",
+        "r13": "0x8f00eff0",
+        "r14": "0x877f6731",
+        "r15": "0x877f671c",
+        "cpsr": "0x200001f3"
+      }
+    },
+    {
+      "stage": "original_start_return",
+      "stop": "T05thread:01;",
+      "pc": "0x8eff0000"
+    }
+  ],
+  "before_software_completion": {
+    "original_status": {
+      "returned": true,
+      "stop": "T05thread:01;",
+      "registers": {
+        "r0": "0x0",
+        "r1": "0x1",
+        "r2": "0x0",
+        "r3": "0x0",
+        "r4": "0x0",
+        "r5": "0x0",
+        "r6": "0x0",
+        "r7": "0x0",
+        "r8": "0x0",
+        "r9": "0x0",
+        "r10": "0x0",
+        "r11": "0x0",
+        "r12": "0x0",
+        "r13": "0x8f00f000",
+        "r14": "0x877f6ecb",
+        "r15": "0x8eff0000",
+        "cpsr": "0x400001f3"
+      }
+    },
+    "words": [
+      0,
+      0,
+      0
+    ],
+    "output_sentinel_intact": true
+  },
+  "software_device_writes": {
+    "backend": "Pillow 11.3.0",
+    "quality": 95,
+    "subsampling": 1,
+    "buffer_address": "0x94000000",
+    "jpeg_bytes": 806097,
+    "jpeg_sha256": "8cce4c962734cb2444133d982353e1af3f4df06fe537b15b8fdd0efceb110aad",
+    "status_registers": {
+      "0x7c157808": "0x2",
+      "0x7c15603c": "0x40"
+    },
+    "length_registers": {
+      "0x7c156050": 0,
+      "0x7c15602c": 12,
+      "0x7c156030": 76,
+      "0x7c156034": 223
+    }
+  },
+  "after_software_completion": {
+    "original_status": {
+      "returned": true,
+      "stop": "T05thread:01;",
+      "registers": {
+        "r0": "0x0",
+        "r1": "0x4c",
+        "r2": "0xc",
+        "r3": "0x0",
+        "r4": "0x0",
+        "r5": "0x0",
+        "r6": "0x0",
+        "r7": "0x0",
+        "r8": "0x0",
+        "r9": "0x0",
+        "r10": "0x0",
+        "r11": "0x0",
+        "r12": "0x0",
+        "r13": "0x8f00f000",
+        "r14": "0x877f6edf",
+        "r15": "0x8eff0000",
+        "cpsr": "0x1f3"
+      }
+    },
+    "words": [
+      11,
+      806097,
+      0
+    ]
+  },
+  "job_read_from_guest_mmio": {
+    "y_address": 2415919104,
+    "y_stride": 6016,
+    "y_height": 4000,
+    "c_address": 2449473536,
+    "c_stride": 6016,
+    "c_height": 4000,
+    "width": 6000,
+    "height": 4000,
+    "output_address": 2483027968,
+    "output_end": 2487222272
+  },
+  "export": {
+    "path": "/Users/lixiuqi/Documents/ChatGPT/\u76f8\u673a/s5-emulator/capture/results/photo-20261124-200413-17ae09/jpu/guest-output.jpg",
+    "sha256": "8cce4c962734cb2444133d982353e1af3f4df06fe537b15b8fdd0efceb110aad",
+    "decoded_dimensions": [
+      6000,
+      4000
+    ]
+  },
+  "passed": true,
+  "limitations": [
+    "Pillow is an explicitly substituted software device; original S5 compression hardware/quality/tables are not reproduced",
+    "Original unmodified driver start/configuration/status functions execute, with a synthetic incomplete job descriptor",
+    "Debugger instruction breakpoints mediate one synchronous encode request; no real QEMU MMIO implementation or interrupt wiring",
+    "Completion register semantics are derived from observed firmware readers; no physical device validation",
+    "Uses previously verified synthetic QEMU LUT-on planes; no menu, sensor, shutter or camera ISP execution"
+  ]
+}

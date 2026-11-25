@@ -1,0 +1,158 @@
+Original program SHA256=fc496d62a91f6e9b1b84807183bb805bc546c9105d2938546b58a66ad9d132fe; selectedThumbblocks; no guest executed.
+
+RANGE 0x682de54
+0682de54 70b5       push      {r4, r5, r6, lr} 
+0682de56 0024       movs      r4, #0 
+0682de58 1546       mov       r5, r2 
+0682de5a a0f17060   sub.w     r0, r0, #0xf000000 
+0682de5e 0a46       mov       r2, r1 
+0682de60 801e       subs      r0, r0, #2 
+0682de62 04d0       beq       #0x682de6e 
+0682de64 0528       cmp       r0, #5 
+0682de66 0cd0       beq       #0x682de82 
+0682de68 0e28       cmp       r0, #0xe 
+0682de6a 13d1       bne       #0x682de94 
+0682de6c 03e0       b         #0x682de76 
+0682de6e 0846       mov       r0, r1 
+0682de70 fff736f9   bl        #0x682d0e0 
+0682de74 03e0       b         #0x682de7e 
+0682de76 2946       mov       r1, r5 
+0682de78 1046       mov       r0, r2 
+0682de7a fef713fd   bl        #0x682c8a4 
+0682de7e 0446       mov       r4, r0 
+0682de80 08e0       b         #0x682de94 
+0682de82 e6f789fc   bl        #0x6814798 
+0682de86 a0f50071   sub.w     r1, r0, #0x200 
+0682de8a 4639       subs      r1, #0x46 
+0682de8c 02d1       bne       #0x682de94 
+0682de8e 012d       cmp       r5, #1 
+0682de90 00d1       bne       #0x682de94 
+0682de92 0124       movs      r4, #1 
+0682de94 2046       mov       r0, r4 
+0682de96 70bd       pop       {r4, r5, r6, pc} 
+
+RANGE 0x682d54e
+0682d54e a6f2e710   subw      r0, r6, #0x1e7 
+0682d552 8928       cmp       r0, #0x89 
+0682d554 ced2       bhs       #0x682d4f4 
+0682d556 13e0       b         #0x682d580 
+
+RANGE 0x682d580
+0682d580 8300       lsls      r3, r0, #2 
+0682d582 00bf       nop        
+0682d584 7b44       add       r3, pc 
+0682d586 5b68       ldr       r3, [r3, #4] 
+0682d588 9f44       add       pc, r3 
+
+RANGE 0x682d866
+0682d866 2846       mov       r0, r5 
+0682d868 00f0eefc   bl        #0x682e248 
+0682d86c 1de1       b         #0x682daaa 
+
+RANGE 0x682e248
+0682e248 70b5       push      {r4, r5, r6, lr} 
+0682e24a 264d       ldr       r5, [pc, #0x98] ; [0682e2e4]=062b047c
+0682e24c 1228       cmp       r0, #0x12 
+0682e24e 264c       ldr       r4, [pc, #0x98] ; [0682e2e8]=08cc5da0
+0682e250 40f23c26   movw      r6, #0x23c 
+0682e254 08d0       beq       #0x682e268 
+0682e256 03dc       bgt       #0x682e260 
+0682e258 68b1       cbz       r0, #0x682e276 
+0682e25a 0728       cmp       r0, #7 
+0682e25c 3cd1       bne       #0x682e2d8 
+0682e25e 03e0       b         #0x682e268 
+0682e260 1328       cmp       r0, #0x13 
+0682e262 20d0       beq       #0x682e2a6 
+0682e264 4828       cmp       r0, #0x48 
+0682e266 37d1       bne       #0x682e2d8 
+0682e268 0420       movs      r0, #4 
+0682e26a 7cf61ff8   bl        #0x66aa2ac 
+0682e26e 0220       movs      r0, #2 
+0682e270 89f00df8   bl        #0x68b728e 
+0682e274 30e0       b         #0x682e2d8 
+
+RANGE 0x68b728e
+068b728e 10b5       push      {r4, lr} 
+068b7290 0446       mov       r4, r0 
+068b7292 2020       movs      r0, #0x20 
+068b7294 07f655fd   bl        #0x66bed42 
+068b7298 0120       movs      r0, #1 
+068b729a 5df775fc   bl        #0x6814b88 
+068b729e 5748       ldr       r0, [pc, #0x15c] ; [068b73fc]=08a934b9
+068b72a0 401e       subs      r0, r0, #1 
+068b72a2 0470       strb      r4, [r0] 
+068b72a4 00f04afc   bl        #0x68b7b3c 
+068b72a8 bde81040   pop.w     {r4, lr} 
+068b72ac 7bf736bb   b.w       #0x683291c 
+
+RANGE 0x68b7b3c
+068b7b3c 47f2de00   movw      r0, #0x70de 
+068b7b40 10b5       push      {r4, lr} 
+068b7b42 09f61eff   bl        #0x66c1982 
+
+RANGE 0x66431de
+066431de 10b5       push      {r4, lr} 
+066431e0 4249       ldr       r1, [pc, #0x108] ; [066432ec]=08ca9624
+066431e2 0446       mov       r4, r0 
+066431e4 fdf70df9   bl        #0x6640402 
+066431e8 4549       ldr       r1, [pc, #0x114] ; [06643300]=08aa0f94
+066431ea 60b1       cbz       r0, #0x6643206 
+066431ec 0020       movs      r0, #0 
+066431ee 01f84a0f   strb      r0, [r1, #0x4a]! 
+066431f2 c870       strb      r0, [r1, #3] 
+066431f4 01f2eefd   bl        #0x6844dd4 
+066431f8 f8f78dfd   bl        #0x663bd16 
+066431fc 7bf057f9   bl        #0x66be4ae 
+06643200 6af055f9   bl        #0x66ad4ae 
+06643204 03e0       b         #0x664320e 
+06643206 0120       movs      r0, #1 
+06643208 01f84a0f   strb      r0, [r1, #0x4a]! 
+0664320c c870       strb      r0, [r1, #3] 
+0664320e 29f0f5fc   bl        #0x666cbfc 
+06643212 28b1       cbz       r0, #0x6643220 
+06643214 2046       mov       r0, r4 
+06643216 3549       ldr       r1, [pc, #0xd4] ; [066432ec]=08ca9624
+06643218 bde81040   pop.w     {r4, lr} 
+0664321c 82f159be   b.w       #0x67c5ed2 
+06643220 7cf07ffd   bl        #0x66bfd22 
+06643224 0028       cmp       r0, #0 
+06643226 26d1       bne       #0x6643276 
+06643228 6af068fd   bl        #0x66adcfc 
+0664322c 0028       cmp       r0, #0 
+0664322e 22d1       bne       #0x6643276 
+06643230 f8f7cdfc   bl        #0x663bbce 
+06643234 18b1       cbz       r0, #0x664323e 
+06643236 7cf0b3fd   bl        #0x66bfda0 
+0664323a 0128       cmp       r0, #1 
+0664323c 04d0       beq       #0x6643248 
+0664323e 2046       mov       r0, r4 
+06643240 bde81040   pop.w     {r4, lr} 
+06643244 fbf789bc   b.w       #0x663eb5a 
+
+RANGE 0x66bfd22
+066bfd22 fe48       ldr       r0, [pc, #0x3f8] ; [066c011c]=08aa10fc
+066bfd24 816a       ldr       r1, [r0, #0x28] 
+066bfd26 ff29       cmp       r1, #0xff 
+066bfd28 03d1       bne       #0x66bfd32 
+066bfd2a 406a       ldr       r0, [r0, #0x24] 
+066bfd2c 18b1       cbz       r0, #0x66bfd36 
+066bfd2e 0128       cmp       r0, #1 
+066bfd30 01d0       beq       #0x66bfd36 
+066bfd32 0120       movs      r0, #1 
+066bfd34 7047       bx        lr 
+066bfd36 0020       movs      r0, #0 
+066bfd38 7047       bx        lr 
+
+RANGE 0x66adcfc
+066adcfc 80f168bc   b.w       #0x682e5d0 
+
+RANGE 0x682e5d0
+0682e5d0 a449       ldr       r1, [pc, #0x290] ; [0682e864]=08aa08fc
+0682e5d2 0020       movs      r0, #0 
+0682e5d4 0969       ldr       r1, [r1, #0x10] 
+0682e5d6 0029       cmp       r1, #0 
+0682e5d8 02d0       beq       #0x682e5e0 
+0682e5da 0129       cmp       r1, #1 
+0682e5dc 00d0       beq       #0x682e5e0 
+0682e5de 0120       movs      r0, #1 
+0682e5e0 7047       bx        lr 

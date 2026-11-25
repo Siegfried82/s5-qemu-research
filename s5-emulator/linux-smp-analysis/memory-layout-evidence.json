@@ -1,0 +1,585 @@
+{
+  "scope": "Read-only original-byte and RAM-snapshot analysis. No QEMU/boot/graphics changes; no guest execution.",
+  "loader_sha256": "67d44d7c2bb2091b7a56ca5118345e0ee604e6b2c6c31769cd6de06ae752d838",
+  "program_sha256": "fc496d62a91f6e9b1b84807183bb805bc546c9105d2938546b58a66ad9d132fe",
+  "loader_table_builder": {
+    "entry": "0x4cc",
+    "return": "0x10cc",
+    "decoded_loops": 64,
+    "each_loop_sections": 256,
+    "total_descriptor_writes": 16384,
+    "all_four_tables_equal": true,
+    "all_descriptors_identity_sections": true,
+    "table_sha256": "d5ccd3e7eb5171677dae62a78c021285134f1f48f20e198eb94adb84ba585fd5",
+    "loops": [
+      {
+        "pc": "0x4cc",
+        "table": "0x86270000",
+        "va_start": "0x0",
+        "va_end_exclusive": "0x10000000",
+        "attribute": "0x15c06"
+      },
+      {
+        "pc": "0x4fc",
+        "table": "0x86270000",
+        "va_start": "0x10000000",
+        "va_end_exclusive": "0x20000000",
+        "attribute": "0x15c06"
+      },
+      {
+        "pc": "0x52c",
+        "table": "0x86270000",
+        "va_start": "0x20000000",
+        "va_end_exclusive": "0x30000000",
+        "attribute": "0x15c06"
+      },
+      {
+        "pc": "0x55c",
+        "table": "0x86270000",
+        "va_start": "0x30000000",
+        "va_end_exclusive": "0x40000000",
+        "attribute": "0x15c06"
+      },
+      {
+        "pc": "0x58c",
+        "table": "0x86270000",
+        "va_start": "0x40000000",
+        "va_end_exclusive": "0x50000000",
+        "attribute": "0x2002"
+      },
+      {
+        "pc": "0x5bc",
+        "table": "0x86270000",
+        "va_start": "0x50000000",
+        "va_end_exclusive": "0x60000000",
+        "attribute": "0x2002"
+      },
+      {
+        "pc": "0x5ec",
+        "table": "0x86270000",
+        "va_start": "0x60000000",
+        "va_end_exclusive": "0x70000000",
+        "attribute": "0x2002"
+      },
+      {
+        "pc": "0x61c",
+        "table": "0x86270000",
+        "va_start": "0x70000000",
+        "va_end_exclusive": "0x80000000",
+        "attribute": "0x2002"
+      },
+      {
+        "pc": "0x64c",
+        "table": "0x86270000",
+        "va_start": "0x80000000",
+        "va_end_exclusive": "0x90000000",
+        "attribute": "0x11c02"
+      },
+      {
+        "pc": "0x67c",
+        "table": "0x86270000",
+        "va_start": "0x90000000",
+        "va_end_exclusive": "0xa0000000",
+        "attribute": "0x11c02"
+      },
+      {
+        "pc": "0x6ac",
+        "table": "0x86270000",
+        "va_start": "0xa0000000",
+        "va_end_exclusive": "0xb0000000",
+        "attribute": "0x11c02"
+      },
+      {
+        "pc": "0x6dc",
+        "table": "0x86270000",
+        "va_start": "0xb0000000",
+        "va_end_exclusive": "0xc0000000",
+        "attribute": "0x11c02"
+      },
+      {
+        "pc": "0x70c",
+        "table": "0x86270000",
+        "va_start": "0xc0000000",
+        "va_end_exclusive": "0xd0000000",
+        "attribute": "0x11c02"
+      },
+      {
+        "pc": "0x73c",
+        "table": "0x86270000",
+        "va_start": "0xd0000000",
+        "va_end_exclusive": "0xe0000000",
+        "attribute": "0x11c02"
+      },
+      {
+        "pc": "0x76c",
+        "table": "0x86270000",
+        "va_start": "0xe0000000",
+        "va_end_exclusive": "0xf0000000",
+        "attribute": "0x11c02"
+      },
+      {
+        "pc": "0x79c",
+        "table": "0x86270000",
+        "va_start": "0xf0000000",
+        "va_end_exclusive": "0x100000000",
+        "attribute": "0x11c02"
+      },
+      {
+        "pc": "0x7cc",
+        "table": "0x86274000",
+        "va_start": "0x0",
+        "va_end_exclusive": "0x10000000",
+        "attribute": "0x15c06"
+      },
+      {
+        "pc": "0x7fc",
+        "table": "0x86274000",
+        "va_start": "0x10000000",
+        "va_end_exclusive": "0x20000000",
+        "attribute": "0x15c06"
+      },
+      {
+        "pc": "0x82c",
+        "table": "0x86274000",
+        "va_start": "0x20000000",
+        "va_end_exclusive": "0x30000000",
+        "attribute": "0x15c06"
+      },
+      {
+        "pc": "0x85c",
+        "table": "0x86274000",
+        "va_start": "0x30000000",
+        "va_end_exclusive": "0x40000000",
+        "attribute": "0x15c06"
+      },
+      {
+        "pc": "0x88c",
+        "table": "0x86274000",
+        "va_start": "0x40000000",
+        "va_end_exclusive": "0x50000000",
+        "attribute": "0x2002"
+      },
+      {
+        "pc": "0x8bc",
+        "table": "0x86274000",
+        "va_start": "0x50000000",
+        "va_end_exclusive": "0x60000000",
+        "attribute": "0x2002"
+      },
+      {
+        "pc": "0x8ec",
+        "table": "0x86274000",
+        "va_start": "0x60000000",
+        "va_end_exclusive": "0x70000000",
+        "attribute": "0x2002"
+      },
+      {
+        "pc": "0x91c",
+        "table": "0x86274000",
+        "va_start": "0x70000000",
+        "va_end_exclusive": "0x80000000",
+        "attribute": "0x2002"
+      },
+      {
+        "pc": "0x94c",
+        "table": "0x86274000",
+        "va_start": "0x80000000",
+        "va_end_exclusive": "0x90000000",
+        "attribute": "0x11c02"
+      },
+      {
+        "pc": "0x97c",
+        "table": "0x86274000",
+        "va_start": "0x90000000",
+        "va_end_exclusive": "0xa0000000",
+        "attribute": "0x11c02"
+      },
+      {
+        "pc": "0x9ac",
+        "table": "0x86274000",
+        "va_start": "0xa0000000",
+        "va_end_exclusive": "0xb0000000",
+        "attribute": "0x11c02"
+      },
+      {
+        "pc": "0x9dc",
+        "table": "0x86274000",
+        "va_start": "0xb0000000",
+        "va_end_exclusive": "0xc0000000",
+        "attribute": "0x11c02"
+      },
+      {
+        "pc": "0xa0c",
+        "table": "0x86274000",
+        "va_start": "0xc0000000",
+        "va_end_exclusive": "0xd0000000",
+        "attribute": "0x11c02"
+      },
+      {
+        "pc": "0xa3c",
+        "table": "0x86274000",
+        "va_start": "0xd0000000",
+        "va_end_exclusive": "0xe0000000",
+        "attribute": "0x11c02"
+      },
+      {
+        "pc": "0xa6c",
+        "table": "0x86274000",
+        "va_start": "0xe0000000",
+        "va_end_exclusive": "0xf0000000",
+        "attribute": "0x11c02"
+      },
+      {
+        "pc": "0xa9c",
+        "table": "0x86274000",
+        "va_start": "0xf0000000",
+        "va_end_exclusive": "0x100000000",
+        "attribute": "0x11c02"
+      },
+      {
+        "pc": "0xacc",
+        "table": "0x86278000",
+        "va_start": "0x0",
+        "va_end_exclusive": "0x10000000",
+        "attribute": "0x15c06"
+      },
+      {
+        "pc": "0xafc",
+        "table": "0x86278000",
+        "va_start": "0x10000000",
+        "va_end_exclusive": "0x20000000",
+        "attribute": "0x15c06"
+      },
+      {
+        "pc": "0xb2c",
+        "table": "0x86278000",
+        "va_start": "0x20000000",
+        "va_end_exclusive": "0x30000000",
+        "attribute": "0x15c06"
+      },
+      {
+        "pc": "0xb5c",
+        "table": "0x86278000",
+        "va_start": "0x30000000",
+        "va_end_exclusive": "0x40000000",
+        "attribute": "0x15c06"
+      },
+      {
+        "pc": "0xb8c",
+        "table": "0x86278000",
+        "va_start": "0x40000000",
+        "va_end_exclusive": "0x50000000",
+        "attribute": "0x2002"
+      },
+      {
+        "pc": "0xbbc",
+        "table": "0x86278000",
+        "va_start": "0x50000000",
+        "va_end_exclusive": "0x60000000",
+        "attribute": "0x2002"
+      },
+      {
+        "pc": "0xbec",
+        "table": "0x86278000",
+        "va_start": "0x60000000",
+        "va_end_exclusive": "0x70000000",
+        "attribute": "0x2002"
+      },
+      {
+        "pc": "0xc1c",
+        "table": "0x86278000",
+        "va_start": "0x70000000",
+        "va_end_exclusive": "0x80000000",
+        "attribute": "0x2002"
+      },
+      {
+        "pc": "0xc4c",
+        "table": "0x86278000",
+        "va_start": "0x80000000",
+        "va_end_exclusive": "0x90000000",
+        "attribute": "0x11c02"
+      },
+      {
+        "pc": "0xc7c",
+        "table": "0x86278000",
+        "va_start": "0x90000000",
+        "va_end_exclusive": "0xa0000000",
+        "attribute": "0x11c02"
+      },
+      {
+        "pc": "0xcac",
+        "table": "0x86278000",
+        "va_start": "0xa0000000",
+        "va_end_exclusive": "0xb0000000",
+        "attribute": "0x11c02"
+      },
+      {
+        "pc": "0xcdc",
+        "table": "0x86278000",
+        "va_start": "0xb0000000",
+        "va_end_exclusive": "0xc0000000",
+        "attribute": "0x11c02"
+      },
+      {
+        "pc": "0xd0c",
+        "table": "0x86278000",
+        "va_start": "0xc0000000",
+        "va_end_exclusive": "0xd0000000",
+        "attribute": "0x11c02"
+      },
+      {
+        "pc": "0xd3c",
+        "table": "0x86278000",
+        "va_start": "0xd0000000",
+        "va_end_exclusive": "0xe0000000",
+        "attribute": "0x11c02"
+      },
+      {
+        "pc": "0xd6c",
+        "table": "0x86278000",
+        "va_start": "0xe0000000",
+        "va_end_exclusive": "0xf0000000",
+        "attribute": "0x11c02"
+      },
+      {
+        "pc": "0xd9c",
+        "table": "0x86278000",
+        "va_start": "0xf0000000",
+        "va_end_exclusive": "0x100000000",
+        "attribute": "0x11c02"
+      },
+      {
+        "pc": "0xdcc",
+        "table": "0x8627c000",
+        "va_start": "0x0",
+        "va_end_exclusive": "0x10000000",
+        "attribute": "0x15c06"
+      },
+      {
+        "pc": "0xdfc",
+        "table": "0x8627c000",
+        "va_start": "0x10000000",
+        "va_end_exclusive": "0x20000000",
+        "attribute": "0x15c06"
+      },
+      {
+        "pc": "0xe2c",
+        "table": "0x8627c000",
+        "va_start": "0x20000000",
+        "va_end_exclusive": "0x30000000",
+        "attribute": "0x15c06"
+      },
+      {
+        "pc": "0xe5c",
+        "table": "0x8627c000",
+        "va_start": "0x30000000",
+        "va_end_exclusive": "0x40000000",
+        "attribute": "0x15c06"
+      },
+      {
+        "pc": "0xe8c",
+        "table": "0x8627c000",
+        "va_start": "0x40000000",
+        "va_end_exclusive": "0x50000000",
+        "attribute": "0x2002"
+      },
+      {
+        "pc": "0xebc",
+        "table": "0x8627c000",
+        "va_start": "0x50000000",
+        "va_end_exclusive": "0x60000000",
+        "attribute": "0x2002"
+      },
+      {
+        "pc": "0xeec",
+        "table": "0x8627c000",
+        "va_start": "0x60000000",
+        "va_end_exclusive": "0x70000000",
+        "attribute": "0x2002"
+      },
+      {
+        "pc": "0xf1c",
+        "table": "0x8627c000",
+        "va_start": "0x70000000",
+        "va_end_exclusive": "0x80000000",
+        "attribute": "0x2002"
+      },
+      {
+        "pc": "0xf4c",
+        "table": "0x8627c000",
+        "va_start": "0x80000000",
+        "va_end_exclusive": "0x90000000",
+        "attribute": "0x11c02"
+      },
+      {
+        "pc": "0xf7c",
+        "table": "0x8627c000",
+        "va_start": "0x90000000",
+        "va_end_exclusive": "0xa0000000",
+        "attribute": "0x11c02"
+      },
+      {
+        "pc": "0xfac",
+        "table": "0x8627c000",
+        "va_start": "0xa0000000",
+        "va_end_exclusive": "0xb0000000",
+        "attribute": "0x11c02"
+      },
+      {
+        "pc": "0xfdc",
+        "table": "0x8627c000",
+        "va_start": "0xb0000000",
+        "va_end_exclusive": "0xc0000000",
+        "attribute": "0x11c02"
+      },
+      {
+        "pc": "0x100c",
+        "table": "0x8627c000",
+        "va_start": "0xc0000000",
+        "va_end_exclusive": "0xd0000000",
+        "attribute": "0x11c02"
+      },
+      {
+        "pc": "0x103c",
+        "table": "0x8627c000",
+        "va_start": "0xd0000000",
+        "va_end_exclusive": "0xe0000000",
+        "attribute": "0x11c02"
+      },
+      {
+        "pc": "0x106c",
+        "table": "0x8627c000",
+        "va_start": "0xe0000000",
+        "va_end_exclusive": "0xf0000000",
+        "attribute": "0x11c02"
+      },
+      {
+        "pc": "0x109c",
+        "table": "0x8627c000",
+        "va_start": "0xf0000000",
+        "va_end_exclusive": "0x100000000",
+        "attribute": "0x11c02"
+      }
+    ]
+  },
+  "loader_cp15": {
+    "ttbr0": "86270000 + physical_core*4000, via original4b0",
+    "dacr": "ffffffff at4c0..4c4",
+    "enable": "SCTLR OR5 atfc..10c / 2bc..2c8",
+    "note": "Exact original cacheability attributes retained as raw descriptors; no claim all inherited SCTLR bits were reconstructed"
+  },
+  "conversion_table_address": "0x06ff11b0",
+  "conversion_table": [
+    {
+      "size": "0x40000000",
+      "field1": "0x0",
+      "field2": "0x0",
+      "field3": "0x80000000"
+    },
+    {
+      "size": "0x40000000",
+      "field1": "0x40000000",
+      "field2": "0xdead",
+      "field3": "0xc0000000"
+    },
+    {
+      "size": "0x0",
+      "field1": "0xdead",
+      "field2": "0xdead",
+      "field3": "0xdead"
+    },
+    {
+      "size": "0x0",
+      "field1": "0xdead",
+      "field2": "0xdead",
+      "field3": "0xdead"
+    }
+  ],
+  "conversion": "66808c6 sets source field1, destinationfield3;6680838..89c validates containing range and returns source offset plus destination base",
+  "second_bank": "[40000000,80000000) translates to [c0000000,100000000); field2 is deliberatelyDEAD/unavailable, not a low512MiB alias",
+  "snapshot": "/Users/lixiuqi/Documents/ChatGPT/\u76f8\u673a/s5-emulator/menu-smp/results/local-ui-mode35",
+  "addresses": [
+    {
+      "virtual": "0x7d159000",
+      "loader_descriptor": "0x7d102002",
+      "loader_physical": "0x7d159000",
+      "synthetic_descriptor": "0x7d100c02",
+      "synthetic_physical": "0x7d159000",
+      "current512MiB_backing_contains": false
+    },
+    {
+      "virtual": "0xfd159000",
+      "loader_descriptor": "0xfd111c02",
+      "loader_physical": "0xfd159000",
+      "synthetic_descriptor": "0xfd111c02",
+      "synthetic_physical": "0xfd159000",
+      "current512MiB_backing_contains": false
+    },
+    {
+      "virtual": "0x7fa91080",
+      "loader_descriptor": "0x7fa02002",
+      "loader_physical": "0x7fa91080",
+      "synthetic_descriptor": "0x7fa00c02",
+      "synthetic_physical": "0x7fa91080",
+      "current512MiB_backing_contains": false
+    },
+    {
+      "virtual": "0xffa91000",
+      "loader_descriptor": "0xffa11c02",
+      "loader_physical": "0xffa91000",
+      "synthetic_descriptor": "0xffa11c02",
+      "synthetic_physical": "0xffa91000",
+      "current512MiB_backing_contains": false
+    },
+    {
+      "virtual": "0x1d159000",
+      "loader_descriptor": "0x1d115c06",
+      "loader_physical": "0x1d159000",
+      "synthetic_descriptor": "0x1d111c02",
+      "synthetic_physical": "0x1d159000",
+      "current512MiB_backing_contains": true
+    },
+    {
+      "virtual": "0x9d159000",
+      "loader_descriptor": "0x9d111c02",
+      "loader_physical": "0x9d159000",
+      "synthetic_descriptor": "0x9d111c02",
+      "synthetic_physical": "0x9d159000",
+      "current512MiB_backing_contains": true
+    }
+  ],
+  "conclusion": "No VA-to-low512MiB translation in original loader. Explicit2GiB software backing with high80000000..ffffffff and low0..3fffffff aliases is consistent with these original address ranges, but physical camera DRAM capacity is unverified.",
+  "limits": [
+    "The helper's512MiB RAM backing cannot serviceffa91000 even though its identitysection descriptor exists",
+    "Do not mask with1fffffff: distinct original second-bank addresses would corrupt first-bank RAM",
+    "Do not map all40000000..7fffffff over existingMMIO",
+    "Static capacity/address-conversion declarations do not identify physical DRAM chips or prove all target apertures"
+  ],
+  "original_runtime_conversion_table_matches": true,
+  "fault_arena": {
+    "address": "0x09049728",
+    "words": [
+      "0x26",
+      "0x7d159000",
+      "0x2e87000",
+      "0x2",
+      "0x9049708",
+      "0x0",
+      "0x9049ad8",
+      "0x9049ad8"
+    ]
+  },
+  "allocation_descriptor": {
+    "address": "0x09051738",
+    "words": [
+      "0x1",
+      "0x7d159000",
+      "0x2938080",
+      "0x9049728",
+      "0x11",
+      "0x100",
+      "0x0",
+      "0x0"
+    ]
+  }
+}

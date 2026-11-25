@@ -1,0 +1,133 @@
+{
+  "scope": "Read-only original opcode and existing run comparison; no new firmware execution by this inspector",
+  "program": {
+    "path": "/Users/lixiuqi/Documents/ChatGPT/相机/s5-v29-offline/unpacked-v29/03_program.bin",
+    "sha256": "fc496d62a91f6e9b1b84807183bb805bc546c9105d2938546b58a66ad9d132fe"
+  },
+  "runs": [
+    {
+      "directory": "/Users/lixiuqi/Documents/ChatGPT/相机/s5-emulator/menu-smp/results/local-ui-loop",
+      "result_sha256": "ea8633cf3d7b7ccb123a24604ecfa692d605c05d913bc1f7cd26e021be9cf4ec",
+      "loop": {
+        "status": "original_receive_pending",
+        "messages_received": 2,
+        "messages_completed": 2,
+        "receive_errors": 0,
+        "postinit_672060c_executed_by_helper": false,
+        "postinit_65b9fcc_executed_by_helper": false,
+        "messages": [
+          {
+            "number": 1,
+            "words": [
+              "0x7f",
+              "0x4a",
+              "0x40001",
+              "0x8aab920",
+              "0x1"
+            ],
+            "iteration_completed": true,
+            "dispatch_return": "0x1"
+          },
+          {
+            "number": 2,
+            "words": [
+              "0x115",
+              "0x11d",
+              "0x2b",
+              "0x0",
+              "0x0"
+            ],
+            "iteration_completed": true,
+            "dispatch_return": "0x1"
+          }
+        ]
+      },
+      "graphics_draws": 4,
+      "graphics_swaps": 1,
+      "ram": {
+        "0x6318814": "11000000",
+        "0x8aa02ac": "00010000",
+        "0x8aa02e4": "010000000100000000000000000000000000000000000000000000000100000000000000000000000000000000000000",
+        "0x8a947d8": "000000000000000000000000000000000000000000000000d8eeb10800000000000000000000000000000000",
+        "0x8b1eecc": "000000000000000000000000",
+        "0x62efe00": "ffff0000ffff0000ffff0000ffff0000ffff00000000000000000000ffff0000"
+      },
+      "six_original_signed_counts": {
+        "0x62efe1c": -1,
+        "0x62efe00": -1,
+        "0x62efe08": -1,
+        "0x62efe10": -1,
+        "0x62efe04": -1,
+        "0x62efe0c": -1
+      }
+    },
+    {
+      "directory": "/Users/lixiuqi/Documents/ChatGPT/相机/s5-emulator/menu-smp/results/local-ui-loop-postinit",
+      "result_sha256": "bdaaced0eabbbf1593e01b13e47d256e5187c4bf325373a73cce7237c1de32f1",
+      "loop": {
+        "status": "original_receive_pending",
+        "messages_received": 2,
+        "messages_completed": 2,
+        "receive_errors": 0,
+        "postinit_672060c_executed_by_helper": true,
+        "postinit_65b9fcc_executed_by_helper": true,
+        "messages": [
+          {
+            "number": 1,
+            "words": [
+              "0x7f",
+              "0x4a",
+              "0x40001",
+              "0x8aab920",
+              "0x1"
+            ],
+            "iteration_completed": true,
+            "dispatch_return": "0x1"
+          },
+          {
+            "number": 2,
+            "words": [
+              "0x115",
+              "0x11d",
+              "0x2b",
+              "0x0",
+              "0x0"
+            ],
+            "iteration_completed": true,
+            "dispatch_return": "0x1"
+          }
+        ]
+      },
+      "graphics_draws": 4,
+      "graphics_swaps": 1,
+      "ram": {
+        "0x6318814": "11000000",
+        "0x8aa02ac": "00010001",
+        "0x8aa02e4": "010000000100000000000000000000000100000000000000000000000100000000000000000000000000000000000000",
+        "0x8a947d8": "000000000000000000000000000000000000000000000000d8eeb1080000000000000000e847a908ccbeb108",
+        "0x8b1eecc": "000000000000000000000000",
+        "0x62efe00": "ffff0000ffff0000ffff0000ffff0000ffff00000000000000000000ffff0000"
+      },
+      "six_original_signed_counts": {
+        "0x62efe1c": -1,
+        "0x62efe00": -1,
+        "0x62efe08": -1,
+        "0x62efe10": -1,
+        "0x62efe04": -1,
+        "0x62efe0c": -1
+      }
+    }
+  ],
+  "initialization": {
+    "672060c": "Calls675e6ec, returns0",
+    "675e6ec": "Convert0ccb1800 address; call66dde56(size20000); enable08aa02f4 via671f8ce(1)",
+    "65b9fcc": "IRQ-locked byte write08aa02af=1",
+    "66dde56_subsystem_evidence": {
+      "0x66de5e8": "[0x3F][vADRKIZU_Stop]",
+      "0x66de600": "[0x30][lADRKIZU_ExecCorrection] unField=%d, unExecDump=%d",
+      "0x66de8b8": "[0x3A][lADRKIZU_RenewPosData]"
+    },
+    "flag_consumer": "64a6588 combines08aa02e4 and08aa02f4; 66de17e copies/installs coordinate table; else66de1c2 disables correction",
+    "unproven": "No periodic UI/frame source activation has been demonstrated by these initialization returns"
+  }
+}

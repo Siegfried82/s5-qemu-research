@@ -1,0 +1,40 @@
+{
+  "scope": "Original static code only; no QEMU/model/guest change",
+  "program_sha256": "fc496d62a91f6e9b1b84807183bb805bc546c9105d2938546b58a66ad9d132fe",
+  "original_function": "0x6480756",
+  "state_source": "0x08ab4dd4, TBB on first word",
+  "sets": [
+    {
+      "block": "0x64807a6",
+      "reg7c0000e4": "0x1af",
+      "reg7c0000e8": "0x4e1",
+      "reg7c000134": "0x83d5f",
+      "product_plus_one": 540000
+    },
+    {
+      "block": "0x64807c2",
+      "reg7c0000e4": "0x18f",
+      "reg7c0000e8": "0x464",
+      "reg7c000134": "0x6ddcf",
+      "product_plus_one": 450000
+    },
+    {
+      "block": "0x64807e2",
+      "reg7c0000e4": "0x1ac",
+      "reg7c0000e8": "0x419",
+      "reg7c000134": "0x6df91",
+      "product_plus_one": 450450
+    }
+  ],
+  "identity": "(reg134+1)==(reg0e4+1)*(reg0e8+1)",
+  "other_observed_control": "Selected blocks set7c000080 to13/22/02 and RMW7c00010c bit10; semantics not established",
+  "interpretation": "Supports coupled two-dimensional period/count configuration; exact counter semantics and source clock unverified",
+  "unknown": [
+    "source frequency (27MHz would give50/60/59.94Hz but is only an assumption)",
+    "start/stop enable relationship",
+    "physical timing of11c bit0",
+    "device IRQ196 generation/ack/mask",
+    "device IRQ232 generation/ack/mask andef0 status bits"
+  ],
+  "automatic_model_supported": false
+}

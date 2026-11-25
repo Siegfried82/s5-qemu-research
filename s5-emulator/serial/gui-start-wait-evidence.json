@@ -1,0 +1,269 @@
+{
+  "scope": "Observed original GUI startup wait during explicit local scheduling experiment; no flags, messages, firmware or TCB patched",
+  "snapshot": "/Users/lixiuqi/Documents/ChatGPT/相机/s5-emulator/menu-smp/results/isolated-display-gradient/ram.bin",
+  "program_sha256": "fc496d62a91f6e9b1b84807183bb805bc546c9105d2938546b58a66ad9d132fe",
+  "postboot1_sha256": "e14b32e80c50d52e39edd6f7b725aba34b9f0a4ee12ad38987593f5cc8a8ec5f",
+  "graphics": {
+    "swaps": 1,
+    "draws": 4,
+    "normal_menu_verified": false,
+    "warmup": "Original7290030 creates and draws a4x4 path at72901ca..7290234; first swap alone is not a menu"
+  },
+  "ui_state": {
+    "base": "0x08a928b0",
+    "words": [
+      "0x0",
+      "0x0",
+      "0x0",
+      "0x6",
+      "0x1",
+      "0x0"
+    ],
+    "event_gate": "66beeec reads+0xc; when6,66beef0 branches to66bef1c, skipping normal state handler",
+    "state_zero_handler": "Table06a1aff4 entry0 points66bef53(BX LR); actual mode6 already skips that handler"
+  },
+  "mode_transition": {
+    "base": "0x8aa10fc",
+    "block_hex": "00000000000000000d00000000000000000100000000000001000000010000000100000002000000ff000000000000000000000000000000000000000000000000000000",
+    "stage": 2,
+    "requested_mode": 1,
+    "progress_address": "0x08cb0ee0",
+    "progress": "0x3c2",
+    "ack_address": "0x8aa1104",
+    "ack_value": "0xd",
+    "required": "0x0f",
+    "missing_bits": "0x2",
+    "poll_chain": [
+      "6475e5a BL66c138a",
+      "stage2 ->66c13b0 ->66c0718",
+      "step3c2 ->66c082e ->66c0964",
+      "66c0966 CMP ack,#0xf",
+      "not equal ->66c095a storesstep3c2,returns0"
+    ],
+    "original_ack_handler": "64758d2 compares messagecode0x36;64759aa calls66c142c(2),which ORs byte[08aa1104]"
+  },
+  "pending_original_request": {
+    "queue_id": "0x76",
+    "object": "0x8e1a08c",
+    "object_words": [
+      "0x0",
+      "0x38",
+      "0x9aec448",
+      "0x9aec448",
+      "0x1",
+      "0x0",
+      "0x1",
+      "0x0",
+      "0x0"
+    ],
+    "buffer": "0x9aec448",
+    "envelope": "0x99cab3c",
+    "message_words": [
+      "0x115",
+      "0x11d",
+      "0x36",
+      "0x1",
+      "0x0"
+    ],
+    "envelope_fields": [
+      "replyqueue0x115",
+      "source0x11d",
+      "code0x36",
+      "mode1",
+      "payloadsize0"
+    ],
+    "producer": "66c1778(mode1) ->66c17d0 BL67ea590; targetqueue0x76,replyqueue0x115,code0x36",
+    "consumer": "task66 entry675ef84 calls676ede0 before675efc2 queue_receive; queueID global06f49a28 is0x76"
+  },
+  "tasks": [
+    {
+      "address": "0x8e03ad4",
+      "id": "0x42",
+      "run_count": "0x15c",
+      "saved_sp": "0x9acee48",
+      "priority": "0x38",
+      "cpu": "0x0",
+      "entry": "0x675ef85",
+      "state": "0x2",
+      "wait_type": "0x0",
+      "wait_object_id": "0x0",
+      "wait_object": "0x0",
+      "timeout": "0x0",
+      "stack_original_code_candidates": [
+        {
+          "stack_address": "0x9acef88",
+          "value": "0x655197b"
+        },
+        {
+          "stack_address": "0x9acefac",
+          "value": "0x657bb9d"
+        },
+        {
+          "stack_address": "0x9aceffc",
+          "value": "0x65850fb"
+        },
+        {
+          "stack_address": "0x9acf004",
+          "value": "0x65c593b"
+        },
+        {
+          "stack_address": "0x9acf00c",
+          "value": "0x676ee29"
+        },
+        {
+          "stack_address": "0x9acf014",
+          "value": "0x675efb3"
+        },
+        {
+          "stack_address": "0x9acf018",
+          "value": "0x675ef85"
+        },
+        {
+          "stack_address": "0x9acf024",
+          "value": "0x653a231"
+        }
+      ]
+    },
+    {
+      "address": "0x8dffe14",
+      "id": "0x12",
+      "run_count": "0x7493",
+      "saved_sp": "0x99ce918",
+      "priority": "0x6c",
+      "cpu": "0x0",
+      "entry": "0x647e83f",
+      "state": "0x2",
+      "wait_type": "0x0",
+      "wait_object_id": "0x0",
+      "wait_object": "0x0",
+      "timeout": "0x0",
+      "stack_original_code_candidates": [
+        {
+          "stack_address": "0x99cea04",
+          "value": "0x66c246b"
+        },
+        {
+          "stack_address": "0x99cea1c",
+          "value": "0x647dd1f"
+        },
+        {
+          "stack_address": "0x99cea24",
+          "value": "0x647e3ab"
+        },
+        {
+          "stack_address": "0x99cea3c",
+          "value": "0x647e3fb"
+        },
+        {
+          "stack_address": "0x99cea4c",
+          "value": "0x647e91f"
+        },
+        {
+          "stack_address": "0x99cea54",
+          "value": "0x653a231"
+        }
+      ]
+    },
+    {
+      "address": "0x8e13d04",
+      "id": "0x10e",
+      "run_count": "0x8",
+      "saved_sp": "0x9ff51d0",
+      "priority": "0xb6",
+      "cpu": "0x2",
+      "entry": "0x727cf9d",
+      "state": "0x4",
+      "wait_type": "0x20",
+      "wait_object_id": "0x101",
+      "wait_object": "0x8e1b418",
+      "timeout": "0xffffffff",
+      "stack_original_code_candidates": [
+        {
+          "stack_address": "0x9ff52bc",
+          "value": "0x6722de1"
+        },
+        {
+          "stack_address": "0x9ff52e4",
+          "value": "0x67ea6a1"
+        },
+        {
+          "stack_address": "0x9ff52fc",
+          "value": "0x727cfdf"
+        }
+      ]
+    },
+    {
+      "address": "0x8e15000",
+      "id": "0x11d",
+      "run_count": "0xd5a",
+      "saved_sp": "0xa03de30",
+      "priority": "0x8e",
+      "cpu": "0x2",
+      "entry": "0x6475dd5",
+      "state": "0x4",
+      "wait_type": "0x20",
+      "wait_object_id": "0x115",
+      "wait_object": "0x8e1b6e8",
+      "timeout": "0xffffffff",
+      "stack_original_code_candidates": [
+        {
+          "stack_address": "0xa03df1c",
+          "value": "0x6722de1"
+        },
+        {
+          "stack_address": "0xa03df44",
+          "value": "0x67ea6a1"
+        },
+        {
+          "stack_address": "0xa03df5c",
+          "value": "0x6475df5"
+        }
+      ]
+    }
+  ],
+  "display_isolation": {
+    "scope": "Local scheduling experiment, not a completed original boot",
+    "method": "Call original dly_tsk-like API for 60000 ticks at task66's peer wait; no TCB/event/firmware instruction patch",
+    "delay_entry": "0x66c23e8",
+    "calls": [
+      {
+        "cpu": 0,
+        "tcb": "0x8e03ad4",
+        "task_id": 66,
+        "pc": "0x65491ee",
+        "guards": {
+          "0x8ab4e80": 0,
+          "0x8ab4e7c": 0,
+          "0x8ab4e68": 0,
+          "0x209c0": 0
+        },
+        "saved_core_registers": {
+          "r0": "0x1",
+          "r1": "0x7c14071c",
+          "r2": "0x9acef74",
+          "r3": "0x6a3d918",
+          "r4": "0x7b004000",
+          "r5": "0x62e4e74",
+          "r6": "0x62e4e72",
+          "r7": "0x62e4e76",
+          "r8": "0x62e4e70",
+          "r9": "0x62e4e44",
+          "r10": "0x62e4e6e",
+          "r11": "0x62e4e42",
+          "r12": "0x20000",
+          "r13": "0x9acef90",
+          "r14": "0x655197b",
+          "r15": "0x65491ee",
+          "cpsr": "0x20000133"
+        },
+        "requested_ticks": 60000,
+        "returned": true,
+        "return_value": "0x0",
+        "cpu_at_return": 0
+      }
+    ]
+  },
+  "conclusion": "The unsupported coprocessor initialization in task66 prevents the queued original mode request from being consumed. Current GUI progress remains3c2 and lacks originalackbit2. Localdelay does not complete that dependency.",
+  "linux_causality": "No Linux dependency is needed to explain this observed gating. CPU3 was explicitly parked in this snapshot; this report does not establish that later menu features are independent of Linux.",
+  "next_evidence": "Complete/execute the real peer or retain this as a partial experiment; observe original675efc2 consumption,64759aa acknowledgement,66c096a progress and a normal rendered frame. Do not synthesize their completion."
+}

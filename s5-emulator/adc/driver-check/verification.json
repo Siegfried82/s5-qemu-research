@@ -1,0 +1,428 @@
+{
+  "original_program_sha256": "fc496d62a91f6e9b1b84807183bb805bc546c9105d2938546b58a66ad9d132fe",
+  "rw_source": {
+    "address": "0x070879b8",
+    "destination": "0x08a67000",
+    "bytes": 348068,
+    "sha256": "a7eb78773ba35ed188deeb363d6cdaffa0163d3c64a53a9354e64964960f9edf"
+  },
+  "original_adc_instructions_patched": false,
+  "irqs_injected": false,
+  "scope": "Isolated original ADC function; semaphore25 acquire/release only are host substitutes; no battery/main decision branches executed",
+  "cases": [
+    {
+      "channel": 11,
+      "count": 1,
+      "r0": 1,
+      "output_halfwords": [
+        0,
+        43981,
+        43981,
+        43981,
+        43981,
+        43981,
+        43981,
+        43981,
+        43981,
+        43981,
+        43981,
+        43981,
+        43981,
+        43981,
+        43981,
+        43981
+      ],
+      "semaphore_substitutions": [
+        {
+          "pc": "0x66c23ac",
+          "id": 25
+        },
+        {
+          "pc": "0x66c2558",
+          "id": 25
+        }
+      ],
+      "returned_to_original_lr": true,
+      "stack_preserved": true,
+      "profile": "zero",
+      "external_raw_adc11": 0,
+      "expected_halfwords": [
+        0
+      ],
+      "passed": true
+    },
+    {
+      "channel": 11,
+      "count": 0,
+      "r0": 1,
+      "output_halfwords": [
+        0,
+        43981,
+        43981,
+        43981,
+        43981,
+        43981,
+        43981,
+        43981,
+        43981,
+        43981,
+        43981,
+        43981,
+        43981,
+        43981,
+        43981,
+        43981
+      ],
+      "semaphore_substitutions": [
+        {
+          "pc": "0x66c23ac",
+          "id": 25
+        },
+        {
+          "pc": "0x66c2558",
+          "id": 25
+        }
+      ],
+      "returned_to_original_lr": true,
+      "stack_preserved": true,
+      "profile": "zero",
+      "external_raw_adc11": 0,
+      "expected_halfwords": [
+        0
+      ],
+      "passed": true
+    },
+    {
+      "channel": 10,
+      "count": 2,
+      "r0": 1,
+      "output_halfwords": [
+        0,
+        0,
+        43981,
+        43981,
+        43981,
+        43981,
+        43981,
+        43981,
+        43981,
+        43981,
+        43981,
+        43981,
+        43981,
+        43981,
+        43981,
+        43981
+      ],
+      "semaphore_substitutions": [
+        {
+          "pc": "0x66c23ac",
+          "id": 25
+        },
+        {
+          "pc": "0x66c2558",
+          "id": 25
+        }
+      ],
+      "returned_to_original_lr": true,
+      "stack_preserved": true,
+      "profile": "zero",
+      "external_raw_adc11": 0,
+      "expected_halfwords": [
+        0,
+        0
+      ],
+      "passed": true
+    },
+    {
+      "channel": 20,
+      "count": 1,
+      "r0": 1,
+      "output_halfwords": [
+        0,
+        43981,
+        43981,
+        43981,
+        43981,
+        43981,
+        43981,
+        43981,
+        43981,
+        43981,
+        43981,
+        43981,
+        43981,
+        43981,
+        43981,
+        43981
+      ],
+      "semaphore_substitutions": [
+        {
+          "pc": "0x66c23ac",
+          "id": 25
+        },
+        {
+          "pc": "0x66c2558",
+          "id": 25
+        }
+      ],
+      "returned_to_original_lr": true,
+      "stack_preserved": true,
+      "profile": "zero",
+      "external_raw_adc11": 0,
+      "expected_halfwords": [
+        0
+      ],
+      "passed": true
+    },
+    {
+      "channel": 30,
+      "count": 1,
+      "r0": 1,
+      "output_halfwords": [
+        0,
+        43981,
+        43981,
+        43981,
+        43981,
+        43981,
+        43981,
+        43981,
+        43981,
+        43981,
+        43981,
+        43981,
+        43981,
+        43981,
+        43981,
+        43981
+      ],
+      "semaphore_substitutions": [
+        {
+          "pc": "0x66c23ac",
+          "id": 25
+        },
+        {
+          "pc": "0x66c2558",
+          "id": 25
+        }
+      ],
+      "returned_to_original_lr": true,
+      "stack_preserved": true,
+      "profile": "zero",
+      "external_raw_adc11": 0,
+      "expected_halfwords": [
+        0
+      ],
+      "passed": true
+    },
+    {
+      "channel": 11,
+      "count": 1,
+      "r0": 1,
+      "output_halfwords": [
+        768,
+        43981,
+        43981,
+        43981,
+        43981,
+        43981,
+        43981,
+        43981,
+        43981,
+        43981,
+        43981,
+        43981,
+        43981,
+        43981,
+        43981,
+        43981
+      ],
+      "semaphore_substitutions": [
+        {
+          "pc": "0x66c23ac",
+          "id": 25
+        },
+        {
+          "pc": "0x66c2558",
+          "id": 25
+        }
+      ],
+      "returned_to_original_lr": true,
+      "stack_preserved": true,
+      "profile": "raw_0x300",
+      "external_raw_adc11": 768,
+      "expected_halfwords": [
+        768
+      ],
+      "passed": true
+    },
+    {
+      "channel": 11,
+      "count": 0,
+      "r0": 1,
+      "output_halfwords": [
+        768,
+        43981,
+        43981,
+        43981,
+        43981,
+        43981,
+        43981,
+        43981,
+        43981,
+        43981,
+        43981,
+        43981,
+        43981,
+        43981,
+        43981,
+        43981
+      ],
+      "semaphore_substitutions": [
+        {
+          "pc": "0x66c23ac",
+          "id": 25
+        },
+        {
+          "pc": "0x66c2558",
+          "id": 25
+        }
+      ],
+      "returned_to_original_lr": true,
+      "stack_preserved": true,
+      "profile": "raw_0x300",
+      "external_raw_adc11": 768,
+      "expected_halfwords": [
+        768
+      ],
+      "passed": true
+    },
+    {
+      "channel": 10,
+      "count": 2,
+      "r0": 1,
+      "output_halfwords": [
+        0,
+        768,
+        43981,
+        43981,
+        43981,
+        43981,
+        43981,
+        43981,
+        43981,
+        43981,
+        43981,
+        43981,
+        43981,
+        43981,
+        43981,
+        43981
+      ],
+      "semaphore_substitutions": [
+        {
+          "pc": "0x66c23ac",
+          "id": 25
+        },
+        {
+          "pc": "0x66c2558",
+          "id": 25
+        }
+      ],
+      "returned_to_original_lr": true,
+      "stack_preserved": true,
+      "profile": "raw_0x300",
+      "external_raw_adc11": 768,
+      "expected_halfwords": [
+        0,
+        768
+      ],
+      "passed": true
+    },
+    {
+      "channel": 20,
+      "count": 1,
+      "r0": 1,
+      "output_halfwords": [
+        0,
+        43981,
+        43981,
+        43981,
+        43981,
+        43981,
+        43981,
+        43981,
+        43981,
+        43981,
+        43981,
+        43981,
+        43981,
+        43981,
+        43981,
+        43981
+      ],
+      "semaphore_substitutions": [
+        {
+          "pc": "0x66c23ac",
+          "id": 25
+        },
+        {
+          "pc": "0x66c2558",
+          "id": 25
+        }
+      ],
+      "returned_to_original_lr": true,
+      "stack_preserved": true,
+      "profile": "raw_0x300",
+      "external_raw_adc11": 768,
+      "expected_halfwords": [
+        0
+      ],
+      "passed": true
+    },
+    {
+      "channel": 30,
+      "count": 1,
+      "r0": 1,
+      "output_halfwords": [
+        0,
+        43981,
+        43981,
+        43981,
+        43981,
+        43981,
+        43981,
+        43981,
+        43981,
+        43981,
+        43981,
+        43981,
+        43981,
+        43981,
+        43981,
+        43981
+      ],
+      "semaphore_substitutions": [
+        {
+          "pc": "0x66c23ac",
+          "id": 25
+        },
+        {
+          "pc": "0x66c2558",
+          "id": 25
+        }
+      ],
+      "returned_to_original_lr": true,
+      "stack_preserved": true,
+      "profile": "raw_0x300",
+      "external_raw_adc11": 768,
+      "expected_halfwords": [
+        0
+      ],
+      "passed": true
+    }
+  ],
+  "passed": true,
+  "qemu_sha256": "31b523f53ddf268ec9209ade0c27734525078c7ce8acc611aa8c2198a637cc42"
+}

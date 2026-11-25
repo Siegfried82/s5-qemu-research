@@ -1,0 +1,92 @@
+{
+  "scope": "Original status write/read/gate code, synthetic source words; no fake event, component completion or scene",
+  "source_sha256": "fc496d62a91f6e9b1b84807183bb805bc546c9105d2938546b58a66ad9d132fe",
+  "qemu_sha256": "dab0f1a17045b8ecd64985a7a22233c7bdead0cf7610bfb6f62f7af0ec27fcb5",
+  "checks": [
+    "initial zero does not satisfy original scene-mask2 gate",
+    {
+      "writer_cpu": 2,
+      "reader_cpu": 0,
+      "exact_words": [
+        305419896,
+        2596069104,
+        2,
+        2271560481
+      ],
+      "original_gates_checked": [
+        2,
+        4,
+        8,
+        10
+      ]
+    },
+    {
+      "writer_cpu": 1,
+      "reader_cpu": 2,
+      "exact_words": [
+        4294967295,
+        0,
+        8,
+        324508639
+      ],
+      "original_gates_checked": [
+        2,
+        4,
+        8,
+        10
+      ]
+    },
+    {
+      "writer_cpu": 0,
+      "reader_cpu": 1,
+      "exact_words": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "original_gates_checked": [
+        2,
+        4,
+        8,
+        10
+      ]
+    },
+    "adjacent51f0 remains unmodeled and does not alter retained words"
+  ],
+  "final_state": {
+    "scope": "four guest-owned software status words; no automatic ready bits",
+    "base": "0x7c0151f4",
+    "initial_value": 0,
+    "automatic_completion": false,
+    "irq_or_event_generated": false,
+    "adjacent_reset_command_modeled": false,
+    "registers": [
+      {
+        "address": "0x7c0151f4",
+        "value": 0,
+        "reads": 16,
+        "writes": 3
+      },
+      {
+        "address": "0x7c0151f8",
+        "value": 0,
+        "reads": 16,
+        "writes": 3
+      },
+      {
+        "address": "0x7c0151fc",
+        "value": 0,
+        "reads": 16,
+        "writes": 3
+      },
+      {
+        "address": "0x7c015200",
+        "value": 0,
+        "reads": 16,
+        "writes": 3
+      }
+    ]
+  },
+  "passed": true
+}

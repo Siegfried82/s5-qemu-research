@@ -1,0 +1,91 @@
+S5 V2.9 original Linux boot analysis
+
+Verified input zImage SHA-256:
+72b6633d7f20009c5067af6faa5549d52a581c4a55915695e616d666220f7ef0
+Extracted raw kernel SHA-256:
+84f99f8b9d4200a30fe2968e8a3fa29aea6d00aa90c153929e399208d1d3048a
+
+Static findings (recorded before the later QEMU execution below)
+- ARM Linux 3.18.18, SMP, build date 2025-06-12.
+- The original DTB declares panasonic,pvc03v and arm,cortex-a7 at physical CPU ID 3.
+- RAM declared to Linux: 0x80200000, length 0x02f00000.
+- Raw kernel load address 0x80208000, linked VA 0xc0008000.
+- Linear VA-to-PA delta: subtract 0x3fe00000.
+- Rootfs1 at 0x83100000, length 0x00300000; rootfs2 at 0x83400000, length 0x00a00000.
+- Original root mount uses slram and /dev/mtdblock0. SquashFS and LZO support are present.
+- Initramfs functions unpack_to_rootfs, populate_rootfs and initrd_load are present.
+- Script and ELF loading functions are present. No ext2_* functions were found.
+- No embedded IKCONFIG marker was found.
+
+Early board accesses
+- pvc_map_io at 0xc0453194 installs three static maps:
+  VA 0xfe001000 -> PA 0x7f038000, size 0x1000, type 0.
+  VA 0xfe000000 -> PA 0x80200000, size 0x1000, type 0.
+  VA 0xfe002000 -> PA 0x00060000, size 0x2000, type 17.
+- pvc_init_early at 0xc0453170 writes PA 0x7f03807c=3 and PA 0x7f038078=15.
+- pvc_smp_prepare_cpus at 0xc04531a4 writes PA 0x80200000=0x80217168.
+- Providing plain RAM for an unknown register block is a diagnostic approximation,
+  not a validated peripheral model.
+
+GIC startup constraint
+- DTB has GIC distributor at 0x70001000 and CPU interface at 0x70002000,
+  with cpu-offset=0x8000 and physical CPU node ID 3.
+- A single simulated CPU0 requires a derived DTB with CPU ID 0 and cpu-offset=0,
+  or equivalent correct CPU/GIC aliasing.
+- This kernel's gic_init_bases does not contain standard distributor initialization.
+  It selects SPIs whose existing ITARGETSR bits already include the current CPU.
+- No direct BL to gic_dist_config was found in the raw kernel. Cold-reset QEMU
+  GIC state may therefore require explicit distributor enable and SPI target setup.
+- A test boot stub can set GICD_CTLR=1, route SPIs to CPU0 mask 1 and initialize
+  priorities, but these values are reconstructed bootloader assumptions.
+- SP804 timer at 0x7f02a000, interrupts 24/25 in DTB (GIC IDs 56/57).
+- UART PL011 at 0x7f050000, DTB SPI53 (GIC ID85).
+
+Console limitation and useful workaround
+- DTB contains the PL011 UART, but raw kernel has no pl011/uart/serial symbols
+  and no ttyAMA/pl011 strings. No corresponding module was found in rootfs lists.
+- dummycon, VT and PTY support are present. Serial silence is not proof of no boot.
+- Read actual printk records from a paused RAM snapshot using read_kmsg.py.
+- The script validates the expected kernel banner and log metadata and rejects
+  inconsistent record layouts; it does not synthesize boot messages.
+- A small ARM static init in a supplied initramfs can open /dev/kmsg, redirect
+  stdout/stderr, mount the original rootfs, then exec original userland commands.
+  This is a useful research harness, not the original camera startup procedure.
+
+Reproduction
+python3 s5-emulator/analysis/inspect_kernel.py
+python3 s5-emulator/analysis/read_kmsg.py /absolute/path/ram.bin --ram-base 0x80200000
+
+Generated symbol table has 28,401 entries, with token index and all name markers
+checked against the raw kernel. read_kmsg decoding was exercised with in-memory
+synthetic linear and wrapped records, and inconsistent cursors were rejected.
+At the initial static-analysis stage no QEMU boot had yet been performed.
+The following later execution evidence supersedes that initial status.
+
+Actual QEMU execution evidence, 2026-11-24
+- The root worker executed the original Linux kernel in the custom S5 QEMU machine.
+- results/boot-first/ram.bin was inspected by this analysis worker; the corrected
+  read_kmsg.py parsed 220 surviving kernel log records, including successful
+  read-only root SquashFS mount and attempted original cpu_iccdrv/icsm modules.
+- The live snapshot exposed a static-analysis mistake: the earlier proposed
+  first-index/sequence addresses were clear_idx/clear_seq. The parser now uses
+  log_first_idx at PA0x806aaa30 and log_first_seq at PA0x806aaa28.
+- irq_to_desc at VA0xc004d374 explicitly limits IRQs to 448 (0x1c0).
+  A 512-IRQ GIC caused warnings; the machine configuration was corrected.
+- results/userspace-first/kernel.log was directly inspected and contains:
+  S5LAB_BEGIN, S5LAB_ROOTFS_MOUNTED, original /bin/cat /proc/version output,
+  original /bin/ls / output, bash=3.2.57(1)-release and
+  S5LAB_END status=0x00000000.
+- This uses the new userspace/init.S initramfs harness and executes original
+  Linux userland. It does not establish original camera main-program startup,
+  menus, capture, image processing, or physical-device compatibility.
+
+Final command-harness checks
+- results/final-check/demo/result.json: original shell command completed, exit 0.
+- results/final-check/long-output/result.json: 4138 output bytes total, including
+  the 4097-byte single-write case plus marker-like text; no truncation/panic.
+- results/final-check/exit7/result.json: raw wait status 1792, decoded exit code 7.
+- results/final-check/timeout/result.json: marker-like output did not produce a
+  false completion; the infinite loop timed out.
+- Current harness transports stdout/stderr through a pipe and hexadecimal
+  records of at most 384 source bytes, with a per-run marker token.

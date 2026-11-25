@@ -1,0 +1,300 @@
+{
+  "scope": "Original bytes and saved RAM only; no queue receive, ACK, flag, display signal or firmware mutation in this analysis",
+  "snapshot": "/Users/lixiuqi/Documents/ChatGPT/相机/s5-emulator/menu-smp/results/local-ui-service-first",
+  "program_sha256": "fc496d62a91f6e9b1b84807183bb805bc546c9105d2938546b58a66ad9d132fe",
+  "previous_actual_service": {
+    "scope": "One original queued mode1 service call before DSP init completes; function-level local execution experiment",
+    "status": "original_request_serviced_wait_restored",
+    "original_instructions_modified": false,
+    "dsp_ready_or_magic_written": false,
+    "ui_or_tcb_fields_written": false,
+    "message_fields_synthesized": false,
+    "original_wait_restored": true,
+    "dsp_initialization_completed": false,
+    "menu_opened_verified": false,
+    "events": [
+      {
+        "pc": "0x67ea6cc",
+        "cpu": 0,
+        "r0_r2": [
+          "0x6",
+          "0x99caac4",
+          "0xfffffff4"
+        ],
+        "kind": "original_pool6_release"
+      },
+      {
+        "pc": "0x67ea6d0",
+        "cpu": 0,
+        "r0_r2": [
+          "0x0",
+          "0x20940",
+          "0x0"
+        ],
+        "kind": "original_pool6_release_return"
+      },
+      {
+        "pc": "0x653b7e6",
+        "cpu": 0,
+        "r0_r2": [
+          "0xa603680",
+          "0xffffffff",
+          "0x0"
+        ],
+        "kind": "original_mode1_handler"
+      },
+      {
+        "pc": "0x6759710",
+        "cpu": 0,
+        "r0_r2": [
+          "0x36",
+          "0x1",
+          "0x0"
+        ],
+        "kind": "original_ack_helper"
+      },
+      {
+        "pc": "0x6759766",
+        "cpu": 0,
+        "r0_r2": [
+          "0x0",
+          "0x20940",
+          "0x0"
+        ],
+        "kind": "original_ack_enqueue_return"
+      }
+    ],
+    "guards": {
+      "cpu": 0,
+      "tcb": "0x8e03ad4",
+      "task_id": 66,
+      "cpsr": "0x20000133",
+      "sp": "0x9acef90",
+      "call_sp": "0x9acef90",
+      "stack_start": "0x9acca48",
+      "stack_end": "0x9acf047",
+      "globals": {
+        "0x8ab4e80": 0,
+        "0x8ab4e7c": 0,
+        "0x8ab4e68": 0,
+        "0x209c0": 0
+      }
+    },
+    "original_route_globals": {
+      "0x6f49a28": "0x76",
+      "0x6f492b0": "0x11d",
+      "0x6f49c64": "0x115",
+      "0x6f48f88": "0x42"
+    },
+    "queue_before": {
+      "object": "0x8e1a08c",
+      "capacity": 56,
+      "count": 1,
+      "read_index": 0,
+      "write_index": 1,
+      "slot": "0x9aec448",
+      "envelope": "0x99caac4",
+      "words": [
+        "0x115",
+        "0x11d",
+        "0x36",
+        "0x1",
+        "0x0"
+      ],
+      "waiting_senders": 0,
+      "pool6_object": "0x8e1c2cc",
+      "envelope_pool_prefix": "0x8e1c2cc"
+    },
+    "register_xml_sha256": {
+      "arm-core.xml": "4308fe5a521f0949ac64a3a2f04dce41bdbff68ef243f01b7e2bd078c49f95bf",
+      "arm-neon.xml": "367c88c18bd9ee5978a3582f945405d8b656f89e5b47a52f5186ff38e3cfec7e",
+      "arm-vfp-sysregs.xml": "87b5a22be1f19a18f884f9afa854801da153437c6e17396d241348d9660beae0"
+    },
+    "fp_register_numbers": {
+      "d0": 26,
+      "d1": 27,
+      "d2": 28,
+      "d3": 29,
+      "d4": 30,
+      "d5": 31,
+      "d6": 32,
+      "d7": 33,
+      "d8": 34,
+      "d9": 35,
+      "d10": 36,
+      "d11": 37,
+      "d12": 38,
+      "d13": 39,
+      "d14": 40,
+      "d15": 41,
+      "d16": 42,
+      "d17": 43,
+      "d18": 44,
+      "d19": 45,
+      "d20": 46,
+      "d21": 47,
+      "d22": 48,
+      "d23": 49,
+      "d24": 50,
+      "d25": 51,
+      "d26": 52,
+      "d27": 53,
+      "d28": 54,
+      "d29": 55,
+      "d30": 56,
+      "d31": 57,
+      "fpscr": 74,
+      "fpexc": 76,
+      "fpsid": 75
+    },
+    "register_packet_bytes": 68,
+    "independent_fp_registers": 35,
+    "message_buffer": "0xa603680",
+    "timeout_argument": 0,
+    "stack_alignment_adjustment": 0,
+    "message_buffer_before_hex": "0000000000000000000000000000000000000000",
+    "original_pool_release_call": true,
+    "original_pool_release_returned": true,
+    "pool_release_return": "0x0",
+    "receive_return": "0x0",
+    "received_words": [
+      "0x115",
+      "0x11d",
+      "0x36",
+      "0x1",
+      "0x0"
+    ],
+    "queue_count_after_receive": 0,
+    "ack_ring_pointer": "0x8e9f518",
+    "ack_words": [
+      "0x76",
+      "0x42",
+      "0x36",
+      "0x0",
+      "0x1"
+    ],
+    "ack_send_return": "0x0",
+    "dispatch_return": "0x1",
+    "fp_registers_restored": true,
+    "live_stack_unchanged": true,
+    "original_request_consumed": true,
+    "original_ack_enqueued": true,
+    "closed": true,
+    "unsafe_to_force_context_restore": false
+  },
+  "ui": {
+    "state": 1,
+    "mode": 1,
+    "step": "0x436",
+    "transition_stage": 2,
+    "control_base": "0x08aa10fc",
+    "control_hex": "000000000000000dff00000000000000000100000000000001000000010000000100000002000000ff000000000000000000000000000000000000000000000000000000",
+    "previous_ack_08aa1104": "0xff",
+    "current_ack_08aa1103": "0xd",
+    "required_current_ack": "0x0f",
+    "missing_current_bits": "0x2"
+  },
+  "exact_wait_chain": [
+    "066c0788 compares(step-0x3c2) to0x74; step0x436 jumps066c085e ->066c0a54",
+    "066c0a54 LDRB r0,[r5,#7],r5=08aa10fc;066c0a56 CMP r0,#0xf",
+    "Mismatch ->066c0a4e storesstep0x436 via066c07e8,returns0",
+    "The tested byte is08aa1103,not previous-stage08aa1104"
+  ],
+  "ack_producer_and_consumer": {
+    "request_producer": "066c03c8..066c03e0 calls original67ea590(queue76,reply115,source11d,code35,mode1,size0)",
+    "original_ack_consumer": "064758ae compares messagecode35 ->064759b2 loads2 ->064759b4 BL066c1436",
+    "writer": "066c1436 ORs r0 into byte[08aa10fc+7]",
+    "other_bit": "066be25e calls066c1436(1); observedmask0xd already contains that bit"
+  },
+  "queue76": {
+    "object": "0x8e1a08c",
+    "capacity": 56,
+    "array": "0x9aec448",
+    "read_index": 1,
+    "count": 2,
+    "waiting_senders": 0,
+    "messages": [
+      {
+        "slot": "0x9aec44c",
+        "envelope": "0x99cab24",
+        "words": [
+          "0x115",
+          "0x11d",
+          "0x35",
+          "0x1",
+          "0x0"
+        ]
+      },
+      {
+        "slot": "0x9aec450",
+        "envelope": "0x99caaf4",
+        "words": [
+          "0x115",
+          "0x11d",
+          "0x2b",
+          "0x0",
+          "0x0"
+        ]
+      }
+    ]
+  },
+  "command35": {
+    "tbb_byte_address": "0x675ebdd",
+    "tbb_byte": 108,
+    "tbb_target": "0x675ec80",
+    "handler": "0x0653b86c",
+    "flag_08a9da70": 0,
+    "previous_mode_08aa0e10": "0xff",
+    "actual_selected_path": "flag0,mode1,previousff ->0653b8ae BL066d04dc(ff); then0653b8b4 BL067361a8(0); then original STR mode1 to08aa0e10",
+    "direct_ack_condition": "flag!=0 OR mode!=1 OR previousmode==1; none holds in this saved snapshot",
+    "does_not_equal_command36": "Unlike command36, this selected path starts a substantial control sequence; no unconditional immediateACK contract",
+    "ready_bytes_08ab09e0": "0101",
+    "objects": [
+      {
+        "address": "0x9003cf8",
+        "vtable": "0x6fb4034",
+        "get_child": "0x679f7e1",
+        "child": "0x9047c50",
+        "child_vtable": "0x6fb4078",
+        "child_method_48": "0x67a0fd1"
+      },
+      {
+        "address": "0x9003d8c",
+        "vtable": "0x6fb4034",
+        "get_child": "0x679f7e1",
+        "child": "0x9047e28",
+        "child_vtable": "0x6fb4078",
+        "child_method_48": "0x67a0fd1"
+      }
+    ],
+    "control_state_08aac2e4": [
+      "0x0",
+      "0x2",
+      "0x0",
+      "0x0",
+      "0x0",
+      "0x0",
+      "0x0",
+      "0x10000",
+      "0x0",
+      "0x0",
+      "0x0",
+      "0x0"
+    ],
+    "next_state_08aaa780": "0x1",
+    "control_dependencies": [
+      "066d04dc obtains two original objects via6608846/66088c0; calls child vtable+48 ->067a0fd0",
+      "066d0548/0554 register original callback0648d793 through648b08e for pipelines0/1",
+      "066d05ac sends originalcode40001 through6759778;066d05de sets its own controllerstate2",
+      "Original further calls include676a65c,6730b7a,671f846,674b9bc,673626c,6500c42,65c2a34,67866fe,66d1d1e,671fbb2",
+      "These are not a proved dependency-free ACK stub; downstream hardware/peer dependencies remain to be observed"
+    ],
+    "diagnostic_contract": "ui_service_probe.py command35 verifies the exact head and these original object/state guards, executes originalreceive/dispatch under2s stage deadlines, and only reports handler_returned_ack_pending if originaldispatchreturns1 without synchronousACK"
+  },
+  "independent_lcd_wait": {
+    "state_08ab488c": 1,
+    "avio_08a9c7f8": 0,
+    "evidence": "display-clock-evidence.json"
+  },
+  "conclusion": "The direct step0x436 condition is a second software acknowledgement byte missingbit2, with the actualcode35 request still queued for task66. This is not evidence that the step directly reads or waits for the LCD completion word. LCD synchronization is independently incomplete; later code35 processing may introduce display/hardware dependencies."
+}

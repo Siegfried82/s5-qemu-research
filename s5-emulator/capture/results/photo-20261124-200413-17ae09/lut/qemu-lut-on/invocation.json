@@ -1,0 +1,55 @@
+{
+  "argv": [
+    "/Users/lixiuqi/Documents/ChatGPT/\u76f8\u673a/s5-emulator/toolchain/build/qemu-system-arm",
+    "-M",
+    "none",
+    "-cpu",
+    "cortex-a7",
+    "-m",
+    "3G",
+    "-S",
+    "-accel",
+    "tcg,thread=single",
+    "-display",
+    "none",
+    "-monitor",
+    "none",
+    "-serial",
+    "none",
+    "-no-user-config",
+    "-nodefaults",
+    "-qmp",
+    "unix:/tmp/s5-rsp-fash8_u0/qmp,server=on,wait=off",
+    "-gdb",
+    "unix:/tmp/s5-rsp-fash8_u0/gdb,server=on,wait=off",
+    "-device",
+    "loader,file=/Users/lixiuqi/\u76f8\u673a\u529f\u80fd\u9a8c\u8bc1/data/program_0x86280000.bin,addr=0x86280000,force-raw=on",
+    "-device",
+    "loader,file=/Users/lixiuqi/Documents/ChatGPT/\u76f8\u673a/s5-emulator/capture/results/photo-20261124-200413-17ae09/lut/input-Y.bin,addr=0x90000000,force-raw=on",
+    "-device",
+    "loader,file=/Users/lixiuqi/Documents/ChatGPT/\u76f8\u673a/s5-emulator/capture/results/photo-20261124-200413-17ae09/lut/input-C.bin,addr=0x92000000,force-raw=on"
+  ],
+  "ram_base": 0,
+  "ram_bytes": 3221225472,
+  "loaded_files": [
+    {
+      "file": "/Users/lixiuqi/\u76f8\u673a\u529f\u80fd\u9a8c\u8bc1/data/program_0x86280000.bin",
+      "address": 2250768384,
+      "bytes": 30932992,
+      "sha256": "7ae165083396d4c9213f7a1c019ac56823d0ed4196fa14b8eb25e553a45a21e4"
+    },
+    {
+      "file": "/Users/lixiuqi/Documents/ChatGPT/\u76f8\u673a/s5-emulator/capture/results/photo-20261124-200413-17ae09/lut/input-Y.bin",
+      "address": 2415919104,
+      "bytes": 24064000,
+      "sha256": "daa2c1182917f267649f1700ccd1f0c92ff845f211feaecc141c13dd8aea3636"
+    },
+    {
+      "file": "/Users/lixiuqi/Documents/ChatGPT/\u76f8\u673a/s5-emulator/capture/results/photo-20261124-200413-17ae09/lut/input-C.bin",
+      "address": 2449473536,
+      "bytes": 24064000,
+      "sha256": "8332034dc860811fc0515afeace3e1156dfcfe44b28a79b6739bd1b10c29e860"
+    }
+  ],
+  "scope": "Flat-memory ARM function probe; no S5 hardware model"
+}

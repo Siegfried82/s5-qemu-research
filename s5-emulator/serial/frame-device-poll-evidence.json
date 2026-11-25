@@ -1,0 +1,122 @@
+{
+  "scope": "Read original instructions and completed snapshot only; no device state, IRQ, frame metadata or ACK is changed",
+  "snapshot": "/Users/lixiuqi/Documents/ChatGPT/\u76f8\u673a/s5-emulator/menu-smp/results/local-frame-paced-menu-stepfix",
+  "actual": {
+    "cpu0": {
+      "r0": "0x0",
+      "r1": "0xc604",
+      "r2": "0x90",
+      "r3": "0x0",
+      "r4": "0x1",
+      "r5": "0x9d",
+      "r6": "0x10000",
+      "r7": "0x7b193444",
+      "r8": "0x6fc2f1c",
+      "r9": "0x10",
+      "r10": "0x10000",
+      "r11": "0x1",
+      "r12": "0x7b193408",
+      "r13": "0xac38758",
+      "r14": "0x7b193430",
+      "r15": "0x67092da",
+      "cpsr": "0x800001b2"
+    },
+    "frame_probe_status": "timeout_original_isr",
+    "completed_consumers": [
+      {
+        "cpu": 0,
+        "tcb": "0x8e03c18",
+        "sp": 162359312,
+        "pair": 2,
+        "words": [
+          "0x0",
+          "0x2001",
+          "0x0",
+          "0x8c51d9c",
+          "0x0"
+        ],
+        "poll_before": 0,
+        "poll_after": 1,
+        "queue_count_after": 1,
+        "completed_pc": "0x67055ba"
+      },
+      {
+        "cpu": 0,
+        "tcb": "0x8e03c18",
+        "sp": 162359312,
+        "pair": 2,
+        "words": [
+          "0x0",
+          "0x2001",
+          "0x28",
+          "0x0",
+          "0x0"
+        ],
+        "poll_before": 1,
+        "poll_after": 1,
+        "queue_count_after": 0,
+        "completed_pc": "0x67055ba"
+      },
+      {
+        "cpu": 0,
+        "tcb": "0x8e03c18",
+        "sp": 162359312,
+        "pair": 3,
+        "words": [
+          "0x0",
+          "0x2001",
+          "0x2",
+          "0x8c51d9c",
+          "0x0"
+        ],
+        "poll_before": 1,
+        "poll_after": 2,
+        "queue_count_after": 1,
+        "completed_pc": "0x67055ba"
+      },
+      {
+        "cpu": 0,
+        "tcb": "0x8e03c18",
+        "sp": 162359312,
+        "pair": 3,
+        "words": [
+          "0x0",
+          "0x2001",
+          "0x28",
+          "0x0",
+          "0x0"
+        ],
+        "poll_before": 2,
+        "poll_after": 2,
+        "queue_count_after": 0,
+        "completed_pc": "0x67055ba"
+      }
+    ]
+  },
+  "driver": {
+    "entry": "0x067091f2",
+    "record_table": "0x06fc2f1c",
+    "count": 157,
+    "records": "0x06fc1fb4",
+    "current_record_index": 144,
+    "record_size": 4,
+    "status": "0x7b193444 bit8",
+    "start_stop": "0x7b193408 = 1/0",
+    "command": "0x7b193410",
+    "ack": "0x7b193430 = 0x10 then0",
+    "per_poll_limit": "0x10000 comparison against previous count; at most65537 status reads per wait",
+    "loop_semantics": [
+      "Wait bit8 set; on bounded timeout set stickyerror r4=1, skip ACK-clear wait, stop request and advance record.",
+      "On observed bit8 set, writeACK0x10, then bounded wait for bit8 clear; clearACK0 and stop request.",
+      "After all records restore saved interrupt state and return stickyerror inr0."
+    ],
+    "completion_irq_required_by_this_function": false,
+    "note": "The function polls MMIO synchronously in IRQ context. Additional frame pulses are not a substitute for the device status handshake."
+  },
+  "original_error_propagation": [
+    "06709574 BL067091f2;06709578 ORS r4,r0;0670958e returnsr4.",
+    "06709618 BL0670951e;0670961c moves resulttor5;wrapperreturnsit.",
+    "Actual caller067097be BL06709594;067097c2 immediately MOVS r0,4 and storesstate, without a return-dependent branch."
+  ],
+  "interpretation": "The2s host watchdog expired inside a finite original157-record programming transaction, at record144. This is not evidence of an infinite guest wait. A separately labeled longer bounded stage can test natural error-return progress while preserving the absent-device baseline. No correct device completion model or physical identity is claimed."
+}

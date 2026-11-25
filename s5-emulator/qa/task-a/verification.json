@@ -1,0 +1,1075 @@
+{
+  "task": "Task A: Lens-release input model regression and UI comparison",
+  "unique_variable_check": {
+    "verified_single_variable": true,
+    "unique_variable_name": "--lens-release-input-high (/machine/rtc-peer.lens-release-input-high)",
+    "baseline_value": false,
+    "candidate_value": true,
+    "qemu_argv_identical_modulo_paths": true,
+    "unexpected_config_differences": []
+  },
+  "execution_vs_assertions": {
+    "unmodified_focused_test_execution_succeeded": false,
+    "focused_with_vfp_execution_succeeded": true,
+    "focused_with_vfp_assertions_passed": true,
+    "baseline_execution_succeeded": true,
+    "candidate_execution_succeeded": true,
+    "single_variable_assertion_passed": true,
+    "baseline_reproduced_modal4a_warning": true,
+    "candidate_eliminated_modal4a_in_state_and_layout": true,
+    "candidate_eliminated_modal4a_in_all_presented_frames": true,
+    "candidate_timezone_confirmation_succeeded": true,
+    "candidate_page_actually_updated_to_scene70de": true
+  },
+  "summary_answers": {
+    "unique_variable": "--lens-release-input-high (/machine/rtc-peer.lens-release-input-high)",
+    "baseline_stop_reason": "time_bound",
+    "candidate_stop_reason": "time_bound",
+    "baseline_qemu_exit_code": 0,
+    "candidate_qemu_exit_code": 0,
+    "warning_present_in_baseline": true,
+    "warning_present_in_candidate": false,
+    "candidate_any_swap_matched_warning_sha": false,
+    "baseline_timezone_confirmation_succeeded": true,
+    "candidate_timezone_confirmation_succeeded": true,
+    "candidate_page_updated": true,
+    "candidate_frame2_matches_reference_scene70de_sha": true,
+    "candidate_post_confirm_frames_observation": "Frames 2..9 all render unobstructed scene 0x70de world-map timezone UI (no modal 0x4a); timezone steps eastward (GMT+3:30 Tehran -> GMT+4:30 -> GMT+5:00 -> GMT+5:45 -> GMT+7:00 -> GMT+9:30 -> GMT+10:00 Guam/Sydney) across the 8 completed LCD232 refresh requests, exposing an unmodeled directional/dial input once modal 0x4a no longer masks scene 0x70de.",
+    "main_menu_rendered": false,
+    "lens_attached_claimed": false
+  },
+  "preserved_run_directories": [
+    {
+      "dir": "/Users/lixiuqi/Documents/ChatGPT/相机/s5-emulator/qa/task-a/focused-taska-01",
+      "note": "Sandbox AF_UNIX socket PermissionError attempt (preserved)"
+    },
+    {
+      "dir": "/Users/lixiuqi/Documents/ChatGPT/相机/s5-emulator/qa/task-a/focused-taska-02",
+      "note": "Unmodified qemu/test_lens_release_input.py cold-reset VFP UND timeout (preserved)"
+    },
+    {
+      "dir": "/Users/lixiuqi/Documents/ChatGPT/相机/s5-emulator/qa/task-a/focused-vfp-taska-01",
+      "note": "Sandbox AF_UNIX socket PermissionError attempt (preserved)"
+    },
+    {
+      "dir": "/Users/lixiuqi/Documents/ChatGPT/相机/s5-emulator/qa/task-a/focused-vfp-taska-02",
+      "note": "Focused verification with architectural VFP enabled (passed)"
+    },
+    {
+      "dir": "/Users/lixiuqi/Documents/ChatGPT/相机/s5-emulator/qa/task-a/baseline-taska-sandbox-01",
+      "note": "Sandbox AF_UNIX socket PermissionError attempt (preserved)"
+    },
+    {
+      "dir": "/Users/lixiuqi/Documents/ChatGPT/相机/s5-emulator/qa/task-a/baseline-taska-01",
+      "note": "Host concurrent load caused pair-30 10s stage timeout at 2483/2585 storage reads (preserved)"
+    },
+    {
+      "dir": "/Users/lixiuqi/Documents/ChatGPT/相机/s5-emulator/qa/task-a/baseline-taska-02",
+      "note": "Full 120s baseline run (completed, reproduced modal 0x4a)"
+    },
+    {
+      "dir": "/Users/lixiuqi/Documents/ChatGPT/相机/s5-emulator/qa/task-a/lens-release-high-taska-sandbox-01",
+      "note": "Sandbox AF_UNIX socket PermissionError attempt (preserved)"
+    },
+    {
+      "dir": "/Users/lixiuqi/Documents/ChatGPT/相机/s5-emulator/qa/task-a/lens-release-high-taska-01",
+      "note": "Full 120s controlled run with --lens-release-input-high (completed, modal 0x4a eliminated)"
+    }
+  ],
+  "focused_verification": {
+    "path": "/Users/lixiuqi/Documents/ChatGPT/相机/s5-emulator/qa/task-a/focused-vfp-taska-02/verification.json",
+    "unmodified_test_defect": {
+      "reproduced": true,
+      "stop_reply": "T05thread:01;",
+      "vector_pc": "0x4",
+      "cpsr": "0x1db",
+      "mode": "UND (0x1b)",
+      "lr_und": "0x66c2624",
+      "faulting_pc": "0x66c2620",
+      "faulting_instruction_word": "0xed2d0b08",
+      "faulting_instruction_mnemonic": "vpush {d0, d1, d2, d3}",
+      "call_chain": "0x06753036 -> 0x064e6a78 -> 0x066c261c (zeroes 0x18-byte SPI stack struct via NEON/VFP)",
+      "cause": "qemu/test_lens_release_input.py runs from cold CPU reset without enabling CPACR.cp10/11 and FPEXC.EN",
+      "suggested_patch": "/Users/lixiuqi/Documents/ChatGPT/相机/s5-emulator/qa/task-a/task-a-test_lens_release_input.patch"
+    },
+    "original_entry_execution_evidence": {
+      "0x06753036_hits": 11,
+      "0x06752fb0_hits": 14,
+      "0x0642c43c_hits": 25,
+      "verified_instruction_words": {
+        "0x06752fb0_first8_hex": "7fb5fa4c0d46f849",
+        "0x06753036_first8_hex": "7cb5d84d0024d64a",
+        "0x0642c43c_first8_hex": "f0b5384f00252c46"
+      }
+    },
+    "checks": [
+      {
+        "name": "default_off_stored02_enabled03_disabled02",
+        "passed": true,
+        "default_read": 2,
+        "enabled_read": 3,
+        "disabled_read": 2,
+        "stored_value_throughout": 2
+      },
+      {
+        "name": "register_044e_other_bits_and_latch_preserved",
+        "passed": true,
+        "cases": [
+          {
+            "written": 0,
+            "stored": 0,
+            "read_when_enabled": 1
+          },
+          {
+            "written": 2,
+            "stored": 2,
+            "read_when_enabled": 3
+          },
+          {
+            "written": 128,
+            "stored": 128,
+            "read_when_enabled": 129
+          },
+          {
+            "written": 254,
+            "stored": 254,
+            "read_when_enabled": 255
+          },
+          {
+            "written": 255,
+            "stored": 255,
+            "read_when_enabled": 255
+          }
+        ]
+      },
+      {
+        "name": "other_spi3_registers_unaffected",
+        "passed": true,
+        "cases": [
+          {
+            "register": "0x0448",
+            "written": 16,
+            "read": 16
+          },
+          {
+            "register": "0x044a",
+            "written": 119,
+            "read": 119
+          },
+          {
+            "register": "0x044c",
+            "written": 74,
+            "read": 74
+          },
+          {
+            "register": "0x0402",
+            "written": 53,
+            "read": 53
+          }
+        ]
+      },
+      {
+        "name": "unknown_register_still_reported_unsupported",
+        "passed": true,
+        "unknown_reads": 1,
+        "unsupported_registers": [
+          "0x0554"
+        ],
+        "affected_reads": 6
+      }
+    ]
+  },
+  "rtc_comparison": {
+    "baseline_rtc": {
+      "profile": "assumed-cold-reset",
+      "physical_chip_identified": false,
+      "clock_advances": false,
+      "reads": 73838,
+      "writes": 1898,
+      "unknown_reads": 41277,
+      "malformed_frames": 0,
+      "lens_release_input": {
+        "enabled": false,
+        "scope": "explicit external input: read044e bit0 high; not lens presence or peer ACK",
+        "register": "0x044e",
+        "read_mask": 1,
+        "stored_value": 2,
+        "effective_value": 2,
+        "affected_reads": 0,
+        "stored_value_modified": false
+      },
+      "unsupported_registers": [
+        "0x041a",
+        "0x0474",
+        "0x0476",
+        "0x0478",
+        "0x047a",
+        "0x047c",
+        "0x047e",
+        "0x0488"
+      ],
+      "registers": {
+        "0x0402": 0,
+        "0x0404": 0,
+        "0x0406": 0,
+        "0x0408": 1,
+        "0x040a": 1,
+        "0x040c": 20,
+        "0x040e": 1,
+        "0x0410": 1,
+        "0x041a": 1,
+        "0x0420": 0,
+        "0x0422": 0,
+        "0x0424": 1,
+        "0x0426": 24,
+        "0x0428": 0,
+        "0x042a": 0,
+        "0x042c": 0,
+        "0x042e": 0,
+        "0x0430": 0,
+        "0x0432": 0,
+        "0x0434": 0,
+        "0x0436": 0,
+        "0x0438": 0,
+        "0x043a": 0,
+        "0x043c": 0,
+        "0x043e": 0,
+        "0x0440": 64,
+        "0x0442": 0,
+        "0x0448": 16,
+        "0x044a": 119,
+        "0x044c": 74,
+        "0x044e": 2,
+        "0x0456": 243,
+        "0x0458": 255,
+        "0x045a": 255,
+        "0x045c": 6,
+        "0x0464": 0,
+        "0x0466": 0,
+        "0x0468": 0,
+        "0x046a": 0,
+        "0x0602": 0,
+        "0x0604": 0,
+        "0x0606": 0,
+        "0x0608": 0,
+        "0x0610": 1,
+        "0x0800": 49,
+        "0x0802": 3,
+        "0x0806": 0,
+        "0x0808": 74,
+        "0x080a": 38,
+        "0x080c": 104,
+        "0x080e": 4,
+        "0x0810": 65,
+        "0x0812": 0,
+        "0x0814": 64,
+        "0x0816": 128,
+        "0x0818": 30,
+        "0x081c": 32,
+        "0x0822": 32,
+        "0x0826": 32,
+        "0x082a": 1,
+        "0x082c": 33,
+        "0x082e": 0,
+        "0x0832": 0,
+        "0x0838": 0,
+        "0x083a": 0,
+        "0x0860": 63,
+        "0x0862": 245,
+        "0x0864": 0,
+        "0x0866": 0,
+        "0x0868": 63,
+        "0x086a": 254,
+        "0x086c": 192,
+        "0x086e": 1,
+        "0x0870": 0,
+        "0x0872": 0,
+        "0x08c4": 63,
+        "0x08c6": 245,
+        "0x08c8": 0,
+        "0x08ca": 0,
+        "0x08cc": 63,
+        "0x08ce": 254,
+        "0x08d0": 192,
+        "0x08d2": 1,
+        "0x08d4": 0,
+        "0x08d6": 0,
+        "0x0914": 0,
+        "0x0916": 0,
+        "0x092e": 0,
+        "0x0930": 0,
+        "0x0932": 0,
+        "0x0934": 0,
+        "0x0936": 0,
+        "0x0938": 0,
+        "0x093a": 0,
+        "0x093c": 0,
+        "0x093e": 0,
+        "0x0940": 0
+      }
+    },
+    "candidate_rtc": {
+      "profile": "assumed-cold-reset",
+      "physical_chip_identified": false,
+      "clock_advances": false,
+      "reads": 74444,
+      "writes": 1918,
+      "unknown_reads": 41631,
+      "malformed_frames": 0,
+      "lens_release_input": {
+        "enabled": true,
+        "scope": "explicit external input: read044e bit0 high; not lens presence or peer ACK",
+        "register": "0x044e",
+        "read_mask": 1,
+        "stored_value": 2,
+        "effective_value": 3,
+        "affected_reads": 6938,
+        "stored_value_modified": false
+      },
+      "unsupported_registers": [
+        "0x041a",
+        "0x0474",
+        "0x0476",
+        "0x0478",
+        "0x047a",
+        "0x047c",
+        "0x047e",
+        "0x0488"
+      ],
+      "registers": {
+        "0x0402": 0,
+        "0x0404": 0,
+        "0x0406": 0,
+        "0x0408": 1,
+        "0x040a": 1,
+        "0x040c": 20,
+        "0x040e": 1,
+        "0x0410": 1,
+        "0x041a": 1,
+        "0x0420": 0,
+        "0x0422": 0,
+        "0x0424": 1,
+        "0x0426": 24,
+        "0x0428": 0,
+        "0x042a": 0,
+        "0x042c": 0,
+        "0x042e": 0,
+        "0x0430": 0,
+        "0x0432": 0,
+        "0x0434": 0,
+        "0x0436": 0,
+        "0x0438": 0,
+        "0x043a": 0,
+        "0x043c": 0,
+        "0x043e": 0,
+        "0x0440": 64,
+        "0x0442": 0,
+        "0x0448": 16,
+        "0x044a": 119,
+        "0x044c": 74,
+        "0x044e": 2,
+        "0x0456": 243,
+        "0x0458": 255,
+        "0x045a": 255,
+        "0x045c": 6,
+        "0x0464": 0,
+        "0x0466": 0,
+        "0x0468": 0,
+        "0x046a": 0,
+        "0x0602": 0,
+        "0x0604": 0,
+        "0x0606": 0,
+        "0x0608": 0,
+        "0x0610": 1,
+        "0x0800": 49,
+        "0x0802": 3,
+        "0x0806": 0,
+        "0x0808": 74,
+        "0x080a": 38,
+        "0x080c": 104,
+        "0x080e": 4,
+        "0x0810": 65,
+        "0x0812": 0,
+        "0x0814": 64,
+        "0x0816": 128,
+        "0x0818": 30,
+        "0x081c": 32,
+        "0x0822": 32,
+        "0x0826": 32,
+        "0x082a": 1,
+        "0x082c": 33,
+        "0x082e": 0,
+        "0x0832": 0,
+        "0x0838": 0,
+        "0x083a": 0,
+        "0x0860": 63,
+        "0x0862": 245,
+        "0x0864": 0,
+        "0x0866": 0,
+        "0x0868": 63,
+        "0x086a": 254,
+        "0x086c": 192,
+        "0x086e": 1,
+        "0x0870": 0,
+        "0x0872": 0,
+        "0x08c4": 63,
+        "0x08c6": 245,
+        "0x08c8": 0,
+        "0x08ca": 0,
+        "0x08cc": 63,
+        "0x08ce": 254,
+        "0x08d0": 192,
+        "0x08d2": 1,
+        "0x08d4": 0,
+        "0x08d6": 0,
+        "0x0914": 0,
+        "0x0916": 0,
+        "0x092e": 0,
+        "0x0930": 0,
+        "0x0932": 0,
+        "0x0934": 0,
+        "0x0936": 0,
+        "0x0938": 0,
+        "0x093a": 0,
+        "0x093c": 0,
+        "0x093e": 0,
+        "0x0940": 0
+      }
+    },
+    "register_044e_stored_baseline": 2,
+    "register_044e_stored_candidate": 2,
+    "register_044e_effective_baseline": 2,
+    "register_044e_effective_candidate": 3,
+    "candidate_affected_reads_044e": 6938,
+    "other_registers_identical": true
+  },
+  "ui_and_layout_comparison": {
+    "baseline": {
+      "ui_state": {
+        "control_words_08a928b0": [
+          "0x0",
+          "0x20",
+          "0x0",
+          "0x1"
+        ],
+        "transition_step_08cb0ee0": "0x4a0",
+        "secondary_transition_stage_08aa090c": 1,
+        "modal_id_08a92898": "0x4a",
+        "mode35_confirmation_mask_08aa1103": "0xff",
+        "confirmation_mask_08aa1104": "0xff",
+        "source_scene_08cb10d0": "0x70de",
+        "render_scene_0b392e98": "0x70de",
+        "source_layout_08cb10c8_hex": "000000004a000000de70000000000000",
+        "render_layout_0b392e90_hex": "000000004a000000de70000000000000",
+        "lcd_clock_state_08ab488c": "0x4",
+        "avio_clock_completion_08a9c7f8": "0x2"
+      },
+      "decoded_source_layout": {
+        "raw_hex": "000000004a000000de70000000000000",
+        "word0": "0x0",
+        "modal_word1": "0x4a",
+        "scene_word2": "0x70de",
+        "word3": "0x0"
+      },
+      "decoded_render_layout": {
+        "raw_hex": "000000004a000000de70000000000000",
+        "word0": "0x0",
+        "modal_word1": "0x4a",
+        "scene_word2": "0x70de",
+        "word3": "0x0"
+      }
+    },
+    "candidate": {
+      "ui_state": {
+        "control_words_08a928b0": [
+          "0x0",
+          "0x20",
+          "0x0",
+          "0x1"
+        ],
+        "transition_step_08cb0ee0": "0x4a0",
+        "secondary_transition_stage_08aa090c": 1,
+        "modal_id_08a92898": "0x0",
+        "mode35_confirmation_mask_08aa1103": "0xff",
+        "confirmation_mask_08aa1104": "0xff",
+        "source_scene_08cb10d0": "0x70de",
+        "render_scene_0b392e98": "0x70de",
+        "source_layout_08cb10c8_hex": "0000000000000000de70000000000000",
+        "render_layout_0b392e90_hex": "0000000000000000de70000000000000",
+        "lcd_clock_state_08ab488c": "0x4",
+        "avio_clock_completion_08a9c7f8": "0x2"
+      },
+      "decoded_source_layout": {
+        "raw_hex": "0000000000000000de70000000000000",
+        "word0": "0x0",
+        "modal_word1": "0x0",
+        "scene_word2": "0x70de",
+        "word3": "0x0"
+      },
+      "decoded_render_layout": {
+        "raw_hex": "0000000000000000de70000000000000",
+        "word0": "0x0",
+        "modal_word1": "0x0",
+        "scene_word2": "0x70de",
+        "word3": "0x0"
+      }
+    }
+  },
+  "key_path_comparison": {
+    "baseline": {
+      "armed": true,
+      "click_release_armed": true,
+      "key_error": null,
+      "requests": [
+        {
+          "key": "KEY_CENTER",
+          "action": 1,
+          "consumed": true,
+          "egl_swaps_at_original_dispatch": 1,
+          "input_route_gate": {
+            "samples": 12,
+            "wait_steps": 11,
+            "original_primary_getter": "0x066bfd22",
+            "original_secondary_getter": "0x0682e5d0",
+            "required": "pending_mode==0xff and primary_stage in{0,1} and secondary_stage in{0,1}",
+            "primary_stage": 0,
+            "pending_mode": 255,
+            "secondary_stage": 1,
+            "primary_ready": true,
+            "secondary_ready": true,
+            "passed": true
+          },
+          "hit_timezone_setup_entry_068b728e": true,
+          "hit_timezone_scene_setup_068b7b3c": true,
+          "route_sequence": [
+            "original_pool_copy@0x67f0e42",
+            "original_queue_receive@0x6475df4",
+            "original_key_dispatch@0x64759c6",
+            "original_input_state_handler@0x66435a0",
+            "original_ui_event@0x66beea6",
+            "raw_state_route_entry",
+            "alternate_handler_gate_return",
+            "transition_gate_return",
+            "secondary_transition_gate_return",
+            "live_state_gate_return",
+            "generic_key_route_entry",
+            "original_ui_key@0x66bddc8",
+            "original_ui_event@0x66beea6",
+            "original_modal_key_dispatch",
+            "original_timezone_prompt_key_handler",
+            "original_ui_key@0x66bddc8",
+            "original_ui_event@0x66beea6",
+            "original_modal_key_dispatch",
+            "original_timezone_prompt_key_handler",
+            "original_timezone_setup_entry",
+            "original_timezone_scene_setup",
+            "original_key_dispatch_returned@0x64759ca"
+          ]
+        },
+        {
+          "key": "KEY_CENTER",
+          "action": 0,
+          "consumed": true,
+          "egl_swaps_at_original_dispatch": null,
+          "input_route_gate": null,
+          "hit_timezone_setup_entry_068b728e": false,
+          "hit_timezone_scene_setup_068b7b3c": false,
+          "route_sequence": [
+            "original_pool_copy@0x67f0e42",
+            "original_queue_receive@0x6475df4",
+            "original_key_dispatch@0x64759c6",
+            "original_input_state_handler@0x66435a0",
+            "raw_state_route_entry",
+            "alternate_handler_gate_return",
+            "transition_gate_return",
+            "secondary_transition_gate_return",
+            "live_state_gate_return",
+            "generic_key_route_entry",
+            "original_ui_key@0x66bddc8",
+            "original_ui_event@0x66beea6",
+            "original_key_dispatch_returned@0x64759ca"
+          ]
+        }
+      ],
+      "timezone_confirmation_observed_in_route": true,
+      "release_retriggered_confirmation": false,
+      "final_state_0x20_and_source_scene_0x70de": true,
+      "timezone_confirmation_succeeded": true
+    },
+    "candidate": {
+      "armed": true,
+      "click_release_armed": true,
+      "key_error": null,
+      "requests": [
+        {
+          "key": "KEY_CENTER",
+          "action": 1,
+          "consumed": true,
+          "egl_swaps_at_original_dispatch": 1,
+          "input_route_gate": {
+            "samples": 12,
+            "wait_steps": 11,
+            "original_primary_getter": "0x066bfd22",
+            "original_secondary_getter": "0x0682e5d0",
+            "required": "pending_mode==0xff and primary_stage in{0,1} and secondary_stage in{0,1}",
+            "primary_stage": 0,
+            "pending_mode": 255,
+            "secondary_stage": 1,
+            "primary_ready": true,
+            "secondary_ready": true,
+            "passed": true
+          },
+          "hit_timezone_setup_entry_068b728e": true,
+          "hit_timezone_scene_setup_068b7b3c": true,
+          "route_sequence": [
+            "original_pool_copy@0x67f0e42",
+            "original_queue_receive@0x6475df4",
+            "original_key_dispatch@0x64759c6",
+            "original_input_state_handler@0x66435a0",
+            "original_ui_event@0x66beea6",
+            "raw_state_route_entry",
+            "alternate_handler_gate_return",
+            "transition_gate_return",
+            "secondary_transition_gate_return",
+            "live_state_gate_return",
+            "generic_key_route_entry",
+            "original_ui_key@0x66bddc8",
+            "original_ui_event@0x66beea6",
+            "original_modal_key_dispatch",
+            "original_timezone_prompt_key_handler",
+            "original_ui_key@0x66bddc8",
+            "original_ui_event@0x66beea6",
+            "original_modal_key_dispatch",
+            "original_timezone_prompt_key_handler",
+            "original_timezone_setup_entry",
+            "original_timezone_scene_setup",
+            "original_key_dispatch_returned@0x64759ca"
+          ]
+        },
+        {
+          "key": "KEY_CENTER",
+          "action": 0,
+          "consumed": true,
+          "egl_swaps_at_original_dispatch": null,
+          "input_route_gate": null,
+          "hit_timezone_setup_entry_068b728e": false,
+          "hit_timezone_scene_setup_068b7b3c": false,
+          "route_sequence": [
+            "original_pool_copy@0x67f0e42",
+            "original_queue_receive@0x6475df4",
+            "original_key_dispatch@0x64759c6",
+            "original_input_state_handler@0x66435a0",
+            "raw_state_route_entry",
+            "alternate_handler_gate_return",
+            "transition_gate_return",
+            "secondary_transition_gate_return",
+            "live_state_gate_return",
+            "generic_key_route_entry",
+            "original_ui_key@0x66bddc8",
+            "original_ui_event@0x66beea6",
+            "original_key_dispatch_returned@0x64759ca"
+          ]
+        }
+      ],
+      "timezone_confirmation_observed_in_route": true,
+      "release_retriggered_confirmation": false,
+      "final_state_0x20_and_source_scene_0x70de": true,
+      "timezone_confirmation_succeeded": true
+    }
+  },
+  "graphics_and_frames_comparison": {
+    "baseline": {
+      "draws": 116,
+      "swaps": 5,
+      "graphics_error": null,
+      "lcd_refresh_completed_requests": 3,
+      "lcd_refresh_probe_summary": {
+        "scope": "Request-gated explicit LCD232 TEST; no physical period, hardware clock, scanout or menu proof",
+        "status": "armed_waiting_original_event86_request",
+        "max_pulses": 8,
+        "automatic_timing": false,
+        "guest_ram_or_registers_written_by_host": false,
+        "guest_callback_invoked_by_host": false,
+        "queue_messages_created_by_host": false,
+        "completed_requests": 3,
+        "pending_irq_cleanup": "Disabling TEST does not retract pending GIC edges; no GIC pending/active bits are manually cleared",
+        "initial_state": {
+          "event_object": "0x8e18b70",
+          "event_flags": 1,
+          "callback": "0x727cf59",
+          "lcd": 4,
+          "avio": 2,
+          "selector": 0,
+          "q15_count": 6,
+          "queued_type3": 2
+        },
+        "passive_receive_observations": 5,
+        "closed": true,
+        "started": true
+      },
+      "frames": [
+        {
+          "index": 0,
+          "name": "frame-0000.png",
+          "path": "/Users/lixiuqi/Documents/ChatGPT/相机/s5-emulator/qa/task-a/baseline-taska-02/graphics/frame-0000.png",
+          "bytes": 20624,
+          "sha256": "441650dc9de75635c6e5009d8937594af0b4a85bb0a6f4dd93725f09cd885fc7",
+          "width": 1024,
+          "height": 768,
+          "bit_depth": 8,
+          "color_type": 6,
+          "decoded_pixels_sha256": "d7a946b8b4bec79220964cc3f9bff9896c742eccd433aadb388fd83a00673ed0",
+          "visible_nonblack_pixels": 75768,
+          "bright_white_pixels": 9566
+        },
+        {
+          "index": 1,
+          "name": "frame-0001.png",
+          "path": "/Users/lixiuqi/Documents/ChatGPT/相机/s5-emulator/qa/task-a/baseline-taska-02/graphics/frame-0001.png",
+          "bytes": 21421,
+          "sha256": "4cc91201a32a93d87c7c03470860c59453861af28b03792dea514061bb14b7b8",
+          "width": 1024,
+          "height": 768,
+          "bit_depth": 8,
+          "color_type": 6,
+          "decoded_pixels_sha256": "123fef96b3a5a6ae5f834a4a9b7eed7a00744dc1e00fb83083152dd8420b3bbb",
+          "visible_nonblack_pixels": 77951,
+          "bright_white_pixels": 10256
+        },
+        {
+          "index": 2,
+          "name": "frame-0002.png",
+          "path": "/Users/lixiuqi/Documents/ChatGPT/相机/s5-emulator/qa/task-a/baseline-taska-02/graphics/frame-0002.png",
+          "bytes": 94140,
+          "sha256": "6f14f83b44331ea1e0e95423fa4044ad6960ee4cc48fec45bc9cfe61a3916e24",
+          "width": 1024,
+          "height": 768,
+          "bit_depth": 8,
+          "color_type": 6,
+          "decoded_pixels_sha256": "17da39e75ba61c0b37a398b4ceb30922a66826393126c52d175474c15daaae9e",
+          "visible_nonblack_pixels": 609454,
+          "bright_white_pixels": 10869
+        },
+        {
+          "index": 3,
+          "name": "frame-0003.png",
+          "path": "/Users/lixiuqi/Documents/ChatGPT/相机/s5-emulator/qa/task-a/baseline-taska-02/graphics/frame-0003.png",
+          "bytes": 34369,
+          "sha256": "ef76bb7730fa498f70c0978643c6ed07e2ea707a964fd8af953f52fb16c20890",
+          "width": 1024,
+          "height": 768,
+          "bit_depth": 8,
+          "color_type": 6,
+          "decoded_pixels_sha256": "929922100cabc5f07e805b79014293f7b07dd11410eff31738bed019370571de",
+          "visible_nonblack_pixels": 614410,
+          "bright_white_pixels": 19428
+        },
+        {
+          "index": 4,
+          "name": "frame-0004.png",
+          "path": "/Users/lixiuqi/Documents/ChatGPT/相机/s5-emulator/qa/task-a/baseline-taska-02/graphics/frame-0004.png",
+          "bytes": 34369,
+          "sha256": "ef76bb7730fa498f70c0978643c6ed07e2ea707a964fd8af953f52fb16c20890",
+          "width": 1024,
+          "height": 768,
+          "bit_depth": 8,
+          "color_type": 6,
+          "decoded_pixels_sha256": "929922100cabc5f07e805b79014293f7b07dd11410eff31738bed019370571de",
+          "visible_nonblack_pixels": 614410,
+          "bright_white_pixels": 19428
+        }
+      ],
+      "incomplete_surfaces": [
+        {
+          "index": 60000002,
+          "name": "incomplete-surface-60000002.png",
+          "path": "/Users/lixiuqi/Documents/ChatGPT/相机/s5-emulator/qa/task-a/baseline-taska-02/graphics/incomplete-surface-60000002.png",
+          "bytes": 34369,
+          "sha256": "ef76bb7730fa498f70c0978643c6ed07e2ea707a964fd8af953f52fb16c20890",
+          "width": 1024,
+          "height": 768,
+          "bit_depth": 8,
+          "color_type": 6,
+          "decoded_pixels_sha256": "929922100cabc5f07e805b79014293f7b07dd11410eff31738bed019370571de",
+          "visible_nonblack_pixels": 614410,
+          "bright_white_pixels": 19428
+        }
+      ]
+    },
+    "candidate": {
+      "draws": 425,
+      "swaps": 10,
+      "graphics_error": null,
+      "lcd_refresh_completed_requests": 8,
+      "lcd_refresh_probe_summary": {
+        "scope": "Request-gated explicit LCD232 TEST; no physical period, hardware clock, scanout or menu proof",
+        "status": "bounded_original_callbacks_completed",
+        "max_pulses": 8,
+        "automatic_timing": false,
+        "guest_ram_or_registers_written_by_host": false,
+        "guest_callback_invoked_by_host": false,
+        "queue_messages_created_by_host": false,
+        "completed_requests": 8,
+        "pending_irq_cleanup": "Disabling TEST does not retract pending GIC edges; no GIC pending/active bits are manually cleared",
+        "initial_state": {
+          "event_object": "0x8e18b70",
+          "event_flags": 1,
+          "callback": "0x727cf59",
+          "lcd": 4,
+          "avio": 2,
+          "selector": 0,
+          "q15_count": 6,
+          "queued_type3": 2
+        },
+        "passive_receive_observations": 5,
+        "closed": true,
+        "started": true
+      },
+      "frames": [
+        {
+          "index": 0,
+          "name": "frame-0000.png",
+          "path": "/Users/lixiuqi/Documents/ChatGPT/相机/s5-emulator/qa/task-a/lens-release-high-taska-01/graphics/frame-0000.png",
+          "bytes": 20624,
+          "sha256": "441650dc9de75635c6e5009d8937594af0b4a85bb0a6f4dd93725f09cd885fc7",
+          "width": 1024,
+          "height": 768,
+          "bit_depth": 8,
+          "color_type": 6,
+          "decoded_pixels_sha256": "d7a946b8b4bec79220964cc3f9bff9896c742eccd433aadb388fd83a00673ed0",
+          "visible_nonblack_pixels": 75768,
+          "bright_white_pixels": 9566
+        },
+        {
+          "index": 1,
+          "name": "frame-0001.png",
+          "path": "/Users/lixiuqi/Documents/ChatGPT/相机/s5-emulator/qa/task-a/lens-release-high-taska-01/graphics/frame-0001.png",
+          "bytes": 21421,
+          "sha256": "4cc91201a32a93d87c7c03470860c59453861af28b03792dea514061bb14b7b8",
+          "width": 1024,
+          "height": 768,
+          "bit_depth": 8,
+          "color_type": 6,
+          "decoded_pixels_sha256": "123fef96b3a5a6ae5f834a4a9b7eed7a00744dc1e00fb83083152dd8420b3bbb",
+          "visible_nonblack_pixels": 77951,
+          "bright_white_pixels": 10256
+        },
+        {
+          "index": 2,
+          "name": "frame-0002.png",
+          "path": "/Users/lixiuqi/Documents/ChatGPT/相机/s5-emulator/qa/task-a/lens-release-high-taska-01/graphics/frame-0002.png",
+          "bytes": 69029,
+          "sha256": "5716bb8ee9b24138a1bbb930479a8cf0efc4782b3e8a013ef32c87839295e199",
+          "width": 1024,
+          "height": 768,
+          "bit_depth": 8,
+          "color_type": 6,
+          "decoded_pixels_sha256": "69fcadd7c294887087d7208423d3407e0a71a749968345d639e29107b2e58c78",
+          "visible_nonblack_pixels": 609454,
+          "bright_white_pixels": 6756
+        },
+        {
+          "index": 3,
+          "name": "frame-0003.png",
+          "path": "/Users/lixiuqi/Documents/ChatGPT/相机/s5-emulator/qa/task-a/lens-release-high-taska-01/graphics/frame-0003.png",
+          "bytes": 68056,
+          "sha256": "16c3b11967010d0258f0820a36d9b0a149fe995ddbaa039ea92d39b116e2175a",
+          "width": 1024,
+          "height": 768,
+          "bit_depth": 8,
+          "color_type": 6,
+          "decoded_pixels_sha256": "2e6c618e4d2bac5752ee899c9c798e97dc216374984fa6854a0565db91b01f73",
+          "visible_nonblack_pixels": 609453,
+          "bright_white_pixels": 6655
+        },
+        {
+          "index": 4,
+          "name": "frame-0004.png",
+          "path": "/Users/lixiuqi/Documents/ChatGPT/相机/s5-emulator/qa/task-a/lens-release-high-taska-01/graphics/frame-0004.png",
+          "bytes": 83244,
+          "sha256": "e6d920c211a2132f6f9c9b8460c30ec3d0132ed77e4a7ba0471f50f0304049e3",
+          "width": 1024,
+          "height": 768,
+          "bit_depth": 8,
+          "color_type": 6,
+          "decoded_pixels_sha256": "83effc78d1fa7175f9d51f3564647bc436ced84a05f406f3037a491b99160bc5",
+          "visible_nonblack_pixels": 609455,
+          "bright_white_pixels": 9613
+        },
+        {
+          "index": 5,
+          "name": "frame-0005.png",
+          "path": "/Users/lixiuqi/Documents/ChatGPT/相机/s5-emulator/qa/task-a/lens-release-high-taska-01/graphics/frame-0005.png",
+          "bytes": 69465,
+          "sha256": "9668abb6fa402a8f27282dd5c085373a7efbd3f0c3497134872ed3dfa1a5c23c",
+          "width": 1024,
+          "height": 768,
+          "bit_depth": 8,
+          "color_type": 6,
+          "decoded_pixels_sha256": "0bb3b3f096c0e4b37a2a630cea4e43ccda290f7450a095eccc281b8614bd4fd8",
+          "visible_nonblack_pixels": 609453,
+          "bright_white_pixels": 7523
+        },
+        {
+          "index": 6,
+          "name": "frame-0006.png",
+          "path": "/Users/lixiuqi/Documents/ChatGPT/相机/s5-emulator/qa/task-a/lens-release-high-taska-01/graphics/frame-0006.png",
+          "bytes": 81040,
+          "sha256": "775d52d077a9786aa960ff3b02b39c503c2c9a36b034cf0c300c1cb70cf6c9bc",
+          "width": 1024,
+          "height": 768,
+          "bit_depth": 8,
+          "color_type": 6,
+          "decoded_pixels_sha256": "76bfd6105590f51b1014c79ca04df81825a73fff35afbda6634307ce446d8c55",
+          "visible_nonblack_pixels": 609453,
+          "bright_white_pixels": 8441
+        },
+        {
+          "index": 7,
+          "name": "frame-0007.png",
+          "path": "/Users/lixiuqi/Documents/ChatGPT/相机/s5-emulator/qa/task-a/lens-release-high-taska-01/graphics/frame-0007.png",
+          "bytes": 81040,
+          "sha256": "775d52d077a9786aa960ff3b02b39c503c2c9a36b034cf0c300c1cb70cf6c9bc",
+          "width": 1024,
+          "height": 768,
+          "bit_depth": 8,
+          "color_type": 6,
+          "decoded_pixels_sha256": "76bfd6105590f51b1014c79ca04df81825a73fff35afbda6634307ce446d8c55",
+          "visible_nonblack_pixels": 609453,
+          "bright_white_pixels": 8441
+        },
+        {
+          "index": 8,
+          "name": "frame-0008.png",
+          "path": "/Users/lixiuqi/Documents/ChatGPT/相机/s5-emulator/qa/task-a/lens-release-high-taska-01/graphics/frame-0008.png",
+          "bytes": 71896,
+          "sha256": "1df28b49741b05f99699f779ebd8a5b648a66a052395b7607afcf75002bf1adb",
+          "width": 1024,
+          "height": 768,
+          "bit_depth": 8,
+          "color_type": 6,
+          "decoded_pixels_sha256": "a30a2de9c212ccb8510dffb7e69cb3cf41e238b977fb0d5828276d16e5d8021d",
+          "visible_nonblack_pixels": 609453,
+          "bright_white_pixels": 7306
+        },
+        {
+          "index": 9,
+          "name": "frame-0009.png",
+          "path": "/Users/lixiuqi/Documents/ChatGPT/相机/s5-emulator/qa/task-a/lens-release-high-taska-01/graphics/frame-0009.png",
+          "bytes": 79689,
+          "sha256": "edb072cbb227c61f2dbe303780d784b32725f10d6a7474364aa7c481611a7eba",
+          "width": 1024,
+          "height": 768,
+          "bit_depth": 8,
+          "color_type": 6,
+          "decoded_pixels_sha256": "8273695c8bf68d6a49e8b1459671898da998994a039859357ce90bd385363061",
+          "visible_nonblack_pixels": 609453,
+          "bright_white_pixels": 8069
+        }
+      ],
+      "incomplete_surfaces": [
+        {
+          "index": 60000002,
+          "name": "incomplete-surface-60000002.png",
+          "path": "/Users/lixiuqi/Documents/ChatGPT/相机/s5-emulator/qa/task-a/lens-release-high-taska-01/graphics/incomplete-surface-60000002.png",
+          "bytes": 79689,
+          "sha256": "edb072cbb227c61f2dbe303780d784b32725f10d6a7474364aa7c481611a7eba",
+          "width": 1024,
+          "height": 768,
+          "bit_depth": 8,
+          "color_type": 6,
+          "decoded_pixels_sha256": "8273695c8bf68d6a49e8b1459671898da998994a039859357ce90bd385363061",
+          "visible_nonblack_pixels": 609453,
+          "bright_white_pixels": 8069
+        }
+      ]
+    },
+    "reference_local_requested_lcd_refresh_frames": [
+      {
+        "index": 0,
+        "name": "frame-0000.png",
+        "path": "/Users/lixiuqi/Documents/ChatGPT/相机/s5-emulator/menu-smp/results/local-requested-lcd-refresh/graphics/frame-0000.png",
+        "bytes": 20624,
+        "sha256": "441650dc9de75635c6e5009d8937594af0b4a85bb0a6f4dd93725f09cd885fc7",
+        "width": 1024,
+        "height": 768,
+        "bit_depth": 8,
+        "color_type": 6,
+        "decoded_pixels_sha256": "d7a946b8b4bec79220964cc3f9bff9896c742eccd433aadb388fd83a00673ed0",
+        "visible_nonblack_pixels": 75768,
+        "bright_white_pixels": 9566
+      },
+      {
+        "index": 1,
+        "name": "frame-0001.png",
+        "path": "/Users/lixiuqi/Documents/ChatGPT/相机/s5-emulator/menu-smp/results/local-requested-lcd-refresh/graphics/frame-0001.png",
+        "bytes": 21421,
+        "sha256": "4cc91201a32a93d87c7c03470860c59453861af28b03792dea514061bb14b7b8",
+        "width": 1024,
+        "height": 768,
+        "bit_depth": 8,
+        "color_type": 6,
+        "decoded_pixels_sha256": "123fef96b3a5a6ae5f834a4a9b7eed7a00744dc1e00fb83083152dd8420b3bbb",
+        "visible_nonblack_pixels": 77951,
+        "bright_white_pixels": 10256
+      },
+      {
+        "index": 2,
+        "name": "frame-0002.png",
+        "path": "/Users/lixiuqi/Documents/ChatGPT/相机/s5-emulator/menu-smp/results/local-requested-lcd-refresh/graphics/frame-0002.png",
+        "bytes": 69029,
+        "sha256": "5716bb8ee9b24138a1bbb930479a8cf0efc4782b3e8a013ef32c87839295e199",
+        "width": 1024,
+        "height": 768,
+        "bit_depth": 8,
+        "color_type": 6,
+        "decoded_pixels_sha256": "69fcadd7c294887087d7208423d3407e0a71a749968345d639e29107b2e58c78",
+        "visible_nonblack_pixels": 609454,
+        "bright_white_pixels": 6756
+      },
+      {
+        "index": 3,
+        "name": "frame-0003.png",
+        "path": "/Users/lixiuqi/Documents/ChatGPT/相机/s5-emulator/menu-smp/results/local-requested-lcd-refresh/graphics/frame-0003.png",
+        "bytes": 34369,
+        "sha256": "ef76bb7730fa498f70c0978643c6ed07e2ea707a964fd8af953f52fb16c20890",
+        "width": 1024,
+        "height": 768,
+        "bit_depth": 8,
+        "color_type": 6,
+        "decoded_pixels_sha256": "929922100cabc5f07e805b79014293f7b07dd11410eff31738bed019370571de",
+        "visible_nonblack_pixels": 614410,
+        "bright_white_pixels": 19428
+      },
+      {
+        "index": 4,
+        "name": "frame-0004.png",
+        "path": "/Users/lixiuqi/Documents/ChatGPT/相机/s5-emulator/menu-smp/results/local-requested-lcd-refresh/graphics/frame-0004.png",
+        "bytes": 34369,
+        "sha256": "ef76bb7730fa498f70c0978643c6ed07e2ea707a964fd8af953f52fb16c20890",
+        "width": 1024,
+        "height": 768,
+        "bit_depth": 8,
+        "color_type": 6,
+        "decoded_pixels_sha256": "929922100cabc5f07e805b79014293f7b07dd11410eff31738bed019370571de",
+        "visible_nonblack_pixels": 614410,
+        "bright_white_pixels": 19428
+      }
+    ]
+  },
+  "verified_facts_vs_hypotheses": {
+    "verified": [
+      "Original firmware SPI3 routines 0x06752fb0 (read) and 0x06753036 (write) execute in guest Thumb mode via 0x064e6a78 -> 0x0642327e -> 0x0642c43c.",
+      "Unmodified qemu/test_lens_release_input.py traps to UND (0x4) at 0x066c2620 (vpush {d0-d3}) because cold-reset CPACR/FPEXC disable VFP/NEON.",
+      "With architectural VFP enabled, SPI3 register 0x044e defaults to lens_release_input.enabled=false, retains guest latch 0x02, reads 0x03 when enabled, restores 0x02 when disabled, and leaves all other bits and registers unchanged.",
+      "Both 120s SMP runs share identical firmware images, QEMU binary, RAM layout, and CLI/QOM configuration except --lens-release-input-high.",
+      "Enabling --lens-release-input-high affected 6938 original SPI3 reads of register 0x044e (effective 0x03 while stored latch remained 0x02), completely eliminating modal 0x4a in UI state (modal_id=0x0), source layout (0000000000000000de70000000000000), render layout (0000000000000000de70000000000000), and all 10 swap PNGs (frames 2..9 all show unobstructed scene 0x70de world-map timezone selection)."
+    ],
+    "still_hypotheses_or_limits": [
+      "Physical chip identity of the SPI3 peer and physical pin/circuit polarity of register 0x044e bit0 are not hardware-measured.",
+      "--lens-release-input-high models only an inactive external release-button input level; it does NOT model an attached lens, lens communication/ACK, sensor frames, or full DSP initialization.",
+      "Once modal 0x4a no longer covers scene 0x70de, frames 2..9 step eastward across timezones (GMT+3:30 -> GMT+10:00), indicating another unmodeled directional/dial input remains active in scene 0x70de.",
+      "Both runs remain local display-isolation experiments (--isolate-display, --service-gui-once, --probe-ui-mode35, --ui-service-loop, TEST IRQ pulses) and menu_rendered remains false."
+    ]
+  }
+}

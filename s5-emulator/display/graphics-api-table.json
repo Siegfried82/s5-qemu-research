@@ -1,0 +1,887 @@
+{
+  "evidence": "Pairs of null-terminated function-name pointers and Thumb entry pointers in original firmware initialization data; actual name strings, no inferred aliases",
+  "apis": [
+    {
+      "name": "eglBindAPI",
+      "entry": "0x64c2344",
+      "pointer": "0x64c2345",
+      "original_table": "0x70d5944",
+      "relocated_table": "0x8ab4f8c"
+    },
+    {
+      "name": "eglBindTexImage",
+      "entry": "0x64c2e12",
+      "pointer": "0x64c2e13",
+      "original_table": "0x70d5974",
+      "relocated_table": "0x8ab4fbc"
+    },
+    {
+      "name": "eglChooseConfig",
+      "entry": "0x64c13ba",
+      "pointer": "0x64c13bb",
+      "original_table": "0x70d590c",
+      "relocated_table": "0x8ab4f54"
+    },
+    {
+      "name": "eglCopyBuffers",
+      "entry": "0x64c3e3c",
+      "pointer": "0x64c3e3d",
+      "original_table": "0x70d59dc",
+      "relocated_table": "0x8ab5024"
+    },
+    {
+      "name": "eglCreateContext",
+      "entry": "0x64c2f62",
+      "pointer": "0x64c2f63",
+      "original_table": "0x70d598c",
+      "relocated_table": "0x8ab4fd4"
+    },
+    {
+      "name": "eglCreatePbufferFromClientBuffer",
+      "entry": "0x64c2878",
+      "pointer": "0x64c2879",
+      "original_table": "0x70d5964",
+      "relocated_table": "0x8ab4fac"
+    },
+    {
+      "name": "eglCreatePbufferSurface",
+      "entry": "0x64c1ed8",
+      "pointer": "0x64c1ed9",
+      "original_table": "0x70d5924",
+      "relocated_table": "0x8ab4f6c"
+    },
+    {
+      "name": "eglCreatePixmapSurface",
+      "entry": "0x64c20e8",
+      "pointer": "0x64c20e9",
+      "original_table": "0x70d592c",
+      "relocated_table": "0x8ab4f74"
+    },
+    {
+      "name": "eglCreateWindowSurface",
+      "entry": "0x64c1ce6",
+      "pointer": "0x64c1ce7",
+      "original_table": "0x70d591c",
+      "relocated_table": "0x8ab4f64"
+    },
+    {
+      "name": "eglDestroyContext",
+      "entry": "0x64c33ee",
+      "pointer": "0x64c33ef",
+      "original_table": "0x70d5994",
+      "relocated_table": "0x8ab4fdc"
+    },
+    {
+      "name": "eglDestroySurface",
+      "entry": "0x64c20f8",
+      "pointer": "0x64c20f9",
+      "original_table": "0x70d5934",
+      "relocated_table": "0x8ab4f7c"
+    },
+    {
+      "name": "eglDumpReferenceColorBufferDMPX",
+      "entry": "0x64c441e",
+      "pointer": "0x64c441f",
+      "original_table": "0x70d59fc",
+      "relocated_table": "0x8ab5044"
+    },
+    {
+      "name": "eglGetConfigAttrib",
+      "entry": "0x64c19a6",
+      "pointer": "0x64c19a7",
+      "original_table": "0x70d5914",
+      "relocated_table": "0x8ab4f5c"
+    },
+    {
+      "name": "eglGetConfigs",
+      "entry": "0x64c1266",
+      "pointer": "0x64c1267",
+      "original_table": "0x70d5904",
+      "relocated_table": "0x8ab4f4c"
+    },
+    {
+      "name": "eglGetCurrentContext",
+      "entry": "0x64c38f6",
+      "pointer": "0x64c38f7",
+      "original_table": "0x70d59a4",
+      "relocated_table": "0x8ab4fec"
+    },
+    {
+      "name": "eglGetCurrentDisplay",
+      "entry": "0x64c39dc",
+      "pointer": "0x64c39dd",
+      "original_table": "0x70d59b4",
+      "relocated_table": "0x8ab4ffc"
+    },
+    {
+      "name": "eglGetCurrentSurface",
+      "entry": "0x64c3952",
+      "pointer": "0x64c3953",
+      "original_table": "0x70d59ac",
+      "relocated_table": "0x8ab4ff4"
+    },
+    {
+      "name": "eglGetDisplay",
+      "entry": "0x64c0d90",
+      "pointer": "0x64c0d91",
+      "original_table": "0x70d58ec",
+      "relocated_table": "0x8ab4f34"
+    },
+    {
+      "name": "eglGetError",
+      "entry": "0x64c0d74",
+      "pointer": "0x64c0d75",
+      "original_table": "0x70d58e4",
+      "relocated_table": "0x8ab4f2c"
+    },
+    {
+      "name": "eglGetProcAddress",
+      "entry": "0x64c4122",
+      "pointer": "0x64c4123",
+      "original_table": "0x70d59e4",
+      "relocated_table": "0x8ab502c"
+    },
+    {
+      "name": "eglInitialize",
+      "entry": "0x64c0daa",
+      "pointer": "0x64c0dab",
+      "original_table": "0x70d58f4",
+      "relocated_table": "0x8ab4f3c"
+    },
+    {
+      "name": "eglMakeCurrent",
+      "entry": "0x64c3478",
+      "pointer": "0x64c3479",
+      "original_table": "0x70d599c",
+      "relocated_table": "0x8ab4fe4"
+    },
+    {
+      "name": "eglQueryAPI",
+      "entry": "0x64c2386",
+      "pointer": "0x64c2387",
+      "original_table": "0x70d594c",
+      "relocated_table": "0x8ab4f94"
+    },
+    {
+      "name": "eglQueryContext",
+      "entry": "0x64c3a2c",
+      "pointer": "0x64c3a2d",
+      "original_table": "0x70d59bc",
+      "relocated_table": "0x8ab5004"
+    },
+    {
+      "name": "eglQueryDisplayDMP",
+      "entry": "0x64c41a0",
+      "pointer": "0x64c41a1",
+      "original_table": "0x70d59ec",
+      "relocated_table": "0x8ab5034"
+    },
+    {
+      "name": "eglQueryFrameDMP",
+      "entry": "0x64c4362",
+      "pointer": "0x64c4363",
+      "original_table": "0x70d59f4",
+      "relocated_table": "0x8ab503c"
+    },
+    {
+      "name": "eglQuerySurface",
+      "entry": "0x64c2180",
+      "pointer": "0x64c2181",
+      "original_table": "0x70d593c",
+      "relocated_table": "0x8ab4f84"
+    },
+    {
+      "name": "eglReleaseTexImage",
+      "entry": "0x64c2e62",
+      "pointer": "0x64c2e63",
+      "original_table": "0x70d597c",
+      "relocated_table": "0x8ab4fc4"
+    },
+    {
+      "name": "eglReleaseThread",
+      "entry": "0x64c23c6",
+      "pointer": "0x64c23c7",
+      "original_table": "0x70d595c",
+      "relocated_table": "0x8ab4fa4"
+    },
+    {
+      "name": "eglSurfaceAttrib",
+      "entry": "0x64c288e",
+      "pointer": "0x64c288f",
+      "original_table": "0x70d596c",
+      "relocated_table": "0x8ab4fb4"
+    },
+    {
+      "name": "eglSwapBuffers",
+      "entry": "0x64c3cda",
+      "pointer": "0x64c3cdb",
+      "original_table": "0x70d59d4",
+      "relocated_table": "0x8ab501c"
+    },
+    {
+      "name": "eglSwapInterval",
+      "entry": "0x64c2eb0",
+      "pointer": "0x64c2eb1",
+      "original_table": "0x70d5984",
+      "relocated_table": "0x8ab4fcc"
+    },
+    {
+      "name": "eglTerminate",
+      "entry": "0x64c111c",
+      "pointer": "0x64c111d",
+      "original_table": "0x70d58fc",
+      "relocated_table": "0x8ab4f44"
+    },
+    {
+      "name": "eglWaitClient",
+      "entry": "0x64c23a2",
+      "pointer": "0x64c23a3",
+      "original_table": "0x70d5954",
+      "relocated_table": "0x8ab4f9c"
+    },
+    {
+      "name": "eglWaitGL",
+      "entry": "0x64c3c32",
+      "pointer": "0x64c3c33",
+      "original_table": "0x70d59c4",
+      "relocated_table": "0x8ab500c"
+    },
+    {
+      "name": "eglWaitNative",
+      "entry": "0x64c3c58",
+      "pointer": "0x64c3c59",
+      "original_table": "0x70d59cc",
+      "relocated_table": "0x8ab5014"
+    },
+    {
+      "name": "glAlphaFuncxOES",
+      "entry": "0x64cf934",
+      "pointer": "0x64cf935",
+      "original_table": "0x70d77d4",
+      "relocated_table": "0x8ab6e1c"
+    },
+    {
+      "name": "glBindFramebufferOES",
+      "entry": "0x64cfb4e",
+      "pointer": "0x64cfb4f",
+      "original_table": "0x70d7944",
+      "relocated_table": "0x8ab6f8c"
+    },
+    {
+      "name": "glBindRenderbufferOES",
+      "entry": "0x64cfa04",
+      "pointer": "0x64cfa05",
+      "original_table": "0x70d7914",
+      "relocated_table": "0x8ab6f5c"
+    },
+    {
+      "name": "glBindVertexArrayOES",
+      "entry": "0x64cfe32",
+      "pointer": "0x64cfe33",
+      "original_table": "0x70d79dc",
+      "relocated_table": "0x8ab7024"
+    },
+    {
+      "name": "glBlendColorDMP",
+      "entry": "0x64cfedc",
+      "pointer": "0x64cfedd",
+      "original_table": "0x70d7a04",
+      "relocated_table": "0x8ab704c"
+    },
+    {
+      "name": "glBlendEquationOES",
+      "entry": "0x64cf772",
+      "pointer": "0x64cf773",
+      "original_table": "0x70d778c",
+      "relocated_table": "0x8ab6dd4"
+    },
+    {
+      "name": "glBlendEquationSeparateOES",
+      "entry": "0x64cf712",
+      "pointer": "0x64cf713",
+      "original_table": "0x70d777c",
+      "relocated_table": "0x8ab6dc4"
+    },
+    {
+      "name": "glBlendFuncSeparateOES",
+      "entry": "0x64cf740",
+      "pointer": "0x64cf741",
+      "original_table": "0x70d7784",
+      "relocated_table": "0x8ab6dcc"
+    },
+    {
+      "name": "glCheckFramebufferStatusOES",
+      "entry": "0x64cfbd8",
+      "pointer": "0x64cfbd9",
+      "original_table": "0x70d795c",
+      "relocated_table": "0x8ab6fa4"
+    },
+    {
+      "name": "glClearColorxOES",
+      "entry": "0x64cf938",
+      "pointer": "0x64cf939",
+      "original_table": "0x70d77dc",
+      "relocated_table": "0x8ab6e24"
+    },
+    {
+      "name": "glClearDepthfOES",
+      "entry": "0x64cfe2e",
+      "pointer": "0x64cfe2f",
+      "original_table": "0x70d79d4",
+      "relocated_table": "0x8ab701c"
+    },
+    {
+      "name": "glClearDepthxOES",
+      "entry": "0x64cf93c",
+      "pointer": "0x64cf93d",
+      "original_table": "0x70d77e4",
+      "relocated_table": "0x8ab6e2c"
+    },
+    {
+      "name": "glClipPlanefOES",
+      "entry": "0x64cfe26",
+      "pointer": "0x64cfe27",
+      "original_table": "0x70d79c4",
+      "relocated_table": "0x8ab700c"
+    },
+    {
+      "name": "glClipPlanexOES",
+      "entry": "0x64cf940",
+      "pointer": "0x64cf941",
+      "original_table": "0x70d77ec",
+      "relocated_table": "0x8ab6e34"
+    },
+    {
+      "name": "glColor4xOES",
+      "entry": "0x64cf944",
+      "pointer": "0x64cf945",
+      "original_table": "0x70d77f4",
+      "relocated_table": "0x8ab6e3c"
+    },
+    {
+      "name": "glCurrentPaletteMatrixOES",
+      "entry": "0x64cfd22",
+      "pointer": "0x64cfd23",
+      "original_table": "0x70d7984",
+      "relocated_table": "0x8ab6fcc"
+    },
+    {
+      "name": "glDeleteFramebuffersOES",
+      "entry": "0x64cfb7c",
+      "pointer": "0x64cfb7d",
+      "original_table": "0x70d794c",
+      "relocated_table": "0x8ab6f94"
+    },
+    {
+      "name": "glDeleteRenderbuffersOES",
+      "entry": "0x64cfa32",
+      "pointer": "0x64cfa33",
+      "original_table": "0x70d791c",
+      "relocated_table": "0x8ab6f64"
+    },
+    {
+      "name": "glDeleteVertexArraysOES",
+      "entry": "0x64cfe5c",
+      "pointer": "0x64cfe5d",
+      "original_table": "0x70d79e4",
+      "relocated_table": "0x8ab702c"
+    },
+    {
+      "name": "glDepthRangefOES",
+      "entry": "0x64cfdfe",
+      "pointer": "0x64cfdff",
+      "original_table": "0x70d79ac",
+      "relocated_table": "0x8ab6ff4"
+    },
+    {
+      "name": "glDepthRangexOES",
+      "entry": "0x64cf948",
+      "pointer": "0x64cf949",
+      "original_table": "0x70d77fc",
+      "relocated_table": "0x8ab6e44"
+    },
+    {
+      "name": "glDrawTexfOES",
+      "entry": "0x64cf8c4",
+      "pointer": "0x64cf8c5",
+      "original_table": "0x70d77c4",
+      "relocated_table": "0x8ab6e0c"
+    },
+    {
+      "name": "glDrawTexfvOES",
+      "entry": "0x64cf90a",
+      "pointer": "0x64cf90b",
+      "original_table": "0x70d77cc",
+      "relocated_table": "0x8ab6e14"
+    },
+    {
+      "name": "glDrawTexiOES",
+      "entry": "0x64cf7d6",
+      "pointer": "0x64cf7d7",
+      "original_table": "0x70d779c",
+      "relocated_table": "0x8ab6de4"
+    },
+    {
+      "name": "glDrawTexivOES",
+      "entry": "0x64cf870",
+      "pointer": "0x64cf871",
+      "original_table": "0x70d77b4",
+      "relocated_table": "0x8ab6dfc"
+    },
+    {
+      "name": "glDrawTexsOES",
+      "entry": "0x64cf79e",
+      "pointer": "0x64cf79f",
+      "original_table": "0x70d7794",
+      "relocated_table": "0x8ab6ddc"
+    },
+    {
+      "name": "glDrawTexsvOES",
+      "entry": "0x64cf846",
+      "pointer": "0x64cf847",
+      "original_table": "0x70d77ac",
+      "relocated_table": "0x8ab6df4"
+    },
+    {
+      "name": "glDrawTexxOES",
+      "entry": "0x64cf80e",
+      "pointer": "0x64cf80f",
+      "original_table": "0x70d77a4",
+      "relocated_table": "0x8ab6dec"
+    },
+    {
+      "name": "glDrawTexxvOES",
+      "entry": "0x64cf89a",
+      "pointer": "0x64cf89b",
+      "original_table": "0x70d77bc",
+      "relocated_table": "0x8ab6e04"
+    },
+    {
+      "name": "glFogxOES",
+      "entry": "0x64cf94c",
+      "pointer": "0x64cf94d",
+      "original_table": "0x70d7804",
+      "relocated_table": "0x8ab6e4c"
+    },
+    {
+      "name": "glFogxvOES",
+      "entry": "0x64cf950",
+      "pointer": "0x64cf951",
+      "original_table": "0x70d780c",
+      "relocated_table": "0x8ab6e54"
+    },
+    {
+      "name": "glFramebufferRenderbufferOES",
+      "entry": "0x64cfbfc",
+      "pointer": "0x64cfbfd",
+      "original_table": "0x70d7964",
+      "relocated_table": "0x8ab6fac"
+    },
+    {
+      "name": "glFramebufferTexture2DOES",
+      "entry": "0x64cfc2e",
+      "pointer": "0x64cfc2f",
+      "original_table": "0x70d796c",
+      "relocated_table": "0x8ab6fb4"
+    },
+    {
+      "name": "glFrustumfOES",
+      "entry": "0x64cfe02",
+      "pointer": "0x64cfe03",
+      "original_table": "0x70d79b4",
+      "relocated_table": "0x8ab6ffc"
+    },
+    {
+      "name": "glFrustumxOES",
+      "entry": "0x64cf954",
+      "pointer": "0x64cf955",
+      "original_table": "0x70d7814",
+      "relocated_table": "0x8ab6e5c"
+    },
+    {
+      "name": "glGenFramebuffersOES",
+      "entry": "0x64cfbaa",
+      "pointer": "0x64cfbab",
+      "original_table": "0x70d7954",
+      "relocated_table": "0x8ab6f9c"
+    },
+    {
+      "name": "glGenRenderbuffersOES",
+      "entry": "0x64cfa60",
+      "pointer": "0x64cfa61",
+      "original_table": "0x70d7924",
+      "relocated_table": "0x8ab6f6c"
+    },
+    {
+      "name": "glGenVertexArraysOES",
+      "entry": "0x64cfe8a",
+      "pointer": "0x64cfe8b",
+      "original_table": "0x70d79ec",
+      "relocated_table": "0x8ab7034"
+    },
+    {
+      "name": "glGenerateMipmapOES",
+      "entry": "0x64cfcfc",
+      "pointer": "0x64cfcfd",
+      "original_table": "0x70d797c",
+      "relocated_table": "0x8ab6fc4"
+    },
+    {
+      "name": "glGetClipPlanefOES",
+      "entry": "0x64cfe2a",
+      "pointer": "0x64cfe2b",
+      "original_table": "0x70d79cc",
+      "relocated_table": "0x8ab7014"
+    },
+    {
+      "name": "glGetClipPlanexOES",
+      "entry": "0x64cf964",
+      "pointer": "0x64cf965",
+      "original_table": "0x70d781c",
+      "relocated_table": "0x8ab6e64"
+    },
+    {
+      "name": "glGetFixedvOES",
+      "entry": "0x64cf968",
+      "pointer": "0x64cf969",
+      "original_table": "0x70d7824",
+      "relocated_table": "0x8ab6e6c"
+    },
+    {
+      "name": "glGetFramebufferAttachmentParameterivOES",
+      "entry": "0x64cfc98",
+      "pointer": "0x64cfc99",
+      "original_table": "0x70d7974",
+      "relocated_table": "0x8ab6fbc"
+    },
+    {
+      "name": "glGetLightxvOES",
+      "entry": "0x64cf96c",
+      "pointer": "0x64cf96d",
+      "original_table": "0x70d782c",
+      "relocated_table": "0x8ab6e74"
+    },
+    {
+      "name": "glGetMaterialxvOES",
+      "entry": "0x64cf970",
+      "pointer": "0x64cf971",
+      "original_table": "0x70d7834",
+      "relocated_table": "0x8ab6e7c"
+    },
+    {
+      "name": "glGetRenderbufferParameterivOES",
+      "entry": "0x64cfaf8",
+      "pointer": "0x64cfaf9",
+      "original_table": "0x70d7934",
+      "relocated_table": "0x8ab6f7c"
+    },
+    {
+      "name": "glGetTexEnvxvOES",
+      "entry": "0x64cf974",
+      "pointer": "0x64cf975",
+      "original_table": "0x70d783c",
+      "relocated_table": "0x8ab6e84"
+    },
+    {
+      "name": "glGetTexParameterxvOES",
+      "entry": "0x64cf978",
+      "pointer": "0x64cf979",
+      "original_table": "0x70d7844",
+      "relocated_table": "0x8ab6e8c"
+    },
+    {
+      "name": "glIsFramebufferOES",
+      "entry": "0x64cfb2a",
+      "pointer": "0x64cfb2b",
+      "original_table": "0x70d793c",
+      "relocated_table": "0x8ab6f84"
+    },
+    {
+      "name": "glIsRenderbufferOES",
+      "entry": "0x64cf9e0",
+      "pointer": "0x64cf9e1",
+      "original_table": "0x70d790c",
+      "relocated_table": "0x8ab6f54"
+    },
+    {
+      "name": "glIsVertexArrayOES",
+      "entry": "0x64cfeb8",
+      "pointer": "0x64cfeb9",
+      "original_table": "0x70d79f4",
+      "relocated_table": "0x8ab703c"
+    },
+    {
+      "name": "glLightModelxOES",
+      "entry": "0x64cf97c",
+      "pointer": "0x64cf97d",
+      "original_table": "0x70d784c",
+      "relocated_table": "0x8ab6e94"
+    },
+    {
+      "name": "glLightModelxvOES",
+      "entry": "0x64cf980",
+      "pointer": "0x64cf981",
+      "original_table": "0x70d7854",
+      "relocated_table": "0x8ab6e9c"
+    },
+    {
+      "name": "glLightxOES",
+      "entry": "0x64cf984",
+      "pointer": "0x64cf985",
+      "original_table": "0x70d785c",
+      "relocated_table": "0x8ab6ea4"
+    },
+    {
+      "name": "glLightxvOES",
+      "entry": "0x64cf988",
+      "pointer": "0x64cf989",
+      "original_table": "0x70d7864",
+      "relocated_table": "0x8ab6eac"
+    },
+    {
+      "name": "glLineStippleDMP",
+      "entry": "0x64cff0e",
+      "pointer": "0x64cff0f",
+      "original_table": "0x70d79fc",
+      "relocated_table": "0x8ab7044"
+    },
+    {
+      "name": "glLineWidthxOES",
+      "entry": "0x64cf98c",
+      "pointer": "0x64cf98d",
+      "original_table": "0x70d786c",
+      "relocated_table": "0x8ab6eb4"
+    },
+    {
+      "name": "glLoadMatrixxOES",
+      "entry": "0x64cf990",
+      "pointer": "0x64cf991",
+      "original_table": "0x70d7874",
+      "relocated_table": "0x8ab6ebc"
+    },
+    {
+      "name": "glLoadPaletteFromModelViewMatrixOES",
+      "entry": "0x64cfd4c",
+      "pointer": "0x64cfd4d",
+      "original_table": "0x70d798c",
+      "relocated_table": "0x8ab6fd4"
+    },
+    {
+      "name": "glMaterialxOES",
+      "entry": "0x64cf994",
+      "pointer": "0x64cf995",
+      "original_table": "0x70d787c",
+      "relocated_table": "0x8ab6ec4"
+    },
+    {
+      "name": "glMaterialxvOES",
+      "entry": "0x64cf998",
+      "pointer": "0x64cf999",
+      "original_table": "0x70d7884",
+      "relocated_table": "0x8ab6ecc"
+    },
+    {
+      "name": "glMatrixIndexPointerOES",
+      "entry": "0x64cfd72",
+      "pointer": "0x64cfd73",
+      "original_table": "0x70d7994",
+      "relocated_table": "0x8ab6fdc"
+    },
+    {
+      "name": "glMultMatrixxOES",
+      "entry": "0x64cf99c",
+      "pointer": "0x64cf99d",
+      "original_table": "0x70d788c",
+      "relocated_table": "0x8ab6ed4"
+    },
+    {
+      "name": "glMultiTexCoord4xOES",
+      "entry": "0x64cf9a0",
+      "pointer": "0x64cf9a1",
+      "original_table": "0x70d7894",
+      "relocated_table": "0x8ab6edc"
+    },
+    {
+      "name": "glNormal3xOES",
+      "entry": "0x64cf9ac",
+      "pointer": "0x64cf9ad",
+      "original_table": "0x70d789c",
+      "relocated_table": "0x8ab6ee4"
+    },
+    {
+      "name": "glOrthofOES",
+      "entry": "0x64cfe14",
+      "pointer": "0x64cfe15",
+      "original_table": "0x70d79bc",
+      "relocated_table": "0x8ab7004"
+    },
+    {
+      "name": "glOrthoxOES",
+      "entry": "0x64cf9b0",
+      "pointer": "0x64cf9b1",
+      "original_table": "0x70d78a4",
+      "relocated_table": "0x8ab6eec"
+    },
+    {
+      "name": "glPointParameterxOES",
+      "entry": "0x64cf9c0",
+      "pointer": "0x64cf9c1",
+      "original_table": "0x70d78ac",
+      "relocated_table": "0x8ab6ef4"
+    },
+    {
+      "name": "glPointParameterxvOES",
+      "entry": "0x64cf9c4",
+      "pointer": "0x64cf9c5",
+      "original_table": "0x70d78b4",
+      "relocated_table": "0x8ab6efc"
+    },
+    {
+      "name": "glPointSizePointerOES",
+      "entry": "0x64cf6e0",
+      "pointer": "0x64cf6e1",
+      "original_table": "0x70d7774",
+      "relocated_table": "0x8ab6dbc"
+    },
+    {
+      "name": "glPointSizexOES",
+      "entry": "0x64cf9c8",
+      "pointer": "0x64cf9c9",
+      "original_table": "0x70d78bc",
+      "relocated_table": "0x8ab6f04"
+    },
+    {
+      "name": "glPolygonOffsetxOES",
+      "entry": "0x64cf9cc",
+      "pointer": "0x64cf9cd",
+      "original_table": "0x70d78c4",
+      "relocated_table": "0x8ab6f0c"
+    },
+    {
+      "name": "glQueryMatrixxOES",
+      "entry": "0x64cfdd6",
+      "pointer": "0x64cfdd7",
+      "original_table": "0x70d79a4",
+      "relocated_table": "0x8ab6fec"
+    },
+    {
+      "name": "glRenderbufferStorageOES",
+      "entry": "0x64cfa8e",
+      "pointer": "0x64cfa8f",
+      "original_table": "0x70d792c",
+      "relocated_table": "0x8ab6f74"
+    },
+    {
+      "name": "glRotatexOES",
+      "entry": "0x64cf9d0",
+      "pointer": "0x64cf9d1",
+      "original_table": "0x70d78cc",
+      "relocated_table": "0x8ab6f14"
+    },
+    {
+      "name": "glSampleCoveragexOES",
+      "entry": "0x64cf9d2",
+      "pointer": "0x64cf9d3",
+      "original_table": "0x70d78d4",
+      "relocated_table": "0x8ab6f1c"
+    },
+    {
+      "name": "glScalexOES",
+      "entry": "0x64cf9d4",
+      "pointer": "0x64cf9d5",
+      "original_table": "0x70d78dc",
+      "relocated_table": "0x8ab6f24"
+    },
+    {
+      "name": "glTexEnvxOES",
+      "entry": "0x64cf9d6",
+      "pointer": "0x64cf9d7",
+      "original_table": "0x70d78e4",
+      "relocated_table": "0x8ab6f2c"
+    },
+    {
+      "name": "glTexEnvxvOES",
+      "entry": "0x64cf9d8",
+      "pointer": "0x64cf9d9",
+      "original_table": "0x70d78ec",
+      "relocated_table": "0x8ab6f34"
+    },
+    {
+      "name": "glTexParameterxOES",
+      "entry": "0x64cf9da",
+      "pointer": "0x64cf9db",
+      "original_table": "0x70d78f4",
+      "relocated_table": "0x8ab6f3c"
+    },
+    {
+      "name": "glTexParameterxvOES",
+      "entry": "0x64cf9dc",
+      "pointer": "0x64cf9dd",
+      "original_table": "0x70d78fc",
+      "relocated_table": "0x8ab6f44"
+    },
+    {
+      "name": "glTranslatexOES",
+      "entry": "0x64cf9de",
+      "pointer": "0x64cf9df",
+      "original_table": "0x70d7904",
+      "relocated_table": "0x8ab6f4c"
+    },
+    {
+      "name": "glWeightPointerOES",
+      "entry": "0x64cfda4",
+      "pointer": "0x64cfda5",
+      "original_table": "0x70d799c",
+      "relocated_table": "0x8ab6fe4"
+    },
+    {
+      "name": "vgCreateImageDataDMP",
+      "entry": "0x65da95a",
+      "pointer": "0x65da95b",
+      "original_table": "0x70d7a0c",
+      "relocated_table": "0x8ab7054"
+    },
+    {
+      "name": "vgCreateImageStandardDataDMP",
+      "entry": "0x65da992",
+      "pointer": "0x65da993",
+      "original_table": "0x70d7a3c",
+      "relocated_table": "0x8ab7084"
+    },
+    {
+      "name": "vgDrawPathDataArraysDMP",
+      "entry": "0x65da8ee",
+      "pointer": "0x65da8ef",
+      "original_table": "0x70d7a34",
+      "relocated_table": "0x8ab707c"
+    },
+    {
+      "name": "vgDrawPathDataDMP",
+      "entry": "0x65da884",
+      "pointer": "0x65da885",
+      "original_table": "0x70d7a2c",
+      "relocated_table": "0x8ab7074"
+    },
+    {
+      "name": "vgDrawSubImageDMP",
+      "entry": "0x65da76e",
+      "pointer": "0x65da76f",
+      "original_table": "0x70d7a14",
+      "relocated_table": "0x8ab705c"
+    },
+    {
+      "name": "vgDrawSubImagesDMP",
+      "entry": "0x65da7ca",
+      "pointer": "0x65da7cb",
+      "original_table": "0x70d7a1c",
+      "relocated_table": "0x8ab7064"
+    },
+    {
+      "name": "vgMultiDrawImageDMP",
+      "entry": "0x65da830",
+      "pointer": "0x65da831",
+      "original_table": "0x70d7a24",
+      "relocated_table": "0x8ab706c"
+    }
+  ]
+}

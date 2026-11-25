@@ -1,0 +1,27 @@
+{
+  "synthetic_surface_and_shape": true,
+  "menu_rendered": false,
+  "original_wrapper": "0x072a34d6",
+  "scope": "Original app wrapper, not complete menu logic; EGL/VG software state deliberately supplied",
+  "stops": [
+    {
+      "pc": "0x65da884",
+      "reply": "T05thread:01;"
+    },
+    {
+      "pc": "0x65d9280",
+      "reply": "T05thread:01;"
+    },
+    {
+      "pc": "0x18000",
+      "reply": "T05thread:01;"
+    }
+  ],
+  "returned": true,
+  "return_r0": 0,
+  "callee_saved_preserved": true,
+  "stack_preserved": true,
+  "captured_original_api_args_match_expected": true,
+  "pixels_match_known_test_shape": true,
+  "passed": true
+}

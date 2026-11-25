@@ -1,0 +1,251 @@
+{
+  "program": "/Users/lixiuqi/Documents/ChatGPT/\u76f8\u673a/s5-v29-offline/unpacked-v29/03_program.bin",
+  "program_sha256": "fc496d62a91f6e9b1b84807183bb805bc546c9105d2938546b58a66ad9d132fe",
+  "program_base": "0x6280000",
+  "isa_identified": false,
+  "blobs": [
+    {
+      "name": "code",
+      "source": "0x6a2d918",
+      "destination": "0x7b020000",
+      "bytes": 65536,
+      "sha256": "26f6eb49c382cba94195244ed759162c21066508ec79e4e5ed42c4486ce30b99",
+      "prefix64_hex": "010100a72a0000a7d40100a72e0000a70000000000000000a70200a70000000000000000000000007a0300a70000000000000000000000000000000000000000",
+      "nonzero_bytes": 45212,
+      "first_nonzero": "0x0",
+      "last_nonzero": "0xe0b5",
+      "frequent_le16": [
+        {
+          "value": "0x0",
+          "count": 8754
+        },
+        {
+          "value": "0xd7e6",
+          "count": 1121
+        },
+        {
+          "value": "0xd7ee",
+          "count": 745
+        },
+        {
+          "value": "0xedb0",
+          "count": 621
+        },
+        {
+          "value": "0xffff",
+          "count": 458
+        },
+        {
+          "value": "0xc26f",
+          "count": 340
+        },
+        {
+          "value": "0xf787",
+          "count": 288
+        },
+        {
+          "value": "0xc0a7",
+          "count": 276
+        },
+        {
+          "value": "0xf79d",
+          "count": 233
+        },
+        {
+          "value": "0xd7ea",
+          "count": 230
+        },
+        {
+          "value": "0x1020",
+          "count": 220
+        },
+        {
+          "value": "0x1320",
+          "count": 191
+        },
+        {
+          "value": "0xc26e",
+          "count": 191
+        },
+        {
+          "value": "0xce06",
+          "count": 190
+        },
+        {
+          "value": "0xc266",
+          "count": 190
+        },
+        {
+          "value": "0x4000",
+          "count": 164
+        },
+        {
+          "value": "0xc09e",
+          "count": 161
+        },
+        {
+          "value": "0x1",
+          "count": 153
+        },
+        {
+          "value": "0xdb08",
+          "count": 150
+        },
+        {
+          "value": "0xf7c2",
+          "count": 141
+        }
+      ],
+      "magic_occurrences": {
+        "0x1234": {
+          "le16_aligned": [
+            "0x8572",
+            "0x85b0"
+          ],
+          "le32_aligned": []
+        },
+        "0x5678": {
+          "le16_aligned": [
+            "0x8576"
+          ],
+          "le32_aligned": []
+        },
+        "0x9012": {
+          "le16_aligned": [
+            "0x85c2"
+          ],
+          "le32_aligned": []
+        },
+        "0x3456": {
+          "le16_aligned": [
+            "0x85d6"
+          ],
+          "le32_aligned": []
+        },
+        "0x7890": {
+          "le16_aligned": [
+            "0x85da"
+          ],
+          "le32_aligned": []
+        }
+      },
+      "code_0x8500_0x8600_hex": "05e3e7d7b16600008875b0ed1200813fffff2013eed77c046033ead78666acff004f01432dc3ffffe6d70a20c0bd83ed83ed00210000057383ed36530420c3bd6033ead70620c3bd6033ead7dcc2ffff60b3ead77fc2ffff030923092affffffd126000060f3ead7e1a405092309440983ed3412f0a478561404e0a40620c5bd3421000010cbe6d73021000000dbe6d72e21000004dbe6d701dbe6d79004e0a400dbe6d73c3a000001dbe6d7322100003412e0a4305e0000e821000000dbe6d7e6d71290809383ede0a4ac41000000db000000dbe6d75634e6d79078e0a4f042e0a4ca43000000db000000dbe6d76001e6d70832e0a43821e0a43a21000000db"
+    },
+    {
+      "name": "data",
+      "source": "0x6a3d918",
+      "destination": "0x7b000000",
+      "bytes": 131072,
+      "sha256": "1a14e21b097bfcc2a377a851e9414732f46974f148f6bd5bd5e4cf1561e5bef2",
+      "prefix64_hex": "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "nonzero_bytes": 250,
+      "first_nonzero": "0xcd26",
+      "last_nonzero": "0xd3d9",
+      "frequent_le16": [
+        {
+          "value": "0x0",
+          "count": 65403
+        },
+        {
+          "value": "0x4",
+          "count": 9
+        },
+        {
+          "value": "0x2b",
+          "count": 5
+        },
+        {
+          "value": "0xffff",
+          "count": 4
+        },
+        {
+          "value": "0x683c",
+          "count": 2
+        },
+        {
+          "value": "0x6884",
+          "count": 2
+        },
+        {
+          "value": "0x68cc",
+          "count": 2
+        },
+        {
+          "value": "0xcccd",
+          "count": 2
+        },
+        {
+          "value": "0x28f6",
+          "count": 2
+        },
+        {
+          "value": "0x6666",
+          "count": 2
+        },
+        {
+          "value": "0xcd15",
+          "count": 1
+        },
+        {
+          "value": "0x75b",
+          "count": 1
+        },
+        {
+          "value": "0x1333",
+          "count": 1
+        },
+        {
+          "value": "0x549",
+          "count": 1
+        },
+        {
+          "value": "0x55e5",
+          "count": 1
+        },
+        {
+          "value": "0x159a",
+          "count": 1
+        },
+        {
+          "value": "0x3bb5",
+          "count": 1
+        },
+        {
+          "value": "0x1f12",
+          "count": 1
+        },
+        {
+          "value": "0xf",
+          "count": 1
+        },
+        {
+          "value": "0x6df0",
+          "count": 1
+        }
+      ],
+      "magic_occurrences": {
+        "0x1234": {
+          "le16_aligned": [],
+          "le32_aligned": []
+        },
+        "0x5678": {
+          "le16_aligned": [],
+          "le32_aligned": []
+        },
+        "0x9012": {
+          "le16_aligned": [],
+          "le32_aligned": []
+        },
+        "0x3456": {
+          "le16_aligned": [],
+          "le32_aligned": []
+        },
+        "0x7890": {
+          "le16_aligned": [],
+          "le32_aligned": []
+        }
+      },
+      "mailbox_0x4000_first_0x20_hex": "0000000000000000000000000000000000000000000000000000000000000000"
+    }
+  ]
+}

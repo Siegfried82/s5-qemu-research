@@ -1,0 +1,100 @@
+{
+  "scope": "No firmware loaded; synthetic ARM load/store helpers test actual GIC access",
+  "guest_instructions_executed": "Synthetic MMIO LDR/STR and BX only",
+  "hardware_timing_verified": false,
+  "qemu_sha256": "9842c4bb70de9e69ea19fff6321706ab667ce949113a5cdf04c5492281a32b2f",
+  "checks": [
+    {
+      "name": "default disabled with zero mask",
+      "passed": true
+    },
+    {
+      "name": "default MMIO unchanged",
+      "passed": true
+    },
+    {
+      "name": "pulse rejected while disabled",
+      "passed": true
+    },
+    {
+      "name": "mask inactive while disabled",
+      "passed": true
+    },
+    {
+      "name": "independent mask 0",
+      "passed": true
+    },
+    {
+      "name": "independent mask 1",
+      "passed": true
+    },
+    {
+      "name": "independent mask 2",
+      "passed": true
+    },
+    {
+      "name": "independent mask 3",
+      "passed": true
+    },
+    {
+      "name": "byte access uses correct little-endian lane",
+      "passed": true
+    },
+    {
+      "name": "guest writes do not create extra status bits",
+      "passed": true
+    },
+    {
+      "name": "other MMIO remains original zero",
+      "passed": true
+    },
+    {
+      "name": "invalid mask rejected",
+      "passed": true
+    },
+    {
+      "name": "invalid pulse 0",
+      "passed": true
+    },
+    {
+      "name": "invalid pulse 195",
+      "passed": true
+    },
+    {
+      "name": "invalid pulse 224",
+      "passed": true
+    },
+    {
+      "name": "invalid pulse 231",
+      "passed": true
+    },
+    {
+      "name": "invalid pulse 233",
+      "passed": true
+    },
+    {
+      "name": "invalid pulse 448",
+      "passed": true
+    },
+    {
+      "name": "IRQ starts clear 196",
+      "passed": true
+    },
+    {
+      "name": "pulse reaches actual GIC 196",
+      "passed": false
+    }
+  ],
+  "expected_rejections": [
+    "QMP error: {'class': 'GenericError', 'desc': 'display-test-pulse requires display-test-mode=on, a realized GIC and IRQ 196, 230 or 232'}",
+    "QMP error: {'class': 'GenericError', 'desc': 'display-test-status-mask must be in 0..3'}",
+    "QMP error: {'class': 'GenericError', 'desc': 'display-test-pulse requires display-test-mode=on, a realized GIC and IRQ 196, 230 or 232'}",
+    "QMP error: {'class': 'GenericError', 'desc': 'display-test-pulse requires display-test-mode=on, a realized GIC and IRQ 196, 230 or 232'}",
+    "QMP error: {'class': 'GenericError', 'desc': 'display-test-pulse requires display-test-mode=on, a realized GIC and IRQ 196, 230 or 232'}",
+    "QMP error: {'class': 'GenericError', 'desc': 'display-test-pulse requires display-test-mode=on, a realized GIC and IRQ 196, 230 or 232'}",
+    "QMP error: {'class': 'GenericError', 'desc': 'display-test-pulse requires display-test-mode=on, a realized GIC and IRQ 196, 230 or 232'}",
+    "QMP error: {'class': 'GenericError', 'desc': 'display-test-pulse requires display-test-mode=on, a realized GIC and IRQ 196, 230 or 232'}"
+  ],
+  "passed": false,
+  "error": "pulse reaches actual GIC 196"
+}

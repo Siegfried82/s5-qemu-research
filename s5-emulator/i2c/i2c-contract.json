@@ -1,0 +1,246 @@
+{
+  "source": "/Users/lixiuqi/Documents/ChatGPT/\u76f8\u673a/s5-v29-offline/unpacked-v29/03_program.bin",
+  "program_sha256": "fc496d62a91f6e9b1b84807183bb805bc546c9105d2938546b58a66ad9d132fe",
+  "banks": [
+    {
+      "bus": 0,
+      "base": "0x7f058000",
+      "logical_irq": "0x7c",
+      "gic_absolute_id": 282,
+      "irq_thunk": "0x64973f6"
+    },
+    {
+      "bus": 1,
+      "base": "0x7f058100",
+      "logical_irq": "0x7d",
+      "gic_absolute_id": 283,
+      "irq_thunk": "0x64973fc"
+    },
+    {
+      "bus": 2,
+      "base": "0x7f058200",
+      "logical_irq": "0x7e",
+      "gic_absolute_id": 284,
+      "irq_thunk": "0x6497402"
+    },
+    {
+      "bus": 3,
+      "base": "0x7f058300",
+      "logical_irq": "0x7f",
+      "gic_absolute_id": 285,
+      "irq_thunk": "0x6497408"
+    },
+    {
+      "bus": 4,
+      "base": "0x7f058400",
+      "logical_irq": "0x80",
+      "gic_absolute_id": 286,
+      "irq_thunk": "0x649740e"
+    }
+  ],
+  "original_tables": {
+    "base_pointers": "0x06ff1188",
+    "logical_irqs": "0x06ff119c",
+    "logical_to_gic": "0x06ff1240"
+  },
+  "api": {
+    "write": "0x066ce452",
+    "args": "r0 bus, r1 address byte (copied verbatim to DATA), r2 buffer, r3 byte count, stack[0]=0 stack[4]=0 in audio call",
+    "audio": "0x064a0c30 writes [register,value] two-byte buffer; actual bus0 address byte0x30 (do not call this a proven 7-bit address0x30)",
+    "dispatcher": "0x066ce2c2",
+    "worker": "0x066ce106",
+    "transfer_retries": "0x066ce016",
+    "low_transfer": "0x066cdf62",
+    "isr_dispatch": "0x06499734",
+    "cleanup": "0x06499752"
+  },
+  "irq_chain": {
+    "thunk": "bus thunk calls 06499734 with r0=bus",
+    "dispatch_mode_field": "byte [0x08d31ac8+4]",
+    "handlers": {
+      "0": "0x064994b8",
+      "1": "0x06499234",
+      "2": "0x064990ea",
+      "3": "0x06498e7e"
+    },
+    "error": "each handler tests bit3 of base+4 before state dispatch; disables logical IRQ via0658bb0c, clears GIC pending via0658bb3e, emits event18 mask2",
+    "event_paths": {
+      "context_query_065477bc_0": "06576118(event18,2)",
+      "context_query_065477bc_1": "065490e0(event18,2)"
+    },
+    "worker": "066cdf62 waits mask3 on event18; any nonzero OS wait return or received mask bit2 means failure1 and invokes06499752. 066ce016 retries 4 failures, stores status1 and invokes original callback. Callback066ce2aa posts event19 bit2 when status nonzero; main wrapper returns false unless event19 bit1 received."
+  },
+  "register_evidence": {
+    "0x00": "initialization writes0188 for bus0..3 and01c2 bus4; original start ORs bit5; continuation clearsbit4 and ORsbit8. bit5 enable and bit4 pending interpretation consistent with code, not physical datasheet proof.",
+    "0x04": "start sequence writes0x10 then DATA address then0xf0(TX); RX uses0xb0. Original ISR bit3 alone takes early error branch; bit0 controls dynamically enter normal path.",
+    "0x08": "initialization writes0",
+    "0x0c": "address/data byte; audio request actual address byte0x30",
+    "0x10": "original later writes1 or4 during stop/read handling; exact physical semantics not established",
+    "global_0x7f038328": "initialization writes0x14",
+    "global_0x7f03832c_bit9": "some original stop paths poll this bit, bounded by timer90; not needed for early generic-error path"
+  },
+  "timeout": {
+    "transfer_argument": "for audio2byte mode1 transfer, 066ce016 calculates (2+0x226)/100 +1 =6; 066cdf62 passes6*10=60 to OS event wait",
+    "retry_count": 4,
+    "clock_units": "OS wait units; no unsupported physical time conversion",
+    "observed": "pulse-timer-boot has351 writes of DATA address0x30/start0xf0; original timeout and error retry were already functioning without I2C IRQ"
+  },
+  "minimal_model_proposal": {
+    "profile": "explicit simulated generic controller error, not physical NACK and not successful peer",
+    "trigger": "base+4 write0xf0 or0xb0 (observed valid original start commands)",
+    "completion": "latch status written|8 and CON bit4; assert bank GIC IRQ while CON bit5 set",
+    "cleanup": "deassert when CON bit5 cleared; original cleanup also clears CON bit4 and writesSTAT0, which resets model error latch",
+    "no_peer_ack": "do not clock successful byte IRQs or invent return data; no direct event-memory/status callback edits"
+  },
+  "execution_evidence": "error-isr-check-v2/verification.json:16 error tests+8bit0controls PASS; flat RAM/status input and OS hooks, not full RTOS IRQ delivery",
+  "hardware_unknowns": [
+    "status bit3 physical cause (NACK/arbitration/other) is not established",
+    "register similarities do not establish Exynos hardware or identical NACK semantics",
+    "successful peer transfers and real amplifier protocol are not implemented"
+  ],
+  "snapshot": {
+    "result": "/Users/lixiuqi/Documents/ChatGPT/\u76f8\u673a/s5-emulator/menu-smp/results/pulse-timer-boot/result.json",
+    "result_sha256": "07c460f4891d7a870d878db92c5a714a1e347a05aa102deb155d3dbf20913051",
+    "ram": "/Users/lixiuqi/Documents/ChatGPT/\u76f8\u673a/s5-emulator/menu-smp/results/pulse-timer-boot/ram.bin",
+    "exact_segments": [
+      {
+        "address": "0x8aa7b0c",
+        "length": 64,
+        "bytes_hex": "0001040058000000000000000000000000000000010100000000000001000000000000000000000064000000000000000500000000000000000000000a000000",
+        "sha256": "0dc51e0e2d6b673dd5574905f24be9924f89bcf0312eabeeda71bcaa9529ae8a"
+      },
+      {
+        "address": "0x8d31ac8",
+        "length": 32,
+        "bytes_hex": "0130ff000100000000000000000000000d4ea908010002000000000000000000",
+        "sha256": "0ce8ed1a13619e80516b7db06a4e982e47babf9714907e3aa3af809479ea3759"
+      },
+      {
+        "address": "0x8d31088",
+        "length": 128,
+        "bytes_hex": "8810d3088810d308000000005610d308010000005600000001000000010000000030ff0600000000000000000d4ea90802000000abe26c0601000000014ea908c810d308c810d308010000005610d308010000005700000001000000010000000030ff0600000000000000000d4ea90802000000abe26c0601000000014ea908",
+        "sha256": "dd932c12c03072d8240bea572eeea11a6545e303d98760923b538a8b4010413b"
+      },
+      {
+        "address": "0x6f49740",
+        "length": 12,
+        "bytes_hex": "120000001300000014000000",
+        "sha256": "fbb5cccb5806b69d6f2a0c80e5ce65650ace5dc548153e819cf8e89f3beae645"
+      }
+    ],
+    "i2c_mmio_accesses": [
+      {
+        "cpu": 0,
+        "address": "0x7f058000",
+        "size": 4,
+        "operation": "write",
+        "count": 702,
+        "last_value": 32
+      },
+      {
+        "cpu": 0,
+        "address": "0x7f058008",
+        "size": 4,
+        "operation": "write",
+        "count": 1,
+        "last_value": 0
+      },
+      {
+        "cpu": 0,
+        "address": "0x7f058100",
+        "size": 4,
+        "operation": "write",
+        "count": 1,
+        "last_value": 392
+      },
+      {
+        "cpu": 0,
+        "address": "0x7f058108",
+        "size": 4,
+        "operation": "write",
+        "count": 1,
+        "last_value": 0
+      },
+      {
+        "cpu": 0,
+        "address": "0x7f058200",
+        "size": 4,
+        "operation": "write",
+        "count": 1,
+        "last_value": 392
+      },
+      {
+        "cpu": 0,
+        "address": "0x7f058208",
+        "size": 4,
+        "operation": "write",
+        "count": 1,
+        "last_value": 0
+      },
+      {
+        "cpu": 0,
+        "address": "0x7f058300",
+        "size": 4,
+        "operation": "write",
+        "count": 1,
+        "last_value": 392
+      },
+      {
+        "cpu": 0,
+        "address": "0x7f058308",
+        "size": 4,
+        "operation": "write",
+        "count": 1,
+        "last_value": 0
+      },
+      {
+        "cpu": 0,
+        "address": "0x7f058400",
+        "size": 4,
+        "operation": "write",
+        "count": 1,
+        "last_value": 450
+      },
+      {
+        "cpu": 0,
+        "address": "0x7f058408",
+        "size": 4,
+        "operation": "write",
+        "count": 1,
+        "last_value": 0
+      },
+      {
+        "cpu": 0,
+        "address": "0x7f058004",
+        "size": 4,
+        "operation": "read",
+        "count": 351,
+        "last_value": 0
+      },
+      {
+        "cpu": 0,
+        "address": "0x7f058000",
+        "size": 4,
+        "operation": "read",
+        "count": 701,
+        "last_value": 0
+      },
+      {
+        "cpu": 0,
+        "address": "0x7f058004",
+        "size": 4,
+        "operation": "write",
+        "count": 1052,
+        "last_value": 240
+      },
+      {
+        "cpu": 0,
+        "address": "0x7f05800c",
+        "size": 4,
+        "operation": "write",
+        "count": 351,
+        "last_value": 48
+      }
+    ]
+  }
+}

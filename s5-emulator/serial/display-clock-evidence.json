@@ -1,0 +1,892 @@
+{
+  "scope": "Static original instruction chains plus saved execution evidence; no new hardware model or event injection",
+  "snapshot": "/Users/lixiuqi/Documents/ChatGPT/相机/s5-emulator/menu-smp/results/isolated-display-gradient",
+  "original_files": {
+    "program": {
+      "path": "/Users/lixiuqi/Documents/ChatGPT/相机/s5-v29-offline/unpacked-v29/03_program.bin",
+      "base": "0x6280000",
+      "sha256": "fc496d62a91f6e9b1b84807183bb805bc546c9105d2938546b58a66ad9d132fe"
+    },
+    "loader3": {
+      "path": "/Users/lixiuqi/Documents/ChatGPT/相机/s5-v29-offline/unpacked-v29/02_loader3.bin",
+      "base": "0x0",
+      "sha256": "67d44d7c2bb2091b7a56ca5118345e0ee604e6b2c6c31769cd6de06ae752d838"
+    }
+  },
+  "observed": {
+    "avio_completion": {
+      "address": "0x08a9c7f8",
+      "value": 0,
+      "required": 2
+    },
+    "lcd_transition": {
+      "base": "0x08ab4860",
+      "words": {
+        "0x0": "0x0",
+        "0x4": "0x0",
+        "0x8": "0x3",
+        "0xc": "0x0",
+        "0x10": "0x9",
+        "0x14": "0x0",
+        "0x18": "0x3",
+        "0x1c": "0x0",
+        "0x20": "0x0",
+        "0x24": "0x3",
+        "0x28": "0x0",
+        "0x2c": "0x1",
+        "0x30": "0x647dcf7"
+      },
+      "state_address": "0x08ab488c",
+      "state": 1,
+      "callback": "0x647dcf7"
+    },
+    "primary_irq_context": {
+      "base": "0x08ab4d8c",
+      "words": {
+        "0x0": "0xff00",
+        "0x4": "0x647cab7",
+        "0x8": "0x0",
+        "0xc": "0x1010101"
+      },
+      "phase_byte": 255
+    },
+    "completion_selector": {
+      "address": "0x08ab1bba",
+      "value": 0,
+      "active_irq_when_zero": 232,
+      "active_irq_when_nonzero": 230
+    },
+    "bank0_shadow": {
+      "base": "0x090db3d4",
+      "words": {
+        "0x0": "0x4",
+        "0x4": "0x10008000",
+        "0x8": "0x300",
+        "0xc": "0x1cf0000",
+        "0x10": "0x0",
+        "0x14": "0x0",
+        "0x18": "0x2400",
+        "0x1c": "0x0",
+        "0x20": "0x0",
+        "0x24": "0x0",
+        "0x28": "0x2041c",
+        "0x2c": "0x60010",
+        "0x30": "0xb",
+        "0x34": "0x10401",
+        "0x38": "0x270327",
+        "0x3c": "0x0",
+        "0x40": "0x44c",
+        "0x44": "0x1",
+        "0x48": "0x1000000",
+        "0x4c": "0x88",
+        "0x50": "0x0",
+        "0x54": "0x111",
+        "0x58": "0x2",
+        "0x5c": "0x0",
+        "0x60": "0x0",
+        "0x64": "0x0",
+        "0x68": "0x0",
+        "0x6c": "0x0",
+        "0x70": "0x44",
+        "0x74": "0x44b0332",
+        "0x78": "0xf2",
+        "0x7c": "0x22",
+        "0x80": "0x0",
+        "0x84": "0x44b0332",
+        "0x88": "0x1",
+        "0x8c": "0x0",
+        "0x90": "0x280328",
+        "0x94": "0x0",
+        "0x98": "0x0",
+        "0x9c": "0xfff0fff",
+        "0xa0": "0x359",
+        "0xa4": "0xfff0fff",
+        "0xa8": "0x359",
+        "0xac": "0x0",
+        "0xb0": "0x280",
+        "0xb4": "0x1cf0000",
+        "0xb8": "0x20",
+        "0xbc": "0x0",
+        "0xc0": "0x0",
+        "0xc4": "0x0",
+        "0xc8": "0x650490",
+        "0xcc": "0x40010",
+        "0xd0": "0xb",
+        "0xd4": "0x103c1",
+        "0xd8": "0x6c02ec",
+        "0xdc": "0x0",
+        "0xe0": "0x4b0",
+        "0xe4": "0x44",
+        "0xe8": "0x4af02ed",
+        "0xec": "0xf2",
+        "0xf0": "0x67",
+        "0xf4": "0x0",
+        "0xf8": "0x4af02ed",
+        "0xfc": "0x1",
+        "0x100": "0x0",
+        "0x104": "0x2ed056d",
+        "0x108": "0x0",
+        "0x10c": "0x0",
+        "0x110": "0xf000f",
+        "0x114": "0x833",
+        "0x118": "0xf000f",
+        "0x11c": "0x833",
+        "0x120": "0xf",
+        "0x124": "0x0",
+        "0x128": "0x0",
+        "0x12c": "0x0",
+        "0x130": "0x0",
+        "0x134": "0x1",
+        "0x138": "0x0",
+        "0x13c": "0x0",
+        "0x140": "0x0",
+        "0x144": "0x7c051c00",
+        "0x148": "0x0",
+        "0x14c": "0x1",
+        "0x150": "0x0",
+        "0x154": "0xf2",
+        "0x158": "0xf2"
+      }
+    },
+    "bank1_shadow": {
+      "base": "0x090db530",
+      "words": {
+        "0x0": "0x0",
+        "0x4": "0x0",
+        "0x8": "0x0",
+        "0xc": "0x0",
+        "0x10": "0x0",
+        "0x14": "0x0",
+        "0x18": "0x0",
+        "0x1c": "0x0",
+        "0x20": "0x0",
+        "0x24": "0x0",
+        "0x28": "0x0",
+        "0x2c": "0x0",
+        "0x30": "0x0",
+        "0x34": "0x0",
+        "0x38": "0x0",
+        "0x3c": "0x0",
+        "0x40": "0x0",
+        "0x44": "0x0",
+        "0x48": "0x0",
+        "0x4c": "0x0",
+        "0x50": "0x0",
+        "0x54": "0x0",
+        "0x58": "0x0",
+        "0x5c": "0x0",
+        "0x60": "0x0",
+        "0x64": "0x0",
+        "0x68": "0x0",
+        "0x6c": "0x0",
+        "0x70": "0x0",
+        "0x74": "0x0",
+        "0x78": "0x0",
+        "0x7c": "0x0",
+        "0x80": "0x0",
+        "0x84": "0x0",
+        "0x88": "0x0",
+        "0x8c": "0x0",
+        "0x90": "0x0",
+        "0x94": "0x0",
+        "0x98": "0x0",
+        "0x9c": "0x0",
+        "0xa0": "0x0",
+        "0xa4": "0x0",
+        "0xa8": "0x0",
+        "0xac": "0x0",
+        "0xb0": "0x0",
+        "0xb4": "0x0",
+        "0xb8": "0x0",
+        "0xbc": "0x0",
+        "0xc0": "0x0",
+        "0xc4": "0x0",
+        "0xc8": "0x0",
+        "0xcc": "0x0",
+        "0xd0": "0x0",
+        "0xd4": "0x0",
+        "0xd8": "0x0",
+        "0xdc": "0x0",
+        "0xe0": "0x0",
+        "0xe4": "0x0",
+        "0xe8": "0x0",
+        "0xec": "0x0",
+        "0xf0": "0x0",
+        "0xf4": "0x0",
+        "0xf8": "0x0",
+        "0xfc": "0x0",
+        "0x100": "0x0",
+        "0x104": "0x0",
+        "0x108": "0x0",
+        "0x10c": "0x0",
+        "0x110": "0x0",
+        "0x114": "0x0",
+        "0x118": "0x0",
+        "0x11c": "0x0",
+        "0x120": "0x0",
+        "0x124": "0x0",
+        "0x128": "0x0",
+        "0x12c": "0x0",
+        "0x130": "0x0",
+        "0x134": "0x0",
+        "0x138": "0x0",
+        "0x13c": "0x0",
+        "0x140": "0x0",
+        "0x144": "0x7c056100",
+        "0x148": "0x0",
+        "0x14c": "0x0",
+        "0x150": "0x4",
+        "0x154": "0x0",
+        "0x158": "0x0"
+      }
+    },
+    "pipeline0_descriptor": {
+      "base": "0x090db808",
+      "mmio_base": "0x7c050c00"
+    },
+    "separate_gui_wait": {
+      "step_address": "0x08cb0ee0",
+      "step": "0x3c2",
+      "ack_address": "0x08aa1104",
+      "ack_byte": "0xd",
+      "evidence": "gui-start-wait-evidence.json"
+    },
+    "graphics_draws": 4,
+    "graphics_swaps": 1,
+    "snapshot_scope": "Explicit local scheduling experiment; not complete camera boot"
+  },
+  "irqs": [
+    {
+      "gic_id": 196,
+      "qemu_spi_index": 164,
+      "registration_argument_instruction": "0x63b5956",
+      "callback_literal": "0x63b5ce8",
+      "callback_thumb": "0x649728f",
+      "registration_api": "0x065dd09c (absolute IRQ ID, not logical device index)",
+      "loader_table_offset": "0x6c08",
+      "loader_targets": 1,
+      "loader_configuration": 2,
+      "loader_configuration_meaning": "edge-triggered",
+      "saved_gic_state": {
+        "id": 196,
+        "enabled": 255,
+        "pending": 0,
+        "active": 0,
+        "level": 0,
+        "group": 0,
+        "targets": 1,
+        "priority_cpu0": 0
+      }
+    },
+    {
+      "gic_id": 224,
+      "qemu_spi_index": 192,
+      "registration_argument_instruction": "0x63b5b4e",
+      "callback_literal": "0x63b5d58",
+      "callback_thumb": "0x64972db",
+      "registration_api": "0x065dd09c (absolute IRQ ID, not logical device index)",
+      "loader_table_offset": "0x6c78",
+      "loader_targets": 1,
+      "loader_configuration": 2,
+      "loader_configuration_meaning": "edge-triggered",
+      "saved_gic_state": {
+        "id": 224,
+        "enabled": 255,
+        "pending": 0,
+        "active": 0,
+        "level": 0,
+        "group": 0,
+        "targets": 1,
+        "priority_cpu0": 0
+      }
+    },
+    {
+      "gic_id": 226,
+      "qemu_spi_index": 194,
+      "registration_argument_instruction": "0x63b5b72",
+      "callback_literal": "0x63b5d60",
+      "callback_thumb": "0x64972f3",
+      "registration_api": "0x065dd09c (absolute IRQ ID, not logical device index)",
+      "loader_table_offset": "0x6c80",
+      "loader_targets": 1,
+      "loader_configuration": 2,
+      "loader_configuration_meaning": "edge-triggered",
+      "saved_gic_state": {
+        "id": 226,
+        "enabled": 255,
+        "pending": 0,
+        "active": 0,
+        "level": 0,
+        "group": 0,
+        "targets": 1,
+        "priority_cpu0": 0
+      }
+    },
+    {
+      "gic_id": 230,
+      "qemu_spi_index": 198,
+      "registration_argument_instruction": "0x63b5bba",
+      "callback_literal": "0x63b5d70",
+      "callback_thumb": "0x6497311",
+      "registration_api": "0x065dd09c (absolute IRQ ID, not logical device index)",
+      "loader_table_offset": "0x6c90",
+      "loader_targets": 1,
+      "loader_configuration": 2,
+      "loader_configuration_meaning": "edge-triggered",
+      "saved_gic_state": {
+        "id": 230,
+        "enabled": 255,
+        "pending": 0,
+        "active": 0,
+        "level": 0,
+        "group": 0,
+        "targets": 1,
+        "priority_cpu0": 0
+      }
+    },
+    {
+      "gic_id": 231,
+      "qemu_spi_index": 199,
+      "registration_argument_instruction": "0x63b5bcc",
+      "callback_literal": "0x63b5d74",
+      "callback_thumb": "0x649732b",
+      "registration_api": "0x065dd09c (absolute IRQ ID, not logical device index)",
+      "loader_table_offset": "0x6c94",
+      "loader_targets": 1,
+      "loader_configuration": 2,
+      "loader_configuration_meaning": "edge-triggered",
+      "saved_gic_state": {
+        "id": 231,
+        "enabled": 255,
+        "pending": 0,
+        "active": 0,
+        "level": 0,
+        "group": 0,
+        "targets": 1,
+        "priority_cpu0": 0
+      }
+    },
+    {
+      "gic_id": 232,
+      "qemu_spi_index": 200,
+      "registration_argument_instruction": "0x63b5bde",
+      "callback_literal": "0x63b5d78",
+      "callback_thumb": "0x6497339",
+      "registration_api": "0x065dd09c (absolute IRQ ID, not logical device index)",
+      "loader_table_offset": "0x6c98",
+      "loader_targets": 1,
+      "loader_configuration": 2,
+      "loader_configuration_meaning": "edge-triggered",
+      "saved_gic_state": {
+        "id": 232,
+        "enabled": 255,
+        "pending": 0,
+        "active": 0,
+        "level": 0,
+        "group": 0,
+        "targets": 1,
+        "priority_cpu0": 0
+      }
+    },
+    {
+      "gic_id": 233,
+      "qemu_spi_index": 201,
+      "registration_argument_instruction": "0x63b5bf0",
+      "callback_literal": "0x63b5d7c",
+      "callback_thumb": "0x6497353",
+      "registration_api": "0x065dd09c (absolute IRQ ID, not logical device index)",
+      "loader_table_offset": "0x6c9c",
+      "loader_targets": 1,
+      "loader_configuration": 2,
+      "loader_configuration_meaning": "edge-triggered",
+      "saved_gic_state": {
+        "id": 233,
+        "enabled": 255,
+        "pending": 0,
+        "active": 0,
+        "level": 0,
+        "group": 0,
+        "targets": 1,
+        "priority_cpu0": 0
+      }
+    }
+  ],
+  "primary_chain": [
+    "GIC196 -> 0649728e -> 0648fdd8 -> 06481598",
+    "06481598 calls 06480b9e(3,0) -> 06489ae0(bank0,phase0)",
+    "06489ae0 refuses bank+0x150==4; phase0 additionally requires [7c00011c]&1 == 1",
+    "On eligible phase0, 0648995e commits dirty shadow words to bank MMIO then 064898ac advances per-subphase state",
+    "Return 0xa8c permits 06481598 to change LCD state1 to2 and select completion source via byte08ab1bba"
+  ],
+  "completion_chain": [
+    "GIC230 -> 06497310 only when byte08ab1bba!=0; GIC232 -> 06497338 only when byte==0",
+    "Selected handler drains sibling pending IRQ231 or233 via 06497a54, then calls 0649694e",
+    "0649694e polls pending GIC224 in a bounded loop; if found, clears GIC pending and calls 0648b7c4",
+    "Then 0648b728 -> 0648fe4e -> 064815c8 advances state2->3, next call state3->4",
+    "State3 invokes callback(8); state4 clears callback pointer and invokes callback(9)",
+    "Original callback0647dcf6 maps8->completion1 and9->completion2; 0647dd0c waits for2 using original dly"
+  ],
+  "mmio_contract": {
+    "phase0_status": {
+      "address": "0x7c00011c",
+      "bit": 0,
+      "proven_consumer": "06489b18..06489b20 requires1; 0648fdd8 also tracks this bit",
+      "uncertainty": "Physical field polarity, reset semantics, and period not identified"
+    },
+    "phase1_status": {
+      "address": "0x7c050ef0",
+      "bit": 28,
+      "proven_consumer": "065f0274 gets pipeline0 descriptor+0x20 then reads+0x2f0 bit28",
+      "uncertainty": "Physical status name and transition timing not identified; not a writable success bit"
+    },
+    "bank0": {
+      "shadow": "0x090db3d4",
+      "stride": "0x15c",
+      "mmio_base_field": "0x144",
+      "mmio_base": "0x7c051c00",
+      "dirty_all": "0x134",
+      "dirty_parameters": "0x138",
+      "dirty_minor": "0x13c",
+      "subphase_states": [
+        "0x148",
+        "0x14c"
+      ],
+      "bank_state": "0x150",
+      "commit": "0648995e copies original shadow offsets to corresponding MMIO offsets and clears shadow dirty flags",
+      "latch_sequences": "0648984e can write MMIO+0x98 or+0x10c as0 then1; meaning remains unproven"
+    },
+    "clock_gating": {
+      "registers": [
+        "0x7c0150dc",
+        "0x7c0150e0"
+      ],
+      "original_functions": [
+        "0x06492ed0",
+        "0x0649321c",
+        "0x06493448",
+        "0x06493680"
+      ],
+      "evidence": "Read-modify-write clock/configuration paths, original writes ignored in saved QEMU trace",
+      "uncertainty": "No single global enable mask or source frequency established"
+    },
+    "interrupt_enable": {
+      "proven": "Original loader routes/configures these GIC IRQs; saved GIC state has them enabled for CPU0",
+      "unknown": "Device-side interrupt masks and their register names are not yet identified"
+    },
+    "acknowledgement": {
+      "proven": "06497a54/0649694e use 0649fa90 to read GIC pending, 0649fa4c to clear GICD_ICPENDR(+0x280)",
+      "gic_alias": "0x70001000 + CPU*0x8000",
+      "unknown": "This does not prove any display-device W1C or acknowledgement register"
+    }
+  },
+  "original_initialization_table": [
+    {
+      "table_address": "0x6ff2ba8",
+      "mmio_address": "0x7c0000e0",
+      "value": "0x0"
+    },
+    {
+      "table_address": "0x6ff2bb0",
+      "mmio_address": "0x7c0000e4",
+      "value": "0x1ac"
+    },
+    {
+      "table_address": "0x6ff2bb8",
+      "mmio_address": "0x7c0000e8",
+      "value": "0x419"
+    },
+    {
+      "table_address": "0x6ff2bc0",
+      "mmio_address": "0x7c0000ec",
+      "value": "0x0"
+    },
+    {
+      "table_address": "0x6ff2bc8",
+      "mmio_address": "0x7c0000f0",
+      "value": "0x0"
+    },
+    {
+      "table_address": "0x6ff2bd0",
+      "mmio_address": "0x7c0000f4",
+      "value": "0x0"
+    },
+    {
+      "table_address": "0x6ff2bd8",
+      "mmio_address": "0x7c0000f8",
+      "value": "0x3f"
+    },
+    {
+      "table_address": "0x6ff2be0",
+      "mmio_address": "0x7c0000fc",
+      "value": "0x0"
+    },
+    {
+      "table_address": "0x6ff2be8",
+      "mmio_address": "0x7c000100",
+      "value": "0x23"
+    },
+    {
+      "table_address": "0x6ff2bf0",
+      "mmio_address": "0x7c000104",
+      "value": "0x0"
+    },
+    {
+      "table_address": "0x6ff2bf8",
+      "mmio_address": "0x7c000108",
+      "value": "0x0"
+    },
+    {
+      "table_address": "0x6ff2c00",
+      "mmio_address": "0x7c00010c",
+      "value": "0x0"
+    },
+    {
+      "table_address": "0x6ff2c08",
+      "mmio_address": "0x7c000110",
+      "value": "0x0"
+    },
+    {
+      "table_address": "0x6ff2c10",
+      "mmio_address": "0x7c000118",
+      "value": "0x0"
+    },
+    {
+      "table_address": "0x6ff2c18",
+      "mmio_address": "0x7c00011c",
+      "value": "0x0"
+    },
+    {
+      "table_address": "0x6ff2c20",
+      "mmio_address": "0x7c000124",
+      "value": "0x0"
+    },
+    {
+      "table_address": "0x6ff2c28",
+      "mmio_address": "0x7c000128",
+      "value": "0x325"
+    },
+    {
+      "table_address": "0x6ff2c30",
+      "mmio_address": "0x7c000130",
+      "value": "0x0"
+    },
+    {
+      "table_address": "0x6ff2c38",
+      "mmio_address": "0x7c000134",
+      "value": "0x6df91"
+    },
+    {
+      "table_address": "0x6ff2c40",
+      "mmio_address": "0x7c00013c",
+      "value": "0x0"
+    },
+    {
+      "table_address": "0x6ff2c48",
+      "mmio_address": "0x7c000140",
+      "value": "0xfffff"
+    },
+    {
+      "table_address": "0x6ff2c50",
+      "mmio_address": "0x7c000144",
+      "value": "0x9"
+    },
+    {
+      "table_address": "0x6ff2c58",
+      "mmio_address": "0x7c000148",
+      "value": "0x0"
+    },
+    {
+      "table_address": "0x6ff2c60",
+      "mmio_address": "0x7c00014c",
+      "value": "0x0"
+    },
+    {
+      "table_address": "0x6ff2c68",
+      "mmio_address": "0x7c000150",
+      "value": "0x3"
+    },
+    {
+      "table_address": "0x6ff2c70",
+      "mmio_address": "0x7c000154",
+      "value": "0x258"
+    },
+    {
+      "table_address": "0x6ff2c78",
+      "mmio_address": "0x7c000158",
+      "value": "0x0"
+    },
+    {
+      "table_address": "0x6ff2c80",
+      "mmio_address": "0x7c00015c",
+      "value": "0x0"
+    },
+    {
+      "table_address": "0x6ff2c88",
+      "mmio_address": "0x7c0001c8",
+      "value": "0x0"
+    }
+  ],
+  "period_uncertainty": {
+    "observed_register": "0x7c000134",
+    "observed_value": "0x6df91",
+    "decimal": 450449,
+    "source_table": "0x06ff2c38",
+    "trace": "Original table value was written twice and ignored",
+    "arithmetic_only": "If the clock were27MHz and this were a reload-minus-one value,27000000/(450449+1)=59.94005994005994Hz",
+    "not_verified": [
+      "27MHz source for this block",
+      "reload-minus-one semantics",
+      "frame rate meaning",
+      "timer start/stop/enable bits"
+    ],
+    "implementation_status": "No timing model implemented from this arithmetic"
+  },
+  "trace": {
+    "path": "/Users/lixiuqi/Documents/ChatGPT/相机/s5-emulator/menu-smp/results/isolated-display-gradient/qemu/qemu-trace.log",
+    "selected_lines": [
+      {
+        "line": 1234,
+        "text": "S5_RTOS_UNMODELED cpu=0 write addr=0x7c050ef4 size=4 value=0x0 occurrence=1 ignored"
+      },
+      {
+        "line": 1237,
+        "text": "S5_RTOS_UNMODELED cpu=0 write addr=0x7c051c30 size=4 value=0x6008 occurrence=1 ignored"
+      },
+      {
+        "line": 1249,
+        "text": "S5_RTOS_UNMODELED cpu=0 write addr=0x7c0000e0 size=4 value=0x0 occurrence=1 ignored"
+      },
+      {
+        "line": 1250,
+        "text": "S5_RTOS_UNMODELED cpu=0 write addr=0x7c0000e4 size=4 value=0x1ac occurrence=1 ignored"
+      },
+      {
+        "line": 1251,
+        "text": "S5_RTOS_UNMODELED cpu=0 write addr=0x7c0000e8 size=4 value=0x419 occurrence=1 ignored"
+      },
+      {
+        "line": 1252,
+        "text": "S5_RTOS_UNMODELED cpu=0 write addr=0x7c0000ec size=4 value=0x0 occurrence=1 ignored"
+      },
+      {
+        "line": 1253,
+        "text": "S5_RTOS_UNMODELED cpu=0 write addr=0x7c0000f0 size=4 value=0x0 occurrence=1 ignored"
+      },
+      {
+        "line": 1254,
+        "text": "S5_RTOS_UNMODELED cpu=0 write addr=0x7c0000f4 size=4 value=0x0 occurrence=1 ignored"
+      },
+      {
+        "line": 1255,
+        "text": "S5_RTOS_UNMODELED cpu=0 write addr=0x7c0000f8 size=4 value=0x3f occurrence=1 ignored"
+      },
+      {
+        "line": 1256,
+        "text": "S5_RTOS_UNMODELED cpu=0 write addr=0x7c0000fc size=4 value=0x0 occurrence=1 ignored"
+      },
+      {
+        "line": 1257,
+        "text": "S5_RTOS_UNMODELED cpu=0 write addr=0x7c000100 size=4 value=0x23 occurrence=1 ignored"
+      },
+      {
+        "line": 1258,
+        "text": "S5_RTOS_UNMODELED cpu=0 write addr=0x7c000104 size=4 value=0x0 occurrence=1 ignored"
+      },
+      {
+        "line": 1259,
+        "text": "S5_RTOS_UNMODELED cpu=0 write addr=0x7c000108 size=4 value=0x0 occurrence=1 ignored"
+      },
+      {
+        "line": 1260,
+        "text": "S5_RTOS_UNMODELED cpu=0 write addr=0x7c00010c size=4 value=0x0 occurrence=1 ignored"
+      },
+      {
+        "line": 1261,
+        "text": "S5_RTOS_UNMODELED cpu=0 write addr=0x7c000110 size=4 value=0x0 occurrence=1 ignored"
+      },
+      {
+        "line": 1262,
+        "text": "S5_RTOS_UNMODELED cpu=0 write addr=0x7c000118 size=4 value=0x0 occurrence=1 ignored"
+      },
+      {
+        "line": 1263,
+        "text": "S5_RTOS_UNMODELED cpu=0 write addr=0x7c00011c size=4 value=0x0 occurrence=1 ignored"
+      },
+      {
+        "line": 1264,
+        "text": "S5_RTOS_UNMODELED cpu=0 write addr=0x7c000124 size=4 value=0x0 occurrence=1 ignored"
+      },
+      {
+        "line": 1265,
+        "text": "S5_RTOS_UNMODELED cpu=0 write addr=0x7c000128 size=4 value=0x325 occurrence=1 ignored"
+      },
+      {
+        "line": 1266,
+        "text": "S5_RTOS_UNMODELED cpu=0 write addr=0x7c000130 size=4 value=0x0 occurrence=1 ignored"
+      },
+      {
+        "line": 1267,
+        "text": "S5_RTOS_UNMODELED cpu=0 write addr=0x7c000134 size=4 value=0x6df91 occurrence=1 ignored"
+      },
+      {
+        "line": 1268,
+        "text": "S5_RTOS_UNMODELED cpu=0 write addr=0x7c00013c size=4 value=0x0 occurrence=1 ignored"
+      },
+      {
+        "line": 1269,
+        "text": "S5_RTOS_UNMODELED cpu=0 write addr=0x7c000140 size=4 value=0xfffff occurrence=1 ignored"
+      },
+      {
+        "line": 1270,
+        "text": "S5_RTOS_UNMODELED cpu=0 write addr=0x7c000144 size=4 value=0x9 occurrence=1 ignored"
+      },
+      {
+        "line": 1271,
+        "text": "S5_RTOS_UNMODELED cpu=0 write addr=0x7c000148 size=4 value=0x0 occurrence=1 ignored"
+      },
+      {
+        "line": 1272,
+        "text": "S5_RTOS_UNMODELED cpu=0 write addr=0x7c00014c size=4 value=0x0 occurrence=1 ignored"
+      },
+      {
+        "line": 1273,
+        "text": "S5_RTOS_UNMODELED cpu=0 write addr=0x7c000150 size=4 value=0x3 occurrence=1 ignored"
+      },
+      {
+        "line": 1274,
+        "text": "S5_RTOS_UNMODELED cpu=0 write addr=0x7c000154 size=4 value=0x258 occurrence=1 ignored"
+      },
+      {
+        "line": 1275,
+        "text": "S5_RTOS_UNMODELED cpu=0 write addr=0x7c000158 size=4 value=0x0 occurrence=1 ignored"
+      },
+      {
+        "line": 1276,
+        "text": "S5_RTOS_UNMODELED cpu=0 write addr=0x7c00015c size=4 value=0x0 occurrence=1 ignored"
+      },
+      {
+        "line": 1277,
+        "text": "S5_RTOS_UNMODELED cpu=0 write addr=0x7c0001c8 size=4 value=0x0 occurrence=1 ignored"
+      },
+      {
+        "line": 1392,
+        "text": "S5_RTOS_UNMODELED cpu=0 write addr=0x7c050ef0 size=4 value=0x32102 occurrence=1 ignored"
+      },
+      {
+        "line": 1515,
+        "text": "S5_RTOS_UNMODELED cpu=0 read addr=0x7c0000e0 size=4 value=0x0 occurrence=1 returned"
+      },
+      {
+        "line": 1516,
+        "text": "S5_RTOS_UNMODELED cpu=0 write addr=0x7c0000e0 size=4 value=0x0 occurrence=2 ignored"
+      },
+      {
+        "line": 1520,
+        "text": "S5_RTOS_UNMODELED cpu=0 write addr=0x7c000134 size=4 value=0x6df91 occurrence=2 ignored"
+      },
+      {
+        "line": 1532,
+        "text": "S5_RTOS_UNMODELED cpu=0 read addr=0x7c0150dc size=4 value=0x0 occurrence=1 returned"
+      },
+      {
+        "line": 1533,
+        "text": "S5_RTOS_UNMODELED cpu=0 write addr=0x7c0150dc size=4 value=0x4 occurrence=1 ignored"
+      },
+      {
+        "line": 1557,
+        "text": "S5_RTOS_UNMODELED cpu=0 read addr=0x7c0150dc size=4 value=0x0 occurrence=2 returned"
+      },
+      {
+        "line": 1558,
+        "text": "S5_RTOS_UNMODELED cpu=0 write addr=0x7c0150dc size=4 value=0x400000 occurrence=2 ignored"
+      },
+      {
+        "line": 1559,
+        "text": "S5_RTOS_UNMODELED cpu=0 read addr=0x7c0150dc size=4 value=0x0 occurrence=3 returned"
+      },
+      {
+        "line": 1560,
+        "text": "S5_RTOS_UNMODELED cpu=0 write addr=0x7c0150dc size=4 value=0x200000 occurrence=3 ignored"
+      },
+      {
+        "line": 1561,
+        "text": "S5_RTOS_UNMODELED cpu=0 read addr=0x7c0150dc size=4 value=0x0 occurrence=4 returned"
+      },
+      {
+        "line": 1562,
+        "text": "S5_RTOS_UNMODELED cpu=0 write addr=0x7c0150dc size=4 value=0x20000 occurrence=4 ignored"
+      },
+      {
+        "line": 1563,
+        "text": "S5_RTOS_UNMODELED cpu=0 read addr=0x7c0150e0 size=4 value=0x0 occurrence=1 returned"
+      },
+      {
+        "line": 1564,
+        "text": "S5_RTOS_UNMODELED cpu=0 write addr=0x7c0150e0 size=4 value=0x20 occurrence=1 ignored"
+      },
+      {
+        "line": 1565,
+        "text": "S5_RTOS_UNMODELED cpu=0 read addr=0x7c0150e0 size=4 value=0x0 occurrence=2 returned"
+      },
+      {
+        "line": 1566,
+        "text": "S5_RTOS_UNMODELED cpu=0 write addr=0x7c0150e0 size=4 value=0x40 occurrence=2 ignored"
+      },
+      {
+        "line": 1569,
+        "text": "S5_RTOS_UNMODELED cpu=0 read addr=0x7c0150e0 size=4 value=0x0 occurrence=3 returned"
+      },
+      {
+        "line": 1570,
+        "text": "S5_RTOS_UNMODELED cpu=0 write addr=0x7c0150e0 size=4 value=0x2 occurrence=3 ignored"
+      },
+      {
+        "line": 1573,
+        "text": "S5_RTOS_UNMODELED cpu=0 read addr=0x7c0150e0 size=4 value=0x0 occurrence=4 returned"
+      },
+      {
+        "line": 1574,
+        "text": "S5_RTOS_UNMODELED cpu=0 write addr=0x7c0150e0 size=4 value=0x200 occurrence=4 ignored"
+      },
+      {
+        "line": 2893,
+        "text": "S5_RTOS_UNMODELED cpu=0 write addr=0x7c051c04 size=4 value=0x10008000 occurrence=1 ignored"
+      },
+      {
+        "line": 2894,
+        "text": "S5_RTOS_UNMODELED cpu=0 write addr=0x7c051c04 size=4 value=0x10008000 occurrence=2 ignored"
+      },
+      {
+        "line": 2948,
+        "text": "S5_RTOS_UNMODELED cpu=0 write addr=0x7c0000f4 size=4 value=0x0 occurrence=2 ignored"
+      },
+      {
+        "line": 2949,
+        "text": "S5_RTOS_UNMODELED cpu=0 write addr=0x7c0000f8 size=4 value=0x3f occurrence=2 ignored"
+      },
+      {
+        "line": 2950,
+        "text": "S5_RTOS_UNMODELED cpu=0 write addr=0x7c0000fc size=4 value=0x0 occurrence=2 ignored"
+      },
+      {
+        "line": 2951,
+        "text": "S5_RTOS_UNMODELED cpu=0 write addr=0x7c000100 size=4 value=0x23 occurrence=2 ignored"
+      },
+      {
+        "line": 2952,
+        "text": "S5_RTOS_UNMODELED cpu=0 write addr=0x7c0000e4 size=4 value=0x1ac occurrence=2 ignored"
+      },
+      {
+        "line": 2953,
+        "text": "S5_RTOS_UNMODELED cpu=0 write addr=0x7c0000e8 size=4 value=0x419 occurrence=2 ignored"
+      },
+      {
+        "line": 2954,
+        "text": "S5_RTOS_UNMODELED cpu=0 write addr=0x7c0001c8 size=4 value=0x0 occurrence=2 ignored"
+      }
+    ]
+  },
+  "conclusion": "In this snapshot the original LCD state remains1 with its callback pending and shadow config dirty. Its registered GIC sources are enabled but have no saved pending/active/level indication; the relevant MMIO is unmodeled. This is consistent with missing display timing events. A single end snapshot does not prove an IRQ never occurred.",
+  "model_boundary": "A future explicit display-timing model must derive status transitions and IRQ timing from supported register programming, retain unsupported behavior as unknown, and let original handlers commit configuration and invoke callbacks. Do not force callback9, completion2, GUI ack bits, or menu state.",
+  "independent_blocker": "Even completing LCD synchronization would not consume the real task66 queue76 startup request. The unknown coprocessor execution remains independently blocking GUI mode transition; see gui-start-wait-evidence.json."
+}

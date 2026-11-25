@@ -1,0 +1,127 @@
+
+823000a0..82300238
+823000a0 58489fe5   ldr      r4, [pc, #0x858]
+823000a4 0f00a0e1   mov      r0, pc
+823000a8 040050e1   cmp      r0, r4
+823000ac ac019f35   ldrlo    r0, [pc, #0x1ac]
+823000b0 0f008030   addlo    r0, r0, pc
+823000b4 00005431   cmplo    r4, r0
+823000b8 01408433   orrlo    r4, r4, #1
+823000bc 6f00002b   blhs     #0x82300280
+823000c0 5e0f8fe2   add      r0, pc, #0x178
+823000c4 4e1c90e8   ldm      r0, {r1, r2, r3, r6, sl, fp, ip}
+823000c8 1cd090e5   ldr      sp, [r0, #0x1c]
+823000cc 010040e0   sub      r0, r0, r1
+823000d0 006086e0   add      r6, r6, r0
+823000d4 00a08ae0   add      sl, sl, r0
+823000d8 0090dae5   ldrb     sb, [sl]
+823000dc 01e0dae5   ldrb     lr, [sl, #1]
+823000e0 0e9489e1   orr      sb, sb, lr, lsl #8
+823000e4 02e0dae5   ldrb     lr, [sl, #2]
+823000e8 03a0dae5   ldrb     sl, [sl, #3]
+823000ec 0e9889e1   orr      sb, sb, lr, lsl #16
+823000f0 0a9c89e1   orr      sb, sb, sl, lsl #24
+823000f4 00d08de0   add      sp, sp, r0
+823000f8 01a88de2   add      sl, sp, #0x10000
+823000fc 0050a0e3   mov      r5, #0
+82300100 01a98ae2   add      sl, sl, #0x4000
+82300104 0a0054e1   cmp      r4, sl
+82300108 1e00002a   bhs      #0x82300188
+8230010c 09a084e0   add      sl, r4, sb
+82300110 70908fe2   add      sb, pc, #0x70
+82300114 09005ae1   cmp      sl, sb
+82300118 1a00009a   bls      #0x82300188
+8230011c 09ac8ae2   add      sl, sl, #0x900
+82300120 ffa0cae3   bic      sl, sl, #0xff
+82300124 6c504fe2   sub      r5, pc, #0x6c
+82300128 1f50c5e3   bic      r5, r5, #0x1f
+8230012c 00004fe1   mrs      r0, spsr
+82300130 1f0000e2   and      r0, r0, #0x1f
+82300134 1a0050e3   cmp      r0, #0x1a
+82300138 0300001a   bne      #0x8230014c
+8230013c cc0b00eb   bl       #0x82303074
+82300140 050040e0   sub      r0, r0, r5
+82300144 0a0080e0   add      r0, r0, sl
+82300148 ca0b00eb   bl       #0x82303078
+8230014c 059046e0   sub      sb, r6, r5
+82300150 1f9089e2   add      sb, sb, #0x1f
+82300154 1f90c9e3   bic      sb, sb, #0x1f
+82300158 056089e0   add      r6, sb, r5
+8230015c 0a9089e0   add      sb, sb, sl
+82300160 0f5c36e9   ldmdb    r6!, {r0, r1, r2, r3, sl, fp, ip, lr}
+82300164 050056e1   cmp      r6, r5
+82300168 0f5c29e9   stmdb    sb!, {r0, r1, r2, r3, sl, fp, ip, lr}
+8230016c fbffff8a   bhi      #0x82300160
+82300170 066049e0   sub      r6, sb, r6
+82300174 06d08de0   add      sp, sp, r6
+82300178 680100eb   bl       #0x82300720
+8230017c c4004fe2   sub      r0, pc, #0xc4
+82300180 060080e0   add      r0, r0, r6
+82300184 00f0a0e1   mov      pc, r0
+82300188 051090e1   orrs     r1, r0, r5
+8230018c 0d00000a   beq      #0x823001c8
+82300190 00b08be0   add      fp, fp, r0
+82300194 00c08ce0   add      ip, ip, r0
+82300198 002082e0   add      r2, r2, r0
+8230019c 003083e0   add      r3, r3, r0
+823001a0 00109be5   ldr      r1, [fp]
+823001a4 001081e0   add      r1, r1, r0
+823001a8 020051e1   cmp      r1, r2
+823001ac 01005321   cmphs    r3, r1
+823001b0 05108180   addhi    r1, r1, r5
+823001b4 04108be4   str      r1, [fp], #4
+823001b8 0c005be1   cmp      fp, ip
+823001bc f7ffff3a   blo      #0x823001a0
+823001c0 052082e0   add      r2, r2, r5
+823001c4 053083e0   add      r3, r3, r5
+823001c8 0000a0e3   mov      r0, #0
+823001cc 040082e4   str      r0, [r2], #4
+823001d0 040082e4   str      r0, [r2], #4
+823001d4 040082e4   str      r0, [r2], #4
+823001d8 040082e4   str      r0, [r2], #4
+823001dc 030052e1   cmp      r2, r3
+823001e0 f9ffff3a   blo      #0x823001cc
+823001e4 010014e3   tst      r4, #1
+823001e8 0140c4e3   bic      r4, r4, #1
+823001ec 2300001b   blne     #0x82300280
+823001f0 0400a0e1   mov      r0, r4
+823001f4 0d10a0e1   mov      r1, sp
+823001f8 01288de2   add      r2, sp, #0x10000
+823001fc 0730a0e1   mov      r3, r7
+82300200 f30100eb   bl       #0x823009d4
+82300204 450100eb   bl       #0x82300720
+82300208 1c0100eb   bl       #0x82300680
+8230020c 0710a0e1   mov      r1, r7
+82300210 0820a0e1   mov      r2, r8
+82300214 00004fe1   mrs      r0, spsr
+82300218 1f0000e2   and      r0, r0, #0x1f
+8230021c 1a0050e3   cmp      r0, #0x1a
+82300220 c601001a   bne      #0x82300940
+82300224 10c08fe2   add      ip, pc, #0x10
+82300228 00009ce5   ldr      r0, [ip]
+8230022c 0c0080e0   add      r0, r0, ip
+82300230 900b00eb   bl       #0x82303078
+82300234 700040e1   hvc      #0
+
+8230031c..82300370
+8230031c 013944e2   sub      r3, r4, #0x4000
+82300320 ff30c3e3   bic      r3, r3, #0xff
+82300324 3f3cc3e3   bic      r3, r3, #0x3f00
+82300328 0300a0e1   mov      r0, r3
+8230032c 2099a0e1   lsr      sb, r0, #0x12
+82300330 0999a0e1   lsl      sb, sb, #0x12
+82300334 01a289e2   add      sl, sb, #0x10000000
+82300338 09005ae1   cmp      sl, sb
+8230033c 00a0e033   mvnlo    sl, #0
+82300340 1210a0e3   mov      r1, #0x12
+82300344 031b81e3   orr      r1, r1, #0xc00
+82300348 012983e2   add      r2, r3, #0x4000
+8230034c 090051e1   cmp      r1, sb
+82300350 01005a21   cmphs    sl, r1
+82300354 1c10c1e3   bic      r1, r1, #0x1c
+82300358 10108133   orrlo    r1, r1, #0x10
+8230035c 06108121   orrhs    r1, r1, r6
+82300360 041080e4   str      r1, [r0], #4
+82300364 011681e2   add      r1, r1, #0x100000
+82300368 020030e1   teq      r0, r2
+8230036c f6ffff1a   bne      #0x8230034c

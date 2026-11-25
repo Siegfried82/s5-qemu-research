@@ -1,0 +1,63 @@
+{
+  "scope": "Read-only original bytes and completed snapshot. No IRQ, synthetic metadata, queue message, original poll call or ACK is injected.",
+  "snapshot": "/Users/lixiuqi/Documents/ChatGPT/相机/s5-emulator/menu-smp/results/local-ui-loop-postinit",
+  "program_sha256": "fc496d62a91f6e9b1b84807183bb805bc546c9105d2938546b58a66ad9d132fe",
+  "actual": {
+    "ui_step": "0x436",
+    "ack_byte": "0xd",
+    "lcd_state": 4,
+    "avio_state": 2,
+    "controller_state": 2,
+    "mode35_pending_byte14": 1,
+    "original_40001_received_byte15": 1,
+    "poll_counter_08aac26c": 0,
+    "ack_fsm_08aaa780": "0x1001",
+    "postinit_flag_08aa02af": 1,
+    "task67": {
+      "tcb": "0x8e03c18",
+      "entry": "0x6705545",
+      "state": 4,
+      "saved_sp": "0x9ad66e0",
+      "wait_object": "0x8e1a0b0"
+    },
+    "queue77": {
+      "object": "0x8e1a0b0",
+      "capacity": 32,
+      "count": 0,
+      "read_index": 0,
+      "write_index": 0
+    },
+    "frame": {
+      "address": "0xa603fb8",
+      "size_copied": "0x220",
+      "mode_bc": 0,
+      "child_e8": "0x0",
+      "child_byte19": null
+    }
+  },
+  "consumer": [
+    "Original task67 entry06705544 receives queue77 via06705570 BL067ea67a, timeoutffffffff.",
+    "0670558c calls06705762; for accepted frame codes and nonnull payload,0670577e BL0675eff8 copies0x220B payload into0a603fb8.",
+    "06705786 checks frame+bc. Modes other than2/3 may wait at067057d0 original065b2480 before dispatch; a frame IRQ does not guarantee immediate poll.",
+    "0670559e BL06705262 dispatches code0->067052ac->06786afe(r1=1); code1->067052dc->06786c30; code2->067052c6->06786afe(r1=0); code3->067052f0->06786cb0.",
+    "These frame handlers call066d19c2 at06786c18/06786ca2/06786d10. Its controller-state2 branch066d147a returns1, continues original frame work, then tail-jumps066d179c at066d1a20.",
+    "066d179c calls0649f6c2(frame+bc): if frame+e8 is nonnull and its byte19!=0, skip readiness poll; otherwise066d17b6 BL066d16fe.",
+    "The same readiness function can run through067055dc->0670564e->066d179c when original08aa0178 gate is nonzero; this is also after a received frame-class message."
+  ],
+  "readiness_and_ack": [
+    "066d16fe requires byte08aac2f8(+14)!=0. If zero, resets halfword08aac26c and returns0.",
+    "Byte08aac2f9(+15), set only by the observed original40001 handler, enables ready checks. Zero skips those checks but still increments the original poll counter.",
+    "For controllerstate2:6718c9e reads08ab1758;676efba reads08aa0214;6718cac reads08ab16ef. Additional tests6728c64/6728cd2 and67365a2 exist; not named as proved hardware conditions.",
+    "066d1774 increments halfword08aac26c. At old count0x5a it stores0x5b then tail-calls067361a8(1); larger counts also take that path. This is a count of function calls, not a verified time duration or frame rate.",
+    "For actual ACK FSM08aaa780=1001,067361a8(1)->06736204 sets its original pending byte then067361f4 BL066d1a22(1).",
+    "066d1a22 calls06759710(code35,arg1=1,arg2=0). Only successful send clears controller+14; when argument1 it sets controllerstate3. Original input task later ORs2 into08aa1103."
+  ],
+  "producer_connection": [
+    "065206b8(code,payload) constructs a static20B ring message {0,2001,code,payload,0} at08c4ffe0+index*20, index from08aa0234+2 modulo32, then sends queue77.",
+    "Code0 sender0671edee is in0671e37a; code1/2 senders0671e0e8/0671e35e are in0671d72e; code3 sender0671eef2 is in0671edfa.",
+    "0671edfa calls0671e37a/0671d72e and has caller065b9d52 in065b9c3a, plus064a7278 and064a74cc.",
+    "064a7308 (contains064a74cc) also has caller065b9d40 in the same original service chain; this is not independent evidence for LCD196/232 as producer.",
+    "Teammate original registration audit identifies IRQ192->06497252->065b9c3a and IRQ193->0649727c->065b9e1a. Source register/enable gates and metadata ownership are audited separately; no automatic clock is inferred here."
+  ],
+  "next_evidence": "Use explicitly bounded source IRQ192/193 TEST input only after source gates are verified, observe original065206b8 and task67 copy/dispatch/poll/ACK. Preserve any new original wait. Do not directly call066d16fe or manufacture queue77 metadata/GUI ACK."
+}

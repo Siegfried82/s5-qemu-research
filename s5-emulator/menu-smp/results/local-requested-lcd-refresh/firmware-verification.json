@@ -1,0 +1,246 @@
+{
+  "source_sha256": "b2ec4aeec209693b874df8dfdf11fc85b38fa4675b44ec554b7a167f430827e1",
+  "verified_components": 48,
+  "components": [
+    {
+      "name": "loader1",
+      "bytes": 4096,
+      "sha256": "e009d688fb152a70d90fb4df88705b29f441e3dc50c57e4ea1fddf1a49c19d32"
+    },
+    {
+      "name": "loader2",
+      "bytes": 38912,
+      "sha256": "4a925f2e019310a9a8f2029df652cc7a5e93be5fb8ee4b6b29c6c6d3805cea85"
+    },
+    {
+      "name": "loader3",
+      "bytes": 49152,
+      "sha256": "67d44d7c2bb2091b7a56ca5118345e0ee604e6b2c6c31769cd6de06ae752d838"
+    },
+    {
+      "name": "program",
+      "bytes": 16674816,
+      "sha256": "fc496d62a91f6e9b1b84807183bb805bc546c9105d2938546b58a66ad9d132fe"
+    },
+    {
+      "name": "storage",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "postboot1",
+      "bytes": 4718592,
+      "sha256": "e14b32e80c50d52e39edd6f7b725aba34b9f0a4ee12ad38987593f5cc8a8ec5f"
+    },
+    {
+      "name": "postboot2",
+      "bytes": 131072,
+      "sha256": "76a627dc813626668f242f3da0001e9c7df6cb6983a68093951b42d4b8a81284"
+    },
+    {
+      "name": "postboot3",
+      "bytes": 8257536,
+      "sha256": "435f3b6a4f2f3368107885025dc698acc333f6f048875727bed25b93d49b4dbc"
+    },
+    {
+      "name": "postboot4",
+      "bytes": 131072,
+      "sha256": "a328d5508102bdb141469c4b6a6dc84b584f14dfbc34cfde54d5837a4f42f444"
+    },
+    {
+      "name": "postboot5",
+      "bytes": 917504,
+      "sha256": "8912a67ac38cba6edd4f15810322dd0142f3497c20cb077dbfaa203001896286"
+    },
+    {
+      "name": "dram_sleep",
+      "bytes": 6144,
+      "sha256": "d2bc9022b49fd9bfd908e5e95039604ab925d143b568ffc2964ed0355681bbee"
+    },
+    {
+      "name": "eep_ow_a",
+      "bytes": 131072,
+      "sha256": "6c4be51bd4c8fb00919ba3460313f31ea2f69bbc107ec4ce5f26ec1ab44ed013"
+    },
+    {
+      "name": "eep_ow_b",
+      "bytes": 131072,
+      "sha256": "6c4be51bd4c8fb00919ba3460313f31ea2f69bbc107ec4ce5f26ec1ab44ed013"
+    },
+    {
+      "name": "eep_adj",
+      "bytes": 131072,
+      "sha256": "3a611abac2442339574ace1c359b801de15ba2c0c5cde42ed4471597505d204b"
+    },
+    {
+      "name": "eep_fix",
+      "bytes": 131072,
+      "sha256": "725b5876e98704a75d0395cb97bf7e68d4e1a2ef5014b30ea5990792074e5d04"
+    },
+    {
+      "name": "eep_act_a",
+      "bytes": 2048,
+      "sha256": "59aa79d1fdaa9ed58e3eb53b3bad24ca7301ad21fd2f967af4ec8a7c518ecf4a"
+    },
+    {
+      "name": "eep_act_b",
+      "bytes": 2048,
+      "sha256": "59aa79d1fdaa9ed58e3eb53b3bad24ca7301ad21fd2f967af4ec8a7c518ecf4a"
+    },
+    {
+      "name": "history",
+      "bytes": 262144,
+      "sha256": "8a39d2abd3999ab73c34db2476849cddf303ce389b35826850f9a700589b4a90"
+    },
+    {
+      "name": "lens_hist",
+      "bytes": 393216,
+      "sha256": "a6619f482fee91a315f76cdcd8705d39b6ce11077c435ccc696142e130c27762"
+    },
+    {
+      "name": "music",
+      "bytes": 3538944,
+      "sha256": "5dcc34ae10f9d7be2150752d7fbf4e7bae58d585ea3b3eeff93e985cf557c723"
+    },
+    {
+      "name": "osdover",
+      "bytes": 10485760,
+      "sha256": "f0305598ea9cac9ba916e5a8a6d0c4f62aad590f181b1908937676743ac15ab8"
+    },
+    {
+      "name": "osddata",
+      "bytes": 11010048,
+      "sha256": "9581b1d535c8f3eb20f5f51d7d33c4c5e4106a3024c0ba7bf2b231a480e29f5b"
+    },
+    {
+      "name": "fileinfo",
+      "bytes": 917504,
+      "sha256": "03cdeacb6a286652f8b3a2e4a6d6a3f81d4952762eb12b1659338722c7ab4a5b"
+    },
+    {
+      "name": "ninsho_db",
+      "bytes": 655360,
+      "sha256": "ff6335069b6e140eb47149d847aea80bf7e2b06bd80ae9708aa382efb3ae21ee"
+    },
+    {
+      "name": "koutei_kao",
+      "bytes": 114688,
+      "sha256": "0fb19aef2e26fbb568abce93c300cb41b2754c6e309726c880fd11c2a1f7776d"
+    },
+    {
+      "name": "wifi_info",
+      "bytes": 131072,
+      "sha256": "fa43239bcee7b97ca62f007cc68487560a39e19f74f3dde7486db3f98df8e471"
+    },
+    {
+      "name": "menu_save",
+      "bytes": 131072,
+      "sha256": "b5a41c3758763bbec72769fab4a2533bf2db0b6312d93d25a695f9e4b9e02260"
+    },
+    {
+      "name": "zboot",
+      "bytes": 2048,
+      "sha256": "014dad699b15c269e9905ccfbffe1f73963bbef1301298ba230bb9cf8b34fd9f"
+    },
+    {
+      "name": "dtb",
+      "bytes": 4096,
+      "sha256": "f1a4d16edaadbda1940fa95994acd5d69a3e90f5c25daaa68c7151535df8e188"
+    },
+    {
+      "name": "zimage",
+      "bytes": 2621440,
+      "sha256": "72b6633d7f20009c5067af6faa5549d52a581c4a55915695e616d666220f7ef0"
+    },
+    {
+      "name": "rootfs1",
+      "bytes": 3145728,
+      "sha256": "4a41552e007d5048e32c542899324935c762ae8583b818712cb78b028ba49bf0"
+    },
+    {
+      "name": "rootfs2",
+      "bytes": 10485760,
+      "sha256": "4121e7d7503c68d108453ece3016553f5d1ec90cf7bcc79aaf5e3b4234147215"
+    },
+    {
+      "name": "usbcharge",
+      "bytes": 131072,
+      "sha256": "fc6d177cdc31bd35c45e964617eda6c630423657c89794bccaaff2cbd31a89a7"
+    },
+    {
+      "name": "ipu_data",
+      "bytes": 262144,
+      "sha256": "8a39d2abd3999ab73c34db2476849cddf303ce389b35826850f9a700589b4a90"
+    },
+    {
+      "name": "ipu_code",
+      "bytes": 65536,
+      "sha256": "c8958782feff19752e0b81122b79f742d06d102343f08a2101fa4e8b1e2f572c"
+    },
+    {
+      "name": "rc_data",
+      "bytes": 262144,
+      "sha256": "736424438c98bbe9fde213cc237c09aff94003fa1b62bf39d80bf7a854eda718"
+    },
+    {
+      "name": "rc_code",
+      "bytes": 65536,
+      "sha256": "fc306a4463c9784a2f8f7f16f473bacc6f75ae0f49a69357c8d6c2cd805918c2"
+    },
+    {
+      "name": "nr_data",
+      "bytes": 262144,
+      "sha256": "e235e38856489970ba0cff0a6128391b7e56aa0f13f65ca06d2f2ce9b96ac76a"
+    },
+    {
+      "name": "nr_code",
+      "bytes": 65536,
+      "sha256": "2553aa1d7cc21e0750d81b0c671abbf361acd35d69d96b9d2f6ba47c52c434cf"
+    },
+    {
+      "name": "hm_c_prog",
+      "bytes": 65536,
+      "sha256": "06e44fbb2c38f7b389ff71a85dd66ebf06ad1138e2fd8f4aebf3bfc6a97a0d47"
+    },
+    {
+      "name": "hm_d_prog",
+      "bytes": 262144,
+      "sha256": "dc4064303a8eab1bd7f374aa8d8df52834ace9873dce1f1087458ff2ff75beaf"
+    },
+    {
+      "name": "hm_c_ddr",
+      "bytes": 3145728,
+      "sha256": "b26f3b3d07c411f1b7e641b03aec415f8ae2068edd8746b8ac71d50db143415f"
+    },
+    {
+      "name": "hm_d_ddr",
+      "bytes": 1048576,
+      "sha256": "e9688a52f4371814874321f244516d809d36d8fa16f1895b26a6e0224de734e2"
+    },
+    {
+      "name": "hm_d_nw",
+      "bytes": 4194304,
+      "sha256": "d74e1f38fa7ce7a40ed49e6ffc3fd65bae70ae77eb9d37add2f896abc52897d6"
+    },
+    {
+      "name": "hm_d_nw_sng",
+      "bytes": 4194304,
+      "sha256": "b510989f1e12fd1e6a2efbc5306b125289cb796c48e5ffefe7e4d4ce26390a50"
+    },
+    {
+      "name": "hr_c_prog",
+      "bytes": 65536,
+      "sha256": "79ea2664e742c6a0bc7005052473c7c4f04292eaafab625b2774ffad0e8db9aa"
+    },
+    {
+      "name": "hr_d_prog",
+      "bytes": 262144,
+      "sha256": "805be6894a099e740c4aac0931db28f2fcfa0f105b0bc3fe448c0354174cc586"
+    },
+    {
+      "name": "hr_c_ddr",
+      "bytes": 524288,
+      "sha256": "d4478e26b8b7b385f5f1483bba7d4a89a51005be45c07d280ba270b9996963c6"
+    }
+  ]
+}

@@ -1,0 +1,119 @@
+{
+  "kind": "S5 V2.9 main-program bounded startup investigation",
+  "source": {
+    "file": "../s5-v29-offline/unpacked-v29/03_program.bin",
+    "bytes": 16674816,
+    "sha256": "fc496d62a91f6e9b1b84807183bb805bc546c9105d2938546b58a66ad9d132fe",
+    "original_instructions_patched": false,
+    "rehash_after_probes_matches": true
+  },
+  "entry": {
+    "address": "0x06280004",
+    "state": "ARM",
+    "basis": "upstream reset handoff record corroborated by component instruction decoding"
+  },
+  "machine": {
+    "qemu_machine": "none",
+    "cpu": "cortex-a7",
+    "executing_cpu_count": 1,
+    "ram": "3G",
+    "low_high_copies_coherent": false,
+    "soc_peripherals_modeled": false
+  },
+  "camera_connected": false,
+  "osd_init_breakpoint": "0x06495ab6",
+  "osd_init_breakpoint_hit": false,
+  "menu_booted": false,
+  "cases": [
+    {
+      "name": "unaltered_cpu_baseline",
+      "result_file": "results-original/result.json",
+      "source_kind": "original",
+      "stop_reason": "breakpoint or other GDB stop",
+      "final_pc": "0x4",
+      "exception_vector": "undefined instruction",
+      "qemu_exit_code": 0,
+      "menu_booted": false
+    },
+    {
+      "name": "runtime_dump_baseline",
+      "result_file": "results-dump/result.json",
+      "source_kind": "dump",
+      "stop_reason": "breakpoint or other GDB stop",
+      "final_pc": "0x4",
+      "exception_vector": "undefined instruction",
+      "qemu_exit_code": 0,
+      "menu_booted": false
+    },
+    {
+      "name": "vfp_enabled_mmu_off",
+      "result_file": "results-vfp-no-watchpoints/result.json",
+      "source_kind": "original",
+      "stop_reason": "breakpoint or other GDB stop",
+      "final_pc": "0x10",
+      "exception_vector": "data abort",
+      "qemu_exit_code": 0,
+      "menu_booted": false
+    },
+    {
+      "name": "synthetic_normal_ram_mmu",
+      "result_file": "results-vfp-mmu-normal/result.json",
+      "source_kind": "original",
+      "stop_reason": "execution time bound reached; interrupted",
+      "final_pc": "0x63b0136",
+      "exception_vector": null,
+      "qemu_exit_code": 0,
+      "menu_booted": false
+    },
+    {
+      "name": "synthetic_peer_flags_completed",
+      "result_file": "results-peer-flags-cleared/result.json",
+      "source_kind": "original",
+      "stop_reason": "execution time bound reached; interrupted",
+      "final_pc": "0x642c458",
+      "exception_vector": null,
+      "qemu_exit_code": 0,
+      "menu_booted": false
+    },
+    {
+      "name": "synthetic_serial_ready",
+      "result_file": "results-serial-ready/result.json",
+      "source_kind": "original",
+      "stop_reason": "execution time bound reached; interrupted",
+      "final_pc": "0x642c500",
+      "exception_vector": null,
+      "qemu_exit_code": 0,
+      "menu_booted": false
+    }
+  ],
+  "current_observed_blocker": {
+    "result_file": "results-serial-ready/result.json",
+    "pc": "0x0642c500",
+    "loop_end": "0x0642c50c",
+    "status_address": "0x7f04300c",
+    "data_address": "0x7f043008",
+    "receive_ready_bit": 2,
+    "transmit_count": 3,
+    "receive_count": 0,
+    "status_value": 3,
+    "device_identity": "unidentified serial controller",
+    "observation": "original code waits for receive data; no FIFO or peer response is implemented"
+  },
+  "synthetic_conditions_for_furthest_case": [
+    "loader CPACR CP10/11 and FPEXC.EN enabled via separate helper",
+    "identity 1 MiB short-section MMU table at 0x00100000, Normal non-cacheable RAM",
+    "peer completion flags at 0x000209c4 and 0x000209c8 cleared without executing peer CPU initialization",
+    "serial status at 0x7f04300c fixed to 3; no response bytes invented"
+  ],
+  "instrumentation_limit": {
+    "gdb_data_watchpoints_caused_qemu_unresponsiveness": true,
+    "counted_as_firmware_fault": false,
+    "default_data_watchpoints_enabled": false
+  },
+  "next_evidence_needed": [
+    "identify serial endpoint and obtain or reconstruct its response/FIFO semantics",
+    "recover or validate real loader/page-table and coherent alias state",
+    "model required peer-core initialization rather than only completion flags"
+  ],
+  "report": "README.md"
+}

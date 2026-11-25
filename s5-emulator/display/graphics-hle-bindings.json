@@ -1,0 +1,762 @@
+{
+  "program_sha256": "fc496d62a91f6e9b1b84807183bb805bc546c9105d2938546b58a66ad9d132fe",
+  "base": "0x06280000",
+  "default_execution": "Opt-in only; unknown calls explicitly stop",
+  "guard": {
+    "entry": "0x065daab4",
+    "purpose": "Catch unhandled core VG stubs before original context lookup receives software handles"
+  },
+  "bindings": [
+    {
+      "name": "vgGetError",
+      "entry": "0x65d9280",
+      "argc_words": 0,
+      "evidence": "Static inference from wrapper ABI, enum use, lower function semantics and original application call sites; not exported symbol name",
+      "entry_bytes_16": "10b501f017fc41f2070140b1c26932b1"
+    },
+    {
+      "name": "vgFlush",
+      "entry": "0x65d92a2",
+      "argc_words": 0,
+      "evidence": "Static inference from wrapper ABI, enum use, lower function semantics and original application call sites; not exported symbol name",
+      "entry_bytes_16": "10b501f006fc00280dd0c369002b0ad0"
+    },
+    {
+      "name": "vgFinish",
+      "entry": "0x65d92ca",
+      "argc_words": 0,
+      "evidence": "Static inference from wrapper ABI, enum use, lower function semantics and original application call sites; not exported symbol name",
+      "entry_bytes_16": "10b501f0f2fb00280dd0c369002b0ad0"
+    },
+    {
+      "name": "vgLoadIdentity",
+      "entry": "0x65d92f2",
+      "argc_words": 0,
+      "evidence": "Static inference from wrapper ABI, enum use, lower function semantics and original application call sites; not exported symbol name",
+      "entry_bytes_16": "10b501f0defb002803d0bde81040fff6"
+    },
+    {
+      "name": "vgLoadMatrix",
+      "entry": "0x65d9306",
+      "argc_words": 1,
+      "evidence": "Static inference from wrapper ABI, enum use, lower function semantics and original application call sites; not exported symbol name",
+      "entry_bytes_16": "10b5044601f0d3fb002804d02146bde8"
+    },
+    {
+      "name": "vgGetMatrix",
+      "entry": "0x65d931e",
+      "argc_words": 1,
+      "evidence": "Static inference from wrapper ABI, enum use, lower function semantics and original application call sites; not exported symbol name",
+      "entry_bytes_16": "10b5044601f0c7fb002804d02146bde8"
+    },
+    {
+      "name": "vgMultMatrix",
+      "entry": "0x65d9336",
+      "argc_words": 1,
+      "evidence": "Static inference from wrapper ABI, enum use, lower function semantics and original application call sites; not exported symbol name",
+      "entry_bytes_16": "10b5044601f0bbfb002804d02146bde8"
+    },
+    {
+      "name": "vgTranslate",
+      "entry": "0x65d934e",
+      "argc_words": 2,
+      "evidence": "Static inference from wrapper ABI, enum use, lower function semantics and original application call sites; not exported symbol name",
+      "entry_bytes_16": "70b504460d4601f0aefb002805d02a46"
+    },
+    {
+      "name": "vgScale",
+      "entry": "0x65d936a",
+      "argc_words": 2,
+      "evidence": "Static inference from wrapper ABI, enum use, lower function semantics and original application call sites; not exported symbol name",
+      "entry_bytes_16": "70b504460d4601f0a0fb002805d02a46"
+    },
+    {
+      "name": "vgShear",
+      "entry": "0x65d9386",
+      "argc_words": 2,
+      "evidence": "Static inference from wrapper ABI, enum use, lower function semantics and original application call sites; not exported symbol name",
+      "entry_bytes_16": "70b504460d4601f092fb002805d02a46"
+    },
+    {
+      "name": "vgRotate",
+      "entry": "0x65d93a2",
+      "argc_words": 1,
+      "evidence": "Static inference from wrapper ABI, enum use, lower function semantics and original application call sites; not exported symbol name",
+      "entry_bytes_16": "10b5044601f085fb002804d02146bde8"
+    },
+    {
+      "name": "vgSetf",
+      "entry": "0x65d93ba",
+      "argc_words": 2,
+      "evidence": "Static inference from wrapper ABI, enum use, lower function semantics and original application call sites; not exported symbol name",
+      "entry_bytes_16": "70b505460c4601f078fb002805d02246"
+    },
+    {
+      "name": "vgSeti",
+      "entry": "0x65d93d6",
+      "argc_words": 2,
+      "evidence": "Static inference from wrapper ABI, enum use, lower function semantics and original application call sites; not exported symbol name",
+      "entry_bytes_16": "70b50c46054601f06afb002805d02246"
+    },
+    {
+      "name": "vgSetfv",
+      "entry": "0x65d93f2",
+      "argc_words": 3,
+      "evidence": "Static inference from wrapper ABI, enum use, lower function semantics and original application call sites; not exported symbol name",
+      "entry_bytes_16": "70b514460d46064601f05bfb002806d0"
+    },
+    {
+      "name": "vgSetiv",
+      "entry": "0x65d9412",
+      "argc_words": 3,
+      "evidence": "Static inference from wrapper ABI, enum use, lower function semantics and original application call sites; not exported symbol name",
+      "entry_bytes_16": "70b514460d46064601f04bfb002806d0"
+    },
+    {
+      "name": "vgGetf",
+      "entry": "0x65d9432",
+      "argc_words": 1,
+      "evidence": "Static inference from wrapper ABI, enum use, lower function semantics and original application call sites; not exported symbol name",
+      "entry_bytes_16": "10b5044601f03dfb9fedf60a20b12146"
+    },
+    {
+      "name": "vgGeti",
+      "entry": "0x65d9450",
+      "argc_words": 1,
+      "evidence": "Static inference from wrapper ABI, enum use, lower function semantics and original application call sites; not exported symbol name",
+      "entry_bytes_16": "10b5044601f02efb02004ff0000005d0"
+    },
+    {
+      "name": "vgGetVectorSize",
+      "entry": "0x65d946e",
+      "argc_words": 1,
+      "evidence": "Static inference from wrapper ABI, enum use, lower function semantics and original application call sites; not exported symbol name",
+      "entry_bytes_16": "10b5044601f01ffb02004ff0000005d0"
+    },
+    {
+      "name": "vgGetfv",
+      "entry": "0x65d948c",
+      "argc_words": 3,
+      "evidence": "Static inference from wrapper ABI, enum use, lower function semantics and original application call sites; not exported symbol name",
+      "entry_bytes_16": "70b514460d46064601f00efb002806d0"
+    },
+    {
+      "name": "vgGetiv",
+      "entry": "0x65d94ac",
+      "argc_words": 3,
+      "evidence": "Static inference from wrapper ABI, enum use, lower function semantics and original application call sites; not exported symbol name",
+      "entry_bytes_16": "70b514460d46064601f0fefa002806d0"
+    },
+    {
+      "name": "vgSetParameterf",
+      "entry": "0x65d94cc",
+      "argc_words": 3,
+      "evidence": "Static inference from wrapper ABI, enum use, lower function semantics and original application call sites; not exported symbol name",
+      "entry_bytes_16": "2de9f74183b08846064601f0edfa0500"
+    },
+    {
+      "name": "vgSetParameteri",
+      "entry": "0x65d9572",
+      "argc_words": 3,
+      "evidence": "Static inference from wrapper ABI, enum use, lower function semantics and original application call sites; not exported symbol name",
+      "entry_bytes_16": "2de9f74382b08946074601f09afa0500"
+    },
+    {
+      "name": "vgSetParameterfv",
+      "entry": "0x65d961c",
+      "argc_words": 4,
+      "evidence": "Static inference from wrapper ABI, enum use, lower function semantics and original application call sites; not exported symbol name",
+      "entry_bytes_16": "2de9fc479a4614468946074601f044fa"
+    },
+    {
+      "name": "vgSetParameteriv",
+      "entry": "0x65d96ca",
+      "argc_words": 4,
+      "evidence": "Static inference from wrapper ABI, enum use, lower function semantics and original application call sites; not exported symbol name",
+      "entry_bytes_16": "2de9fc479a4614468946074601f0edf9"
+    },
+    {
+      "name": "vgClear",
+      "entry": "0x65d9b0c",
+      "argc_words": 4,
+      "evidence": "Static inference from wrapper ABI, enum use, lower function semantics and original application call sites; not exported symbol name",
+      "entry_bytes_16": "2de9f8431d4616460f46804600f0ccff"
+    },
+    {
+      "name": "vgCreatePath",
+      "entry": "0x65d9b48",
+      "argc_words": 7,
+      "evidence": "Static inference from wrapper ABI, enum use, lower function semantics and original application call sites; not exported symbol name",
+      "entry_bytes_16": "2de9ff478946824614461d46ddf83080"
+    },
+    {
+      "name": "vgClearPath",
+      "entry": "0x65d9b80",
+      "argc_words": 2,
+      "evidence": "Static inference from wrapper ABI, enum use, lower function semantics and original application call sites; not exported symbol name",
+      "entry_bytes_16": "70b50c46054600f095ff002805d02246"
+    },
+    {
+      "name": "vgDestroyPath",
+      "entry": "0x65d9b9c",
+      "argc_words": 1,
+      "evidence": "Static inference from wrapper ABI, enum use, lower function semantics and original application call sites; not exported symbol name",
+      "entry_bytes_16": "10b5044600f088ff00280dd0c1690029"
+    },
+    {
+      "name": "vgAppendPathData",
+      "entry": "0x65d9c1c",
+      "argc_words": 4,
+      "evidence": "Static inference from wrapper ABI, enum use, lower function semantics and original application call sites; not exported symbol name",
+      "entry_bytes_16": "2de9fc411c4615460e46074600f044ff"
+    },
+    {
+      "name": "vgDrawPath",
+      "entry": "0x65d9d4e",
+      "argc_words": 2,
+      "evidence": "Static inference from wrapper ABI, enum use, lower function semantics and original application call sites; not exported symbol name",
+      "entry_bytes_16": "2de9fc410e46074600f0adfe040021d0"
+    },
+    {
+      "name": "vgCreatePaint",
+      "entry": "0x65d9da4",
+      "argc_words": 0,
+      "evidence": "Static inference from wrapper ABI, enum use, lower function semantics and original application call sites; not exported symbol name",
+      "entry_bytes_16": "10b500f085fe01004ff0000004d0bde8"
+    },
+    {
+      "name": "vgDestroyPaint",
+      "entry": "0x65d9dbe",
+      "argc_words": 1,
+      "evidence": "Static inference from wrapper ABI, enum use, lower function semantics and original application call sites; not exported symbol name",
+      "entry_bytes_16": "10b5044600f077fe00280dd0c1690029"
+    },
+    {
+      "name": "vgSetPaint",
+      "entry": "0x65d9de8",
+      "argc_words": 2,
+      "evidence": "Static inference from wrapper ABI, enum use, lower function semantics and original application call sites; not exported symbol name",
+      "entry_bytes_16": "70b50c46054600f061fe002805d02246"
+    },
+    {
+      "name": "vgGetPaint",
+      "entry": "0x65d9e04",
+      "argc_words": 1,
+      "evidence": "Static inference from wrapper ABI, enum use, lower function semantics and original application call sites; not exported symbol name",
+      "entry_bytes_16": "10b5044600f054fe02004ff0000005d0"
+    },
+    {
+      "name": "vgSetColor",
+      "entry": "0x65d9e22",
+      "argc_words": 2,
+      "evidence": "Static inference from wrapper ABI, enum use, lower function semantics and original application call sites; not exported symbol name",
+      "entry_bytes_16": "70b50c46054600f044fe002805d02246"
+    },
+    {
+      "name": "vgGetColor",
+      "entry": "0x65d9e3e",
+      "argc_words": 1,
+      "evidence": "Static inference from wrapper ABI, enum use, lower function semantics and original application call sites; not exported symbol name",
+      "entry_bytes_16": "10b5044600f037fe02004ff0000005d0"
+    },
+    {
+      "name": "vgPaintPattern",
+      "entry": "0x65d9e5c",
+      "argc_words": 2,
+      "evidence": "Static inference from wrapper ABI, enum use, lower function semantics and original application call sites; not exported symbol name",
+      "entry_bytes_16": "70b50c46054600f027fe002805d02246"
+    },
+    {
+      "name": "vgCreateImage",
+      "entry": "0x65d9e78",
+      "argc_words": 4,
+      "evidence": "Static inference from wrapper ABI, enum use, lower function semantics and original application call sites; not exported symbol name",
+      "entry_bytes_16": "2de9fc411c4615460e46074600f016fe"
+    },
+    {
+      "name": "vgDestroyImage",
+      "entry": "0x65d9ea0",
+      "argc_words": 1,
+      "evidence": "Static inference from wrapper ABI, enum use, lower function semantics and original application call sites; not exported symbol name",
+      "entry_bytes_16": "10b5044600f006fe00280dd0c1690029"
+    },
+    {
+      "name": "vgImageSubData",
+      "entry": "0x65d9ef0",
+      "argc_words": 8,
+      "evidence": "Static inference from wrapper ABI, enum use, lower function semantics and original application call sites; not exported symbol name",
+      "entry_bytes_16": "2de9f04f85b01c4691468a468346dde9"
+    },
+    {
+      "name": "vgGetImageSubData",
+      "entry": "0x65d9f24",
+      "argc_words": 8,
+      "evidence": "Static inference from wrapper ABI, enum use, lower function semantics and original application call sites; not exported symbol name",
+      "entry_bytes_16": "2de9f04f85b01c4691468a468346dde9"
+    },
+    {
+      "name": "vgDrawImage",
+      "entry": "0x65d9fda",
+      "argc_words": 1,
+      "evidence": "Static inference from wrapper ABI, enum use, lower function semantics and original application call sites; not exported symbol name",
+      "entry_bytes_16": "70b5064600f069fd04001bd0fff76efd"
+    },
+    {
+      "name": "eglBindAPI",
+      "entry": "0x64c2344",
+      "pointer": "0x64c2345",
+      "original_table": "0x70d5944",
+      "relocated_table": "0x8ab4f8c",
+      "argc_words": 1,
+      "evidence": "Original name/function export table",
+      "entry_bytes_16": "70b50546fef7f3fc002813d0ff4aa5f5"
+    },
+    {
+      "name": "eglBindTexImage",
+      "entry": "0x64c2e12",
+      "pointer": "0x64c2e13",
+      "original_table": "0x70d5974",
+      "relocated_table": "0x8ab4fbc",
+      "argc_words": null,
+      "evidence": "Original name/function export table",
+      "entry_bytes_16": "2de9f041ff4f0e460546fdf789ff0400"
+    },
+    {
+      "name": "eglChooseConfig",
+      "entry": "0x64c13ba",
+      "pointer": "0x64c13bb",
+      "original_table": "0x70d590c",
+      "relocated_table": "0x8ab4f54",
+      "argc_words": 5,
+      "evidence": "Original name/function export table",
+      "entry_bytes_16": "2de9ff4fa1b00446002043f28e068846"
+    },
+    {
+      "name": "eglCopyBuffers",
+      "entry": "0x64c3e3c",
+      "pointer": "0x64c3e3d",
+      "original_table": "0x70d59dc",
+      "relocated_table": "0x8ab5024",
+      "argc_words": null,
+      "evidence": "Original name/function export table",
+      "entry_bytes_16": "2de9f74f9ab08a46fb49012634220546"
+    },
+    {
+      "name": "eglCreateContext",
+      "entry": "0x64c2f62",
+      "pointer": "0x64c2f63",
+      "original_table": "0x70d598c",
+      "relocated_table": "0x8ab4fd4",
+      "argc_words": 4,
+      "evidence": "Original name/function export table",
+      "entry_bytes_16": "2de9ff4f93b0aa4e00201d460f468146"
+    },
+    {
+      "name": "eglCreatePbufferFromClientBuffer",
+      "entry": "0x64c2878",
+      "pointer": "0x64c2879",
+      "original_table": "0x70d5964",
+      "relocated_table": "0x8ab4fac",
+      "argc_words": null,
+      "evidence": "Original name/function export table",
+      "entry_bytes_16": "7fb50024089dcde9005402940394fff7"
+    },
+    {
+      "name": "eglCreatePbufferSurface",
+      "entry": "0x64c1ed8",
+      "pointer": "0x64c1ed9",
+      "original_table": "0x70d5924",
+      "relocated_table": "0x8ab4f6c",
+      "argc_words": 3,
+      "evidence": "Original name/function export table",
+      "entry_bytes_16": "1cb5002300930193fff709ff1cbd2de9"
+    },
+    {
+      "name": "eglCreatePixmapSurface",
+      "entry": "0x64c20e8",
+      "pointer": "0x64c20e9",
+      "original_table": "0x70d592c",
+      "relocated_table": "0x8ab4f74",
+      "argc_words": null,
+      "evidence": "Original name/function export table",
+      "entry_bytes_16": "3eb50024009401940294fff7f8fe3ebd"
+    },
+    {
+      "name": "eglCreateWindowSurface",
+      "entry": "0x64c1ce6",
+      "pointer": "0x64c1ce7",
+      "original_table": "0x70d591c",
+      "relocated_table": "0x8ab4f64",
+      "argc_words": 4,
+      "evidence": "Original name/function export table",
+      "entry_bytes_16": "3eb50024009401940294fff7e4fe3ebd"
+    },
+    {
+      "name": "eglDestroyContext",
+      "entry": "0x64c33ee",
+      "pointer": "0x64c33ef",
+      "original_table": "0x70d5994",
+      "relocated_table": "0x8ab4fdc",
+      "argc_words": 2,
+      "evidence": "Original name/function export table",
+      "entry_bytes_16": "2de9f047fe4e88460546fdf79bfc0400"
+    },
+    {
+      "name": "eglDestroySurface",
+      "entry": "0x64c20f8",
+      "pointer": "0x64c20f9",
+      "original_table": "0x70d5934",
+      "relocated_table": "0x8ab4f7c",
+      "argc_words": 2,
+      "evidence": "Original name/function export table",
+      "entry_bytes_16": "2de9f0477c4e88460546fef716fe0400"
+    },
+    {
+      "name": "eglDumpReferenceColorBufferDMPX",
+      "entry": "0x64c441e",
+      "pointer": "0x64c441f",
+      "original_table": "0x70d59fc",
+      "relocated_table": "0x8ab5044",
+      "argc_words": null,
+      "evidence": "Original name/function export table",
+      "entry_bytes_16": "2de9f0419e4f0d460646fcf783fc0400"
+    },
+    {
+      "name": "eglGetConfigAttrib",
+      "entry": "0x64c19a6",
+      "pointer": "0x64c19a7",
+      "original_table": "0x70d5914",
+      "relocated_table": "0x8ab4f5c",
+      "argc_words": 4,
+      "evidence": "Original name/function export table",
+      "entry_bytes_16": "2de9f0471c46904689460646fe4ffff7"
+    },
+    {
+      "name": "eglGetConfigs",
+      "entry": "0x64c1266",
+      "pointer": "0x64c1267",
+      "original_table": "0x70d5904",
+      "relocated_table": "0x8ab4f4c",
+      "argc_words": 4,
+      "evidence": "Original name/function export table",
+      "entry_bytes_16": "2de9f047dff89c921f46144688460646"
+    },
+    {
+      "name": "eglGetCurrentContext",
+      "entry": "0x64c38f6",
+      "pointer": "0x64c38f7",
+      "original_table": "0x70d59a4",
+      "relocated_table": "0x8ab4fec",
+      "argc_words": 0,
+      "evidence": "Original name/function export table",
+      "entry_bytes_16": "70b50025fdf71afa04001bd0a06843f2"
+    },
+    {
+      "name": "eglGetCurrentDisplay",
+      "entry": "0x64c39dc",
+      "pointer": "0x64c39dd",
+      "original_table": "0x70d59b4",
+      "relocated_table": "0x8ab4ffc",
+      "argc_words": 0,
+      "evidence": "Original name/function export table",
+      "entry_bytes_16": "10b50024fdf7a7f9002814d0816843f2"
+    },
+    {
+      "name": "eglGetCurrentSurface",
+      "entry": "0x64c3952",
+      "pointer": "0x64c3953",
+      "original_table": "0x70d59ac",
+      "relocated_table": "0x8ab4ff4",
+      "argc_words": 1,
+      "evidence": "Original name/function export table",
+      "entry_bytes_16": "2de9f04100260546fdf7eaf904001cd0"
+    },
+    {
+      "name": "eglGetDisplay",
+      "entry": "0x64c0d90",
+      "pointer": "0x64c0d91",
+      "original_table": "0x70d58ec",
+      "relocated_table": "0x8ab4f34",
+      "argc_words": 1,
+      "evidence": "Original name/function export table",
+      "entry_bytes_16": "70b5d04d0446002000bfa04203d014b1"
+    },
+    {
+      "name": "eglGetError",
+      "entry": "0x64c0d74",
+      "pointer": "0x64c0d75",
+      "original_table": "0x70d58e4",
+      "relocated_table": "0x8ab4f2c",
+      "argc_words": 0,
+      "evidence": "Original name/function export table",
+      "entry_bytes_16": "10b543f20304fff7daff002800d04468"
+    },
+    {
+      "name": "eglGetProcAddress",
+      "entry": "0x64c4122",
+      "pointer": "0x64c4123",
+      "original_table": "0x70d59e4",
+      "relocated_table": "0x8ab502c",
+      "argc_words": null,
+      "evidence": "Original name/function export table",
+      "entry_bytes_16": "2de9f04100240646fcf702fe050017d0"
+    },
+    {
+      "name": "eglInitialize",
+      "entry": "0x64c0daa",
+      "pointer": "0x64c0dab",
+      "original_table": "0x70d58f4",
+      "relocated_table": "0x8ab4f3c",
+      "argc_words": 3,
+      "evidence": "Original name/function export table",
+      "entry_bytes_16": "2de9f047c94f0026914688460546fff7"
+    },
+    {
+      "name": "eglMakeCurrent",
+      "entry": "0x64c3478",
+      "pointer": "0x64c3479",
+      "original_table": "0x70d599c",
+      "relocated_table": "0x8ab4fe4",
+      "argc_words": 4,
+      "evidence": "Original name/function export table",
+      "entry_bytes_16": "2de9ff4f8db09a4600254ff0ff371821"
+    },
+    {
+      "name": "eglQueryAPI",
+      "entry": "0x64c2386",
+      "pointer": "0x64c2387",
+      "original_table": "0x70d594c",
+      "relocated_table": "0x8ab4f94",
+      "argc_words": 0,
+      "evidence": "Original name/function export table",
+      "entry_bytes_16": "10b543f23804fef7d1fc28b1816843f2"
+    },
+    {
+      "name": "eglQueryContext",
+      "entry": "0x64c3a2c",
+      "pointer": "0x64c3a2d",
+      "original_table": "0x70d59bc",
+      "relocated_table": "0x8ab5004",
+      "argc_words": null,
+      "evidence": "Original name/function export table",
+      "entry_bytes_16": "2de9f0471c46904689460646fe4ffdf7"
+    },
+    {
+      "name": "eglQueryDisplayDMP",
+      "entry": "0x64c41a0",
+      "pointer": "0x64c41a1",
+      "original_table": "0x70d59ec",
+      "relocated_table": "0x8ab5034",
+      "argc_words": null,
+      "evidence": "Original name/function export table",
+      "entry_bytes_16": "2de9f041244f144688460646fcf7c1fd"
+    },
+    {
+      "name": "eglQueryFrameDMP",
+      "entry": "0x64c4362",
+      "pointer": "0x64c4363",
+      "original_table": "0x70d59f4",
+      "relocated_table": "0x8ab503c",
+      "argc_words": null,
+      "evidence": "Original name/function export table",
+      "entry_bytes_16": "2de9f041cd4f154688460646fcf7e0fc"
+    },
+    {
+      "name": "eglQuerySurface",
+      "entry": "0x64c2180",
+      "pointer": "0x64c2181",
+      "original_table": "0x70d593c",
+      "relocated_table": "0x8ab4f84",
+      "argc_words": 4,
+      "evidence": "Original name/function export table",
+      "entry_bytes_16": "2de9f0475a4f1c46904689460646fef7"
+    },
+    {
+      "name": "eglReleaseTexImage",
+      "entry": "0x64c2e62",
+      "pointer": "0x64c2e63",
+      "original_table": "0x70d597c",
+      "relocated_table": "0x8ab4fc4",
+      "argc_words": null,
+      "evidence": "Original name/function export table",
+      "entry_bytes_16": "2de9f041eb4f0e460546fdf761ff0400"
+    },
+    {
+      "name": "eglReleaseThread",
+      "entry": "0x64c23c6",
+      "pointer": "0x64c23c7",
+      "original_table": "0x70d595c",
+      "relocated_table": "0x8ab4fa4",
+      "argc_words": null,
+      "evidence": "Original name/function export table",
+      "entry_bytes_16": "2de9f047e14d43f20007fef7affc0400"
+    },
+    {
+      "name": "eglSurfaceAttrib",
+      "entry": "0x64c288e",
+      "pointer": "0x64c288f",
+      "original_table": "0x70d596c",
+      "relocated_table": "0x8ab4fb4",
+      "argc_words": 4,
+      "evidence": "Original name/function export table",
+      "entry_bytes_16": "2de9f84ffc4f1d4691468a460446fef7"
+    },
+    {
+      "name": "eglSwapBuffers",
+      "entry": "0x64c3cda",
+      "pointer": "0x64c3cdb",
+      "original_table": "0x70d59d4",
+      "relocated_table": "0x8ab501c",
+      "argc_words": 2,
+      "evidence": "Original name/function export table",
+      "entry_bytes_16": "2de9f04194b00d4655493c22064601a8"
+    },
+    {
+      "name": "eglSwapInterval",
+      "entry": "0x64c2eb0",
+      "pointer": "0x64c2eb1",
+      "original_table": "0x70d5984",
+      "relocated_table": "0x8ab4fcc",
+      "argc_words": 2,
+      "evidence": "Original name/function export table",
+      "entry_bytes_16": "2de9f041d74d0e460746fdf73aff0400"
+    },
+    {
+      "name": "eglTerminate",
+      "entry": "0x64c111c",
+      "pointer": "0x64c111d",
+      "original_table": "0x70d58fc",
+      "relocated_table": "0x8ab4f44",
+      "argc_words": 1,
+      "evidence": "Original name/function export table",
+      "entry_bytes_16": "2de9f047f94f054643f20006fff703fe"
+    },
+    {
+      "name": "eglWaitClient",
+      "entry": "0x64c23a2",
+      "pointer": "0x64c23a3",
+      "original_table": "0x70d5954",
+      "relocated_table": "0x8ab4f9c",
+      "argc_words": null,
+      "evidence": "Original name/function export table",
+      "entry_bytes_16": "70b543f20005fef7c3fc040005d0a168"
+    },
+    {
+      "name": "eglWaitGL",
+      "entry": "0x64c3c32",
+      "pointer": "0x64c3c33",
+      "original_table": "0x70d59c4",
+      "relocated_table": "0x8ab500c",
+      "argc_words": null,
+      "evidence": "Original name/function export table",
+      "entry_bytes_16": "70b543f20005fdf77bf8040006d043f2"
+    },
+    {
+      "name": "eglWaitNative",
+      "entry": "0x64c3c58",
+      "pointer": "0x64c3c59",
+      "original_table": "0x70d59cc",
+      "relocated_table": "0x8ab5014",
+      "argc_words": null,
+      "evidence": "Original name/function export table",
+      "entry_bytes_16": "70b50546fdf769f8040034d0a5f54050"
+    },
+    {
+      "name": "vgCreateImageDataDMP",
+      "entry": "0x65da95a",
+      "pointer": "0x65da95b",
+      "original_table": "0x70d7a0c",
+      "relocated_table": "0x8ab7054",
+      "argc_words": null,
+      "evidence": "Original name/function export table",
+      "entry_bytes_16": "2de9f04385b01c46174688468146dde9"
+    },
+    {
+      "name": "vgCreateImageStandardDataDMP",
+      "entry": "0x65da992",
+      "pointer": "0x65da993",
+      "original_table": "0x70d7a3c",
+      "relocated_table": "0x8ab7084",
+      "argc_words": 6,
+      "evidence": "Original name/function export table",
+      "entry_bytes_16": "2de9f04385b01c46174688468146dde9"
+    },
+    {
+      "name": "vgDrawPathDataArraysDMP",
+      "entry": "0x65da8ee",
+      "pointer": "0x65da8ef",
+      "original_table": "0x70d7a34",
+      "relocated_table": "0x8ab707c",
+      "argc_words": null,
+      "evidence": "Original name/function export table",
+      "entry_bytes_16": "2de9ff4f87b016461f46dde91798dde9"
+    },
+    {
+      "name": "vgDrawPathDataDMP",
+      "entry": "0x65da884",
+      "pointer": "0x65da885",
+      "original_table": "0x70d7a2c",
+      "relocated_table": "0x8ab7074",
+      "argc_words": 8,
+      "evidence": "Original name/function export table",
+      "entry_bytes_16": "2de9ff4f87b016461f46dde91698dde9"
+    },
+    {
+      "name": "vgDrawSubImageDMP",
+      "entry": "0x65da76e",
+      "pointer": "0x65da76f",
+      "original_table": "0x70d7a14",
+      "relocated_table": "0x8ab705c",
+      "argc_words": 5,
+      "evidence": "Original name/function export table",
+      "entry_bytes_16": "2de9fe4f1e469046894682460c9f00f0"
+    },
+    {
+      "name": "vgDrawSubImagesDMP",
+      "entry": "0x65da7ca",
+      "pointer": "0x65da7cb",
+      "original_table": "0x70d7a1c",
+      "relocated_table": "0x8ab7064",
+      "argc_words": null,
+      "evidence": "Original name/function export table",
+      "entry_bytes_16": "2de9ff5f1e4691468a468346dde90e87"
+    },
+    {
+      "name": "vgMultiDrawImageDMP",
+      "entry": "0x65da830",
+      "pointer": "0x65da831",
+      "original_table": "0x70d7a24",
+      "relocated_table": "0x8ab706c",
+      "argc_words": null,
+      "evidence": "Original name/function export table",
+      "entry_bytes_16": "2de9f84316460f46804600f03bf90400"
+    }
+  ],
+  "guards": [
+    {
+      "entry": "0x065daab4",
+      "purpose": "Unhandled core VG context lookup"
+    }
+  ],
+  "observed_config_request": {
+    "attributes_address": "0x07435b54",
+    "words": [
+      "0x3028",
+      "0x6",
+      "0x3038"
+    ],
+    "static_config_row": "0x0701da80",
+    "initializer": "0x064cff9c",
+    "layout": "RGBA8, buffer 32, depth 0, stencil 0"
+  },
+  "native_bridge": {
+    "entry": "0x064c46c4",
+    "argc_words": 3,
+    "evidence": "Original type1 EGLsurface+68 native-handle query; mapped software surface to captured original native DWD handle",
+    "native_queries_unmodified": [
+      "0x064de7da",
+      "0x064de686"
+    ],
+    "correction": "0x064de686 E010 returns next buffer index, not pixel format"
+  }
+}

@@ -1,0 +1,296 @@
+{
+  "evidence": "Static original uiTSK001 late activation function 063c7db6; task id loads resolved against parent inactive-inputs-boot/ram.bin snapshot",
+  "records": [
+    {
+      "pc": "0x63c7dbc",
+      "task_id": 77,
+      "task_id_global": "0x6f48fb4"
+    },
+    {
+      "pc": "0x63c7dc4",
+      "task_id": 78,
+      "task_id_global": "0x6f48fb8"
+    },
+    {
+      "pc": "0x63c7dcc",
+      "task_id": 285,
+      "task_id_global": "0x6f492b0"
+    },
+    {
+      "pc": "0x63c7dd4",
+      "task_id": 65,
+      "task_id_global": "0x6f48f84"
+    },
+    {
+      "pc": "0x63c7ddc",
+      "task_id": 286,
+      "task_id_global": "0x6f492b4"
+    },
+    {
+      "pc": "0x63c7de4",
+      "task_id": 287,
+      "task_id_global": "0x6f492b8"
+    },
+    {
+      "pc": "0x63c7dec",
+      "task_id": 22,
+      "task_id_global": "0x6f48ee8"
+    },
+    {
+      "pc": "0x63c7df4",
+      "task_id": 66,
+      "task_id_global": "0x6f48f88"
+    },
+    {
+      "pc": "0x63c7dfc",
+      "task_id": 67,
+      "task_id_global": "0x6f48f8c"
+    },
+    {
+      "pc": "0x63c7e04",
+      "task_id": 68,
+      "task_id_global": "0x6f48f90"
+    },
+    {
+      "pc": "0x63c7e0c",
+      "task_id": 58,
+      "task_id_global": "0x6f48f68"
+    },
+    {
+      "pc": "0x63c7e14",
+      "task_id": 74,
+      "task_id_global": "0x6f48fa8"
+    },
+    {
+      "pc": "0x63c7e1c",
+      "task_id": 52,
+      "task_id_global": "0x6f48f50"
+    },
+    {
+      "pc": "0x63c7e24",
+      "task_id": 53,
+      "task_id_global": "0x6f48f54"
+    },
+    {
+      "pc": "0x63c7e2c",
+      "task_id": 55,
+      "task_id_global": "0x6f48f5c"
+    },
+    {
+      "pc": "0x63c7e34",
+      "task_id": 54,
+      "task_id_global": "0x6f48f58"
+    },
+    {
+      "pc": "0x63c7e3c",
+      "task_id": 59,
+      "task_id_global": "0x6f48f6c"
+    },
+    {
+      "pc": "0x63c7e44",
+      "task_id": 60,
+      "task_id_global": "0x6f48f70"
+    },
+    {
+      "pc": "0x63c7e4c",
+      "task_id": 61,
+      "task_id_global": "0x6f48f74"
+    },
+    {
+      "pc": "0x63c7e54",
+      "task_id": 62,
+      "task_id_global": "0x6f48f78"
+    },
+    {
+      "pc": "0x63c7e5c",
+      "task_id": 63,
+      "task_id_global": "0x6f48f7c"
+    },
+    {
+      "pc": "0x63c7e64",
+      "task_id": 56,
+      "task_id_global": "0x6f48f60"
+    },
+    {
+      "pc": "0x63c7e6c",
+      "task_id": 57,
+      "task_id_global": "0x6f48f64"
+    },
+    {
+      "pc": "0x63c7e74",
+      "task_id": 69,
+      "task_id_global": "0x6f48f94"
+    },
+    {
+      "pc": "0x63c7e7c",
+      "task_id": 71,
+      "task_id_global": "0x6f48f9c"
+    },
+    {
+      "pc": "0x63c7e84",
+      "task_id": 72,
+      "task_id_global": "0x6f48fa0"
+    },
+    {
+      "pc": "0x63c7e8c",
+      "task_id": 73,
+      "task_id_global": "0x6f48fa4"
+    },
+    {
+      "pc": "0x63c7e94",
+      "task_id": 64,
+      "task_id_global": "0x6f48f80"
+    },
+    {
+      "pc": "0x63c7e9c",
+      "task_id": 35,
+      "task_id_global": "0x6f48f0c"
+    },
+    {
+      "pc": "0x63c7ea4",
+      "task_id": 250,
+      "task_id_global": "0x6f49228"
+    },
+    {
+      "pc": "0x63c7eb0",
+      "task_id": 18,
+      "task_id_global": "0x6f48ed8"
+    },
+    {
+      "pc": "0x63c7eb8",
+      "task_id": 28,
+      "task_id_global": "0x6f48ef0"
+    },
+    {
+      "pc": "0x63c7ec0",
+      "task_id": 19,
+      "task_id_global": "0x6f48edc"
+    },
+    {
+      "pc": "0x63c7ec8",
+      "task_id": 21,
+      "task_id_global": "0x6f48ee4"
+    },
+    {
+      "pc": "0x63c7ed0",
+      "task_id": 20,
+      "task_id_global": "0x6f48ee0"
+    },
+    {
+      "pc": "0x63c7ed8",
+      "task_id": 174,
+      "task_id_global": "0x6f49138"
+    },
+    {
+      "pc": "0x63c7ee0",
+      "task_id": 175,
+      "task_id_global": "0x6f4913c"
+    },
+    {
+      "pc": "0x63c7ee8",
+      "task_id": 176,
+      "task_id_global": "0x6f49140"
+    },
+    {
+      "pc": "0x63c7ef0",
+      "task_id": 75,
+      "task_id_global": "0x6f48fac"
+    },
+    {
+      "pc": "0x63c7ef8",
+      "task_id": 172,
+      "task_id_global": "0x6f49130"
+    },
+    {
+      "pc": "0x63c7f00",
+      "task_id": 34,
+      "task_id_global": "0x6f48f08"
+    },
+    {
+      "pc": "0x63c7f08",
+      "task_id": 76,
+      "task_id_global": "0x6f48fb0"
+    },
+    {
+      "pc": "0x63c7f14",
+      "task_id": 27,
+      "task_id_global": "0x6f48eec"
+    },
+    {
+      "pc": "0x63c7f28",
+      "task_id": 243,
+      "task_id_global": "0x6f4920c"
+    },
+    {
+      "pc": "0x63c7f30",
+      "task_id": 244,
+      "task_id_global": "0x6f49210"
+    },
+    {
+      "pc": "0x63c7f38",
+      "task_id": 245,
+      "task_id_global": "0x6f49214"
+    },
+    {
+      "pc": "0x63c7f40",
+      "task_id": 173,
+      "task_id_global": "0x6f49134"
+    },
+    {
+      "pc": "0x63c7f48",
+      "task_id": 246,
+      "task_id_global": "0x6f49218"
+    },
+    {
+      "pc": "0x63c7f50",
+      "task_id": 31,
+      "task_id_global": "0x6f48efc"
+    },
+    {
+      "pc": "0x63c7f58",
+      "task_id": 30,
+      "task_id_global": "0x6f48ef8"
+    },
+    {
+      "pc": "0x63c7f60",
+      "task_id": 149,
+      "task_id_global": "0x6f490d4"
+    },
+    {
+      "pc": "0x63c7f68",
+      "task_id": 150,
+      "task_id_global": "0x6f490d8"
+    },
+    {
+      "pc": "0x63c7f70",
+      "task_id": 151,
+      "task_id_global": "0x6f490dc"
+    },
+    {
+      "pc": "0x63c7f78",
+      "task_id": 5,
+      "task_id_global": "0x6f48eb0"
+    },
+    {
+      "pc": "0x63c7f84",
+      "task_id": 154,
+      "task_id_global": "0x6f490e8"
+    }
+  ],
+  "ram_snapshot": {
+    "path": "/Users/lixiuqi/Documents/ChatGPT/\u76f8\u673a/s5-emulator/menu-smp/results/inactive-inputs-boot/ram.bin",
+    "sha256": "500eacf3cae5af9ebbf95ac98dea2eac849ad1a2d72830c29c3891be9a6bda27"
+  },
+  "ui_tsk_018": {
+    "create_call": "0x063b077a",
+    "entry": "0x0647e83f",
+    "task_id": 18,
+    "priority": 108,
+    "stack_size": 10240,
+    "stack_address": "0x099cc278",
+    "activation_call": "0x063c7eb0",
+    "activation_wrapper": "0x065a2b2e",
+    "task_id_global": "0x06f48ed8",
+    "main_call_to_batch_activation": "0x063c8b94"
+  }
+}

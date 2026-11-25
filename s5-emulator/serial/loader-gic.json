@@ -1,0 +1,3832 @@
+{
+  "sources": {
+    "01_loader2.bin": {
+      "path": "/Users/lixiuqi/Documents/ChatGPT/\u76f8\u673a/s5-v29-offline/unpacked-v29/01_loader2.bin",
+      "sha256": "4a925f2e019310a9a8f2029df652cc7a5e93be5fb8ee4b6b29c6c6d3805cea85"
+    },
+    "02_loader3.bin": {
+      "path": "/Users/lixiuqi/Documents/ChatGPT/\u76f8\u673a/s5-v29-offline/unpacked-v29/02_loader3.bin",
+      "sha256": "67d44d7c2bb2091b7a56ca5118345e0ee604e6b2c6c31769cd6de06ae752d838"
+    },
+    "03_program.bin": {
+      "path": "/Users/lixiuqi/Documents/ChatGPT/\u76f8\u673a/s5-v29-offline/unpacked-v29/03_program.bin",
+      "sha256": "fc496d62a91f6e9b1b84807183bb805bc546c9105d2938546b58a66ad9d132fe"
+    }
+  },
+  "gic_distributor": {
+    "loader2_store_file_offset": "0x1998",
+    "register": "0x70001000",
+    "value": 1
+  },
+  "routes": {
+    "loader3_function_file_offset": "0x10e8",
+    "loader3_call_file_offset": "0x19c",
+    "table_file_offset": "0x6978",
+    "count": 416,
+    "rows": [
+      {
+        "gic_id": 32,
+        "loader3_table_file_offset": "0x6978",
+        "target_mask": "0x1",
+        "config_2bits": 0,
+        "itargetsr_address": "0x70001820",
+        "icfgr_byte_address": "0x70001c08",
+        "icfgr_shift": 0
+      },
+      {
+        "gic_id": 33,
+        "loader3_table_file_offset": "0x697c",
+        "target_mask": "0x1",
+        "config_2bits": 0,
+        "itargetsr_address": "0x70001821",
+        "icfgr_byte_address": "0x70001c08",
+        "icfgr_shift": 2
+      },
+      {
+        "gic_id": 34,
+        "loader3_table_file_offset": "0x6980",
+        "target_mask": "0x1",
+        "config_2bits": 0,
+        "itargetsr_address": "0x70001822",
+        "icfgr_byte_address": "0x70001c08",
+        "icfgr_shift": 4
+      },
+      {
+        "gic_id": 35,
+        "loader3_table_file_offset": "0x6984",
+        "target_mask": "0x1",
+        "config_2bits": 2,
+        "itargetsr_address": "0x70001823",
+        "icfgr_byte_address": "0x70001c08",
+        "icfgr_shift": 6
+      },
+      {
+        "gic_id": 36,
+        "loader3_table_file_offset": "0x6988",
+        "target_mask": "0x1",
+        "config_2bits": 2,
+        "itargetsr_address": "0x70001824",
+        "icfgr_byte_address": "0x70001c09",
+        "icfgr_shift": 0
+      },
+      {
+        "gic_id": 37,
+        "loader3_table_file_offset": "0x698c",
+        "target_mask": "0x1",
+        "config_2bits": 2,
+        "itargetsr_address": "0x70001825",
+        "icfgr_byte_address": "0x70001c09",
+        "icfgr_shift": 2
+      },
+      {
+        "gic_id": 38,
+        "loader3_table_file_offset": "0x6990",
+        "target_mask": "0x1",
+        "config_2bits": 2,
+        "itargetsr_address": "0x70001826",
+        "icfgr_byte_address": "0x70001c09",
+        "icfgr_shift": 4
+      },
+      {
+        "gic_id": 39,
+        "loader3_table_file_offset": "0x6994",
+        "target_mask": "0x1",
+        "config_2bits": 2,
+        "itargetsr_address": "0x70001827",
+        "icfgr_byte_address": "0x70001c09",
+        "icfgr_shift": 6
+      },
+      {
+        "gic_id": 40,
+        "loader3_table_file_offset": "0x6998",
+        "target_mask": "0x1",
+        "config_2bits": 2,
+        "itargetsr_address": "0x70001828",
+        "icfgr_byte_address": "0x70001c0a",
+        "icfgr_shift": 0
+      },
+      {
+        "gic_id": 41,
+        "loader3_table_file_offset": "0x699c",
+        "target_mask": "0x1",
+        "config_2bits": 2,
+        "itargetsr_address": "0x70001829",
+        "icfgr_byte_address": "0x70001c0a",
+        "icfgr_shift": 2
+      },
+      {
+        "gic_id": 42,
+        "loader3_table_file_offset": "0x69a0",
+        "target_mask": "0x1",
+        "config_2bits": 2,
+        "itargetsr_address": "0x7000182a",
+        "icfgr_byte_address": "0x70001c0a",
+        "icfgr_shift": 4
+      },
+      {
+        "gic_id": 43,
+        "loader3_table_file_offset": "0x69a4",
+        "target_mask": "0x1",
+        "config_2bits": 2,
+        "itargetsr_address": "0x7000182b",
+        "icfgr_byte_address": "0x70001c0a",
+        "icfgr_shift": 6
+      },
+      {
+        "gic_id": 44,
+        "loader3_table_file_offset": "0x69a8",
+        "target_mask": "0x1",
+        "config_2bits": 2,
+        "itargetsr_address": "0x7000182c",
+        "icfgr_byte_address": "0x70001c0b",
+        "icfgr_shift": 0
+      },
+      {
+        "gic_id": 45,
+        "loader3_table_file_offset": "0x69ac",
+        "target_mask": "0x1",
+        "config_2bits": 2,
+        "itargetsr_address": "0x7000182d",
+        "icfgr_byte_address": "0x70001c0b",
+        "icfgr_shift": 2
+      },
+      {
+        "gic_id": 46,
+        "loader3_table_file_offset": "0x69b0",
+        "target_mask": "0x1",
+        "config_2bits": 2,
+        "itargetsr_address": "0x7000182e",
+        "icfgr_byte_address": "0x70001c0b",
+        "icfgr_shift": 4
+      },
+      {
+        "gic_id": 47,
+        "loader3_table_file_offset": "0x69b4",
+        "target_mask": "0x1",
+        "config_2bits": 2,
+        "itargetsr_address": "0x7000182f",
+        "icfgr_byte_address": "0x70001c0b",
+        "icfgr_shift": 6
+      },
+      {
+        "gic_id": 48,
+        "loader3_table_file_offset": "0x69b8",
+        "target_mask": "0x1",
+        "config_2bits": 2,
+        "itargetsr_address": "0x70001830",
+        "icfgr_byte_address": "0x70001c0c",
+        "icfgr_shift": 0
+      },
+      {
+        "gic_id": 49,
+        "loader3_table_file_offset": "0x69bc",
+        "target_mask": "0x1",
+        "config_2bits": 2,
+        "itargetsr_address": "0x70001831",
+        "icfgr_byte_address": "0x70001c0c",
+        "icfgr_shift": 2
+      },
+      {
+        "gic_id": 50,
+        "loader3_table_file_offset": "0x69c0",
+        "target_mask": "0x1",
+        "config_2bits": 2,
+        "itargetsr_address": "0x70001832",
+        "icfgr_byte_address": "0x70001c0c",
+        "icfgr_shift": 4
+      },
+      {
+        "gic_id": 51,
+        "loader3_table_file_offset": "0x69c4",
+        "target_mask": "0x1",
+        "config_2bits": 2,
+        "itargetsr_address": "0x70001833",
+        "icfgr_byte_address": "0x70001c0c",
+        "icfgr_shift": 6
+      },
+      {
+        "gic_id": 52,
+        "loader3_table_file_offset": "0x69c8",
+        "target_mask": "0x1",
+        "config_2bits": 2,
+        "itargetsr_address": "0x70001834",
+        "icfgr_byte_address": "0x70001c0d",
+        "icfgr_shift": 0
+      },
+      {
+        "gic_id": 53,
+        "loader3_table_file_offset": "0x69cc",
+        "target_mask": "0x1",
+        "config_2bits": 2,
+        "itargetsr_address": "0x70001835",
+        "icfgr_byte_address": "0x70001c0d",
+        "icfgr_shift": 2
+      },
+      {
+        "gic_id": 54,
+        "loader3_table_file_offset": "0x69d0",
+        "target_mask": "0x1",
+        "config_2bits": 2,
+        "itargetsr_address": "0x70001836",
+        "icfgr_byte_address": "0x70001c0d",
+        "icfgr_shift": 4
+      },
+      {
+        "gic_id": 55,
+        "loader3_table_file_offset": "0x69d4",
+        "target_mask": "0x1",
+        "config_2bits": 2,
+        "itargetsr_address": "0x70001837",
+        "icfgr_byte_address": "0x70001c0d",
+        "icfgr_shift": 6
+      },
+      {
+        "gic_id": 56,
+        "loader3_table_file_offset": "0x69d8",
+        "target_mask": "0x8",
+        "config_2bits": 0,
+        "itargetsr_address": "0x70001838",
+        "icfgr_byte_address": "0x70001c0e",
+        "icfgr_shift": 0
+      },
+      {
+        "gic_id": 57,
+        "loader3_table_file_offset": "0x69dc",
+        "target_mask": "0x8",
+        "config_2bits": 0,
+        "itargetsr_address": "0x70001839",
+        "icfgr_byte_address": "0x70001c0e",
+        "icfgr_shift": 2
+      },
+      {
+        "gic_id": 58,
+        "loader3_table_file_offset": "0x69e0",
+        "target_mask": "0x8",
+        "config_2bits": 0,
+        "itargetsr_address": "0x7000183a",
+        "icfgr_byte_address": "0x70001c0e",
+        "icfgr_shift": 4
+      },
+      {
+        "gic_id": 59,
+        "loader3_table_file_offset": "0x69e4",
+        "target_mask": "0x8",
+        "config_2bits": 0,
+        "itargetsr_address": "0x7000183b",
+        "icfgr_byte_address": "0x70001c0e",
+        "icfgr_shift": 6
+      },
+      {
+        "gic_id": 60,
+        "loader3_table_file_offset": "0x69e8",
+        "target_mask": "0x1",
+        "config_2bits": 2,
+        "itargetsr_address": "0x7000183c",
+        "icfgr_byte_address": "0x70001c0f",
+        "icfgr_shift": 0
+      },
+      {
+        "gic_id": 61,
+        "loader3_table_file_offset": "0x69ec",
+        "target_mask": "0x2",
+        "config_2bits": 2,
+        "itargetsr_address": "0x7000183d",
+        "icfgr_byte_address": "0x70001c0f",
+        "icfgr_shift": 2
+      },
+      {
+        "gic_id": 62,
+        "loader3_table_file_offset": "0x69f0",
+        "target_mask": "0x1",
+        "config_2bits": 2,
+        "itargetsr_address": "0x7000183e",
+        "icfgr_byte_address": "0x70001c0f",
+        "icfgr_shift": 4
+      },
+      {
+        "gic_id": 63,
+        "loader3_table_file_offset": "0x69f4",
+        "target_mask": "0x1",
+        "config_2bits": 2,
+        "itargetsr_address": "0x7000183f",
+        "icfgr_byte_address": "0x70001c0f",
+        "icfgr_shift": 6
+      },
+      {
+        "gic_id": 64,
+        "loader3_table_file_offset": "0x69f8",
+        "target_mask": "0x1",
+        "config_2bits": 2,
+        "itargetsr_address": "0x70001840",
+        "icfgr_byte_address": "0x70001c10",
+        "icfgr_shift": 0
+      },
+      {
+        "gic_id": 65,
+        "loader3_table_file_offset": "0x69fc",
+        "target_mask": "0x1",
+        "config_2bits": 2,
+        "itargetsr_address": "0x70001841",
+        "icfgr_byte_address": "0x70001c10",
+        "icfgr_shift": 2
+      },
+      {
+        "gic_id": 66,
+        "loader3_table_file_offset": "0x6a00",
+        "target_mask": "0x1",
+        "config_2bits": 2,
+        "itargetsr_address": "0x70001842",
+        "icfgr_byte_address": "0x70001c10",
+        "icfgr_shift": 4
+      },
+      {
+        "gic_id": 67,
+        "loader3_table_file_offset": "0x6a04",
+        "target_mask": "0x1",
+        "config_2bits": 2,
+        "itargetsr_address": "0x70001843",
+        "icfgr_byte_address": "0x70001c10",
+        "icfgr_shift": 6
+      },
+      {
+        "gic_id": 68,
+        "loader3_table_file_offset": "0x6a08",
+        "target_mask": "0x1",
+        "config_2bits": 2,
+        "itargetsr_address": "0x70001844",
+        "icfgr_byte_address": "0x70001c11",
+        "icfgr_shift": 0
+      },
+      {
+        "gic_id": 69,
+        "loader3_table_file_offset": "0x6a0c",
+        "target_mask": "0x1",
+        "config_2bits": 2,
+        "itargetsr_address": "0x70001845",
+        "icfgr_byte_address": "0x70001c11",
+        "icfgr_shift": 2
+      },
+      {
+        "gic_id": 70,
+        "loader3_table_file_offset": "0x6a10",
+        "target_mask": "0x1",
+        "config_2bits": 0,
+        "itargetsr_address": "0x70001846",
+        "icfgr_byte_address": "0x70001c11",
+        "icfgr_shift": 4
+      },
+      {
+        "gic_id": 71,
+        "loader3_table_file_offset": "0x6a14",
+        "target_mask": "0x1",
+        "config_2bits": 0,
+        "itargetsr_address": "0x70001847",
+        "icfgr_byte_address": "0x70001c11",
+        "icfgr_shift": 6
+      },
+      {
+        "gic_id": 72,
+        "loader3_table_file_offset": "0x6a18",
+        "target_mask": "0x1",
+        "config_2bits": 0,
+        "itargetsr_address": "0x70001848",
+        "icfgr_byte_address": "0x70001c12",
+        "icfgr_shift": 0
+      },
+      {
+        "gic_id": 73,
+        "loader3_table_file_offset": "0x6a1c",
+        "target_mask": "0x1",
+        "config_2bits": 0,
+        "itargetsr_address": "0x70001849",
+        "icfgr_byte_address": "0x70001c12",
+        "icfgr_shift": 2
+      },
+      {
+        "gic_id": 74,
+        "loader3_table_file_offset": "0x6a20",
+        "target_mask": "0x1",
+        "config_2bits": 0,
+        "itargetsr_address": "0x7000184a",
+        "icfgr_byte_address": "0x70001c12",
+        "icfgr_shift": 4
+      },
+      {
+        "gic_id": 75,
+        "loader3_table_file_offset": "0x6a24",
+        "target_mask": "0x1",
+        "config_2bits": 0,
+        "itargetsr_address": "0x7000184b",
+        "icfgr_byte_address": "0x70001c12",
+        "icfgr_shift": 6
+      },
+      {
+        "gic_id": 76,
+        "loader3_table_file_offset": "0x6a28",
+        "target_mask": "0x1",
+        "config_2bits": 0,
+        "itargetsr_address": "0x7000184c",
+        "icfgr_byte_address": "0x70001c13",
+        "icfgr_shift": 0
+      },
+      {
+        "gic_id": 77,
+        "loader3_table_file_offset": "0x6a2c",
+        "target_mask": "0x1",
+        "config_2bits": 0,
+        "itargetsr_address": "0x7000184d",
+        "icfgr_byte_address": "0x70001c13",
+        "icfgr_shift": 2
+      },
+      {
+        "gic_id": 78,
+        "loader3_table_file_offset": "0x6a30",
+        "target_mask": "0x1",
+        "config_2bits": 0,
+        "itargetsr_address": "0x7000184e",
+        "icfgr_byte_address": "0x70001c13",
+        "icfgr_shift": 4
+      },
+      {
+        "gic_id": 79,
+        "loader3_table_file_offset": "0x6a34",
+        "target_mask": "0x1",
+        "config_2bits": 0,
+        "itargetsr_address": "0x7000184f",
+        "icfgr_byte_address": "0x70001c13",
+        "icfgr_shift": 6
+      },
+      {
+        "gic_id": 80,
+        "loader3_table_file_offset": "0x6a38",
+        "target_mask": "0x1",
+        "config_2bits": 0,
+        "itargetsr_address": "0x70001850",
+        "icfgr_byte_address": "0x70001c14",
+        "icfgr_shift": 0
+      },
+      {
+        "gic_id": 81,
+        "loader3_table_file_offset": "0x6a3c",
+        "target_mask": "0x1",
+        "config_2bits": 0,
+        "itargetsr_address": "0x70001851",
+        "icfgr_byte_address": "0x70001c14",
+        "icfgr_shift": 2
+      },
+      {
+        "gic_id": 82,
+        "loader3_table_file_offset": "0x6a40",
+        "target_mask": "0x1",
+        "config_2bits": 0,
+        "itargetsr_address": "0x70001852",
+        "icfgr_byte_address": "0x70001c14",
+        "icfgr_shift": 4
+      },
+      {
+        "gic_id": 83,
+        "loader3_table_file_offset": "0x6a44",
+        "target_mask": "0x1",
+        "config_2bits": 0,
+        "itargetsr_address": "0x70001853",
+        "icfgr_byte_address": "0x70001c14",
+        "icfgr_shift": 6
+      },
+      {
+        "gic_id": 84,
+        "loader3_table_file_offset": "0x6a48",
+        "target_mask": "0x1",
+        "config_2bits": 0,
+        "itargetsr_address": "0x70001854",
+        "icfgr_byte_address": "0x70001c15",
+        "icfgr_shift": 0
+      },
+      {
+        "gic_id": 85,
+        "loader3_table_file_offset": "0x6a4c",
+        "target_mask": "0x8",
+        "config_2bits": 0,
+        "itargetsr_address": "0x70001855",
+        "icfgr_byte_address": "0x70001c15",
+        "icfgr_shift": 2
+      },
+      {
+        "gic_id": 86,
+        "loader3_table_file_offset": "0x6a50",
+        "target_mask": "0x1",
+        "config_2bits": 0,
+        "itargetsr_address": "0x70001856",
+        "icfgr_byte_address": "0x70001c15",
+        "icfgr_shift": 4
+      },
+      {
+        "gic_id": 87,
+        "loader3_table_file_offset": "0x6a54",
+        "target_mask": "0x1",
+        "config_2bits": 0,
+        "itargetsr_address": "0x70001857",
+        "icfgr_byte_address": "0x70001c15",
+        "icfgr_shift": 6
+      },
+      {
+        "gic_id": 88,
+        "loader3_table_file_offset": "0x6a58",
+        "target_mask": "0x1",
+        "config_2bits": 0,
+        "itargetsr_address": "0x70001858",
+        "icfgr_byte_address": "0x70001c16",
+        "icfgr_shift": 0
+      },
+      {
+        "gic_id": 89,
+        "loader3_table_file_offset": "0x6a5c",
+        "target_mask": "0x1",
+        "config_2bits": 0,
+        "itargetsr_address": "0x70001859",
+        "icfgr_byte_address": "0x70001c16",
+        "icfgr_shift": 2
+      },
+      {
+        "gic_id": 90,
+        "loader3_table_file_offset": "0x6a60",
+        "target_mask": "0x1",
+        "config_2bits": 0,
+        "itargetsr_address": "0x7000185a",
+        "icfgr_byte_address": "0x70001c16",
+        "icfgr_shift": 4
+      },
+      {
+        "gic_id": 91,
+        "loader3_table_file_offset": "0x6a64",
+        "target_mask": "0x8",
+        "config_2bits": 0,
+        "itargetsr_address": "0x7000185b",
+        "icfgr_byte_address": "0x70001c16",
+        "icfgr_shift": 6
+      },
+      {
+        "gic_id": 92,
+        "loader3_table_file_offset": "0x6a68",
+        "target_mask": "0x8",
+        "config_2bits": 0,
+        "itargetsr_address": "0x7000185c",
+        "icfgr_byte_address": "0x70001c17",
+        "icfgr_shift": 0
+      },
+      {
+        "gic_id": 93,
+        "loader3_table_file_offset": "0x6a6c",
+        "target_mask": "0x1",
+        "config_2bits": 0,
+        "itargetsr_address": "0x7000185d",
+        "icfgr_byte_address": "0x70001c17",
+        "icfgr_shift": 2
+      },
+      {
+        "gic_id": 94,
+        "loader3_table_file_offset": "0x6a70",
+        "target_mask": "0x1",
+        "config_2bits": 0,
+        "itargetsr_address": "0x7000185e",
+        "icfgr_byte_address": "0x70001c17",
+        "icfgr_shift": 4
+      },
+      {
+        "gic_id": 95,
+        "loader3_table_file_offset": "0x6a74",
+        "target_mask": "0x1",
+        "config_2bits": 0,
+        "itargetsr_address": "0x7000185f",
+        "icfgr_byte_address": "0x70001c17",
+        "icfgr_shift": 6
+      },
+      {
+        "gic_id": 96,
+        "loader3_table_file_offset": "0x6a78",
+        "target_mask": "0x1",
+        "config_2bits": 0,
+        "itargetsr_address": "0x70001860",
+        "icfgr_byte_address": "0x70001c18",
+        "icfgr_shift": 0
+      },
+      {
+        "gic_id": 97,
+        "loader3_table_file_offset": "0x6a7c",
+        "target_mask": "0x1",
+        "config_2bits": 0,
+        "itargetsr_address": "0x70001861",
+        "icfgr_byte_address": "0x70001c18",
+        "icfgr_shift": 2
+      },
+      {
+        "gic_id": 98,
+        "loader3_table_file_offset": "0x6a80",
+        "target_mask": "0x1",
+        "config_2bits": 0,
+        "itargetsr_address": "0x70001862",
+        "icfgr_byte_address": "0x70001c18",
+        "icfgr_shift": 4
+      },
+      {
+        "gic_id": 99,
+        "loader3_table_file_offset": "0x6a84",
+        "target_mask": "0x1",
+        "config_2bits": 0,
+        "itargetsr_address": "0x70001863",
+        "icfgr_byte_address": "0x70001c18",
+        "icfgr_shift": 6
+      },
+      {
+        "gic_id": 100,
+        "loader3_table_file_offset": "0x6a88",
+        "target_mask": "0x1",
+        "config_2bits": 0,
+        "itargetsr_address": "0x70001864",
+        "icfgr_byte_address": "0x70001c19",
+        "icfgr_shift": 0
+      },
+      {
+        "gic_id": 101,
+        "loader3_table_file_offset": "0x6a8c",
+        "target_mask": "0x1",
+        "config_2bits": 0,
+        "itargetsr_address": "0x70001865",
+        "icfgr_byte_address": "0x70001c19",
+        "icfgr_shift": 2
+      },
+      {
+        "gic_id": 102,
+        "loader3_table_file_offset": "0x6a90",
+        "target_mask": "0x1",
+        "config_2bits": 0,
+        "itargetsr_address": "0x70001866",
+        "icfgr_byte_address": "0x70001c19",
+        "icfgr_shift": 4
+      },
+      {
+        "gic_id": 103,
+        "loader3_table_file_offset": "0x6a94",
+        "target_mask": "0x1",
+        "config_2bits": 0,
+        "itargetsr_address": "0x70001867",
+        "icfgr_byte_address": "0x70001c19",
+        "icfgr_shift": 6
+      },
+      {
+        "gic_id": 104,
+        "loader3_table_file_offset": "0x6a98",
+        "target_mask": "0x1",
+        "config_2bits": 0,
+        "itargetsr_address": "0x70001868",
+        "icfgr_byte_address": "0x70001c1a",
+        "icfgr_shift": 0
+      },
+      {
+        "gic_id": 105,
+        "loader3_table_file_offset": "0x6a9c",
+        "target_mask": "0x1",
+        "config_2bits": 0,
+        "itargetsr_address": "0x70001869",
+        "icfgr_byte_address": "0x70001c1a",
+        "icfgr_shift": 2
+      },
+      {
+        "gic_id": 106,
+        "loader3_table_file_offset": "0x6aa0",
+        "target_mask": "0x1",
+        "config_2bits": 0,
+        "itargetsr_address": "0x7000186a",
+        "icfgr_byte_address": "0x70001c1a",
+        "icfgr_shift": 4
+      },
+      {
+        "gic_id": 107,
+        "loader3_table_file_offset": "0x6aa4",
+        "target_mask": "0x1",
+        "config_2bits": 0,
+        "itargetsr_address": "0x7000186b",
+        "icfgr_byte_address": "0x70001c1a",
+        "icfgr_shift": 6
+      },
+      {
+        "gic_id": 108,
+        "loader3_table_file_offset": "0x6aa8",
+        "target_mask": "0x1",
+        "config_2bits": 0,
+        "itargetsr_address": "0x7000186c",
+        "icfgr_byte_address": "0x70001c1b",
+        "icfgr_shift": 0
+      },
+      {
+        "gic_id": 109,
+        "loader3_table_file_offset": "0x6aac",
+        "target_mask": "0x1",
+        "config_2bits": 0,
+        "itargetsr_address": "0x7000186d",
+        "icfgr_byte_address": "0x70001c1b",
+        "icfgr_shift": 2
+      },
+      {
+        "gic_id": 110,
+        "loader3_table_file_offset": "0x6ab0",
+        "target_mask": "0x1",
+        "config_2bits": 0,
+        "itargetsr_address": "0x7000186e",
+        "icfgr_byte_address": "0x70001c1b",
+        "icfgr_shift": 4
+      },
+      {
+        "gic_id": 111,
+        "loader3_table_file_offset": "0x6ab4",
+        "target_mask": "0x1",
+        "config_2bits": 0,
+        "itargetsr_address": "0x7000186f",
+        "icfgr_byte_address": "0x70001c1b",
+        "icfgr_shift": 6
+      },
+      {
+        "gic_id": 112,
+        "loader3_table_file_offset": "0x6ab8",
+        "target_mask": "0x1",
+        "config_2bits": 0,
+        "itargetsr_address": "0x70001870",
+        "icfgr_byte_address": "0x70001c1c",
+        "icfgr_shift": 0
+      },
+      {
+        "gic_id": 113,
+        "loader3_table_file_offset": "0x6abc",
+        "target_mask": "0x1",
+        "config_2bits": 0,
+        "itargetsr_address": "0x70001871",
+        "icfgr_byte_address": "0x70001c1c",
+        "icfgr_shift": 2
+      },
+      {
+        "gic_id": 114,
+        "loader3_table_file_offset": "0x6ac0",
+        "target_mask": "0x4",
+        "config_2bits": 0,
+        "itargetsr_address": "0x70001872",
+        "icfgr_byte_address": "0x70001c1c",
+        "icfgr_shift": 4
+      },
+      {
+        "gic_id": 115,
+        "loader3_table_file_offset": "0x6ac4",
+        "target_mask": "0x1",
+        "config_2bits": 0,
+        "itargetsr_address": "0x70001873",
+        "icfgr_byte_address": "0x70001c1c",
+        "icfgr_shift": 6
+      },
+      {
+        "gic_id": 116,
+        "loader3_table_file_offset": "0x6ac8",
+        "target_mask": "0x1",
+        "config_2bits": 0,
+        "itargetsr_address": "0x70001874",
+        "icfgr_byte_address": "0x70001c1d",
+        "icfgr_shift": 0
+      },
+      {
+        "gic_id": 117,
+        "loader3_table_file_offset": "0x6acc",
+        "target_mask": "0x1",
+        "config_2bits": 0,
+        "itargetsr_address": "0x70001875",
+        "icfgr_byte_address": "0x70001c1d",
+        "icfgr_shift": 2
+      },
+      {
+        "gic_id": 118,
+        "loader3_table_file_offset": "0x6ad0",
+        "target_mask": "0x1",
+        "config_2bits": 0,
+        "itargetsr_address": "0x70001876",
+        "icfgr_byte_address": "0x70001c1d",
+        "icfgr_shift": 4
+      },
+      {
+        "gic_id": 119,
+        "loader3_table_file_offset": "0x6ad4",
+        "target_mask": "0x1",
+        "config_2bits": 0,
+        "itargetsr_address": "0x70001877",
+        "icfgr_byte_address": "0x70001c1d",
+        "icfgr_shift": 6
+      },
+      {
+        "gic_id": 120,
+        "loader3_table_file_offset": "0x6ad8",
+        "target_mask": "0x1",
+        "config_2bits": 0,
+        "itargetsr_address": "0x70001878",
+        "icfgr_byte_address": "0x70001c1e",
+        "icfgr_shift": 0
+      },
+      {
+        "gic_id": 121,
+        "loader3_table_file_offset": "0x6adc",
+        "target_mask": "0x1",
+        "config_2bits": 0,
+        "itargetsr_address": "0x70001879",
+        "icfgr_byte_address": "0x70001c1e",
+        "icfgr_shift": 2
+      },
+      {
+        "gic_id": 122,
+        "loader3_table_file_offset": "0x6ae0",
+        "target_mask": "0x1",
+        "config_2bits": 0,
+        "itargetsr_address": "0x7000187a",
+        "icfgr_byte_address": "0x70001c1e",
+        "icfgr_shift": 4
+      },
+      {
+        "gic_id": 123,
+        "loader3_table_file_offset": "0x6ae4",
+        "target_mask": "0x1",
+        "config_2bits": 0,
+        "itargetsr_address": "0x7000187b",
+        "icfgr_byte_address": "0x70001c1e",
+        "icfgr_shift": 6
+      },
+      {
+        "gic_id": 124,
+        "loader3_table_file_offset": "0x6ae8",
+        "target_mask": "0x1",
+        "config_2bits": 0,
+        "itargetsr_address": "0x7000187c",
+        "icfgr_byte_address": "0x70001c1f",
+        "icfgr_shift": 0
+      },
+      {
+        "gic_id": 125,
+        "loader3_table_file_offset": "0x6aec",
+        "target_mask": "0x1",
+        "config_2bits": 0,
+        "itargetsr_address": "0x7000187d",
+        "icfgr_byte_address": "0x70001c1f",
+        "icfgr_shift": 2
+      },
+      {
+        "gic_id": 126,
+        "loader3_table_file_offset": "0x6af0",
+        "target_mask": "0x1",
+        "config_2bits": 0,
+        "itargetsr_address": "0x7000187e",
+        "icfgr_byte_address": "0x70001c1f",
+        "icfgr_shift": 4
+      },
+      {
+        "gic_id": 127,
+        "loader3_table_file_offset": "0x6af4",
+        "target_mask": "0x1",
+        "config_2bits": 0,
+        "itargetsr_address": "0x7000187f",
+        "icfgr_byte_address": "0x70001c1f",
+        "icfgr_shift": 6
+      },
+      {
+        "gic_id": 128,
+        "loader3_table_file_offset": "0x6af8",
+        "target_mask": "0x1",
+        "config_2bits": 0,
+        "itargetsr_address": "0x70001880",
+        "icfgr_byte_address": "0x70001c20",
+        "icfgr_shift": 0
+      },
+      {
+        "gic_id": 129,
+        "loader3_table_file_offset": "0x6afc",
+        "target_mask": "0x1",
+        "config_2bits": 0,
+        "itargetsr_address": "0x70001881",
+        "icfgr_byte_address": "0x70001c20",
+        "icfgr_shift": 2
+      },
+      {
+        "gic_id": 130,
+        "loader3_table_file_offset": "0x6b00",
+        "target_mask": "0x1",
+        "config_2bits": 0,
+        "itargetsr_address": "0x70001882",
+        "icfgr_byte_address": "0x70001c20",
+        "icfgr_shift": 4
+      },
+      {
+        "gic_id": 131,
+        "loader3_table_file_offset": "0x6b04",
+        "target_mask": "0x1",
+        "config_2bits": 0,
+        "itargetsr_address": "0x70001883",
+        "icfgr_byte_address": "0x70001c20",
+        "icfgr_shift": 6
+      },
+      {
+        "gic_id": 132,
+        "loader3_table_file_offset": "0x6b08",
+        "target_mask": "0x1",
+        "config_2bits": 0,
+        "itargetsr_address": "0x70001884",
+        "icfgr_byte_address": "0x70001c21",
+        "icfgr_shift": 0
+      },
+      {
+        "gic_id": 133,
+        "loader3_table_file_offset": "0x6b0c",
+        "target_mask": "0x1",
+        "config_2bits": 0,
+        "itargetsr_address": "0x70001885",
+        "icfgr_byte_address": "0x70001c21",
+        "icfgr_shift": 2
+      },
+      {
+        "gic_id": 134,
+        "loader3_table_file_offset": "0x6b10",
+        "target_mask": "0x1",
+        "config_2bits": 0,
+        "itargetsr_address": "0x70001886",
+        "icfgr_byte_address": "0x70001c21",
+        "icfgr_shift": 4
+      },
+      {
+        "gic_id": 135,
+        "loader3_table_file_offset": "0x6b14",
+        "target_mask": "0x1",
+        "config_2bits": 0,
+        "itargetsr_address": "0x70001887",
+        "icfgr_byte_address": "0x70001c21",
+        "icfgr_shift": 6
+      },
+      {
+        "gic_id": 136,
+        "loader3_table_file_offset": "0x6b18",
+        "target_mask": "0x1",
+        "config_2bits": 0,
+        "itargetsr_address": "0x70001888",
+        "icfgr_byte_address": "0x70001c22",
+        "icfgr_shift": 0
+      },
+      {
+        "gic_id": 137,
+        "loader3_table_file_offset": "0x6b1c",
+        "target_mask": "0x1",
+        "config_2bits": 0,
+        "itargetsr_address": "0x70001889",
+        "icfgr_byte_address": "0x70001c22",
+        "icfgr_shift": 2
+      },
+      {
+        "gic_id": 138,
+        "loader3_table_file_offset": "0x6b20",
+        "target_mask": "0x1",
+        "config_2bits": 0,
+        "itargetsr_address": "0x7000188a",
+        "icfgr_byte_address": "0x70001c22",
+        "icfgr_shift": 4
+      },
+      {
+        "gic_id": 139,
+        "loader3_table_file_offset": "0x6b24",
+        "target_mask": "0x1",
+        "config_2bits": 0,
+        "itargetsr_address": "0x7000188b",
+        "icfgr_byte_address": "0x70001c22",
+        "icfgr_shift": 6
+      },
+      {
+        "gic_id": 140,
+        "loader3_table_file_offset": "0x6b28",
+        "target_mask": "0x1",
+        "config_2bits": 0,
+        "itargetsr_address": "0x7000188c",
+        "icfgr_byte_address": "0x70001c23",
+        "icfgr_shift": 0
+      },
+      {
+        "gic_id": 141,
+        "loader3_table_file_offset": "0x6b2c",
+        "target_mask": "0x1",
+        "config_2bits": 0,
+        "itargetsr_address": "0x7000188d",
+        "icfgr_byte_address": "0x70001c23",
+        "icfgr_shift": 2
+      },
+      {
+        "gic_id": 142,
+        "loader3_table_file_offset": "0x6b30",
+        "target_mask": "0x1",
+        "config_2bits": 0,
+        "itargetsr_address": "0x7000188e",
+        "icfgr_byte_address": "0x70001c23",
+        "icfgr_shift": 4
+      },
+      {
+        "gic_id": 143,
+        "loader3_table_file_offset": "0x6b34",
+        "target_mask": "0x1",
+        "config_2bits": 0,
+        "itargetsr_address": "0x7000188f",
+        "icfgr_byte_address": "0x70001c23",
+        "icfgr_shift": 6
+      },
+      {
+        "gic_id": 144,
+        "loader3_table_file_offset": "0x6b38",
+        "target_mask": "0x1",
+        "config_2bits": 2,
+        "itargetsr_address": "0x70001890",
+        "icfgr_byte_address": "0x70001c24",
+        "icfgr_shift": 0
+      },
+      {
+        "gic_id": 145,
+        "loader3_table_file_offset": "0x6b3c",
+        "target_mask": "0x1",
+        "config_2bits": 2,
+        "itargetsr_address": "0x70001891",
+        "icfgr_byte_address": "0x70001c24",
+        "icfgr_shift": 2
+      },
+      {
+        "gic_id": 146,
+        "loader3_table_file_offset": "0x6b40",
+        "target_mask": "0x1",
+        "config_2bits": 2,
+        "itargetsr_address": "0x70001892",
+        "icfgr_byte_address": "0x70001c24",
+        "icfgr_shift": 4
+      },
+      {
+        "gic_id": 147,
+        "loader3_table_file_offset": "0x6b44",
+        "target_mask": "0x1",
+        "config_2bits": 2,
+        "itargetsr_address": "0x70001893",
+        "icfgr_byte_address": "0x70001c24",
+        "icfgr_shift": 6
+      },
+      {
+        "gic_id": 148,
+        "loader3_table_file_offset": "0x6b48",
+        "target_mask": "0x1",
+        "config_2bits": 2,
+        "itargetsr_address": "0x70001894",
+        "icfgr_byte_address": "0x70001c25",
+        "icfgr_shift": 0
+      },
+      {
+        "gic_id": 149,
+        "loader3_table_file_offset": "0x6b4c",
+        "target_mask": "0x1",
+        "config_2bits": 2,
+        "itargetsr_address": "0x70001895",
+        "icfgr_byte_address": "0x70001c25",
+        "icfgr_shift": 2
+      },
+      {
+        "gic_id": 150,
+        "loader3_table_file_offset": "0x6b50",
+        "target_mask": "0x1",
+        "config_2bits": 0,
+        "itargetsr_address": "0x70001896",
+        "icfgr_byte_address": "0x70001c25",
+        "icfgr_shift": 4
+      },
+      {
+        "gic_id": 151,
+        "loader3_table_file_offset": "0x6b54",
+        "target_mask": "0x1",
+        "config_2bits": 0,
+        "itargetsr_address": "0x70001897",
+        "icfgr_byte_address": "0x70001c25",
+        "icfgr_shift": 6
+      },
+      {
+        "gic_id": 152,
+        "loader3_table_file_offset": "0x6b58",
+        "target_mask": "0x1",
+        "config_2bits": 0,
+        "itargetsr_address": "0x70001898",
+        "icfgr_byte_address": "0x70001c26",
+        "icfgr_shift": 0
+      },
+      {
+        "gic_id": 153,
+        "loader3_table_file_offset": "0x6b5c",
+        "target_mask": "0x1",
+        "config_2bits": 0,
+        "itargetsr_address": "0x70001899",
+        "icfgr_byte_address": "0x70001c26",
+        "icfgr_shift": 2
+      },
+      {
+        "gic_id": 154,
+        "loader3_table_file_offset": "0x6b60",
+        "target_mask": "0x1",
+        "config_2bits": 0,
+        "itargetsr_address": "0x7000189a",
+        "icfgr_byte_address": "0x70001c26",
+        "icfgr_shift": 4
+      },
+      {
+        "gic_id": 155,
+        "loader3_table_file_offset": "0x6b64",
+        "target_mask": "0x1",
+        "config_2bits": 0,
+        "itargetsr_address": "0x7000189b",
+        "icfgr_byte_address": "0x70001c26",
+        "icfgr_shift": 6
+      },
+      {
+        "gic_id": 156,
+        "loader3_table_file_offset": "0x6b68",
+        "target_mask": "0x1",
+        "config_2bits": 0,
+        "itargetsr_address": "0x7000189c",
+        "icfgr_byte_address": "0x70001c27",
+        "icfgr_shift": 0
+      },
+      {
+        "gic_id": 157,
+        "loader3_table_file_offset": "0x6b6c",
+        "target_mask": "0x1",
+        "config_2bits": 0,
+        "itargetsr_address": "0x7000189d",
+        "icfgr_byte_address": "0x70001c27",
+        "icfgr_shift": 2
+      },
+      {
+        "gic_id": 158,
+        "loader3_table_file_offset": "0x6b70",
+        "target_mask": "0x1",
+        "config_2bits": 0,
+        "itargetsr_address": "0x7000189e",
+        "icfgr_byte_address": "0x70001c27",
+        "icfgr_shift": 4
+      },
+      {
+        "gic_id": 159,
+        "loader3_table_file_offset": "0x6b74",
+        "target_mask": "0x1",
+        "config_2bits": 0,
+        "itargetsr_address": "0x7000189f",
+        "icfgr_byte_address": "0x70001c27",
+        "icfgr_shift": 6
+      },
+      {
+        "gic_id": 160,
+        "loader3_table_file_offset": "0x6b78",
+        "target_mask": "0x1",
+        "config_2bits": 2,
+        "itargetsr_address": "0x700018a0",
+        "icfgr_byte_address": "0x70001c28",
+        "icfgr_shift": 0
+      },
+      {
+        "gic_id": 161,
+        "loader3_table_file_offset": "0x6b7c",
+        "target_mask": "0x1",
+        "config_2bits": 2,
+        "itargetsr_address": "0x700018a1",
+        "icfgr_byte_address": "0x70001c28",
+        "icfgr_shift": 2
+      },
+      {
+        "gic_id": 162,
+        "loader3_table_file_offset": "0x6b80",
+        "target_mask": "0x1",
+        "config_2bits": 2,
+        "itargetsr_address": "0x700018a2",
+        "icfgr_byte_address": "0x70001c28",
+        "icfgr_shift": 4
+      },
+      {
+        "gic_id": 163,
+        "loader3_table_file_offset": "0x6b84",
+        "target_mask": "0x1",
+        "config_2bits": 2,
+        "itargetsr_address": "0x700018a3",
+        "icfgr_byte_address": "0x70001c28",
+        "icfgr_shift": 6
+      },
+      {
+        "gic_id": 164,
+        "loader3_table_file_offset": "0x6b88",
+        "target_mask": "0x1",
+        "config_2bits": 2,
+        "itargetsr_address": "0x700018a4",
+        "icfgr_byte_address": "0x70001c29",
+        "icfgr_shift": 0
+      },
+      {
+        "gic_id": 165,
+        "loader3_table_file_offset": "0x6b8c",
+        "target_mask": "0x1",
+        "config_2bits": 2,
+        "itargetsr_address": "0x700018a5",
+        "icfgr_byte_address": "0x70001c29",
+        "icfgr_shift": 2
+      },
+      {
+        "gic_id": 166,
+        "loader3_table_file_offset": "0x6b90",
+        "target_mask": "0x1",
+        "config_2bits": 2,
+        "itargetsr_address": "0x700018a6",
+        "icfgr_byte_address": "0x70001c29",
+        "icfgr_shift": 4
+      },
+      {
+        "gic_id": 167,
+        "loader3_table_file_offset": "0x6b94",
+        "target_mask": "0x1",
+        "config_2bits": 2,
+        "itargetsr_address": "0x700018a7",
+        "icfgr_byte_address": "0x70001c29",
+        "icfgr_shift": 6
+      },
+      {
+        "gic_id": 168,
+        "loader3_table_file_offset": "0x6b98",
+        "target_mask": "0x1",
+        "config_2bits": 2,
+        "itargetsr_address": "0x700018a8",
+        "icfgr_byte_address": "0x70001c2a",
+        "icfgr_shift": 0
+      },
+      {
+        "gic_id": 169,
+        "loader3_table_file_offset": "0x6b9c",
+        "target_mask": "0x1",
+        "config_2bits": 2,
+        "itargetsr_address": "0x700018a9",
+        "icfgr_byte_address": "0x70001c2a",
+        "icfgr_shift": 2
+      },
+      {
+        "gic_id": 170,
+        "loader3_table_file_offset": "0x6ba0",
+        "target_mask": "0x1",
+        "config_2bits": 2,
+        "itargetsr_address": "0x700018aa",
+        "icfgr_byte_address": "0x70001c2a",
+        "icfgr_shift": 4
+      },
+      {
+        "gic_id": 171,
+        "loader3_table_file_offset": "0x6ba4",
+        "target_mask": "0x1",
+        "config_2bits": 2,
+        "itargetsr_address": "0x700018ab",
+        "icfgr_byte_address": "0x70001c2a",
+        "icfgr_shift": 6
+      },
+      {
+        "gic_id": 172,
+        "loader3_table_file_offset": "0x6ba8",
+        "target_mask": "0x1",
+        "config_2bits": 2,
+        "itargetsr_address": "0x700018ac",
+        "icfgr_byte_address": "0x70001c2b",
+        "icfgr_shift": 0
+      },
+      {
+        "gic_id": 173,
+        "loader3_table_file_offset": "0x6bac",
+        "target_mask": "0x1",
+        "config_2bits": 2,
+        "itargetsr_address": "0x700018ad",
+        "icfgr_byte_address": "0x70001c2b",
+        "icfgr_shift": 2
+      },
+      {
+        "gic_id": 174,
+        "loader3_table_file_offset": "0x6bb0",
+        "target_mask": "0x1",
+        "config_2bits": 0,
+        "itargetsr_address": "0x700018ae",
+        "icfgr_byte_address": "0x70001c2b",
+        "icfgr_shift": 4
+      },
+      {
+        "gic_id": 175,
+        "loader3_table_file_offset": "0x6bb4",
+        "target_mask": "0x1",
+        "config_2bits": 2,
+        "itargetsr_address": "0x700018af",
+        "icfgr_byte_address": "0x70001c2b",
+        "icfgr_shift": 6
+      },
+      {
+        "gic_id": 176,
+        "loader3_table_file_offset": "0x6bb8",
+        "target_mask": "0x1",
+        "config_2bits": 2,
+        "itargetsr_address": "0x700018b0",
+        "icfgr_byte_address": "0x70001c2c",
+        "icfgr_shift": 0
+      },
+      {
+        "gic_id": 177,
+        "loader3_table_file_offset": "0x6bbc",
+        "target_mask": "0x1",
+        "config_2bits": 2,
+        "itargetsr_address": "0x700018b1",
+        "icfgr_byte_address": "0x70001c2c",
+        "icfgr_shift": 2
+      },
+      {
+        "gic_id": 178,
+        "loader3_table_file_offset": "0x6bc0",
+        "target_mask": "0x1",
+        "config_2bits": 2,
+        "itargetsr_address": "0x700018b2",
+        "icfgr_byte_address": "0x70001c2c",
+        "icfgr_shift": 4
+      },
+      {
+        "gic_id": 179,
+        "loader3_table_file_offset": "0x6bc4",
+        "target_mask": "0x1",
+        "config_2bits": 2,
+        "itargetsr_address": "0x700018b3",
+        "icfgr_byte_address": "0x70001c2c",
+        "icfgr_shift": 6
+      },
+      {
+        "gic_id": 180,
+        "loader3_table_file_offset": "0x6bc8",
+        "target_mask": "0x1",
+        "config_2bits": 2,
+        "itargetsr_address": "0x700018b4",
+        "icfgr_byte_address": "0x70001c2d",
+        "icfgr_shift": 0
+      },
+      {
+        "gic_id": 181,
+        "loader3_table_file_offset": "0x6bcc",
+        "target_mask": "0x1",
+        "config_2bits": 2,
+        "itargetsr_address": "0x700018b5",
+        "icfgr_byte_address": "0x70001c2d",
+        "icfgr_shift": 2
+      },
+      {
+        "gic_id": 182,
+        "loader3_table_file_offset": "0x6bd0",
+        "target_mask": "0x2",
+        "config_2bits": 2,
+        "itargetsr_address": "0x700018b6",
+        "icfgr_byte_address": "0x70001c2d",
+        "icfgr_shift": 4
+      },
+      {
+        "gic_id": 183,
+        "loader3_table_file_offset": "0x6bd4",
+        "target_mask": "0x1",
+        "config_2bits": 2,
+        "itargetsr_address": "0x700018b7",
+        "icfgr_byte_address": "0x70001c2d",
+        "icfgr_shift": 6
+      },
+      {
+        "gic_id": 184,
+        "loader3_table_file_offset": "0x6bd8",
+        "target_mask": "0x1",
+        "config_2bits": 2,
+        "itargetsr_address": "0x700018b8",
+        "icfgr_byte_address": "0x70001c2e",
+        "icfgr_shift": 0
+      },
+      {
+        "gic_id": 185,
+        "loader3_table_file_offset": "0x6bdc",
+        "target_mask": "0x1",
+        "config_2bits": 2,
+        "itargetsr_address": "0x700018b9",
+        "icfgr_byte_address": "0x70001c2e",
+        "icfgr_shift": 2
+      },
+      {
+        "gic_id": 186,
+        "loader3_table_file_offset": "0x6be0",
+        "target_mask": "0x1",
+        "config_2bits": 2,
+        "itargetsr_address": "0x700018ba",
+        "icfgr_byte_address": "0x70001c2e",
+        "icfgr_shift": 4
+      },
+      {
+        "gic_id": 187,
+        "loader3_table_file_offset": "0x6be4",
+        "target_mask": "0x1",
+        "config_2bits": 0,
+        "itargetsr_address": "0x700018bb",
+        "icfgr_byte_address": "0x70001c2e",
+        "icfgr_shift": 6
+      },
+      {
+        "gic_id": 188,
+        "loader3_table_file_offset": "0x6be8",
+        "target_mask": "0x1",
+        "config_2bits": 0,
+        "itargetsr_address": "0x700018bc",
+        "icfgr_byte_address": "0x70001c2f",
+        "icfgr_shift": 0
+      },
+      {
+        "gic_id": 189,
+        "loader3_table_file_offset": "0x6bec",
+        "target_mask": "0x1",
+        "config_2bits": 2,
+        "itargetsr_address": "0x700018bd",
+        "icfgr_byte_address": "0x70001c2f",
+        "icfgr_shift": 2
+      },
+      {
+        "gic_id": 190,
+        "loader3_table_file_offset": "0x6bf0",
+        "target_mask": "0x1",
+        "config_2bits": 2,
+        "itargetsr_address": "0x700018be",
+        "icfgr_byte_address": "0x70001c2f",
+        "icfgr_shift": 4
+      },
+      {
+        "gic_id": 191,
+        "loader3_table_file_offset": "0x6bf4",
+        "target_mask": "0x1",
+        "config_2bits": 2,
+        "itargetsr_address": "0x700018bf",
+        "icfgr_byte_address": "0x70001c2f",
+        "icfgr_shift": 6
+      },
+      {
+        "gic_id": 192,
+        "loader3_table_file_offset": "0x6bf8",
+        "target_mask": "0x1",
+        "config_2bits": 2,
+        "itargetsr_address": "0x700018c0",
+        "icfgr_byte_address": "0x70001c30",
+        "icfgr_shift": 0
+      },
+      {
+        "gic_id": 193,
+        "loader3_table_file_offset": "0x6bfc",
+        "target_mask": "0x1",
+        "config_2bits": 2,
+        "itargetsr_address": "0x700018c1",
+        "icfgr_byte_address": "0x70001c30",
+        "icfgr_shift": 2
+      },
+      {
+        "gic_id": 194,
+        "loader3_table_file_offset": "0x6c00",
+        "target_mask": "0x1",
+        "config_2bits": 2,
+        "itargetsr_address": "0x700018c2",
+        "icfgr_byte_address": "0x70001c30",
+        "icfgr_shift": 4
+      },
+      {
+        "gic_id": 195,
+        "loader3_table_file_offset": "0x6c04",
+        "target_mask": "0x1",
+        "config_2bits": 2,
+        "itargetsr_address": "0x700018c3",
+        "icfgr_byte_address": "0x70001c30",
+        "icfgr_shift": 6
+      },
+      {
+        "gic_id": 196,
+        "loader3_table_file_offset": "0x6c08",
+        "target_mask": "0x1",
+        "config_2bits": 2,
+        "itargetsr_address": "0x700018c4",
+        "icfgr_byte_address": "0x70001c31",
+        "icfgr_shift": 0
+      },
+      {
+        "gic_id": 197,
+        "loader3_table_file_offset": "0x6c0c",
+        "target_mask": "0x1",
+        "config_2bits": 2,
+        "itargetsr_address": "0x700018c5",
+        "icfgr_byte_address": "0x70001c31",
+        "icfgr_shift": 2
+      },
+      {
+        "gic_id": 198,
+        "loader3_table_file_offset": "0x6c10",
+        "target_mask": "0x1",
+        "config_2bits": 2,
+        "itargetsr_address": "0x700018c6",
+        "icfgr_byte_address": "0x70001c31",
+        "icfgr_shift": 4
+      },
+      {
+        "gic_id": 199,
+        "loader3_table_file_offset": "0x6c14",
+        "target_mask": "0x1",
+        "config_2bits": 2,
+        "itargetsr_address": "0x700018c7",
+        "icfgr_byte_address": "0x70001c31",
+        "icfgr_shift": 6
+      },
+      {
+        "gic_id": 200,
+        "loader3_table_file_offset": "0x6c18",
+        "target_mask": "0x1",
+        "config_2bits": 2,
+        "itargetsr_address": "0x700018c8",
+        "icfgr_byte_address": "0x70001c32",
+        "icfgr_shift": 0
+      },
+      {
+        "gic_id": 201,
+        "loader3_table_file_offset": "0x6c1c",
+        "target_mask": "0x1",
+        "config_2bits": 2,
+        "itargetsr_address": "0x700018c9",
+        "icfgr_byte_address": "0x70001c32",
+        "icfgr_shift": 2
+      },
+      {
+        "gic_id": 202,
+        "loader3_table_file_offset": "0x6c20",
+        "target_mask": "0x1",
+        "config_2bits": 2,
+        "itargetsr_address": "0x700018ca",
+        "icfgr_byte_address": "0x70001c32",
+        "icfgr_shift": 4
+      },
+      {
+        "gic_id": 203,
+        "loader3_table_file_offset": "0x6c24",
+        "target_mask": "0x1",
+        "config_2bits": 2,
+        "itargetsr_address": "0x700018cb",
+        "icfgr_byte_address": "0x70001c32",
+        "icfgr_shift": 6
+      },
+      {
+        "gic_id": 204,
+        "loader3_table_file_offset": "0x6c28",
+        "target_mask": "0x1",
+        "config_2bits": 2,
+        "itargetsr_address": "0x700018cc",
+        "icfgr_byte_address": "0x70001c33",
+        "icfgr_shift": 0
+      },
+      {
+        "gic_id": 205,
+        "loader3_table_file_offset": "0x6c2c",
+        "target_mask": "0x1",
+        "config_2bits": 2,
+        "itargetsr_address": "0x700018cd",
+        "icfgr_byte_address": "0x70001c33",
+        "icfgr_shift": 2
+      },
+      {
+        "gic_id": 206,
+        "loader3_table_file_offset": "0x6c30",
+        "target_mask": "0x1",
+        "config_2bits": 2,
+        "itargetsr_address": "0x700018ce",
+        "icfgr_byte_address": "0x70001c33",
+        "icfgr_shift": 4
+      },
+      {
+        "gic_id": 207,
+        "loader3_table_file_offset": "0x6c34",
+        "target_mask": "0x1",
+        "config_2bits": 2,
+        "itargetsr_address": "0x700018cf",
+        "icfgr_byte_address": "0x70001c33",
+        "icfgr_shift": 6
+      },
+      {
+        "gic_id": 208,
+        "loader3_table_file_offset": "0x6c38",
+        "target_mask": "0x1",
+        "config_2bits": 2,
+        "itargetsr_address": "0x700018d0",
+        "icfgr_byte_address": "0x70001c34",
+        "icfgr_shift": 0
+      },
+      {
+        "gic_id": 209,
+        "loader3_table_file_offset": "0x6c3c",
+        "target_mask": "0x1",
+        "config_2bits": 2,
+        "itargetsr_address": "0x700018d1",
+        "icfgr_byte_address": "0x70001c34",
+        "icfgr_shift": 2
+      },
+      {
+        "gic_id": 210,
+        "loader3_table_file_offset": "0x6c40",
+        "target_mask": "0x1",
+        "config_2bits": 2,
+        "itargetsr_address": "0x700018d2",
+        "icfgr_byte_address": "0x70001c34",
+        "icfgr_shift": 4
+      },
+      {
+        "gic_id": 211,
+        "loader3_table_file_offset": "0x6c44",
+        "target_mask": "0x1",
+        "config_2bits": 2,
+        "itargetsr_address": "0x700018d3",
+        "icfgr_byte_address": "0x70001c34",
+        "icfgr_shift": 6
+      },
+      {
+        "gic_id": 212,
+        "loader3_table_file_offset": "0x6c48",
+        "target_mask": "0x1",
+        "config_2bits": 2,
+        "itargetsr_address": "0x700018d4",
+        "icfgr_byte_address": "0x70001c35",
+        "icfgr_shift": 0
+      },
+      {
+        "gic_id": 213,
+        "loader3_table_file_offset": "0x6c4c",
+        "target_mask": "0x1",
+        "config_2bits": 2,
+        "itargetsr_address": "0x700018d5",
+        "icfgr_byte_address": "0x70001c35",
+        "icfgr_shift": 2
+      },
+      {
+        "gic_id": 214,
+        "loader3_table_file_offset": "0x6c50",
+        "target_mask": "0x1",
+        "config_2bits": 2,
+        "itargetsr_address": "0x700018d6",
+        "icfgr_byte_address": "0x70001c35",
+        "icfgr_shift": 4
+      },
+      {
+        "gic_id": 215,
+        "loader3_table_file_offset": "0x6c54",
+        "target_mask": "0x1",
+        "config_2bits": 2,
+        "itargetsr_address": "0x700018d7",
+        "icfgr_byte_address": "0x70001c35",
+        "icfgr_shift": 6
+      },
+      {
+        "gic_id": 216,
+        "loader3_table_file_offset": "0x6c58",
+        "target_mask": "0x1",
+        "config_2bits": 2,
+        "itargetsr_address": "0x700018d8",
+        "icfgr_byte_address": "0x70001c36",
+        "icfgr_shift": 0
+      },
+      {
+        "gic_id": 217,
+        "loader3_table_file_offset": "0x6c5c",
+        "target_mask": "0x1",
+        "config_2bits": 2,
+        "itargetsr_address": "0x700018d9",
+        "icfgr_byte_address": "0x70001c36",
+        "icfgr_shift": 2
+      },
+      {
+        "gic_id": 218,
+        "loader3_table_file_offset": "0x6c60",
+        "target_mask": "0x1",
+        "config_2bits": 2,
+        "itargetsr_address": "0x700018da",
+        "icfgr_byte_address": "0x70001c36",
+        "icfgr_shift": 4
+      },
+      {
+        "gic_id": 219,
+        "loader3_table_file_offset": "0x6c64",
+        "target_mask": "0x1",
+        "config_2bits": 2,
+        "itargetsr_address": "0x700018db",
+        "icfgr_byte_address": "0x70001c36",
+        "icfgr_shift": 6
+      },
+      {
+        "gic_id": 220,
+        "loader3_table_file_offset": "0x6c68",
+        "target_mask": "0x1",
+        "config_2bits": 2,
+        "itargetsr_address": "0x700018dc",
+        "icfgr_byte_address": "0x70001c37",
+        "icfgr_shift": 0
+      },
+      {
+        "gic_id": 221,
+        "loader3_table_file_offset": "0x6c6c",
+        "target_mask": "0x1",
+        "config_2bits": 2,
+        "itargetsr_address": "0x700018dd",
+        "icfgr_byte_address": "0x70001c37",
+        "icfgr_shift": 2
+      },
+      {
+        "gic_id": 222,
+        "loader3_table_file_offset": "0x6c70",
+        "target_mask": "0x1",
+        "config_2bits": 2,
+        "itargetsr_address": "0x700018de",
+        "icfgr_byte_address": "0x70001c37",
+        "icfgr_shift": 4
+      },
+      {
+        "gic_id": 223,
+        "loader3_table_file_offset": "0x6c74",
+        "target_mask": "0x1",
+        "config_2bits": 2,
+        "itargetsr_address": "0x700018df",
+        "icfgr_byte_address": "0x70001c37",
+        "icfgr_shift": 6
+      },
+      {
+        "gic_id": 224,
+        "loader3_table_file_offset": "0x6c78",
+        "target_mask": "0x1",
+        "config_2bits": 2,
+        "itargetsr_address": "0x700018e0",
+        "icfgr_byte_address": "0x70001c38",
+        "icfgr_shift": 0
+      },
+      {
+        "gic_id": 225,
+        "loader3_table_file_offset": "0x6c7c",
+        "target_mask": "0x1",
+        "config_2bits": 2,
+        "itargetsr_address": "0x700018e1",
+        "icfgr_byte_address": "0x70001c38",
+        "icfgr_shift": 2
+      },
+      {
+        "gic_id": 226,
+        "loader3_table_file_offset": "0x6c80",
+        "target_mask": "0x1",
+        "config_2bits": 2,
+        "itargetsr_address": "0x700018e2",
+        "icfgr_byte_address": "0x70001c38",
+        "icfgr_shift": 4
+      },
+      {
+        "gic_id": 227,
+        "loader3_table_file_offset": "0x6c84",
+        "target_mask": "0x1",
+        "config_2bits": 2,
+        "itargetsr_address": "0x700018e3",
+        "icfgr_byte_address": "0x70001c38",
+        "icfgr_shift": 6
+      },
+      {
+        "gic_id": 228,
+        "loader3_table_file_offset": "0x6c88",
+        "target_mask": "0x1",
+        "config_2bits": 2,
+        "itargetsr_address": "0x700018e4",
+        "icfgr_byte_address": "0x70001c39",
+        "icfgr_shift": 0
+      },
+      {
+        "gic_id": 229,
+        "loader3_table_file_offset": "0x6c8c",
+        "target_mask": "0x1",
+        "config_2bits": 2,
+        "itargetsr_address": "0x700018e5",
+        "icfgr_byte_address": "0x70001c39",
+        "icfgr_shift": 2
+      },
+      {
+        "gic_id": 230,
+        "loader3_table_file_offset": "0x6c90",
+        "target_mask": "0x1",
+        "config_2bits": 2,
+        "itargetsr_address": "0x700018e6",
+        "icfgr_byte_address": "0x70001c39",
+        "icfgr_shift": 4
+      },
+      {
+        "gic_id": 231,
+        "loader3_table_file_offset": "0x6c94",
+        "target_mask": "0x1",
+        "config_2bits": 2,
+        "itargetsr_address": "0x700018e7",
+        "icfgr_byte_address": "0x70001c39",
+        "icfgr_shift": 6
+      },
+      {
+        "gic_id": 232,
+        "loader3_table_file_offset": "0x6c98",
+        "target_mask": "0x1",
+        "config_2bits": 2,
+        "itargetsr_address": "0x700018e8",
+        "icfgr_byte_address": "0x70001c3a",
+        "icfgr_shift": 0
+      },
+      {
+        "gic_id": 233,
+        "loader3_table_file_offset": "0x6c9c",
+        "target_mask": "0x1",
+        "config_2bits": 2,
+        "itargetsr_address": "0x700018e9",
+        "icfgr_byte_address": "0x70001c3a",
+        "icfgr_shift": 2
+      },
+      {
+        "gic_id": 234,
+        "loader3_table_file_offset": "0x6ca0",
+        "target_mask": "0x1",
+        "config_2bits": 2,
+        "itargetsr_address": "0x700018ea",
+        "icfgr_byte_address": "0x70001c3a",
+        "icfgr_shift": 4
+      },
+      {
+        "gic_id": 235,
+        "loader3_table_file_offset": "0x6ca4",
+        "target_mask": "0x1",
+        "config_2bits": 2,
+        "itargetsr_address": "0x700018eb",
+        "icfgr_byte_address": "0x70001c3a",
+        "icfgr_shift": 6
+      },
+      {
+        "gic_id": 236,
+        "loader3_table_file_offset": "0x6ca8",
+        "target_mask": "0x1",
+        "config_2bits": 2,
+        "itargetsr_address": "0x700018ec",
+        "icfgr_byte_address": "0x70001c3b",
+        "icfgr_shift": 0
+      },
+      {
+        "gic_id": 237,
+        "loader3_table_file_offset": "0x6cac",
+        "target_mask": "0x1",
+        "config_2bits": 2,
+        "itargetsr_address": "0x700018ed",
+        "icfgr_byte_address": "0x70001c3b",
+        "icfgr_shift": 2
+      },
+      {
+        "gic_id": 238,
+        "loader3_table_file_offset": "0x6cb0",
+        "target_mask": "0x1",
+        "config_2bits": 2,
+        "itargetsr_address": "0x700018ee",
+        "icfgr_byte_address": "0x70001c3b",
+        "icfgr_shift": 4
+      },
+      {
+        "gic_id": 239,
+        "loader3_table_file_offset": "0x6cb4",
+        "target_mask": "0x1",
+        "config_2bits": 2,
+        "itargetsr_address": "0x700018ef",
+        "icfgr_byte_address": "0x70001c3b",
+        "icfgr_shift": 6
+      },
+      {
+        "gic_id": 240,
+        "loader3_table_file_offset": "0x6cb8",
+        "target_mask": "0x1",
+        "config_2bits": 2,
+        "itargetsr_address": "0x700018f0",
+        "icfgr_byte_address": "0x70001c3c",
+        "icfgr_shift": 0
+      },
+      {
+        "gic_id": 241,
+        "loader3_table_file_offset": "0x6cbc",
+        "target_mask": "0x1",
+        "config_2bits": 2,
+        "itargetsr_address": "0x700018f1",
+        "icfgr_byte_address": "0x70001c3c",
+        "icfgr_shift": 2
+      },
+      {
+        "gic_id": 242,
+        "loader3_table_file_offset": "0x6cc0",
+        "target_mask": "0x1",
+        "config_2bits": 2,
+        "itargetsr_address": "0x700018f2",
+        "icfgr_byte_address": "0x70001c3c",
+        "icfgr_shift": 4
+      },
+      {
+        "gic_id": 243,
+        "loader3_table_file_offset": "0x6cc4",
+        "target_mask": "0x1",
+        "config_2bits": 2,
+        "itargetsr_address": "0x700018f3",
+        "icfgr_byte_address": "0x70001c3c",
+        "icfgr_shift": 6
+      },
+      {
+        "gic_id": 244,
+        "loader3_table_file_offset": "0x6cc8",
+        "target_mask": "0x1",
+        "config_2bits": 2,
+        "itargetsr_address": "0x700018f4",
+        "icfgr_byte_address": "0x70001c3d",
+        "icfgr_shift": 0
+      },
+      {
+        "gic_id": 245,
+        "loader3_table_file_offset": "0x6ccc",
+        "target_mask": "0x1",
+        "config_2bits": 2,
+        "itargetsr_address": "0x700018f5",
+        "icfgr_byte_address": "0x70001c3d",
+        "icfgr_shift": 2
+      },
+      {
+        "gic_id": 246,
+        "loader3_table_file_offset": "0x6cd0",
+        "target_mask": "0x1",
+        "config_2bits": 2,
+        "itargetsr_address": "0x700018f6",
+        "icfgr_byte_address": "0x70001c3d",
+        "icfgr_shift": 4
+      },
+      {
+        "gic_id": 247,
+        "loader3_table_file_offset": "0x6cd4",
+        "target_mask": "0x1",
+        "config_2bits": 2,
+        "itargetsr_address": "0x700018f7",
+        "icfgr_byte_address": "0x70001c3d",
+        "icfgr_shift": 6
+      },
+      {
+        "gic_id": 248,
+        "loader3_table_file_offset": "0x6cd8",
+        "target_mask": "0x1",
+        "config_2bits": 2,
+        "itargetsr_address": "0x700018f8",
+        "icfgr_byte_address": "0x70001c3e",
+        "icfgr_shift": 0
+      },
+      {
+        "gic_id": 249,
+        "loader3_table_file_offset": "0x6cdc",
+        "target_mask": "0x1",
+        "config_2bits": 2,
+        "itargetsr_address": "0x700018f9",
+        "icfgr_byte_address": "0x70001c3e",
+        "icfgr_shift": 2
+      },
+      {
+        "gic_id": 250,
+        "loader3_table_file_offset": "0x6ce0",
+        "target_mask": "0x1",
+        "config_2bits": 2,
+        "itargetsr_address": "0x700018fa",
+        "icfgr_byte_address": "0x70001c3e",
+        "icfgr_shift": 4
+      },
+      {
+        "gic_id": 251,
+        "loader3_table_file_offset": "0x6ce4",
+        "target_mask": "0x1",
+        "config_2bits": 2,
+        "itargetsr_address": "0x700018fb",
+        "icfgr_byte_address": "0x70001c3e",
+        "icfgr_shift": 6
+      },
+      {
+        "gic_id": 252,
+        "loader3_table_file_offset": "0x6ce8",
+        "target_mask": "0x1",
+        "config_2bits": 2,
+        "itargetsr_address": "0x700018fc",
+        "icfgr_byte_address": "0x70001c3f",
+        "icfgr_shift": 0
+      },
+      {
+        "gic_id": 253,
+        "loader3_table_file_offset": "0x6cec",
+        "target_mask": "0x1",
+        "config_2bits": 2,
+        "itargetsr_address": "0x700018fd",
+        "icfgr_byte_address": "0x70001c3f",
+        "icfgr_shift": 2
+      },
+      {
+        "gic_id": 254,
+        "loader3_table_file_offset": "0x6cf0",
+        "target_mask": "0x1",
+        "config_2bits": 2,
+        "itargetsr_address": "0x700018fe",
+        "icfgr_byte_address": "0x70001c3f",
+        "icfgr_shift": 4
+      },
+      {
+        "gic_id": 255,
+        "loader3_table_file_offset": "0x6cf4",
+        "target_mask": "0x1",
+        "config_2bits": 2,
+        "itargetsr_address": "0x700018ff",
+        "icfgr_byte_address": "0x70001c3f",
+        "icfgr_shift": 6
+      },
+      {
+        "gic_id": 256,
+        "loader3_table_file_offset": "0x6cf8",
+        "target_mask": "0x4",
+        "config_2bits": 0,
+        "itargetsr_address": "0x70001900",
+        "icfgr_byte_address": "0x70001c40",
+        "icfgr_shift": 0
+      },
+      {
+        "gic_id": 257,
+        "loader3_table_file_offset": "0x6cfc",
+        "target_mask": "0x4",
+        "config_2bits": 0,
+        "itargetsr_address": "0x70001901",
+        "icfgr_byte_address": "0x70001c40",
+        "icfgr_shift": 2
+      },
+      {
+        "gic_id": 258,
+        "loader3_table_file_offset": "0x6d00",
+        "target_mask": "0x4",
+        "config_2bits": 0,
+        "itargetsr_address": "0x70001902",
+        "icfgr_byte_address": "0x70001c40",
+        "icfgr_shift": 4
+      },
+      {
+        "gic_id": 259,
+        "loader3_table_file_offset": "0x6d04",
+        "target_mask": "0x1",
+        "config_2bits": 2,
+        "itargetsr_address": "0x70001903",
+        "icfgr_byte_address": "0x70001c40",
+        "icfgr_shift": 6
+      },
+      {
+        "gic_id": 260,
+        "loader3_table_file_offset": "0x6d08",
+        "target_mask": "0x1",
+        "config_2bits": 2,
+        "itargetsr_address": "0x70001904",
+        "icfgr_byte_address": "0x70001c41",
+        "icfgr_shift": 0
+      },
+      {
+        "gic_id": 261,
+        "loader3_table_file_offset": "0x6d0c",
+        "target_mask": "0x1",
+        "config_2bits": 2,
+        "itargetsr_address": "0x70001905",
+        "icfgr_byte_address": "0x70001c41",
+        "icfgr_shift": 2
+      },
+      {
+        "gic_id": 262,
+        "loader3_table_file_offset": "0x6d10",
+        "target_mask": "0x1",
+        "config_2bits": 2,
+        "itargetsr_address": "0x70001906",
+        "icfgr_byte_address": "0x70001c41",
+        "icfgr_shift": 4
+      },
+      {
+        "gic_id": 263,
+        "loader3_table_file_offset": "0x6d14",
+        "target_mask": "0x1",
+        "config_2bits": 2,
+        "itargetsr_address": "0x70001907",
+        "icfgr_byte_address": "0x70001c41",
+        "icfgr_shift": 6
+      },
+      {
+        "gic_id": 264,
+        "loader3_table_file_offset": "0x6d18",
+        "target_mask": "0x1",
+        "config_2bits": 2,
+        "itargetsr_address": "0x70001908",
+        "icfgr_byte_address": "0x70001c42",
+        "icfgr_shift": 0
+      },
+      {
+        "gic_id": 265,
+        "loader3_table_file_offset": "0x6d1c",
+        "target_mask": "0x1",
+        "config_2bits": 2,
+        "itargetsr_address": "0x70001909",
+        "icfgr_byte_address": "0x70001c42",
+        "icfgr_shift": 2
+      },
+      {
+        "gic_id": 266,
+        "loader3_table_file_offset": "0x6d20",
+        "target_mask": "0x1",
+        "config_2bits": 2,
+        "itargetsr_address": "0x7000190a",
+        "icfgr_byte_address": "0x70001c42",
+        "icfgr_shift": 4
+      },
+      {
+        "gic_id": 267,
+        "loader3_table_file_offset": "0x6d24",
+        "target_mask": "0x1",
+        "config_2bits": 2,
+        "itargetsr_address": "0x7000190b",
+        "icfgr_byte_address": "0x70001c42",
+        "icfgr_shift": 6
+      },
+      {
+        "gic_id": 268,
+        "loader3_table_file_offset": "0x6d28",
+        "target_mask": "0x1",
+        "config_2bits": 2,
+        "itargetsr_address": "0x7000190c",
+        "icfgr_byte_address": "0x70001c43",
+        "icfgr_shift": 0
+      },
+      {
+        "gic_id": 269,
+        "loader3_table_file_offset": "0x6d2c",
+        "target_mask": "0x1",
+        "config_2bits": 2,
+        "itargetsr_address": "0x7000190d",
+        "icfgr_byte_address": "0x70001c43",
+        "icfgr_shift": 2
+      },
+      {
+        "gic_id": 270,
+        "loader3_table_file_offset": "0x6d30",
+        "target_mask": "0x1",
+        "config_2bits": 2,
+        "itargetsr_address": "0x7000190e",
+        "icfgr_byte_address": "0x70001c43",
+        "icfgr_shift": 4
+      },
+      {
+        "gic_id": 271,
+        "loader3_table_file_offset": "0x6d34",
+        "target_mask": "0x1",
+        "config_2bits": 2,
+        "itargetsr_address": "0x7000190f",
+        "icfgr_byte_address": "0x70001c43",
+        "icfgr_shift": 6
+      },
+      {
+        "gic_id": 272,
+        "loader3_table_file_offset": "0x6d38",
+        "target_mask": "0x1",
+        "config_2bits": 2,
+        "itargetsr_address": "0x70001910",
+        "icfgr_byte_address": "0x70001c44",
+        "icfgr_shift": 0
+      },
+      {
+        "gic_id": 273,
+        "loader3_table_file_offset": "0x6d3c",
+        "target_mask": "0x1",
+        "config_2bits": 2,
+        "itargetsr_address": "0x70001911",
+        "icfgr_byte_address": "0x70001c44",
+        "icfgr_shift": 2
+      },
+      {
+        "gic_id": 274,
+        "loader3_table_file_offset": "0x6d40",
+        "target_mask": "0x1",
+        "config_2bits": 2,
+        "itargetsr_address": "0x70001912",
+        "icfgr_byte_address": "0x70001c44",
+        "icfgr_shift": 4
+      },
+      {
+        "gic_id": 275,
+        "loader3_table_file_offset": "0x6d44",
+        "target_mask": "0x1",
+        "config_2bits": 2,
+        "itargetsr_address": "0x70001913",
+        "icfgr_byte_address": "0x70001c44",
+        "icfgr_shift": 6
+      },
+      {
+        "gic_id": 276,
+        "loader3_table_file_offset": "0x6d48",
+        "target_mask": "0x1",
+        "config_2bits": 2,
+        "itargetsr_address": "0x70001914",
+        "icfgr_byte_address": "0x70001c45",
+        "icfgr_shift": 0
+      },
+      {
+        "gic_id": 277,
+        "loader3_table_file_offset": "0x6d4c",
+        "target_mask": "0x1",
+        "config_2bits": 2,
+        "itargetsr_address": "0x70001915",
+        "icfgr_byte_address": "0x70001c45",
+        "icfgr_shift": 2
+      },
+      {
+        "gic_id": 278,
+        "loader3_table_file_offset": "0x6d50",
+        "target_mask": "0x1",
+        "config_2bits": 2,
+        "itargetsr_address": "0x70001916",
+        "icfgr_byte_address": "0x70001c45",
+        "icfgr_shift": 4
+      },
+      {
+        "gic_id": 279,
+        "loader3_table_file_offset": "0x6d54",
+        "target_mask": "0x1",
+        "config_2bits": 2,
+        "itargetsr_address": "0x70001917",
+        "icfgr_byte_address": "0x70001c45",
+        "icfgr_shift": 6
+      },
+      {
+        "gic_id": 280,
+        "loader3_table_file_offset": "0x6d58",
+        "target_mask": "0x1",
+        "config_2bits": 2,
+        "itargetsr_address": "0x70001918",
+        "icfgr_byte_address": "0x70001c46",
+        "icfgr_shift": 0
+      },
+      {
+        "gic_id": 281,
+        "loader3_table_file_offset": "0x6d5c",
+        "target_mask": "0x1",
+        "config_2bits": 2,
+        "itargetsr_address": "0x70001919",
+        "icfgr_byte_address": "0x70001c46",
+        "icfgr_shift": 2
+      },
+      {
+        "gic_id": 282,
+        "loader3_table_file_offset": "0x6d60",
+        "target_mask": "0x1",
+        "config_2bits": 0,
+        "itargetsr_address": "0x7000191a",
+        "icfgr_byte_address": "0x70001c46",
+        "icfgr_shift": 4
+      },
+      {
+        "gic_id": 283,
+        "loader3_table_file_offset": "0x6d64",
+        "target_mask": "0x1",
+        "config_2bits": 0,
+        "itargetsr_address": "0x7000191b",
+        "icfgr_byte_address": "0x70001c46",
+        "icfgr_shift": 6
+      },
+      {
+        "gic_id": 284,
+        "loader3_table_file_offset": "0x6d68",
+        "target_mask": "0x1",
+        "config_2bits": 0,
+        "itargetsr_address": "0x7000191c",
+        "icfgr_byte_address": "0x70001c47",
+        "icfgr_shift": 0
+      },
+      {
+        "gic_id": 285,
+        "loader3_table_file_offset": "0x6d6c",
+        "target_mask": "0x1",
+        "config_2bits": 0,
+        "itargetsr_address": "0x7000191d",
+        "icfgr_byte_address": "0x70001c47",
+        "icfgr_shift": 2
+      },
+      {
+        "gic_id": 286,
+        "loader3_table_file_offset": "0x6d70",
+        "target_mask": "0x1",
+        "config_2bits": 0,
+        "itargetsr_address": "0x7000191e",
+        "icfgr_byte_address": "0x70001c47",
+        "icfgr_shift": 4
+      },
+      {
+        "gic_id": 287,
+        "loader3_table_file_offset": "0x6d74",
+        "target_mask": "0x1",
+        "config_2bits": 2,
+        "itargetsr_address": "0x7000191f",
+        "icfgr_byte_address": "0x70001c47",
+        "icfgr_shift": 6
+      },
+      {
+        "gic_id": 288,
+        "loader3_table_file_offset": "0x6d78",
+        "target_mask": "0x1",
+        "config_2bits": 0,
+        "itargetsr_address": "0x70001920",
+        "icfgr_byte_address": "0x70001c48",
+        "icfgr_shift": 0
+      },
+      {
+        "gic_id": 289,
+        "loader3_table_file_offset": "0x6d7c",
+        "target_mask": "0x1",
+        "config_2bits": 0,
+        "itargetsr_address": "0x70001921",
+        "icfgr_byte_address": "0x70001c48",
+        "icfgr_shift": 2
+      },
+      {
+        "gic_id": 290,
+        "loader3_table_file_offset": "0x6d80",
+        "target_mask": "0x1",
+        "config_2bits": 0,
+        "itargetsr_address": "0x70001922",
+        "icfgr_byte_address": "0x70001c48",
+        "icfgr_shift": 4
+      },
+      {
+        "gic_id": 291,
+        "loader3_table_file_offset": "0x6d84",
+        "target_mask": "0x1",
+        "config_2bits": 0,
+        "itargetsr_address": "0x70001923",
+        "icfgr_byte_address": "0x70001c48",
+        "icfgr_shift": 6
+      },
+      {
+        "gic_id": 292,
+        "loader3_table_file_offset": "0x6d88",
+        "target_mask": "0x1",
+        "config_2bits": 0,
+        "itargetsr_address": "0x70001924",
+        "icfgr_byte_address": "0x70001c49",
+        "icfgr_shift": 0
+      },
+      {
+        "gic_id": 293,
+        "loader3_table_file_offset": "0x6d8c",
+        "target_mask": "0x1",
+        "config_2bits": 0,
+        "itargetsr_address": "0x70001925",
+        "icfgr_byte_address": "0x70001c49",
+        "icfgr_shift": 2
+      },
+      {
+        "gic_id": 294,
+        "loader3_table_file_offset": "0x6d90",
+        "target_mask": "0x1",
+        "config_2bits": 0,
+        "itargetsr_address": "0x70001926",
+        "icfgr_byte_address": "0x70001c49",
+        "icfgr_shift": 4
+      },
+      {
+        "gic_id": 295,
+        "loader3_table_file_offset": "0x6d94",
+        "target_mask": "0x1",
+        "config_2bits": 0,
+        "itargetsr_address": "0x70001927",
+        "icfgr_byte_address": "0x70001c49",
+        "icfgr_shift": 6
+      },
+      {
+        "gic_id": 296,
+        "loader3_table_file_offset": "0x6d98",
+        "target_mask": "0x1",
+        "config_2bits": 0,
+        "itargetsr_address": "0x70001928",
+        "icfgr_byte_address": "0x70001c4a",
+        "icfgr_shift": 0
+      },
+      {
+        "gic_id": 297,
+        "loader3_table_file_offset": "0x6d9c",
+        "target_mask": "0x1",
+        "config_2bits": 2,
+        "itargetsr_address": "0x70001929",
+        "icfgr_byte_address": "0x70001c4a",
+        "icfgr_shift": 2
+      },
+      {
+        "gic_id": 298,
+        "loader3_table_file_offset": "0x6da0",
+        "target_mask": "0x1",
+        "config_2bits": 2,
+        "itargetsr_address": "0x7000192a",
+        "icfgr_byte_address": "0x70001c4a",
+        "icfgr_shift": 4
+      },
+      {
+        "gic_id": 299,
+        "loader3_table_file_offset": "0x6da4",
+        "target_mask": "0x1",
+        "config_2bits": 2,
+        "itargetsr_address": "0x7000192b",
+        "icfgr_byte_address": "0x70001c4a",
+        "icfgr_shift": 6
+      },
+      {
+        "gic_id": 300,
+        "loader3_table_file_offset": "0x6da8",
+        "target_mask": "0x1",
+        "config_2bits": 2,
+        "itargetsr_address": "0x7000192c",
+        "icfgr_byte_address": "0x70001c4b",
+        "icfgr_shift": 0
+      },
+      {
+        "gic_id": 301,
+        "loader3_table_file_offset": "0x6dac",
+        "target_mask": "0x1",
+        "config_2bits": 2,
+        "itargetsr_address": "0x7000192d",
+        "icfgr_byte_address": "0x70001c4b",
+        "icfgr_shift": 2
+      },
+      {
+        "gic_id": 302,
+        "loader3_table_file_offset": "0x6db0",
+        "target_mask": "0x1",
+        "config_2bits": 2,
+        "itargetsr_address": "0x7000192e",
+        "icfgr_byte_address": "0x70001c4b",
+        "icfgr_shift": 4
+      },
+      {
+        "gic_id": 303,
+        "loader3_table_file_offset": "0x6db4",
+        "target_mask": "0x1",
+        "config_2bits": 2,
+        "itargetsr_address": "0x7000192f",
+        "icfgr_byte_address": "0x70001c4b",
+        "icfgr_shift": 6
+      },
+      {
+        "gic_id": 304,
+        "loader3_table_file_offset": "0x6db8",
+        "target_mask": "0x1",
+        "config_2bits": 0,
+        "itargetsr_address": "0x70001930",
+        "icfgr_byte_address": "0x70001c4c",
+        "icfgr_shift": 0
+      },
+      {
+        "gic_id": 305,
+        "loader3_table_file_offset": "0x6dbc",
+        "target_mask": "0x1",
+        "config_2bits": 0,
+        "itargetsr_address": "0x70001931",
+        "icfgr_byte_address": "0x70001c4c",
+        "icfgr_shift": 2
+      },
+      {
+        "gic_id": 306,
+        "loader3_table_file_offset": "0x6dc0",
+        "target_mask": "0x1",
+        "config_2bits": 0,
+        "itargetsr_address": "0x70001932",
+        "icfgr_byte_address": "0x70001c4c",
+        "icfgr_shift": 4
+      },
+      {
+        "gic_id": 307,
+        "loader3_table_file_offset": "0x6dc4",
+        "target_mask": "0x1",
+        "config_2bits": 0,
+        "itargetsr_address": "0x70001933",
+        "icfgr_byte_address": "0x70001c4c",
+        "icfgr_shift": 6
+      },
+      {
+        "gic_id": 308,
+        "loader3_table_file_offset": "0x6dc8",
+        "target_mask": "0x1",
+        "config_2bits": 0,
+        "itargetsr_address": "0x70001934",
+        "icfgr_byte_address": "0x70001c4d",
+        "icfgr_shift": 0
+      },
+      {
+        "gic_id": 309,
+        "loader3_table_file_offset": "0x6dcc",
+        "target_mask": "0x1",
+        "config_2bits": 0,
+        "itargetsr_address": "0x70001935",
+        "icfgr_byte_address": "0x70001c4d",
+        "icfgr_shift": 2
+      },
+      {
+        "gic_id": 310,
+        "loader3_table_file_offset": "0x6dd0",
+        "target_mask": "0x1",
+        "config_2bits": 0,
+        "itargetsr_address": "0x70001936",
+        "icfgr_byte_address": "0x70001c4d",
+        "icfgr_shift": 4
+      },
+      {
+        "gic_id": 311,
+        "loader3_table_file_offset": "0x6dd4",
+        "target_mask": "0x1",
+        "config_2bits": 0,
+        "itargetsr_address": "0x70001937",
+        "icfgr_byte_address": "0x70001c4d",
+        "icfgr_shift": 6
+      },
+      {
+        "gic_id": 312,
+        "loader3_table_file_offset": "0x6dd8",
+        "target_mask": "0x1",
+        "config_2bits": 0,
+        "itargetsr_address": "0x70001938",
+        "icfgr_byte_address": "0x70001c4e",
+        "icfgr_shift": 0
+      },
+      {
+        "gic_id": 313,
+        "loader3_table_file_offset": "0x6ddc",
+        "target_mask": "0x1",
+        "config_2bits": 0,
+        "itargetsr_address": "0x70001939",
+        "icfgr_byte_address": "0x70001c4e",
+        "icfgr_shift": 2
+      },
+      {
+        "gic_id": 314,
+        "loader3_table_file_offset": "0x6de0",
+        "target_mask": "0x1",
+        "config_2bits": 0,
+        "itargetsr_address": "0x7000193a",
+        "icfgr_byte_address": "0x70001c4e",
+        "icfgr_shift": 4
+      },
+      {
+        "gic_id": 315,
+        "loader3_table_file_offset": "0x6de4",
+        "target_mask": "0x1",
+        "config_2bits": 0,
+        "itargetsr_address": "0x7000193b",
+        "icfgr_byte_address": "0x70001c4e",
+        "icfgr_shift": 6
+      },
+      {
+        "gic_id": 316,
+        "loader3_table_file_offset": "0x6de8",
+        "target_mask": "0x1",
+        "config_2bits": 2,
+        "itargetsr_address": "0x7000193c",
+        "icfgr_byte_address": "0x70001c4f",
+        "icfgr_shift": 0
+      },
+      {
+        "gic_id": 317,
+        "loader3_table_file_offset": "0x6dec",
+        "target_mask": "0x1",
+        "config_2bits": 2,
+        "itargetsr_address": "0x7000193d",
+        "icfgr_byte_address": "0x70001c4f",
+        "icfgr_shift": 2
+      },
+      {
+        "gic_id": 318,
+        "loader3_table_file_offset": "0x6df0",
+        "target_mask": "0x1",
+        "config_2bits": 2,
+        "itargetsr_address": "0x7000193e",
+        "icfgr_byte_address": "0x70001c4f",
+        "icfgr_shift": 4
+      },
+      {
+        "gic_id": 319,
+        "loader3_table_file_offset": "0x6df4",
+        "target_mask": "0x1",
+        "config_2bits": 2,
+        "itargetsr_address": "0x7000193f",
+        "icfgr_byte_address": "0x70001c4f",
+        "icfgr_shift": 6
+      },
+      {
+        "gic_id": 320,
+        "loader3_table_file_offset": "0x6df8",
+        "target_mask": "0x1",
+        "config_2bits": 2,
+        "itargetsr_address": "0x70001940",
+        "icfgr_byte_address": "0x70001c50",
+        "icfgr_shift": 0
+      },
+      {
+        "gic_id": 321,
+        "loader3_table_file_offset": "0x6dfc",
+        "target_mask": "0x1",
+        "config_2bits": 2,
+        "itargetsr_address": "0x70001941",
+        "icfgr_byte_address": "0x70001c50",
+        "icfgr_shift": 2
+      },
+      {
+        "gic_id": 322,
+        "loader3_table_file_offset": "0x6e00",
+        "target_mask": "0x1",
+        "config_2bits": 2,
+        "itargetsr_address": "0x70001942",
+        "icfgr_byte_address": "0x70001c50",
+        "icfgr_shift": 4
+      },
+      {
+        "gic_id": 323,
+        "loader3_table_file_offset": "0x6e04",
+        "target_mask": "0x1",
+        "config_2bits": 2,
+        "itargetsr_address": "0x70001943",
+        "icfgr_byte_address": "0x70001c50",
+        "icfgr_shift": 6
+      },
+      {
+        "gic_id": 324,
+        "loader3_table_file_offset": "0x6e08",
+        "target_mask": "0x1",
+        "config_2bits": 2,
+        "itargetsr_address": "0x70001944",
+        "icfgr_byte_address": "0x70001c51",
+        "icfgr_shift": 0
+      },
+      {
+        "gic_id": 325,
+        "loader3_table_file_offset": "0x6e0c",
+        "target_mask": "0x1",
+        "config_2bits": 2,
+        "itargetsr_address": "0x70001945",
+        "icfgr_byte_address": "0x70001c51",
+        "icfgr_shift": 2
+      },
+      {
+        "gic_id": 326,
+        "loader3_table_file_offset": "0x6e10",
+        "target_mask": "0x1",
+        "config_2bits": 2,
+        "itargetsr_address": "0x70001946",
+        "icfgr_byte_address": "0x70001c51",
+        "icfgr_shift": 4
+      },
+      {
+        "gic_id": 327,
+        "loader3_table_file_offset": "0x6e14",
+        "target_mask": "0x1",
+        "config_2bits": 2,
+        "itargetsr_address": "0x70001947",
+        "icfgr_byte_address": "0x70001c51",
+        "icfgr_shift": 6
+      },
+      {
+        "gic_id": 328,
+        "loader3_table_file_offset": "0x6e18",
+        "target_mask": "0x1",
+        "config_2bits": 2,
+        "itargetsr_address": "0x70001948",
+        "icfgr_byte_address": "0x70001c52",
+        "icfgr_shift": 0
+      },
+      {
+        "gic_id": 329,
+        "loader3_table_file_offset": "0x6e1c",
+        "target_mask": "0x1",
+        "config_2bits": 2,
+        "itargetsr_address": "0x70001949",
+        "icfgr_byte_address": "0x70001c52",
+        "icfgr_shift": 2
+      },
+      {
+        "gic_id": 330,
+        "loader3_table_file_offset": "0x6e20",
+        "target_mask": "0x1",
+        "config_2bits": 2,
+        "itargetsr_address": "0x7000194a",
+        "icfgr_byte_address": "0x70001c52",
+        "icfgr_shift": 4
+      },
+      {
+        "gic_id": 331,
+        "loader3_table_file_offset": "0x6e24",
+        "target_mask": "0x1",
+        "config_2bits": 2,
+        "itargetsr_address": "0x7000194b",
+        "icfgr_byte_address": "0x70001c52",
+        "icfgr_shift": 6
+      },
+      {
+        "gic_id": 332,
+        "loader3_table_file_offset": "0x6e28",
+        "target_mask": "0x1",
+        "config_2bits": 2,
+        "itargetsr_address": "0x7000194c",
+        "icfgr_byte_address": "0x70001c53",
+        "icfgr_shift": 0
+      },
+      {
+        "gic_id": 333,
+        "loader3_table_file_offset": "0x6e2c",
+        "target_mask": "0x1",
+        "config_2bits": 2,
+        "itargetsr_address": "0x7000194d",
+        "icfgr_byte_address": "0x70001c53",
+        "icfgr_shift": 2
+      },
+      {
+        "gic_id": 334,
+        "loader3_table_file_offset": "0x6e30",
+        "target_mask": "0x1",
+        "config_2bits": 2,
+        "itargetsr_address": "0x7000194e",
+        "icfgr_byte_address": "0x70001c53",
+        "icfgr_shift": 4
+      },
+      {
+        "gic_id": 335,
+        "loader3_table_file_offset": "0x6e34",
+        "target_mask": "0x1",
+        "config_2bits": 2,
+        "itargetsr_address": "0x7000194f",
+        "icfgr_byte_address": "0x70001c53",
+        "icfgr_shift": 6
+      },
+      {
+        "gic_id": 336,
+        "loader3_table_file_offset": "0x6e38",
+        "target_mask": "0x1",
+        "config_2bits": 2,
+        "itargetsr_address": "0x70001950",
+        "icfgr_byte_address": "0x70001c54",
+        "icfgr_shift": 0
+      },
+      {
+        "gic_id": 337,
+        "loader3_table_file_offset": "0x6e3c",
+        "target_mask": "0x1",
+        "config_2bits": 2,
+        "itargetsr_address": "0x70001951",
+        "icfgr_byte_address": "0x70001c54",
+        "icfgr_shift": 2
+      },
+      {
+        "gic_id": 338,
+        "loader3_table_file_offset": "0x6e40",
+        "target_mask": "0x1",
+        "config_2bits": 2,
+        "itargetsr_address": "0x70001952",
+        "icfgr_byte_address": "0x70001c54",
+        "icfgr_shift": 4
+      },
+      {
+        "gic_id": 339,
+        "loader3_table_file_offset": "0x6e44",
+        "target_mask": "0x1",
+        "config_2bits": 2,
+        "itargetsr_address": "0x70001953",
+        "icfgr_byte_address": "0x70001c54",
+        "icfgr_shift": 6
+      },
+      {
+        "gic_id": 340,
+        "loader3_table_file_offset": "0x6e48",
+        "target_mask": "0x1",
+        "config_2bits": 2,
+        "itargetsr_address": "0x70001954",
+        "icfgr_byte_address": "0x70001c55",
+        "icfgr_shift": 0
+      },
+      {
+        "gic_id": 341,
+        "loader3_table_file_offset": "0x6e4c",
+        "target_mask": "0x1",
+        "config_2bits": 2,
+        "itargetsr_address": "0x70001955",
+        "icfgr_byte_address": "0x70001c55",
+        "icfgr_shift": 2
+      },
+      {
+        "gic_id": 342,
+        "loader3_table_file_offset": "0x6e50",
+        "target_mask": "0x1",
+        "config_2bits": 2,
+        "itargetsr_address": "0x70001956",
+        "icfgr_byte_address": "0x70001c55",
+        "icfgr_shift": 4
+      },
+      {
+        "gic_id": 343,
+        "loader3_table_file_offset": "0x6e54",
+        "target_mask": "0x1",
+        "config_2bits": 2,
+        "itargetsr_address": "0x70001957",
+        "icfgr_byte_address": "0x70001c55",
+        "icfgr_shift": 6
+      },
+      {
+        "gic_id": 344,
+        "loader3_table_file_offset": "0x6e58",
+        "target_mask": "0x1",
+        "config_2bits": 2,
+        "itargetsr_address": "0x70001958",
+        "icfgr_byte_address": "0x70001c56",
+        "icfgr_shift": 0
+      },
+      {
+        "gic_id": 345,
+        "loader3_table_file_offset": "0x6e5c",
+        "target_mask": "0x1",
+        "config_2bits": 2,
+        "itargetsr_address": "0x70001959",
+        "icfgr_byte_address": "0x70001c56",
+        "icfgr_shift": 2
+      },
+      {
+        "gic_id": 346,
+        "loader3_table_file_offset": "0x6e60",
+        "target_mask": "0x1",
+        "config_2bits": 2,
+        "itargetsr_address": "0x7000195a",
+        "icfgr_byte_address": "0x70001c56",
+        "icfgr_shift": 4
+      },
+      {
+        "gic_id": 347,
+        "loader3_table_file_offset": "0x6e64",
+        "target_mask": "0x1",
+        "config_2bits": 2,
+        "itargetsr_address": "0x7000195b",
+        "icfgr_byte_address": "0x70001c56",
+        "icfgr_shift": 6
+      },
+      {
+        "gic_id": 348,
+        "loader3_table_file_offset": "0x6e68",
+        "target_mask": "0x1",
+        "config_2bits": 0,
+        "itargetsr_address": "0x7000195c",
+        "icfgr_byte_address": "0x70001c57",
+        "icfgr_shift": 0
+      },
+      {
+        "gic_id": 349,
+        "loader3_table_file_offset": "0x6e6c",
+        "target_mask": "0x1",
+        "config_2bits": 2,
+        "itargetsr_address": "0x7000195d",
+        "icfgr_byte_address": "0x70001c57",
+        "icfgr_shift": 2
+      },
+      {
+        "gic_id": 350,
+        "loader3_table_file_offset": "0x6e70",
+        "target_mask": "0x1",
+        "config_2bits": 2,
+        "itargetsr_address": "0x7000195e",
+        "icfgr_byte_address": "0x70001c57",
+        "icfgr_shift": 4
+      },
+      {
+        "gic_id": 351,
+        "loader3_table_file_offset": "0x6e74",
+        "target_mask": "0x1",
+        "config_2bits": 2,
+        "itargetsr_address": "0x7000195f",
+        "icfgr_byte_address": "0x70001c57",
+        "icfgr_shift": 6
+      },
+      {
+        "gic_id": 352,
+        "loader3_table_file_offset": "0x6e78",
+        "target_mask": "0x1",
+        "config_2bits": 0,
+        "itargetsr_address": "0x70001960",
+        "icfgr_byte_address": "0x70001c58",
+        "icfgr_shift": 0
+      },
+      {
+        "gic_id": 353,
+        "loader3_table_file_offset": "0x6e7c",
+        "target_mask": "0x1",
+        "config_2bits": 0,
+        "itargetsr_address": "0x70001961",
+        "icfgr_byte_address": "0x70001c58",
+        "icfgr_shift": 2
+      },
+      {
+        "gic_id": 354,
+        "loader3_table_file_offset": "0x6e80",
+        "target_mask": "0x1",
+        "config_2bits": 0,
+        "itargetsr_address": "0x70001962",
+        "icfgr_byte_address": "0x70001c58",
+        "icfgr_shift": 4
+      },
+      {
+        "gic_id": 355,
+        "loader3_table_file_offset": "0x6e84",
+        "target_mask": "0x1",
+        "config_2bits": 0,
+        "itargetsr_address": "0x70001963",
+        "icfgr_byte_address": "0x70001c58",
+        "icfgr_shift": 6
+      },
+      {
+        "gic_id": 356,
+        "loader3_table_file_offset": "0x6e88",
+        "target_mask": "0x1",
+        "config_2bits": 0,
+        "itargetsr_address": "0x70001964",
+        "icfgr_byte_address": "0x70001c59",
+        "icfgr_shift": 0
+      },
+      {
+        "gic_id": 357,
+        "loader3_table_file_offset": "0x6e8c",
+        "target_mask": "0x1",
+        "config_2bits": 0,
+        "itargetsr_address": "0x70001965",
+        "icfgr_byte_address": "0x70001c59",
+        "icfgr_shift": 2
+      },
+      {
+        "gic_id": 358,
+        "loader3_table_file_offset": "0x6e90",
+        "target_mask": "0x1",
+        "config_2bits": 0,
+        "itargetsr_address": "0x70001966",
+        "icfgr_byte_address": "0x70001c59",
+        "icfgr_shift": 4
+      },
+      {
+        "gic_id": 359,
+        "loader3_table_file_offset": "0x6e94",
+        "target_mask": "0x1",
+        "config_2bits": 0,
+        "itargetsr_address": "0x70001967",
+        "icfgr_byte_address": "0x70001c59",
+        "icfgr_shift": 6
+      },
+      {
+        "gic_id": 360,
+        "loader3_table_file_offset": "0x6e98",
+        "target_mask": "0x1",
+        "config_2bits": 0,
+        "itargetsr_address": "0x70001968",
+        "icfgr_byte_address": "0x70001c5a",
+        "icfgr_shift": 0
+      },
+      {
+        "gic_id": 361,
+        "loader3_table_file_offset": "0x6e9c",
+        "target_mask": "0x1",
+        "config_2bits": 0,
+        "itargetsr_address": "0x70001969",
+        "icfgr_byte_address": "0x70001c5a",
+        "icfgr_shift": 2
+      },
+      {
+        "gic_id": 362,
+        "loader3_table_file_offset": "0x6ea0",
+        "target_mask": "0x1",
+        "config_2bits": 0,
+        "itargetsr_address": "0x7000196a",
+        "icfgr_byte_address": "0x70001c5a",
+        "icfgr_shift": 4
+      },
+      {
+        "gic_id": 363,
+        "loader3_table_file_offset": "0x6ea4",
+        "target_mask": "0x1",
+        "config_2bits": 0,
+        "itargetsr_address": "0x7000196b",
+        "icfgr_byte_address": "0x70001c5a",
+        "icfgr_shift": 6
+      },
+      {
+        "gic_id": 364,
+        "loader3_table_file_offset": "0x6ea8",
+        "target_mask": "0x1",
+        "config_2bits": 0,
+        "itargetsr_address": "0x7000196c",
+        "icfgr_byte_address": "0x70001c5b",
+        "icfgr_shift": 0
+      },
+      {
+        "gic_id": 365,
+        "loader3_table_file_offset": "0x6eac",
+        "target_mask": "0x1",
+        "config_2bits": 0,
+        "itargetsr_address": "0x7000196d",
+        "icfgr_byte_address": "0x70001c5b",
+        "icfgr_shift": 2
+      },
+      {
+        "gic_id": 366,
+        "loader3_table_file_offset": "0x6eb0",
+        "target_mask": "0x1",
+        "config_2bits": 0,
+        "itargetsr_address": "0x7000196e",
+        "icfgr_byte_address": "0x70001c5b",
+        "icfgr_shift": 4
+      },
+      {
+        "gic_id": 367,
+        "loader3_table_file_offset": "0x6eb4",
+        "target_mask": "0x1",
+        "config_2bits": 0,
+        "itargetsr_address": "0x7000196f",
+        "icfgr_byte_address": "0x70001c5b",
+        "icfgr_shift": 6
+      },
+      {
+        "gic_id": 368,
+        "loader3_table_file_offset": "0x6eb8",
+        "target_mask": "0x1",
+        "config_2bits": 0,
+        "itargetsr_address": "0x70001970",
+        "icfgr_byte_address": "0x70001c5c",
+        "icfgr_shift": 0
+      },
+      {
+        "gic_id": 369,
+        "loader3_table_file_offset": "0x6ebc",
+        "target_mask": "0x1",
+        "config_2bits": 0,
+        "itargetsr_address": "0x70001971",
+        "icfgr_byte_address": "0x70001c5c",
+        "icfgr_shift": 2
+      },
+      {
+        "gic_id": 370,
+        "loader3_table_file_offset": "0x6ec0",
+        "target_mask": "0x1",
+        "config_2bits": 0,
+        "itargetsr_address": "0x70001972",
+        "icfgr_byte_address": "0x70001c5c",
+        "icfgr_shift": 4
+      },
+      {
+        "gic_id": 371,
+        "loader3_table_file_offset": "0x6ec4",
+        "target_mask": "0x1",
+        "config_2bits": 0,
+        "itargetsr_address": "0x70001973",
+        "icfgr_byte_address": "0x70001c5c",
+        "icfgr_shift": 6
+      },
+      {
+        "gic_id": 372,
+        "loader3_table_file_offset": "0x6ec8",
+        "target_mask": "0x1",
+        "config_2bits": 0,
+        "itargetsr_address": "0x70001974",
+        "icfgr_byte_address": "0x70001c5d",
+        "icfgr_shift": 0
+      },
+      {
+        "gic_id": 373,
+        "loader3_table_file_offset": "0x6ecc",
+        "target_mask": "0x1",
+        "config_2bits": 0,
+        "itargetsr_address": "0x70001975",
+        "icfgr_byte_address": "0x70001c5d",
+        "icfgr_shift": 2
+      },
+      {
+        "gic_id": 374,
+        "loader3_table_file_offset": "0x6ed0",
+        "target_mask": "0x1",
+        "config_2bits": 0,
+        "itargetsr_address": "0x70001976",
+        "icfgr_byte_address": "0x70001c5d",
+        "icfgr_shift": 4
+      },
+      {
+        "gic_id": 375,
+        "loader3_table_file_offset": "0x6ed4",
+        "target_mask": "0x1",
+        "config_2bits": 0,
+        "itargetsr_address": "0x70001977",
+        "icfgr_byte_address": "0x70001c5d",
+        "icfgr_shift": 6
+      },
+      {
+        "gic_id": 376,
+        "loader3_table_file_offset": "0x6ed8",
+        "target_mask": "0x1",
+        "config_2bits": 0,
+        "itargetsr_address": "0x70001978",
+        "icfgr_byte_address": "0x70001c5e",
+        "icfgr_shift": 0
+      },
+      {
+        "gic_id": 377,
+        "loader3_table_file_offset": "0x6edc",
+        "target_mask": "0x1",
+        "config_2bits": 0,
+        "itargetsr_address": "0x70001979",
+        "icfgr_byte_address": "0x70001c5e",
+        "icfgr_shift": 2
+      },
+      {
+        "gic_id": 378,
+        "loader3_table_file_offset": "0x6ee0",
+        "target_mask": "0x1",
+        "config_2bits": 0,
+        "itargetsr_address": "0x7000197a",
+        "icfgr_byte_address": "0x70001c5e",
+        "icfgr_shift": 4
+      },
+      {
+        "gic_id": 379,
+        "loader3_table_file_offset": "0x6ee4",
+        "target_mask": "0x1",
+        "config_2bits": 0,
+        "itargetsr_address": "0x7000197b",
+        "icfgr_byte_address": "0x70001c5e",
+        "icfgr_shift": 6
+      },
+      {
+        "gic_id": 380,
+        "loader3_table_file_offset": "0x6ee8",
+        "target_mask": "0x1",
+        "config_2bits": 2,
+        "itargetsr_address": "0x7000197c",
+        "icfgr_byte_address": "0x70001c5f",
+        "icfgr_shift": 0
+      },
+      {
+        "gic_id": 381,
+        "loader3_table_file_offset": "0x6eec",
+        "target_mask": "0x1",
+        "config_2bits": 2,
+        "itargetsr_address": "0x7000197d",
+        "icfgr_byte_address": "0x70001c5f",
+        "icfgr_shift": 2
+      },
+      {
+        "gic_id": 382,
+        "loader3_table_file_offset": "0x6ef0",
+        "target_mask": "0x1",
+        "config_2bits": 2,
+        "itargetsr_address": "0x7000197e",
+        "icfgr_byte_address": "0x70001c5f",
+        "icfgr_shift": 4
+      },
+      {
+        "gic_id": 383,
+        "loader3_table_file_offset": "0x6ef4",
+        "target_mask": "0x1",
+        "config_2bits": 2,
+        "itargetsr_address": "0x7000197f",
+        "icfgr_byte_address": "0x70001c5f",
+        "icfgr_shift": 6
+      },
+      {
+        "gic_id": 384,
+        "loader3_table_file_offset": "0x6ef8",
+        "target_mask": "0x1",
+        "config_2bits": 0,
+        "itargetsr_address": "0x70001980",
+        "icfgr_byte_address": "0x70001c60",
+        "icfgr_shift": 0
+      },
+      {
+        "gic_id": 385,
+        "loader3_table_file_offset": "0x6efc",
+        "target_mask": "0x1",
+        "config_2bits": 0,
+        "itargetsr_address": "0x70001981",
+        "icfgr_byte_address": "0x70001c60",
+        "icfgr_shift": 2
+      },
+      {
+        "gic_id": 386,
+        "loader3_table_file_offset": "0x6f00",
+        "target_mask": "0x1",
+        "config_2bits": 0,
+        "itargetsr_address": "0x70001982",
+        "icfgr_byte_address": "0x70001c60",
+        "icfgr_shift": 4
+      },
+      {
+        "gic_id": 387,
+        "loader3_table_file_offset": "0x6f04",
+        "target_mask": "0x1",
+        "config_2bits": 0,
+        "itargetsr_address": "0x70001983",
+        "icfgr_byte_address": "0x70001c60",
+        "icfgr_shift": 6
+      },
+      {
+        "gic_id": 388,
+        "loader3_table_file_offset": "0x6f08",
+        "target_mask": "0x1",
+        "config_2bits": 2,
+        "itargetsr_address": "0x70001984",
+        "icfgr_byte_address": "0x70001c61",
+        "icfgr_shift": 0
+      },
+      {
+        "gic_id": 389,
+        "loader3_table_file_offset": "0x6f0c",
+        "target_mask": "0x1",
+        "config_2bits": 2,
+        "itargetsr_address": "0x70001985",
+        "icfgr_byte_address": "0x70001c61",
+        "icfgr_shift": 2
+      },
+      {
+        "gic_id": 390,
+        "loader3_table_file_offset": "0x6f10",
+        "target_mask": "0x1",
+        "config_2bits": 2,
+        "itargetsr_address": "0x70001986",
+        "icfgr_byte_address": "0x70001c61",
+        "icfgr_shift": 4
+      },
+      {
+        "gic_id": 391,
+        "loader3_table_file_offset": "0x6f14",
+        "target_mask": "0x1",
+        "config_2bits": 2,
+        "itargetsr_address": "0x70001987",
+        "icfgr_byte_address": "0x70001c61",
+        "icfgr_shift": 6
+      },
+      {
+        "gic_id": 392,
+        "loader3_table_file_offset": "0x6f18",
+        "target_mask": "0x1",
+        "config_2bits": 2,
+        "itargetsr_address": "0x70001988",
+        "icfgr_byte_address": "0x70001c62",
+        "icfgr_shift": 0
+      },
+      {
+        "gic_id": 393,
+        "loader3_table_file_offset": "0x6f1c",
+        "target_mask": "0x1",
+        "config_2bits": 2,
+        "itargetsr_address": "0x70001989",
+        "icfgr_byte_address": "0x70001c62",
+        "icfgr_shift": 2
+      },
+      {
+        "gic_id": 394,
+        "loader3_table_file_offset": "0x6f20",
+        "target_mask": "0x1",
+        "config_2bits": 2,
+        "itargetsr_address": "0x7000198a",
+        "icfgr_byte_address": "0x70001c62",
+        "icfgr_shift": 4
+      },
+      {
+        "gic_id": 395,
+        "loader3_table_file_offset": "0x6f24",
+        "target_mask": "0x1",
+        "config_2bits": 2,
+        "itargetsr_address": "0x7000198b",
+        "icfgr_byte_address": "0x70001c62",
+        "icfgr_shift": 6
+      },
+      {
+        "gic_id": 396,
+        "loader3_table_file_offset": "0x6f28",
+        "target_mask": "0x1",
+        "config_2bits": 2,
+        "itargetsr_address": "0x7000198c",
+        "icfgr_byte_address": "0x70001c63",
+        "icfgr_shift": 0
+      },
+      {
+        "gic_id": 397,
+        "loader3_table_file_offset": "0x6f2c",
+        "target_mask": "0x1",
+        "config_2bits": 2,
+        "itargetsr_address": "0x7000198d",
+        "icfgr_byte_address": "0x70001c63",
+        "icfgr_shift": 2
+      },
+      {
+        "gic_id": 398,
+        "loader3_table_file_offset": "0x6f30",
+        "target_mask": "0x1",
+        "config_2bits": 2,
+        "itargetsr_address": "0x7000198e",
+        "icfgr_byte_address": "0x70001c63",
+        "icfgr_shift": 4
+      },
+      {
+        "gic_id": 399,
+        "loader3_table_file_offset": "0x6f34",
+        "target_mask": "0x1",
+        "config_2bits": 2,
+        "itargetsr_address": "0x7000198f",
+        "icfgr_byte_address": "0x70001c63",
+        "icfgr_shift": 6
+      },
+      {
+        "gic_id": 400,
+        "loader3_table_file_offset": "0x6f38",
+        "target_mask": "0x1",
+        "config_2bits": 0,
+        "itargetsr_address": "0x70001990",
+        "icfgr_byte_address": "0x70001c64",
+        "icfgr_shift": 0
+      },
+      {
+        "gic_id": 401,
+        "loader3_table_file_offset": "0x6f3c",
+        "target_mask": "0x1",
+        "config_2bits": 0,
+        "itargetsr_address": "0x70001991",
+        "icfgr_byte_address": "0x70001c64",
+        "icfgr_shift": 2
+      },
+      {
+        "gic_id": 402,
+        "loader3_table_file_offset": "0x6f40",
+        "target_mask": "0x2",
+        "config_2bits": 0,
+        "itargetsr_address": "0x70001992",
+        "icfgr_byte_address": "0x70001c64",
+        "icfgr_shift": 4
+      },
+      {
+        "gic_id": 403,
+        "loader3_table_file_offset": "0x6f44",
+        "target_mask": "0x1",
+        "config_2bits": 0,
+        "itargetsr_address": "0x70001993",
+        "icfgr_byte_address": "0x70001c64",
+        "icfgr_shift": 6
+      },
+      {
+        "gic_id": 404,
+        "loader3_table_file_offset": "0x6f48",
+        "target_mask": "0x1",
+        "config_2bits": 0,
+        "itargetsr_address": "0x70001994",
+        "icfgr_byte_address": "0x70001c65",
+        "icfgr_shift": 0
+      },
+      {
+        "gic_id": 405,
+        "loader3_table_file_offset": "0x6f4c",
+        "target_mask": "0x1",
+        "config_2bits": 0,
+        "itargetsr_address": "0x70001995",
+        "icfgr_byte_address": "0x70001c65",
+        "icfgr_shift": 2
+      },
+      {
+        "gic_id": 406,
+        "loader3_table_file_offset": "0x6f50",
+        "target_mask": "0x1",
+        "config_2bits": 0,
+        "itargetsr_address": "0x70001996",
+        "icfgr_byte_address": "0x70001c65",
+        "icfgr_shift": 4
+      },
+      {
+        "gic_id": 407,
+        "loader3_table_file_offset": "0x6f54",
+        "target_mask": "0x1",
+        "config_2bits": 0,
+        "itargetsr_address": "0x70001997",
+        "icfgr_byte_address": "0x70001c65",
+        "icfgr_shift": 6
+      },
+      {
+        "gic_id": 408,
+        "loader3_table_file_offset": "0x6f58",
+        "target_mask": "0x1",
+        "config_2bits": 0,
+        "itargetsr_address": "0x70001998",
+        "icfgr_byte_address": "0x70001c66",
+        "icfgr_shift": 0
+      },
+      {
+        "gic_id": 409,
+        "loader3_table_file_offset": "0x6f5c",
+        "target_mask": "0x1",
+        "config_2bits": 0,
+        "itargetsr_address": "0x70001999",
+        "icfgr_byte_address": "0x70001c66",
+        "icfgr_shift": 2
+      },
+      {
+        "gic_id": 410,
+        "loader3_table_file_offset": "0x6f60",
+        "target_mask": "0x1",
+        "config_2bits": 0,
+        "itargetsr_address": "0x7000199a",
+        "icfgr_byte_address": "0x70001c66",
+        "icfgr_shift": 4
+      },
+      {
+        "gic_id": 411,
+        "loader3_table_file_offset": "0x6f64",
+        "target_mask": "0x1",
+        "config_2bits": 0,
+        "itargetsr_address": "0x7000199b",
+        "icfgr_byte_address": "0x70001c66",
+        "icfgr_shift": 6
+      },
+      {
+        "gic_id": 412,
+        "loader3_table_file_offset": "0x6f68",
+        "target_mask": "0x1",
+        "config_2bits": 0,
+        "itargetsr_address": "0x7000199c",
+        "icfgr_byte_address": "0x70001c67",
+        "icfgr_shift": 0
+      },
+      {
+        "gic_id": 413,
+        "loader3_table_file_offset": "0x6f6c",
+        "target_mask": "0x1",
+        "config_2bits": 0,
+        "itargetsr_address": "0x7000199d",
+        "icfgr_byte_address": "0x70001c67",
+        "icfgr_shift": 2
+      },
+      {
+        "gic_id": 414,
+        "loader3_table_file_offset": "0x6f70",
+        "target_mask": "0x1",
+        "config_2bits": 0,
+        "itargetsr_address": "0x7000199e",
+        "icfgr_byte_address": "0x70001c67",
+        "icfgr_shift": 4
+      },
+      {
+        "gic_id": 415,
+        "loader3_table_file_offset": "0x6f74",
+        "target_mask": "0x1",
+        "config_2bits": 0,
+        "itargetsr_address": "0x7000199f",
+        "icfgr_byte_address": "0x70001c67",
+        "icfgr_shift": 6
+      },
+      {
+        "gic_id": 416,
+        "loader3_table_file_offset": "0x6f78",
+        "target_mask": "0x1",
+        "config_2bits": 0,
+        "itargetsr_address": "0x700019a0",
+        "icfgr_byte_address": "0x70001c68",
+        "icfgr_shift": 0
+      },
+      {
+        "gic_id": 417,
+        "loader3_table_file_offset": "0x6f7c",
+        "target_mask": "0x1",
+        "config_2bits": 0,
+        "itargetsr_address": "0x700019a1",
+        "icfgr_byte_address": "0x70001c68",
+        "icfgr_shift": 2
+      },
+      {
+        "gic_id": 418,
+        "loader3_table_file_offset": "0x6f80",
+        "target_mask": "0x1",
+        "config_2bits": 0,
+        "itargetsr_address": "0x700019a2",
+        "icfgr_byte_address": "0x70001c68",
+        "icfgr_shift": 4
+      },
+      {
+        "gic_id": 419,
+        "loader3_table_file_offset": "0x6f84",
+        "target_mask": "0x1",
+        "config_2bits": 0,
+        "itargetsr_address": "0x700019a3",
+        "icfgr_byte_address": "0x70001c68",
+        "icfgr_shift": 6
+      },
+      {
+        "gic_id": 420,
+        "loader3_table_file_offset": "0x6f88",
+        "target_mask": "0x1",
+        "config_2bits": 0,
+        "itargetsr_address": "0x700019a4",
+        "icfgr_byte_address": "0x70001c69",
+        "icfgr_shift": 0
+      },
+      {
+        "gic_id": 421,
+        "loader3_table_file_offset": "0x6f8c",
+        "target_mask": "0x1",
+        "config_2bits": 0,
+        "itargetsr_address": "0x700019a5",
+        "icfgr_byte_address": "0x70001c69",
+        "icfgr_shift": 2
+      },
+      {
+        "gic_id": 422,
+        "loader3_table_file_offset": "0x6f90",
+        "target_mask": "0x1",
+        "config_2bits": 0,
+        "itargetsr_address": "0x700019a6",
+        "icfgr_byte_address": "0x70001c69",
+        "icfgr_shift": 4
+      },
+      {
+        "gic_id": 423,
+        "loader3_table_file_offset": "0x6f94",
+        "target_mask": "0x1",
+        "config_2bits": 0,
+        "itargetsr_address": "0x700019a7",
+        "icfgr_byte_address": "0x70001c69",
+        "icfgr_shift": 6
+      },
+      {
+        "gic_id": 424,
+        "loader3_table_file_offset": "0x6f98",
+        "target_mask": "0x1",
+        "config_2bits": 0,
+        "itargetsr_address": "0x700019a8",
+        "icfgr_byte_address": "0x70001c6a",
+        "icfgr_shift": 0
+      },
+      {
+        "gic_id": 425,
+        "loader3_table_file_offset": "0x6f9c",
+        "target_mask": "0x1",
+        "config_2bits": 0,
+        "itargetsr_address": "0x700019a9",
+        "icfgr_byte_address": "0x70001c6a",
+        "icfgr_shift": 2
+      },
+      {
+        "gic_id": 426,
+        "loader3_table_file_offset": "0x6fa0",
+        "target_mask": "0x1",
+        "config_2bits": 0,
+        "itargetsr_address": "0x700019aa",
+        "icfgr_byte_address": "0x70001c6a",
+        "icfgr_shift": 4
+      },
+      {
+        "gic_id": 427,
+        "loader3_table_file_offset": "0x6fa4",
+        "target_mask": "0x1",
+        "config_2bits": 0,
+        "itargetsr_address": "0x700019ab",
+        "icfgr_byte_address": "0x70001c6a",
+        "icfgr_shift": 6
+      },
+      {
+        "gic_id": 428,
+        "loader3_table_file_offset": "0x6fa8",
+        "target_mask": "0x1",
+        "config_2bits": 0,
+        "itargetsr_address": "0x700019ac",
+        "icfgr_byte_address": "0x70001c6b",
+        "icfgr_shift": 0
+      },
+      {
+        "gic_id": 429,
+        "loader3_table_file_offset": "0x6fac",
+        "target_mask": "0x1",
+        "config_2bits": 0,
+        "itargetsr_address": "0x700019ad",
+        "icfgr_byte_address": "0x70001c6b",
+        "icfgr_shift": 2
+      },
+      {
+        "gic_id": 430,
+        "loader3_table_file_offset": "0x6fb0",
+        "target_mask": "0x1",
+        "config_2bits": 0,
+        "itargetsr_address": "0x700019ae",
+        "icfgr_byte_address": "0x70001c6b",
+        "icfgr_shift": 4
+      },
+      {
+        "gic_id": 431,
+        "loader3_table_file_offset": "0x6fb4",
+        "target_mask": "0x1",
+        "config_2bits": 0,
+        "itargetsr_address": "0x700019af",
+        "icfgr_byte_address": "0x70001c6b",
+        "icfgr_shift": 6
+      },
+      {
+        "gic_id": 432,
+        "loader3_table_file_offset": "0x6fb8",
+        "target_mask": "0x1",
+        "config_2bits": 0,
+        "itargetsr_address": "0x700019b0",
+        "icfgr_byte_address": "0x70001c6c",
+        "icfgr_shift": 0
+      },
+      {
+        "gic_id": 433,
+        "loader3_table_file_offset": "0x6fbc",
+        "target_mask": "0x1",
+        "config_2bits": 0,
+        "itargetsr_address": "0x700019b1",
+        "icfgr_byte_address": "0x70001c6c",
+        "icfgr_shift": 2
+      },
+      {
+        "gic_id": 434,
+        "loader3_table_file_offset": "0x6fc0",
+        "target_mask": "0x1",
+        "config_2bits": 0,
+        "itargetsr_address": "0x700019b2",
+        "icfgr_byte_address": "0x70001c6c",
+        "icfgr_shift": 4
+      },
+      {
+        "gic_id": 435,
+        "loader3_table_file_offset": "0x6fc4",
+        "target_mask": "0x1",
+        "config_2bits": 0,
+        "itargetsr_address": "0x700019b3",
+        "icfgr_byte_address": "0x70001c6c",
+        "icfgr_shift": 6
+      },
+      {
+        "gic_id": 436,
+        "loader3_table_file_offset": "0x6fc8",
+        "target_mask": "0x1",
+        "config_2bits": 0,
+        "itargetsr_address": "0x700019b4",
+        "icfgr_byte_address": "0x70001c6d",
+        "icfgr_shift": 0
+      },
+      {
+        "gic_id": 437,
+        "loader3_table_file_offset": "0x6fcc",
+        "target_mask": "0x1",
+        "config_2bits": 0,
+        "itargetsr_address": "0x700019b5",
+        "icfgr_byte_address": "0x70001c6d",
+        "icfgr_shift": 2
+      },
+      {
+        "gic_id": 438,
+        "loader3_table_file_offset": "0x6fd0",
+        "target_mask": "0x1",
+        "config_2bits": 0,
+        "itargetsr_address": "0x700019b6",
+        "icfgr_byte_address": "0x70001c6d",
+        "icfgr_shift": 4
+      },
+      {
+        "gic_id": 439,
+        "loader3_table_file_offset": "0x6fd4",
+        "target_mask": "0x1",
+        "config_2bits": 0,
+        "itargetsr_address": "0x700019b7",
+        "icfgr_byte_address": "0x70001c6d",
+        "icfgr_shift": 6
+      },
+      {
+        "gic_id": 440,
+        "loader3_table_file_offset": "0x6fd8",
+        "target_mask": "0x1",
+        "config_2bits": 0,
+        "itargetsr_address": "0x700019b8",
+        "icfgr_byte_address": "0x70001c6e",
+        "icfgr_shift": 0
+      },
+      {
+        "gic_id": 441,
+        "loader3_table_file_offset": "0x6fdc",
+        "target_mask": "0x1",
+        "config_2bits": 0,
+        "itargetsr_address": "0x700019b9",
+        "icfgr_byte_address": "0x70001c6e",
+        "icfgr_shift": 2
+      },
+      {
+        "gic_id": 442,
+        "loader3_table_file_offset": "0x6fe0",
+        "target_mask": "0x1",
+        "config_2bits": 0,
+        "itargetsr_address": "0x700019ba",
+        "icfgr_byte_address": "0x70001c6e",
+        "icfgr_shift": 4
+      },
+      {
+        "gic_id": 443,
+        "loader3_table_file_offset": "0x6fe4",
+        "target_mask": "0x1",
+        "config_2bits": 0,
+        "itargetsr_address": "0x700019bb",
+        "icfgr_byte_address": "0x70001c6e",
+        "icfgr_shift": 6
+      },
+      {
+        "gic_id": 444,
+        "loader3_table_file_offset": "0x6fe8",
+        "target_mask": "0x1",
+        "config_2bits": 0,
+        "itargetsr_address": "0x700019bc",
+        "icfgr_byte_address": "0x70001c6f",
+        "icfgr_shift": 0
+      },
+      {
+        "gic_id": 445,
+        "loader3_table_file_offset": "0x6fec",
+        "target_mask": "0x1",
+        "config_2bits": 0,
+        "itargetsr_address": "0x700019bd",
+        "icfgr_byte_address": "0x70001c6f",
+        "icfgr_shift": 2
+      },
+      {
+        "gic_id": 446,
+        "loader3_table_file_offset": "0x6ff0",
+        "target_mask": "0x1",
+        "config_2bits": 0,
+        "itargetsr_address": "0x700019be",
+        "icfgr_byte_address": "0x70001c6f",
+        "icfgr_shift": 4
+      },
+      {
+        "gic_id": 447,
+        "loader3_table_file_offset": "0x6ff4",
+        "target_mask": "0x1",
+        "config_2bits": 0,
+        "itargetsr_address": "0x700019bf",
+        "icfgr_byte_address": "0x70001c6f",
+        "icfgr_shift": 6
+      }
+    ]
+  },
+  "cpu_interface": {
+    "loader3_instructions_file_range": [
+      "0x1a0",
+      "0x1d0"
+    ],
+    "base": "0x70002000",
+    "per_cpu_stride": "0x8000",
+    "control": 1,
+    "priority_mask": "0xf0",
+    "note": "Loader3 call path at these offsets runs CPU0. Replaying these values separately for all QEMU CPU interfaces is an explicit handoff reconstruction, not proof all cores use this exact loader call path."
+  },
+  "irq_vectors": {
+    "vbar": "0x0",
+    "preload": "Original complete 02_loader3.bin at 0 (48KiB); do not execute its startup for this handoff test.",
+    "chain": [
+      {
+        "address": "0x18",
+        "source": "loader3+0x18",
+        "instruction": "b 0x4c"
+      },
+      {
+        "address": "0x4c",
+        "source": "loader3+0x4c",
+        "instruction": "ldr pc,[pc,#0x3f4]",
+        "literal_address": "0x448",
+        "literal_value": "0x06280000"
+      },
+      {
+        "address": "0x06280000",
+        "source": "program+0",
+        "instruction": "ldr pc,[pc,#0x70]",
+        "literal_address": "0x06280078",
+        "literal_value": "0x068f9a0c"
+      },
+      {
+        "address": "0x068f9a0c",
+        "source": "program",
+        "instruction": "b 0x068f9c1c"
+      },
+      {
+        "address": "0x068f9c1c",
+        "source": "program",
+        "meaning": "Original RTOS IRQ context save, then 0x068f9a10 dispatch"
+      }
+    ],
+    "vbar_note": "No VBAR write was found in the examined loader/entry routines. VBAR0 plus the resident loader3 vector chain is supported by direct instruction evidence; high vectors remain unproven."
+  },
+  "original_runtime_mmio": {
+    "iar_function": "0x068e7ec4",
+    "iar_address": "0x7000200c + (MPIDR & 3) * 0x8000",
+    "eoir_function": "0x068e7ee8",
+    "eoir_address": "0x70002010 + (MPIDR & 3) * 0x8000",
+    "requirement": "Map CPU1/2 fixed GIC interface views at 0x7000a000 / 0x70012000; banked CPU0-only mapping is insufficient."
+  },
+  "isolated_runtime_verification": "results-loader-gic-guest-readback/result.json",
+  "limitations": [
+    "Full IRQ delivery and menu rendering not proven by the isolated routing test.",
+    "Do not bulk-read GIC with GDB memory requests; use guest instructions or safe QOM state."
+  ]
+}

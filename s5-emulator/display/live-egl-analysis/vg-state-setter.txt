@@ -1,0 +1,968 @@
+064dc988: push.w   {r0, r1, r2, r3, r4, r5, r6, r7, r8, sb, sl, fp, lr}
+064dc98c: mov.w    fp, #0
+064dc990: mov      r7, r3
+064dc992: subs     r5, r2, #0
+064dc994: mov      sl, r1
+064dc996: vpush    {d8}
+064dc99a: sub      sp, #0x6c
+064dc99c: mov      r6, fp
+064dc99e: mov      r8, r3
+064dc9a0: ldr      r0, [sp, #0x74]
+064dc9a2: ldr.w    sb, [sp, #0xa8]
+064dc9a6: ldr      r4, [r0, #0x1c]
+064dc9a8: add.w    r4, r4, #0x170
+064dc9ac: blt      #0x64dca98
+064dc9ae: cmp.w    r8, #0
+064dc9b2: mov      r0, r7
+064dc9b4: beq      #0x64dc9d8
+064dc9b6: movs     r1, #4
+064dc9b8: bl       #0x64ddcac
+064dc9bc: cmp      r0, #0
+064dc9be: beq      #0x64dca98
+064dc9c0: cbz      r5, #0x64dc9ec
+064dc9c2: cmp.w    sb, #0
+064dc9c6: beq      #0x64dc9de
+064dc9c8: ldr.w    r0, [r8]
+064dc9cc: bl       #0x64f1d64
+064dc9d0: vldr     s0, [r8]
+064dc9d4: mov      r6, r0
+064dc9d6: b        #0x64dc9e8
+064dc9d8: cmp      r5, #0
+064dc9da: bgt      #0x64dca98
+064dc9dc: b        #0x64dc9ec
+064dc9de: ldr      r6, [r7]
+064dc9e0: vmov     s0, r6
+064dc9e4: vcvt.f32.s32 s0, s0
+064dc9e8: vstr     s0, [sp, #8]
+064dc9ec: movw     r0, #0x1166
+064dc9f0: mov      ip, sl
+064dc9f2: cmp      sl, r0
+064dc9f4: sub.w    r1, sl, r0
+064dc9f8: mov.w    r2, #0x3f800000
+064dc9fc: beq      #0x64dcaa0
+064dc9fe: bgt      #0x64dcaa2
+064dca00: movw     r1, #0x1121
+064dca04: vldr     s16, [pc, #0x8c]
+064dca08: cmp      ip, r1
+064dca0a: sub.w    r0, ip, r1
+064dca0e: add.w    sl, sp, #8
+064dca12: beq      #0x64dcaf6
+064dca14: bgt      #0x64dca5c
+064dca16: movw     r1, #0x1110
+064dca1a: cmp      ip, r1
+064dca1c: sub.w    r0, ip, r1
+064dca20: beq      #0x64dcaf8
+064dca22: bgt      #0x64dca3a
+064dca24: sub.w    ip, ip, #0x1100
+064dca28: cmp.w    ip, #7
+064dca2c: bhs      #0x64dca98
+064dca2e: tbb      [pc, ip]
+064dca32: add      r2, sp, #0x268
+064dca34: stm      r6!, {r3, r4, r5, r7}
+064dca36: ldcl     p0, c0, [sl], {0xfb}
+064dca3a: cmp      r0, #4
+064dca3c: beq      #0x64dcb22
+064dca3e: bgt      #0x64dca4e
+064dca40: cmp      r0, #1
+064dca42: beq      #0x64dcb24
+064dca44: cmp      r0, #2
+064dca46: beq      #0x64dcb26
+064dca48: cmp      r0, #3
+064dca4a: bne      #0x64dca98
+064dca4c: b        #0x64dcd26
+064dca4e: cmp      r0, #5
+064dca50: beq      #0x64dcb28
+064dca52: cmp      r0, #6
+064dca54: beq      #0x64dcb2a
+064dca56: cmp      r0, #0x10
+064dca58: bne      #0x64dca4a
+064dca5a: b        #0x64dcfb6
+064dca5c: cmp      r0, #0x31
+064dca5e: beq      #0x64dcb4e
+064dca60: bgt      #0x64dca9a
+064dca62: cmp      r0, #0x1f
+064dca64: beq      #0x64dcb50
+064dca66: bgt      #0x64dca76
+064dca68: cmp      r0, #1
+064dca6a: beq      #0x64dcb52
+064dca6c: cmp      r0, #0xf
+064dca6e: beq      #0x64dcb54
+064dca70: cmp      r0, #0x10
+064dca72: bne      #0x64dca4a
+064dca74: b        #0x64dd16e
+064dca76: cmp      r0, #0x20
+064dca78: beq      #0x64dc9fc
+064dca7a: cmp      r0, #0x2f
+064dca7c: beq      #0x64dcb56
+064dca7e: cmp      r0, #0x30
+064dca80: bne      #0x64dca4a
+064dca82: b        #0x64dd1c6
+064dca84: movs     r0, r0
+064dca86: .byte    0xc0, 0xff
+064dca88: .byte    0xff, 0xff
+064dca8a: rors     r7, r3
+064dca8c: movs     r0, r0
+064dca8e: movs     r0, r0
+064dca90: movs     r0, r0
+064dca92: stm      r1!, {r5, r6, r7}
+064dca94: movs     r0, r0
+064dca96: movs     r0, r0
+064dca98: b        #0x64dcb84
+064dca9a: subs     r0, #0x3f
+064dca9c: cmp      r0, #5
+064dca9e: bhi      #0x64dcb84
+064dcaa0: b        #0x64dd29a
+064dcaa2: movw     r3, #0xaedf
+064dcaa6: subs     r0, r1, r3
+064dcaa8: cmp      r1, r3
+064dcaaa: beq      #0x64dcaa0
+064dcaac: bgt      #0x64dcb04
+064dcaae: movw     r3, #0xae9b
+064dcab2: cmp      r1, r3
+064dcab4: sub.w    r0, r1, r3
+064dcab8: beq      #0x64dcaa0
+064dcaba: bgt      #0x64dcae2
+064dcabc: cmp      r1, #4
+064dcabe: beq      #0x64dcaa0
+064dcac0: bgt      #0x64dcad0
+064dcac2: cmp      r1, #1
+064dcac4: beq      #0x64dcaa0
+064dcac6: cmp      r1, #2
+064dcac8: beq      #0x64dcaa0
+064dcaca: cmp      r1, #3
+064dcacc: bne      #0x64dca4a
+064dcace: b        #0x64dd29a
+064dcad0: cmp      r1, #0xa
+064dcad2: beq      #0x64dcbb8
+064dcad4: cmp      r1, #0xb
+064dcad6: beq      #0x64dcbba
+064dcad8: sub.w    r1, r1, #0xae00
+064dcadc: subs     r1, #0x9a
+064dcade: bne      #0x64dca4a
+064dcae0: b        #0x64dd29a
+064dcae2: cmp      r0, #0x41
+064dcae4: beq      #0x64dcaf4
+064dcae6: bgt      #0x64dcafa
+064dcae8: cmp      r0, #0x2f
+064dcaea: beq      #0x64dcbbc
+064dcaec: cmp      r0, #0x3f
+064dcaee: beq      #0x64dcbe4
+064dcaf0: cmp      r0, #0x40
+064dcaf2: bne      #0x64dca4a
+064dcaf4: b        #0x64dd242
+064dcaf6: b        #0x64dd080
+064dcaf8: b        #0x64dccd2
+064dcafa: cmp      r0, #0x42
+064dcafc: beq      #0x64dcaf4
+064dcafe: cmp      r0, #0x43
+064dcb00: bne      #0x64dca4a
+064dcb02: b        #0x64dd242
+064dcb04: cmp      r0, #0xdc
+064dcb06: mov.w    fp, #0x10000
+064dcb0a: beq      #0x64dcb4c
+064dcb0c: bgt      #0x64dcb3a
+064dcb0e: cmp      r0, #0xbd
+064dcb10: beq      #0x64dcaa0
+064dcb12: bgt      #0x64dcb2c
+064dcb14: cmp      r0, #0xb
+064dcb16: beq      #0x64dcc02
+064dcb18: cmp      r0, #0x2b
+064dcb1a: beq      #0x64dcc04
+064dcb1c: cmp      r0, #0xbc
+064dcb1e: bne      #0x64dca4a
+064dcb20: b        #0x64dd29a
+064dcb22: b        #0x64dcd42
+064dcb24: b        #0x64dccee
+064dcb26: b        #0x64dcd0a
+064dcb28: b        #0x64dcec4
+064dcb2a: b        #0x64dcee0
+064dcb2c: cmp      r0, #0xbe
+064dcb2e: beq      #0x64dcaa0
+064dcb30: cmp      r0, #0xbf
+064dcb32: beq      #0x64dcaa0
+064dcb34: cmp      r0, #0xdb
+064dcb36: bne      #0x64dca4a
+064dcb38: b        #0x64dd256
+064dcb3a: cmp      r0, #0xe0
+064dcb3c: beq      #0x64dcc26
+064dcb3e: bgt      #0x64dcb58
+064dcb40: cmp      r0, #0xdd
+064dcb42: beq      #0x64dcb3c
+064dcb44: cmp      r0, #0xde
+064dcb46: beq      #0x64dcb38
+064dcb48: cmp      r0, #0xdf
+064dcb4a: bne      #0x64dca58
+064dcb4c: b        #0x64dd2bc
+064dcb4e: b        #0x64dd1e8
+064dcb50: b        #0x64dd184
+064dcb52: b        #0x64dcef2
+064dcb54: b        #0x64dd14c
+064dcb56: b        #0x64dd1a4
+064dcb58: sub.w    r0, r0, #0x100
+064dcb5c: subs     r0, #0x4b
+064dcb5e: beq      #0x64dcaa0
+064dcb60: cmp      r0, #1
+064dcb62: bne      #0x64dca72
+064dcb64: b        #0x64dd29a
+064dcb66: cmp      r5, #1
+064dcb68: bne      #0x64dca80
+064dcb6a: cmp.w    r6, #0x1400
+064dcb6e: blt      #0x64dcb84
+064dcb70: movw     r0, #0x1404
+064dcb74: cmp      r6, r0
+064dcb76: bgt      #0x64dcb84
+064dcb78: str      r6, [r4]
+064dcb7a: add      sp, #0x6c
+064dcb7c: vpop     {d8}
+064dcb80: pop.w    {r0, r1, r2, r3, r4, r5, r6, r7, r8, sb, sl, fp, pc}
+064dcb84: b        #0x64dccba
+064dcb86: cmp      r5, #1
+064dcb88: bne      #0x64dcacc
+064dcb8a: cmp.w    r6, #0x1900
+064dcb8e: blt      #0x64dcb6e
+064dcb90: movw     r0, #0x1901
+064dcb94: cmp      r6, r0
+064dcb96: bgt      #0x64dcb76
+064dcb98: ldr      r0, [r4, #4]
+064dcb9a: cmp      r0, r6
+064dcb9c: beq      #0x64dcb7a
+064dcb9e: str      r6, [r4, #4]
+064dcba0: b        #0x64dcb7a
+064dcba2: cmp      r5, #1
+064dcba4: bne      #0x64dcacc
+064dcba6: cmp      r6, #1
+064dcba8: blt      #0x64dcb6e
+064dcbaa: cmp      r6, #4
+064dcbac: bgt      #0x64dcb76
+064dcbae: ldr      r0, [r4, #8]
+064dcbb0: cmp      r0, r6
+064dcbb2: beq      #0x64dcb7a
+064dcbb4: str      r6, [r4, #8]
+064dcbb6: b        #0x64dcb7a
+064dcbb8: b        #0x64dcfa2
+064dcbba: b        #0x64dcf28
+064dcbbc: b        #0x64dd1fa
+064dcbbe: cmp      r5, #1
+064dcbc0: bne      #0x64dcacc
+064dcbc2: cmp.w    r6, #0x1200
+064dcbc6: blt      #0x64dcb6e
+064dcbc8: movw     r0, #0x1202
+064dcbcc: cmp      r6, r0
+064dcbce: bgt      #0x64dcb76
+064dcbd0: ldr      r0, [r4, #0x14]
+064dcbd2: cmp      r0, r6
+064dcbd4: blo      #0x64dccba
+064dcbd6: ldr      r0, [r4, #0xc]
+064dcbd8: cmp      r0, r6
+064dcbda: beq      #0x64dcb7a
+064dcbdc: movs     r2, #1
+064dcbde: str      r6, [r4, #0xc]
+064dcbe0: movs     r1, #2
+064dcbe2: b        #0x64dd2b4
+064dcbe4: b        #0x64dd238
+064dcbe6: cmp      r5, #1
+064dcbe8: bne      #0x64dcb00
+064dcbea: cmp.w    r6, #0x2000
+064dcbee: blt      #0x64dcb6e
+064dcbf0: movw     r0, #0x2009
+064dcbf4: cmp      r6, r0
+064dcbf6: bgt      #0x64dcb76
+064dcbf8: ldr      r0, [r4, #0x18]
+064dcbfa: cmp      r0, r6
+064dcbfc: beq      #0x64dcb7a
+064dcbfe: str      r6, [r4, #0x18]
+064dcc00: b        #0x64dcb7a
+064dcc02: b        #0x64dd224
+064dcc04: b        #0x64dd20c
+064dcc06: b        #0x64dcc28
+064dcc08: b        #0x64dcc0a
+064dcc0a: cmp      r5, #1
+064dcc0c: bne      #0x64dcb1e
+064dcc0e: cmp.w    r6, #0x1f00
+064dcc12: blt      #0x64dcb6e
+064dcc14: movw     r0, #0x1f02
+064dcc18: cmp      r6, r0
+064dcc1a: bgt      #0x64dcb76
+064dcc1c: ldr      r0, [r4, #0x1c]
+064dcc1e: cmp      r0, r6
+064dcc20: beq      #0x64dcb7a
+064dcc22: str      r6, [r4, #0x1c]
+064dcc24: b        #0x64dcb7a
+064dcc26: b        #0x64dd314
+064dcc28: lsls     r0, r5, #0x1e
+064dcc2a: bne      #0x64dcb36
+064dcc2c: ldr      r0, [sp, #0x74]
+064dcc2e: ldr      r0, [r0, #0x1c]
+064dcc30: add.w    r0, r0, #0x28c
+064dcc34: bl       #0x64ddcd4
+064dcc38: cbz      r5, #0x64dccb8
+064dcc3a: ldr      r0, [sp, #0x74]
+064dcc3c: lsls     r1, r5, #4
+064dcc3e: movs     r2, #0x10
+064dcc40: ldr      r0, [r0, #0x1c]
+064dcc42: add.w    r0, r0, #0x28c
+064dcc46: bl       #0x64dc6d4
+064dcc4a: cbz      r0, #0x64dcc50
+064dcc4c: movs     r0, #0
+064dcc4e: b        #0x64dccc0
+064dcc50: ldr      r0, [sp, #0x74]
+064dcc52: movw     r1, #0x1002
+064dcc56: bl       #0x64fd1d0
+064dcc5a: b        #0x64dcccc
+064dcc5c: cmp.w    sb, #0
+064dcc60: beq      #0x64dcc8e
+064dcc62: ldr.w    r0, [r8]
+064dcc66: add.w    r6, r8, #4
+064dcc6a: bl       #0x64f1d64
+064dcc6e: mov      fp, r0
+064dcc70: ldr      r0, [r6]
+064dcc72: bl       #0x64f1d64
+064dcc76: str      r0, [sp]
+064dcc78: ldr      r0, [r6, #4]
+064dcc7a: bl       #0x64f1d64
+064dcc7e: str      r0, [sp, #4]
+064dcc80: add.w    r8, r6, #0xc
+064dcc84: ldr      r0, [r6, #8]
+064dcc86: bl       #0x64f1d64
+064dcc8a: mov      r1, r0
+064dcc8c: b        #0x64dcc9c
+064dcc8e: ldrd     fp, r0, [r7]
+064dcc92: str      r0, [sp]
+064dcc94: ldr      r0, [r7, #8]
+064dcc96: str      r0, [sp, #4]
+064dcc98: ldr      r1, [r7, #0xc]
+064dcc9a: adds     r7, #0x10
+064dcc9c: ldrd     r0, r2, [r4, #0x11c]
+064dcca0: add.w    r0, r0, r2, lsl #4
+064dcca4: adds     r2, r2, #1
+064dcca6: str.w    r2, [r4, #0x120]
+064dccaa: ldrd     r3, r6, [sp]
+064dccae: strd     r6, r1, [r0, #8]
+064dccb2: strd     fp, r3, [r0]
+064dccb6: b        #0x64dccbc
+064dccb8: b        #0x64dcccc
+064dccba: b        #0x64dcfac
+064dccbc: add.w    r0, sl, #4
+064dccc0: cmp      r0, r5
+064dccc2: mov      sl, r0
+064dccc4: bge      #0x64dcccc
+064dccc6: cmp.w    sl, #0x80
+064dccca: blt      #0x64dcc5c
+064dcccc: movs     r2, #1
+064dccce: movs     r1, #4
+064dccd0: b        #0x64dd2b4
+064dccd2: cmp      r5, #1
+064dccd4: bne      #0x64dcbe8
+064dccd6: vldr     s1, [r4, #0x20]
+064dccda: vldr     s0, [sp, #8]
+064dccde: vcmp.f32 s1, s0
+064dcce2: vmrs     apsr_nzcv, fpscr
+064dcce6: beq      #0x64dcc00
+064dcce8: vstr     s0, [r4, #0x20]
+064dccec: b        #0x64dcb7a
+064dccee: cmp      r5, #1
+064dccf0: bne      #0x64dcc0c
+064dccf2: cmp.w    r6, #0x1700
+064dccf6: blt      #0x64dcc12
+064dccf8: movw     r0, #0x1702
+064dccfc: cmp      r6, r0
+064dccfe: bgt      #0x64dcc1a
+064dcd00: ldr      r0, [r4, #0x24]
+064dcd02: cmp      r0, r6
+064dcd04: beq      #0x64dcc24
+064dcd06: str      r6, [r4, #0x24]
+064dcd08: b        #0x64dcb7a
+064dcd0a: cmp      r5, #1
+064dcd0c: bne      #0x64dcc2a
+064dcd0e: cmp.w    r6, #0x1800
+064dcd12: blt      #0x64dccf6
+064dcd14: movw     r0, #0x1802
+064dcd18: cmp      r6, r0
+064dcd1a: bgt      #0x64dccfe
+064dcd1c: ldr      r0, [r4, #0x28]
+064dcd1e: cmp      r0, r6
+064dcd20: beq      #0x64dccec
+064dcd22: str      r6, [r4, #0x28]
+064dcd24: b        #0x64dcb7a
+064dcd26: cmp      r5, #1
+064dcd28: bne      #0x64dccd4
+064dcd2a: vldr     s1, [r4, #0x2c]
+064dcd2e: vldr     s0, [sp, #8]
+064dcd32: vcmp.f32 s1, s0
+064dcd36: vmrs     apsr_nzcv, fpscr
+064dcd3a: beq      #0x64dccec
+064dcd3c: vstr     s0, [r4, #0x2c]
+064dcd40: b        #0x64dcb7a
+064dcd42: ldr.w    r1, [r4, #0x114]
+064dcd46: cmp      r5, r1
+064dcd48: bne      #0x64dcd92
+064dcd4a: movs     r0, #0
+064dcd4c: b        #0x64dcd8a
+064dcd4e: cmp.w    sb, #0
+064dcd52: beq      #0x64dcd5e
+064dcd54: add.w    r2, r8, r0, lsl #2
+064dcd58: vldr     s0, [r2]
+064dcd5c: b        #0x64dcd6a
+064dcd5e: ldr.w    r2, [r7, r0, lsl #2]
+064dcd62: vmov     s0, r2
+064dcd66: vcvt.f32.s32 s0, s0
+064dcd6a: vstr     s0, [sp, #8]
+064dcd6e: ldr.w    r2, [r4, #0x110]
+064dcd72: vldr     s1, [sp, #8]
+064dcd76: add.w    r2, r2, r0, lsl #2
+064dcd7a: vldr     s0, [r2]
+064dcd7e: vcmp.f32 s0, s1
+064dcd82: vmrs     apsr_nzcv, fpscr
+064dcd86: bne      #0x64dcd8e
+064dcd88: adds     r0, r0, #1
+064dcd8a: cmp      r0, r1
+064dcd8c: blo      #0x64dcd4e
+064dcd8e: cmp      r0, r1
+064dcd90: beq      #0x64dccec
+064dcd92: movs     r0, #0
+064dcd94: str.w    r0, [r4, #0x114]
+064dcd98: lsls     r1, r5, #2
+064dcd9a: movs     r2, #4
+064dcd9c: add.w    r0, r4, #0x110
+064dcda0: bl       #0x64dc6d4
+064dcda4: ldr.w    r0, [r4, #0x110]
+064dcda8: cbnz     r0, #0x64dcdb2
+064dcdaa: cbz      r5, #0x64dcdb2
+064dcdac: movw     r1, #0x1002
+064dcdb0: b        #0x64dce70
+064dcdb2: movs     r0, #0
+064dcdb4: b        #0x64dcdea
+064dcdb6: cmp.w    sb, #0
+064dcdba: beq      #0x64dcdc6
+064dcdbc: add.w    r1, r8, r0, lsl #2
+064dcdc0: vldr     s0, [r1]
+064dcdc4: b        #0x64dcdd2
+064dcdc6: ldr.w    r1, [r7, r0, lsl #2]
+064dcdca: vmov     s0, r1
+064dcdce: vcvt.f32.s32 s0, s0
+064dcdd2: vstr     s0, [sp, #8]
+064dcdd6: ldrd     r2, r1, [r4, #0x110]
+064dcdda: add.w    r2, r2, r1, lsl #2
+064dcdde: adds     r1, r1, #1
+064dcde0: str.w    r1, [r4, #0x114]
+064dcde4: adds     r0, r0, #1
+064dcde6: vstr     s0, [r2]
+064dcdea: cmp      r0, r5
+064dcdec: bge      #0x64dcdf2
+064dcdee: cmp      r0, #0x10
+064dcdf0: blt      #0x64dcdb6
+064dcdf2: cmp.w    fp, #0
+064dcdf6: bne      #0x64dcd08
+064dcdf8: add.w    r0, r4, #0x104
+064dcdfc: mov      fp, r0
+064dcdfe: bl       #0x64ddcd4
+064dce02: lsls     r0, r5, #0x1f
+064dce04: beq      #0x64dce08
+064dce06: subs     r5, r5, #1
+064dce08: cmp      r5, #0
+064dce0a: beq      #0x64dcd24
+064dce0c: movs     r0, #0
+064dce0e: mov      r6, sl
+064dce10: b        #0x64dce4e
+064dce12: cmp.w    sb, #0
+064dce16: beq      #0x64dce22
+064dce18: add.w    r1, r8, r0, lsl #2
+064dce1c: vldr     s0, [r1]
+064dce20: b        #0x64dce2e
+064dce22: ldr.w    r1, [r7, r0, lsl #2]
+064dce26: vmov     s0, r1
+064dce2a: vcvt.f32.s32 s0, s0
+064dce2e: add.w    r1, r6, r0, lsl #2
+064dce32: vstr     s0, [r1]
+064dce36: add.w    r1, r6, r0, lsl #2
+064dce3a: vldr     s0, [r1]
+064dce3e: vcmpe.f32 s0, #0
+064dce42: vmrs     apsr_nzcv, fpscr
+064dce46: bhs      #0x64dce4c
+064dce48: vstr     s16, [r1]
+064dce4c: adds     r0, r0, #1
+064dce4e: cmp      r0, r5
+064dce50: bge      #0x64dce56
+064dce52: cmp      r0, #0x10
+064dce54: blt      #0x64dce12
+064dce56: lsls     r1, r5, #2
+064dce58: mov      r0, fp
+064dce5a: movs     r2, #4
+064dce5c: bl       #0x64dc6d4
+064dce60: ldr.w    r0, [r4, #0x104]
+064dce64: cbnz     r0, #0x64dce6a
+064dce66: cmp      r5, #0
+064dce68: bne      #0x64dcdac
+064dce6a: movs     r0, #0
+064dce6c: subs     r2, r5, #1
+064dce6e: b        #0x64dceb4
+064dce70: ldr      r0, [sp, #0x74]
+064dce72: bl       #0x64fd1d0
+064dce76: b        #0x64dcb7a
+064dce78: add.w    r1, r6, r0, lsl #2
+064dce7c: vldr     s0, [r1]
+064dce80: vcmpe.f32 s0, #0
+064dce84: vmrs     apsr_nzcv, fpscr
+064dce88: bne      #0x64dcea0
+064dce8a: cmp      r0, r2
+064dce8c: bge      #0x64dcea0
+064dce8e: vldr     s1, [r1, #4]
+064dce92: vcmpe.f32 s1, #0
+064dce96: vmrs     apsr_nzcv, fpscr
+064dce9a: bne      #0x64dcea0
+064dce9c: adds     r0, r0, #1
+064dce9e: b        #0x64dceb2
+064dcea0: ldrd     r3, r1, [r4, #0x104]
+064dcea4: add.w    r3, r3, r1, lsl #2
+064dcea8: adds     r1, r1, #1
+064dceaa: str.w    r1, [r4, #0x108]
+064dceae: vstr     s0, [r3]
+064dceb2: adds     r0, r0, #1
+064dceb4: cmp      r0, r5
+064dceb6: bge      #0x64dcebc
+064dceb8: cmp      r0, #0x10
+064dceba: blt      #0x64dce78
+064dcebc: ldr      r0, [sp, #0x74]
+064dcebe: bl       #0x64dc8fe
+064dcec2: b        #0x64dcb7a
+064dcec4: cmp      r5, #1
+064dcec6: bne      #0x64dcfac
+064dcec8: vldr     s1, [r4, #0x34]
+064dcecc: vldr     s0, [sp, #8]
+064dced0: vcmp.f32 s1, s0
+064dced4: vmrs     apsr_nzcv, fpscr
+064dced8: beq      #0x64dce76
+064dceda: vstr     s0, [r4, #0x34]
+064dcede: b        #0x64dcebc
+064dcee0: cmp      r5, #1
+064dcee2: bne      #0x64dcfac
+064dcee4: cbz      r6, #0x64dceea
+064dcee6: movs     r0, #1
+064dcee8: b        #0x64dceec
+064dceea: movs     r0, #0
+064dceec: str.w    r0, [r4, #0xd0]
+064dcef0: b        #0x64dcb7a
+064dcef2: cmp      r5, #2
+064dcef4: bne      #0x64dcfac
+064dcef6: movs     r0, #0
+064dcef8: cmp.w    sb, #0
+064dcefc: beq      #0x64dcf08
+064dcefe: add.w    r1, r8, r0, lsl #2
+064dcf02: vldr     s0, [r1]
+064dcf06: b        #0x64dcf14
+064dcf08: ldr.w    r1, [r7, r0, lsl #2]
+064dcf0c: vmov     s0, r1
+064dcf10: vcvt.f32.s32 s0, s0
+064dcf14: add.w    r1, r4, r0, lsl #2
+064dcf18: adds     r0, r0, #1
+064dcf1a: vstr     s0, [sp, #8]
+064dcf1e: cmp      r0, r5
+064dcf20: vstr     s0, [r1, #0x7c]
+064dcf24: blt      #0x64dcef8
+064dcf26: b        #0x64dcb7a
+064dcf28: cmp      r5, #8
+064dcf2a: bne      #0x64dcfac
+064dcf2c: movs     r0, #0
+064dcf2e: cmp.w    sb, #0
+064dcf32: beq      #0x64dcf3e
+064dcf34: add.w    r1, r8, r0, lsl #2
+064dcf38: vldr     s0, [r1]
+064dcf3c: b        #0x64dcf4a
+064dcf3e: ldr.w    r1, [r7, r0, lsl #2]
+064dcf42: vmov     s0, r1
+064dcf46: vcvt.f32.s32 s0, s0
+064dcf4a: add.w    r1, r4, r0, lsl #2
+064dcf4e: cmp      r0, #4
+064dcf50: vmov     r3, s0
+064dcf54: vstr     s0, [sp, #8]
+064dcf58: vstr     s0, [r1, #0xa4]
+064dcf5c: bge      #0x64dcf7a
+064dcf5e: ldr      r6, [pc, #0x3f8]
+064dcf60: cmp      r3, r6
+064dcf62: ble      #0x64dcf6a
+064dcf64: vldr     s0, [pc, #0x3f4]
+064dcf68: b        #0x64dcf92
+064dcf6a: vmov     r3, s0
+064dcf6e: ldr      r6, [pc, #0x3f0]
+064dcf70: cmp      r3, r6
+064dcf72: bls      #0x64dcf92
+064dcf74: vldr     s0, [pc, #0x3ec]
+064dcf78: b        #0x64dcf92
+064dcf7a: cmp      r3, r2
+064dcf7c: ble      #0x64dcf84
+064dcf7e: vmov.f32 s0, #1.000000e+00
+064dcf82: b        #0x64dcf92
+064dcf84: vmov     r3, s0
+064dcf88: cmn.w    r3, #0x40800000
+064dcf8c: bls      #0x64dcf92
+064dcf8e: vmov.f32 s0, #-1.000000e+00
+064dcf92: adds     r0, r0, #1
+064dcf94: vstr     s0, [sp, #8]
+064dcf98: cmp      r0, r5
+064dcf9a: vstr     s0, [r1, #0x84]
+064dcf9e: blt      #0x64dcf2e
+064dcfa0: b        #0x64dcb7a
+064dcfa2: cmp      r5, #1
+064dcfa4: bne      #0x64dcfac
+064dcfa6: cbz      r6, #0x64dcfae
+064dcfa8: movs     r0, #1
+064dcfaa: b        #0x64dcfb0
+064dcfac: b        #0x64dd0a8
+064dcfae: movs     r0, #0
+064dcfb0: str.w    r0, [r4, #0xcc]
+064dcfb4: b        #0x64dcb7a
+064dcfb6: cmp      r5, #4
+064dcfb8: bne      #0x64dd0a8
+064dcfba: cmp.w    sb, #0
+064dcfbe: mov.w    r0, #0
+064dcfc2: beq      #0x64dcfde
+064dcfc4: mov      r1, sl
+064dcfc6: add.w    r3, r8, r0, lsl #2
+064dcfca: vldr     s0, [r3]
+064dcfce: add.w    r3, r1, r0, lsl #2
+064dcfd2: adds     r0, r0, #1
+064dcfd4: cmp      r0, r5
+064dcfd6: vstr     s0, [r3]
+064dcfda: blt      #0x64dcfc6
+064dcfdc: b        #0x64dcffa
+064dcfde: mov      r3, sl
+064dcfe0: ldr.w    r1, [r7, r0, lsl #2]
+064dcfe4: vmov     s0, r1
+064dcfe8: add.w    r1, r3, r0, lsl #2
+064dcfec: adds     r0, r0, #1
+064dcfee: vcvt.f32.s32 s0, s0
+064dcff2: cmp      r0, r5
+064dcff4: vstr     s0, [r1]
+064dcff8: blt      #0x64dcfe0
+064dcffa: vldr     s0, [sp, #8]
+064dcffe: vldr     s1, [r4, #0x4c]
+064dd002: vcmp.f32 s0, s1
+064dd006: vmrs     apsr_nzcv, fpscr
+064dd00a: bne      #0x64dd042
+064dd00c: vldr     s0, [sp, #0xc]
+064dd010: vldr     s1, [r4, #0x50]
+064dd014: vcmp.f32 s0, s1
+064dd018: vmrs     apsr_nzcv, fpscr
+064dd01c: bne      #0x64dd042
+064dd01e: vldr     s0, [sp, #0x10]
+064dd022: vldr     s1, [r4, #0x54]
+064dd026: vcmp.f32 s0, s1
+064dd02a: vmrs     apsr_nzcv, fpscr
+064dd02e: bne      #0x64dd042
+064dd030: vldr     s0, [sp, #0x14]
+064dd034: vldr     s1, [r4, #0x58]
+064dd038: vcmp.f32 s0, s1
+064dd03c: vmrs     apsr_nzcv, fpscr
+064dd040: beq      #0x64dcfa0
+064dd042: movs     r0, #0
+064dd044: mov      r6, sl
+064dd046: b        #0x64dd07a
+064dd048: add.w    r1, r6, r0, lsl #2
+064dd04c: vldr     s0, [r1]
+064dd050: add.w    r1, r4, r0, lsl #2
+064dd054: vmov     r3, s0
+064dd058: vstr     s0, [r1, #0x4c]
+064dd05c: cmp      r3, r2
+064dd05e: ble      #0x64dd066
+064dd060: vmov.f32 s0, #1.000000e+00
+064dd064: b        #0x64dd074
+064dd066: vcmpe.f32 s0, #0
+064dd06a: vmrs     apsr_nzcv, fpscr
+064dd06e: bhs      #0x64dd074
+064dd070: vmov.f32 s0, s16
+064dd074: adds     r0, r0, #1
+064dd076: vstr     s0, [r1, #0x3c]
+064dd07a: cmp      r0, r5
+064dd07c: blt      #0x64dd048
+064dd07e: b        #0x64dcb7a
+064dd080: cmp      r5, #4
+064dd082: bne      #0x64dd0a8
+064dd084: cmp.w    sb, #0
+064dd088: mov.w    r0, #0
+064dd08c: beq      #0x64dd0aa
+064dd08e: mov      r1, sl
+064dd090: add.w    r3, r8, r0, lsl #2
+064dd094: vldr     s0, [r3]
+064dd098: add.w    r3, r1, r0, lsl #2
+064dd09c: adds     r0, r0, #1
+064dd09e: cmp      r0, r5
+064dd0a0: vstr     s0, [r3]
+064dd0a4: blt      #0x64dd090
+064dd0a6: b        #0x64dd0c6
+064dd0a8: b        #0x64dd22e
+064dd0aa: mov      r3, sl
+064dd0ac: ldr.w    r1, [r7, r0, lsl #2]
+064dd0b0: vmov     s0, r1
+064dd0b4: add.w    r1, r3, r0, lsl #2
+064dd0b8: adds     r0, r0, #1
+064dd0ba: vcvt.f32.s32 s0, s0
+064dd0be: cmp      r0, r5
+064dd0c0: vstr     s0, [r1]
+064dd0c4: blt      #0x64dd0ac
+064dd0c6: vldr     s0, [sp, #8]
+064dd0ca: vldr     s1, [r4, #0x6c]
+064dd0ce: vcmp.f32 s0, s1
+064dd0d2: vmrs     apsr_nzcv, fpscr
+064dd0d6: bne      #0x64dd10e
+064dd0d8: vldr     s0, [sp, #0xc]
+064dd0dc: vldr     s1, [r4, #0x70]
+064dd0e0: vcmp.f32 s0, s1
+064dd0e4: vmrs     apsr_nzcv, fpscr
+064dd0e8: bne      #0x64dd10e
+064dd0ea: vldr     s0, [sp, #0x10]
+064dd0ee: vldr     s1, [r4, #0x74]
+064dd0f2: vcmp.f32 s0, s1
+064dd0f6: vmrs     apsr_nzcv, fpscr
+064dd0fa: bne      #0x64dd10e
+064dd0fc: vldr     s0, [sp, #0x14]
+064dd100: vldr     s1, [r4, #0x78]
+064dd104: vcmp.f32 s0, s1
+064dd108: vmrs     apsr_nzcv, fpscr
+064dd10c: beq      #0x64dd07e
+064dd10e: movs     r0, #0
+064dd110: mov      r6, sl
+064dd112: b        #0x64dd146
+064dd114: add.w    r1, r6, r0, lsl #2
+064dd118: vldr     s0, [r1]
+064dd11c: add.w    r1, r4, r0, lsl #2
+064dd120: vmov     r3, s0
+064dd124: vstr     s0, [r1, #0x6c]
+064dd128: cmp      r3, r2
+064dd12a: ble      #0x64dd132
+064dd12c: vmov.f32 s0, #1.000000e+00
+064dd130: b        #0x64dd140
+064dd132: vcmpe.f32 s0, #0
+064dd136: vmrs     apsr_nzcv, fpscr
+064dd13a: bhs      #0x64dd140
+064dd13c: vmov.f32 s0, s16
+064dd140: adds     r0, r0, #1
+064dd142: vstr     s0, [r1, #0x5c]
+064dd146: cmp      r0, r5
+064dd148: blt      #0x64dd114
+064dd14a: b        #0x64dcb7a
+064dd14c: cmp      r5, #1
+064dd14e: bne      #0x64dd22e
+064dd150: ldr.w    r0, [r4, #0xc4]
+064dd154: cbz      r0, #0x64dd166
+064dd156: cmp      r0, #1
+064dd158: bne      #0x64dd07e
+064dd15a: cmp      r6, #0
+064dd15c: bne      #0x64dd07e
+064dd15e: movs     r0, #0
+064dd160: str.w    r0, [r4, #0xc4]
+064dd164: b        #0x64dcb7a
+064dd166: cmp      r6, #0
+064dd168: beq      #0x64dd07e
+064dd16a: movs     r0, #1
+064dd16c: b        #0x64dd160
+064dd16e: cmp      r5, #1
+064dd170: bne      #0x64dd22e
+064dd172: cbz      r6, #0x64dd178
+064dd174: movs     r0, #1
+064dd176: b        #0x64dd17a
+064dd178: movs     r0, #0
+064dd17a: str.w    r0, [r4, #0xd4]
+064dd17e: movs     r2, #1
+064dd180: movs     r1, #8
+064dd182: b        #0x64dd2b4
+064dd184: cmp      r5, #1
+064dd186: bne      #0x64dd27a
+064dd188: cmp.w    r6, #0x1300
+064dd18c: blt      #0x64dd27a
+064dd18e: movw     r0, #0x1304
+064dd192: cmp      r6, r0
+064dd194: bgt      #0x64dd27a
+064dd196: ldr.w    r0, [r4, #0xd8]
+064dd19a: cmp      r0, r6
+064dd19c: beq      #0x64dd14a
+064dd19e: str.w    r6, [r4, #0xd8]
+064dd1a2: b        #0x64dcb7a
+064dd1a4: cmp      r5, #1
+064dd1a6: bne      #0x64dd27a
+064dd1a8: ldr.w    r0, [r4, #0xe8]
+064dd1ac: cbz      r0, #0x64dd1be
+064dd1ae: cmp      r0, #1
+064dd1b0: bne      #0x64dd14a
+064dd1b2: cmp      r6, #0
+064dd1b4: bne      #0x64dd14a
+064dd1b6: movs     r0, #0
+064dd1b8: str.w    r0, [r4, #0xe8]
+064dd1bc: b        #0x64dcb7a
+064dd1be: cmp      r6, #0
+064dd1c0: beq      #0x64dd14a
+064dd1c2: movs     r0, #1
+064dd1c4: b        #0x64dd1b8
+064dd1c6: cmp      r5, #1
+064dd1c8: bne      #0x64dd27a
+064dd1ca: ldr.w    r0, [r4, #0xec]
+064dd1ce: cbz      r0, #0x64dd1e0
+064dd1d0: cmp      r0, #1
+064dd1d2: bne      #0x64dd14a
+064dd1d4: cmp      r6, #0
+064dd1d6: bne      #0x64dd14a
+064dd1d8: movs     r0, #0
+064dd1da: str.w    r0, [r4, #0xec]
+064dd1de: b        #0x64dcb7a
+064dd1e0: cmp      r6, #0
+064dd1e2: beq      #0x64dd14a
+064dd1e4: movs     r0, #1
+064dd1e6: b        #0x64dd1da
+064dd1e8: cmp      r5, #1
+064dd1ea: bne      #0x64dd27a
+064dd1ec: ldr.w    r0, [r4, #0xf0]
+064dd1f0: cmp      r0, r6
+064dd1f2: beq      #0x64dd14a
+064dd1f4: str.w    r6, [r4, #0xf0]
+064dd1f8: b        #0x64dcb7a
+064dd1fa: cmp      r5, #1
+064dd1fc: bne      #0x64dd27a
+064dd1fe: cbz      r6, #0x64dd204
+064dd200: movs     r0, #1
+064dd202: b        #0x64dd206
+064dd204: movs     r0, #0
+064dd206: str.w    r0, [r4, #0x100]
+064dd20a: b        #0x64dcb7a
+064dd20c: cmp      r5, #1
+064dd20e: bne      #0x64dd27a
+064dd210: lsls     r0, r6, #0x1d
+064dd212: bne      #0x64dd27a
+064dd214: cmp      r6, #8
+064dd216: blt      #0x64dd27a
+064dd218: cmp.w    r6, #0x800
+064dd21c: bgt      #0x64dd27a
+064dd21e: str.w    r6, [r4, #0x1c0]
+064dd222: b        #0x64dcb7a
+064dd224: cmp      r5, #1
+064dd226: bne      #0x64dd27a
+064dd228: cbz      r6, #0x64dd230
+064dd22a: movs     r0, #1
+064dd22c: b        #0x64dd232
+064dd22e: b        #0x64dd27a
+064dd230: movs     r0, #0
+064dd232: str.w    r0, [r4, #0x1bc]
+064dd236: b        #0x64dcb7a
+064dd238: cmp      r5, #1
+064dd23a: bne      #0x64dd27a
+064dd23c: str.w    r6, [r4, #0x128]
+064dd240: b        #0x64dcb7a
+064dd242: ldr      r0, [sp, #0x74]
+064dd244: add.w    r1, r4, #0x12c
+064dd248: strd     sb, r5, [sp]
+064dd24c: mov      r3, r7
+064dd24e: mov      r2, ip
+064dd250: bl       #0x64fdda4
+064dd254: b        #0x64dcb7a
+064dd256: sub.w    r1, sl, #0xc100
+064dd25a: subs     r1, #0x20
+064dd25c: bne      #0x64dd270
+064dd25e: ldr      r0, [sp, #0x74]
+064dd260: movs     r2, #1
+064dd262: add.w    r6, r4, #0x1fc
+064dd266: mov      r1, fp
+064dd268: bl       #0x64fd3b8
+064dd26c: movs     r4, #6
+064dd26e: b        #0x64dd276
+064dd270: add.w    r6, r4, #0x1c4
+064dd274: movs     r4, #9
+064dd276: cmp      r5, r4
+064dd278: beq      #0x64dd280
+064dd27a: movw     r1, #0x1001
+064dd27e: b        #0x64dce70
+064dd280: cmp.w    sb, #0
+064dd284: beq      #0x64dd292
+064dd286: add      r1, sp, #0x48
+064dd288: mov      r2, r8
+064dd28a: mov      r0, r4
+064dd28c: bl       #0x64f1da8
+064dd290: add      r7, sp, #0x48
+064dd292: movs     r0, #0
+064dd294: rsb.w    r1, r4, #9
+064dd298: b        #0x64dd2ac
+064dd29a: b        #0x64dd370
+064dd29c: ldrh.w   r2, [r7, r0, lsl #2]
+064dd2a0: adds     r3, r1, r0
+064dd2a2: adds     r0, r0, #1
+064dd2a4: ubfx     r2, r2, #0, #0xb
+064dd2a8: str.w    r2, [r6, r3, lsl #2]
+064dd2ac: cmp      r0, r4
+064dd2ae: blt      #0x64dd29c
+064dd2b0: movs     r2, #1
+064dd2b2: mov      r1, fp
+064dd2b4: ldr      r0, [sp, #0x74]
+064dd2b6: bl       #0x64fd3b8
+064dd2ba: b        #0x64dcb7a
+064dd2bc: cmp      r5, #2
+064dd2be: bne      #0x64dd27a
+064dd2c0: sub.w    r1, sl, #0xc100
+064dd2c4: subs     r1, #0x21
+064dd2c6: bne      #0x64dd2d8
+064dd2c8: ldr      r0, [sp, #0x74]
+064dd2ca: movs     r2, #1
+064dd2cc: add.w    r4, r4, #0x1fc
+064dd2d0: mov      r1, fp
+064dd2d2: bl       #0x64fd3b8
+064dd2d6: b        #0x64dd2dc
+064dd2d8: add.w    r4, r4, #0x1c4
+064dd2dc: cmp.w    sb, #0
+064dd2e0: beq      #0x64dd2ee
+064dd2e2: movs     r0, #2
+064dd2e4: mov      r2, r8
+064dd2e6: mov      r1, sp
+064dd2e8: bl       #0x64f1da8
+064dd2ec: mov      r7, sp
+064dd2ee: movs     r0, #0
+064dd2f0: mvn      r2, #0x7f
+064dd2f4: ldr.w    r1, [r7, r0, lsl #2]
+064dd2f8: cmp      r1, #0x80
+064dd2fa: ble      #0x64dd300
+064dd2fc: movs     r1, #0x80
+064dd2fe: b        #0x64dd306
+064dd300: cmp      r1, r2
+064dd302: bge      #0x64dd306
+064dd304: mov      r1, r2
+064dd306: add.w    r3, r4, r0, lsl #2
+064dd30a: adds     r0, r0, #1
+064dd30c: cmp      r0, #2
+064dd30e: str      r1, [r3, #0x24]
+064dd310: blt      #0x64dd2f4
+064dd312: b        #0x64dd2b0
+064dd314: cmp      r5, #3
+064dd316: bne      #0x64dd27a
+064dd318: sub.w    r1, sl, #0xc100
+064dd31c: subs     r1, #0x22
+064dd31e: bne      #0x64dd330
+064dd320: ldr      r0, [sp, #0x74]
+064dd322: movs     r2, #1
+064dd324: add.w    r4, r4, #0x1fc
+064dd328: mov      r1, fp
+064dd32a: bl       #0x64fd3b8
+064dd32e: b        #0x64dd334
+064dd330: add.w    r4, r4, #0x1c4
+064dd334: cmp.w    sb, #0
+064dd338: beq      #0x64dd346
+064dd33a: movs     r0, #3
+064dd33c: mov      r2, r8
+064dd33e: add      r1, sp, #0x48
+064dd340: bl       #0x64f1da8
+064dd344: add      r7, sp, #0x48
+064dd346: movs     r0, #0
+064dd348: add.w    r2, r4, r0, lsl #2
+064dd34c: ldr.w    r1, [r7, r0, lsl #2]
+064dd350: adds     r0, r0, #1
+064dd352: usat     r1, #0xa, r1
+064dd356: b        #0x64dd368
+064dd358: movs     r0, r0
+064dd35a: cmn      r6, r7
+064dd35c: movs     r0, r0
+064dd35e: cmn      r6, r7
+064dd360: movs     r0, r0
+064dd362: stm      r2!, {r1, r2, r3, r4, r5, r6, r7}
+064dd364: movs     r0, r0
+064dd366: stm      r2!, {r1, r2, r3, r4, r5, r6, r7}
+064dd368: cmp      r0, #3
+064dd36a: str      r1, [r2, #0x2c]
+064dd36c: blt      #0x64dd348
+064dd36e: b        #0x64dcb7a
+064dd370: cmp      r5, #1
+064dd372: bne      #0x64dd27a
+064dd374: b        #0x64dcba0

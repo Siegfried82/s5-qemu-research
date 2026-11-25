@@ -1,0 +1,59 @@
+{
+  "source": "/Users/lixiuqi/Documents/ChatGPT/\u76f8\u673a/s5-v29-offline/unpacked-v29/29_zimage.bin",
+  "source_sha256": "72b6633d7f20009c5067af6faa5549d52a581c4a55915695e616d666220f7ef0",
+  "gzip_offset": "0x406f",
+  "gzip_bytes": 2424520,
+  "kernel_bytes": 4851232,
+  "kernel_sha256": "84f99f8b9d4200a30fe2968e8a3fa29aea6d00aa90c153929e399208d1d3048a",
+  "version": "Linux version 3.18.18 (img.yamashita.seiya@imglinux125) (gcc version 4.8.5 (Buildroot 2017.02) ) #1 SMP Thu Jun 12 14:54:26 JST 2025",
+  "symbol_count": 28401,
+  "kernel_virtual_base": "0xc0008000",
+  "kernel_physical_load": "0x80208000",
+  "virtual_to_physical_subtract": "0x3fe00000",
+  "ikconfig_marker_found": false,
+  "pl011_uart_symbol_found": false,
+  "ttyama_string_found": false,
+  "entry_points": {
+    "log_store": "0xc004af9c",
+    "log_buf_addr_get": "0xc004b9c4",
+    "log_buf_len_get": "0xc004b9d4",
+    "vprintk_emit": "0xc004be58",
+    "start_kernel": "0xc044d898",
+    "sp804_of_init": "0xc0452cd8",
+    "pvc_init_early": "0xc0453170",
+    "pvc_map_io": "0xc0453194",
+    "pvc_smp_prepare_cpus": "0xc04531a4",
+    "gic_init_bases": "0xc045ef8c",
+    "gic_of_init": "0xc045f2ac"
+  },
+  "printk": {
+    "log_buf_pointer_pa": "0x80693a10",
+    "log_buf_len_pa": "0x80693a24",
+    "initial_buffer_pa": "0x806ab754",
+    "initial_buffer_length": 16384,
+    "first_index_pa": "0x806aaa30",
+    "next_index_pa": "0x806aaa40",
+    "first_sequence_pa": "0x806aaa28",
+    "next_sequence_pa": "0x806aaa20"
+  },
+  "board_early_writes": [
+    {
+      "pa": "0x7f03807c",
+      "value": 3
+    },
+    {
+      "pa": "0x7f038078",
+      "value": 15
+    },
+    {
+      "pa": "0x80200000",
+      "value": "0x80217168",
+      "phase": "smp_prepare_cpus"
+    }
+  ],
+  "limitations": [
+    "Static extraction and symbol recovery do not establish a successful QEMU boot.",
+    "No embedded IKCONFIG was found; absence of UART symbols/strings does not establish runtime module availability.",
+    "The physical mapping is specific to this kernel and the original S5 DTB."
+  ]
+}

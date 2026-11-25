@@ -1,0 +1,86 @@
+
+80120000..80120150
+80120000 c0000cf1   cpsid    if
+80120004 0000a0e3   mov      r0, #0
+80120008 d50f07ee   mcr      p15, #0, r0, c7, c5, #6
+8012000c 150f07ee   mcr      p15, #0, r0, c7, c5, #0
+80120010 100f11ee   mrc      p15, #0, r0, c1, c0, #0
+80120014 010a80e3   orr      r0, r0, #0x1000
+80120018 100f01ee   mcr      p15, #0, r0, c1, c0, #0
+8012001c 320000eb   bl       #0x801200ec
+80120020 100f11ee   mrc      p15, #0, r0, c1, c0, #0
+80120024 0d00c0e3   bic      r0, r0, #0xd
+80120028 100f01ee   mcr      p15, #0, r0, c1, c0, #0
+8012002c 0000a0e3   mov      r0, #0
+80120030 170f08ee   mcr      p15, #0, r0, c8, c7, #0
+80120034 b00f10ee   mrc      p15, #0, r0, c0, c0, #5
+80120038 10119fe5   ldr      r1, [pc, #0x110]
+8012003c 010000e0   and      r0, r0, r1
+80120040 0310a0e3   mov      r1, #3
+80120044 000051e1   cmp      r1, r0
+80120048 0600001a   bne      #0x80120068
+8012004c 00219fe5   ldr      r2, [pc, #0x100]
+80120050 0330a0e3   mov      r3, #3
+80120054 003082e5   str      r3, [r2]
+80120058 0000a0e3   mov      r0, #0
+8012005c f4209fe5   ldr      r2, [pc, #0xf4]
+80120060 f4309fe5   ldr      r3, [pc, #0xf4]
+80120064 03f0a0e1   mov      pc, r3
+80120068 e4209fe5   ldr      r2, [pc, #0xe4]
+8012006c 003092e5   ldr      r3, [r2]
+80120070 030053e3   cmp      r3, #3
+80120074 fbffff1a   bne      #0x80120068
+80120078 e0109fe5   ldr      r1, [pc, #0xe0]
+8012007c 0229a0e3   mov      r2, #0x8000
+80120080 b00f10ee   mrc      p15, #0, r0, c0, c0, #5
+80120084 0330a0e3   mov      r3, #3
+80120088 030000e0   and      r0, r0, r3
+8012008c 920002e0   mul      r2, r2, r0
+80120090 021081e0   add      r1, r1, r2
+80120094 0130a0e3   mov      r3, #1
+80120098 003081e5   str      r3, [r1]
+8012009c c0109fe5   ldr      r1, [pc, #0xc0]
+801200a0 021081e0   add      r1, r1, r2
+801200a4 f030a0e3   mov      r3, #0xf0
+801200a8 003081e5   str      r3, [r1]
+801200ac 4ff07ff5   dsb      sy
+801200b0 03f020e3   wfi      
+801200b4 ac109fe5   ldr      r1, [pc, #0xac]
+801200b8 b00f10ee   mrc      p15, #0, r0, c0, c0, #5
+801200bc 0320a0e3   mov      r2, #3
+801200c0 020000e0   and      r0, r0, r2
+801200c4 0229a0e3   mov      r2, #0x8000
+801200c8 920002e0   mul      r2, r2, r0
+801200cc 021081e0   add      r1, r1, r2
+801200d0 ff20a0e3   mov      r2, #0xff
+801200d4 0120c1e5   strb     r2, [r1, #1]
+801200d8 74209fe5   ldr      r2, [pc, #0x74]
+801200dc 003092e5   ldr      r3, [r2]
+801200e0 030053e3   cmp      r3, #3
+801200e4 f0ffff0a   beq      #0x801200ac
+801200e8 13ff2fe1   bx       r3
+801200ec 5ff07ff5   dmb      sy
+801200f0 00a0a0e3   mov      sl, #0
+801200f4 10af40ee   mcr      p15, #2, sl, c0, c0, #0
+801200f8 6ff07ff5   isb      sy
+801200fc 101f30ee   mrc      p15, #1, r1, c0, c0, #0
+80120100 072001e2   and      r2, r1, #7
+80120104 042082e2   add      r2, r2, #4
+80120108 5c409fe5   ldr      r4, [pc, #0x5c]
+8012010c a14114e0   ands     r4, r4, r1, lsr #3
+80120110 145f6fe1   clz      r5, r4
+80120114 54709fe5   ldr      r7, [pc, #0x54]
+80120118 a17617e0   ands     r7, r7, r1, lsr #13
+8012011c 0490a0e1   mov      sb, r4
+80120120 19b58ae1   orr      fp, sl, sb, lsl r5
+80120124 17b28be1   orr      fp, fp, r7, lsl r2
+80120128 56bf07ee   mcr      p15, #0, fp, c7, c6, #2
+8012012c 019059e2   subs     sb, sb, #1
+80120130 faffffaa   bge      #0x80120120
+80120134 017057e2   subs     r7, r7, #1
+80120138 f7ffffaa   bge      #0x8012011c
+8012013c 00a0a0e3   mov      sl, #0
+80120140 10af40ee   mcr      p15, #2, sl, c0, c0, #0
+80120144 4ff07ff5   dsb      sy
+80120148 6ff07ff5   isb      sy
+8012014c 0ef0a0e1   mov      pc, lr
