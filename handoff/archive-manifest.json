@@ -1,0 +1,60 @@
+{
+  "created": "2026-11-25",
+  "archive_format": "concatenated parts form one tar.gz",
+  "part_size_limit": 536870912,
+  "entries": 109033,
+  "regular_file_bytes": 24903561756,
+  "compressed_bytes": 2631066264,
+  "sources": [
+    {
+      "source": "/Users/lixiuqi/Documents/ChatGPT/相机/s5-emulator",
+      "archive_prefix": "s5-emulator"
+    },
+    {
+      "source": "/Users/lixiuqi/Documents/ChatGPT/相机/s5-v29-offline",
+      "archive_prefix": "s5-v29-offline"
+    },
+    {
+      "source": "/Users/lixiuqi/Documents/ChatGPT/相机/s5-video-unlocker",
+      "archive_prefix": "s5-video-unlocker"
+    },
+    {
+      "source": "/Users/lixiuqi/Documents/ChatGPT/相机/s5-sd-loader-prototype",
+      "archive_prefix": "s5-sd-loader-prototype"
+    },
+    {
+      "source": "/Users/lixiuqi/相机功能验证",
+      "archive_prefix": "external/相机功能验证"
+    }
+  ],
+  "parts": [
+    {
+      "name": "s5-full-handoff.tar.gz.part-000",
+      "bytes": 536870912,
+      "sha256": "a51fd2ec22ca7d76d80ce592d7f34f7925d09e6d7025cc2997ff8d8851eeb1a5"
+    },
+    {
+      "name": "s5-full-handoff.tar.gz.part-001",
+      "bytes": 536870912,
+      "sha256": "b327c456c79ed06659e6f3d6e5a06e038e5833cc5cdeb0f61e2e93b4a7037db8"
+    },
+    {
+      "name": "s5-full-handoff.tar.gz.part-002",
+      "bytes": 536870912,
+      "sha256": "6b41ebf14e373f7e6362461116a466eaf5a4cb133fd687cb1bb1be1b232dd28b"
+    },
+    {
+      "name": "s5-full-handoff.tar.gz.part-003",
+      "bytes": 536870912,
+      "sha256": "23c9fce4faa2b46b8491eb31c22a0ef601e775c2d23dde86eaf1d154a02a5759"
+    },
+    {
+      "name": "s5-full-handoff.tar.gz.part-004",
+      "bytes": 483582616,
+      "sha256": "713df1299d524ce5a1bcaf82af6c42b5051a04624266938189b64f7bcda2fb98"
+    }
+  ],
+  "excluded_special_runtime_nodes": [],
+  "file_manifest_sha256": "2d96ae9f8817fee4d2f9cea4b4883b915f4a7aa93daf89409d0f83d6b32a2be8",
+  "original_absolute_symlinks_preserved": true
+}
