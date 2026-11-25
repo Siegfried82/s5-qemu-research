@@ -1,0 +1,158 @@
+--- a/display/replay_graphics_trace.py
++++ b/display/replay_graphics_trace.py
+@@ -1,55 +1,112 @@
+ #!/usr/bin/env python3
+ """Replay captured host-renderer semantic events, without QEMU or new UI data."""
+ import argparse
++import hashlib
+ import json
+-from pathlib import Path
++from pathlib import Path, PurePosixPath
+ from openvg_backend import OpenVGBackend
+ 
+ 
+-def replay(source,output):
+-    rows=[json.loads(line) for line in source.read_text().splitlines()]
+-    b=OpenVGBackend(output);handles={};pending=None;main=None;observations=[]
+-    def h(v):return handles[int(v,0) if isinstance(v,str)else v]
++def _resolve_image_path(trace_dir, raw_path):
++    if not isinstance(raw_path, str) or not raw_path or "\x00" in raw_path:
++        raise ValueError(f"Invalid image source_path: {raw_path!r}")
++    if ".." in PurePosixPath(raw_path.replace("\\", "/")).parts:
++        raise ValueError(f"Path traversal rejected in source_path: {raw_path!r}")
++    root = trace_dir.resolve()
++    p = Path(raw_path)
++    if p.is_absolute():
++        candidate = p if p.resolve(strict=False).is_relative_to(root) else (trace_dir / p.name)
++    else:
++        candidate = trace_dir / p
++    resolved = candidate.resolve(strict=False)
++    if not resolved.is_relative_to(root) or not resolved.is_file():
++        raise FileNotFoundError(f"Missing or out-of-tree image dependency: {resolved}")
++    return resolved
++
++
++def replay(source, output):
++    source = Path(source)
++    output = Path(output)
++    rows = []
++    for lineno, line in enumerate(source.read_text(encoding="utf-8").splitlines(), start=1):
++        if not line.strip():
++            raise ValueError(f"{source}:{lineno}: empty JSONL line")
++        try:
++            obj = json.loads(line)
++        except json.JSONDecodeError as exc:
++            raise ValueError(f"{source}:{lineno}:{exc.colno}: corrupt/truncated JSON: {exc.msg}") from exc
++        if not isinstance(obj, dict) or "name" not in obj or "index" not in obj:
++            raise ValueError(f"{source}:{lineno}: malformed event object")
++        rows.append(obj)
++    b = OpenVGBackend(output)
++    handles = {}
++    pending = None
++    main = None
++    observations = []
++    unsupported_stop = None
++    def h(v): return handles[int(v, 0) if isinstance(v, str) else v]
+     try:
+         for row in rows:
+-            name=row['name'];index=row['index'];drew=False
+-            if name=='guest_api_entry':pending=row
+-            elif name=='guest_api_return':
+-                api=row['api'];args=pending['r0_r3'] if pending else []
+-                if api=='vgCreatePaint':handles[row['result']]=b.create_paint()
+-                elif api=='vgSetColor':b.paints[h(args[0])][0x1a01]=[(args[1]>>shift&255)/255 for shift in (24,16,8,0)]
+-                elif api=='vgSetPaint':b.set_paint(h(args[0])if args[0]else 0,args[1])
+-            elif name=='create_surface' and row['origin']!='original VGImage client buffer':
+-                value=b.create_surface(row['width'],row['height'],row['origin']);handles[int(row['handle'],0)]=value
+-                if main is None:main=value
+-            elif name=='captured_image':
+-                handles[int(row['handle'],0)]=b.create_image(Path(row['source_path']).read_bytes(),int(row['format'],0),row['width'],row['height'],row['stride'])
+-            elif name=='bind_client_image_surface':handles[int(row['surface'],0)]=b.create_image_surface(h(row['image']))
+-            elif name=='destroy_surface':b.destroy_surface(h(row['surface']))
+-            elif name=='destroy_image':b.destroy_image(h(row['image']))
+-            elif name=='make_current':b.make_current(h(row['surface']))
+-            elif name in ('set_state','vendor_resource_configuration','vendor_yuv_coefficients'):
+-                b.set_state(int(row['parameter'],0),row['values'])
+-            elif name=='set_matrix':b.matrices[int(row['mode'],0)]=row['matrix']
+-            elif name=='paint_parameter':b.set_paint_parameter(h(row['handle']),int(row['parameter'],0),row['values'])
+-            elif name=='destroy_paint':b.destroy_paint(h(row['handle']))
+-            elif name=='clear':b.clear(*row['rect']);drew=True
+-            elif name=='draw_captured_path':
+-                b.draw_path_data(row['segments'],row['coordinates'],row['modes'],row['datatype'],row['scale'],row['bias']);drew=True
+-            elif name=='draw_captured_image':b.draw_image(h(row['handle']),*row['source_rect']);drew=True
+-            elif name=='software_swap':b.swap(h(row['surface']))
++            name = row["name"]; index = row["index"]; drew = False
++            if unsupported_stop is not None:
++                raise ValueError(f"Unexpected event {name!r} at index {index} after unsupported_or_invalid_call")
++            if name == "guest_api_entry": pending = row
++            elif name == "guest_api_return":
++                api = row["api"]; args = pending["r0_r3"] if pending else []
++                pending = None
++                if api == "vgCreatePaint": handles[row["result"]] = b.create_paint()
++                elif api == "vgSetColor": b.paints[h(args[0])][0x1a01] = [(args[1]>>shift&255)/255 for shift in (24,16,8,0)]
++                elif api == "vgSetPaint": b.set_paint(h(args[0]) if args[0] else 0, args[1])
++            elif name == "unsupported_or_invalid_call":
++                pending = None
++                unsupported_stop = row
++            elif name == "create_surface" and row["origin"] != "original VGImage client buffer":
++                value = b.create_surface(row["width"], row["height"], row["origin"]); handles[int(row["handle"], 0)] = value
++                if main is None: main = value
++            elif name == "captured_image":
++                img_path = _resolve_image_path(source.parent, row["source_path"])
++                raw = img_path.read_bytes()
++                if row.get("sha256") and hashlib.sha256(raw).hexdigest() != row["sha256"]:
++                    raise ValueError(f"SHA-256 mismatch for {img_path.name} at index {index}")
++                handles[int(row["handle"], 0)] = b.create_image(raw, int(row["format"], 0), row["width"], row["height"], row["stride"])
++            elif name == "bind_client_image_surface": handles[int(row["surface"], 0)] = b.create_image_surface(h(row["image"]))
++            elif name == "destroy_surface": b.destroy_surface(h(row["surface"]))
++            elif name == "destroy_image": b.destroy_image(h(row["image"]))
++            elif name == "make_current": b.make_current(h(row["surface"]))
++            elif name in ("set_state", "vendor_resource_configuration", "vendor_yuv_configuration", "vendor_yuv_coefficients"):
++                b.set_state(int(row["parameter"], 0), row["values"])
++            elif name == "set_matrix": b.matrices[int(row["mode"], 0)] = row["matrix"]
++            elif name == "paint_parameter": b.set_paint_parameter(h(row["handle"]), int(row["parameter"], 0), row["values"])
++            elif name == "destroy_paint": b.destroy_paint(h(row["handle"]))
++            elif name == "clear": b.clear(*row["rect"]); drew = True
++            elif name == "draw_captured_path":
++                b.draw_path_data(row["segments"], row["coordinates"], row["modes"], row["datatype"], row["scale"], row["bias"]); drew = True
++            elif name == "draw_captured_image": b.draw_image(h(row["handle"]), *row["source_rect"]); drew = True
++            elif name == "software_swap": b.swap(h(row["surface"]))
++            elif name in ("create_surface", "transform_path", "original_context_resource_requests",
++                          "observed_native_window", "original_linear_buffer_mode",
++                          "original_standard_image_layout", "original_frame_mode",
++                          "original_frame_status_read_clear"):
++                pass
++            else:
++                raise ValueError(f"Unknown trace event {name!r} at index {index}")
+             if drew and main is not None:
+-                image=b.surfaces[main].image()
+-                region=image.crop((160,250,800,390))
+-                observations.append(dict(index=index,operation=name,surface=b.surface,
+-                    center_alpha_nonzero=sum(p[3]>0 for p in region.getdata()),
+-                    center_bright=sum(p[0]>100 and p[3]>100 for p in region.getdata())))
+-        (output/'replay-observations.json').write_text(json.dumps(observations,indent=2)+'\n')
+-        return observations
+-    finally:b.close()
++                image = b.surfaces[main].image()
++                region = image.crop((160, 250, 800, 390))
++                observations.append(dict(index=index, operation=name, surface=b.surface,
++                    center_alpha_nonzero=sum(p[3] > 0 for p in region.getdata()),
++                    center_bright=sum(p[0] > 100 and p[3] > 100 for p in region.getdata())))
++        summary = {
++            "completed_prefix_only": unsupported_stop is not None,
++            "unsupported_stop": unsupported_stop,
++            "observations": observations,
++        }
++        (output / "replay-observations.json").write_text(json.dumps(summary, indent=2) + "\n")
++        return summary
++    finally: b.close()
+ 
+ 
+-if __name__=='__main__':
+-    parser=argparse.ArgumentParser();parser.add_argument('trace',type=Path);parser.add_argument('output',type=Path)
+-    args=parser.parse_args();observed=replay(args.trace,args.output)
+-    print(json.dumps(observed,indent=2))
++if __name__ == "__main__":
++    parser = argparse.ArgumentParser(); parser.add_argument("trace", type=Path); parser.add_argument("output", type=Path)
++    args = parser.parse_args(); observed = replay(args.trace, args.output)
++    print(json.dumps(observed, indent=2))

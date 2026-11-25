@@ -41,12 +41,19 @@ CENTER_TRANSITION = 0x066be02a
 INPUT_TASK_ID = 285
 MESSAGE_CODE = 0x0011f002
 
-# Index, bank, mask. Names/indexes are from original06f1003c, not invented keys.
+# Index, bank, mask. Names/indexes are from original 0x06f1003c, not invented keys.
 KEYS = {
     "KEY_UP": (3, 0, 4), "KEY_DOWN": (4, 0, 8),
     "KEY_LEFT": (5, 0, 1), "KEY_RIGHT": (6, 0, 2),
     "KEY_CENTER": (7, 0, 0x10), "KEY_PLAY": (8, 0, 0x20),
-    "KEY_Q_MENU": (15, 0, 0x2000), "KEY_SET": (58, 1, 0x200000),
+    "KEY_DISPLAY": (9, 0, 0x40), "KEY_DELETE": (10, 0, 0x80),
+    "KEY_Q_MENU": (15, 0, 0x2000),
+    "KEY_ISO": (26, 0, 0x800000), "KEY_WB": (27, 0, 0x1000000),
+    "KEY_EXPOSE": (28, 0, 0x2000000),
+    "CONTROL_DIAL_LEFT": (30, 0, 0x4000000), "CONTROL_DIAL_RIGHT": (31, 0, 0x8000000),
+    "FRONT_DIAL_LEFT": (35, 1, 0x1), "FRONT_DIAL_RIGHT": (36, 1, 0x2),
+    "REAR_DIAL_LEFT": (37, 1, 0x4), "REAR_DIAL_RIGHT": (38, 1, 0x8),
+    "KEY_SET": (58, 1, 0x200000),
 }
 GUARDS = (0x08ab4e80, 0x08ab4e7c, 0x08ab4e68)
 KEY_ROUTE = {
@@ -73,6 +80,20 @@ KEY_ROUTE = {
     0x0682e248: "original_timezone_prompt_key_handler",
     0x068b728e: "original_timezone_setup_entry",
     0x068b7b3c: "original_timezone_scene_setup",
+    0x06646e92: "center_live_gate_817214",
+    0x06646e9a: "center_live_gate_6a325e",
+    0x06646ea8: "center_live_gate_byte29",
+    0x06646eb6: "center_live_gate_6b9388",
+    0x06646ec4: "center_live_gate_6aef3e",
+    0x06646ecc: "center_live_gate_69be10",
+    0x06646f02: "center_live_gate_67a442",
+    0x06646f30: "center_live_branch_69465a",
+    0x06646f7e: "center_live_gate_7fe97e",
+    0x06646fea: "center_live_gate_6a74ba",
+    0x06647026: "center_live_gate_6b27de",
+    0x0664702c: "center_live_gate_6b27ce",
+    0x0664702e: "center_live_early_return_zero",
+    0x0664704c: "center_live_menu_open_entry",
 }
 KEY_ROUTE_PAYLOAD = (0x066431de, 0x0663eb5a, 0x0663fe34)
 KEY_ROUTE_CENTER_TABLE = frozenset(pc for pc in KEY_ROUTE if 0x0663fed0 <= pc <= 0x0663ff94)
@@ -165,6 +186,7 @@ class KeyProbe:
                          "wait_for_mode35_ack": wait_for_mode35_ack,
                          "wait_for_transition_complete": wait_for_transition_complete,
                          "wait_for_input_route_ready": wait_for_input_route_ready,
+                         "dispatch_guard_wait_steps": 0,
                          "queue_accepted": False, "consumed": False, "events": []}
         self.report["requests"].append(self._request)
         self._inside_dispatch = False
@@ -183,11 +205,13 @@ class KeyProbe:
             waiting_ack = self._request.get("status") == "waiting_for_mode35_ack"
             waiting_transition = self._request.get("status") == "waiting_for_transition_complete"
             waiting_route = self._request.get("status") == "waiting_for_input_route_ready"
+            waiting_dispatch_guard = self._request.get("status") == "waiting_for_clean_dispatch_guard"
             self._request["status"] = ("timeout_call_incomplete" if self._saved else
                                        "timeout_waiting_for_ui_active" if waiting_ui else
                                        "timeout_waiting_for_mode35_ack" if waiting_ack else
                                        "timeout_waiting_for_transition_complete" if waiting_transition else
                                        "timeout_waiting_for_input_route_ready" if waiting_route else
+                                       "timeout_waiting_for_clean_dispatch_guard" if waiting_dispatch_guard else
                                        "timeout_waiting_for_consumer")
             self._request["unsafe_to_force_context_restore"] = bool(self._saved)
             raise KeyProbeError(self._request["status"])
@@ -396,6 +420,22 @@ class KeyProbe:
                     waiting = waiting or "waiting_for_input_route_ready"
                 else:
                     gate["passed"] = True
+            if not waiting:
+                cpsr = regs["cpsr"]
+                if (cpsr & 0x3f) == 0x33 and not (cpsr & 0x0600fc00):
+                    checks = {hex(a): self._u32(a) for a in GUARDS + (0x209c0 + cpu*4,)}
+                    irq_disabled = bool(cpsr & 0x80)
+                    if any(checks.values()) or irq_disabled:
+                        # Transient SMP IRQ/critical-section window: step the original
+                        # instruction without modifying guest state or extending the deadline.
+                        self._request["dispatch_guard_wait_steps"] = (
+                            self._request.get("dispatch_guard_wait_steps", 0) + 1
+                        )
+                        self._request["dispatch_guard_last_observed"] = {
+                            "cpu": cpu, "cpsr": hex(cpsr),
+                            "irq_disabled": irq_disabled, "globals": checks,
+                        }
+                        waiting = "waiting_for_clean_dispatch_guard"
             if waiting:
                 self._request["status"] = waiting
                 self._step_original(pc)
@@ -480,6 +520,15 @@ class KeyProbe:
         else:
             self._step_original(pc)
         return True
+
+    def recover_pre_call_error(self):
+        """Safely clear a failed request ONLY when no inferior call started."""
+        if self._saved is not None:
+            raise KeyProbeError("Cannot recover: inferior call in progress; unsafe to restore context")
+        self._clear()
+        self._request = None
+        self._inside_dispatch = False
+        self._deadline = None
 
     def close(self):
         """Remove owned breakpoints; never force-restore an unfinished call."""

@@ -106,11 +106,16 @@ struct S5RTOSMachineState {
     DeviceState *rtc_peer;
     DeviceState *gic;
     S5GPIOInput startup_inputs[2];
+    S5GPIOInput shutter_s2_input;
     S5ADC adc[3];
+    uint32_t adc0_ch5_sample;
+    uint32_t adc1_ch4_sample;
     uint32_t adc11_sample;
+    uint32_t adc2_ch0_sample;
     S5I2C i2c[5];
     bool i2c_generic_error;
     bool inactive_inputs;
+    bool shutter_s2_input_high;
     uint32_t spi_cs_value;
     uint32_t module_regs[0x1000 / 4];
     uint64_t module_requests;
@@ -635,8 +640,17 @@ static void s5_rtos_adc_write(void *opaque, hwaddr offset, uint64_t value,
             adc->status |= 1;
             for (channel = 0; channel < adc->channels; channel++) {
                 if (adc->mask & (1U << channel)) {
-                    adc->results[channel] = adc->index == 0 && channel == 11 ?
-                        adc->machine->adc11_sample : 0;
+                    uint16_t sample = 0;
+                    if (adc->index == 0 && channel == 5) {
+                        sample = adc->machine->adc0_ch5_sample;
+                    } else if (adc->index == 0 && channel == 11) {
+                        sample = adc->machine->adc11_sample;
+                    } else if (adc->index == 1 && channel == 4) {
+                        sample = adc->machine->adc1_ch4_sample;
+                    } else if (adc->index == 2 && channel == 0) {
+                        sample = adc->machine->adc2_ch0_sample;
+                    }
+                    adc->results[channel] = sample;
                 }
             }
             /* Synchronous research conversion: only documented busy bits
@@ -646,9 +660,10 @@ static void s5_rtos_adc_write(void *opaque, hwaddr offset, uint64_t value,
             adc->status &= ~1U;
             if (adc->conversions <= 64) {
                 qemu_log_mask(LOG_UNIMP,
-                    "S5_ADC_CONVERSION bank=%u mask=0x%08x count=%u raw11=%u"
-                    " immediate-completion\n", adc->index, adc->mask,
-                    adc->count, adc->machine->adc11_sample);
+                    "S5_ADC_CONVERSION bank=%u mask=0x%08x count=%u raw0_5=%u"
+                    " raw11=%u raw2_0=%u immediate-completion\n", adc->index,
+                    adc->mask, adc->count, adc->machine->adc0_ch5_sample,
+                    adc->machine->adc11_sample, adc->machine->adc2_ch0_sample);
             }
         }
         break;
@@ -692,6 +707,95 @@ static void s5_rtos_set_adc11_sample(Object *obj, Visitor *v, const char *name,
     S5_RTOS_MACHINE(obj)->adc11_sample = value;
 }
 
+/* Explicit external raw sample for ADC bank 2 channel 0 (0x7f032014).
+ * Original 0x06544990 reads bank 2 ch 0..3 into [0x08e21130 + 0x26] and
+ * 0x06544a36 passes [0x08e21130 + 0x26] to directional resistor-ladder
+ * decoder 0x06545554, where 0..0x38 decodes to raw 0x20 -> KEY_LEFT (0x1).
+ * Default remains 0; no calibrated voltage or physical button claim is made.
+ */
+static void s5_rtos_get_adc2_ch0_sample(Object *obj, Visitor *v,
+                                        const char *name, void *opaque,
+                                        Error **errp)
+{
+    uint32_t value = S5_RTOS_MACHINE(obj)->adc2_ch0_sample;
+    visit_type_uint32(v, name, &value, errp);
+}
+
+static void s5_rtos_set_adc2_ch0_sample(Object *obj, Visitor *v,
+                                        const char *name, void *opaque,
+                                        Error **errp)
+{
+    uint32_t value;
+    if (!visit_type_uint32(v, name, &value, errp)) {
+        return;
+    }
+    if (value > 0xffff) {
+        error_setg(errp, "adc2-ch0-sample must fit the original 16-bit raw result");
+        return;
+    }
+    S5_RTOS_MACHINE(obj)->adc2_ch0_sample = value;
+}
+
+/* Explicit external raw sample for ADC bank 0 channel 5 (0x7f030028).
+ * Original 0x06544988 reads bank 0 ch 0..11 into [0x08e21130 + 0x00..0x16] and
+ * 0x06544ad4 passes [0x08e2113a] (ch 5) to joystick resistor-ladder decoder
+ * 0x065454d8, where 0..0x38 decodes to raw 0x2 -> logical bank2 0x8 -> repeat
+ * UI key 0x00010006 (DOWN). Highest band is 0x0322 +/- 0x38 (746..858); 0x3ff
+ * decodes idle 0x0. Default remains 0; no calibrated voltage claim is made.
+ */
+static void s5_rtos_get_adc0_ch5_sample(Object *obj, Visitor *v,
+                                        const char *name, void *opaque,
+                                        Error **errp)
+{
+    uint32_t value = S5_RTOS_MACHINE(obj)->adc0_ch5_sample;
+    visit_type_uint32(v, name, &value, errp);
+}
+
+static void s5_rtos_set_adc0_ch5_sample(Object *obj, Visitor *v,
+                                        const char *name, void *opaque,
+                                        Error **errp)
+{
+    uint32_t value;
+    if (!visit_type_uint32(v, name, &value, errp)) {
+        return;
+    }
+    if (value > 0xffff) {
+        error_setg(errp, "adc0-ch5-sample must fit the original 16-bit raw result");
+        return;
+    }
+    S5_RTOS_MACHINE(obj)->adc0_ch5_sample = value;
+}
+
+/* Explicit external raw sample for ADC bank 1 channel 4 (0x7f031024).
+ * Original 0x06544a02 reads [0x08e21150] (bank 1 ch 4) into remote-shutter
+ * detector 0x06547882 -> 0x06547a0e. Sample 0 falls in 0..0x3a -> remote mode
+ * 3 -> 0x06547966 returns 0x24 -> 0x0654799a asserts KEY_SHUTTER_HALF|FULL
+ * (0x300). Band 0x3c5..0x439 (e.g. 0x3ff) decodes mode 0 (unplugged/idle).
+ * Default remains 0; no calibrated voltage claim is made.
+ */
+static void s5_rtos_get_adc1_ch4_sample(Object *obj, Visitor *v,
+                                        const char *name, void *opaque,
+                                        Error **errp)
+{
+    uint32_t value = S5_RTOS_MACHINE(obj)->adc1_ch4_sample;
+    visit_type_uint32(v, name, &value, errp);
+}
+
+static void s5_rtos_set_adc1_ch4_sample(Object *obj, Visitor *v,
+                                        const char *name, void *opaque,
+                                        Error **errp)
+{
+    uint32_t value;
+    if (!visit_type_uint32(v, name, &value, errp)) {
+        return;
+    }
+    if (value > 0xffff) {
+        error_setg(errp, "adc1-ch4-sample must fit the original 16-bit raw result");
+        return;
+    }
+    S5_RTOS_MACHINE(obj)->adc1_ch4_sample = value;
+}
+
 static char *s5_rtos_adc_state(Object *obj, Error **errp)
 {
     S5RTOSMachineState *s = S5_RTOS_MACHINE(obj);
@@ -699,7 +803,9 @@ static char *s5_rtos_adc_state(Object *obj, Error **errp)
     unsigned i, channel;
     g_string_append_printf(json, "{\"profile\":\"synchronous-raw-input\","
         "\"voltage_scale_known\":false,\"conversion_latency_verified\":false,"
-        "\"adc11_sample\":%u,\"banks\":[", s->adc11_sample);
+        "\"adc0_ch5_sample\":%u,\"adc1_ch4_sample\":%u,\"adc11_sample\":%u,"
+        "\"adc2_ch0_sample\":%u,\"banks\":[",
+        s->adc0_ch5_sample, s->adc1_ch4_sample, s->adc11_sample, s->adc2_ch0_sample);
     for (i = 0; i < ARRAY_SIZE(s->adc); i++) {
         S5ADC *adc = &s->adc[i];
         g_string_append_printf(json, "%s{\"base\":\"0x%08" HWADDR_PRIx
@@ -927,6 +1033,30 @@ static const MemoryRegionOps s5_rtos_input_ops = {
     .valid.min_access_size = 1,
     .valid.max_access_size = 4,
 };
+
+static uint64_t s5_rtos_shutter_s2_read(void *opaque, hwaddr offset, unsigned size)
+{
+    S5GPIOInput *input = opaque;
+    return (input->machine->shutter_s2_input_high ? 0x10 : 0) >> (offset * 8);
+}
+
+static const MemoryRegionOps s5_rtos_shutter_s2_ops = {
+    .read = s5_rtos_shutter_s2_read,
+    .write = s5_rtos_input_write,
+    .endianness = DEVICE_LITTLE_ENDIAN,
+    .valid.min_access_size = 1,
+    .valid.max_access_size = 4,
+};
+
+static bool s5_rtos_get_shutter_s2_input_high(Object *obj, Error **errp)
+{
+    return S5_RTOS_MACHINE(obj)->shutter_s2_input_high;
+}
+
+static void s5_rtos_set_shutter_s2_input_high(Object *obj, bool value, Error **errp)
+{
+    S5_RTOS_MACHINE(obj)->shutter_s2_input_high = value;
+}
 
 static bool s5_rtos_get_inactive_inputs(Object *obj, Error **errp)
 {
@@ -1273,6 +1403,17 @@ static void s5_rtos_init(MachineState *machine)
                               input, "s5-rtos.startup-gpio-input", 4);
         memory_region_add_subregion(sysmem, input->base, &input->iomem);
     }
+    /* Active-low shutter S2 input at 0x7f081038 bit 4 (original 0x06544bac ->
+     * raw bit 1 -> 0x070c93a4 logical 0x200 KEY_SHUTTER_FULL -> 0x06543ea6
+     * forces 0x100 KEY_SHUTTER_HALF). Default OFF (0) preserves baseline.
+     */
+    s->shutter_s2_input.machine = s;
+    s->shutter_s2_input.base = 0x7f081038;
+    memory_region_init_io(&s->shutter_s2_input.iomem, OBJECT(machine),
+                          &s5_rtos_shutter_s2_ops, &s->shutter_s2_input,
+                          "s5-rtos.shutter-s2-gpio-input", 4);
+    memory_region_add_subregion(sysmem, s->shutter_s2_input.base,
+                                &s->shutter_s2_input.iomem);
 
     for (i = 0; i < S5_RTOS_CPUS; i++) {
         Object *cpuobj = object_new(machine->cpu_type);
@@ -1466,9 +1607,21 @@ static void s5_rtos_machine_class_init(ObjectClass *oc, void *data)
                               s5_rtos_get_spi_mask, s5_rtos_set_spi_mask,
                               NULL, NULL);
     object_class_property_add_str(oc, "spi-state-json", s5_rtos_spi_states, NULL);
+    object_class_property_add(oc, "adc0-ch5-sample", "uint32",
+                              s5_rtos_get_adc0_ch5_sample,
+                              s5_rtos_set_adc0_ch5_sample, NULL, NULL);
+    object_class_property_add(oc, "adc1-ch4-sample", "uint32",
+                              s5_rtos_get_adc1_ch4_sample,
+                              s5_rtos_set_adc1_ch4_sample, NULL, NULL);
+    object_class_property_add_bool(oc, "shutter-s2-input-high",
+                                   s5_rtos_get_shutter_s2_input_high,
+                                   s5_rtos_set_shutter_s2_input_high);
     object_class_property_add(oc, "adc11-sample", "uint32",
                               s5_rtos_get_adc11_sample, s5_rtos_set_adc11_sample,
                               NULL, NULL);
+    object_class_property_add(oc, "adc2-ch0-sample", "uint32",
+                              s5_rtos_get_adc2_ch0_sample,
+                              s5_rtos_set_adc2_ch0_sample, NULL, NULL);
     object_class_property_add_str(oc, "adc-state-json", s5_rtos_adc_state, NULL);
     object_class_property_add_bool(oc, "i2c-generic-error", s5_rtos_get_i2c_error,
                                    s5_rtos_set_i2c_error);

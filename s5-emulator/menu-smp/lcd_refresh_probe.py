@@ -25,12 +25,20 @@ class LCDRefreshProbeError(RuntimeError):
 
 
 class LCDRefreshProbe:
-    def __init__(self, emu, *, max_pulses=8, stage_timeout=10.0):
-        if type(max_pulses) is not int or not 1 <= max_pulses <= 64:
-            raise ValueError('Use one through64 bounded request-gated pulses')
+    def __init__(self, emu, *, max_pulses=8, stage_timeout=10.0, allow_extended_pulses=False):
+        if type(allow_extended_pulses) is not bool:
+            raise ValueError('allow_extended_pulses must be a boolean')
+        pulse_limit = 4096 if allow_extended_pulses else 64
+        if type(max_pulses) is not int or not 1 <= max_pulses <= pulse_limit:
+            raise ValueError(f'Use one through {pulse_limit} bounded request-gated pulses')
         if not 0 < stage_timeout <= 10:
             raise ValueError('Use a stage timeout <=10seconds')
         self.emu, self.max_pulses, self.stage_timeout = emu, max_pulses, stage_timeout
+        self.allow_extended_pulses = allow_extended_pulses
+        self._pulse_count = 0
+        self._event_count = 0
+        self._max_recorded_pulses = 64 if allow_extended_pulses else max_pulses
+        self._max_recorded_events = 256 if allow_extended_pulses else None
         self._bps = {}
         self._started = self._armed = self._owns = self._completed = False
         self._stage = self._deadline = self._old_mask = self._entry = self._callback = None
@@ -41,6 +49,28 @@ class LCDRefreshProbe:
                            guest_callback_invoked_by_host=False, queue_messages_created_by_host=False,
                            pulses=[], events=[], completed_requests=0,
                            pending_irq_cleanup='Disabling TEST does not retract pending GIC edges; no GIC pending/active bits are manually cleared')
+        if allow_extended_pulses:
+            self.report['extended_pulses_enabled'] = True
+            self.report['total_pulses'] = 0
+            self.report['total_events'] = 0
+
+    def _record_event(self, event):
+        self._event_count += 1
+        events = self.report['events']
+        events.append(event)
+        if self._max_recorded_events is not None and len(events) > self._max_recorded_events:
+            del events[:-self._max_recorded_events]
+        if self.allow_extended_pulses:
+            self.report['total_events'] = self._event_count
+
+    def _record_pulse(self, pulse):
+        self._pulse_count += 1
+        pulses = self.report['pulses']
+        pulses.append(pulse)
+        if self.allow_extended_pulses:
+            if len(pulses) > self._max_recorded_pulses:
+                del pulses[:-self._max_recorded_pulses]
+            self.report['total_pulses'] = self._pulse_count
 
     @property
     def active(self):
@@ -169,7 +199,7 @@ class LCDRefreshProbe:
             self._remove(REQUEST)
             self._add(DRAIN)
             self.report['status'] = 'passive_waiting_existing_display_work'
-            self.report['events'].append(dict(kind='deferred_for_original_queue_work',state=state))
+            self._record_event(dict(kind='deferred_for_original_queue_work',state=state))
             return
         self._remove(DRAIN)
         self._pulse(state)
@@ -179,7 +209,8 @@ class LCDRefreshProbe:
         # observer. This only avoids retrapping the same untouched opcode.
         count=self.report.get('passive_receive_observations',0)+1
         self.report['passive_receive_observations']=count
-        if count>256:
+        drain_limit = max(256, self.max_pulses * 32) if self.allow_extended_pulses else 256
+        if count>drain_limit:
             self._fail('Bounded observation of existing display work exhausted')
         self._remove(DRAIN)
         try:self.emu.step(timeout=.5)
@@ -192,7 +223,7 @@ class LCDRefreshProbe:
             self._fail('Refusing pulse without original event86bit0 request')
         if state['q15_count'] or state['queued_type3']:
             self._fail('Existing display queue work prevents attributing a new TEST callback')
-        if len(self.report['pulses']) >= self.max_pulses:
+        if self._pulse_count >= self.max_pulses:
             self._fail('Request pulse bound exceeded')
         if self._get('display-test-mode') is not False:
             self._fail('Display TEST already owned by another diagnostic')
@@ -225,7 +256,7 @@ class LCDRefreshProbe:
         expected = {k:v+(k=='232') for k,v in model['pulses'].items()}
         if after['pulses'] != expected or not after['enabled'] or after['status_mask'] != 3:
             self._fail('Model did not record exactly one requested GIC232 pulse')
-        self.report['pulses'].append(dict(irq=232, request_state=state, counts=after['pulses'], test_status_mask=3))
+        self._record_pulse(dict(irq=232, request_state=state, counts=after['pulses'], test_status_mask=3))
         self.report['status'] = self._stage
 
     def _task18(self, cpu, regs):
@@ -268,19 +299,19 @@ class LCDRefreshProbe:
                 self._task18(cpu,regs)
                 self._guard(state)
                 if not state['event_flags']&1:
-                    self.report['events'].append(dict(kind='original_request_cleared_while_draining',cpu=cpu,state=state))
+                    self._record_event(dict(kind='original_request_cleared_while_draining',cpu=cpu,state=state))
                     self._remove(DRAIN)
                     self._add(REQUEST)
                     self.report['status']='armed_waiting_original_event86_request'
                 elif state['q15_count'] or state['queued_type3']:
                     self._step_drain()
                 else:
-                    self.report['events'].append(dict(kind='original_queue_drained_request_still_pending',cpu=cpu,state=state))
+                    self._record_event(dict(kind='original_queue_drained_request_still_pending',cpu=cpu,state=state))
                     self._remove(DRAIN)
                     self._pulse(state)
                 return True
             if pc == REQUEST:
-                self.report['events'].append(dict(kind='original_event86_set_return',cpu=cpu,r0=regs['r0'],state=state))
+                self._record_event(dict(kind='original_event86_set_return',cpu=cpu,r0=regs['r0'],state=state))
                 if regs['r0'] != 0:
                     self._fail('Original event86 set returned an error')
                 self._request(state)
@@ -296,7 +327,7 @@ class LCDRefreshProbe:
                 if not ((ins&0xff87 == 0x4780) if kind==2 else (ins&0x0ffffff0 == 0x012fff30)):
                     self._fail('Original ISR LR does not follow BLX(register)')
                 self._entry = dict(pc=ret,kind=kind,sp=regs['r13'])
-                self.report['events'].append(dict(kind='original_isr_entry',cpu=cpu,lr=hex(regs['r14']),sp=hex(regs['r13'])))
+                self._record_event(dict(kind='original_isr_entry',cpu=cpu,lr=hex(regs['r14']),sp=hex(regs['r13'])))
                 self._remove(pc)
                 self._add(ret,kind)
             elif self._entry and pc == self._entry['pc']:
@@ -305,7 +336,7 @@ class LCDRefreshProbe:
                     self._step_shared(pc)
                     return True
                 self._irq_done = True
-                self.report['events'].append(dict(kind='original_isr_return',cpu=cpu,pc=hex(pc),sp=hex(regs['r13'])))
+                self._record_event(dict(kind='original_isr_return',cpu=cpu,pc=hex(pc),sp=hex(regs['r13'])))
                 self._remove(pc)
             else:
                 tcb = self._task18(cpu,regs)
@@ -313,7 +344,7 @@ class LCDRefreshProbe:
                     if not state['event_flags']&1:
                         self._fail('Original callback no longer sees the requested event86bit0')
                     self._callback = dict(tcb=tcb,sp=regs['r13'],send_success=False)
-                    self.report['events'].append(dict(kind='original_task18_callback_entry',cpu=cpu,tcb=hex(tcb),state=state))
+                    self._record_event(dict(kind='original_task18_callback_entry',cpu=cpu,tcb=hex(tcb),state=state))
                 else:
                     call = self._callback
                     if not call or tcb != call['tcb'] or regs['r13'] != call['sp']-24:
@@ -323,18 +354,18 @@ class LCDRefreshProbe:
                         if regs['r0'] != 0 or msg != (0,0x10e,0x11f438,0,0):
                             self._fail('Original GUI callback did not enqueue its expected notification successfully')
                         call['send_success'] = True
-                        self.report['events'].append(dict(kind='original_callback_queue115_send_success',cpu=cpu,message=[hex(x)for x in msg]))
+                        self._record_event(dict(kind='original_callback_queue115_send_success',cpu=cpu,message=[hex(x)for x in msg]))
                     elif pc == CALLBACK_RETURN:
                         if not call['send_success'] or state['event_flags']&1:
                             self._fail('Original callback did not clear its completed event86 request')
                         self._callback_done = True
-                        self.report['events'].append(dict(kind='original_callback_return_boundary',cpu=cpu,state=state))
+                        self._record_event(dict(kind='original_callback_return_boundary',cpu=cpu,state=state))
                 self._remove(pc)
             if self._irq_done and self._callback_done:
                 self._inputs_off()
                 self.report['completed_requests'] += 1
                 self._stage = self._deadline = None
-                if len(self.report['pulses']) >= self.max_pulses:
+                if self._pulse_count >= self.max_pulses:
                     self._completed = True
                     self._cleanup()
                     self.report['status'] = 'bounded_original_callbacks_completed'

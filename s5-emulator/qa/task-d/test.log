@@ -1,0 +1,13 @@
+[PASS] 1_start_before_result_and_calls_exist (59.66 ms)
+[PASS] 2_non_swap_and_truncated_jsonl_tail (53.88 ms)
+[PASS] 3_swap1_chunked_png_then_complete (54.97 ms)
+[PASS] 4_swap2_retains_prev_then_advances_and_downloads (54.28 ms)
+[PASS] 5_result_json_completion_and_xss_safety (53.29 ms)
+[PASS] 6_failure_exit_and_missing_png (53.67 ms)
+[PASS] 7_security_traversal_symlinks_methods_loopback (57.41 ms)
+[PASS] 8_readonly_byte_invariance_on_sim_dir (54.9 ms)
+[PASS] 9_real_corpus_local_requested_lcd_refresh_and_cli (438.13 ms)
+[PASS] 10_real_corpus_live_timezone_confirm_03 (351.92 ms)
+
+Summary: 10/10 cases passed | tests_executed_ok=True | assertions_passed=True
+Wrote /Volumes/SATA-1TB/Projects/s5-qemu/workspace/s5-emulator/qa/task-d/verification.json

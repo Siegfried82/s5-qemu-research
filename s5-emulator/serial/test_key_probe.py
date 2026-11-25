@@ -101,18 +101,70 @@ class KeyProbeTests(unittest.TestCase):
         with self.assertRaises(module.KeyProbeError):self.probe.arm('UP',1,swaps_observed=0)
 
     def test_context_guards_fail_without_guest_write(self):
-        for name,value in [('cpsr',0x60000192),('cpsr',0x600001b3),
-                           ('cpsr',0x60000533),('r13',0xa03df74)]:
+        for name,value in [('cpsr',0x60000192),('cpsr',0x60000533),('r13',0xa03df74)]:
             emu=FakeQemu();emu.regs[name]=value;p=module.KeyProbe(emu)
             p.arm('KEY_CENTER',1,swaps_observed=1)
             with self.assertRaises(module.KeyProbeError):p.handle(module.LOOP_ENTRY,2)
             self.assertEqual(emu.writes,[])
 
-    def test_dispatch_disabled_fails_without_guest_write(self):
-        self.emu.seed(module.GUARDS[0],struct.pack('<I',1))
+    def test_transient_dispatch_guard_and_irq_disabled_wait_then_start(self):
         self.probe.arm('KEY_CENTER',1,swaps_observed=1)
-        with self.assertRaises(module.KeyProbeError):self.probe.handle(module.LOOP_ENTRY,2)
+        deadline=self.probe._deadline
+        # Transient global guards (including SMP 0x08ab4e68), per-CPU nesting, and IRQ-disabled bit
+        transient_states=[
+            (module.GUARDS[0],1,0x60000133),
+            (module.GUARDS[2],1,0x60000133),
+            (0x209c8,1,0x60000133),
+            (None,0,0x600001b3),
+        ]
+        for addr,val,cpsr in transient_states:
+            for a in module.GUARDS+(0x209c8,):
+                self.emu.seed(a,struct.pack('<I',0))
+            if addr is not None:
+                self.emu.seed(addr,struct.pack('<I',val))
+            self.emu.regs.update(r15=module.LOOP_ENTRY,cpsr=cpsr)
+            self.assertTrue(self.probe.handle(module.LOOP_ENTRY,2))
+            self.assertEqual(self.emu.writes,[])
+            self.assertIsNone(self.probe._saved)
+            self.assertIn(module.LOOP_ENTRY,self.emu.breakpoints)
+            self.assertEqual(self.probe._deadline,deadline)
+            self.assertEqual(self.probe.report['requests'][0]['status'],'waiting_for_clean_dispatch_guard')
+        # Clear all guards and IRQ-disabled bit -> next LOOP_ENTRY starts cleanly.
+        for a in module.GUARDS+(0x209c8,):
+            self.emu.seed(a,struct.pack('<I',0))
+        self.emu.regs.update(r15=module.LOOP_ENTRY,cpsr=0x60000133)
+        self.probe.handle(module.LOOP_ENTRY,2)
+        self.assertEqual(self.emu.regs['r15'],module.QUEUE_API)
+        self.assertEqual(self.probe.report['requests'][0]['dispatch_guard_wait_steps'],4)
+
+    def test_transient_dispatch_guard_timeout_reports_distinct_status_without_writes(self):
+        self.emu.seed(module.GUARDS[2],struct.pack('<I',1))
+        self.probe.arm('KEY_CENTER',1,swaps_observed=1)
+        self.probe.handle(module.LOOP_ENTRY,2)
+        self.probe._deadline=time.monotonic()-1
+        with self.assertRaises(module.KeyProbeError):self.probe.check_timeout()
+        self.probe.close()
+        req=self.probe.report['requests'][0]
+        self.assertEqual(req['status'],'timeout_waiting_for_clean_dispatch_guard')
+        self.assertEqual(req['dispatch_guard_wait_steps'],1)
         self.assertFalse(self.emu.writes)
+
+    def test_start_hard_guards_reject_nonzero_dispatch_guard_and_irq_disabled(self):
+        for addr,val,cpsr in [
+            (module.GUARDS[0],1,0x60000133),
+            (module.GUARDS[2],1,0x60000133),
+            (0x209c8,1,0x60000133),
+            (None,0,0x600001b3),
+        ]:
+            emu=FakeQemu()
+            if addr is not None:
+                emu.seed(addr,struct.pack('<I',val))
+            emu.regs['cpsr']=cpsr
+            p=module.KeyProbe(emu)
+            p.arm('KEY_CENTER',1,swaps_observed=1)
+            with self.assertRaises(module.KeyProbeError):p._start(2,emu.registers())
+            self.assertEqual(p.report['requests'][0]['status'],'guard_rejected')
+            self.assertFalse(emu.writes)
 
     def test_bounded_original_arguments_and_full_register_restore(self):
         original=self.emu.registers();fp=dict(self.emu.rsp.fp);self.start();call_sp=original['r13']-32
@@ -161,7 +213,7 @@ class KeyProbeTests(unittest.TestCase):
         self.assertTrue(self.probe.report['requests'][0]['consumed'])
 
     def test_close_preserves_rejection(self):
-        self.emu.regs['cpsr']=0x600001b3
+        self.emu.regs['cpsr']=0x60000533
         self.probe.arm('UP',1,swaps_observed=1)
         with self.assertRaises(module.KeyProbeError):self.probe.handle(module.LOOP_ENTRY,2)
         self.probe.close()
@@ -206,7 +258,7 @@ class KeyProbeTests(unittest.TestCase):
         self.probe.arm('KEY_CENTER',1,swaps_observed=1,wait_for_ui_active=True)
         self.emu.seed(0x08a928b4,struct.pack('<I',1))
         self.emu.seed(0x08a928bc,struct.pack('<I',1))
-        self.emu.regs['cpsr']=0x600001b3
+        self.emu.regs['cpsr']=0x60000533
         with self.assertRaises(module.KeyProbeError):self.probe.handle(module.LOOP_ENTRY,2)
         self.assertEqual(self.emu.writes,[])
 
@@ -239,7 +291,7 @@ class KeyProbeTests(unittest.TestCase):
             self.probe.handle(module.LOOP_ENTRY,2)
             self.assertEqual(self.emu.writes,[])
         self.emu.seed(0x08aa1103,b'\x0f')
-        self.emu.regs.update(r15=module.LOOP_ENTRY,cpsr=0x600001b3)
+        self.emu.regs.update(r15=module.LOOP_ENTRY,cpsr=0x60000533)
         with self.assertRaises(module.KeyProbeError):self.probe.handle(module.LOOP_ENTRY,2)
         self.assertEqual(self.emu.writes,[])
 
@@ -353,9 +405,29 @@ class KeyProbeTests(unittest.TestCase):
     def test_input_route_gate_cannot_bypass_original_call_context_guards(self):
         self.probe.arm('KEY_CENTER',1,swaps_observed=1,wait_for_input_route_ready=True)
         self.emu.seed(0x08aa1124,struct.pack('<I',0xff))
-        self.emu.regs['cpsr']=0x600001b3
+        self.emu.regs['cpsr']=0x60000533
         with self.assertRaises(module.KeyProbeError):self.probe.handle(module.LOOP_ENTRY,2)
         self.assertFalse(self.emu.writes)
+
+    def test_all_supported_keys_match_static_06f1003c_table_evidence(self):
+        import json
+        evidence = json.loads((Path(__file__).parent / 'key-event-evidence.json').read_text())
+        by_name = {entry['name']: entry for entry in evidence['keys']}
+        case_to_bank = {'0x6643776': 0, '0x664378c': 1}
+        expected_new = (
+            'KEY_DISPLAY', 'KEY_DELETE', 'KEY_ISO', 'KEY_WB', 'KEY_EXPOSE',
+            'CONTROL_DIAL_LEFT', 'CONTROL_DIAL_RIGHT',
+            'FRONT_DIAL_LEFT', 'FRONT_DIAL_RIGHT',
+            'REAR_DIAL_LEFT', 'REAR_DIAL_RIGHT',
+        )
+        for name in expected_new:
+            self.assertIn(name, module.KEYS)
+        for name, (index, bank, mask) in module.KEYS.items():
+            self.assertIn(name, by_name)
+            row = by_name[name]
+            self.assertEqual(index, row['index'], name)
+            self.assertEqual(bank, case_to_bank[row['dispatcher_case']], name)
+            self.assertEqual(mask, int(row['value'], 0), name)
 
 
 if __name__ == '__main__':

@@ -1,0 +1,5 @@
+Trace corpus verification: overall_passed=True (total=3, full=2, prefix_only=1, failed=0, swap_frames_verified=8)
+  - local-frame-query: status=completed_prefix_only full_run_succeeded=False swaps=1 errors=0 [PREFIX ONLY: stopped at eglCreatePbufferFromClientBuffer idx=1028]
+  - local-shared-image-stride: status=completed_full full_run_succeeded=True swaps=2 errors=0
+  - local-requested-lcd-refresh: status=completed_full full_run_succeeded=True swaps=5 errors=0
+Report written to: /Volumes/SATA-1TB/Projects/s5-qemu/workspace/s5-emulator/qa/task-c/corpus-report.json

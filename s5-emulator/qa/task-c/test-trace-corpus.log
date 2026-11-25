@@ -1,0 +1,36 @@
+test_01_baseline_copy_passes_and_does_not_mutate_copy (__main__.TraceCorpusVerifierTests) ... ok
+test_02_deleted_image_dependency_fails_with_locatable_error (__main__.TraceCorpusVerifierTests) ... ok
+test_03_mutated_transform_path_geometry_file_fails (__main__.TraceCorpusVerifierTests) ... ok
+test_04_mutated_draw_path_geometry_in_calls_jsonl_fails (__main__.TraceCorpusVerifierTests) ... ok
+test_05_swapped_two_reference_frames_fails_with_diff_bbox (__main__.TraceCorpusVerifierTests) ... ok
+test_06_corrupted_truncated_tail_line_in_calls_jsonl_fails (__main__.TraceCorpusVerifierTests) ... ok
+test_07_single_known_pixel_modified_in_reference_png_fails (__main__.TraceCorpusVerifierTests) ... ok
+test_07b_single_pixel_alpha_only_change_also_fails (__main__.TraceCorpusVerifierTests) ... ok
+test_08_mid_run_unsupported_trace_is_honestly_prefix_only_not_full (__main__.TraceCorpusVerifierTests) ... ok
+test_09_recompressed_png_with_identical_rgba_still_passes (__main__.TraceCorpusVerifierTests)
+RGBA identity must NOT require identical PNG compression bytes. ... ok
+test_10_path_traversal_and_unknown_event_rejected (__main__.TraceCorpusVerifierTests) ... ok
+test_11_cli_returns_nonzero_on_failure_and_zero_on_default_corpus (__main__.TraceCorpusVerifierTests) ... ok
+
+----------------------------------------------------------------------
+Ran 12 tests in 2.091s
+
+OK
+Trace corpus verification: overall_passed=False (total=1, full=0, prefix_only=1, failed=0, swap_frames_verified=1)
+  - frame-query-prefix-src: status=completed_prefix_only full_run_succeeded=False swaps=1 errors=1 [PREFIX ONLY: stopped at eglCreatePbufferFromClientBuffer idx=1028]
+      ERROR [full_run_required]: Trace did not complete full run (status='completed_prefix_only'); --require-full rejects prefix-only traces
+Trace corpus verification: overall_passed=True (total=3, full=2, prefix_only=1, failed=0, swap_frames_verified=8)
+  - local-frame-query: status=completed_prefix_only full_run_succeeded=False swaps=1 errors=0 [PREFIX ONLY: stopped at eglCreatePbufferFromClientBuffer idx=1028]
+  - local-shared-image-stride: status=completed_full full_run_succeeded=True swaps=2 errors=0
+  - local-requested-lcd-refresh: status=completed_full full_run_succeeded=True swaps=5 errors=0
+Report written to: /Volumes/SATA-1TB/Projects/s5-qemu/tmp/s5-trace-fixture-rcyfk2rg/corpus-ok.json
+Trace corpus verification: overall_passed=False (total=1, full=0, prefix_only=0, failed=1, swap_frames_verified=0)
+  - cli-broken-src: status=failed full_run_succeeded=False swaps=2 errors=7
+      ERROR [missing_dependency]: Missing captured_image file: /Volumes/SATA-1TB/Projects/s5-qemu/tmp/s5-trace-fixture-rcyfk2rg/cli-broken-src/graphics/image-40000012.bin
+      ERROR [replay_execution_error]: KeyError at event 459 (line 460, draw_captured_image): "Unknown image handle '0x40000012' (parsed 0x40000012) at event 459 (line 460)"
+      ERROR [swap_draw_count_mismatch]: Swap #0 draw_calls mismatch: recorded 15 vs replayed 14
+      ERROR [frame_pixel_mismatch]: Frame frame-0000.png (swap #0, event 696) RGBA mismatch: changed_pixels=960, diff_bbox=[849, 565, 862, 640]
+      ERROR [replay_execution_error]: KeyError at event 841 (line 842, draw_captured_image): "Unknown image handle '0x40000012' (parsed 0x40000012) at event 841 (line 842)"
+      ERROR [swap_draw_count_mismatch]: Swap #1 draw_calls mismatch: recorded 31 vs replayed 29
+      ERROR [frame_pixel_mismatch]: Frame frame-0001.png (swap #1, event 1289) RGBA mismatch: changed_pixels=960, diff_bbox=[849, 565, 862, 640]
+Report written to: /Volumes/SATA-1TB/Projects/s5-qemu/tmp/s5-trace-fixture-rcyfk2rg/corpus-bad.json

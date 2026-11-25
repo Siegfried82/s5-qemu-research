@@ -22,3 +22,4 @@ s5-emulator/toolchain/deps/
 s5-emulator/toolchain/mamba-root/
 s5-emulator/toolchain/qemu-9.2.4/
 s5-emulator/toolchain/bin/micromamba
+s5-emulator/interactive/sessions/

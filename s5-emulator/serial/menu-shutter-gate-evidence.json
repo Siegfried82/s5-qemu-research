@@ -1,0 +1,35 @@
+{
+  "scope": "Read-only static firmware audit of 03_program.bin explaining why CENTER_LIVE_HANDLER (0x06646e84) returned early at 0x06646efe -> 0x0667a442() == 1 in Live View.",
+  "program_sha256": "fc496d62a91f6e9b1b84807183bb805bc546c9105d2938546b58a66ad9d132fe",
+  "menu_gate": {
+    "live_handler": "0x06646e84",
+    "gate_callsite": "0x06646efe",
+    "gate_function": "0x0667a442",
+    "gate_struct": "0x8aa4570",
+    "predicate": "[0x08aa4570 + 2] != 0 && ([0x08aa4570 + 0x14] & 1) != 0",
+    "setter_function": "0x0667a60c",
+    "menu_open_entry": "0x0664704c -> 0x066be02a"
+  },
+  "hardware_sources_causing_stuck_shutter_s1_s2": [
+    {
+      "name": "body_shutter_s2_gpio",
+      "mmio_address": "0x7f081038",
+      "bit": 4,
+      "polarity": "active_low (0=pressed, 1=released)",
+      "firmware_check": "0x06544bac: ldrh.w r0, [sl, #0x38]; lsls r0, r0, #0x1b; bpl #0x6544bbe (r0=1)",
+      "raw_to_logical": "raw bit 1 (0x2) -> ROM table 0x070c93a4 logical 0x200 (KEY_SHUTTER_FULL) -> 0x06543ea6 forces 0x100 (KEY_SHUTTER_HALF)",
+      "opt_in_qom_property": "shutter-s2-input-high",
+      "opt_in_cli_flag": "--shutter-s2-input-high"
+    },
+    {
+      "name": "wired_remote_jack_adc",
+      "mmio_address": "0x7f031024",
+      "adc_bank": 1,
+      "adc_channel": 4,
+      "buffer_address": "0x08e21150",
+      "firmware_check": "0x06544a02 -> 0x06547882 -> 0x06547a0e: sample 0..0x3a returns mode 3 -> 0x06547966 returns 0x24 -> 0x0654799a asserts 0x300 (KEY_SHUTTER_HALF|FULL); sample 0x3c5..0x439 (0x3ff) returns mode 0 (unplugged)",
+      "opt_in_qom_property": "adc1-ch4-sample",
+      "opt_in_cli_flag": "--adc1-ch4-sample 0x3ff"
+    }
+  ]
+}

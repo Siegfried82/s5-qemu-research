@@ -1,0 +1,185 @@
+{
+  "task": "task-interactive-s5-emulator",
+  "generated_utc": "2026-11-25T09:43:00Z",
+  "launch_command": "TMPDIR=/Volumes/SATA-1TB/Projects/s5-qemu/tmp python3 -B interactive/s5_interactive.py --boot-to menu --open-browser",
+  "files_created": [
+    "menu-smp/interactive_control.py",
+    "interactive/s5_interactive.py",
+    "interactive/README.md",
+    "qa/task-interactive/test_interactive_unit.py",
+    "qa/task-interactive/test_live_interactive.py",
+    "qa/task-interactive/verification.json",
+    "qa/task-interactive/report.md"
+  ],
+  "files_modified": [
+    "menu-smp/key_probe.py",
+    "menu-smp/key_sequence_scheduler.py",
+    "menu-smp/lcd_refresh_probe.py",
+    "menu-smp/boot.py",
+    "serial/test_key_probe.py"
+  ],
+  "protected_files_untouched": [
+    "viewer/s5_frame_viewer.py",
+    "display/verify_trace_corpus.py",
+    "qemu/s5-rtos.c"
+  ],
+  "unit_and_regression_suites": {
+    "qa/task-interactive/test_interactive_unit.py": {
+      "executed_ok": true,
+      "assertions_passed": true,
+      "tests_passed": 9,
+      "tests_total": 9
+    },
+    "serial/test_key_probe.py": {
+      "executed_ok": true,
+      "assertions_passed": true,
+      "tests_passed": 28,
+      "tests_total": 28
+    },
+    "serial/test_key_sequence_scheduler.py": {
+      "executed_ok": true,
+      "assertions_passed": true,
+      "tests_passed": 15,
+      "tests_total": 15
+    },
+    "serial/test_lcd_refresh_probe.py": {
+      "executed_ok": true,
+      "assertions_passed": true,
+      "tests_passed": 9,
+      "tests_total": 9
+    },
+    "qa/task-d/test_frame_viewer.py": {
+      "executed_ok": true,
+      "assertions_passed": true,
+      "tests_passed": 10,
+      "tests_total": 10
+    }
+  },
+  "live_e2e_qemu_interactive_test": {
+    "script": "qa/task-interactive/test_live_interactive.py",
+    "session_dir": "qa/task-interactive/live-session-01",
+    "boot_to": "menu",
+    "executed_ok": true,
+    "assertions_passed": true,
+    "boot_to_ready_seconds": 109.73,
+    "total_wall_seconds": 143.28,
+    "initial_ready_frame": {
+      "filename": "frame-0010.png",
+      "swap_count": 11,
+      "draw_calls": 558,
+      "render_scene": "0x1002",
+      "render_modal": "0x0",
+      "ui_state": {
+        "state": "0x2",
+        "mode": "0x1",
+        "modal_id": "0x0"
+      },
+      "width": 1024,
+      "height": 768,
+      "png_bytes": 76983,
+      "png_sha256": "e697bfa7d7e8b7d0171815469ac10602e641c02ca18ff3ecbd3c69297bf9be59",
+      "byte_identical_to_disk": true,
+      "visual_observation": "Native Main Menu (Photo / Image Quality 1): yellow focus border on Column 1 red Camera category icon."
+    },
+    "tested_keys": [
+      {
+        "step": 1,
+        "key": "KEY_RIGHT",
+        "key_table_entry": { "index": 6, "bank": 0, "mask": "0x2" },
+        "request_id": "c6bd9a65ba38",
+        "consume_status": "consumed",
+        "key_duration_ms": 167.3,
+        "wall_to_swap_seconds": 9.05,
+        "resulting_frame": "frame-0011.png",
+        "swap_count": 12,
+        "draw_calls": 605,
+        "render_scene": "0x1002",
+        "render_modal": "0x0",
+        "ui_state": { "state": "0x2", "mode": "0x1", "modal_id": "0x0" },
+        "png_bytes": 77831,
+        "png_sha256": "810f442ad9734093c6b782e48dd29e4ded542269bfc357ffef02d2aa1086d9f6",
+        "byte_identical_to_disk": true,
+        "pixels_changed_from_prev": true,
+        "visual_observation": "Focus advanced from Column 1 to Column 2: Image Quality 1 sub-category icon solid yellow and 'Image Quality 1' header turned yellow."
+      },
+      {
+        "step": 2,
+        "key": "KEY_CENTER",
+        "key_table_entry": { "index": 7, "bank": 0, "mask": "0x10" },
+        "request_id": "58be30b8a18c",
+        "consume_status": "consumed",
+        "key_duration_ms": 120.0,
+        "wall_to_swap_seconds": 8.47,
+        "resulting_frame": "frame-0012.png",
+        "swap_count": 13,
+        "draw_calls": 652,
+        "render_scene": "0x1002",
+        "render_modal": "0x0",
+        "ui_state": { "state": "0x2", "mode": "0x1", "modal_id": "0x0" },
+        "png_bytes": 76832,
+        "png_sha256": "a018b47b83d4fc2081c9d8abcd4daeeda01c4eb3c54a8b17e47632246be489d5",
+        "byte_identical_to_disk": true,
+        "pixels_changed_from_prev": true,
+        "visual_observation": "Focus advanced from Column 2 into Column 3 item list: 'Photo Style STD.' row highlighted with solid yellow selection bar."
+      },
+      {
+        "step": 3,
+        "key": "KEY_DELETE",
+        "key_table_entry": { "index": 10, "bank": 0, "mask": "0x80" },
+        "request_id": "5c0ecdc2c135",
+        "consume_status": "consumed",
+        "key_duration_ms": 139.6,
+        "wall_to_swap_seconds": 9.47,
+        "resulting_frame": "frame-0013.png",
+        "swap_count": 14,
+        "draw_calls": 868,
+        "render_scene": "0x1001",
+        "render_modal": "0x0",
+        "ui_state": { "state": "0x1", "mode": "0x1", "modal_id": "0x0" },
+        "png_bytes": 35916,
+        "png_sha256": "f2ecaebf1c704089971bfcc73838d9f153dda8e5ec66c14dfad40d566f3784a4",
+        "byte_identical_to_disk": true,
+        "pixels_changed_from_prev": true,
+        "visual_observation": "Newly added verified BACK/Trash key (KEY_DELETE) exited Main Menu cleanly back to Native Live View HUD (STD., FINE L, P, 10s, BODY, CH1/CH2, ISO AUTO, Battery; SHA-256 matches pre-menu Live View HUD bit-for-bit)."
+      },
+      {
+        "step": 4,
+        "key": "KEY_DOWN",
+        "key_table_entry": { "index": 4, "bank": 0, "mask": "0x8" },
+        "request_id": "71db06ad68c2",
+        "consume_status": "consumed",
+        "key_duration_ms": 159.0,
+        "wall_to_swap_seconds": 5.57,
+        "resulting_frame": "frame-0014.png",
+        "swap_count": 15,
+        "draw_calls": 1056,
+        "render_scene": "0x1001",
+        "render_modal": "0x0",
+        "ui_state": { "state": "0x1", "mode": "0x1", "modal_id": "0x0" },
+        "png_bytes": 33443,
+        "png_sha256": "0601dd9295a10d206c0d2736137cb3a3dace7647d05a182c9273a456eaf2424a",
+        "byte_identical_to_disk": true,
+        "pixels_changed_from_prev": true,
+        "visual_observation": "Live View HUD updated cleanly (+188 draw calls; SD card [1][2] indicator blinked on HUD redraw)."
+      }
+    ],
+    "shutdown": {
+      "stop_reason": "user_requested",
+      "boot_exit_code": 0,
+      "launcher_exit_code": 0,
+      "qemu_exit_code": 0,
+      "graphics_error": null,
+      "original_firmware_instructions_modified": false,
+      "peer_flags_manually_cleared": false,
+      "total_graphics_swaps": 15,
+      "total_graphics_draws": 1056,
+      "interactive_clicks_recorded": 4,
+      "lcd_refresh_total_pulses": 14,
+      "result_json_present": true
+    }
+  },
+  "overall": {
+    "all_tests_executed_ok": true,
+    "all_assertions_passed": true
+  }
+}

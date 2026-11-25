@@ -1,0 +1,76 @@
+{
+  "task": "B",
+  "title": "Reliable key-sequence scheduler",
+  "generated_at_utc": "2026-11-25T08:00:22.538720+00:00",
+  "scope": "Host-only unit/behavioral verification; no QEMU execution and no live firmware claim",
+  "qemu_executed": false,
+  "menu_rendered_verified": false,
+  "boot_py_untouched": true,
+  "boot_py_sha256": "ff70a1826d4136f586157d3f14e92bc0339681c24d6e1a292aa92e8e93575aaa",
+  "tests_executed_ok": true,
+  "assertions_passed": true,
+  "test_count": 15,
+  "test_command": "TMPDIR=/Volumes/SATA-1TB/Projects/s5-qemu/tmp python3 -B serial/test_key_sequence_scheduler.py",
+  "test_exit_code": 0,
+  "test_log_path": "/Volumes/SATA-1TB/Projects/s5-qemu/workspace/s5-emulator/qa/task-b/test-key-sequence-scheduler.log",
+  "checks": {
+    "python_syntax_check": {
+      "executed_ok": true,
+      "passed": true,
+      "exit_code": 0
+    },
+    "boot_integration_patch_dry_run": {
+      "executed_ok": true,
+      "passed": true,
+      "exit_code": 0,
+      "stdout": "patching file '/Volumes/SATA-1TB/Projects/s5-qemu/tmp/boot_verify_copy.py'"
+    },
+    "boot_integration_patch_apply_and_compile": {
+      "executed_ok": true,
+      "passed": true,
+      "apply_exit_code": 0,
+      "compile_exit_code": 0
+    }
+  },
+  "egl_swap_sampling_boundary": {
+    "api": "eglSwapBuffers",
+    "entry_pc": "0x064c3cda",
+    "thumb_pointer": "0x064c3cdb",
+    "authoritative_render_layout_addr": "0x0b392e90",
+    "diagnostic_source_layout_addr": "0x08cb10c8",
+    "modal_offset": 4,
+    "scene_offset": 8
+  },
+  "created_files": [
+    {
+      "path": "/Volumes/SATA-1TB/Projects/s5-qemu/workspace/s5-emulator/menu-smp/key_sequence_scheduler.py",
+      "bytes": 70611,
+      "sha256": "3f39268f6a3227fc3560173ef5a14b6aa1fdc9d540d8f59fb8a046bb1726fdbc"
+    },
+    {
+      "path": "/Volumes/SATA-1TB/Projects/s5-qemu/workspace/s5-emulator/serial/test_key_sequence_scheduler.py",
+      "bytes": 44475,
+      "sha256": "22c38b4ecaadf5d28fe67e20b4c1804e5a56bad22172c47ab26c003b709f4e07"
+    },
+    {
+      "path": "/Volumes/SATA-1TB/Projects/s5-qemu/workspace/s5-emulator/qa/task-b/boot-integration.patch",
+      "bytes": 18707,
+      "sha256": "11804149a9518d4cafbc6ad73bb1ec8229eb71c17059f0ab052af9ee19f39a75"
+    },
+    {
+      "path": "/Volumes/SATA-1TB/Projects/s5-qemu/workspace/s5-emulator/qa/task-b/report-task-b.md",
+      "bytes": 10684,
+      "sha256": "7ddde965d24cd202b0d071d04c4d38222709dddd7886d04a7013fae36ebad4f0"
+    },
+    {
+      "path": "/Volumes/SATA-1TB/Projects/s5-qemu/workspace/s5-emulator/qa/task-b/test-key-sequence-scheduler.log",
+      "bytes": 1983,
+      "sha256": "949c121f13bc123212698e2de8017df3739203e40cbadd44ec8084c3b20f920e"
+    }
+  ],
+  "remaining_live_qemu_verification": [
+    "Apply qa/task-b/boot-integration.patch to menu-smp/boot.py after parallel tasks complete",
+    "Verify live multi-step sequence against real S5 firmware with --lens-release-input-high and explicit --key-target specs",
+    "Verify live behavior of same-scene UP/DOWN redraws and pixel/selection evidence"
+  ]
+}

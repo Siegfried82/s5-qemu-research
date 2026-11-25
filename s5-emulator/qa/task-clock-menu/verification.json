@@ -1,0 +1,299 @@
+{
+  "scope": "End-to-end native LUMIX S5 boot progression from 'Please set the time zone' through Time Zone, Clock Set (with ADC0 ch5 drift diagnosis & A/B control), IBIS Focal Length prompt, Live View HUD, and into the interactive Native Main Menu (Photo + Video tabs). Zero firmware instructions modified; zero guest UI state, ready flags, TCBs, or callbacks written; zero bulk GPIO pull-ups.",
+  "original_firmware_instructions_modified": false,
+  "guest_ui_state_or_flags_modified": false,
+  "bulk_gpio_pullups_used": false,
+  "program_sha256": "fc496d62a91f6e9b1b84807183bb805bc546c9105d2938546b58a66ad9d132fe",
+  "qemu_sha256": "fbb7b320d266ccf0fc4bd40336b2165fda3ce5a4e619f12fdf8ddeb6ade819bf",
+  "modified_files": [
+    {
+      "path": "/Volumes/SATA-1TB/Projects/s5-qemu/workspace/s5-emulator/menu-smp/key_probe.py",
+      "sha256": "d6c5a9064d83d3d31180e63bdd604919cf9e4a0bb46f0216a18571032125dc0e",
+      "summary": "Wait/single-step at LOOP_ENTRY on transient SMP dispatch guards or IRQ-disabled bit within existing deadline (recording dispatch_guard_wait_steps and timeout_waiting_for_clean_dispatch_guard); preserve strict hard checks in _start(); add read-only CENTER_LIVE_HANDLER route observers."
+    },
+    {
+      "path": "/Volumes/SATA-1TB/Projects/s5-qemu/workspace/s5-emulator/serial/test_key_probe.py",
+      "sha256": "9485dec06b8627eef74b8c02a13635e5e31bcc3edcc4c0b4720be52056193191",
+      "summary": "Added unit tests for transient dispatch-guard/IRQ-disabled wait, distinct timeout status, and hard _start() rejection."
+    },
+    {
+      "path": "/Volumes/SATA-1TB/Projects/s5-qemu/workspace/s5-emulator/qemu/s5-rtos.c",
+      "sha256": "1c27ca3301ff381c22843163e8f0f4fd7e9ec33f3810cc26278ff03d8a76857a",
+      "summary": "Added three minimal opt-in default-OFF hardware input properties: adc0-ch5-sample (0x7f030028 joystick ladder), adc1-ch4-sample (0x7f031024 wired remote sense), shutter-s2-input-high (0x7f081038 bit 4 active-low body shutter S2)."
+    },
+    {
+      "path": "/Volumes/SATA-1TB/Projects/s5-qemu/workspace/s5-emulator/menu-smp/boot.py",
+      "sha256": "f136d23c46508033ff70fec97c08fc20328b4502b74751622a9d6fcab5528f60",
+      "summary": "Added opt-in CLI flags --adc0-ch5-sample, --adc1-ch4-sample, --shutter-s2-input-high (all default OFF/0) wired to QOM properties and reported in result.json."
+    }
+  ],
+  "created_files": [
+    {
+      "path": "/Volumes/SATA-1TB/Projects/s5-qemu/workspace/s5-emulator/qemu/test_adc0_ch5_input.py",
+      "sha256": "de731036a90a77557f11cd356a16ebd166119d0a9364217100604a02cadddc6a"
+    },
+    {
+      "path": "/Volumes/SATA-1TB/Projects/s5-qemu/workspace/s5-emulator/qemu/test_shutter_s2_and_remote_input.py",
+      "sha256": "b00902c5edae5fe9b2cc6973f08e43b95ca10a3dd1ab8475404a4754757"
+    },
+    {
+      "path": "/Volumes/SATA-1TB/Projects/s5-qemu/workspace/s5-emulator/serial/audit_clock_drift.py",
+      "sha256": "794c1eb0783f31e255a684e1290423714dbdfe87d5443eaac8944609fadbd256"
+    },
+    {
+      "path": "/Volumes/SATA-1TB/Projects/s5-qemu/workspace/s5-emulator/serial/clock-drift-evidence.json",
+      "sha256": "c61349b2e35d951991f88b328acfb726e79931c94a44b584a95cd2e535000c5f"
+    },
+    {
+      "path": "/Volumes/SATA-1TB/Projects/s5-qemu/workspace/s5-emulator/serial/audit_menu_shutter_gate.py",
+      "sha256": "34f00797596e3724fab0d783043843f876bed5c3f7e19bbcf3260d2a2dc50bfd"
+    },
+    {
+      "path": "/Volumes/SATA-1TB/Projects/s5-qemu/workspace/s5-emulator/serial/menu-shutter-gate-evidence.json",
+      "sha256": "cc63c56ad16d377a04c22b4331a452cf0f0b311c9a0fa8300b3a262353fa2a51"
+    }
+  ],
+  "checks": [
+    {
+      "name": "host_unit_test_key_probe",
+      "command": "python3 -B serial/test_key_probe.py",
+      "executed": true,
+      "exit_code": 0,
+      "assertions_passed": true,
+      "details": "27/27 tests OK"
+    },
+    {
+      "name": "host_unit_test_key_sequence_scheduler",
+      "command": "python3 -B serial/test_key_sequence_scheduler.py",
+      "executed": true,
+      "exit_code": 0,
+      "assertions_passed": true,
+      "details": "15/15 tests OK"
+    },
+    {
+      "name": "qemu_build",
+      "command": "TMPDIR=/Volumes/SATA-1TB/Projects/s5-qemu/tmp S5_BUILD_JOBS=8 bash toolchain/build.sh",
+      "executed": true,
+      "exit_code": 0,
+      "assertions_passed": true,
+      "details": "Built qemu-system-arm 9.2.4 cleanly (sha256 fbb7b320d266ccf0...)"
+    },
+    {
+      "name": "qemu_decoder_test_adc0_ch5",
+      "command": "TMPDIR=/Volumes/SATA-1TB/Projects/s5-qemu/tmp python3 -B qemu/test_adc0_ch5_input.py --output qa/task-clock-menu/test-adc0-ch5-02",
+      "executed": true,
+      "exit_code": 0,
+      "assertions_passed": true,
+      "details": "5/5 checks passed (default 0 -> 0x2, all 5 bands + idle 0x3ff -> 0x0 through original 0x065454d8, bank isolation)"
+    },
+    {
+      "name": "qemu_decoder_test_adc2_ch0",
+      "command": "TMPDIR=/Volumes/SATA-1TB/Projects/s5-qemu/tmp python3 -B qemu/test_adc2_ch0_input.py --output qa/task-clock-menu/test-adc2-ch0-02",
+      "executed": true,
+      "exit_code": 0,
+      "assertions_passed": true,
+      "details": "5/5 checks passed"
+    },
+    {
+      "name": "qemu_decoder_test_shutter_s2_and_remote",
+      "command": "TMPDIR=/Volumes/SATA-1TB/Projects/s5-qemu/tmp python3 -B qemu/test_shutter_s2_and_remote_input.py --output qa/task-clock-menu/test-shutter-s2-remote-01",
+      "executed": true,
+      "exit_code": 0,
+      "assertions_passed": true,
+      "details": "4/4 checks passed (default OFF, 0x7f081038 bit4 isolated, 0x06547a0e mode 3 at 0 vs mode 0 at 0x3ff)"
+    },
+    {
+      "name": "qemu_regression_test_ram_layout",
+      "command": "TMPDIR=/Volumes/SATA-1TB/Projects/s5-qemu/tmp python3 -B qemu/test_ram_layout.py --output qa/task-clock-menu/test-ram-layout-02",
+      "executed": true,
+      "exit_code": 0,
+      "assertions_passed": true,
+      "details": "83/83 checks passed"
+    }
+  ],
+  "live_experiments": [
+    {
+      "id": "step3-clock-set-03",
+      "dir": "/Volumes/SATA-1TB/Projects/s5-qemu/workspace/s5-emulator/qa/task-clock-menu/step3-clock-set-03",
+      "role": "A/B Control A (default --adc0-ch5-sample 0)",
+      "executed": true,
+      "stop_reason": "time_bound",
+      "graphics_error": null,
+      "graphics_swaps": 16,
+      "graphics_draws": 481,
+      "final_scene": "0x2",
+      "final_modal": "0x0",
+      "final_state": "0x1f",
+      "visual_observation": "Clock Set screen reached, but Hour drifts continuously (18 -> 4 -> 14 -> 10 -> 19) due to continuous 0x00010006 DOWN repeat from ADC0 ch5 = 0."
+    },
+    {
+      "id": "step3-clock-set-adc0ch5-fixed-01",
+      "dir": "/Volumes/SATA-1TB/Projects/s5-qemu/workspace/s5-emulator/qa/task-clock-menu/step3-clock-set-adc0ch5-fixed-01",
+      "role": "A/B Control B (--adc0-ch5-sample 0x3ff)",
+      "executed": true,
+      "stop_reason": "time_bound",
+      "graphics_error": null,
+      "graphics_swaps": 5,
+      "graphics_draws": 144,
+      "final_scene": "0x2",
+      "final_modal": "0x0",
+      "final_state": "0x1f",
+      "visual_observation": "Zero 0x00010006 repeats; Clock Set stays rock-solid at 0 : 00 : 00  1 . JAN . 2020 (Set hidden until first field modification per 0x068b0924)."
+    },
+    {
+      "id": "step5-clock-confirm-01",
+      "dir": "/Volumes/SATA-1TB/Projects/s5-qemu/workspace/s5-emulator/qa/task-clock-menu/step5-clock-confirm-01",
+      "role": "5-step Clock Set modification (KEY_UP) + confirmation (KEY_CENTER)",
+      "executed": true,
+      "stop_reason": "time_bound",
+      "graphics_error": null,
+      "graphics_swaps": 7,
+      "graphics_draws": 212,
+      "final_scene": "0x2",
+      "final_modal": "0x9c",
+      "final_state": "0x1f",
+      "visual_observation": "frame-0005.png shows 1 : 00 : 00  1 . JAN . 2020 with Set enabled; frame-0006.png shows 'The clock setting has been completed.' (1:00 1.JAN.2020)."
+    },
+    {
+      "id": "step6-post-clock-01",
+      "dir": "/Volumes/SATA-1TB/Projects/s5-qemu/workspace/s5-emulator/qa/task-clock-menu/step6-post-clock-01",
+      "role": "6-step confirm modal 0x9c -> IBIS focal length prompt",
+      "executed": true,
+      "stop_reason": "time_bound",
+      "graphics_error": null,
+      "graphics_swaps": 8,
+      "graphics_draws": 226,
+      "final_scene": "0x1112",
+      "final_modal": "0x0",
+      "final_state": "0x8d",
+      "visual_observation": "frame-0007.png shows native manual-lens IBIS prompt: 'Current focal length setting: 35mm / Change the setting? [Yes] [No]' with 'No' highlighted."
+    },
+    {
+      "id": "step7-liveview-01",
+      "dir": "/Volumes/SATA-1TB/Projects/s5-qemu/workspace/s5-emulator/qa/task-clock-menu/step7-liveview-01",
+      "role": "7-step dismiss focal length prompt -> Native Live View HUD",
+      "executed": true,
+      "stop_reason": "time_bound",
+      "graphics_error": null,
+      "graphics_swaps": 9,
+      "graphics_draws": 479,
+      "final_scene": "0x1001",
+      "final_modal": "0x0",
+      "final_state": "0x1",
+      "visual_observation": "frame-0008.png shows Native LUMIX S5 Live View HUD (STD., FINE L, P, 10s timer, BODY IBIS, EXT. LMT ON CH1/CH2 meters, C2 P, ISO AUTO, dual SD slot icons, full battery)."
+    },
+    {
+      "id": "step9-menu-diag-01",
+      "dir": "/Volumes/SATA-1TB/Projects/s5-qemu/workspace/s5-emulator/qa/task-clock-menu/step9-menu-diag-01",
+      "role": "A/B Control A for Live View MENU/SET gate (default shutter S2=0, ADC1 ch4=0)",
+      "executed": true,
+      "stop_reason": "time_bound",
+      "graphics_error": null,
+      "graphics_swaps": 11,
+      "graphics_draws": 883,
+      "final_scene": "0x1001",
+      "final_modal": "0x0",
+      "final_state": "0x1",
+      "visual_observation": "Proved CENTER_LIVE_HANDLER (0x06646e84) returned early at 0x06646efe -> 0x0667a442() == 1 due to stuck shutter S1/S2 from 0x7f081038==0 and ADC1 ch4==0."
+    },
+    {
+      "id": "step8-main-menu-unlocked-01",
+      "dir": "/Volumes/SATA-1TB/Projects/s5-qemu/workspace/s5-emulator/qa/task-clock-menu/step8-main-menu-unlocked-01",
+      "role": "A/B Control B: 8-step full progression to Native Main Menu (--shutter-s2-input-high --adc1-ch4-sample 0x3ff)",
+      "executed": true,
+      "stop_reason": "time_bound",
+      "graphics_error": null,
+      "graphics_swaps": 11,
+      "graphics_draws": 558,
+      "final_scene": "0x1002",
+      "final_modal": "0x0",
+      "final_state": "0x2",
+      "menu_opened_verified_visually": true,
+      "visual_observation": "CENTER_LIVE_HANDLER passed 0x0667a442()==0, entered 0x0664704c -> 0x066be02a, transitioned to state=0x2 scene=0x1002, and rendered Native LUMIX S5 Main Menu (Photo tab -> Image Quality 1: Photo Style STD., Metering Mode, Aspect Ratio 3:2, Picture Quality FINE, Picture Size L 24M, HLG Photo OFF, High Resolution Mode, Long Exposure NR ON)."
+    },
+    {
+      "id": "step9-main-menu-nav-01",
+      "dir": "/Volumes/SATA-1TB/Projects/s5-qemu/workspace/s5-emulator/qa/task-clock-menu/step9-main-menu-nav-01",
+      "role": "9-step full progression + live KEY_DOWN navigation inside Native Main Menu",
+      "executed": true,
+      "stop_reason": "time_bound",
+      "graphics_error": null,
+      "graphics_swaps": 12,
+      "graphics_draws": 610,
+      "final_scene": "0x10cd",
+      "final_modal": "0x0",
+      "final_state": "0x2",
+      "menu_opened_verified_visually": true,
+      "menu_navigation_verified_visually": true,
+      "visual_observation": "Bit-for-bit identical frames 0000..0010 vs step8-main-menu-unlocked-01; frame-0011.png shows KEY_DOWN moving the active tab from Photo (0x1002) to Video (0x10cd, Image Quality 1: Exposure Mode, Photo Style STD., Metering Mode, ISO Sensitivity (video), Flicker Decrease (Video) OFF, Master Pedestal Level 0, SS/Gain Operation SEC/ISO, i.Dynamic Range OFF)."
+    }
+  ],
+  "milestone_frames_step9_main_menu_nav_01": [
+    {
+      "frame": "frame-0000.png",
+      "path": "/Volumes/SATA-1TB/Projects/s5-qemu/workspace/s5-emulator/qa/task-clock-menu/step9-main-menu-nav-01/graphics/frame-0000.png",
+      "sha256": "441650dc9de75635c6e5009d8937594af0b4a85bb0a6f4dd93725f09cd885fc7",
+      "screen": "Please set the time zone (scene=0xffff, modal=0x23c)"
+    },
+    {
+      "frame": "frame-0002.png",
+      "path": "/Volumes/SATA-1TB/Projects/s5-qemu/workspace/s5-emulator/qa/task-clock-menu/step9-main-menu-nav-01/graphics/frame-0002.png",
+      "sha256": "55447019af512b18fa899f4b5d3103f212d4bed17af48ff51b4f373b25845b0b",
+      "screen": "Time Zone: Berlin GMT+1:00 (scene=0x70de, modal=0x0)"
+    },
+    {
+      "frame": "frame-0003.png",
+      "path": "/Volumes/SATA-1TB/Projects/s5-qemu/workspace/s5-emulator/qa/task-clock-menu/step9-main-menu-nav-01/graphics/frame-0003.png",
+      "sha256": "c988d50615ee7350ace3c16f82df98d9f07942be3fdd3f25c9df38946447a31f",
+      "screen": "Please set the clock / Clock Set (scene=0x70de, modal=0xe)"
+    },
+    {
+      "frame": "frame-0004.png",
+      "path": "/Volumes/SATA-1TB/Projects/s5-qemu/workspace/s5-emulator/qa/task-clock-menu/step9-main-menu-nav-01/graphics/frame-0004.png",
+      "sha256": "23b536428f86e307d15d3b1cdf54969c612f798b0159f528f52effb69f50b8f6",
+      "screen": "Clock Set 0:00:00 1.JAN.2020 (scene=0x2, modal=0x0, zero drift)"
+    },
+    {
+      "frame": "frame-0005.png",
+      "path": "/Volumes/SATA-1TB/Projects/s5-qemu/workspace/s5-emulator/qa/task-clock-menu/step9-main-menu-nav-01/graphics/frame-0005.png",
+      "sha256": "8bcb428e77635fe9fe08ac4293a97c0af501406eb8176882d35e48297d67d298",
+      "screen": "Clock Set 1:00:00 1.JAN.2020 with Set enabled (scene=0x2, modal=0x0)"
+    },
+    {
+      "frame": "frame-0006.png",
+      "path": "/Volumes/SATA-1TB/Projects/s5-qemu/workspace/s5-emulator/qa/task-clock-menu/step9-main-menu-nav-01/graphics/frame-0006.png",
+      "sha256": "8033e16ff70d3b0320b25340ea24534648f1de62c8329e85f1b2926801be0c90",
+      "screen": "The clock setting has been completed. 1:00 1.JAN.2020 (scene=0x2, modal=0x9c)"
+    },
+    {
+      "frame": "frame-0007.png",
+      "path": "/Volumes/SATA-1TB/Projects/s5-qemu/workspace/s5-emulator/qa/task-clock-menu/step9-main-menu-nav-01/graphics/frame-0007.png",
+      "sha256": "59dbb6b0334e7e50e43fdf3fd286ff3def06635dd4384c26f02c5c503dcb2617",
+      "screen": "Current focal length setting: 35mm / Change the setting? [Yes] [No] (scene=0x1112, modal=0x0)"
+    },
+    {
+      "frame": "frame-0008.png",
+      "path": "/Volumes/SATA-1TB/Projects/s5-qemu/workspace/s5-emulator/qa/task-clock-menu/step9-main-menu-nav-01/graphics/frame-0008.png",
+      "sha256": "d189531ed8f51bf583450382433501ab6b53ce1d6ee1fd43ad0edb0226f5f439",
+      "screen": "No memory card [1][2] toast (scene=0x1001)"
+    },
+    {
+      "frame": "frame-0009.png",
+      "path": "/Volumes/SATA-1TB/Projects/s5-qemu/workspace/s5-emulator/qa/task-clock-menu/step9-main-menu-nav-01/graphics/frame-0009.png",
+      "sha256": "f2ecaebf1c704089971bfcc73838d9f153dda8e5ec66c14dfad40d566f3784a4",
+      "screen": "Native LUMIX S5 Live View HUD (scene=0x1001, modal=0x0, state=0x1)"
+    },
+    {
+      "frame": "frame-0010.png",
+      "path": "/Volumes/SATA-1TB/Projects/s5-qemu/workspace/s5-emulator/qa/task-clock-menu/step9-main-menu-nav-01/graphics/frame-0010.png",
+      "sha256": "e697bfa7d7e8b7d0171815469ac10602e641c02ca18ff3ecbd3c69297bf9be59",
+      "screen": "Native LUMIX S5 Main Menu — Photo / Image Quality 1 (scene=0x1002, modal=0x0, state=0x2)"
+    },
+    {
+      "frame": "frame-0011.png",
+      "path": "/Volumes/SATA-1TB/Projects/s5-qemu/workspace/s5-emulator/qa/task-clock-menu/step9-main-menu-nav-01/graphics/frame-0011.png",
+      "sha256": "8a793a7bdad3b415b7bf0b7337cc5c83dd6cef4011a20a15f0afdcaf50c399df",
+      "screen": "Native LUMIX S5 Main Menu — Video / Image Quality 1 (scene=0x10cd, modal=0x0, state=0x2)"
+    }
+  ]
+}

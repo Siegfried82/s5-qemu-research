@@ -4,9 +4,9 @@
 
 **完整交接版已补充为 [Full Handoff Release](https://github.com/Siegfried82/s5-qemu-research/releases/tag/handoff-full-20261125)。包含固件、完整工具链、所有内存快照与实验结果及外部依赖。请下载所有5个归档分片与校验/恢复附件；只点击 GitHub 的 Source code ZIP 不包含这些大文件。见[恢复与接手说明](handoff/HANDOFF.md)。
 
-**已运行原厂时区选择界面，并通过原输入任务处理确认键。完整主菜单、DSP、传感器/ISP和菜单快门到JPEG的整条流程尚未完成。**
+**已走通原厂时区/时钟开机向导、进入原厂取景 HUD，并真正渲染与交互导航 Panasonic LUMIX S5 原厂主菜单（照片与视频标签页、子列焦点切换、返回键退出），并提供一键本地浏览器交互入口。DSP、传感器/ISP、SD 卡槽和菜单快门到 JPEG 的整条硬件链尚未完成。**
 
-![原厂时区选择界面](s5-emulator/qa/task-a/lens-release-high-taska-01/graphics/frame-0009.png)
+![原厂主菜单界面](s5-emulator/qa/task-clock-menu/step9-main-menu-nav-01/graphics/frame-0010.png)
 
 ## 当前结果
 
@@ -16,29 +16,29 @@
 | 外设 | 原RTC/SPI读写、定时器和GIC中断；部分外设采用明确标注的HLE或TEST输入 |
 | 图形 | 原GUI产生文字轮廓、路径、图标、共享图像离屏绘制及实际EGL swap；软件后端在macOS绘制PNG |
 | 模式切换 | 原模式35确认发出并消费，原状态机完成切换 |
-| 输入 | 原CENTER按下与释放经过原pool、队列和处理器；确认时区提示进入state0x20/scene0x70de |
-| 最新镜头输入对照 | 默认输入复现modal0x4a；显式`--lens-release-input-high`后最终modal为0，实际显示无遮挡时区地图；425次绘制、10次swap |
+| 输入 | 原厂 `0x06f1003c` 表中 19 个实体按键/拨轮经原pool、队列和处理器消费；新增 `key_sequence_scheduler` 在原 `eglSwapBuffers` 边界核对目标 `scene/modal` 门禁 |
+| 外部硬件输入模型 | 全部默认关闭、单变量实跑对照通过：`--lens-release-input-high`（SPI3 `0x044e` bit0，解除 modal `0x4a`）、`--adc2-ch0-sample 0x3ff`（ADC2 ch0 方向电阻梯空闲，消除时区漂移）、`--adc0-ch5-sample 0x3ff`（ADC0 ch5 摇杆下空闲，消除 Clock Set 小时漂移）、`--shutter-s2-input-high` + `--adc1-ch4-sample 0x3ff`（机身快门 S2 与有线快门线未按，解除 Live View 进主菜单门禁） |
+| 原厂主菜单与实时交互 | 已从开机向导走至原厂取景 HUD（`scene 0x1001`）与主菜单（照片 `scene 0x1002`、视频 `scene 0x10cd`）；新增 `interactive/s5_interactive.py` 浏览器交互入口（实测 `KEY_RIGHT`/`KEY_CENTER`/`KEY_DELETE`/`KEY_DOWN` 实时消费与画面刷新）、`viewer/s5_frame_viewer.py` 只读查看器与 `display/verify_trace_corpus.py` 轨迹回归工具 |
 | JPEG局部实验 | 合成输入与真实LUT补丁、原JPU驱动及软件JPU模型可输出6000×4000 JPEG；尚非原相机快门/ISP整条链 |
 
 “原厂界面”指固件真正执行并发出绘图调用；图形驱动由软件后端替代。当前仍用`--isolate-display`延迟未模拟的DSP等待，并局部运行原task66服务，以及显式测试中断。这些结果不表示整机已经完整启动。
 
 ## 下一步
 
-1. 定位时区没有方向键操作却持续向东变化的原因；方向键/拨轮输入异常目前只是候选解释。
-2. 完善多步按键调度：新帧必须与期望scene/modal关联，再发送下一次确认。
-3. 完成时区、日期设置，验证原主菜单导航。
-4. 把真实画面查看和输入组织成持续交互入口，再继续DSP、图像和存储链。
-
-Gemini任务A已产出独立测试与建议补丁。原focused测试缺少冷启动VFP使能；开启CPACR/FPEXC的独立测试通过，建议补丁保留在任务目录，未合入原测试。
+1. 研究并建模 SD 卡槽（SDIO/存储控制器），解除取景界面“No memory card”提示并打通原厂存储读写链。
+2. 推进快门/拍照控制链与未知协处理器（DSP，`0x7b000000`）研究，逐步替代显式 `--isolate-display` 与 TEST 脉冲。
+3. 视需要合入任务 A（focused VFP 补丁）与任务 C（`replay_graphics_trace.patch`）的独立建议补丁并持续扩展图形轨迹回归集。
 
 ## 目录与证据
 
 - [主工具说明](s5-emulator/README.md)、[最新多核菜单实验](s5-emulator/menu-smp/README.md)
+- [交互式 S5 模拟器](s5-emulator/interactive/README.md)、[只读原厂画面查看器](s5-emulator/viewer/README.md)
 - [QEMU板卡与设备源码](s5-emulator/qemu/)、[图形后端](s5-emulator/display/)
-- [任务A对照报告](s5-emulator/qa/task-a/report-task-a.md)、[机器可读结果](s5-emulator/qa/task-a/verification.json)
-- [任务A默认输入结果](s5-emulator/qa/task-a/baseline-taska-02/result.json)、[释放输入结果](s5-emulator/qa/task-a/lens-release-high-taska-01/result.json)
-- [Gemini工作包](s5-emulator/gemini-work-packages/分工与验收.txt)
-- [快照文件与SHA-256](snapshot-manifest.json)
+- [开机向导→取景HUD→主菜单报告](s5-emulator/qa/task-clock-menu/report.md)（[verification.json](s5-emulator/qa/task-clock-menu/verification.json)）
+- [交互式模拟器端到端报告](s5-emulator/qa/task-interactive/report.md)（[verification.json](s5-emulator/qa/task-interactive/verification.json)）
+- [时区漂移根因与单变量对照](s5-emulator/qa/task-timezone-drift/report.md)（[verification.json](s5-emulator/qa/task-timezone-drift/verification.json)）
+- [任务A镜头输入对照](s5-emulator/qa/task-a/report-task-a.md)、[任务B连续按键调度](s5-emulator/qa/task-b/report-task-b.md)、[任务C图形重放验收](s5-emulator/qa/task-c/report-task-c.md)、[任务D只读查看器](s5-emulator/qa/task-d/report-task-d.md)
+- [Gemini工作包](s5-emulator/gemini-work-packages/分工与验收.txt)、[快照文件与SHA-256](snapshot-manifest.json)
 
 部分历史说明描述各阶段当时状态；以上进度与最新任务A结果优先。任务A比较器“不匹配已知警告PNG摘要”只能说明没有完全相同的警告图片，不能单独证明所有帧均无警告；本次结论同时依赖最终原状态、布局及图像检查。
 
@@ -60,20 +60,28 @@ repo/
 
 构建说明见[toolchain/README.md](s5-emulator/toolchain/README.md)。QEMU官方源码版本、下载地址和摘要在`toolchain/source-manifest.json`；需按记录恢复`toolchain/qemu-9.2.4/`及`toolchain/deps/`再运行`build.sh`，脚本应用项目板卡及定时器补丁。该快照没有自动下载安装依赖的引导器。图形后端当前依赖macOS CoreGraphics与Pillow；其他平台未验证。
 
-在依赖与固件恢复后，从`s5-emulator/`运行：
+在依赖与固件恢复后，从`s5-emulator/`一键启动本地浏览器交互式模拟器（默认自动走完向导进入原厂主菜单，也支持 `--boot-to liveview` / `--boot-to wizard`）：
+
+```sh
+python3 -B interactive/s5_interactive.py --boot-to menu --open-browser
+```
+
+或运行非交互单步对照命令：
 
 ```sh
 python3 -B menu-smp/boot.py --ram 2G --storage-hle --capture-gfx --graphics-hle \
   --spi0-open-bus --spi6-open-bus --tx-serial-hle --adc11-sample 0x300 \
+  --adc2-ch0-sample 0x3ff --adc0-ch5-sample 0x3ff --adc1-ch4-sample 0x3ff \
+  --shutter-s2-input-high --lens-release-input-high \
   --isolate-display --isolate-display-ticks 600000 --linux-peer \
   --service-gui-once --probe-ui-mode35 --display-clock-test \
   --ui-service-loop --ui-service-postinit \
   --frame-irq-test-pairs 128 --frame-test-stage-seconds 10 \
-  --lcd-refresh-test-pulses 8 --key-event KEY_CENTER --key-click \
-  --lens-release-input-high --seconds 120
+  --lcd-refresh-test-pulses 12 --key-event KEY_CENTER --key-click \
+  --seconds 120
 ```
 
-该选项只改变串行外部输入位的读取电平，不表示镜头已连接。QEMU需要宿主机允许JIT与本地调试套接字；不连接实体相机。
+以上外部输入开关均默认关闭，只改变对应外部硬件采样电平，不表示镜头已连接或整机已完整启动。QEMU需要宿主机允许JIT与本地调试套接字；不连接实体相机。
 
 ## 快照范围
 

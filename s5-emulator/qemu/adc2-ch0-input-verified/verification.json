@@ -1,0 +1,140 @@
+{
+  "scope": "Hardware ADC bank 2 channel 0 MMIO conversion + original Thumb-2 decoder 0x06545554; no firmware patch or UI write.",
+  "qemu_sha256": "b12ab0b0bead16c0e4d5d954f745c829db49d155ae67640bf730eeed4450b702",
+  "program_sha256": "fc496d62a91f6e9b1b84807183bb805bc546c9105d2938546b58a66ad9d132fe",
+  "original_instructions_modified": false,
+  "guest_ui_or_event_writes": false,
+  "checks": [
+    "default adc2-ch0-sample is 0 and reported in adc-state-json",
+    "adc2-ch0-sample rejects > 0xffff without mutating stored value",
+    "default bank2 ch0=0 -> original 0x06545554 returns raw 0x20 (KEY_LEFT)",
+    "all 4 directional bands + idle 0x3ff verified through 0x7f032014 and original 0x06545554",
+    "bank0/bank1/bank2 isolation and adc-state-json accounting verified"
+  ],
+  "decoder_cases": [
+    {
+      "sample": "0x0",
+      "mmio_bank2": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "decoded_raw_06545554": "0x20",
+      "label": "KEY_LEFT"
+    },
+    {
+      "sample": "0xb8",
+      "mmio_bank2": [
+        184,
+        0,
+        0,
+        0
+      ],
+      "decoded_raw_06545554": "0x4",
+      "label": "KEY_UP"
+    },
+    {
+      "sample": "0x183",
+      "mmio_bank2": [
+        387,
+        0,
+        0,
+        0
+      ],
+      "decoded_raw_06545554": "0x10",
+      "label": "KEY_RIGHT"
+    },
+    {
+      "sample": "0x25a",
+      "mmio_bank2": [
+        602,
+        0,
+        0,
+        0
+      ],
+      "decoded_raw_06545554": "0x8",
+      "label": "KEY_DOWN"
+    },
+    {
+      "sample": "0x3ff",
+      "mmio_bank2": [
+        1023,
+        0,
+        0,
+        0
+      ],
+      "decoded_raw_06545554": "0x0",
+      "label": "IDLE_NO_KEY"
+    }
+  ],
+  "final_adc_state": {
+    "profile": "synchronous-raw-input",
+    "voltage_scale_known": false,
+    "conversion_latency_verified": false,
+    "adc11_sample": 768,
+    "adc2_ch0_sample": 1023,
+    "banks": [
+      {
+        "base": "0x7f030000",
+        "control": 0,
+        "mask": 4095,
+        "count": 12,
+        "status": 0,
+        "conversions": 1,
+        "unknown_reads": 0,
+        "unknown_writes": 0,
+        "results": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          768
+        ]
+      },
+      {
+        "base": "0x7f031000",
+        "control": 0,
+        "mask": 127,
+        "count": 7,
+        "status": 0,
+        "conversions": 1,
+        "unknown_reads": 0,
+        "unknown_writes": 0,
+        "results": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "base": "0x7f032000",
+        "control": 0,
+        "mask": 15,
+        "count": 4,
+        "status": 0,
+        "conversions": 7,
+        "unknown_reads": 0,
+        "unknown_writes": 0,
+        "results": [
+          1023,
+          0,
+          0,
+          0
+        ]
+      }
+    ]
+  },
+  "passed": true
+}

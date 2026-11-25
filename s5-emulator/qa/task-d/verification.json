@@ -1,0 +1,241 @@
+{
+  "task": "task-d-native-frame-viewer",
+  "viewer_script": "viewer/s5_frame_viewer.py",
+  "test_script": "qa/task-d/test_frame_viewer.py",
+  "python_version": "3.9.6",
+  "stdlib_only": true,
+  "tests_executed_ok": true,
+  "assertions_passed": true,
+  "total_cases": 10,
+  "passed_cases": 10,
+  "launch_command": "python3 -B viewer/s5_frame_viewer.py --result-dir menu-smp/results/local-requested-lcd-refresh",
+  "real_corpus_verification": {
+    "local_requested_lcd_refresh": {
+      "cli_bound_loopback_url_example": "http://127.0.0.1:62265/",
+      "swap_count": 5,
+      "menu_rendered": false,
+      "stop_reason": "time_bound",
+      "qemu_exit_code": 0,
+      "modal_id_at_stop": "0x4a",
+      "render_scene_at_stop": "0x70de",
+      "source_dir_files_checked": 75,
+      "source_dir_byte_identical_after_run": true,
+      "frames": [
+        {
+          "swap_seq": 0,
+          "filename": "frame-0000.png",
+          "trace_index": 696,
+          "draw_calls": 15,
+          "width": 1024,
+          "height": 768,
+          "png_bytes": 20624,
+          "png_sha256": "441650dc9de75635c6e5009d8937594af0b4a85bb0a6f4dd93725f09cd885fc7",
+          "byte_identical_to_disk": true
+        },
+        {
+          "swap_seq": 1,
+          "filename": "frame-0001.png",
+          "trace_index": 1289,
+          "draw_calls": 31,
+          "width": 1024,
+          "height": 768,
+          "png_bytes": 21421,
+          "png_sha256": "4cc91201a32a93d87c7c03470860c59453861af28b03792dea514061bb14b7b8",
+          "byte_identical_to_disk": true
+        },
+        {
+          "swap_seq": 2,
+          "filename": "frame-0002.png",
+          "trace_index": 3443,
+          "draw_calls": 84,
+          "width": 1024,
+          "height": 768,
+          "png_bytes": 69029,
+          "png_sha256": "5716bb8ee9b24138a1bbb930479a8cf0efc4782b3e8a013ef32c87839295e199",
+          "byte_identical_to_disk": true
+        },
+        {
+          "swap_seq": 3,
+          "filename": "frame-0003.png",
+          "trace_index": 4476,
+          "draw_calls": 98,
+          "width": 1024,
+          "height": 768,
+          "png_bytes": 34369,
+          "png_sha256": "ef76bb7730fa498f70c0978643c6ed07e2ea707a964fd8af953f52fb16c20890",
+          "byte_identical_to_disk": true
+        },
+        {
+          "swap_seq": 4,
+          "filename": "frame-0004.png",
+          "trace_index": 4881,
+          "draw_calls": 110,
+          "width": 1024,
+          "height": 768,
+          "png_bytes": 34369,
+          "png_sha256": "ef76bb7730fa498f70c0978643c6ed07e2ea707a964fd8af953f52fb16c20890",
+          "byte_identical_to_disk": true
+        }
+      ]
+    },
+    "live_timezone_confirm_03": {
+      "swap_count": 13,
+      "menu_rendered": false,
+      "stop_reason": "time_bound",
+      "qemu_exit_code": 0,
+      "unswapped_incomplete_surface_rejected_http": 400,
+      "lens_release_input_present": true,
+      "source_dir_files_checked": 91,
+      "source_dir_byte_identical_after_run": true
+    }
+  },
+  "cases": [
+    {
+      "name": "1_start_before_result_and_calls_exist",
+      "executed_ok": true,
+      "assertions_passed": true,
+      "details": {
+        "run_state": "waiting_for_run",
+        "waiting_reason": "Waiting for graphics/calls.jsonl and first complete software_swap PNG."
+      },
+      "error": null,
+      "duration_ms": 54.89
+    },
+    {
+      "name": "2_non_swap_and_truncated_jsonl_tail",
+      "executed_ok": true,
+      "assertions_passed": true,
+      "details": {
+        "trace_records_parsed": 2,
+        "truncated_tail_ignored": true
+      },
+      "error": null,
+      "duration_ms": 53.83
+    },
+    {
+      "name": "3_swap1_chunked_png_then_complete",
+      "executed_ok": true,
+      "assertions_passed": true,
+      "details": {
+        "partial_status": 409,
+        "complete_sha256": "2615435ca41e119d9fd3383c59868884a007002eb9697c0fe8ef25bc6146b435"
+      },
+      "error": null,
+      "duration_ms": 55.34
+    },
+    {
+      "name": "4_swap2_retains_prev_then_advances_and_downloads",
+      "executed_ok": true,
+      "assertions_passed": true,
+      "details": {
+        "order": [
+          0,
+          1
+        ],
+        "download_sha256": "332e9ae23276612ae0a72c2e80f4a72bc8369143b7a54c85763dd7fcb7b6e8ec"
+      },
+      "error": null,
+      "duration_ms": 56.17
+    },
+    {
+      "name": "5_result_json_completion_and_xss_safety",
+      "executed_ok": true,
+      "assertions_passed": true,
+      "details": {
+        "menu_rendered": false,
+        "xss_in_html": false
+      },
+      "error": null,
+      "duration_ms": 55.23
+    },
+    {
+      "name": "6_failure_exit_and_missing_png",
+      "executed_ok": true,
+      "assertions_passed": true,
+      "details": {
+        "run_state": "failed",
+        "missing_png_http": 404
+      },
+      "error": null,
+      "duration_ms": 54.96
+    },
+    {
+      "name": "7_security_traversal_symlinks_methods_loopback",
+      "executed_ok": true,
+      "assertions_passed": true,
+      "details": {
+        "rejected_hosts": [
+          "0.0.0.0",
+          "192.168.1.10",
+          "::",
+          "example.com"
+        ],
+        "attack_statuses": {
+          "/api/frames/../../outside-secret.png": 400,
+          "/api/frames/../result.json": 400,
+          "/api/frames/%2e%2e/result.json": 400,
+          "/api/frames/%2e%2e%2fresult.json": 400,
+          "/api/frames/..%2fresult.json": 400,
+          "/api/frames//etc/passwd": 400,
+          "/api/frames/%2fetc%2fpasswd": 400,
+          "/api/frames/..\\result.json": 400,
+          "/../result.json": 400,
+          "/api/frames/frame-0099.png": 403,
+          "/api/frames/frame-0099.png/download": 403
+        }
+      },
+      "error": null,
+      "duration_ms": 61.7
+    },
+    {
+      "name": "8_readonly_byte_invariance_on_sim_dir",
+      "executed_ok": true,
+      "assertions_passed": true,
+      "details": {
+        "files_checked": 5,
+        "byte_identical": true
+      },
+      "error": null,
+      "duration_ms": 58.52
+    },
+    {
+      "name": "9_real_corpus_local_requested_lcd_refresh_and_cli",
+      "executed_ok": true,
+      "assertions_passed": true,
+      "details": {
+        "cli_url": "http://127.0.0.1:62265/",
+        "frames_verified": 5,
+        "source_dir_untouched": true
+      },
+      "error": null,
+      "duration_ms": 456.84
+    },
+    {
+      "name": "10_real_corpus_live_timezone_confirm_03",
+      "executed_ok": true,
+      "assertions_passed": true,
+      "details": {
+        "frames_verified": 13,
+        "unswapped_rejected_http": 400,
+        "source_dir_untouched": true
+      },
+      "error": null,
+      "duration_ms": 373.45
+    }
+  ],
+  "verified_vs_assumptions": {
+    "verified": [
+      "Pure Python standard library HTTP server binds loopback 127.0.0.1 on random free port (--port 0) and rejects non-loopback hosts.",
+      "Starts cleanly before result.json or graphics/calls.jsonl exists; ignores non-swap events and incomplete trailing JSONL lines.",
+      "Validates PNG signature, IHDR, IDAT, chunk CRCs, and IEND in memory; retains previous valid frame while next PNG is incomplete; never synthesizes placeholder frames.",
+      "Serves exact byte-identical raw PNGs and download attachments strictly for authorized software_swap records; rejects unswapped incomplete-surface PNGs.",
+      "Preserves menu_rendered verbatim (false) and separates native swap frames, result.json boot status, and local HLE/TEST experiment scope.",
+      "Static HTML shell + textContent-only DOM rendering + strict CSP + nosniff prevents HTML/XSS injection from result.json or calls.jsonl strings.",
+      "Rejects path traversal, percent-encoded traversal, symlink escapes (403), and HTTP write methods (405); verified byte-level read-only invariance on synthetic and both real corpora (5 frames + 13 frames)."
+    ],
+    "not_claimed_or_remaining_assumptions": [
+      "Headless browser DOM rendering (CSS/JS execution inside an actual browser engine) was not driven by Playwright/Chrome in this stdlib-only test; JS safety was verified by static inspection (zero innerHTML/outerHTML/insertAdjacentHTML/document.write), CSP headers, and API JSON payload verification.",
+      "Viewer does not run QEMU, does not provide camera input controls, and does not claim main menu or full camera boot succeeded (menu_rendered remains false on both real corpora)."
+    ]
+  }
+}

@@ -1,0 +1,179 @@
+{
+  "task": "C",
+  "title": "Graphics trace batch replay & regression verification tool",
+  "generated_at_utc": "2026-11-25T08:31:00+00:00",
+  "scope": "Host-only OpenVGBackend replay and destructive fixture verification on previously captured call traces; replay verifies backend fidelity on captured calls only and does NOT prove new firmware execution, QEMU boot success, or main menu rendering.",
+  "qemu_executed": false,
+  "menu_rendered_verified": false,
+  "tests_executed_ok": true,
+  "assertions_passed": true,
+  "commands": {
+    "corpus_verify": {
+      "command": "TMPDIR=/Volumes/SATA-1TB/Projects/s5-qemu/tmp python3 -B display/verify_trace_corpus.py --output qa/task-c/corpus-report.json",
+      "executed_ok": true,
+      "assertions_passed": true,
+      "exit_code": 0,
+      "output_json": "/Volumes/SATA-1TB/Projects/s5-qemu/workspace/s5-emulator/qa/task-c/corpus-report.json",
+      "log_path": "/Volumes/SATA-1TB/Projects/s5-qemu/workspace/s5-emulator/qa/task-c/verify-trace-corpus.log"
+    },
+    "destructive_fixture_tests": {
+      "command": "TMPDIR=/Volumes/SATA-1TB/Projects/s5-qemu/tmp python3 -B display/test_trace_corpus.py",
+      "executed_ok": true,
+      "assertions_passed": true,
+      "test_count": 12,
+      "exit_code": 0,
+      "log_path": "/Volumes/SATA-1TB/Projects/s5-qemu/workspace/s5-emulator/qa/task-c/test-trace-corpus.log"
+    },
+    "python_syntax_check": {
+      "command": "python3 -B -m py_compile display/verify_trace_corpus.py display/test_trace_corpus.py",
+      "executed_ok": true,
+      "assertions_passed": true,
+      "exit_code": 0
+    },
+    "suggested_replay_patch_verify": {
+      "command": "cp display/replay_graphics_trace.py /Volumes/SATA-1TB/Projects/s5-qemu/tmp/replay_verify_copy.py && patch --dry-run /Volumes/SATA-1TB/Projects/s5-qemu/tmp/replay_verify_copy.py qa/task-c/replay_graphics_trace.patch && patch /Volumes/SATA-1TB/Projects/s5-qemu/tmp/replay_verify_copy.py qa/task-c/replay_graphics_trace.patch && python3 -B -m py_compile /Volumes/SATA-1TB/Projects/s5-qemu/tmp/replay_verify_copy.py",
+      "executed_ok": true,
+      "assertions_passed": true,
+      "exit_code": 0,
+      "patch_path": "/Volumes/SATA-1TB/Projects/s5-qemu/workspace/s5-emulator/qa/task-c/replay_graphics_trace.patch"
+    }
+  },
+  "corpus_results": {
+    "total_traces": 3,
+    "completed_full": 2,
+    "completed_prefix_only": 1,
+    "failed": 0,
+    "total_swap_frames_verified": 8,
+    "traces": [
+      {
+        "name": "local-frame-query",
+        "trace_dir": "/Volumes/SATA-1TB/Projects/s5-qemu/workspace/s5-emulator/menu-smp/results/local-frame-query/graphics",
+        "calls_jsonl_sha256": "426bbd428bda9496f16ec9fa1e3f891961a2c84c0f4b7c363eb4f5c46eec3dee",
+        "completion_status": "completed_prefix_only",
+        "full_run_succeeded": false,
+        "prefix_verified": true,
+        "unsupported_stop": {
+          "event_index": 1028,
+          "line": 1029,
+          "api": "eglCreatePbufferFromClientBuffer",
+          "pc": "0x64c2878",
+          "exception": "UnsupportedVG",
+          "error": "ABI/implementation not established for eglCreatePbufferFromClientBuffer",
+          "draws_completed_before_stop": 27,
+          "swaps_completed_before_stop": 1
+        },
+        "swap_frames_verified": 1,
+        "incomplete_surfaces_separated": 1,
+        "image_dependencies_verified": 4,
+        "transform_path_dependencies_verified": 2
+      },
+      {
+        "name": "local-shared-image-stride",
+        "trace_dir": "/Volumes/SATA-1TB/Projects/s5-qemu/workspace/s5-emulator/menu-smp/results/local-shared-image-stride/graphics",
+        "calls_jsonl_sha256": "3f3d82aee73869ae6b2a109bf577774b5b9376867778ab445625a534abf0b175",
+        "completion_status": "completed_full",
+        "full_run_succeeded": true,
+        "prefix_verified": true,
+        "swap_frames_verified": 2,
+        "incomplete_surfaces_separated": 1,
+        "image_dependencies_verified": 5,
+        "transform_path_dependencies_verified": 2,
+        "targeted_roi_regression": {
+          "is_generic_menu_detector": false,
+          "evidence_reference": "display/render-wait-analysis/two-frame-pixel-verification.json",
+          "center_roi": [160, 250, 800, 390],
+          "center_pixels_identical": true,
+          "whole_image_diff_bbox": [866, 21, 929, 59],
+          "whole_image_changed_pixel_count": 2309,
+          "diff_within_battery_region": true,
+          "center_bright_pixels_each": [9696, 9696],
+          "passed": true
+        }
+      },
+      {
+        "name": "local-requested-lcd-refresh",
+        "trace_dir": "/Volumes/SATA-1TB/Projects/s5-qemu/workspace/s5-emulator/menu-smp/results/local-requested-lcd-refresh/graphics",
+        "calls_jsonl_sha256": "d4a76e35483b17b7e1a5383d5eff70f7d27298bb9f800bd7e3b0a38c86c21e3e",
+        "completion_status": "completed_full",
+        "full_run_succeeded": true,
+        "prefix_verified": true,
+        "swap_frames_verified": 5,
+        "incomplete_surfaces_separated": 1,
+        "image_dependencies_verified": 38,
+        "transform_path_dependencies_verified": 10
+      }
+    ]
+  },
+  "destructive_fixture_coverage": [
+    "deleted_image_dependency",
+    "mutated_transform_path_geometry_file",
+    "mutated_draw_path_geometry_in_calls_jsonl",
+    "swapped_two_reference_frames",
+    "corrupted_truncated_tail_line_in_calls_jsonl",
+    "single_known_pixel_modified_rgb_only_in_center_roi",
+    "single_known_pixel_modified_alpha_only",
+    "mid_run_unsupported_prefix_only_and_require_full_rejection",
+    "recompressed_png_identical_rgba_passes",
+    "path_traversal_and_unknown_event_rejected",
+    "cli_exit_code_zero_on_pass_nonzero_on_failure",
+    "zero_source_directory_mutation_verified_via_sha256_snapshots"
+  ],
+  "protected_files_untouched": {
+    "verified": true,
+    "files": [
+      {
+        "path": "/Volumes/SATA-1TB/Projects/s5-qemu/workspace/s5-emulator/display/openvg_backend.py",
+        "bytes": 37322,
+        "sha256": "19129b73b6348549c393874ce2bde44f9d8a2453e4ff0f239215db4a8e1fee35"
+      },
+      {
+        "path": "/Volumes/SATA-1TB/Projects/s5-qemu/workspace/s5-emulator/display/graphics_hle.py",
+        "bytes": 27252,
+        "sha256": "0565692bb73b501b4566699d182e800ed0a8bdbecbdd75b5bf284d75f15ae29b"
+      },
+      {
+        "path": "/Volumes/SATA-1TB/Projects/s5-qemu/workspace/s5-emulator/display/replay_graphics_trace.py",
+        "bytes": 3435,
+        "sha256": "03baa4acfae1cd212d17013159e4027615f325a6877cfe60a8b83fdf05d4367c"
+      }
+    ]
+  },
+  "created_files": [
+    {
+      "path": "/Volumes/SATA-1TB/Projects/s5-qemu/workspace/s5-emulator/display/verify_trace_corpus.py",
+      "bytes": 70545,
+      "sha256": "9a77c3e8513e5be16810116629c665c2dab5af9eee5a6f684a419771a8b9d6c2"
+    },
+    {
+      "path": "/Volumes/SATA-1TB/Projects/s5-qemu/workspace/s5-emulator/display/test_trace_corpus.py",
+      "bytes": 16719,
+      "sha256": "a3b1cd8641c6b6267151d81fbc1a31d697c23e616e7d9cc5d176d682bc8fe6b8"
+    },
+    {
+      "path": "/Volumes/SATA-1TB/Projects/s5-qemu/workspace/s5-emulator/qa/task-c/corpus-report.json",
+      "bytes": 99545,
+      "sha256": "96e81ce1ce7a5f0f7145966770ead6c1f07b9d95ca529d0f0911f3a4783d5eef"
+    },
+    {
+      "path": "/Volumes/SATA-1TB/Projects/s5-qemu/workspace/s5-emulator/qa/task-c/verify-trace-corpus.log",
+      "bytes": 571,
+      "sha256": "7607c8f36d1ee2b191b5f296823dfd41c6b619bed970051a0b4f37d21b4fb0c1"
+    },
+    {
+      "path": "/Volumes/SATA-1TB/Projects/s5-qemu/workspace/s5-emulator/qa/task-c/test-trace-corpus.log",
+      "bytes": 3645,
+      "sha256": "3a4be6ea3280dec585fca3b0a17f86ba00a60d44a17ea79f4fec2f267ef13b42"
+    },
+    {
+      "path": "/Volumes/SATA-1TB/Projects/s5-qemu/workspace/s5-emulator/qa/task-c/replay_graphics_trace.patch",
+      "bytes": 9712,
+      "sha256": "b8fb4257f63666a3fa216a6e58999de78f1faf85ba16249e4c07e302f2aa3eb6"
+    }
+  ],
+  "limitations_and_assumptions": [
+    "Replay validates host OpenVGBackend rendering fidelity against previously captured guest API call traces only; it does NOT run QEMU or prove live S5 firmware progression.",
+    "local-frame-query stopped mid-run at unsupported eglCreatePbufferFromClientBuffer (index 1028); only its completed prefix (1 swap, 27 draws) can be replayed and verified.",
+    "The local-shared-image-stride center ROI check (160,250)-(800,390) vs battery diff bbox (866,21)-(929,59) is a targeted regression check against display/render-wait-analysis/two-frame-pixel-verification.json, NOT a generic menu detector.",
+    "display/replay_graphics_trace.py was NOT modified directly due to parallel isolation; defects found in it are delivered as qa/task-c/replay_graphics_trace.patch for review."
+  ]
+}

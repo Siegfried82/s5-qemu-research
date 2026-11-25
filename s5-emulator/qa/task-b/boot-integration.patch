@@ -1,0 +1,256 @@
+--- a/menu-smp/boot.py
++++ b/menu-smp/boot.py
+@@ -127,7 +127,9 @@
+     p.add_argument("--key-event",choices=("KEY_CENTER","KEY_UP","KEY_DOWN","KEY_LEFT","KEY_RIGHT","KEY_PLAY","KEY_Q_MENU","KEY_SET"),help="after the first observed swap, send one explicit software key through the original input-task queue")
+     p.add_argument("--key-action",type=int,choices=(0,1),default=1,help="software key action: 0 release, 1 press")
+     p.add_argument("--key-click",action="store_true",help="after the original press is consumed, send its release through the same original input-task queue")
+-    p.add_argument("--key-sequence",nargs="+",choices=("KEY_CENTER","KEY_UP","KEY_DOWN","KEY_LEFT","KEY_RIGHT","KEY_PLAY","KEY_Q_MENU","KEY_SET"),help="up to16 explicit clicks; each subsequent press waits for a new actual EGL swap and original input readiness")
++    p.add_argument("--key-sequence",nargs="+",choices=("KEY_CENTER","KEY_UP","KEY_DOWN","KEY_LEFT","KEY_RIGHT","KEY_PLAY","KEY_Q_MENU","KEY_SET"),help="up to16 explicit clicks; each subsequent press waits for a proven post-dispatch EGL swap target and original input readiness")
++    p.add_argument("--key-target",action="append",default=[],help="explicit post-step EGL swap target for each non-final click in --key-sequence (e.g. scene=0x70de,modal=0x0 or same_scene,scene=0x70de,pixels_change)")
++    p.add_argument("--key-step-timeout",type=float,default=0,help="bounded per-phase timeout in seconds for key-sequence scheduler waits (0: 30s with --service-gui-once else 5s)")
+     p.add_argument("--spi0-open-bus",action="store_true",help="experimental disconnected SPI0 MISO=0, no success ACK or coprocessor execution")
+     p.add_argument("--spi6-open-bus",action="store_true",help="experimental disconnected SPI6 MISO=0 for original display initialization; no panel response invented")
+     p.add_argument("--tx-serial-hle",action="store_true",help="explicit TX-only controller completion model for 0x7b193400; captures bytes, no peripheral acknowledgement or image generation")
+@@ -145,10 +147,20 @@
+     p.add_argument("--frame-test-stage-seconds",type=float,default=2,help="bounded TEST watchdog for each original ISR/consumer stage (0..10 seconds); does not change guest timeout logic")
+     p.add_argument("--lcd-refresh-test-pulses",type=int,default=0,help="up to 1..32 explicit IRQ232 TEST inputs, only after the original GUI sets its refresh event; no automatic frame timing")
+     a=p.parse_args()
++    if a.key_target and not a.key_sequence:
++        p.error("--key-target requires --key-sequence")
++    if not 0 <= a.key_step_timeout <= 600:
++        p.error("--key-step-timeout must be within 0..600")
+     if a.key_sequence:
+         if len(a.key_sequence)>16:p.error("--key-sequence accepts at most16 clicks")
+         if a.key_event or a.key_click or a.key_action!=1:
+             p.error("--key-sequence supplies its own presses/releases; do not combine it with --key-event/--key-click/--key-action")
++        from key_sequence_scheduler import parse_target_spec
++        for spec in a.key_target:
++            try:parse_target_spec(spec)
++            except ValueError as exc:p.error(f"Invalid --key-target {spec!r}: {exc}")
++        if a.key_target and len(a.key_target) not in (max(0,len(a.key_sequence)-1),len(a.key_sequence)):
++            p.error(f"--key-target count ({len(a.key_target)}) must match non-final steps ({max(0,len(a.key_sequence)-1)})")
+         a.key_event=a.key_sequence[0];a.key_click=True
+     if not 0 < a.seconds <= 600:
+         p.error("--seconds must be within (0,600]")
+@@ -260,10 +272,28 @@
+         if storage:emu.breakpoint_add(STORAGE_READ)
+         if a.capture_gfx:emu.breakpoint_add(GFX_SOURCE)
+         graphics=None;window_returns={}
+-        key_probe=None;key_armed=False;key_release_armed=False
++        key_probe=None;key_scheduler=None
+         if a.key_event:
+             from key_probe import KeyProbe,KeyProbeError
+-            key_probe=KeyProbe(emu,consumption_timeout=30 if a.service_gui_once else 5)
++            from key_sequence_scheduler import (
++                InputReadiness,KeySequenceError,KeySequenceScheduler,
++                LayoutSnapshot,SwapObservation,WAIT_INPUT_READY,
++                read_input_route_readiness,read_layout_snapshot)
++            key_timeout=a.key_step_timeout or (30 if a.service_gui_once else 5)
++            key_probe=KeyProbe(emu,consumption_timeout=min(30,key_timeout))
++            key_scheduler=KeySequenceScheduler.from_cli(
++                key_event=None if a.key_sequence else a.key_event,
++                key_action=a.key_action,
++                key_click=a.key_click,
++                key_sequence=a.key_sequence,
++                key_targets=a.key_target,
++                initial_arm_options={
++                    "wait_for_ui_active":bool(service_probe),
++                    "wait_for_mode35_ack":bool(service_loop),
++                    "wait_for_transition_complete":bool(service_loop),
++                    "wait_for_input_route_ready":bool(service_loop)},
++                subsequent_arm_options={"wait_for_input_route_ready":True},
++                default_phase_timeout=key_timeout)
+         service_probe=None;service_started=False;service_phase=0;service_probes=[]
+         if a.service_gui_once:
+             from ui_service_probe import UIServiceProbe,UIServiceProbeError
+@@ -300,42 +330,36 @@
+         for address in points:emu.breakpoint_add(address,kind=4 if address in arm_points else 2)
+         for address in EXCEPTIONS:emu.breakpoint_add(address,kind=4)
+         report["initial_registers"]=capture(emu)
+-        def key_input_ready():
+-            if not graphics or not graphics.backend.swaps:return False
+-            if service_probe:
+-                # The key probe observes actual state changes at the input
+-                # task's loop even when no further graphics calls arrive.
+-                return (service_probe.completed and
+-                        (not service_loop or emu.read_mem(0x08aa1103,1)[0]&0xf==0xf))
+-            return True
++        def sample_key_input_readiness():
++            has_swap=bool(graphics and graphics.backend.swaps)
++            if not has_swap:
++                return InputReadiness(ready=False,has_initial_swap=False,reason="no_initial_egl_swap")
++            svc_done=(not service_probe) or bool(service_probe.completed)
++            # Step 0 keeps existing KeyProbe LOOP_ENTRY gating for initial transition;
++            # subsequent steps require read-only input-route readiness before arming.
++            check_route=bool(key_scheduler and key_scheduler.current_index>0)
++            return read_input_route_readiness(
++                emu.read_mem,
++                has_initial_swap=True,
++                service_probe_completed=svc_done,
++                require_ui_active=False,
++                require_mode35_ack=bool(service_probe and service_loop),
++                require_transition_complete=False,
++                require_input_route_ready=check_route)
+         deadline=time.monotonic()+a.seconds
+-        scripted_keys=a.key_sequence or ([a.key_event] if a.key_event else [])
+-        key_sequence_index=0;key_sequence_completed=0;key_release_recorded=False;key_next_swap_floor=None
+         while time.monotonic()<deadline:
+-            if key_probe and not key_armed and key_input_ready():
+-                key_probe.arm(a.key_event,a.key_action,swaps_observed=graphics.backend.swaps,
+-                              wait_for_ui_active=bool(service_probe),wait_for_mode35_ack=bool(service_loop),wait_for_transition_complete=bool(service_loop),wait_for_input_route_ready=bool(service_loop))
+-                key_armed=True
+-            if (a.key_click and key_armed and not key_release_armed and not key_probe.active
+-                    and key_probe.report["requests"][-1].get("consumed")):
+-                # Release is valid even if the press changed the active scene.
+-                key_probe.arm(scripted_keys[key_sequence_index],0,swaps_observed=graphics.backend.swaps)
+-                key_release_armed=True
+-            if (a.key_sequence and key_release_armed and not key_release_recorded and not key_probe.active
+-                    and key_probe.report["requests"][-1].get("consumed")):
+-                key_release_recorded=True
+-                key_sequence_completed+=1
+-                # A new frame may arrive before the original release is
+-                # consumed. Count from the actual press dispatch, after all
+-                # readiness waits, rather than from arm/release time.
+-                key_next_swap_floor=key_probe.report["requests"][-2].get(
+-                    "egl_swaps_at_original_dispatch",graphics.backend.swaps)
+-            if (a.key_sequence and key_release_recorded and key_sequence_index+1<len(scripted_keys)
+-                    and graphics.backend.swaps>key_next_swap_floor):
+-                key_sequence_index+=1
+-                key_probe.arm(scripted_keys[key_sequence_index],1,swaps_observed=graphics.backend.swaps,
+-                              wait_for_input_route_ready=True)
+-                key_release_armed=False;key_release_recorded=False
++            if key_probe and key_scheduler and key_scheduler.active:
++                key_scheduler.observe_input_readiness(sample_key_input_readiness())
++                try:
++                    key_scheduler.check_timeout()
++                except KeySequenceError as exc:
++                    report["key_sequence_error"]=str(exc)
++                    report["stop_reason"]="software_key_sequence_stopped"
++                    break
++                if not key_probe.active:
++                    cmd=key_scheduler.next_action()
++                    if cmd is not None:
++                        key_probe.arm(cmd.key,cmd.action,swaps_observed=graphics.backend.swaps,**cmd.arm_options)
+             if (frame_probe and not frame_probe_started and display_clock_probe.completed
+                     and service_loop.report.get("postinit_672060c_executed_by_helper")
+                     and service_loop.report.get("postinit_65b9fcc_executed_by_helper")
+@@ -360,6 +384,10 @@
+             try:
+                 timeout=max(.001,deadline-time.monotonic())
+                 if key_probe and key_probe.active:timeout=min(timeout,key_probe.timeout_hint())
++                if key_scheduler and key_scheduler.active:
++                    timeout=min(timeout,key_scheduler.timeout_hint())
++                    if not key_probe.active and key_scheduler.pending_wait_reason==WAIT_INPUT_READY and key_scheduler.current_index>0:
++                        timeout=min(timeout,0.25)
+                 if service_probe and service_probe.active:timeout=min(timeout,service_probe.timeout_hint())
+                 if display_clock_probe and display_clock_probe.active:timeout=min(timeout,display_clock_probe.timeout_hint())
+                 if frame_probe and frame_probe.active:timeout=min(timeout,frame_probe.timeout_hint())
+@@ -393,9 +421,18 @@
+                 if key_probe and key_probe.active:
+                     try:key_probe.check_timeout()
+                     except KeyProbeError as exc:
++                        if key_scheduler and key_scheduler.active:key_scheduler.fail(f"key_probe_error:{exc}")
+                         report["key_error"]=str(exc)
+                         report["stop_reason"]="software_key_probe_stopped"
+                         break
++                if key_scheduler and key_scheduler.active:
++                    try:key_scheduler.check_timeout()
++                    except KeySequenceError as exc:
++                        report["key_sequence_error"]=str(exc)
++                        report["stop_reason"]="software_key_sequence_stopped"
++                        break
++                    if time.monotonic()<deadline and not key_probe.active and key_scheduler.pending_wait_reason==WAIT_INPUT_READY and key_scheduler.current_index>0:
++                        continue
+                 report["stop_reason"]="time_bound"
+                 break
+             match=re.search(r"thread:([^;]+)",reply)
+@@ -442,9 +479,6 @@
+                                         break
+                                 else:emu.breakpoint_add(PEER_WAIT)
+                             else:emu.breakpoint_add(PEER_WAIT)
+-                            if key_probe and not key_armed and key_input_ready():
+-                                key_probe.arm(a.key_event,a.key_action,swaps_observed=graphics.backend.swaps,wait_for_ui_active=bool(service_probe),wait_for_mode35_ack=bool(service_loop),wait_for_transition_complete=bool(service_loop),wait_for_input_route_ready=bool(service_loop))
+-                                key_armed=True
+                         continue
+                 except UIServiceProbeError as exc:
+                     report["ui_service_error"]=str(exc)
+@@ -473,8 +507,21 @@
+                         events=request.get("events",[])
+                         if request["action"]==1 and events and events[-1]["kind"]=="original_key_dispatch":
+                             request.setdefault("egl_swaps_at_original_dispatch",graphics.backend.swaps)
++                            if key_scheduler and not request.get("scheduler_dispatch_notified"):
++                                key_scheduler.observe_press_dispatched(request["key"],swap_count=graphics.backend.swaps)
++                                request["scheduler_dispatch_notified"]=True
++                        if key_scheduler and not key_probe.active and not request.get("scheduler_terminal_notified"):
++                            request["scheduler_terminal_notified"]=True
++                            if request.get("consumed"):
++                                if request["action"]==1:
++                                    key_scheduler.observe_press_consumed(request["key"])
++                                else:
++                                    key_scheduler.observe_release_consumed(request["key"])
++                            else:
++                                key_scheduler.fail(f"key_probe_not_consumed:{request.get('status')}")
+                         continue
+                 except KeyProbeError as exc:
++                    if key_scheduler and key_scheduler.active:key_scheduler.fail(f"key_probe_error:{exc}")
+                     report["key_error"]=str(exc)
+                     report["stop_reason"]="software_key_probe_stopped"
+                     break
+@@ -517,14 +564,26 @@
+                 continue
+             if graphics and pc in graphics.breakpoints:
+                 try:
+-                    graphics.handle(pc,emu.registers())
++                    gfx_result=graphics.handle(pc,emu.registers())
+                 except (ValueError,RuntimeError,KeyError) as exc:
+                     report["graphics_error"]={"pc":hex(pc),"cpu":index,"error":str(exc),"exception":type(exc).__name__}
+                     report["stop_reason"]="graphics_unsupported_or_invalid"
+                     break
+-                if key_probe and not key_armed and key_input_ready():
+-                    key_probe.arm(a.key_event,a.key_action,swaps_observed=graphics.backend.swaps,wait_for_ui_active=bool(service_probe),wait_for_mode35_ack=bool(service_loop),wait_for_transition_complete=bool(service_loop),wait_for_input_route_ready=bool(service_loop))
+-                    key_armed=True
++                if key_scheduler and gfx_result and gfx_result.get("api")=="eglSwapBuffers":
++                    # Exact original eglSwapBuffers (0x064c3cda) boundary: guest is still
++                    # halted before resume; sample read-only render_layout (0x0b392e90)
++                    # and source_layout (0x08cb10c8).
++                    try:swap_layout=read_layout_snapshot(emu.read_mem)
++                    except (ValueError,RuntimeError):swap_layout=LayoutSnapshot(captured=False)
++                    swap_event=next((ev for ev in reversed(graphics.backend.events) if ev.get("name")=="software_swap"),None)
++                    frame_id=Path(swap_event["path"]).name if swap_event and swap_event.get("path") else None
++                    key_scheduler.observe_swap(SwapObservation(
++                        swap_count=graphics.backend.swaps,
++                        layout=swap_layout,
++                        frame_id=frame_id,
++                        pixels_sha256=swap_event.get("pixels_sha256") if swap_event else None,
++                        draw_calls=graphics.backend.draw_count,
++                        boundary_pc=pc&~1))
+                 if a.stop_after_swaps and graphics.backend.swaps >= a.stop_after_swaps:
+                     report["stop_reason"]="requested_egl_swap_count"
+                     break
+@@ -610,15 +669,18 @@
+             service_loop.close()
+             report["original_ui_service_loop_probe"]=service_loop.report
+         if key_probe:
++            if key_scheduler and key_scheduler.active:
++                key_scheduler.cancel(report.get("stop_reason","stopped"))
++            sched_report=key_scheduler.report() if key_scheduler else None
++            any_armed=bool(sched_report and any(s["press_armed"] or s["release_armed"] for s in sched_report["steps"]))
++            any_release_armed=bool(sched_report and any(s["release_armed"] for s in sched_report["steps"]))
+             report["software_key_probe"]=key_probe.report
+-            report["software_key_probe"]["armed"]=key_armed
+-            report["software_key_probe"]["click_release_armed"]=key_release_armed
+-            if a.key_sequence:
+-                report["software_key_sequence"]={"keys":scripted_keys,"completed_clicks":key_sequence_completed,
+-                    "current_index":key_sequence_index,"waiting_for_swap_after":key_next_swap_floor,
+-                    "next_press_requires_new_egl_swap":True,"complete":key_sequence_completed==len(scripted_keys)}
+-            if not key_armed:
+-                report["software_key_probe"]["pending_reason"]="Waiting for a real swap and, in local UI service mode, original nonzero UI state outside mode6"
++            report["software_key_probe"]["armed"]=any_armed
++            report["software_key_probe"]["click_release_armed"]=any_release_armed
++            if sched_report is not None:
++                report["software_key_sequence"]=sched_report
++            if not any_armed:
++                report["software_key_probe"]["pending_reason"]=(sched_report.get("pending_wait_reason") if sched_report else None) or "Waiting for a real swap and, in local UI service mode, original nonzero UI state outside mode6"
+             key_probe.close()
+         if service_probe:
+             report["original_ui_service_probe"]=service_probes[0].report

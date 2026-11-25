@@ -1,0 +1,20 @@
+test_actual_swap_without_layout_proof_keeps_waiting_and_never_guesses (__main__.KeySequenceSchedulerBehavioralTests) ... ok
+test_cancellation_across_all_lifecycle_points_reports_release_safety_accurately (__main__.KeySequenceSchedulerBehavioralTests) ... ok
+test_consecutive_same_key_down_uses_post_step_frame_id_without_backfill (__main__.KeySequenceSchedulerBehavioralTests) ... ok
+test_duplicate_press_and_release_notifications_are_idempotently_rejected (__main__.KeySequenceSchedulerBehavioralTests) ... ok
+test_final_step_ignores_extra_target_and_finishes_without_extra_swap (__main__.KeySequenceSchedulerBehavioralTests) ... ok
+test_input_gate_not_ready_blocks_next_press_even_after_target_frame_swapped (__main__.KeySequenceSchedulerBehavioralTests) ... ok
+test_legacy_single_key_and_legacy_sequence_compatibility (__main__.KeySequenceSchedulerBehavioralTests) ... ok
+test_multi_step_different_keys_with_same_scene_down_no_backfill_and_honest_reporting (__main__.KeySequenceSchedulerBehavioralTests) ... ok
+test_stale_old_scene_swap_arriving_late_does_not_advance_even_when_source_updated (__main__.KeySequenceSchedulerBehavioralTests) ... ok
+test_strict_read_only_guest_ram_guarantee (__main__.KeySequenceSchedulerBehavioralTests) ... ok
+test_swap_before_press_dispatch_cannot_satisfy_target_even_if_layout_matches (__main__.KeySequenceSchedulerBehavioralTests) ... ok
+test_target_scene_swaps_before_release_consumed_still_completes_release_first (__main__.KeySequenceSchedulerBehavioralTests) ... ok
+test_timeouts_in_every_distinct_wait_phase_report_exact_reason (__main__.KeySequenceSchedulerBehavioralTests) ... ok
+test_validation_rejects_missing_non_final_target_and_invalid_inputs (__main__.KeySequenceSchedulerBehavioralTests) ... ok
+test_working_layout_match_without_swap_never_satisfies_target_or_extends_deadline (__main__.KeySequenceSchedulerBehavioralTests) ... ok
+
+----------------------------------------------------------------------
+Ran 15 tests in 0.002s
+
+OK

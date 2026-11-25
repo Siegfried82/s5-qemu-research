@@ -1,0 +1,451 @@
+{
+  "scope": "Single-variable A/B verification of opt-in --adc2-ch0-sample 0x3ff (ADC bank2 ch0 0x7f032014) on top of Task A --lens-release-input-high.",
+  "single_variable": "--adc2-ch0-sample 0x3ff (/machine.adc2-ch0-sample: 0 -> 1023)",
+  "execution": {
+    "focused_adc2_ch0_executed": true,
+    "ram_layout_regression_executed": true,
+    "baseline_executed": true,
+    "candidate_executed": true
+  },
+  "assertions": {
+    "focused_adc2_ch0_passed": true,
+    "ram_layout_regression_passed": true,
+    "verified_single_variable": true,
+    "original_firmware_unmodified": true,
+    "baseline_reached_scene_70de_no_modal": true,
+    "baseline_reproduced_timezone_drift": true,
+    "candidate_reached_scene_70de_no_modal": true,
+    "candidate_center_key_consumed": true,
+    "candidate_stopped_timezone_drift": true,
+    "candidate_bank2_ch0_effective_0x3ff": true,
+    "baseline_bank2_ch0_default_0": true
+  },
+  "all_executions_ok": true,
+  "all_assertions_passed": true,
+  "focused_test": {
+    "path": "/Volumes/SATA-1TB/Projects/s5-qemu/workspace/s5-emulator/qemu/adc2-ch0-input-verified/verification.json",
+    "passed": true,
+    "checks": [
+      "default adc2-ch0-sample is 0 and reported in adc-state-json",
+      "adc2-ch0-sample rejects > 0xffff without mutating stored value",
+      "default bank2 ch0=0 -> original 0x06545554 returns raw 0x20 (KEY_LEFT)",
+      "all 4 directional bands + idle 0x3ff verified through 0x7f032014 and original 0x06545554",
+      "bank0/bank1/bank2 isolation and adc-state-json accounting verified"
+    ],
+    "decoder_cases": [
+      {
+        "sample": "0x0",
+        "mmio_bank2": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "decoded_raw_06545554": "0x20",
+        "label": "KEY_LEFT"
+      },
+      {
+        "sample": "0xb8",
+        "mmio_bank2": [
+          184,
+          0,
+          0,
+          0
+        ],
+        "decoded_raw_06545554": "0x4",
+        "label": "KEY_UP"
+      },
+      {
+        "sample": "0x183",
+        "mmio_bank2": [
+          387,
+          0,
+          0,
+          0
+        ],
+        "decoded_raw_06545554": "0x10",
+        "label": "KEY_RIGHT"
+      },
+      {
+        "sample": "0x25a",
+        "mmio_bank2": [
+          602,
+          0,
+          0,
+          0
+        ],
+        "decoded_raw_06545554": "0x8",
+        "label": "KEY_DOWN"
+      },
+      {
+        "sample": "0x3ff",
+        "mmio_bank2": [
+          1023,
+          0,
+          0,
+          0
+        ],
+        "decoded_raw_06545554": "0x0",
+        "label": "IDLE_NO_KEY"
+      }
+    ]
+  },
+  "ram_layout_regression": {
+    "path": "/Volumes/SATA-1TB/Projects/s5-qemu/workspace/s5-emulator/qa/task-timezone-drift/ram-layout-regression/verification.json",
+    "passed": true,
+    "checks": 83
+  },
+  "baseline": {
+    "dir": "/Volumes/SATA-1TB/Projects/s5-qemu/workspace/s5-emulator/qa/task-timezone-drift/baseline-drift-02",
+    "execution_ok": true,
+    "qemu_exit_code": 0,
+    "qemu_sha256": "b12ab0b0bead16c0e4d5d954f745c829db49d155ae67640bf730eeed4450b702",
+    "stop_reason": "time_bound",
+    "graphics_error": null,
+    "graphics_draws": 423,
+    "graphics_swaps": 10,
+    "menu_rendered": false,
+    "original_firmware_instructions_modified": false,
+    "adc_environment": {
+      "channel": 11,
+      "raw_sample": 768,
+      "adc2_ch0_sample": 0,
+      "voltage_calibrated": false,
+      "firmware_thresholds_modified": false
+    },
+    "adc_state_summary": {
+      "adc11_sample": 768,
+      "adc2_ch0_sample": 0,
+      "bank0_conversions": 8026,
+      "bank0_results": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        768
+      ],
+      "bank2_conversions": 8018,
+      "bank2_results": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "lens_release_input": {
+      "enabled": true,
+      "scope": "explicit external input: read044e bit0 high; not lens presence or peer ACK",
+      "register": "0x044e",
+      "read_mask": 1,
+      "stored_value": 2,
+      "effective_value": 3,
+      "affected_reads": 8018,
+      "stored_value_modified": false
+    },
+    "lcd_refresh_completed_requests": 8,
+    "original_ui_state_at_stop": {
+      "control_words_08a928b0": [
+        "0x0",
+        "0x20",
+        "0x0",
+        "0x1"
+      ],
+      "transition_step_08cb0ee0": "0x4a0",
+      "secondary_transition_stage_08aa090c": 1,
+      "modal_id_08a92898": "0x0",
+      "mode35_confirmation_mask_08aa1103": "0xff",
+      "confirmation_mask_08aa1104": "0xff",
+      "source_scene_08cb10d0": "0x70de",
+      "render_scene_0b392e98": "0x70de",
+      "source_layout_08cb10c8_hex": "0000000000000000de70000000000000",
+      "render_layout_0b392e90_hex": "0000000000000000de70000000000000",
+      "lcd_clock_state_08ab488c": "0x4",
+      "avio_clock_completion_08a9c7f8": "0x2"
+    },
+    "frames": [
+      {
+        "name": "frame-0000.png",
+        "path": "/Volumes/SATA-1TB/Projects/s5-qemu/workspace/s5-emulator/qa/task-timezone-drift/baseline-drift-02/graphics/frame-0000.png",
+        "bytes": 20624,
+        "sha256": "441650dc9de75635c6e5009d8937594af0b4a85bb0a6f4dd93725f09cd885fc7",
+        "size": [
+          1024,
+          768
+        ],
+        "non_black_pixels": 75768,
+        "bright_white_pixels": 8976
+      },
+      {
+        "name": "frame-0001.png",
+        "path": "/Volumes/SATA-1TB/Projects/s5-qemu/workspace/s5-emulator/qa/task-timezone-drift/baseline-drift-02/graphics/frame-0001.png",
+        "bytes": 21421,
+        "sha256": "4cc91201a32a93d87c7c03470860c59453861af28b03792dea514061bb14b7b8",
+        "size": [
+          1024,
+          768
+        ],
+        "non_black_pixels": 77951,
+        "bright_white_pixels": 9624
+      },
+      {
+        "name": "frame-0002.png",
+        "path": "/Volumes/SATA-1TB/Projects/s5-qemu/workspace/s5-emulator/qa/task-timezone-drift/baseline-drift-02/graphics/frame-0002.png",
+        "bytes": 69029,
+        "sha256": "5716bb8ee9b24138a1bbb930479a8cf0efc4782b3e8a013ef32c87839295e199",
+        "size": [
+          1024,
+          768
+        ],
+        "non_black_pixels": 609454,
+        "bright_white_pixels": 6144
+      },
+      {
+        "name": "frame-0003.png",
+        "path": "/Volumes/SATA-1TB/Projects/s5-qemu/workspace/s5-emulator/qa/task-timezone-drift/baseline-drift-02/graphics/frame-0003.png",
+        "bytes": 68056,
+        "sha256": "16c3b11967010d0258f0820a36d9b0a149fe995ddbaa039ea92d39b116e2175a",
+        "size": [
+          1024,
+          768
+        ],
+        "non_black_pixels": 609453,
+        "bright_white_pixels": 6095
+      },
+      {
+        "name": "frame-0004.png",
+        "path": "/Volumes/SATA-1TB/Projects/s5-qemu/workspace/s5-emulator/qa/task-timezone-drift/baseline-drift-02/graphics/frame-0004.png",
+        "bytes": 69465,
+        "sha256": "9668abb6fa402a8f27282dd5c085373a7efbd3f0c3497134872ed3dfa1a5c23c",
+        "size": [
+          1024,
+          768
+        ],
+        "non_black_pixels": 609453,
+        "bright_white_pixels": 6848
+      },
+      {
+        "name": "frame-0005.png",
+        "path": "/Volumes/SATA-1TB/Projects/s5-qemu/workspace/s5-emulator/qa/task-timezone-drift/baseline-drift-02/graphics/frame-0005.png",
+        "bytes": 81040,
+        "sha256": "775d52d077a9786aa960ff3b02b39c503c2c9a36b034cf0c300c1cb70cf6c9bc",
+        "size": [
+          1024,
+          768
+        ],
+        "non_black_pixels": 609453,
+        "bright_white_pixels": 7702
+      },
+      {
+        "name": "frame-0006.png",
+        "path": "/Volumes/SATA-1TB/Projects/s5-qemu/workspace/s5-emulator/qa/task-timezone-drift/baseline-drift-02/graphics/frame-0006.png",
+        "bytes": 80849,
+        "sha256": "26eb19e49cdaff74ff66b32ed6bb5f7cb2f568dca63efc676b360d3ca8a11919",
+        "size": [
+          1024,
+          768
+        ],
+        "non_black_pixels": 609456,
+        "bright_white_pixels": 6943
+      },
+      {
+        "name": "frame-0007.png",
+        "path": "/Volumes/SATA-1TB/Projects/s5-qemu/workspace/s5-emulator/qa/task-timezone-drift/baseline-drift-02/graphics/frame-0007.png",
+        "bytes": 84047,
+        "sha256": "e87ede96af7ea1e050b962d4df671e22b40ebced435da1ef3675e80deaa6125f",
+        "size": [
+          1024,
+          768
+        ],
+        "non_black_pixels": 609456,
+        "bright_white_pixels": 9758
+      },
+      {
+        "name": "frame-0008.png",
+        "path": "/Volumes/SATA-1TB/Projects/s5-qemu/workspace/s5-emulator/qa/task-timezone-drift/baseline-drift-02/graphics/frame-0008.png",
+        "bytes": 72847,
+        "sha256": "68a8024b6be8ca6e8ec73d02c40fa72f1bd15682928bfd61698d581e731a1596",
+        "size": [
+          1024,
+          768
+        ],
+        "non_black_pixels": 609453,
+        "bright_white_pixels": 7538
+      },
+      {
+        "name": "frame-0009.png",
+        "path": "/Volumes/SATA-1TB/Projects/s5-qemu/workspace/s5-emulator/qa/task-timezone-drift/baseline-drift-02/graphics/frame-0009.png",
+        "bytes": 78775,
+        "sha256": "39b97540488cd8051343d73ece01569ce26bb3af11639eef0664c0c43995fc29",
+        "size": [
+          1024,
+          768
+        ],
+        "non_black_pixels": 609453,
+        "bright_white_pixels": 7815
+      }
+    ],
+    "scene70de_frame_count": 8,
+    "scene70de_unique_sha256_count": 8,
+    "scene70de_unique_sha256s": [
+      "16c3b11967010d0258f0820a36d9b0a149fe995ddbaa039ea92d39b116e2175a",
+      "26eb19e49cdaff74ff66b32ed6bb5f7cb2f568dca63efc676b360d3ca8a11919",
+      "39b97540488cd8051343d73ece01569ce26bb3af11639eef0664c0c43995fc29",
+      "5716bb8ee9b24138a1bbb930479a8cf0efc4782b3e8a013ef32c87839295e199",
+      "68a8024b6be8ca6e8ec73d02c40fa72f1bd15682928bfd61698d581e731a1596",
+      "775d52d077a9786aa960ff3b02b39c503c2c9a36b034cf0c300c1cb70cf6c9bc",
+      "9668abb6fa402a8f27282dd5c085373a7efbd3f0c3497134872ed3dfa1a5c23c",
+      "e87ede96af7ea1e050b962d4df671e22b40ebced435da1ef3675e80deaa6125f"
+    ],
+    "key_requests_consumed": true
+  },
+  "candidate": {
+    "dir": "/Volumes/SATA-1TB/Projects/s5-qemu/workspace/s5-emulator/qa/task-timezone-drift/candidate-adc2-ch0-0x3ff-01",
+    "execution_ok": true,
+    "qemu_exit_code": 0,
+    "qemu_sha256": "b12ab0b0bead16c0e4d5d954f745c829db49d155ae67640bf730eeed4450b702",
+    "stop_reason": "time_bound",
+    "graphics_error": null,
+    "graphics_draws": 204,
+    "graphics_swaps": 5,
+    "menu_rendered": false,
+    "original_firmware_instructions_modified": false,
+    "adc_environment": {
+      "channel": 11,
+      "raw_sample": 768,
+      "adc2_ch0_sample": 1023,
+      "voltage_calibrated": false,
+      "firmware_thresholds_modified": false
+    },
+    "adc_state_summary": {
+      "adc11_sample": 768,
+      "adc2_ch0_sample": 1023,
+      "bank0_conversions": 7007,
+      "bank0_results": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        768
+      ],
+      "bank2_conversions": 6999,
+      "bank2_results": [
+        1023,
+        0,
+        0,
+        0
+      ]
+    },
+    "lens_release_input": {
+      "enabled": true,
+      "scope": "explicit external input: read044e bit0 high; not lens presence or peer ACK",
+      "register": "0x044e",
+      "read_mask": 1,
+      "stored_value": 2,
+      "effective_value": 3,
+      "affected_reads": 6999,
+      "stored_value_modified": false
+    },
+    "lcd_refresh_completed_requests": 4,
+    "original_ui_state_at_stop": {
+      "control_words_08a928b0": [
+        "0x0",
+        "0x20",
+        "0x0",
+        "0x1"
+      ],
+      "transition_step_08cb0ee0": "0x4a0",
+      "secondary_transition_stage_08aa090c": 1,
+      "modal_id_08a92898": "0x0",
+      "mode35_confirmation_mask_08aa1103": "0xff",
+      "confirmation_mask_08aa1104": "0xff",
+      "source_scene_08cb10d0": "0x70de",
+      "render_scene_0b392e98": "0x70de",
+      "source_layout_08cb10c8_hex": "0000000000000000de70000000000000",
+      "render_layout_0b392e90_hex": "0000000000000000de70000000000000",
+      "lcd_clock_state_08ab488c": "0x4",
+      "avio_clock_completion_08a9c7f8": "0x2"
+    },
+    "frames": [
+      {
+        "name": "frame-0000.png",
+        "path": "/Volumes/SATA-1TB/Projects/s5-qemu/workspace/s5-emulator/qa/task-timezone-drift/candidate-adc2-ch0-0x3ff-01/graphics/frame-0000.png",
+        "bytes": 20624,
+        "sha256": "441650dc9de75635c6e5009d8937594af0b4a85bb0a6f4dd93725f09cd885fc7",
+        "size": [
+          1024,
+          768
+        ],
+        "non_black_pixels": 75768,
+        "bright_white_pixels": 8976
+      },
+      {
+        "name": "frame-0001.png",
+        "path": "/Volumes/SATA-1TB/Projects/s5-qemu/workspace/s5-emulator/qa/task-timezone-drift/candidate-adc2-ch0-0x3ff-01/graphics/frame-0001.png",
+        "bytes": 21421,
+        "sha256": "4cc91201a32a93d87c7c03470860c59453861af28b03792dea514061bb14b7b8",
+        "size": [
+          1024,
+          768
+        ],
+        "non_black_pixels": 77951,
+        "bright_white_pixels": 9624
+      },
+      {
+        "name": "frame-0002.png",
+        "path": "/Volumes/SATA-1TB/Projects/s5-qemu/workspace/s5-emulator/qa/task-timezone-drift/candidate-adc2-ch0-0x3ff-01/graphics/frame-0002.png",
+        "bytes": 94939,
+        "sha256": "55447019af512b18fa899f4b5d3103f212d4bed17af48ff51b4f373b25845b0b",
+        "size": [
+          1024,
+          768
+        ],
+        "non_black_pixels": 609453,
+        "bright_white_pixels": 10551
+      },
+      {
+        "name": "frame-0003.png",
+        "path": "/Volumes/SATA-1TB/Projects/s5-qemu/workspace/s5-emulator/qa/task-timezone-drift/candidate-adc2-ch0-0x3ff-01/graphics/frame-0003.png",
+        "bytes": 94939,
+        "sha256": "55447019af512b18fa899f4b5d3103f212d4bed17af48ff51b4f373b25845b0b",
+        "size": [
+          1024,
+          768
+        ],
+        "non_black_pixels": 609453,
+        "bright_white_pixels": 10551
+      },
+      {
+        "name": "frame-0004.png",
+        "path": "/Volumes/SATA-1TB/Projects/s5-qemu/workspace/s5-emulator/qa/task-timezone-drift/candidate-adc2-ch0-0x3ff-01/graphics/frame-0004.png",
+        "bytes": 94939,
+        "sha256": "55447019af512b18fa899f4b5d3103f212d4bed17af48ff51b4f373b25845b0b",
+        "size": [
+          1024,
+          768
+        ],
+        "non_black_pixels": 609453,
+        "bright_white_pixels": 10551
+      }
+    ],
+    "scene70de_frame_count": 3,
+    "scene70de_unique_sha256_count": 1,
+    "scene70de_unique_sha256s": [
+      "55447019af512b18fa899f4b5d3103f212d4bed17af48ff51b4f373b25845b0b"
+    ],
+    "key_requests_consumed": true
+  }
+}
